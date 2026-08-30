@@ -15,44 +15,44 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <text class="svg-lbl" x="350" y="56" text-anchor="middle">MASTER RECORD</text>
 <text class="svg-sub" x="350" y="70" text-anchor="middle">independent of platforms</text>
 
-<line x1="290" y1="82" x2="105" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
-<line x1="325" y1="82" x2="260" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
-<line x1="375" y1="82" x2="440" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
-<line x1="410" y1="82" x2="595" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
+<line x1="290" y1="82" x2="99" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
+<line x1="325" y1="82" x2="266" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
+<line x1="375" y1="82" x2="433" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
+<line x1="410" y1="82" x2="600" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d9-arrow)"/>
 
-<rect x="20" y="112" width="170" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<rect x="35" y="128" width="140" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="105" y="152" text-anchor="middle">Platform A</text>
-<rect x="35" y="212" width="140" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="105" y="232" text-anchor="middle">agents</text>
-<line x1="105" y1="212" x2="105" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+<rect x="20" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="35" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="152" text-anchor="middle">Platform A</text>
+<rect x="35" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="232" text-anchor="middle">agents</text>
+<line x1="99" y1="212" x2="99" y2="170" stroke="#1b1b19" stroke-width=".5"/>
 
-<rect x="200" y="112" width="170" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<rect x="215" y="128" width="140" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="285" y="152" text-anchor="middle">Platform B</text>
-<rect x="215" y="212" width="140" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="285" y="232" text-anchor="middle">agents</text>
-<line x1="285" y1="212" x2="285" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+<rect x="187" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="202" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="152" text-anchor="middle">Platform B</text>
+<rect x="202" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="232" text-anchor="middle">agents</text>
+<line x1="266" y1="212" x2="266" y2="170" stroke="#1b1b19" stroke-width=".5"/>
 
-<rect x="380" y="112" width="170" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<rect x="395" y="128" width="140" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="465" y="152" text-anchor="middle">Built in house</text>
-<rect x="395" y="212" width="140" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="465" y="232" text-anchor="middle">agents</text>
-<line x1="465" y1="212" x2="465" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+<rect x="354" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="369" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="152" text-anchor="middle">Built in house</text>
+<rect x="369" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="232" text-anchor="middle">agents</text>
+<line x1="433" y1="212" x2="433" y2="170" stroke="#1b1b19" stroke-width=".5"/>
 
-<rect x="510" y="112" width="170" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<rect x="525" y="128" width="140" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="595" y="146" text-anchor="middle">Spreadsheet and</text>
-<text class="svg-sub" x="595" y="158" text-anchor="middle">simple automation</text>
-<rect x="525" y="212" width="140" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-sub" x="595" y="232" text-anchor="middle">agents</text>
-<line x1="595" y1="212" x2="595" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+<rect x="521" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="536" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="146" text-anchor="middle">Spreadsheet and</text>
+<text class="svg-sub" x="600" y="158" text-anchor="middle">simple automation</text>
+<rect x="536" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="232" text-anchor="middle">agents</text>
+<line x1="600" y1="212" x2="600" y2="170" stroke="#1b1b19" stroke-width=".5"/>
 
-<line x1="105" y1="244" x2="290" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
-<line x1="285" y1="244" x2="325" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
-<line x1="465" y1="244" x2="375" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
-<line x1="595" y1="244" x2="410" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
+<line x1="99" y1="244" x2="290" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
+<line x1="266" y1="244" x2="325" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
+<line x1="433" y1="244" x2="375" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
+<line x1="600" y1="244" x2="410" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d9-arrow)"/>
 
 <text class="svg-cap" x="350" y="292" text-anchor="middle">EACH PLATFORM IS DEEP, CREDIBLE AND LIMITED BY ITS OWN WALLS. YOUR RESPONSIBILITY IS NOT</text>
 </svg>

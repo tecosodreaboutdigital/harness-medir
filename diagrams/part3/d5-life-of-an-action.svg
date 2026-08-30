@@ -60,5 +60,5 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <text class="svg-sub" x="548" y="363" text-anchor="middle">logs result and cost</text>
 
 <path d="M620,398 C 655,398 655,414 620,414" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d5-arrow-open)"/>
-<text class="svg-sub" x="628" y="430" text-anchor="start">minimum six-month retention</text>
+<text class="svg-sub" x="695" y="430" text-anchor="end">minimum six-month retention</text>
 </svg>
