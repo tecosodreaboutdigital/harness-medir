@@ -58,6 +58,9 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── harness-caixa-de-ferramentas.html  guia compacto, organizado pelo MEDIR, pronto
 ├── fontes/
 │   └── inventario.md                  todas as fontes verificadas, com status
+├── docs/
+│   ├── diario-de-bordo.html           trilíngue, gerado do git e do uso real da sessão
+│   └── assets/diario-metrics.json     dado bruto do diário, nunca editado à mão
 └── build/                             corpos de texto e scripts de montagem
 ```
 

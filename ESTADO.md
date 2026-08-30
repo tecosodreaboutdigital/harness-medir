@@ -2,9 +2,15 @@
 
 Situação em 30 de agosto de 2026.
 
+Publicado em `github.com/tecosodreaboutdigital/harness-medir` (repositório) e `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, os HTML renderizam como página, não só como código-fonte).
+
 ---
 
 ## Pronto
+
+### Diário de bordo
+
+`docs/diario-de-bordo.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas e tokens consumidos por marco, gerado a partir do git e do transcript real da sessão, nunca escrito à mão. Ver `build/generate_diario_metrics.py` e `build/build_diario.py`. Seis marcos até aqui, o histórico completo do repositório, mais o que ainda está em sessão aberta.
 
 ### Parte 1 · O melhor modelo do mundo dentro de uma empresa sem processo
 

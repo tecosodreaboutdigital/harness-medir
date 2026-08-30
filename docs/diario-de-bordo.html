@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diário de bordo | Harness</title>
+<style>
+:root{
+  --ink:#1b1b19;
+  --ink-soft:#4a4a45;
+  --ink-faint:#8a887f;
+  --rule:#c9c7bf;
+  --accent:#5c6b52;
+  --paper:#ffffff;
+  --fill:#eef1f4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:#f2f1ed;
+  color:var(--ink);
+  font-family:"Aptos","Aptos Light","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.62;
+  font-weight:400;
+}
+.page{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  padding:64px 72px 80px;
+}
+
+.langbar{
+  display:flex;
+  justify-content:flex-end;
+  gap:2px;
+  margin:0 0 22px;
+}
+.langbar button{
+  font-size:10px;
+  letter-spacing:.18em;
+  padding:5px 10px;
+  border:.5pt solid var(--rule);
+  color:var(--ink-faint);
+  background:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.langbar button.on{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+}
+.langbar button:hover{border-color:var(--accent);color:var(--ink)}
+
+.langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+main[hidden]{display:none}
+
+.kpi-grid{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 30px;border-top:.5pt solid var(--ink);border-bottom:.5pt solid var(--ink)}
+.kpi{flex:1 1 22%;padding:16px 14px;border-right:.5pt solid var(--rule);display:flex;flex-direction:column;gap:4px}
+.kpi:last-child{border-right:0}
+.kpi-n{font-size:22px;font-weight:600;letter-spacing:-.01em}
+.kpi-l{font-size:10.5px;color:var(--ink-faint);line-height:1.3}
+.mono{font-family:"Consolas","Menlo",monospace;font-size:10.5px;color:var(--ink-faint)}
+@media (max-width:640px){.kpi{flex:1 1 48%}}
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 18px;
+}
+h1{
+  font-size:30px;
+  line-height:1.18;
+  font-weight:600;
+  margin:0 0 14px;
+  letter-spacing:-.01em;
+}
+.deck{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin:0 0 26px;
+  max-width:58ch;
+}
+.byline{
+  font-size:11.5px;
+  color:var(--ink-faint);
+  border-top:.5pt solid var(--rule);
+  border-bottom:.5pt solid var(--rule);
+  padding:9px 0;
+  margin:0 0 34px;
+  letter-spacing:.02em;
+}
+h2{
+  font-size:19px;
+  font-weight:600;
+  line-height:1.3;
+  margin:44px 0 8px;
+  letter-spacing:-.005em;
+}
+h3{font-size:15px;font-weight:600;margin:26px 0 6px}
+p{margin:0 0 14px;text-align:justify;hyphens:auto}
+a{color:var(--ink);text-decoration:none;border-bottom:.5pt solid var(--rule)}
+a:hover{border-bottom-color:var(--accent)}
+.toc{
+  border:.5pt solid var(--rule);
+  padding:20px 24px;
+  margin:0 0 40px;
+}
+.toc p{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin:0 0 12px;
+  text-align:left;
+}
+.toc ol{margin:0;padding-left:18px;font-size:13.5px;line-height:1.9}
+.toc a{border:0}
+.toc a:hover{border-bottom:.5pt solid var(--accent)}
+blockquote{
+  margin:24px 0;
+  padding:14px 18px;
+  border:0;
+  background:var(--fill);
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--ink);
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+blockquote p{text-align:left;margin:0;font-size:12.5px}
+.rule-box{
+  border:0;
+  background:var(--fill);
+  padding:14px 18px;
+  margin:24px 0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+.rule-box p{margin:0;text-align:left;font-size:12.5px;line-height:1.55}
+.rule-box .lbl{
+  display:block;
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+figure{margin:30px 0;page-break-inside:avoid}
+figure svg{width:100%;height:auto;display:block}
+figcaption{
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+  margin-top:10px;
+  line-height:1.5;
+  text-align:left;
+  border:0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  font-size:12.5px;
+}
+th{
+  text-align:center;
+  font-weight:600;
+  font-size:11.5px;
+  padding:7px 9px;
+  border-top:.5pt solid var(--ink);
+  border-bottom:.5pt solid var(--ink);
+}
+td{
+  padding:7px 9px;
+  border-bottom:.5pt solid var(--rule);
+  vertical-align:top;
+  line-height:1.45;
+}
+td:first-child{white-space:nowrap}
+table.wrap td:first-child{white-space:normal}
+ul,ol.body{margin:0 0 16px;padding-left:20px}
+li{margin-bottom:6px}
+.checklist{list-style:none;padding-left:0}
+.checklist li{
+  padding-left:26px;
+  position:relative;
+  margin-bottom:9px;
+  font-size:13.5px;
+}
+.checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;top:4px;
+  width:11px;height:11px;
+  border:.5pt solid var(--ink);
+}
+.checklist strong{font-weight:600}
+
+.g{
+  border-bottom:.5pt dotted var(--accent);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.g::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.g:hover::after,.g:focus::after{opacity:1;visibility:visible}
+
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{
+  border:0;
+  margin:0 0 9px;
+  padding-left:1.4em;
+  text-indent:-1.4em;
+  font-size:12.5px;
+  line-height:1.55;
+  text-align:justify;
+}
+.gitem strong{font-weight:600}
+.gitem .orig{color:var(--ink-faint);font-size:11.5px}
+.sources{font-size:11.5px;line-height:1.6;color:var(--ink-soft)}
+.sources li{margin-bottom:8px}
+.next{
+  border-top:.5pt solid var(--ink);
+  margin-top:44px;
+  padding-top:22px;
+}
+.foot{
+  margin-top:44px;
+  padding-top:14px;
+  border-top:.5pt solid var(--rule);
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+}
+svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+
+@media print{
+  @page{size:A4;margin:2cm 1.5cm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .page{max-width:none;padding:0;margin:0}
+  h1{font-size:20pt}
+  .deck{font-size:11.5pt}
+  h2{font-size:14pt;margin:16pt 0 6pt;page-break-after:avoid}
+  h3{font-size:12pt;margin:10pt 0 3pt;page-break-after:avoid}
+  p{orphans:3;widows:3}
+  th{font-size:8pt}
+  td{font-size:9pt}
+  blockquote{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  blockquote p{font-size:9pt}
+  .rule-box{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  .rule-box p{font-size:9pt}
+  figure{margin:14pt 0}
+  figcaption{font-size:9pt;font-style:italic;border:0}
+  .foot{font-size:9pt;font-style:italic}
+  .foot p{font-size:9pt}
+  .g{border-bottom:.5pt dotted #999}
+  .g::after{display:none}
+  
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{font-size:9.5pt;margin:0 0 5pt;border:0;page-break-inside:avoid}
+  .gitem .orig{font-size:9pt;font-style:italic}
+  pre{font-size:8.5pt;padding:6pt 8pt;background:#eef1f4;border:0;page-break-inside:avoid}
+  pre code{font-size:8.5pt}
+  p code{font-size:9pt}
+  a{border:0}
+  .langbar{display:none}
+  .toc{page-break-after:always}
+}
+@media (max-width:640px){
+  .page{padding:32px 22px 48px}
+  h1{font-size:24px}
+  p{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="langbar">
+<button type="button" class="on" data-lang="pt">PT</button>
+<button type="button" data-lang="en">EN</button>
+<button type="button" data-lang="es">ES</button>
+</div>
+<main class="page" id="doc-pt">
+<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p>
+
+<h1>Diário de bordo do projeto</h1>
+
+<p class="deck">Este projeto argumenta que um harness deve produzir evidência sobre o próprio trabalho, não opinião. Esta página aplica esse argumento a si mesma: quanto texto foi publicado, quanto custou em tokens, marco a marco, com os números extraídos direto do histórico do git e do registro real de uso desta sessão.</p>
+
+<p class="byline">Fernando Teco Sodré · Gerado automaticamente, ver metodologia abaixo · Companheiro das partes 1, 2 e do guia compacto</p>
+
+<div class="rule-box"><span class="lbl">Estado</span><p>Um projeto jovem, uma sessão contínua até aqui. Os seis marcos abaixo são o histórico completo do repositório, não uma amostra. Cada sessão nova que fizer commit vira um marco novo nesta mesma página.</p></div>
+
+<nav class="toc">
+  <p>Neste documento</p>
+  <ol>
+    <li><a href="#pt-numeros">Números até agora</a></li>
+    <li><a href="#pt-evolucao">Evolução</a></li>
+    <li><a href="#pt-linha-do-tempo">Linha do tempo</a></li>
+    <li><a href="#pt-metodologia">Metodologia</a></li>
+    <li><a href="#pt-fontes">Fontes</a></li>
+  </ol>
+</nav>
+
+<h2 id="pt-numeros">1. Números até agora</h2>
+
+<p>Quatro números resumem o projeto neste instante. Todos recalculados a cada execução do gerador, nenhum digitado à mão.</p>
+
+<div class="kpi-grid">
+<div class="kpi"><span class="kpi-n">134,4 mi</span><span class="kpi-l">tokens transacionados até agora</span></div>
+<div class="kpi"><span class="kpi-n">38.204</span><span class="kpi-l">palavras publicadas (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">3.600</span><span class="kpi-l">linhas de script e documento de governança</span></div>
+<div class="kpi"><span class="kpi-n">6</span><span class="kpi-l">marcos (commits) registrados</span></div>
+</div>
+
+<p>Dos tokens acima, cerca de 18,0 mi ainda não fecharam marco: são desta sessão em andamento, ainda não commitados no momento em que este diário foi gerado.</p>
+
+<h2 id="pt-evolucao">2. Evolução</h2>
+
+<p>Dois gráficos, não um só com dois eixos. É a mesma regra que a parte 2 deste projeto aplica a qualquer harness: não misture duas escalas arbitrárias na mesma régua. Os dois compartilham o eixo X, a ordem dos marcos, para que dê para comparar quando um acelerou em relação ao outro.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Palavras publicadas por marco">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">42.788</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,110.8 173.7,99.6 269.3,51.8 365.0,51.1 460.7,51.1 556.3,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="110.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="100.8" text-anchor="middle">22.244</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="99.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="89.6" text-anchor="middle">25.239</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="51.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="41.8" text-anchor="middle">38.031</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">agora</text>
+<text class="svg-cap" x="78" y="244">PALAVRAS PUBLICADAS, ACUMULADO POR MARCO</text>
+</svg>
+<figcaption>Palavras publicadas nos três artigos (partes 1, 2 e guia compacto, somados). Cresce em degrau porque a maior parte do texto nasce dentro de um marco só, não gradualmente entre marcos.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumidos por marco">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">150,6 mi</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,192.0 173.7,181.0 269.3,151.0 365.0,103.7 460.7,95.8 556.3,70.2 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="192.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="182.0" text-anchor="middle">1,9 mi</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="181.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="171.0" text-anchor="middle">12,3 mi</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="151.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="141.0" text-anchor="middle">40,5 mi</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="103.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="93.7" text-anchor="middle">85,0 mi</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="95.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="85.8" text-anchor="middle">92,5 mi</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="70.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="60.2" text-anchor="middle">116,5 mi</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">134,4 mi</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">agora</text>
+<text class="svg-cap" x="78" y="244">TOKENS CONSUMIDOS, ACUMULADO POR MARCO, MESMO EIXO X ACIMA</text>
+</svg>
+<figcaption>Tokens transacionados, acumulado. Inclui leitura de cache, que cresce com o tamanho da sessão por natureza, não só com o trabalho novo. Ver a ressalva na metodologia.</figcaption>
+</figure>
+
+<h2 id="pt-linha-do-tempo">3. Linha do tempo</h2>
+
+<p>Um marco por commit. A coluna de tokens traz dois números: o total do intervalo, incluindo cache, e a saída pura, que é o sinal mais limpo para comparar esforço real entre marcos.</p>
+
+<table class="wrap">
+<thead><tr><th>Marco</th><th>O que aconteceu</th><th>Palavras publicadas</th><th>Tokens do intervalo</th></tr></thead>
+<tbody>
+<tr><td>M1<br><span class="mono">a732861</span></td><td>Commit inicial. O repositório vai ao ar com o que já existia: as partes 1 e 2 em português, a skill de briefing, o inventário de fontes.<br><span class="mono">30 ago, 12:36</span></td><td>22.244</td><td>1,9 mi<br><span class="mono">saída: 37.706</span></td></tr>
+<tr><td>M2<br><span class="mono">1271135</span></td><td>Guia compacto reescrito, organizado pelos cinco passos do MEDIR em vez de por categoria de produto. Dezessete fichas de seis campos, diagnóstico de faixa no início, crítica registrada em cada passo.<br><span class="mono">30 ago, 12:46</span></td><td>25.239</td><td>10,3 mi<br><span class="mono">saída: 102.005</span></td></tr>
+<tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Parte 2 traduzida para inglês e espanhol. O documento vira trilíngue, glossário e fontes replicados nos três idiomas, exemplos de skill traduzidos por completo.<br><span class="mono">30 ago, 13:00</span></td><td>38.031</td><td>28,2 mi<br><span class="mono">saída: 167.713</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Trinta skills de terceiro instaladas para uso no projeto, auditadas antes de instalar. FERRAMENTAS.md criado como registro vivo do que é usado de fato.<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">saída: 115.235</span></td></tr>
+<tr><td>M5<br><span class="mono">51af961</span></td><td>Correção: a skill própria do projeto, levantando-briefing, estava documentada junto das de terceiro. Separada, e ativada de fato neste ambiente.<br><span class="mono">30 ago, 13:29</span></td><td>38.204</td><td>7,5 mi<br><span class="mono">saída: 22.010</span></td></tr>
+<tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing ganha repositório próprio e público, no mesmo padrão das demais skills citadas. O harness-medir passa a só apontar para ela.<br><span class="mono">30 ago, 13:33</span></td><td>38.204</td><td>24,0 mi<br><span class="mono">saída: 31.645</span></td></tr>
+</tbody>
+</table>
+
+<h2 id="pt-metodologia">4. Metodologia</h2>
+
+<p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_diario_metrics.py</code> e <code>build/build_diario.py</code> no repositório.</p>
+
+<p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1, 2 e o guia compacto, nos idiomas que existiam naquele commit.</p>
+
+<p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventário de fontes), por commit.</p>
+
+<p><strong>Tokens.</strong> Soma real do campo <code>usage</code> de cada mensagem do assistente no transcript <code>.jsonl</code> desta sessão, em <code>~/.claude/projects/&lt;projeto&gt;/</code>. Cada evento é atribuído ao commit imediatamente seguinte, por ordem cronológica, mesma técnica usada em outro projeto do autor para o mesmo fim.</p>
+
+<div class="rule-box"><span class="lbl">Viés conhecido</span><p>Leitura de cache cresce com o tamanho acumulado da sessão, não com o esforço do marco específico. Para comparar esforço real entre marcos, use a saída (output), não o total bruto. O total bruto aparece porque é o que a fatura cobra, a saída aparece porque é o que ensina.</p></div>
+
+<p>Uma sessão contínua cobre o projeto inteiro até aqui, então não há reconstrução retroativa a fazer, ao contrário de projetos mais antigos com dezenas de sessões. Cada marco futuro soma a esta mesma série.</p>
+
+<h2 id="pt-fontes">5. Fontes</h2>
+
+<ol class="sources">
+<li>Histórico completo de commits deste repositório. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
+<li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
+<li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+</ol>
+
+<div class="foot">
+<p>Diário de bordo · Série Harness · Gerado automaticamente a partir do git e do registro de uso real da sessão, nunca editado à mão. Ver metodologia acima antes de citar qualquer número.</p>
+</div>
+</main>
+<main class="page" id="doc-en" hidden>
+<p class="eyebrow">Harness · Project log · Live</p>
+
+<h1>Project log</h1>
+
+<p class="deck">This project argues that a harness should produce evidence about its own work, not opinion. This page applies that argument to itself: how much text got published, what it cost in tokens, milestone by milestone, with the numbers pulled straight from git history and this session's real usage record.</p>
+
+<p class="byline">Fernando Teco Sodré · Generated automatically, see methodology below · Companion to parts 1, 2 and the compact guide</p>
+
+<div class="rule-box"><span class="lbl">Status</span><p>A young project, one continuous session so far. The six milestones below are the repository's entire history, not a sample. Every new session that commits becomes a new milestone on this same page.</p></div>
+
+<nav class="toc">
+  <p>In this document</p>
+  <ol>
+    <li><a href="#en-numeros">Numbers so far</a></li>
+    <li><a href="#en-evolucao">Growth</a></li>
+    <li><a href="#en-linha-do-tempo">Timeline</a></li>
+    <li><a href="#en-metodologia">Methodology</a></li>
+    <li><a href="#en-fontes">Sources</a></li>
+  </ol>
+</nav>
+
+<h2 id="en-numeros">1. Numbers so far</h2>
+
+<p>Four numbers summarise the project at this instant. All recalculated on every run of the generator, none typed by hand.</p>
+
+<div class="kpi-grid">
+<div class="kpi"><span class="kpi-n">134.4m</span><span class="kpi-l">tokens transacted so far</span></div>
+<div class="kpi"><span class="kpi-n">38,204</span><span class="kpi-l">words published (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">3,600</span><span class="kpi-l">lines of script and governance document</span></div>
+<div class="kpi"><span class="kpi-n">6</span><span class="kpi-l">milestones (commits) recorded</span></div>
+</div>
+
+<p>Of the tokens above, about 18.0m have not closed a milestone yet: they belong to this ongoing session, not committed yet at the moment this log was generated.</p>
+
+<h2 id="en-evolucao">2. Growth</h2>
+
+<p>Two charts, not one with two axes. It is the same rule this project's part 2 applies to any harness: do not mix two arbitrary scales on the same ruler. Both share the X axis, the order of milestones, so you can compare when one sped up relative to the other.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Words published per milestone">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">42,788</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,110.8 173.7,99.6 269.3,51.8 365.0,51.1 460.7,51.1 556.3,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="110.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="100.8" text-anchor="middle">22,244</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="99.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="89.6" text-anchor="middle">25,239</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="51.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="41.8" text-anchor="middle">38,031</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="41.1" text-anchor="middle">38,204</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="41.1" text-anchor="middle">38,204</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="41.1" text-anchor="middle">38,204</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">38,204</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">now</text>
+<text class="svg-cap" x="78" y="244">WORDS PUBLISHED, CUMULATIVE BY MILESTONE</text>
+</svg>
+<figcaption>Words published across the three articles (parts 1, 2 and the compact guide, summed). It grows in steps because most of the text is born within a single milestone, not gradually between milestones.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumed per milestone">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">150.6m</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,192.0 173.7,181.0 269.3,151.0 365.0,103.7 460.7,95.8 556.3,70.2 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="192.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="182.0" text-anchor="middle">1.9m</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="181.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="171.0" text-anchor="middle">12.3m</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="151.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="141.0" text-anchor="middle">40.5m</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="103.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="93.7" text-anchor="middle">85.0m</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="95.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="85.8" text-anchor="middle">92.5m</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="70.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="60.2" text-anchor="middle">116.5m</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">134.4m</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">now</text>
+<text class="svg-cap" x="78" y="244">TOKENS CONSUMED, CUMULATIVE BY MILESTONE, SAME X AXIS AS ABOVE</text>
+</svg>
+<figcaption>Tokens transacted, cumulative. Includes cache reads, which grow with session size by nature, not only with new work. See the caveat in the methodology.</figcaption>
+</figure>
+
+<h2 id="en-linha-do-tempo">3. Timeline</h2>
+
+<p>One milestone per commit. The tokens column carries two numbers: the interval's total, including cache, and pure output, the cleanest signal for comparing real effort between milestones.</p>
+
+<table class="wrap">
+<thead><tr><th>Milestone</th><th>What happened</th><th>Words published</th><th>Interval tokens</th></tr></thead>
+<tbody>
+<tr><td>M1<br><span class="mono">a732861</span></td><td>Initial commit. The repository goes live with what already existed: parts 1 and 2 in Portuguese, the briefing skill, the source inventory.<br><span class="mono">30 Aug, 12:36</span></td><td>22,244</td><td>1.9m<br><span class="mono">output: 37,706</span></td></tr>
+<tr><td>M2<br><span class="mono">1271135</span></td><td>Compact guide rewritten, organised by the five MEDIR steps instead of by product category. Seventeen six-field entries, a tier diagnostic at the start, a registered critique in every step.<br><span class="mono">30 Aug, 12:46</span></td><td>25,239</td><td>10.3m<br><span class="mono">output: 102,005</span></td></tr>
+<tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Part 2 translated into English and Spanish. The document becomes trilingual, glossary and sources replicated in all three languages, skill examples translated in full.<br><span class="mono">30 Aug, 13:00</span></td><td>38,031</td><td>28.2m<br><span class="mono">output: 167,713</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Thirty third-party skills installed for use on the project, audited before installing. FERRAMENTAS.md created as a living record of what is actually used.<br><span class="mono">30 Aug, 13:24</span></td><td>38,204</td><td>44.5m<br><span class="mono">output: 115,235</span></td></tr>
+<tr><td>M5<br><span class="mono">51af961</span></td><td>Fix: the project’s own skill, levantando-briefing, was documented alongside the third-party ones. Separated, and actually activated in this environment.<br><span class="mono">30 Aug, 13:29</span></td><td>38,204</td><td>7.5m<br><span class="mono">output: 22,010</span></td></tr>
+<tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing gets its own public repository, in the same pattern as the other cited skills. harness-medir now only points to it.<br><span class="mono">30 Aug, 13:33</span></td><td>38,204</td><td>24.0m<br><span class="mono">output: 31,645</span></td></tr>
+</tbody>
+</table>
+
+<h2 id="en-metodologia">4. Methodology</h2>
+
+<p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_diario_metrics.py</code> and <code>build/build_diario.py</code> in the repository.</p>
+
+<p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1, 2 and the compact guide, in whichever languages existed at that commit.</p>
+
+<p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, source inventory), per commit.</p>
+
+<p><strong>Tokens.</strong> Real sum of the <code>usage</code> field on every assistant message in this session's <code>.jsonl</code> transcript, under <code>~/.claude/projects/&lt;project&gt;/</code>. Each event is assigned to the immediately following commit, in chronological order, the same technique used on another of the author's projects for the same purpose.</p>
+
+<div class="rule-box"><span class="lbl">Known bias</span><p>Cache reads grow with the session's accumulated size, not with the specific milestone's effort. To compare real effort between milestones, use output, not the raw total. The raw total shows up because it is what the invoice charges, output shows up because it is what teaches.</p></div>
+
+<p>One continuous session covers the entire project so far, so there is no retroactive reconstruction to do, unlike older projects with dozens of sessions. Every future milestone adds to this same series.</p>
+
+<h2 id="en-fontes">5. Sources</h2>
+
+<ol class="sources">
+<li>Full commit history of this repository. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
+<li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
+<li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+</ol>
+
+<div class="foot">
+<p>Project log · Harness series · Generated automatically from git and the session's real usage record, never edited by hand. See the methodology above before citing any number.</p>
+</div>
+</main>
+<main class="page" id="doc-es" hidden>
+<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
+
+<h1>Diario de bordo del proyecto</h1>
+
+<p class="deck">Este proyecto sostiene que un harness debe producir evidencia sobre su propio trabajo, no opinión. Esta página aplica ese argumento a sí misma: cuánto texto se publicó, cuánto costó en tokens, hito a hito, con los números extraídos directo del historial de git y del registro real de uso de esta sesión.</p>
+
+<p class="byline">Fernando Teco Sodré · Generado automáticamente, ver metodología abajo · Compañero de las partes 1, 2 y de la guía compacta</p>
+
+<div class="rule-box"><span class="lbl">Estado</span><p>Un proyecto joven, una sesión continua hasta ahora. Los seis hitos de abajo son el historial completo del repositorio, no una muestra. Cada sesión nueva que haga commit se vuelve un hito nuevo en esta misma página.</p></div>
+
+<nav class="toc">
+  <p>En este documento</p>
+  <ol>
+    <li><a href="#es-numeros">Números hasta ahora</a></li>
+    <li><a href="#es-evolucao">Evolución</a></li>
+    <li><a href="#es-linha-do-tempo">Línea de tiempo</a></li>
+    <li><a href="#es-metodologia">Metodología</a></li>
+    <li><a href="#es-fontes">Fuentes</a></li>
+  </ol>
+</nav>
+
+<h2 id="es-numeros">1. Números hasta ahora</h2>
+
+<p>Cuatro números resumen el proyecto en este instante. Todos recalculados en cada ejecución del generador, ninguno escrito a mano.</p>
+
+<div class="kpi-grid">
+<div class="kpi"><span class="kpi-n">134,4 mi</span><span class="kpi-l">tokens transaccionados hasta ahora</span></div>
+<div class="kpi"><span class="kpi-n">38.204</span><span class="kpi-l">palabras publicadas (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">3.600</span><span class="kpi-l">líneas de script y documento de gobernanza</span></div>
+<div class="kpi"><span class="kpi-n">6</span><span class="kpi-l">hitos (commits) registrados</span></div>
+</div>
+
+<p>De los tokens de arriba, unos 18,0 mi todavía no cerraron hito: son de esta sesión en curso, aún no confirmados en el momento en que se generó este diario.</p>
+
+<h2 id="es-evolucao">2. Evolución</h2>
+
+<p>Dos gráficos, no uno solo con dos ejes. Es la misma regla que la parte 2 de este proyecto aplica a cualquier harness: no mezcles dos escalas arbitrarias en la misma regla. Los dos comparten el eje X, el orden de los hitos, para poder comparar cuándo uno aceleró respecto al otro.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Palabras publicadas por hito">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">42.788</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,110.8 173.7,99.6 269.3,51.8 365.0,51.1 460.7,51.1 556.3,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="110.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="100.8" text-anchor="middle">22.244</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="99.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="89.6" text-anchor="middle">25.239</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="51.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="41.8" text-anchor="middle">38.031</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">38.204</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">ahora</text>
+<text class="svg-cap" x="78" y="244">PALABRAS PUBLICADAS, ACUMULADO POR HITO</text>
+</svg>
+<figcaption>Palabras publicadas en los tres artículos (partes 1, 2 y guía compacta, sumadas). Crece en escalón porque la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumidos por hito">
+<line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
+<line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="72" y="38" text-anchor="end">150,6 mi</text>
+<text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
+<polyline points="78.0,192.0 173.7,181.0 269.3,151.0 365.0,103.7 460.7,95.8 556.3,70.2 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="192.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="182.0" text-anchor="middle">1,9 mi</text>
+<text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
+<circle cx="173.7" cy="181.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="171.0" text-anchor="middle">12,3 mi</text>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M2</text>
+<circle cx="269.3" cy="151.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="141.0" text-anchor="middle">40,5 mi</text>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M3</text>
+<circle cx="365.0" cy="103.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="93.7" text-anchor="middle">85,0 mi</text>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M4</text>
+<circle cx="460.7" cy="95.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="85.8" text-anchor="middle">92,5 mi</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M5</text>
+<circle cx="556.3" cy="70.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="60.2" text-anchor="middle">116,5 mi</text>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M6</text>
+<circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">134,4 mi</text>
+<text class="svg-sub" x="652.0" y="220" text-anchor="middle">ahora</text>
+<text class="svg-cap" x="78" y="244">TOKENS CONSUMIDOS, ACUMULADO POR HITO, MISMO EJE X DE ARRIBA</text>
+</svg>
+<figcaption>Tokens transaccionados, acumulado. Incluye lectura de caché, que crece con el tamaño de la sesión por naturaleza, no solo con el trabajo nuevo. Ver la salvedad en la metodología.</figcaption>
+</figure>
+
+<h2 id="es-linha-do-tempo">3. Línea de tiempo</h2>
+
+<p>Un hito por commit. La columna de tokens trae dos números: el total del intervalo, incluyendo caché, y la salida pura, la señal más limpia para comparar el esfuerzo real entre hitos.</p>
+
+<table class="wrap">
+<thead><tr><th>Hito</th><th>Qué pasó</th><th>Palabras publicadas</th><th>Tokens del intervalo</th></tr></thead>
+<tbody>
+<tr><td>M1<br><span class="mono">a732861</span></td><td>Commit inicial. El repositorio sale a la luz con lo que ya existía: las partes 1 y 2 en portugués, la skill de briefing, el inventario de fuentes.<br><span class="mono">30 ago, 12:36</span></td><td>22.244</td><td>1,9 mi<br><span class="mono">salida: 37.706</span></td></tr>
+<tr><td>M2<br><span class="mono">1271135</span></td><td>Guía compacta reescrita, organizada por los cinco pasos del MEDIR en vez de por categoría de producto. Diecisiete fichas de seis campos, diagnóstico de banda al inicio, crítica registrada en cada paso.<br><span class="mono">30 ago, 12:46</span></td><td>25.239</td><td>10,3 mi<br><span class="mono">salida: 102.005</span></td></tr>
+<tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Parte 2 traducida al inglés y al español. El documento se vuelve trilingüe, glosario y fuentes replicados en los tres idiomas, ejemplos de skill traducidos por completo.<br><span class="mono">30 ago, 13:00</span></td><td>38.031</td><td>28,2 mi<br><span class="mono">salida: 167.713</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Treinta skills de terceros instaladas para uso en el proyecto, auditadas antes de instalar. FERRAMENTAS.md creado como registro vivo de lo que realmente se usa.<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">salida: 115.235</span></td></tr>
+<tr><td>M5<br><span class="mono">51af961</span></td><td>Corrección: la skill propia del proyecto, levantando-briefing, estaba documentada junto con las de terceros. Separada, y activada de verdad en este entorno.<br><span class="mono">30 ago, 13:29</span></td><td>38.204</td><td>7,5 mi<br><span class="mono">salida: 22.010</span></td></tr>
+<tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing gana repositorio propio y público, en el mismo patrón que las demás skills citadas. harness-medir pasa a solo apuntar hacia allí.<br><span class="mono">30 ago, 13:33</span></td><td>38.204</td><td>24,0 mi<br><span class="mono">salida: 31.645</span></td></tr>
+</tbody>
+</table>
+
+<h2 id="es-metodologia">4. Metodología</h2>
+
+<p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_diario_metrics.py</code> y <code>build/build_diario.py</code> en el repositorio.</p>
+
+<p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1, 2 y la guía compacta, en los idiomas que existían en ese commit.</p>
+
+<p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventario de fuentes), por commit.</p>
+
+<p><strong>Tokens.</strong> Suma real del campo <code>usage</code> de cada mensaje del asistente en el transcript <code>.jsonl</code> de esta sesión, en <code>~/.claude/projects/&lt;proyecto&gt;/</code>. Cada evento se asigna al commit inmediatamente siguiente, en orden cronológico, la misma técnica usada en otro proyecto del autor con el mismo fin.</p>
+
+<div class="rule-box"><span class="lbl">Sesgo conocido</span><p>La lectura de caché crece con el tamaño acumulado de la sesión, no con el esfuerzo del hito específico. Para comparar el esfuerzo real entre hitos, usa la salida (output), no el total bruto. El total bruto aparece porque es lo que cobra la factura, la salida aparece porque es lo que enseña.</p></div>
+
+<p>Una sesión continua cubre el proyecto entero hasta aquí, así que no hay reconstrucción retroactiva que hacer, a diferencia de proyectos más antiguos con decenas de sesiones. Cada hito futuro se suma a esta misma serie.</p>
+
+<h2 id="es-fontes">5. Fuentes</h2>
+
+<ol class="sources">
+<li>Historial completo de commits de este repositorio. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
+<li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
+<li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+</ol>
+
+<div class="foot">
+<p>Diario de bordo · Serie Harness · Generado automáticamente a partir de git y del registro de uso real de la sesión, nunca editado a mano. Ver la metodología arriba antes de citar cualquier número.</p>
+</div>
+</main>
+<script>
+(function(){
+  var bar=document.querySelector('.langbar');
+  var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  function set(l){
+    for(var k in mains){mains[k].hidden=(k!==l);}
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
+    document.documentElement.lang=(l==='pt'?'pt-BR':l);
+  }
+  var h=location.hash.slice(1);
+  var m=h.match(/^(en|es|pt)-/);
+  if(m){
+    set(m[1]);
+    var target=document.getElementById(h);
+    if(target){setTimeout(function(){target.scrollIntoView();},0);}
+  }
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-lang]');
+    if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
+  });
+})();
+</script>
+</body>
+</html>
