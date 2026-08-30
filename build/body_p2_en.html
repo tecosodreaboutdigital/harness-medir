@@ -1,4 +1,4 @@
-<p class="eyebrow">Harness · Part 2 of 3 · How</p>
+<p class="eyebrow">Harness · Part 2 of 4 · How</p>
 
 <h1>Guides and sensors: how an agent learns to correct itself</h1>
 
@@ -24,8 +24,6 @@
     <li><a href="#reforcar">Reinforce: how a harness evolves</a></li>
     <li><a href="#riscos-2">Risks at this layer</a></li>
     <li><a href="#onde-voce-esta">Where you stand</a></li>
-    <li><a href="#glossario">Glossary</a></li>
-    <li><a href="#fontes">Sources</a></li>
   </ol>
 </nav>
 
@@ -53,9 +51,9 @@
 
 <p>The cleanest formulation of these two categories comes from Birgitta Böckeler, at Thoughtworks, and it is worth adopting her two names.</p>
 
-<p><a class="g" href="#g-guia" data-tip="A control that acts before execution, to raise the odds of getting it right on the first try.">Guides</a> are the controls that anticipate. They raise the probability of getting it right on the first attempt: written rules, conventions, examples, a map of where to look for each thing, the task contract. That is what the director built in the fourth week.</p>
+<p><a class="g" href="harness-glossary.html#en-g-guia" data-tip="A control that acts before execution, to raise the odds of getting it right on the first try.">Guides</a> are the controls that anticipate. They raise the probability of getting it right on the first attempt: written rules, conventions, examples, a map of where to look for each thing, the task contract. That is what the director built in the fourth week.</p>
 
-<p><a class="g" href="#g-sensor" data-tip="A control that acts after execution, measuring the result and handing the agent what it needs to correct itself.">Sensors</a> are the controls that observe. They measure what was produced and hand the system the information it needs to correct itself: reconciliations, tests, comparisons against the source, reviews. That is what was missing.</p>
+<p><a class="g" href="harness-glossary.html#en-g-sensor" data-tip="A control that acts after execution, measuring the result and handing the agent what it needs to correct itself.">Sensors</a> are the controls that observe. They measure what was produced and hand the system the information it needs to correct itself: reconciliations, tests, comparisons against the source, reviews. That is what was missing.</p>
 
 <blockquote><p>With guides alone, you have a system that follows rules and never finds out whether they worked. With sensors alone, you have a system that repeats the same mistake forever, corrected anew every time. The two together form something that learns. Separated, neither one is a harness.</p></blockquote>
 
@@ -130,9 +128,9 @@
 
 <p>What is missing is the format. How, in practice, do you write the guide the system reads.</p>
 
-<p>The answer became an open standard, and it is simpler than it sounds. A <a class="g" href="#g-skill" data-tip="A folder with a SKILL.md file, instructions, supporting files and optional code. An open format.">skill</a> is a folder with a file called SKILL.md inside it. That file opens with a two-line header, name and description, and the body carries the instructions. The folder can hold additional files and executable code.</p>
+<p>The answer became an open standard, and it is simpler than it sounds. A <a class="g" href="harness-glossary.html#en-g-skill" data-tip="A folder with a SKILL.md file, instructions, supporting files and optional code. An open format.">skill</a> is a folder with a file called SKILL.md inside it. That file opens with a two-line header, name and description, and the body carries the instructions. The folder can hold additional files and executable code.</p>
 
-<p>What makes this format work is <a class="g" href="#g-divulgacao" data-tip="The agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments.">progressive disclosure</a>, and it solves the space problem that sinks most home-grown attempts.</p>
+<p>What makes this format work is <a class="g" href="harness-glossary.html#en-g-divulgacao" data-tip="The agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments.">progressive disclosure</a>, and it solves the space problem that sinks most home-grown attempts.</p>
 
 <figure>
 <svg viewBox="0 0 700 260" role="img" aria-label="Three tiers of progressive disclosure in a skill">
@@ -213,7 +211,7 @@
 
 <h3>Ceiling and budget</h3>
 
-<p>Every delegation needs two limits the system cannot rewrite. A <a class="g" href="#g-teto" data-tip="The maximum number of times an agent may repeat a task before stopping and escalating.">retry ceiling</a>, because without one a correction loop repeats the same attempt indefinitely. And a cost ceiling, because spend is silent and only shows up on the invoice.</p>
+<p>Every delegation needs two limits the system cannot rewrite. A <a class="g" href="harness-glossary.html#en-g-teto" data-tip="The maximum number of times an agent may repeat a task before stopping and escalating.">retry ceiling</a>, because without one a correction loop repeats the same attempt indefinitely. And a cost ceiling, because spend is silent and only shows up on the invoice.</p>
 
 <p>When the ceiling is reached, the correct behaviour is neither to fail silently nor to keep trying. It is to stop, deliver whatever exists marked as incomplete, and explain what did not close. That is exactly what a good professional does.</p>
 
@@ -296,7 +294,7 @@ the check again before delivering.</code></pre>
 
 <p><strong>At the gate</strong> are the more expensive checks, which run once, at delivery, and confirm the result. It is also where human approval lives, when it exists.</p>
 
-<p><strong>On cadence</strong> are the sensors that look for <a class="g" href="#g-deriva" data-tip="Gradual degradation that does not happen in any single run, but across dozens of them.">drift</a>, that degradation that does not happen in any single run but across dozens of them. They run on a schedule, not per task.</p>
+<p><strong>On cadence</strong> are the sensors that look for <a class="g" href="harness-glossary.html#en-g-deriva" data-tip="Gradual degradation that does not happen in any single run, but across dozens of them.">drift</a>, that degradation that does not happen in any single run but across dozens of them. They run on a schedule, not per task.</p>
 
 <p><strong>In use</strong> are the real-world signals that come back after the work has already shipped. Customer complaints, rework rates, returns. It is the slowest sensor and the truest one.</p>
 
@@ -430,9 +428,9 @@ Red flags:
 </tbody>
 </table>
 
-<p>Notice the criterion organising the table: it is not how important the action looks, it is <a class="g" href="#g-reversibilidade" data-tip="The criterion that organises delegation: a reversible action costs the price of undoing it, an irreversible one costs the price of the mistake.">reversibility</a>. A reversible action can be delegated because the cost of a mistake is the cost of undoing it. An irreversible one cannot, however reliable the system looks.</p>
+<p>Notice the criterion organising the table: it is not how important the action looks, it is <a class="g" href="harness-glossary.html#en-g-reversibilidade" data-tip="The criterion that organises delegation: a reversible action costs the price of undoing it, an irreversible one costs the price of the mistake.">reversibility</a>. A reversible action can be delegated because the cost of a mistake is the cost of undoing it. An irreversible one cannot, however reliable the system looks.</p>
 
-<p>And the <a class="g" href="#g-recibo" data-tip="A compact record of what produced a result: contract, sources, sensors, attempts, cost and approval.">receipt</a>, which turns all of this into something auditable:</p>
+<p>And the <a class="g" href="harness-glossary.html#en-g-recibo" data-tip="A compact record of what produced a result: contract, sources, sensors, attempts, cost and approval.">receipt</a>, which turns all of this into something auditable:</p>
 
 <pre><code>{
   "run": "2026-08-28T09:14:22",
@@ -539,53 +537,7 @@ Red flags:
 </tbody>
 </table>
 
-<h2 id="glossario">16. Glossary</h2>
-
-<p>The terms below appear underlined throughout the text. Hover over them to see the short definition, or click to jump here. The references point to the origin of each concept, not to second-hand summaries.</p>
-
-<p class="gitem" id="g-agente"><strong>agent</strong>: A system that combines a language model with tools, memory and rules to carry out multi-step tasks. The working equation is agent equals model plus harness.</p>
-<p class="gitem" id="g-alcada"><strong>authority limit</strong>: The boundary of what someone, or some system, can decide on their own. In a harness, it is defined by class of action and enforced outside the model.</p>
-<p class="gitem" id="g-analise"><strong>static analysis</strong>: Automated verification carried out on the work without running it, looking for rule violations, excessive size, duplication and irregular structure.</p>
-<p class="gitem" id="g-cadencia"><strong>cadence</strong>: A fixed frequency at which a check runs, regardless of whether a task is in progress. It is what detects drift, which no single run reveals.</p>
-<p class="gitem" id="g-cobertura"><strong>test coverage</strong>: The percentage of the work that was run by tests. It tells you something was executed, not that the effect was verified, which makes it a misleading indicator when used alone.</p>
-<p class="gitem" id="g-contrato"><strong>task contract</strong>: A written definition, made before execution, of what the task delivers, what its limits are and how to know it is done. It is the Map step of the MEDIR cycle.</p>
-<p class="gitem" id="g-deriva"><strong>drift</strong>: Gradual degradation that does not happen in any single run, but across dozens of them. Only sensors running on a cadence detect it.</p>
-<p class="gitem" id="g-divulgacao"><strong>progressive disclosure</strong>: The principle by which the agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments. It is what allows large guides at no reading cost. <em class="orig">Anthropic, Agent Skills. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Source</a></em></p>
-<p class="gitem" id="g-guia"><strong>guide</strong>: A control that acts before execution, raising the odds the agent gets it right on the first attempt: rules, conventions, examples, the task contract. Called an anticipatory control. <em class="orig">Birgitta Böckeler's formulation. <a href="https://martinfowler.com/articles/harness-engineering.html">Source</a></em></p>
-<p class="gitem" id="g-harness"><strong>harness</strong>: Everything in an agent except the model: tools, context, durable memory, permissions, sensors and the record of what it did. <em class="orig">Established as a discipline in February 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Source</a></em></p>
-<p class="gitem" id="g-injecao"><strong>context injection</strong>: Inserting text into the agent's reading field during execution. It is dangerous when it arrives from outside with no control, and it is the central technique of the sensor that teaches when it comes from your own harness.</p>
-<p class="gitem" id="g-jidoka"><strong>jidoka</strong>: Autonomation. The machine detects the abnormality, stops itself and calls for help, so the defect does not travel on down the line. <em class="orig">Toyota Production System. <a href="https://en.wikipedia.org/wiki/Autonomation">Source</a></em></p>
-<p class="gitem" id="g-medir"><strong>MEDIR</strong>: The five-step harness engineering cycle: Map, Equip, Delegate, Inspect and Reinforce. Described in part 1 of this series.</p>
-<p class="gitem" id="g-modelo"><strong>language model</strong>: The reasoning engine. It proposes the next action, but executes nothing on its own: the tools the harness exposes do the executing.</p>
-<p class="gitem" id="g-pdca"><strong>PDCA</strong>: Plan, do, check, act. The iterative cycle of continuous improvement, also known as the Shewhart cycle. A direct ancestor of MEDIR. <em class="orig">Walter Shewhart, 1930s. <a href="https://en.wikipedia.org/wiki/PDCA">Source</a></em></p>
-<p class="gitem" id="g-poka"><strong>poka-yoke</strong>: Mistake-proofing. Redesigning the process so the error becomes impossible, instead of asking whoever executes for more attention. <em class="orig">Shigeo Shingo, Toyota Production System. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Source</a></em></p>
-<p class="gitem" id="g-portao"><strong>gate</strong>: A point in the flow where nothing moves forward unless a condition is met. Unlike an instruction, a gate cannot be ignored by whoever is executing.</p>
-<p class="gitem" id="g-recibo"><strong>execution receipt</strong>: A compact record of what produced a result: the contract used, the sources consulted, the sensors triggered, the attempts, the cost, who approved it and the rollback point.</p>
-<p class="gitem" id="g-reversibilidade"><strong>reversibility</strong>: The criterion that organises delegation: a reversible action costs the price of undoing it, an irreversible action costs the price of the mistake. It is the right yardstick for setting authority limits, not how important the action looks.</p>
-<p class="gitem" id="g-sandbox"><strong>sandbox</strong>: An isolated environment where execution happens without touching real systems. It allows autonomy to be delegated without a mistake having an external consequence.</p>
-<p class="gitem" id="g-sensor"><strong>sensor</strong>: A control that acts after execution, measuring what was produced and handing the agent the information it needs to correct itself. Called a feedback control. <em class="orig">Birgitta Böckeler's formulation. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">Source</a></em></p>
-<p class="gitem" id="g-skill"><strong>skill</strong>: A folder containing a SKILL.md file with a name and description header, plus instructions, supporting files and optional code. An open format for packaging procedural knowledge for agents. <em class="orig">Anthropic, October 2025; open standard since December 2025. <a href="https://agentskills.io/">Source</a></em></p>
-<p class="gitem" id="g-mutacao"><strong>mutation testing</strong>: A technique that introduces small, deliberate changes into the work and checks whether the tests catch them. It reveals tests that run the code without verifying anything.</p>
-<p class="gitem" id="g-regressao"><strong>regression testing</strong>: Verification that detects when a change broke something that used to work. It is the main maintenance sensor for any system that keeps evolving.</p>
-<p class="gitem" id="g-teto"><strong>retry ceiling</strong>: The maximum number of times an agent may repeat a task before stopping and escalating. Without it, a correction loop can burn time and cost indefinitely.</p>
-<p class="gitem" id="g-verificacao"><strong>hard verification</strong>: Deterministic, fast verification that always gives the same answer for the same input. The opposite of judgement verification, which is semantic, expensive and probabilistic.</p>
-
-<h2 id="fontes">17. Sources</h2>
-
-<ol class="sources">
-<li>Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 May 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
-<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 April 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
-<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, October 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
-<li>Anthropic. <em>Effective harnesses for long-running agents</em>, November 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
-<li>Agent Skills, open standard. <a href="https://agentskills.io/">agentskills.io</a></li>
-<li>André Almeida. <em>holdfast</em>, durable partitioned execution. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
-<li>Othman Adi. <em>planning-with-files</em>, durable state on disk. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
-<li>Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
-<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, February 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
-<li>Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
-</ol>
-
 <div class="foot">
-<p>Part 2 of 3 · Harness series · The skill examples are functional and were simplified to fit the article. The character in the opening is composed from recurring patterns.</p>
+<p>Part 2 of 4 · Harness series · The skill examples are functional and were simplified to fit the article. The character in the opening is composed from recurring patterns.</p>
 <p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
 </div>

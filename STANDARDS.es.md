@@ -65,17 +65,21 @@ Cada diagrama trae, en el md, su propósito y una nota de renderización, incluy
 
 ## Glosario
 
-Estilo de libro. Orden alfabético que ignora los acentos. Sin filete entre entradas. Término en negrita, dos puntos, definición en la misma línea, origen al final en cursiva con enlace. Sangría francesa.
+Página única compartida desde el 30 de agosto de 2026: `harness-glossary.html`, trilingüe, una entrada por término para toda la serie (partes 1 a 4, la guía compacta). Ningún documento mantiene ya su propia sección de glosario; un término definido en la parte 2 queda disponible, sin cambios, para las partes 3 y 4.
 
-En el cuerpo del texto, el término aparece con subrayado punteado, con información al pasar el cursor y enlace a la entrada.
+Estilo de libro. Orden alfabético que ignora los acentos. Sin filete entre entradas. Término en negrita, dos puntos, definición en la misma línea, origen al final en cursiva con enlace. Sangría francesa. Los nombres propios se alfabetizan por apellido: "Deming, W. Edwards".
 
-Los nombres propios se alfabetizan por apellido: "Deming, W. Edwards".
+En el cuerpo del texto, el término aparece con subrayado punteado, con información al pasar el cursor (el atributo `data-tip` lleva la definición corta, mostrada localmente, sin navegar) y el clic lleva a `harness-glossary.html#<idioma>-<slug>`, llegando exactamente a esa entrada. Nunca enlazar un término a un ancla local `#g-slug` dentro del propio artículo, esa ancla ya no existe ahí.
+
+Cuando una parte nueva introduce un término, agrégalo directamente en `harness-glossary.html` (en los tres idiomas), manteniendo la posición alfabética, y enlázalo desde el cuerpo de la parte. No dupliques la definición de vuelta en la parte.
 
 ---
 
 ## Referencias
 
-**Enlazar solo donde la URL fue verificada.** Cuando la fuente es conocida pero la dirección no fue comprobada, la fuente aparece en texto plano sin enlace.
+Página única compartida desde el 30 de agosto de 2026: `harness-sources.html`, trilingüe, agrupada por dónde se recopiló la investigación (fuentes fundacionales, luego un grupo por parte). Cada cita en cualquier parte apunta aquí; ningún documento mantiene ya su propia lista numerada de fuentes.
+
+**Enlazar solo donde la URL fue verificada.** Cuando la fuente es conocida pero la dirección no fue comprobada, la entrada aparece en texto plano (clase `orig-plain`) con la brecha declarada en la propia entrada, nunca escondida.
 
 Las referencias apuntan a la fuente primaria, nunca a un blog de consultoría ni a una vitrina de skills sin repositorio de origen visible.
 
@@ -87,10 +91,10 @@ Un inventario que solo recomienda no es un inventario, es un catálogo de provee
 
 Cuatro capas, todas implementadas:
 
-1. Barra de la serie en la parte superior de cada documento, junto al selector de idioma.
-2. Enlaces en el cuerpo: las menciones a una banda o a MEDIR llevan a la sección correspondiente de la Parte 1. Las menciones a una herramienta llevan a su entrada en la guía compacta.
+1. **Barra de la serie**, un componente único compartido (`.topbar`) en la parte superior de cada documento, centrado en la página, fijo al desplazarse. Una sola línea: las partes numeradas unidas por `·`, una `|` antes de los documentos complementarios, luego guía compacta, glosario y fuentes también unidos por `·`, con el selector de idioma entre llaves `{ }` al final. La página actual aparece como texto plano, no como enlace; una parte aún no publicada aparece atenuada y sin enlace. Las etiquetas y destinos de la barra cambian de idioma junto con el selector, gobernados por el objeto `SERIES` y la llamada `setSeries()` dentro del `set()` de cada página, nunca duplicados a mano por idioma.
+2. Enlaces en el cuerpo: las menciones a una banda o a MEDIR llevan a la sección correspondiente de la Parte 1. Las menciones a una herramienta llevan a su entrada en la guía compacta. Las menciones a un término del glosario llevan a `harness-glossary.html`. Las citas llevan a `harness-sources.html`.
 3. Un bloque "Dónde estás" al final de cada pieza.
-4. Un glosario con una única redacción por entrada, replicada entre documentos.
+4. El propio glosario y la propia página de fuentes: una redacción por entrada, una sola página, enlazada desde todas partes.
 
 ---
 

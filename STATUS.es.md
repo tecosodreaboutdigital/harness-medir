@@ -50,6 +50,16 @@ Traducción al inglés en ortografía británica, al español por "tú". MEDIR y
 
 El JavaScript de cambio de idioma de la parte 1 y la parte 2 ganó enrutamiento por ancla: un enlace como `harness-p1.html#en-opening` ahora selecciona la pestaña correcta antes de desplazarse, en lugar de abrir siempre en la pestaña predeterminada. Sin ese ajuste, un lector en inglés que hiciera clic en cualquier referencia cruzada hacia la parte 1 siempre terminaba en portugués.
 
+### Parte 3 · La separación de poderes: qué puede hacer, y quién responde por ello
+
+`harness-p3.html`
+
+Trilingüe por completo desde el 30 de agosto de 2026. Nueve secciones, cinco diagramas, todos incorporados y traducidos por completo. Cerca de 5.131 palabras en inglés, 5.468 en portugués, 5.676 en español, conteos cercanos entre los tres, como se espera de una traducción real y no un resumen.
+
+Abre con Moffatt contra Air Canada, 2024 BCCRT 149: una empresa real argumentó en un tribunal real que su chatbot era una persona legal separada que responde sola, y perdió, declarado explícitamente como precedente extranjero, no brasileño. La directora reingresa en N2, a una pequeña extensión de función de distancia de una respuesta no autorizada que habría comprometido a la empresa, el eco directo del propio error de Air Canada. Tesis central: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua, cuatro funciones que no pueden vivir en el mismo lugar, con el modo de fallo nombrado, concentración. La regla de dos (dato privado, contenido no confiable, comunicación externa, como máximo dos sin humano en el bucle) sirve de herramienta operativa de la pieza, el equivalente de la matriz de guías y sensores de la parte 2, junto a una matriz general de autoridad basada en reversibilidad. La identidad gana un dueño nombrado y la distinción entre delegación en nombre de y autónoma; la inyección se trata como arquitectura, no configuración; un punto de reversión registrado antes de la ejecución, no después, ancla lo que debe quedar en el registro; el riesgo de cadena de suministro de un skill de terceros cierra el gancho que la parte 2 dejó abierto; las obligaciones legales corren en dos columnas, Brasil (artículo 20 de la LGPD, fechado como todavía no regulado específicamente) y Europa (artículos 12, 14 y 26 de la Ley de IA de la UE). Las dos obligaciones de honestidad que señaló la investigación se honran en el texto: el origen extranjero del precedente Air Canada, y la afirmación fechada sobre la regulación brasileña.
+
+Barra de la serie y enlaces de glosario y fuentes ya implementados, según la arquitectura compartida de arriba.
+
 ### Skill intake-briefing
 
 `github.com/tecosodreaboutdigital/intake-briefing`, repositorio propio desde el 30 de agosto de 2026, renombrada de `levantando-briefing` ese mismo día, como parte de la reestructuración hacia el inglés primario ("levantando" era un verbo común en portugués, no un nombre propio establecido como lo son MEDIR y harness). Artefacto original del proyecto, completo, publicado, MIT. Cuatro archivos, cada uno con una traducción en portugués y español al lado: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
@@ -84,17 +94,17 @@ Los documentos de gobernanza ahora describen cuatro partes organizadas alrededor
 
 `diagrams/` ganó nueve archivos SVG independientes, D1 a D9, renderizados a partir de las especificaciones Mermaid del dosier en el sistema visual del proyecto, en inglés porque es contenido nuevo y el inglés se escribe primero. El vocabulario de gobernanza que la parte 4 va a necesitar, dueño del agente, homologador, auditor, patrocinador del área, y recibo mantenido distinto de registro, se fijó en esta etapa justamente para que los diagramas y la prosa futura no se distancien entre sí. Ver `diagrams/README.md` para el índice completo y qué nota de renderización cumple cada archivo.
 
-Lo que queda de la cola del dosier: escribir la parte 3, escribir la parte 4, y consolidar el playbook. Ver `NEXT-STEPS.md`.
+Lo que queda de la cola del dosier: escribir la parte 4, y consolidar el playbook. La parte 3 está lista, ver abajo.
+
+### Diagramas D1 a D9 validados por renderizado, y una arquitectura de serie compartida
+
+Cierra la salvedad que la ronda anterior había registrado: los nueve SVG independientes (`diagrams/part3/`, `diagrams/part4/`) nunca se habían renderizado realmente, solo verificado como XML bien formado. Ahora sí, vía Chrome headless, y revisados visualmente. Cinco cargaban bugs reales de coordenadas, todos corregidos en la fuente SVG, ninguno en la especificación Mermaid detrás, ya que ninguno de los cinco era estructural: `D3` tenía líneas de conexión que salían del centro de una caja y cortaban el texto de cajas apiladas debajo, corregido haciendo que cada línea saliera del borde de la caja más cercano al destino; `D4` cargaba dos conectores superpuestos en su primer rombo, uno del largo correcto sin punta de flecha, el otro con punta de flecha que se pasaba hasta el interior del rombo, fusionados en uno solo; la leyenda de cierre de `D5` se desbordaba 82 píxeles del lienzo de 700px; la línea más gruesa de `D7` cortaba directo la caja `IN OPERATION`, y una curva cortaba `UNDER REVIEW`, ambas redirigidas, el lienzo ganando 24 píxeles de altura; la tercera y cuarta columna de `D9` se superponían en 40 píxeles, duplicando visiblemente un borde punteado. `D1`, `D2`, `D6` y `D8` no tenían ningún bug. Cada SVG ganó un `.png` correspondiente (escala 2x, fondo blanco opaco) para publicación en Medium, ya que el editor de Medium no renderiza ni SVG en línea pegado ni HTML arbitrario.
+
+En paralelo, la serie ganó la navegación superior que le faltaba desde la reestructuración a cuatro partes: un componente único compartido `.topbar`, en una sola línea, centrado, fijo al desplazarse, reactivo al selector de idioma (`PARTE 1 · PARTE 2 · PARTE 3 · PARTE 4 | GUÍA COMPACTA · GLOSARIO · FUENTES { PT EN ES }`, la página actual en texto plano y una parte todavía no escrita atenuada y sin enlace). Reemplaza una barra que antes existía solo en `harness-p1.html`, fija en portugués sin importar la pestaña activa, alineada a la izquierda, no fija al desplazarse. Las secciones de glosario y fuentes que las partes 1 y 2 llevaban cada una se retiraron en favor de dos páginas nuevas, compartidas y trilingües, `harness-glossary.html` (56 entradas consolidadas, sin duplicados) y `harness-sources.html` (46 fuentes consolidadas, agrupadas en fundacionales y parte 3), y todo enlace de término y cita de la serie apunta ahora ahí. `harness-p1.html`, `harness-p2.html` y `harness-toolkit.html` se retrofitaron; `build_p2.py` y `build_toolkit.py` se actualizaron para reproducir la misma barra en una próxima regeneración, cerrando la brecha donde una reconstrucción deshacía el arreglo en silencio. Ver las secciones `Navegación cruzada` y `Glosario` de `STANDARDS.md` para la regla que esto ahora sigue.
 
 ---
 
 ## Sin empezar
-
-### Parte 3 · La separación de poderes
-
-Alcance definido, investigación completa a través del dosier de arriba, todavía no escrita. Es la pieza de mayor valor comercial de la serie.
-
-Tesis central: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua, cuatro funciones que no pueden vivir en el mismo lugar. El modo de fallo tiene nombre, concentración, el mismo sistema probabilístico inventando el plan, aprobando el riesgo y ejecutando el efecto colateral. Se prevén nueve secciones, con cinco diagramas, ver `diagrams/part3/`. Abre con Moffatt contra Air Canada, 2024 BCCRT 149: una empresa real argumentó en un tribunal real que su chatbot era una persona legal separada que responde sola, y perdió, lo opuesto exacto a la tesis de la propia serie.
 
 ### Parte 4 · La oficina de agentes
 
@@ -109,7 +119,7 @@ Tesis central: el ciclo de vida del agente, estados y no pasos, deliberadamente 
 | Parte 1 | lista | lista | lista |
 | Parte 2 | lista | lista | lista |
 | Guía compacta | lista | lista | lista |
-| Parte 3 | falta | falta | falta |
+| Parte 3 | lista | lista | lista |
 | Parte 4 | falta | falta | falta |
 | Skill de briefing | lista | lista | lista |
 | Documentos de gobernanza | lista | lista | lista |

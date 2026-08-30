@@ -1,4 +1,4 @@
-<p class="eyebrow">Harness · Parte 2 de 3 · Cómo</p>
+<p class="eyebrow">Harness · Parte 2 de 4 · Cómo</p>
 
 <h1>Guías y sensores: cómo un agente aprende a corregirse</h1>
 
@@ -24,8 +24,6 @@
     <li><a href="#reforcar">Reforzar: cómo evoluciona un harness</a></li>
     <li><a href="#riscos-2">Riesgos de esta capa</a></li>
     <li><a href="#onde-voce-esta">Dónde estás</a></li>
-    <li><a href="#glossario">Glosario</a></li>
-    <li><a href="#fontes">Fuentes</a></li>
   </ol>
 </nav>
 
@@ -53,9 +51,9 @@
 
 <p>La formulación más limpia de estas dos categorías viene de Birgitta Böckeler, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
 
-<p><a class="g" href="#g-guia" data-tip="Control que actua antes de la ejecucion, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
+<p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actua antes de la ejecucion, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
 
-<p><a class="g" href="#g-sensor" data-tip="Control que actua despues de la ejecucion, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
+<p><a class="g" href="harness-glossary.html#es-g-sensor" data-tip="Control que actua despues de la ejecucion, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
 
 <blockquote><p>Solo con guías, tienes un sistema que sigue reglas y nunca descubre si funcionaron. Solo con sensores, tienes un sistema que repite el mismo error para siempre, corregido cada vez. Los dos juntos forman algo que aprende. Separados, ninguno de los dos es un harness.</p></blockquote>
 
@@ -130,9 +128,9 @@
 
 <p>Falta el formato. Cómo se escribe, en la práctica, la guía que el sistema lee.</p>
 
-<p>La respuesta se volvió un estándar abierto y es más simple de lo que parece. Un <a class="g" href="#g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
+<p>La respuesta se volvió un estándar abierto y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
 
-<p>Lo que hace que este formato funcione es la <a class="g" href="#g-divulgacao" data-tip="El agente carga solo la informacion que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
+<p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la informacion que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
 
 <figure>
 <svg viewBox="0 0 700 260" role="img" aria-label="Tres niveles de divulgación progresiva de un skill">
@@ -213,7 +211,7 @@
 
 <h3>Tope y presupuesto</h3>
 
-<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="#g-teto" data-tip="Numero maximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
+<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="harness-glossary.html#es-g-teto" data-tip="Numero maximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
 
 <p>Cuando se alcanza el tope, el comportamiento correcto no es fallar en silencio ni seguir intentando. Es detenerse, entregar lo que existe marcado como incompleto, y explicar qué no se cerró. Es exactamente lo que hace un buen profesional.</p>
 
@@ -296,7 +294,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p><strong>En la puerta</strong> están las verificaciones más caras, que corren una vez, en la entrega, y confirman el resultado. Es también donde vive la aprobación humana, cuando existe.</p>
 
-<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="#g-deriva" data-tip="Degradacion gradual que no ocurre en ninguna ejecucion especifica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
+<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="harness-glossary.html#es-g-deriva" data-tip="Degradacion gradual que no ocurre en ninguna ejecucion especifica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
 
 <p><strong>En uso</strong> están las señales del mundo real, que vuelven después de que el trabajo ya salió. Quejas de clientes, tasa de retrabajo, devoluciones. Es el sensor más lento y el más verdadero.</p>
 
@@ -435,9 +433,9 @@ Banderas rojas:
 </tbody>
 </table>
 
-<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="#g-reversibilidade" data-tip="Criterio que organiza la delegacion: una accion reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
+<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="Criterio que organiza la delegacion: una accion reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
 
-<p>Y el <a class="g" href="#g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobacion.">recibo</a>, que convierte todo esto en algo auditable:</p>
+<p>Y el <a class="g" href="harness-glossary.html#es-g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobacion.">recibo</a>, que convierte todo esto en algo auditable:</p>
 
 <pre><code>{
   "ejecucion": "2026-08-28T09:14:22",
@@ -544,53 +542,7 @@ Banderas rojas:
 </tbody>
 </table>
 
-<h2 id="glossario">16. Glosario</h2>
-
-<p>Los términos de abajo aparecen subrayados a lo largo del texto. Pasa el cursor por encima para ver la definición corta, o haz clic para llegar aquí. Las referencias apuntan al origen de cada concepto, no a resúmenes de segunda mano.</p>
-
-<p class="gitem" id="g-agente"><strong>agente</strong>: Sistema que combina un modelo de lenguaje con herramientas, memoria y reglas para ejecutar tareas de varias etapas. La ecuación corriente es agente igual a modelo más harness.</p>
-<p class="gitem" id="g-alcada"><strong>límite de autoridad</strong>: El límite de lo que alguien, o algún sistema, puede decidir solo. En un harness, se define por clase de acción y se impone fuera del modelo.</p>
-<p class="gitem" id="g-analise"><strong>análisis estático</strong>: Verificación automática hecha sobre el trabajo sin ejecutarlo, que busca violaciones de regla, tamaño excesivo, duplicidad y estructura irregular.</p>
-<p class="gitem" id="g-cadencia"><strong>cadencia</strong>: Frecuencia fija con la que corre una verificación, exista o no una tarea en curso. Es lo que detecta la deriva, que ninguna ejecución aislada revela.</p>
-<p class="gitem" id="g-cobertura"><strong>cobertura de pruebas</strong>: Porcentaje del trabajo que ejecutaron las pruebas. Informa que algo se ejecutó, no que el efecto se verificó, lo que la vuelve un indicador engañoso cuando se usa sola.</p>
-<p class="gitem" id="g-contrato"><strong>contrato de la tarea</strong>: Definición escrita, antes de la ejecución, de qué entrega la tarea, cuáles son sus límites y cómo saber que terminó. Es el paso Mapear del ciclo MEDIR.</p>
-<p class="gitem" id="g-deriva"><strong>deriva</strong>: Degradación gradual que no ocurre en ninguna ejecución específica, sino a lo largo de decenas de ellas. Solo la detectan los sensores que corren en cadencia.</p>
-<p class="gitem" id="g-divulgacao"><strong>divulgación progresiva</strong>: Principio por el que el agente carga solo la información que la tarea exige, en niveles: primero el resumen, luego el cuerpo, luego los anexos. Es lo que permite guías grandes sin costo de lectura. <em class="orig">Anthropic, Agent Skills. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Fuente</a></em></p>
-<p class="gitem" id="g-guia"><strong>guía</strong>: Control que actúa antes de la ejecución, que aumenta la probabilidad de que el agente acierte al primer intento: reglas, convenciones, ejemplos, el contrato de la tarea. Llamado control anticipatorio. <em class="orig">Formulación de Birgitta Böckeler. <a href="https://martinfowler.com/articles/harness-engineering.html">Fuente</a></em></p>
-<p class="gitem" id="g-harness"><strong>harness</strong>: Todo lo que existe en un agente excepto el modelo: herramientas, contexto, memoria duradera, permisos, sensores y el registro de lo que hizo. <em class="orig">Consolidado como disciplina en febrero de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Fuente</a></em></p>
-<p class="gitem" id="g-injecao"><strong>inyección de contexto</strong>: Inserción de texto en el campo de lectura del agente durante la ejecución. Es peligrosa cuando llega desde afuera sin control, y es la técnica central del sensor que enseña cuando viene de tu propio harness.</p>
-<p class="gitem" id="g-jidoka"><strong>jidoka</strong>: Autonomación. La máquina detecta la anomalía, se detiene sola y pide ayuda, para que el defecto no siga adelante en la línea. <em class="orig">Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Autonomation">Fuente</a></em></p>
-<p class="gitem" id="g-medir"><strong>MEDIR</strong>: Ciclo de ingeniería de harness en cinco pasos: Mapear, Equipar, Delegar, Inspeccionar y Reforzar. Descrito en la parte 1 de esta serie.</p>
-<p class="gitem" id="g-modelo"><strong>modelo de lenguaje</strong>: El motor de razonamiento. Propone la siguiente acción, pero no ejecuta nada por su cuenta: quien ejecuta son las herramientas que expone el harness.</p>
-<p class="gitem" id="g-pdca"><strong>PDCA</strong>: Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, también llamado ciclo de Shewhart. Antecesor directo del MEDIR. <em class="orig">Walter Shewhart, años 1930. <a href="https://en.wikipedia.org/wiki/PDCA">Fuente</a></em></p>
-<p class="gitem" id="g-poka"><strong>poka-yoke</strong>: A prueba de error. Rediseñar el proceso para que el error se vuelva imposible, en vez de pedirle más atención a quien ejecuta. <em class="orig">Shigeo Shingo, Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Fuente</a></em></p>
-<p class="gitem" id="g-portao"><strong>puerta</strong>: Punto del flujo en el que nada avanza sin que se cumpla una condición. A diferencia de una instrucción, una puerta no puede ser ignorada por quien ejecuta.</p>
-<p class="gitem" id="g-recibo"><strong>recibo de ejecución</strong>: Registro compacto de lo que produjo un resultado: contrato usado, fuentes consultadas, sensores activados, intentos, costo, quién aprobó y punto de reversión.</p>
-<p class="gitem" id="g-reversibilidade"><strong>reversibilidad</strong>: Criterio que organiza la delegación: una acción reversible cuesta el precio de deshacerla, una acción irreversible cuesta el precio del error. Es la regla correcta para definir la autoridad, y no lo importante que parezca la acción.</p>
-<p class="gitem" id="g-sandbox"><strong>sandbox</strong>: Entorno aislado donde ocurre la ejecución sin tocar los sistemas reales. Permite delegar autonomía sin que un error tenga consecuencia externa.</p>
-<p class="gitem" id="g-sensor"><strong>sensor</strong>: Control que actúa después de la ejecución, que mide lo que se produjo y le devuelve al agente la información necesaria para que se corrija. Llamado control por realimentación. <em class="orig">Formulación de Birgitta Böckeler. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">Fuente</a></em></p>
-<p class="gitem" id="g-skill"><strong>skill</strong>: Carpeta que contiene un archivo SKILL.md con encabezado de nombre y descripción, más instrucciones, archivos de apoyo y código opcional. Formato abierto para empaquetar conocimiento de procedimiento para agentes. <em class="orig">Anthropic, octubre de 2025; estándar abierto desde diciembre de 2025. <a href="https://agentskills.io/">Fuente</a></em></p>
-<p class="gitem" id="g-mutacao"><strong>prueba de mutación</strong>: Técnica que introduce pequeños cambios deliberados en el trabajo y verifica si las pruebas los detectan. Revela pruebas que ejecutan el código sin verificar nada.</p>
-<p class="gitem" id="g-regressao"><strong>prueba de regresión</strong>: Verificación que detecta cuándo un cambio rompió algo que antes funcionaba. Es el principal sensor de mantenimiento de cualquier sistema que sigue evolucionando.</p>
-<p class="gitem" id="g-teto"><strong>tope de intentos</strong>: Número máximo de veces que un agente puede repetir una tarea antes de detenerse y escalar. Sin él, un ciclo de corrección puede consumir tiempo y costo de forma indefinida.</p>
-<p class="gitem" id="g-verificacao"><strong>verificación dura</strong>: Verificación determinista y rápida, que da siempre la misma respuesta para la misma entrada. Opuesta a la verificación por juicio, que es semántica, cara y probabilística.</p>
-
-<h2 id="fontes">17. Fuentes</h2>
-
-<ol class="sources">
-<li>Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 de mayo de 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
-<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 de abril de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
-<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, octubre de 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
-<li>Anthropic. <em>Effective harnesses for long-running agents</em>, noviembre de 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
-<li>Agent Skills, estándar abierto. <a href="https://agentskills.io/">agentskills.io</a></li>
-<li>André Almeida. <em>holdfast</em>, ejecución particionada duradera. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
-<li>Othman Adi. <em>planning-with-files</em>, estado duradero en disco. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
-<li>Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
-<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, febrero de 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
-<li>Código del panel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
-</ol>
-
 <div class="foot">
-<p>Parte 2 de 3 · Serie Harness · Los ejemplos de skill son funcionales y se simplificaron para caber en el artículo. El personaje de la apertura está compuesto a partir de patrones recurrentes.</p>
+<p>Parte 2 de 4 · Serie Harness · Los ejemplos de skill son funcionales y se simplificaron para caber en el artículo. El personaje de la apertura está compuesto a partir de patrones recurrentes.</p>
 <p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
 </div>

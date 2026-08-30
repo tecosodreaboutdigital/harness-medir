@@ -50,6 +50,16 @@ Tradução ao inglês em grafia britânica, ao espanhol por "tú". MEDIR e harne
 
 O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por âncora: um link como `harness-p1.html#en-opening` agora seleciona a aba certa antes de rolar, em vez de sempre abrir na aba padrão. Sem esse ajuste, um leitor em inglês clicando em qualquer referência cruzada para a parte 1 sempre caía em português.
 
+### Parte 3 · A separação de poderes: o que ele pode fazer, e quem responde por isso
+
+`harness-p3.html`
+
+Trilíngue por completo desde 30 de agosto de 2026. Nove seções, cinco diagramas, todos embutidos e traduzidos por completo. Cerca de 5.131 palavras em inglês, 5.468 em português, 5.676 em espanhol, contagens próximas entre os três, como se espera de uma tradução de verdade e não um resumo.
+
+Abre com Moffatt contra Air Canada, 2024 BCCRT 149: uma empresa real argumentou em um tribunal real que o chatbot dela era uma pessoa legal separada que responde sozinha, e perdeu, declarado explicitamente como precedente estrangeiro, não brasileiro. A diretora reentra em N2, a uma extensão pequena de recurso de distância de uma resposta não autorizada que teria comprometido a empresa, o eco direto do próprio erro da Air Canada. Tese central: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha, quatro funções que não podem morar no mesmo lugar, com o modo de falha nomeado, concentração. A regra de dois (dado privado, conteúdo não confiável, comunicação externa, no máximo duas sem humano no laço) serve de ferramenta operacional da peça, o equivalente da matriz de guias e sensores da parte 2, ao lado de uma matriz geral de alçada baseada em reversibilidade. Identidade ganha dono nomeado e a distinção entre delegação em nome de e autônoma; injeção é tratada como arquitetura, não configuração; um ponto de reversão registrado antes da execução, não depois, ancora o que precisa estar no registro; o risco de cadeia de suprimento de uma skill de terceiro fecha o gancho que a parte 2 deixou aberto; obrigações legais correm em duas colunas, Brasil (artigo 20 da LGPD, datado como ainda não regulamentado especificamente) e Europa (artigos 12, 14 e 26 do AI Act europeu). As duas obrigações de honestidade que a pesquisa sinalizou são honradas no texto: a origem estrangeira do precedente Air Canada, e a afirmação datada sobre a regulamentação brasileira.
+
+Barra de série e links de glossário e fontes já implementados, conforme a arquitetura compartilhada acima.
+
 ### Skill intake-briefing
 
 `github.com/tecosodreaboutdigital/intake-briefing`, repositório próprio desde 30 de agosto de 2026, renomeada de `levantando-briefing` nesse mesmo dia, como parte da reestruturação para inglês primário ("levantando" era um verbo comum em português, não um nome próprio estabelecido como MEDIR e harness são). Artefato original do projeto, completo, publicado, MIT. Quatro arquivos, cada um com uma tradução em português e espanhol ao lado: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
@@ -84,17 +94,17 @@ Os documentos de governança agora descrevem quatro partes organizadas em torno 
 
 `diagrams/` ganhou nove arquivos SVG independentes, D1 a D9, renderizados a partir das especificações Mermaid do dossiê no sistema visual do projeto, em inglês porque é conteúdo novo e o inglês é escrito primeiro. O vocabulário de governança que a parte 4 vai precisar, dono do agente, homologador, auditor, patrocinador da área, e recibo mantido distinto de registro, foi fixado nesta etapa justamente para que os diagramas e a prosa futura não se afastem um do outro. Ver `diagrams/README.md` para o índice completo e qual nota de renderização cada arquivo atende.
 
-O que resta da fila do dossiê: escrever a parte 3, escrever a parte 4, e consolidar o playbook. Ver `NEXT-STEPS.md`.
+O que resta da fila do dossiê: escrever a parte 4, e consolidar o playbook. A parte 3 está pronta, ver abaixo.
+
+### Diagramas D1 a D9 validados por renderização, e uma arquitetura de série compartilhada
+
+Fecha a ressalva que a rodada anterior tinha registrado: os nove SVGs independentes (`diagrams/part3/`, `diagrams/part4/`) nunca tinham sido de fato renderizados, só conferidos como XML bem formado. Agora foram, via Chrome headless, e conferidos visualmente. Cinco carregavam bugs reais de coordenada, todos corrigidos na fonte SVG, nenhum na especificação Mermaid por trás, já que nenhum dos cinco era estrutural: o `D3` tinha linhas de conexão saindo do centro de uma caixa e cortando o texto de caixas empilhadas abaixo, corrigido fazendo cada linha sair da borda da caixa mais próxima do destino; o `D4` carregava dois conectores sobrepostos no primeiro losango, um do tamanho certo sem seta, o outro com seta ultrapassando até o interior do losango, unificados num só; a legenda de fechamento do `D5` estourava 82 pixels o canvas de 700px; a linha mais grossa do `D7` cortava direto a caixa `IN OPERATION`, e uma curva cortava `UNDER REVIEW`, ambas rerroteadas, o canvas ganhando 24 pixels de altura; a terceira e a quarta coluna do `D9` se sobrepunham em 40 pixels, dobrando visivelmente uma borda tracejada. `D1`, `D2`, `D6` e `D8` não tinham bug nenhum. Cada SVG ganhou um `.png` correspondente (escala 2x, fundo branco opaco) para publicação no Medium, já que o editor do Medium não renderiza nem SVG inline colado nem HTML arbitrário.
+
+Em paralelo, a série ganhou a navegação de topo que estava faltando desde a reestruturação para quatro partes: um componente único compartilhado `.topbar`, uma linha só, centralizado, fixo ao rolar, reativo ao seletor de idioma (`PARTE 1 · PARTE 2 · PARTE 3 · PARTE 4 | GUIA COMPACTO · GLOSSÁRIO · FONTES { PT EN ES }`, a página atual em texto simples e uma parte ainda não escrita esmaecida e sem link). Substitui uma barra que antes existia só em `harness-p1.html`, fixa em português independente da aba ativa, alinhada à esquerda, não fixa ao rolar. As seções de glossário e fontes que as partes 1 e 2 carregavam cada uma foram aposentadas em favor de duas páginas novas, compartilhadas e trilíngues, `harness-glossary.html` (56 verbetes consolidados, sem duplicata) e `harness-sources.html` (46 fontes consolidadas, agrupadas em fundadoras e parte 3), e todo link de termo e citação da série agora aponta pra lá. `harness-p1.html`, `harness-p2.html` e `harness-toolkit.html` foram retrofitados; `build_p2.py` e `build_toolkit.py` foram atualizados para reproduzir a mesma barra na próxima regeração, fechando a brecha em que um rebuild desfaria o conserto silenciosamente. Ver as seções `Navegação cruzada` e `Glossário` de `STANDARDS.md` para a regra que isso agora segue.
 
 ---
 
 ## Não iniciado
-
-### Parte 3 · A separação de poderes
-
-Escopo definido, pesquisa completa através do dossiê acima, ainda não escrita. É a peça de maior valor comercial da série.
-
-Tese central: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha, quatro funções que não podem morar no mesmo lugar. O modo de falha tem nome, concentração, o mesmo sistema probabilístico inventando o plano, aprovando o risco e executando o efeito colateral. Nove seções estão previstas, com cinco diagramas, ver `diagrams/part3/`. Abre com Moffatt contra Air Canada, 2024 BCCRT 149: uma empresa real argumentou em um tribunal real que o chatbot dela era uma pessoa legal separada que responde sozinha, e perdeu, o oposto direto da tese da própria série.
 
 ### Parte 4 · O escritório de agentes
 
@@ -109,7 +119,7 @@ Tese central: o ciclo de vida do agente, estados e não passos, deliberadamente 
 | Parte 1 | pronta | pronta | pronta |
 | Parte 2 | pronta | pronta | pronta |
 | Guia compacto | pronta | pronta | pronta |
-| Parte 3 | falta | falta | falta |
+| Parte 3 | pronta | pronta | pronta |
 | Parte 4 | falta | falta | falta |
 | Skill de briefing | pronta | pronta | pronta |
 | Documentos de governança | pronta | pronta | pronta |
