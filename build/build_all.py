@@ -125,11 +125,17 @@ js = """<script>
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
-    try{location.hash='';}catch(e){}
+  }
+  var h=location.hash.slice(1);
+  var m=h.match(/^(en|es|pt)-/);
+  if(m){
+    set(m[1]);
+    var target=document.getElementById(h);
+    if(target){setTimeout(function(){target.scrollIntoView();},0);}
   }
   bar.addEventListener('click',function(e){
     var b=e.target.closest('button[data-lang]');
-    if(b){set(b.dataset.lang);window.scrollTo(0,0);}
+    if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
   });
 })();
 </script>

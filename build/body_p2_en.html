@@ -1,0 +1,590 @@
+<p class="eyebrow">Harness · Part 2 of 3 · How</p>
+
+<h1>Guides and sensors: how an agent learns to correct itself</h1>
+
+<p class="deck">In part 1, an operations director discovered she had hired a worker with no process, no authority limits and no audit trail. She fixed half the problem. This part is about the other half, the one almost nobody builds.</p>
+
+<p class="byline">Fernando Teco Sodré · August 2026 · 18-minute read</p>
+
+<nav class="toc">
+  <p>In this article</p>
+  <ol>
+    <li><a href="#abertura">The fourth week</a></li>
+    <li><a href="#dois-controles">There are only two controls</a></li>
+    <li><a href="#duro-julgamento">Hard verification and judgement verification</a></li>
+    <li><a href="#equipar">Equip: what it sees and what it can touch</a></li>
+    <li><a href="#skill">The anatomy of a skill</a></li>
+    <li><a href="#delegar">Delegate: how the work is handed over</a></li>
+    <li><a href="#inspecionar">Inspect: the sensor that teaches</a></li>
+    <li><a href="#onde-dispara">Where each sensor fires</a></li>
+    <li><a href="#nao-pega">What no sensor catches</a></li>
+    <li><a href="#funciona">How to know if your harness works</a></li>
+    <li><a href="#exemplos">Three complete examples</a></li>
+    <li><a href="#ambientes">Which environment makes this possible</a></li>
+    <li><a href="#reforcar">Reinforce: how a harness evolves</a></li>
+    <li><a href="#riscos-2">Risks at this layer</a></li>
+    <li><a href="#onde-voce-esta">Where you stand</a></li>
+    <li><a href="#glossario">Glossary</a></li>
+    <li><a href="#fontes">Sources</a></li>
+  </ol>
+</nav>
+
+<h2 id="abertura">1. The fourth week</h2>
+
+<p>The operations director who opened <a href="harness-p1.html#en-opening">part 1</a> did not give up on the freight invoice automation. She did what almost everyone does after a scare: she wrote down everything that was missing.</p>
+
+<p>A document spelling out what done meant. The reconciliation rules, one by one. The list of approved carriers. The explicit instruction never to approve anything on its own. It took another afternoon, and it is worth recording that it worked better, because a well-written guide really does work. Fewer discrepancies, less rework, fewer scares.</p>
+
+<p>In the fourth week, the system released an invoice from a carrier whose credentials had been revoked.</p>
+
+<p>The rule was right there. Item seven of the document, written clearly, with no ambiguity, among seventeen other equally clear rules. The system read it, understood it, and let it through anyway. Not out of bad will, not out of stupidity, but because between reading the rule and delivering the work there was absolutely nothing that checked whether the rule had actually been followed.</p>
+
+<p>This is exactly where part 1 ends and this one begins. She moved from N0 to N1, on the <a href="harness-p1.html#en-levels">autonomy tiers</a>: a guide now exists. What still does not exist is a sensor.</p>
+
+<blockquote><p>Asking a system to follow a rule is not the same thing as checking whether it did. One is an instruction. The other is a gate. And without a gate, a guide is a very well written recommendation.</p></blockquote>
+
+<p>The <a href="harness-p1.html#en-medir">MEDIR cycle</a> laid out the five steps in part 1. This part walks through three of them in detail, the ones where instrumentation actually lives: Equip, Delegate and Inspect. Map was already covered, because the task contract is the whole subject of part 1. Reinforce comes at the end, because it only makes sense once there is something to reinforce.</p>
+
+<h2 id="dois-controles">2. There are only two controls</h2>
+
+<p>Before the steps, a simplification worth more than it looks.</p>
+
+<p>However complex a system like this seems, you only have two kinds of control over it. You can influence what it does before it acts, or you can observe what it did after it acted. There is no third place. Everything the industry calls a rule, a policy, a test, a review, a hook, a gate or an audit falls into one of these two categories.</p>
+
+<p>The cleanest formulation of these two categories comes from Birgitta Böckeler, at Thoughtworks, and it is worth adopting her two names.</p>
+
+<p><a class="g" href="#g-guia" data-tip="A control that acts before execution, to raise the odds of getting it right on the first try.">Guides</a> are the controls that anticipate. They raise the probability of getting it right on the first attempt: written rules, conventions, examples, a map of where to look for each thing, the task contract. That is what the director built in the fourth week.</p>
+
+<p><a class="g" href="#g-sensor" data-tip="A control that acts after execution, measuring the result and handing the agent what it needs to correct itself.">Sensors</a> are the controls that observe. They measure what was produced and hand the system the information it needs to correct itself: reconciliations, tests, comparisons against the source, reviews. That is what was missing.</p>
+
+<blockquote><p>With guides alone, you have a system that follows rules and never finds out whether they worked. With sensors alone, you have a system that repeats the same mistake forever, corrected anew every time. The two together form something that learns. Separated, neither one is a harness.</p></blockquote>
+
+<p>Notice that this is exactly the structure of any mature process control: you standardise to prevent, you measure to correct. The difference, and it is a large one, is that here the executor reads the measurement's result and reacts to it. That opens a possibility manufacturing never had: the sensor can teach. We will come back to that.</p>
+
+<h2 id="duro-julgamento">3. Hard verification and judgement verification</h2>
+
+<p>Guides and sensors split again, this time by nature. Böckeler calls it computational and inferential. In plain business language, I prefer hard verification and judgement verification.</p>
+
+<p><strong>Hard verification</strong> is deterministic and fast. It runs in seconds, costs almost nothing, and gives the same answer for the same input every time. A script that checks whether a number matches the source. A rule that stops a document leaving without a required field. An automated test.</p>
+
+<p><strong>Judgement verification</strong> is semantic and probabilistic. It costs more, takes longer, and can give different answers to the same situation. A coherence review done by another system. A tone assessment. An evaluation of whether the solution is needlessly complicated for the problem.</p>
+
+<figure>
+<svg viewBox="0 0 700 380" role="img" aria-label="Matrix of guides and sensors by hard or judgement nature">
+  <line x1="330" y1="60" x2="330" y2="330" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="70" y1="196" x2="660" y2="196" stroke="#c9c7bf" stroke-width=".7"/>
+  <text class="svg-cap" x="200" y="46" text-anchor="middle">GUIDES · BEFORE ACTING</text>
+  <text class="svg-cap" x="495" y="46" text-anchor="middle">SENSORS · AFTER ACTING</text>
+  <text class="svg-cap" x="70" y="80">HARD</text>
+  <text class="svg-cap" x="70" y="216">JUDGEMENT</text>
+  <text class="svg-lbl" x="90" y="108">Document template</text>
+  <text class="svg-lbl" x="90" y="130">Required field on the form</text>
+  <text class="svg-lbl" x="90" y="152">Tool that only accepts one format</text>
+  <text class="svg-lbl" x="90" y="174">Access limited to what the task needs</text>
+  <text class="svg-lbl" x="350" y="108">Check against the source</text>
+  <text class="svg-lbl" x="350" y="130">Automated test</text>
+  <text class="svg-lbl" x="350" y="152">Format and range validation</text>
+  <text class="svg-lbl" x="350" y="174">Duplicate check</text>
+  <text class="svg-lbl" x="90" y="248">Written guide and conventions</text>
+  <text class="svg-lbl" x="90" y="270">Task contract</text>
+  <text class="svg-lbl" x="90" y="292">Examples of what good looks like</text>
+  <text class="svg-lbl" x="90" y="314">Skill with the house method</text>
+  <text class="svg-lbl" x="350" y="248">Review by another agent</text>
+  <text class="svg-lbl" x="350" y="270">Tone and coherence assessment</text>
+  <text class="svg-lbl" x="350" y="292">Critique of needless complexity</text>
+  <text class="svg-lbl" x="350" y="314">Human review</text>
+  <text class="svg-cap" x="70" y="360">START IN THE TOP RIGHT QUADRANT · IT IS THE CHEAPEST AND THE MOST RELIABLE</text>
+</svg>
+<figcaption>The four kinds of control. Most companies only have the bottom left quadrant, where the well-written prompt lives. The director from the opening was standing exactly there.</figcaption>
+</figure>
+
+<p>The investment rule is simple and saves a great deal of money: <strong>whatever can be verified hard, verify hard</strong>. Judgement is expensive, slow and non-deterministic, and should be reserved for what hard verification cannot reach, which is the semantic ground.</p>
+
+<p>There is also a cost effect that has recently shifted. Automated verification always existed and was always under-used, because setting up rules cost more effort than the return justified. Böckeler observes that the balance has flipped: today it is cheap to ask the system itself to write the rules and the checking scripts, which drives the cost of entry down, while the benefit has gone up, because these checks catch precisely the typical machine mistakes a human would not make.</p>
+
+<h2 id="equipar">4. Equip: what it sees and what it can touch</h2>
+
+<p>The first instrumented step of MEDIR. Equip means deciding three things: which tools, which access, and what survives once the conversation ends.</p>
+
+<p>The first two are intuitive and follow the same logic as any corporate access policy: the minimum the task requires, and nothing more. Fewer tools, better described, with predictable failure states. A tool that returns an ambiguous result forces the system to guess what happened, and guessing is the origin of half of all incidents.</p>
+
+<p>The third is the one almost nobody builds, and it is the one that separates an agent from an expensive form.</p>
+
+<h3>The conversation is not the system of record</h3>
+
+<p>A system like this has a finite reading space. When it fills up, the instructions from the start get pushed out, and whatever happened early in the task stops existing. There is no warning. The system simply carries on working without it.</p>
+
+<p>The analogy that explains this best to someone deciding comes from whoever built the tool to solve the problem:</p>
+
+<blockquote><p>The context window is volatile memory. The file system is disk. Everything that matters goes to disk.</p></blockquote>
+
+<p>In practice, this means keeping three things out of the conversation: the plan with its steps and what has already been completed, the decisions made and why, and the record of what happened in each session. The next session reads these files, understands where it left off, and moves forward. It is not a recap of the previous conversation, it is the real state of the work.</p>
+
+<p>It is the same solution Anthropic described for long-running agents, with a first session that sets up the environment and every following one reading the record and advancing a piece further. And it is exactly what was missing from the director's automation: when the error appeared, there was no trail to reconstruct what the system had seen and in what order.</p>
+
+<div class="rule-box"><span class="lbl">A quick test</span><p>If you end the session now and open another tomorrow, does the work continue from where it stopped, or does it start over? If it starts over, you do not have durable state, you have a conversation history. Those are different things.</p></div>
+
+<p>Tools ready for this are in the <a href="harness-caixa-de-ferramentas.html#pt-equipar">compact guide</a>, in the Equip section.</p>
+
+<h2 id="skill">5. The anatomy of a skill</h2>
+
+<p>What is missing is the format. How, in practice, do you write the guide the system reads.</p>
+
+<p>The answer became an open standard, and it is simpler than it sounds. A <a class="g" href="#g-skill" data-tip="A folder with a SKILL.md file, instructions, supporting files and optional code. An open format.">skill</a> is a folder with a file called SKILL.md inside it. That file opens with a two-line header, name and description, and the body carries the instructions. The folder can hold additional files and executable code.</p>
+
+<p>What makes this format work is <a class="g" href="#g-divulgacao" data-tip="The agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments.">progressive disclosure</a>, and it solves the space problem that sinks most home-grown attempts.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Three tiers of progressive disclosure in a skill">
+  <defs><marker id="p2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+  <rect x="60" y="50" width="170" height="70" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="80" y="76">TIER 1</text>
+  <text class="svg-sub" x="80" y="94">name and description</text>
+  <text class="svg-sub" x="80" y="110">always loaded</text>
+  <line x1="232" y1="85" x2="262" y2="85" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p2a)"/>
+  <rect x="265" y="50" width="170" height="70" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="285" y="76">TIER 2</text>
+  <text class="svg-sub" x="285" y="94">the body of SKILL.md</text>
+  <text class="svg-sub" x="285" y="110">read when relevant</text>
+  <line x1="437" y1="85" x2="467" y2="85" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p2a)"/>
+  <rect x="470" y="50" width="170" height="70" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="490" y="76">TIER 3</text>
+  <text class="svg-sub" x="490" y="94">attached files</text>
+  <text class="svg-sub" x="490" y="110">read only if needed</text>
+  <rect x="265" y="160" width="375" height="46" fill="none" stroke="#c9c7bf" stroke-width=".7"/>
+  <text class="svg-lbl" x="285" y="180">CODE</text>
+  <text class="svg-sub" x="285" y="196">executed without being read, when the result must be exact</text>
+  <text class="svg-cap" x="60" y="238">THE SYSTEM LOADS ONLY WHAT THE TASK REQUIRES</text>
+</svg>
+<figcaption>Progressive disclosure. It is why a skill can be enormous without costing any reading space.</figcaption>
+</figure>
+
+<p>Tier 1 is always present and is just enough for the system to know that guide exists and when it applies. Tier 2 comes in once it decides that is the task at hand. Tier 3 is the files it opens on demand, and there can be as many of them as you like at no cost while they stay unopened.</p>
+
+<p>There is a fourth element, and it is where hard verification lives: a skill can carry code. The system executes that code without needing to read it, and the result is deterministic. Checking a total, validating a format, comparing against a list, all of that is cheaper and more reliable in code than in reasoning.</p>
+
+<p>The official analogy from whoever created the format is the same one I used in part 1, which is a good confirmation that the translation was right: building a skill is like putting together the onboarding guide for someone who has just been hired.</p>
+
+<h3>The non-negotiable rule and the red flags</h3>
+
+<p>There is a guide-writing technique that shows up in the most used collections today and is worth stealing, because it solves a problem almost nobody states correctly.</p>
+
+<p>The pattern is this: every guide opens with a non-negotiable rule, short and unambiguous, and right below it lists a set of red flags. The flags do not describe technical mistakes. They describe the rationalisations the system will probably reach for to justify not following the rule. Things like just this once, or the test that passed on the first try without ever having failed, or the words should, probably and it looks like showing up in a verification report.</p>
+
+<p>The reasoning behind this is subtle and correct. The point of the guide is not to teach the rule, because the system already knows it. The point is to stop it talking itself out of following it. Those are different things, and the second is what fails in practice. The director's rule seven did not fail because it was badly written.</p>
+
+<div class="rule-box"><span class="lbl">How to apply it</span><p>After stating each rule, write the excuse. Ask what the most plausible justification for breaking it would be, and put that justification down in writing as a warning sign. You are getting ahead of the negotiation instead of waiting for it to happen.</p></div>
+
+<h2 id="delegar">6. Delegate: how the work is handed over</h2>
+
+<p>Second instrumented step. Delegate means deciding how big the piece is that you hand over at a time, and what happens when the run dies halfway through.</p>
+
+<p>Because it will die. A session drops, a limit is hit, the connection disappears, someone closes the window. This is not a design flaw, it is an operating condition. The right question is not how to avoid it, it is how much it costs when it happens.</p>
+
+<h3>The unit of durability</h3>
+
+<p>The principle that organises this is the best piece of engineering writing I have found on the subject:</p>
+
+<blockquote><p>The unit of durability has to be smaller than the unit of dispatch, and state belongs to files, not to any system's memory.</p></blockquote>
+
+<p>Translated: if you hand over one large task and the result is only saved at the end, a crash three minutes from the finish costs you the entire task. If the same task is split into independent units and each unit writes its result before reporting that it finished, the same crash only costs whatever was in flight at that instant.</p>
+
+<p>What follows from that, in practice:</p>
+
+<table class="wrap">
+<thead><tr><th>Practice</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Partition before dispatching</td><td>Without a written list of units there is no resuming, only restarting</td></tr>
+<tr><td>One shared contract, not copies pasted into each instruction</td><td>Short instructions, an auditable contract, no drift between units</td></tr>
+<tr><td>Save early and often</td><td>The rule that actually preserves work</td></tr>
+<tr><td>A status command that works without context</td><td>Turns where did we stop into a query</td></tr>
+<tr><td>Consolidate between batches, not during</td><td>The one moment nothing is in flight is the cheapest one to merge in</td></tr>
+<tr><td>Partial completion counts</td><td>Reading the material is the expensive part. If it is on record, resuming is cheap</td></tr>
+</tbody>
+</table>
+
+<p>Notice that none of this is sophisticated. It is the same reasoning as saving your document before you step out for lunch, applied with discipline to a worker that produces faster than you can keep up with.</p>
+
+<h3>Trust the disk</h3>
+
+<div class="rule-box"><span class="lbl">Rule</span><p>If the report contradicts the disk, trust the disk. A system reporting that it is still working may already have saved most of the output, and a completion report can arrive before the work is actually finished. A report is an opinion. A saved file is evidence.</p></div>
+
+<p>This is the same thesis from the next section applied to operations: evidence outweighs a statement, including when the statement comes from the very system you are supervising.</p>
+
+<h3>Ceiling and budget</h3>
+
+<p>Every delegation needs two limits the system cannot rewrite. A <a class="g" href="#g-teto" data-tip="The maximum number of times an agent may repeat a task before stopping and escalating.">retry ceiling</a>, because without one a correction loop repeats the same attempt indefinitely. And a cost ceiling, because spend is silent and only shows up on the invoice.</p>
+
+<p>When the ceiling is reached, the correct behaviour is neither to fail silently nor to keep trying. It is to stop, deliver whatever exists marked as incomplete, and explain what did not close. That is exactly what a good professional does.</p>
+
+<p>Tools for this are in the <a href="harness-caixa-de-ferramentas.html#pt-delegar">compact guide</a>, in the Delegate section.</p>
+
+<h2 id="inspecionar">7. Inspect: the sensor that teaches</h2>
+
+<p>Third instrumented step, and the most misunderstood. Here is the most practical finding in the whole literature on the subject, and the easiest one to put to use tomorrow.</p>
+
+<p>An ordinary sensor returns a verdict. A good sensor returns the exact gap and the correction instruction. The difference is not cosmetic, it is the difference between a system that stalls and a system that repairs itself.</p>
+
+<p>Compare two messages the same sensor could return on finding a wrong number in a report:</p>
+
+<pre><code>FAILED: value mismatch on line 14</code></pre>
+
+<p>That one teaches nothing. The system knows it got something wrong, does not know where or how to fix it, and the next attempt is a guess. Now the second one:</p>
+
+<pre><code>MISMATCH in "southeast_revenue"
+  report: $1,284,300
+  source: $1,248,300  (sales.csv, line 812, total column)
+  difference: $36,000
+
+Likely pattern: digit transposition (84 / 48).
+Correct the value in the report using the source figure and run
+the check again before delivering.</code></pre>
+
+<p>The second contains everything needed for self-correction with no new human instruction: what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. Böckeler describes this as a good form of context injection, and reports an experiment that proves the point: when this kind of guidance was missing from a specific rule, the system started routinely working around it, and went back to behaving properly as soon as the guidance was written.</p>
+
+<div class="rule-box"><span class="lbl">The practical rule</span><p>Write your sensor's error message as if you were explaining to a new colleague what to do next. If it does not work for that, it is not a sensor, it is an alarm.</p></div>
+
+<h3>The threshold trick</h3>
+
+<p>There is a classic problem with automated rules: they force a binary choice between complying and switching off. And switching off, in practice, is what ends up happening, because not every rule violation is actually a problem.</p>
+
+<p>The solution observed in the field is elegant. Instead of forcing compliance or suppression, let the system nudge the limit up slightly when it judges the fix unnecessary, while forcing it to justify the call. The limit does not disappear, it steps up, and the rule fires again if the situation gets worse again. The constraint is preserved without turning into a locked door someone eventually breaks down.</p>
+
+<h3>Where to start human review</h3>
+
+<p>This solves a problem almost nobody knew how to phrase: where does a human start reviewing the work of a system that produces more than they can read.</p>
+
+<p>The answer is to start with the exceptions the system created for itself. The warnings it suppressed, the limits it raised, the justifications it wrote. That set is small, it is where it decided the rule did not apply, and it is exactly where human oversight has the most value per minute invested.</p>
+
+<h3>Context as hypothesis, not as fact</h3>
+
+<p>A caution that only shows up once several units are working in parallel, and that corrupts results without producing a single visible error.</p>
+
+<p>If you hand each unit your own conclusions as established fact, they stop being independent observers and turn into an echo. A mistake at the source propagates through everything, and the final aggregate looks robust precisely because every part agrees.</p>
+
+<p>The fix is to pass context as a hypothesis to be tested, and to ask explicitly what was disproved. Units that check each other, and that occasionally retract their own finding after checking the primary source, are what keeps the result honest. It is the same logic of the one who generates does not evaluate, applied horizontally.</p>
+
+<h2 id="onde-dispara">8. Where each sensor fires</h2>
+
+<p>Having the right sensor is not enough. It has to fire at the right moment, and the right moment is always as early as possible, because an error caught early is cheap and an error caught late is expensive. It is the logic of any production line, and it applies here just the same.</p>
+
+<figure>
+<svg viewBox="0 0 700 240" role="img" aria-label="Where sensors run along the lifecycle">
+  <line x1="60" y1="120" x2="660" y2="120" stroke="#1b1b19" stroke-width=".7"/>
+  <line x1="150" y1="112" x2="150" y2="128" stroke="#1b1b19" stroke-width=".7"/>
+  <line x1="320" y1="112" x2="320" y2="128" stroke="#1b1b19" stroke-width=".7"/>
+  <line x1="490" y1="112" x2="490" y2="128" stroke="#1b1b19" stroke-width=".7"/>
+  <line x1="630" y1="112" x2="630" y2="128" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="150" y="100" text-anchor="middle">DURING</text>
+  <text class="svg-sub" x="150" y="150" text-anchor="middle">fast and cheap</text>
+  <text class="svg-sub" x="150" y="166" text-anchor="middle">runs every step</text>
+  <text class="svg-lbl" x="320" y="100" text-anchor="middle">AT THE GATE</text>
+  <text class="svg-sub" x="320" y="150" text-anchor="middle">more expensive</text>
+  <text class="svg-sub" x="320" y="166" text-anchor="middle">runs at delivery</text>
+  <text class="svg-lbl" x="490" y="100" text-anchor="middle">ON CADENCE</text>
+  <text class="svg-sub" x="490" y="150" text-anchor="middle">looks for drift</text>
+  <text class="svg-sub" x="490" y="166" text-anchor="middle">outside the task cycle</text>
+  <text class="svg-lbl" x="630" y="100" text-anchor="middle">IN USE</text>
+  <text class="svg-sub" x="630" y="150" text-anchor="middle">the real world</text>
+  <text class="svg-sub" x="630" y="166" text-anchor="middle">sends signal back</text>
+  <text class="svg-cap" x="60" y="210">THE FURTHER LEFT A SENSOR FIRES, THE CHEAPER THE CORRECTION</text>
+</svg>
+<figcaption>The four moments. Most projects put everything at the gate, which is the most expensive and the latest place possible.</figcaption>
+</figure>
+
+<p><strong>During</strong> are the fast checks, consulted while the work is happening. They need to be cheap enough to run at every step. This is where real self-correction happens.</p>
+
+<p><strong>At the gate</strong> are the more expensive checks, which run once, at delivery, and confirm the result. It is also where human approval lives, when it exists.</p>
+
+<p><strong>On cadence</strong> are the sensors that look for <a class="g" href="#g-deriva" data-tip="Gradual degradation that does not happen in any single run, but across dozens of them.">drift</a>, that degradation that does not happen in any single run but across dozens of them. They run on a schedule, not per task.</p>
+
+<p><strong>In use</strong> are the real-world signals that come back after the work has already shipped. Customer complaints, rework rates, returns. It is the slowest sensor and the truest one.</p>
+
+<h2 id="nao-pega">9. What no sensor catches</h2>
+
+<p>This section exists to stop you leaving here with too much confidence, which is a worse outcome than leaving with none.</p>
+
+<p>Hard verification is excellent at the small scale: format, presence, duplication, numeric consistency, structure. It gets much weaker once a problem spans several pieces of the work and needs context to be judged. In those cases the raw data turns into noise, and a judgement sensor is needed to interpret it.</p>
+
+<p>But even the two together do not reach three categories of failure, and these are precisely the ones with the biggest impact: a wrong diagnosis of the problem, excess zeal producing work nobody asked for, and a misunderstood instruction. Sometimes they catch these. Not reliably enough to reduce supervision.</p>
+
+<blockquote><p>Correction is out of reach of any sensor if the human did not clearly say, beforehand, what they wanted. No amount of instrumentation makes up for a task contract that was never written.</p></blockquote>
+
+<p>Two side effects observed in practice deserve a note. The first is conflict between sensors: a rule demanding smaller pieces pushed complexity somewhere else, creating a different problem from the one it solved. Sensors fight each other, and someone needs to decide the tie-break.</p>
+
+<p>The second is the illusion of quality. A verification report can show high coverage and still have no real verification happening, because coverage tells you something ran, not that the effect was checked. A green dashboard is not evidence of quality, it is evidence that the sensors you have did not fire.</p>
+
+<h2 id="funciona">10. How to know if your harness works</h2>
+
+<p>This is the question that comes up in every board presentation, and it has a better answer than it is hard to measure.</p>
+
+<p>The useful analogy is an inspection line. If it never flags anything, either the process is perfect, which is unlikely, or the instruments are measuring the wrong thing. If it flags everything, either the standard is wrong, or the sensitivity is overdone and the result turns into noise everyone learns to ignore.</p>
+
+<p>The solution is to keep a firing history for each sensor and answer with data instead of opinion.</p>
+
+<table class="wrap">
+<thead><tr><th>What the history shows</th><th>What it means</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td>A sensor never fires</td><td>Either it is unnecessary, or it is not measuring what you think</td><td>Trigger an error on purpose. If it does not catch it, remove it</td></tr>
+<tr><td>A sensor always fires</td><td>The matching guide is weak, or the standard is unrealistic</td><td>Improve the guide before touching the sensor</td></tr>
+<tr><td>Firings drop over time</td><td>The guides are working</td><td>Consider moving up an autonomy tier</td></tr>
+</tbody>
+</table>
+
+<p>Notice what this table does: it turns the harness into something with its own indicator. It stops being a configuration done once and becomes an operated asset, with history and trend. It is the difference between owning a fire extinguisher and running a safety programme.</p>
+
+<h2 id="exemplos">11. Three complete examples</h2>
+
+<p>All three use the same five-field skeleton, which is what you copy: contract, guide, sensor, gatekeeper and receipt.</p>
+
+<h3>Individual: reviewing a contract draft against a checklist</h3>
+
+<p>One person, no technology support, no code written. High volume, no irreversibility, the decision stays with the human. It is the right place to start.</p>
+
+<pre><code>---
+name: reviewing-contract-draft
+description: Reviews contract drafts against the house checklist of
+  mandatory clauses. Use when the user sends a contract, draft,
+  amendment or term sheet for a preliminary review.
+---
+
+# Contract draft review
+
+## Task contract
+Delivers: a report listing gaps between the draft and the checklist.
+Never does: does not draft new clauses, does not opine on commercial
+merit, does not declare the draft approved.
+Done when: every item in checklist.md has been marked present, absent
+or not verifiable, and every gap quotes the passage from the draft.
+
+## How to review
+1. Read checklist.md in full before opening the draft.
+2. For each item, look for the matching passage in the draft.
+3. Classify it as present, absent or divergent.
+4. For divergent, quote the literal passage and say what is missing.
+5. If an item depends on information the draft does not contain,
+   mark it not verifiable and say what would be needed.
+
+## Never
+NON-NEGOTIABLE RULE: this report never approves anything.
+
+Red flags, stop if you catch yourself thinking:
+- "this clause is standard, it is fine to count it as present"
+- "the meaning is there, even with different wording"
+- "it probably covers the case"
+None of these three is verification. Mark it divergent and quote it.</code></pre>
+
+<p>The checklist with the clauses lives in a file alongside, not inside SKILL.md. That is progressive disclosure at work: you can expand it without limit.</p>
+
+<h3>Team: weekly report with a check</h3>
+
+<p>Here hard verification comes in. The classic problem with this kind of task is not the system writing badly, it is writing a very well phrased report with one wrong number, which is worse, because fluent prose lends the mistake credibility.</p>
+
+<pre><code>---
+name: closing-weekly-report
+description: Puts together the weekly indicators report and checks
+  every number against the source before delivering it. Use at the
+  end of the week or whenever the report is requested.
+---
+
+# Weekly report
+
+## Task contract
+Delivers: the report in the standard format, with every number checked.
+Done when: `python verify.py report.md` returns no mismatches and
+the check result is attached to the report.
+
+## Order of work
+1. Generate the report using template.md as the structure.
+2. Run the check: `python verify.py report.md`
+3. If there is a mismatch, correct it using the source value from
+   the message and run the check again.
+4. Three attempts maximum. If the third fails, stop, deliver the
+   report marked NOT CHECKED and explain what did not close.
+
+## Never
+NON-NEGOTIABLE RULE: the source is never adjusted to match the report.
+
+Red flags:
+- "the source figure looks wrong"
+- "I will round it to keep things consistent"
+- "the difference is small"</code></pre>
+
+<p>Three things are transferable here. The done criterion is not an opinion, it is a command's output, so the task cannot be silently redefined. The three-attempt ceiling with a clear exit path stops indefinite spend. And the rule against adjusting the source has to be written down precisely because, in systems with room to act, the shortest path to satisfying the sensor is sometimes to tamper with the sensor.</p>
+
+<h3>Business unit: external effect, authority limits and receipt</h3>
+
+<p>Now the case where an entire unit comes to depend on the system, and what it produces leaves the company.</p>
+
+<p>The authority policy is not an instruction in the conversation. It is a table someone approves and the system cannot rewrite.</p>
+
+<table class="wrap">
+<thead><tr><th>Class of action</th><th>Reversible</th><th>Authority</th></tr></thead>
+<tbody>
+<tr><td>Look up internal data</td><td>Yes</td><td>Free</td></tr>
+<tr><td>Draft a reply</td><td>Yes</td><td>Free</td></tr>
+<tr><td>Send a reply to the customer</td><td>No</td><td>Named approval</td></tr>
+<tr><td>Grant a discount or credit</td><td>No</td><td>Named approval, with a cap</td></tr>
+<tr><td>Change a record</td><td>Partial</td><td>Named approval</td></tr>
+<tr><td>Delete a record</td><td>No</td><td>Forbidden to the system</td></tr>
+</tbody>
+</table>
+
+<p>Notice the criterion organising the table: it is not how important the action looks, it is <a class="g" href="#g-reversibilidade" data-tip="The criterion that organises delegation: a reversible action costs the price of undoing it, an irreversible one costs the price of the mistake.">reversibility</a>. A reversible action can be delegated because the cost of a mistake is the cost of undoing it. An irreversible one cannot, however reliable the system looks.</p>
+
+<p>And the <a class="g" href="#g-recibo" data-tip="A compact record of what produced a result: contract, sources, sensors, attempts, cost and approval.">receipt</a>, which turns all of this into something auditable:</p>
+
+<pre><code>{
+  "run": "2026-08-28T09:14:22",
+  "task": "answering-ticket",
+  "contract": "tier-1-response@v3",
+  "sources_consulted": ["knowledge-base@2026-08-20", "ticket-88431"],
+  "sensors": {
+    "tone-policy": "ok",
+    "personal-data-in-text": "ok",
+    "fact-check": "1 mismatch corrected"
+  },
+  "attempts": 2,
+  "cost": "$0.84",
+  "approved_by": "shift-b-supervisor",
+  "rollback_point": "draft-88431-v1"
+}</code></pre>
+
+<p>This block answers, with no investigation needed, the five questions that come up whenever something goes wrong: what was the task, what information it was done with, what was checked, how many attempts it took, and who authorised it. It is the difference between an incident explained in ten minutes and one that eats up a week.</p>
+
+<h2 id="ambientes">12. Which environment makes this possible</h2>
+
+<p>By this point the question is concrete: I understand all of this, but where do I actually do it. And it matters more than it looks, because most of the frustration with agents does not come from the model or the method, it comes from trying to set up a control the chosen environment cannot sustain.</p>
+
+<p>Tools change names and owners far too fast to serve as the backbone of a piece of writing you will use for years. It is worth organising by environment class instead, which changes far more slowly.</p>
+
+<table class="wrap">
+<thead><tr><th>Environment class</th><th>What it accepts</th><th>Viable tier</th></tr></thead>
+<tbody>
+<tr><td>Conversation with instructions</td><td>Guides, yes. Almost no sensors, because there is no execution and no state that survives</td><td>N0 to N1</td></tr>
+<tr><td>Agent with files and execution</td><td>Guides, hard verification, durable memory, code actually running</td><td>N1 to N2</td></tr>
+<tr><td>Programmed orchestration</td><td>Everything above, plus a ceiling, an authority policy outside the model, and a per-run record</td><td>N2 to N3</td></tr>
+<tr><td>Assisted software generation</td><td>Produces the artefact. The harness that matters is the one built around what was generated</td><td>Not applicable</td></tr>
+</tbody>
+</table>
+
+<p><strong>Conversation with instructions</strong> is where almost everyone starts, and it is honest within its limit. You write a guide, define a method, give examples, and get real consistency. What does not exist there is a sensor: there is no way for the system to run a check and correct itself before you read it. Every verification is yours, after the fact. It is exactly where the director was in the fourth week.</p>
+
+<p>The <strong>agent with files and execution</strong> is the first rung where the cycle closes on its own. A file system exists, so durable state exists. Execution exists, so hard verification exists. This is where a skill stops being a nice document and becomes a mechanism.</p>
+
+<p><strong>Programmed orchestration</strong> is where the things that are not text come in: the ceiling the system cannot ignore, the authority table it cannot rewrite, the record it cannot erase. None of the three is an instruction. They are constraints from the outside. That is why N3 requires this environment and cannot be reached simply by writing a better guide.</p>
+
+<p><strong>Assisted software generation</strong> deserves its own paragraph, because it is the most common confusion. Someone who describes a system in natural language and gets a working application back has not built a harness, they have generated an artefact. And that artefact, if it goes to production, needs everything this article describes. The tool that generated it supplies none of that to what it generated.</p>
+
+<blockquote><p>Most of the frustration with agents comes from trying to operate at N2 inside an environment that only sustains N1. The system is not failing. It is being held to a control nobody gave it any way to build.</p></blockquote>
+
+<p>The practical consequence for whoever decides: the purchasing question is not which tool is best. It is what tier this task needs to reach, and what the simplest environment class is that sustains that tier. Names, repositories and step-by-step guides are in the <a href="harness-caixa-de-ferramentas.html">compact guide</a>, which is dated and revised separately precisely because it ages faster.</p>
+
+<h2 id="reforcar">13. Reinforce: how a harness evolves</h2>
+
+<p>The last step of the cycle, and the one that separates someone with a system from someone with a configuration.</p>
+
+<p>Nothing above is born finished, and trying to design everything before the first run is the most common mistake of people coming from engineering. The path that works runs the other way: start with the minimum that closes the cycle, run it, and let failure tell you what to build next.</p>
+
+<div class="rule-box"><span class="lbl">The minimum sequence</span><p>Write the task contract. Run it. Note where it failed. Write the rule that prevents that failure. Run it again. Only once the same failure returns despite the rule, build the sensor that measures it. A sensor built before a failure has recurred is premature optimisation.</p></div>
+
+<p>There is a shortcut recommended by whoever created the skill format that almost nobody uses: ask the system itself, at the end of a task, to record what worked and where it got lost, and turn that into content for the guide. When it makes a mistake while using a guide, ask it to reflect on what was missing. You find out what it actually needed to know, instead of trying to anticipate everything from the top down.</p>
+
+<h3>Cleanup as a cadence, not a big push</h3>
+
+<p>Guides and sensors pile up clutter like any other system. Rules that no longer apply, checks nobody reads, examples from a process that has since changed. And the work produced piles up its own: needless repetition, layers that serve nothing, leftovers from abandoned attempts.</p>
+
+<p>There is an entire category of tools for this cleanup today. They converge on five rules, and the rules are worth more than any specific product:</p>
+
+<table class="wrap">
+<thead><tr><th>Rule</th><th>Why it exists</th></tr></thead>
+<tbody>
+<tr><td>Lock in the behaviour before touching anything</td><td>Write the check first, so cleanup does not turn into a silent change</td></tr>
+<tr><td>Prefer removal over addition</td><td>Cleanup that adds is not cleanup</td></tr>
+<tr><td>Write the plan before editing</td><td>Without a plan, cleanup turns into a never-ending remodel</td></tr>
+<tr><td>Revert on its own whatever breaks</td><td>Every change that trips the check rolls back automatically</td></tr>
+<tr><td>Separate the one who cleans from the one who reviews</td><td>The same principle of the one who generates does not evaluate</td></tr>
+</tbody>
+</table>
+
+<p>And the discipline that holds it all together: this runs on a cadence, not in a big push. Accumulated debt is a loan at a high interest rate, always better paid in small, continuous instalments than left to compound into a lost week. An annual cleanup push is the symptom that the cadence does not exist.</p>
+
+<h2 id="riscos-2">14. Risks at this layer</h2>
+
+<p>Four risks are specific to this layer and did not appear in part 1.</p>
+
+<p><strong>Signal overload.</strong> Turning on many sensors at once floods the system with findings, and it enters a spiral of unnecessary corrections, burning time and money on problems that were not problems. Turn on one at a time and watch.</p>
+
+<p><strong>Sensors in conflict.</strong> Two reasonable rules can contradict each other, and the system will pick one without announcing there was a choice to make. When this keeps happening, someone needs to decide the priority and write it down.</p>
+
+<p><strong>A green dashboard as proof.</strong> The most dangerous of the four, because it is comfortable. A set of weak sensors produces exactly the same reassuring screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why.</p>
+
+<p><strong>A third party's guide.</strong> Installing a collection of someone else's skills is running someone else's instructions inside your own environment. The recommendation from whoever publishes the format is explicit: install only from a trusted source, and when the source is less known, audit it before using it, paying particular attention to anything telling the system to reach out to an external network. This is not a reason not to use it. It is a reason to read it first, and the <a href="harness-caixa-de-ferramentas.html#pt-seguranca">compact guide</a> carries the three questions that reading needs to answer.</p>
+
+<blockquote><p>An instrumented agent is not a safe agent. Instrumentation tells you whether the work turned out well. It does not tell you whether the work should have been done at all.</p></blockquote>
+
+<h2 id="onde-voce-esta">15. Where you stand</h2>
+
+<p>The director finished this part at N2. A guide exists, state exists that survives the session, a check exists that returns the exact gap, and a retry ceiling exists. The invoice from the carrier with revoked credentials no longer gets through, because something now checks the list before delivery.</p>
+
+<p>What she still does not have is what part 3 covers. Nothing built so far stops an irreversible action. Nothing records who authorised what. And nothing protects against the situation where a malicious instruction arrives inside the very data the system was asked to read.</p>
+
+<table class="wrap">
+<thead><tr><th>Piece</th><th>What it delivers</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
+<tr><td>Part 2, this one</td><td>Guides and sensors, the skill format, three complete examples and the environment classes</td></tr>
+<tr><td>Part 3</td><td>Permission outside the model, instructions arriving inside data, an auditable record, rollback and accountability</td></tr>
+<tr><td><a href="harness-caixa-de-ferramentas.html">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
+</tbody>
+</table>
+
+<h2 id="glossario">16. Glossary</h2>
+
+<p>The terms below appear underlined throughout the text. Hover over them to see the short definition, or click to jump here. The references point to the origin of each concept, not to second-hand summaries.</p>
+
+<p class="gitem" id="g-agente"><strong>agent</strong>: A system that combines a language model with tools, memory and rules to carry out multi-step tasks. The working equation is agent equals model plus harness.</p>
+<p class="gitem" id="g-alcada"><strong>authority limit</strong>: The boundary of what someone, or some system, can decide on their own. In a harness, it is defined by class of action and enforced outside the model.</p>
+<p class="gitem" id="g-analise"><strong>static analysis</strong>: Automated verification carried out on the work without running it, looking for rule violations, excessive size, duplication and irregular structure.</p>
+<p class="gitem" id="g-cadencia"><strong>cadence</strong>: A fixed frequency at which a check runs, regardless of whether a task is in progress. It is what detects drift, which no single run reveals.</p>
+<p class="gitem" id="g-cobertura"><strong>test coverage</strong>: The percentage of the work that was run by tests. It tells you something was executed, not that the effect was verified, which makes it a misleading indicator when used alone.</p>
+<p class="gitem" id="g-contrato"><strong>task contract</strong>: A written definition, made before execution, of what the task delivers, what its limits are and how to know it is done. It is the Map step of the MEDIR cycle.</p>
+<p class="gitem" id="g-deriva"><strong>drift</strong>: Gradual degradation that does not happen in any single run, but across dozens of them. Only sensors running on a cadence detect it.</p>
+<p class="gitem" id="g-divulgacao"><strong>progressive disclosure</strong>: The principle by which the agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments. It is what allows large guides at no reading cost. <em class="orig">Anthropic, Agent Skills. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Source</a></em></p>
+<p class="gitem" id="g-guia"><strong>guide</strong>: A control that acts before execution, raising the odds the agent gets it right on the first attempt: rules, conventions, examples, the task contract. Called an anticipatory control. <em class="orig">Birgitta Böckeler's formulation. <a href="https://martinfowler.com/articles/harness-engineering.html">Source</a></em></p>
+<p class="gitem" id="g-harness"><strong>harness</strong>: Everything in an agent except the model: tools, context, durable memory, permissions, sensors and the record of what it did. <em class="orig">Established as a discipline in February 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Source</a></em></p>
+<p class="gitem" id="g-injecao"><strong>context injection</strong>: Inserting text into the agent's reading field during execution. It is dangerous when it arrives from outside with no control, and it is the central technique of the sensor that teaches when it comes from your own harness.</p>
+<p class="gitem" id="g-jidoka"><strong>jidoka</strong>: Autonomation. The machine detects the abnormality, stops itself and calls for help, so the defect does not travel on down the line. <em class="orig">Toyota Production System. <a href="https://en.wikipedia.org/wiki/Autonomation">Source</a></em></p>
+<p class="gitem" id="g-medir"><strong>MEDIR</strong>: The five-step harness engineering cycle: Map, Equip, Delegate, Inspect and Reinforce. Described in part 1 of this series.</p>
+<p class="gitem" id="g-modelo"><strong>language model</strong>: The reasoning engine. It proposes the next action, but executes nothing on its own: the tools the harness exposes do the executing.</p>
+<p class="gitem" id="g-pdca"><strong>PDCA</strong>: Plan, do, check, act. The iterative cycle of continuous improvement, also known as the Shewhart cycle. A direct ancestor of MEDIR. <em class="orig">Walter Shewhart, 1930s. <a href="https://en.wikipedia.org/wiki/PDCA">Source</a></em></p>
+<p class="gitem" id="g-poka"><strong>poka-yoke</strong>: Mistake-proofing. Redesigning the process so the error becomes impossible, instead of asking whoever executes for more attention. <em class="orig">Shigeo Shingo, Toyota Production System. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Source</a></em></p>
+<p class="gitem" id="g-portao"><strong>gate</strong>: A point in the flow where nothing moves forward unless a condition is met. Unlike an instruction, a gate cannot be ignored by whoever is executing.</p>
+<p class="gitem" id="g-recibo"><strong>execution receipt</strong>: A compact record of what produced a result: the contract used, the sources consulted, the sensors triggered, the attempts, the cost, who approved it and the rollback point.</p>
+<p class="gitem" id="g-reversibilidade"><strong>reversibility</strong>: The criterion that organises delegation: a reversible action costs the price of undoing it, an irreversible action costs the price of the mistake. It is the right yardstick for setting authority limits, not how important the action looks.</p>
+<p class="gitem" id="g-sandbox"><strong>sandbox</strong>: An isolated environment where execution happens without touching real systems. It allows autonomy to be delegated without a mistake having an external consequence.</p>
+<p class="gitem" id="g-sensor"><strong>sensor</strong>: A control that acts after execution, measuring what was produced and handing the agent the information it needs to correct itself. Called a feedback control. <em class="orig">Birgitta Böckeler's formulation. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">Source</a></em></p>
+<p class="gitem" id="g-skill"><strong>skill</strong>: A folder containing a SKILL.md file with a name and description header, plus instructions, supporting files and optional code. An open format for packaging procedural knowledge for agents. <em class="orig">Anthropic, October 2025; open standard since December 2025. <a href="https://agentskills.io/">Source</a></em></p>
+<p class="gitem" id="g-mutacao"><strong>mutation testing</strong>: A technique that introduces small, deliberate changes into the work and checks whether the tests catch them. It reveals tests that run the code without verifying anything.</p>
+<p class="gitem" id="g-regressao"><strong>regression testing</strong>: Verification that detects when a change broke something that used to work. It is the main maintenance sensor for any system that keeps evolving.</p>
+<p class="gitem" id="g-teto"><strong>retry ceiling</strong>: The maximum number of times an agent may repeat a task before stopping and escalating. Without it, a correction loop can burn time and cost indefinitely.</p>
+<p class="gitem" id="g-verificacao"><strong>hard verification</strong>: Deterministic, fast verification that always gives the same answer for the same input. The opposite of judgement verification, which is semantic, expensive and probabilistic.</p>
+
+<h2 id="fontes">17. Sources</h2>
+
+<ol class="sources">
+<li>Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 May 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 April 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
+<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, October 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li>Anthropic. <em>Effective harnesses for long-running agents</em>, November 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
+<li>Agent Skills, open standard. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li>André Almeida. <em>holdfast</em>, durable partitioned execution. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li>Othman Adi. <em>planning-with-files</em>, durable state on disk. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
+<li>Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, February 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
+<li>Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+</ol>
+
+<div class="foot">
+<p>Part 2 of 3 · Harness series · The skill examples are functional and were simplified to fit the article. The character in the opening is composed from recurring patterns.</p>
+</div>

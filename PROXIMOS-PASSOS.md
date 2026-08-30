@@ -10,15 +10,17 @@ Em ordem. Cada item traz o critério de pronto.
 
 **Guia compacto reescrito por completo.** Ver a entrada correspondente em `ESTADO.md` para o detalhamento. Critério de pronto batido: dezessete fichas de seis campos, toda ferramenta verificada em `fontes/inventario.md` (três fontes novas verificadas nesta rodada: Semgrep, LangGraph, GitHub Spec Kit com link direto), e cada passo do MEDIR com crítica registrada.
 
+**Parte 2 traduzida para inglês e espanhol**, no mesmo arquivo, com o seletor. `build/build_p2.py` reescrito para montagem trilíngue, no mesmo padrão de `build/build_all.py`: extrai o corpo PT do arquivo vigente (que é a fonte da verdade, não `build/body_p2_pt.html`, que estava desatualizado), monta EN e ES a partir de `build/body_p2_en.html` e `build/body_p2_es.html`, prefixa tudo por idioma via `scope()`. Os três botões funcionam e não há âncora quebrada. Como efeito colateral, o JavaScript de troca de idioma de `harness-p1.html` e `harness-p2.html` ganhou roteamento por âncora (`#en-opening` seleciona a aba certa antes de rolar), para que um link cruzado entre as peças em inglês ou espanhol não caia sempre na aba em português.
+
 ---
 
-## 1. Traduzir a parte 2 e o guia compacto
+## 1. Traduzir o guia compacto
 
-Inglês e espanhol, no mesmo arquivo, com o seletor.
+Inglês e espanhol, no mesmo arquivo `harness-caixa-de-ferramentas.html`, com o seletor.
 
-Reutilizar `build/build_all.py` como referência de montagem trilíngue. Os identificadores precisam ser prefixados por idioma através da função `scope()`.
+Reutilizar `build/build_kit.py` como base, no mesmo padrão trilíngue que `build/build_p2.py` passou a seguir: corpo PT extraído do arquivo vigente, corpos EN e ES escritos à parte e prefixados por `scope()`.
 
-**Pronto quando:** os três botões funcionam nas quatro peças e não há âncora quebrada.
+**Pronto quando:** os três botões funcionam e não há âncora quebrada, incluindo as âncoras que a parte 2 já referencia (`#pt-equipar`, `#pt-delegar`, `#pt-ambientes`, `#pt-inspecionar`, `#pt-riscos-2`, `#pt-reforcar`, `#pt-seguranca`), que passam a precisar de equivalentes `#en-` e `#es-`.
 
 ---
 

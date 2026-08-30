@@ -20,11 +20,15 @@ Barra de série e bloco "Onde você está" já implementados.
 
 `harness-p2.html`
 
-Português apenas. Dezessete seções, três diagramas, 26 verbetes. Cerca de 6.200 palavras.
+Trilíngue completa desde 30 de agosto de 2026. Dezessete seções, três diagramas, 26 verbetes por idioma. Cerca de 6.200 palavras em português, 6.350 em inglês, 6.450 em espanhol.
 
 Reescrita completa depois de uma primeira versão descartada. A versão descartada falhava por abandonar a personagem, não fazer histórico da parte 1 e organizar por conceito em vez de pelo ciclo.
 
 Conteúdo: abre na quarta semana com a diretora tendo escrito o guia inteiro e o sistema liberando nota de fornecedor descredenciado. Seções ancoradas em Equipar, Delegar e Inspecionar, com Reforçar no fim. Inclui a matriz de guias e sensores, a comparação entre mensagem de erro que ensina e alarme, o truque do limiar, a unidade de durabilidade, três exemplos completos com SKILL.md real, as classes de ambiente cruzadas com as faixas, e limpeza como cadência.
+
+Tradução inglesa em grafia britânica, espanhola por "tú". MEDIR e harness mantidos como nome próprio nos três idiomas, conforme `PADROES.md`. Os exemplos de skill (nomes de arquivo, campos, valores) foram traduzidos também, não só a prosa ao redor.
+
+O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por âncora: um link do tipo `harness-p1.html#en-opening` agora seleciona a aba certa antes de rolar, em vez de sempre abrir na aba PT padrão. Sem esse ajuste, um leitor em inglês clicando em qualquer referência cruzada para a parte 1 caía sempre em português.
 
 ### Skill levantando-briefing
 
@@ -67,7 +71,7 @@ Escrever agora produziria opinião bem escrita, não referência.
 | Peça | PT | EN | ES |
 |---|---|---|---|
 | Parte 1 | pronta | pronta | pronta |
-| Parte 2 | pronta | falta | falta |
+| Parte 2 | pronta | pronta | pronta |
 | Guia compacto | pronta | falta | falta |
 | Parte 3 | falta | falta | falta |
 | Skill de briefing | pronta | falta | falta |
