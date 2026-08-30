@@ -49,6 +49,7 @@ This ledger stays in English only: it is an internal verification tool for whoev
 | V | Inspect | dependency-cruiser | https://github.com/sverweij/dependency-cruiser | Dependency rules |
 | V | Inspect | Stryker | https://stryker-mutator.io/ | Mutation testing |
 | V | Inspect | Semgrep | https://github.com/semgrep/semgrep | Semgrep, Inc. LGPL 2.1. Static analysis for security patterns, runs locally, code is not uploaded by default |
+| V | Inspect | impeccable | https://github.com/pbakaus/impeccable | Apache 2.0. Derives from Anthropic's own frontend-design skill. 30 contributors, versioned (v4.1.2), 61 deterministic detector rules plus LLM-only critique. **Scoped install:** this project only copied `SKILL.md` and `reference/`, not the `scripts/` tree the detector rules need to run without an LLM, see `TOOLS.md` |
 | V | Reinforce | ai-slop-cleaner | https://github.com/yeachan-heo/oh-my-claudecode | The real source of the cleanup skill cited in Part 2. Regression-safe flow, with a separate writer and reviewer |
 | V | Map | GitHub Spec Kit | https://github.com/github/spec-kit | MIT. Named the spec-before-code category. Kiro, Tessl and OpenSpec cited via Böckeler's comparative review, with no directly verified link |
 | V | Reference | autoresearch | https://github.com/karpathy/autoresearch | Reference agentic flow, this one actually by Karpathy |

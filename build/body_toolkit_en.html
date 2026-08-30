@@ -205,7 +205,7 @@
 
 <h2 id="inspecionar">6. Inspect</h2>
 
-<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The four tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
+<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The five tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -251,7 +251,18 @@
 
 <p>Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
-<div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the four tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
+<h3>impeccable</h3>
+
+<p><strong>Problem.</strong> Frontend design quality is usually judged by taste, so the same handful of AI-generated tells (one default font, a purple-to-blue gradient, cards nested inside cards) ships again and again until a person happens to look and object.</p>
+<p><strong>In practice.</strong> Sixty-one deterministic rules that catch a fixed list of AI-generated frontend tells without needing a model to judge them, plus a set of commands for LLM-guided critique on top. It derives from Anthropic's own frontend-design skill. The deterministic pass needs Node and, for the visual check, a headless browser; without them the same rules still work as ordinary LLM-guided critique, just without the no-LLM pass.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness that ships a user-facing interface and has no check today between the agent building it and a person looking at it.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A backend-only system, or an interface a human designer already owns end to end. The rules target AI-generated frontend tells specifically, not a general design-review process.</p>
+<p><strong>How to start in 15 minutes.</strong> Point the audit command at the interface you shipped most recently, before touching anything new. What it flags in work you already trust is the calibration for what it will flag next.</p>
+
+<p>Licence Apache 2.0. Repository: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the five tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
 
 <h2 id="reforcar">7. Reinforce</h2>
 
@@ -392,6 +403,7 @@ description: Reviews contract drafts against the house checklist of
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
 <li>Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Paul Bakaus. <em>impeccable</em>, frontend design detector rules. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, the source of the cleanup matrix. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Community curation. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>

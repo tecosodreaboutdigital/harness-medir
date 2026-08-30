@@ -62,7 +62,7 @@ Separated from the harness-medir monorepo for independent installation, in the s
 
 `harness-toolkit.html`
 
-Completely rewritten on 30 August 2026, then translated into English and Spanish the same day as part of the language restructuring, with English as the default tab. Organised by the five steps of MEDIR, not by product category. Seventeen six-field entries, plus a tier-diagnosis section at the start for readers arriving from Part 1. Every MEDIR step carries a recorded critique, not just a recommendation.
+Completely rewritten on 30 August 2026, then translated into English and Spanish the same day as part of the language restructuring, with English as the default tab. Organised by the five steps of MEDIR, not by product category. Eighteen six-field entries, plus a tier-diagnosis section at the start for readers arriving from Part 1. Every MEDIR step carries a recorded critique, not just a recommendation. The eighteenth, `impeccable`, was added to Inspect afterwards, once this project started curating design-QA tools too, see `TOOLS.md`.
 
 Distribution: Map with four entries (intake-briefing, a Karpathy-inspired guide, c4-skills, spec-before-code with Böckeler and Pocock's critique), Equip with three (superpowers, mattpocock/skills, planning-with-files), Delegate with three (holdfast, environment classes, scheduled orchestration with LangGraph), Inspect with four (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reinforce with three (ai-slop-cleaner, cleanup as cadence, garbage collection).
 
