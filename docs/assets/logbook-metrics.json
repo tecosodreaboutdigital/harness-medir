@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-08-30T21:04:29.476231+00:00",
+  "generated_at": "2026-08-30T22:15:16.391391+00:00",
   "session_files": [
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
@@ -285,12 +286,72 @@
         "cache_read": 273842591,
         "cache_creation": 2914075
       }
+    },
+    {
+      "hash": "223b64a",
+      "timestamp": "2026-08-30T18:05:12-03:00",
+      "subject": "Regera o diario de bordo, marcos ate o dossie de partes 3 e 4",
+      "words_published": 49571,
+      "code_lines": 4971,
+      "governance_lines": 463,
+      "tokens_bucket": {
+        "input": 40,
+        "output": 16621,
+        "cache_read": 5515939,
+        "cache_creation": 19381
+      },
+      "tokens_cumulative": {
+        "input": 2072,
+        "output": 1248781,
+        "cache_read": 279358530,
+        "cache_creation": 2933456
+      }
+    },
+    {
+      "hash": "35cc04d",
+      "timestamp": "2026-08-30T18:45:15-03:00",
+      "subject": "Formaliza a parte 4, integra as fontes e renderiza os diagramas das partes 3 e 4",
+      "words_published": 49571,
+      "code_lines": 5058,
+      "governance_lines": 515,
+      "tokens_bucket": {
+        "input": 252,
+        "output": 368448,
+        "cache_read": 22630951,
+        "cache_creation": 704745
+      },
+      "tokens_cumulative": {
+        "input": 2324,
+        "output": 1617229,
+        "cache_read": 301989481,
+        "cache_creation": 3638201
+      }
+    },
+    {
+      "hash": "059d3f6",
+      "timestamp": "2026-08-30T19:14:23-03:00",
+      "subject": "Corrige a regra de diagramas e documenta a protecao de branch na main",
+      "words_published": 49571,
+      "code_lines": 5058,
+      "governance_lines": 519,
+      "tokens_bucket": {
+        "input": 106,
+        "output": 68617,
+        "cache_read": 15425909,
+        "cache_creation": 91494
+      },
+      "tokens_cumulative": {
+        "input": 2430,
+        "output": 1685846,
+        "cache_read": 317415390,
+        "cache_creation": 3729695
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 26,
-    "output": 12269,
-    "cache_read": 3556618,
-    "cache_creation": 12121
+    "input": 8,
+    "output": 1224,
+    "cache_read": 1260880,
+    "cache_creation": 2062
   }
 }

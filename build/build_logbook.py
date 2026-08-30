@@ -89,6 +89,21 @@ COMMIT_TXT = {
         'en': 'Working dossier for parts 3 and 4 added: a three-layer diagnosis, seven research axes for part 3 already with verified sources, a ten-diagram specification. Proposes a fourth part for the series, not yet formalised in README.md or STATUS.md by explicit decision.',
         'es': 'Dosier de trabajo para las partes 3 y 4 añadido: diagnóstico en tres capas, siete ejes de investigación de la parte 3 ya con fuentes verificadas, especificación de diez diagramas. Propone una cuarta parte para la serie, todavía no formalizada en README.md ni en STATUS.md por decisión explícita.',
     },
+    '223b64a': {
+        'pt': 'Diário de bordo regerado para incluir os marcos que faltavam: a regeneração anterior do próprio diário, e o dossiê de trabalho das partes 3 e 4. O diário tinha ficado uma sessão atrasado em relação ao git.',
+        'en': 'Project log regenerated to include the milestones that were missing: the log’s own previous regeneration, and the working dossier for parts 3 and 4. The log had fallen one session behind the git history.',
+        'es': 'Diario de bordo regenerado para incluir los hitos que faltaban: la regeneración anterior del propio diario, y el dosier de trabajo de las partes 3 y 4. El diario se había quedado una sesión atrás respecto al historial de git.',
+    },
+    '35cc04d': {
+        'pt': 'Fecha os três primeiros itens da fila do dossiê de partes 3 e 4: os documentos de governança passam a descrever quatro partes em três camadas, 32 fontes de pesquisa entram no inventário, nove diagramas Mermaid viram SVG desenhado à mão, prontos para as duas peças ainda não escritas.',
+        'en': 'Closes the first three items of the parts 3 and 4 dossier’s work queue: the governance documents now describe four parts across three layers, 32 research sources enter the inventory, nine Mermaid sketches become hand-drawn SVG, ready for the two pieces still unwritten.',
+        'es': 'Cierra los tres primeros elementos de la cola de trabajo del dosier de las partes 3 y 4: los documentos de gobernanza ahora describen cuatro partes en tres capas, 32 fuentes de investigación entran al inventario, nueve bocetos Mermaid se convierten en SVG dibujado a mano, listos para las dos piezas todavía sin escribir.',
+    },
+    '059d3f6': {
+        'pt': 'Corrige a redação da regra de diagramas, que sugeria um pipeline automático de Mermaid para SVG nunca usado neste projeto, e registra a proteção de branch configurada na main via API do GitHub.',
+        'en': 'Fixes the diagrams rule’s wording, which had suggested an automatic Mermaid-to-SVG pipeline this project never used, and records the branch protection configured on main via the GitHub API.',
+        'es': 'Corrige la redacción de la regla de diagramas, que sugería una canalización automática de Mermaid a SVG que este proyecto nunca usó, y registra la protección de rama configurada en main vía la API de GitHub.',
+    },
 }
 
 MONTHS = {
