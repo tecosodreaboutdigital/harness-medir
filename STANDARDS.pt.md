@@ -65,17 +65,21 @@ Cada diagrama traz, no md, o propósito e a nota de renderização, incluindo o 
 
 ## Glossário
 
-Estilo de livro. Ordem alfabética ignorando acentos. Sem filete entre verbetes. Termo em negrito, dois pontos, definição na mesma linha, origem ao final em itálico com link. Recuo pendente.
+Página única compartilhada desde 30 de agosto de 2026: `harness-glossary.html`, trilíngue, um verbete por termo para a série inteira (partes 1 a 4, o guia compacto). Nenhum documento mantém mais sua própria seção de glossário; um termo definido na parte 2 fica disponível, sem mudança, para as partes 3 e 4.
 
-No corpo do texto, o termo aparece sublinhado em pontilhado, com dica ao passar o cursor e link para o verbete.
+Estilo de livro. Ordem alfabética ignorando acentos. Sem filete entre verbetes. Termo em negrito, dois pontos, definição na mesma linha, origem ao final em itálico com link. Recuo pendente. Nomes próprios entram pelo sobrenome: "Deming, W. Edwards".
 
-Nomes próprios entram pelo sobrenome: "Deming, W. Edwards".
+No corpo do texto, o termo aparece sublinhado em pontilhado, com dica ao passar o cursor (o atributo `data-tip` carrega a definição curta, mostrada localmente, sem navegar) e o clique leva a `harness-glossary.html#<idioma>-<slug>`, chegando exatamente naquele verbete. Nunca linkar um termo para uma âncora local `#g-slug` dentro do próprio artigo, essa âncora não existe mais lá.
+
+Quando uma parte nova introduz um termo, acrescente-o direto em `harness-glossary.html` (nos três idiomas), mantendo a posição alfabética, e linke a ele a partir do corpo da parte. Não duplique a definição de volta na parte.
 
 ---
 
 ## Referências
 
-**Link só onde a URL foi verificada.** Quando a origem é conhecida mas o endereço não foi conferido, a origem aparece em texto sem link.
+Página única compartilhada desde 30 de agosto de 2026: `harness-sources.html`, trilíngue, agrupada por onde a pesquisa foi levantada (fontes fundadoras, depois um grupo por parte). Toda citação em qualquer parte aponta pra cá; nenhum documento mantém mais sua própria lista numerada de fontes.
+
+**Link só onde a URL foi verificada.** Quando a origem é conhecida mas o endereço não foi conferido, a entrada aparece em texto simples (classe `orig-plain`) com a lacuna declarada na própria entrada, nunca escondida.
 
 Referências apontam para a fonte primária, nunca para blog de consultoria ou vitrine de skills sem repositório de origem visível.
 
@@ -87,10 +91,10 @@ Um inventário que só recomenda não é inventário, é catálogo de fornecedor
 
 Quatro camadas, todas implementadas:
 
-1. Barra de série no topo de cada documento, ao lado do seletor de idioma.
-2. Links no corpo: menções a uma faixa ou ao MEDIR levam à seção correspondente da parte 1. Menções a uma ferramenta levam à ficha dela no guia compacto.
+1. **Barra de série**, um componente único compartilhado (`.topbar`) no topo de cada documento, centralizado na página, fixo ao rolar. Uma linha só: as partes numeradas ligadas por `·`, uma `|` antes dos documentos companheiros, depois guia compacto, glossário e fontes também ligados por `·`, com o seletor de idioma entre chaves `{ }` no fim. A página atual aparece como texto simples, não como link; uma parte ainda não publicada aparece esmaecida e sem link. Os rótulos e destinos da barra trocam de idioma junto com o seletor, dirigidos pelo objeto `SERIES` e pela chamada `setSeries()` dentro do `set()` de cada página, nunca duplicados à mão por idioma.
+2. Links no corpo: menções a uma faixa ou ao MEDIR levam à seção correspondente da parte 1. Menções a uma ferramenta levam à ficha dela no guia compacto. Menções a um termo do glossário levam a `harness-glossary.html`. Citações levam a `harness-sources.html`.
 3. Um bloco "Onde você está" ao fim de cada peça.
-4. Um glossário com redação única por verbete, replicada entre documentos.
+4. O próprio glossário e a própria página de fontes: uma redação por verbete, uma página só, linkada de todo lugar.
 
 ---
 

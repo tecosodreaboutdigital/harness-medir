@@ -50,6 +50,16 @@ English translation in British spelling, Spanish by "tú". MEDIR and harness kep
 
 The language-switching JavaScript in Part 1 and Part 2 gained anchor-based routing: a link like `harness-p1.html#en-opening` now selects the correct tab before scrolling, instead of always opening on the default tab. Without that fix, a reader in English clicking any cross-reference into Part 1 always landed in Portuguese.
 
+### Part 3 · The separation of powers: what it can do, and who answers for it
+
+`harness-p3.html`
+
+Fully trilingual since 30 August 2026. Nine sections, five diagrams, all inline and fully translated including every SVG label. About 5,131 words in English, 5,468 in Portuguese, 5,676 in Spanish, the word counts running close across all three, as expected of a real translation rather than a summary.
+
+Opens with Moffatt v Air Canada, 2024 BCCRT 149: a real company argued in a real tribunal that its chatbot was a separate legal person answerable on its own, and lost, stated explicitly as a foreign precedent, not a Brazilian one. The director re-enters at N2, one small feature extension away from an unauthorised reply that would have bound the company, the direct echo of Air Canada's own mistake. Central thesis: the model proposes, the policy authorises, the tool executes, the record witnesses, four functions that cannot live in the same place, with the failure mode named, concentration. The rule of two (private data, untrusted content, external communication, at most two without a human in the loop) serves as the piece's operational tool, the equivalent of Part 2's guides-and-sensors matrix, alongside a general reversibility-based matrix of authority. Identity gets a named owner and the on-behalf-of versus autonomous delegation distinction; injection is treated as architecture, not configuration; a reversal point logged before execution, not after, anchors what must be on the record; a third-party skill's supply-chain risk closes the hook Part 2 left open; legal obligations run in two columns, Brazil (LGPD article 20, dated as not yet specifically regulated) and Europe (EU AI Act articles 12, 14 and 26). Both honesty obligations the research flagged are honoured in the text: the Air Canada precedent's foreign origin, and the dated claim about Brazilian regulation.
+
+Series bar and glossary and sources links already implemented, per the shared architecture above.
+
 ### Skill intake-briefing
 
 `github.com/tecosodreaboutdigital/intake-briefing`, its own repository since 30 August 2026, renamed from `levantando-briefing` that same day as part of the English-primary restructuring ("levantando" was a plain Portuguese verb, not an established proper noun the way MEDIR and harness are). The project's original artefact, complete, published, MIT. Four files, each with a Portuguese and Spanish translation alongside it: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
@@ -84,17 +94,17 @@ The governance documents now describe four parts organised around a three-layer 
 
 `diagrams/` gained nine standalone SVG files, D1 to D9, rendered from the dossier's Mermaid specifications in the project's visual system, English because this is new content and English is authored first. Governance vocabulary that Part 4 will need, agent owner, certifier, auditor, area sponsor, and receipt kept distinct from record, was fixed at this stage precisely so the diagrams and the eventual prose do not drift apart. See `diagrams/README.md` for the full index and which rendering note each file honours.
 
-What remains from the dossier's queue: writing Part 3, writing Part 4, and consolidating the playbook. See `NEXT-STEPS.md`.
+What remains from the dossier's queue: writing Part 4 and consolidating the playbook. Part 3 is done, see below.
+
+### Diagrams D1 to D9 validated by rendering, and a shared series architecture
+
+Closes the caveat the previous round had logged: the nine standalone SVGs (`diagrams/part3/`, `diagrams/part4/`) were never actually rendered, only checked as well-formed XML. They now have been, via headless Chrome, and checked visually. Five carried real coordinate bugs, all fixed in the SVG source, none in the underlying Mermaid specification, since none of the five were structural: `D3` had connector lines starting at a box's centre and cutting through the label text of boxes stacked below, fixed by starting each line at the box edge nearest its destination; `D4` carried two overlapping connectors into its first diamond, one the right length with no arrowhead, the other with an arrowhead overshooting into the diamond's interior, merged into one; `D5`'s closing caption ran 82 pixels past the 700-wide canvas; `D7`'s heaviest line cut straight through the `IN OPERATION` box, and a curve clipped `UNDER REVIEW`, both rerouted, the canvas gaining 24 pixels of height; `D9`'s third and fourth columns overlapped by 40 pixels, doubling a dashed border visibly. `D1`, `D2`, `D6` and `D8` had no bugs. Each SVG gained a matching `.png` (2x scale, opaque white background) for Medium publication, since Medium's editor renders neither pasted inline SVG nor arbitrary HTML.
+
+Separately, the series gained the top navigation it had been missing since the four-part restructuring: a single shared `.topbar` component, one line, centred, sticky while scrolling, reactive to the language selector (`PART 1 · PART 2 · PART 3 · PART 4 | COMPACT GUIDE · GLOSSARY · SOURCES { PT EN ES }`, the current page rendered as plain text and a part not yet written rendered dim and unlinked). It replaces a bar that previously existed only on `harness-p1.html`, hardcoded in Portuguese regardless of the active tab, left-aligned, not sticky. The per-article glossary and sources sections that Parts 1 and 2 each carried were retired in favour of two new shared, trilingual companion pages, `harness-glossary.html` (56 consolidated, deduplicated entries) and `harness-sources.html` (46 consolidated sources, grouped foundational and Part 3), and every in-body glossary link and citation across the whole series now points there instead. `harness-p1.html`, `harness-p2.html` and `harness-toolkit.html` were retrofitted; `build_p2.py` and `build_toolkit.py` were updated to reproduce the same bar on their next regeneration, closing the gap where a rebuild would have silently reverted the fix. See `STANDARDS.md`'s `Cross-navigation` and `Glossary` sections for the rule this now follows.
 
 ---
 
 ## Not started
-
-### Part 3 · The separation of powers
-
-Scope defined, research complete via the dossier above, not yet written. It is the piece with the greatest commercial value in the series.
-
-Central thesis: the model proposes, the policy authorizes, the tool executes, the record witnesses, four functions that cannot live in the same place. The failure mode has a name, concentration, the same probabilistic system inventing the plan, approving the risk and executing the side effect. Nine sections are planned, with five diagrams, see `diagrams/part3/`. Opens with Moffatt v Air Canada, 2024 BCCRT 149: a real company argued in a real tribunal that its chatbot was a separate legal person answerable on its own, and lost, the direct opposite of this series' own thesis.
 
 ### Part 4 · The agent office
 
@@ -109,7 +119,7 @@ Central thesis: the agent life cycle, states and not steps, deliberately disting
 | Part 1 | ready | ready | ready |
 | Part 2 | ready | ready | ready |
 | Compact guide | ready | ready | ready |
-| Part 3 | missing | missing | missing |
+| Part 3 | ready | ready | ready |
 | Part 4 | missing | missing | missing |
 | Briefing skill | ready | ready | ready |
 | Governance docs | ready | ready | ready |

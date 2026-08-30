@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources | Harness series</title>
+<style>
+:root{
+  --ink:#1b1b19;
+  --ink-soft:#4a4a45;
+  --ink-faint:#8a887f;
+  --rule:#c9c7bf;
+  --accent:#5c6b52;
+  --paper:#ffffff;
+  --fill:#eef1f4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:#f2f1ed;
+  color:var(--ink);
+  font-family:"Aptos","Aptos Light","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.62;
+  font-weight:400;
+}
+.page{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  padding:64px 72px 80px;
+}
+
+.langbar{
+  display:flex;
+  justify-content:flex-end;
+  gap:2px;
+  margin:0 0 22px;
+}
+.langbar button{
+  font-size:10px;
+  letter-spacing:.18em;
+  padding:5px 10px;
+  border:.5pt solid var(--rule);
+  color:var(--ink-faint);
+  background:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.langbar button.on{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+}
+.langbar button:hover{border-color:var(--accent);color:var(--ink)}
+
+.langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+.topbar{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 0 12px;margin:0 0 22px;border-bottom:.5pt solid var(--rule);position:sticky;top:0;z-index:40;background:var(--paper)}
+.topbar .serie{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px}
+.topbar a{color:var(--ink-faint);border:0;text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.topbar .cur{color:var(--ink)}
+.topbar .pending{color:var(--rule)}
+.topbar .sep{color:var(--rule)}
+.topbar .brace{color:var(--ink-faint);font-weight:300;margin:0 1px}
+.orig-plain{color:var(--ink-faint);font-style:italic}
+@media print{.topbar{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+main[hidden]{display:none}
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 18px;
+}
+h1{
+  font-size:30px;
+  line-height:1.18;
+  font-weight:600;
+  margin:0 0 14px;
+  letter-spacing:-.01em;
+}
+.deck{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin:0 0 26px;
+  max-width:58ch;
+}
+.byline{
+  font-size:11.5px;
+  color:var(--ink-faint);
+  border-top:.5pt solid var(--rule);
+  border-bottom:.5pt solid var(--rule);
+  padding:9px 0;
+  margin:0 0 34px;
+  letter-spacing:.02em;
+}
+h2{
+  font-size:19px;
+  font-weight:600;
+  line-height:1.3;
+  margin:44px 0 8px;
+  letter-spacing:-.005em;
+}
+h3{font-size:15px;font-weight:600;margin:26px 0 6px}
+p{margin:0 0 14px;text-align:justify;hyphens:auto}
+a{color:var(--ink);text-decoration:none;border-bottom:.5pt solid var(--rule)}
+a:hover{border-bottom-color:var(--accent)}
+.toc{
+  border:.5pt solid var(--rule);
+  padding:20px 24px;
+  margin:0 0 40px;
+}
+.toc p{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin:0 0 12px;
+  text-align:left;
+}
+.toc ol{margin:0;padding-left:18px;font-size:13.5px;line-height:1.9}
+.toc a{border:0}
+.toc a:hover{border-bottom:.5pt solid var(--accent)}
+blockquote{
+  margin:24px 0;
+  padding:14px 18px;
+  border:0;
+  background:var(--fill);
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--ink);
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+blockquote p{text-align:left;margin:0;font-size:12.5px}
+.rule-box{
+  border:0;
+  background:var(--fill);
+  padding:14px 18px;
+  margin:24px 0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+.rule-box p{margin:0;text-align:left;font-size:12.5px;line-height:1.55}
+.rule-box .lbl{
+  display:block;
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+figure{margin:30px 0;page-break-inside:avoid}
+figure svg{width:100%;height:auto;display:block}
+figcaption{
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+  margin-top:10px;
+  line-height:1.5;
+  text-align:left;
+  border:0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  font-size:12.5px;
+}
+th{
+  text-align:center;
+  font-weight:600;
+  font-size:11.5px;
+  padding:7px 9px;
+  border-top:.5pt solid var(--ink);
+  border-bottom:.5pt solid var(--ink);
+}
+td{
+  padding:7px 9px;
+  border-bottom:.5pt solid var(--rule);
+  vertical-align:top;
+  line-height:1.45;
+}
+td:first-child{white-space:nowrap}
+table.wrap td:first-child{white-space:normal}
+ul,ol.body{margin:0 0 16px;padding-left:20px}
+li{margin-bottom:6px}
+.checklist{list-style:none;padding-left:0}
+.checklist li{
+  padding-left:26px;
+  position:relative;
+  margin-bottom:9px;
+  font-size:13.5px;
+}
+.checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;top:4px;
+  width:11px;height:11px;
+  border:.5pt solid var(--ink);
+}
+.checklist strong{font-weight:600}
+
+.g{
+  border-bottom:.5pt dotted var(--accent);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.g::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.g:hover::after,.g:focus::after{opacity:1;visibility:visible}
+
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{
+  border:0;
+  margin:0 0 9px;
+  padding-left:1.4em;
+  text-indent:-1.4em;
+  font-size:12.5px;
+  line-height:1.55;
+  text-align:justify;
+}
+.gitem strong{font-weight:600}
+.gitem .orig{color:var(--ink-faint);font-size:11.5px}
+.sources{font-size:11.5px;line-height:1.6;color:var(--ink-soft)}
+.sources li{margin-bottom:8px}
+.next{
+  border-top:.5pt solid var(--ink);
+  margin-top:44px;
+  padding-top:22px;
+}
+.foot{
+  margin-top:44px;
+  padding-top:14px;
+  border-top:.5pt solid var(--rule);
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+}
+svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+
+@media print{
+  @page{size:A4;margin:2cm 1.5cm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .page{max-width:none;padding:0;margin:0}
+  h1{font-size:20pt}
+  .deck{font-size:11.5pt}
+  h2{font-size:14pt;margin:16pt 0 6pt;page-break-after:avoid}
+  h3{font-size:12pt;margin:10pt 0 3pt;page-break-after:avoid}
+  p{orphans:3;widows:3}
+  th{font-size:8pt}
+  td{font-size:9pt}
+  blockquote{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  blockquote p{font-size:9pt}
+  .rule-box{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  .rule-box p{font-size:9pt}
+  figure{margin:14pt 0}
+  figcaption{font-size:9pt;font-style:italic;border:0}
+  .foot{font-size:9pt;font-style:italic}
+  .foot p{font-size:9pt}
+  .g{border-bottom:.5pt dotted #999}
+  .g::after{display:none}
+  
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{font-size:9.5pt;margin:0 0 5pt;border:0;page-break-inside:avoid}
+  .gitem .orig{font-size:9pt;font-style:italic}
+  pre{font-size:8.5pt;padding:6pt 8pt;background:#eef1f4;border:0;page-break-inside:avoid}
+  pre code{font-size:8.5pt}
+  p code{font-size:9pt}
+  a{border:0}
+  .langbar{display:none}
+  .toc{page-break-after:always}
+}
+@media (max-width:640px){
+  .page{padding:32px 22px 48px}
+  h1{font-size:24px}
+  p{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<nav class="serie">
+<a href="harness-p1.html#en-" data-key="p1">Part 1</a>
+<span class="sep">·</span>
+<a href="harness-p2.html#en-" data-key="p2">Part 2</a>
+<span class="sep">·</span>
+<a href="harness-p3.html#en-" data-key="p3">Part 3</a>
+<span class="sep">·</span>
+<span class="pending" data-key="p4">Part 4</span>
+<span class="sep pipe">|</span>
+<a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a>
+<span class="sep">·</span>
+<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a>
+<span class="sep">·</span>
+<span class="cur" data-key="sources">Sources</span>
+</nav>
+<span class="brace">{</span>
+<div class="langbar">
+<button type="button" data-lang="pt">PT</button>
+<button type="button" class="on" data-lang="en">EN</button>
+<button type="button" data-lang="es">ES</button>
+</div>
+<span class="brace">}</span>
+</div>
+<main class="page" id="doc-pt" hidden>
+<p class="eyebrow">Harness · Documento companheiro</p>
+
+<h1>Fontes</h1>
+
+<p class="deck">Toda citação nas partes 1 a 4 aponta para cá. Link só onde a URL foi verificada, conforme o próprio padrão de fontes deste projeto: uma fonte conhecida mas não confirmada diretamente aparece em texto simples, com a lacuna declarada em vez de escondida.</p>
+
+<p class="byline">Fernando Teco Sodré · Atualizado em agosto de 2026</p>
+
+<h2 id="pt-foundational">Fontes fundadoras: engenharia de harness e MEDIR</h2>
+
+<ol class="sources">
+<li id="pt-src-hashimoto">Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 de fevereiro de 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
+<li id="pt-src-lopopolo">Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 de fevereiro de 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
+<li id="pt-src-bockeler-harness">Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 de abril de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
+<li id="pt-src-bockeler-sensors">Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 de maio de 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li id="pt-src-anthropic-effective">Anthropic. <em>Effective harnesses for long-running agents</em>, novembro de 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
+<li id="pt-src-anthropic-design">Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
+<li id="pt-src-anthropic-skills">Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, outubro de 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li id="pt-src-boluk">Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 de fevereiro de 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
+<li id="pt-src-deepseek">DeepSeek. <em>DeepSeek Harness, developer preview</em>, agosto de 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
+<li id="pt-src-newstack">The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, agosto de 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
+<li id="pt-src-awesome">Comunidade. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
+<li id="pt-src-osmani">Addy Osmani. <em>Long-running agents</em>, abril de 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
+<li id="pt-src-agentskills">Agent Skills, padrão aberto. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li id="pt-src-holdfast">André Almeida. <em>holdfast</em>, execução particionada durável. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li id="pt-src-planning-files">Othman Adi. <em>planning-with-files</em>, estado durável em disco. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
+<li id="pt-src-superpowers">Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li id="pt-src-sensors-cli">Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+</ol>
+
+<h2 id="pt-part3-sources">Fontes da parte 3: segurança, identidade e direito</h2>
+
+<p>Levantadas em 30 de agosto de 2026 para o dossiê de trabalho que fundamenta a parte 3. Duas entradas abaixo carregam uma lacuna de verificação que importa ao texto, não só à citação, anotada onde se aplica.</p>
+
+<ol class="sources">
+<li id="pt-src-air-canada-canlii">Comentário da CanLII, 2025CanLIIDocs1963. Análise de <em>Moffatt v Air Canada</em>, 2024 BCCRT 149. <a href="https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963">canlii.org</a></li>
+<li id="pt-src-aba">American Bar Association. <em>BC tribunal confirms companies remain liable for information provided by an AI chatbot</em>, fevereiro de 2024. <a href="https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/">americanbar.org</a></li>
+<li id="pt-src-mccarthy">McCarthy Tétrault. <em>Moffatt v Air Canada: misrepresentation by AI chatbot</em>. <a href="https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot">mccarthy.ca</a></li>
+<li id="pt-src-air-canada-original">CanLII, decisão original, 2024 BCCRT 149. Endereço citado em fontes secundárias, não aberto diretamente. O precedente é canadense, não brasileiro: nenhum caso brasileiro envolvendo agente com efeito externo foi encontrado. <span class="orig-plain">canlii.ca/t/k2spq</span></li>
+<li id="pt-src-xoomar">Xoomar. <em>Chatbot liability: the Air Canada case</em>. Fonte secundária que consolida o incidente da política fantasma do Cursor em abril de 2025 e o produto de seguro contra alucinação de IA de maio de 2025. <a href="https://xoomar.com/technology/chatbot-liability-air-canada">xoomar.com</a></li>
+<li id="pt-src-infosecurity">Infosecurity Magazine. <em>Prompt injection remains unsolved, OWASP researcher tells Infosecurity Europe</em>, julho de 2026. <a href="https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/">infosecurity-magazine.com</a></li>
+<li id="pt-src-helpnetsecurity">Help Net Security. <em>OWASP: prompt injection and the AI security failures no one has solved</em>, junho de 2026. <a href="https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/">helpnetsecurity.com</a></li>
+<li id="pt-src-lethal-trifecta">memx. <em>The lethal trifecta: how AI agents exfiltrate data</em>. Formulação de Simon Willison. <a href="https://memx.app/blog/lethal-trifecta-ai-agent-data-exfiltration/">memx.app</a></li>
+<li id="pt-src-rule-of-two">Meta, publicação original da regra de dois. Duas fontes secundárias independentes atribuem à Meta com formulação idêntica, suficiente para citar o conteúdo, não suficiente para linkar uma fonte primária. <span class="orig-plain">Não localizada até o momento</span></li>
+<li id="pt-src-owasp-skills">OWASP. Página do projeto <em>Agentic Skills Top 10</em>. Também lista os CVEs usados na seção de cadeia de suprimento da parte 3. <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org</a></li>
+<li id="pt-src-trydeepteam">trydeepteam. <em>OWASP Top 10 for agentic applications</em>. Categorias ASI01, ASI02, ASI03. <a href="https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications">trydeepteam.com</a></li>
+<li id="pt-src-secops">secops.group. <em>Securing agentic AI: the OWASP Top 10 and beyond</em>. <a href="https://secops.group/blog/securing-agentic-ai-the-owasp-top-10-and-beyond/">secops.group</a></li>
+<li id="pt-src-lasoft">lasoft.org. <em>Who pays when the AI is wrong: rethinking how we trust AI</em>. Fonte secundária para o relato do fundador da SaaStr sobre um agente de código que apagou um banco de dados de produção durante um congelamento de mudanças declarado. <a href="https://lasoft.org/blog/who-pays-when-the-ai-is-wrong-rethinking-how-we-trust-ai/">lasoft.org</a></li>
+<li id="pt-src-confidata">Confidata. <em>AI, LGPD and privacy</em>. Artigo 20 da LGPD, o direito de revisão de decisões automatizadas. <a href="https://confidata.com.br/blog/ia-lgpd-inteligencia-artificial-privacidade">confidata.com.br</a></li>
+<li id="pt-src-gutemberg">Gutemberg Amorim. <em>LGPD, IA e decisões automatizadas: discriminação algorítmica e o direito de revisão no art. 20 da LGPD</em>. <a href="https://gutembergamorim.com.br/lgpd-ia-decisoes-automatizadas-e-discriminacao-algoritmica-o-direito-de-revisao-no-art-20-da-lgpd/">gutembergamorim.com.br</a></li>
+<li id="pt-src-farracha">Farracha de Castro. <em>Decisões automatizadas e inteligência artificial: perspectivas regulatórias segundo a ANPD</em>. Agenda regulatória 2025-2026 da ANPD, Nota Técnica 12/2025, mapa de temas prioritários 2026-2027. <a href="https://farrachadecastro.com.br/farracha-de-castro/decisoes-automatizadas-e-inteligencia-artificial-perspectivas-regulatorias-segundo-a-anpd/">farrachadecastro.com.br</a></li>
+<li id="pt-src-barbieri">Barbieri Advogados. <em>Regulamentação de inteligência artificial no Brasil</em>. A transformação da ANPD em agência reguladora independente, setembro de 2025. <a href="https://www.barbieriadvogados.com/regulamentacao-inteligencia-artificial-brasil/">barbieriadvogados.com</a></li>
+<li id="pt-src-csa-deadline">Cloud Security Alliance. <em>Research note: EU AI Act high-risk compliance deadline, 2 August 2026</em>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20/">cloudsecurityalliance.org</a></li>
+<li id="pt-src-augmentcode">Augment Code. <em>EU AI Act 2026 guide</em>. <a href="https://www.augmentcode.com/guides/eu-ai-act-2026">augmentcode.com</a></li>
+<li id="pt-src-aiact-26">AI Act europeu, artigo 26. Obrigações de quem implanta, retenção de registro por seis meses, notificação de incidente em quinze dias. <a href="https://artificialintelligenceact.eu/article/26/">artificialintelligenceact.eu</a></li>
+<li id="pt-src-aiact-14">AI Act europeu, artigo 14. Supervisão humana, incluindo a cláusula de viés de automação. <a href="https://artificialintelligenceact.eu/article/14/">artificialintelligenceact.eu</a></li>
+<li id="pt-src-aiact-servicedesk">EU AI Act Service Desk. Artigo 26, leitura oficial. <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26">ai-act-service-desk.ec.europa.eu</a></li>
+<li id="pt-src-balancedsec">balancedsec. <em>NIST AI RMF or ISO 42001?</em> O NIST AI RMF é autodeclarado, a ISO/IEC 42001 é certificável via sua Declaração de Aplicabilidade. <a href="https://blog.balancedsec.com/p/nist-ai-rmf-or-iso-42001">blog.balancedsec.com</a></li>
+<li id="pt-src-lumenova">Lumenova. <em>Agentic AI risks against OWASP and NIST</em>. Iniciativa de Padrões para Agentes de IA do NIST, anunciada em 17 de fevereiro de 2026. <a href="https://www.lumenova.ai/blog/agentic-ai-risks-owasp-nist/">lumenova.ai</a></li>
+<li id="pt-src-arxiv-taxonomy">arXiv 2607.02201. <em>A risk taxonomy for agentic systems</em>, levantamento comparativo dos quadros de governança contra a pilha agêntica. <a href="https://arxiv.org/pdf/2607.02201">arxiv.org</a></li>
+<li id="pt-src-aiuc1">AIUC-1. Posicionado como o equivalente de certificação SOC 2 para agentes de IA. Referenciado em fonte acadêmica, não lido diretamente. <span class="orig-plain">aiuc-1.com</span></li>
+<li id="pt-src-otel-blog">OpenTelemetry. <em>Generative AI observability</em>, 2026. <a href="https://opentelemetry.io/blog/2026/genai-observability/">opentelemetry.io</a></li>
+<li id="pt-src-digitalapplied">Digital Applied. <em>AI agent observability 2026: tracing and monitoring stack guide</em>. Os principais ambientes de agente já exportam na convenção OpenTelemetry. <a href="https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide">digitalapplied.com</a></li>
+<li id="pt-src-builtin">Built In. <em>Enterprise identity and access management</em>. Classificação copiloto, iniciado por humano e ambiente, mapeada contra N0 a N3. <a href="https://builtin.com/articles/enterprise-identity-access-management">builtin.com</a></li>
+<li id="pt-src-neuralcoretech">NeuralCoreTech. <em>AI agent identity governance 2026</em>. Padrões em nome de versus delegação autônoma, e chave de interface de longa duração embutida como causa raiz mais comum. <a href="https://neuralcoretech.com/ai-agent-identity-governance-2026/">neuralcoretech.com</a></li>
+<li id="pt-src-aieconomy">The AI Economy. <em>ServiceNow's AI Control Tower and 2026 enforcement</em>. Plataformas de governança que agora conseguem descobrir, monitorar e desligar agentes em nuvens de terceiros. <a href="https://theaieconomy.substack.com/p/servicenow-ai-control-tower-knowledge-2026-enforcement">theaieconomy.substack.com</a></li>
+<li id="pt-src-miniorange">miniOrange. <em>IAM trends for AI agents, 2026</em>. A identidade criada numa terça-feira que sobrevive ao desenvolvedor que a criou. <a href="https://www.miniorange.com/blog/iam-trends-ai-agents-2026/">miniorange.com</a></li>
+<li id="pt-src-arxiv-delegation">arXiv 2501.09674. <em>Authenticated delegation and agent authorisation</em>. Referenciado em fonte acadêmica, não lido diretamente. <span class="orig-plain">arxiv.org/abs/2501.09674</span></li>
+</ol>
+
+<div class="foot">
+<p>Série Harness · Documento companheiro · Link só onde a URL foi verificada. Onde a fonte é conhecida mas não confirmada diretamente, ela aparece sem link e a lacuna é declarada na própria entrada.</p>
+</div>
+</main>
+<main class="page" id="doc-en">
+<p class="eyebrow">Harness · Companion document</p>
+
+<h1>Sources</h1>
+
+<p class="deck">Every citation across parts 1 to 4 points here. Link only where the URL has been verified, per this project's own sourcing standard: a source known but not directly confirmed appears in plain text, with the gap stated rather than hidden.</p>
+
+<p class="byline">Fernando Teco Sodré · Updated August 2026</p>
+
+<h2 id="en-foundational">Foundational sources: harness engineering and MEDIR</h2>
+
+<ol class="sources">
+<li id="en-src-hashimoto">Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 February 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
+<li id="en-src-lopopolo">Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 February 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
+<li id="en-src-bockeler-harness">Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 April 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
+<li id="en-src-bockeler-sensors">Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 May 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li id="en-src-anthropic-effective">Anthropic. <em>Effective harnesses for long-running agents</em>, November 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
+<li id="en-src-anthropic-design">Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
+<li id="en-src-anthropic-skills">Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, October 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li id="en-src-boluk">Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 February 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
+<li id="en-src-deepseek">DeepSeek. <em>DeepSeek Harness, developer preview</em>, August 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
+<li id="en-src-newstack">The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, August 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
+<li id="en-src-awesome">Community. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
+<li id="en-src-osmani">Addy Osmani. <em>Long-running agents</em>, April 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
+<li id="en-src-agentskills">Agent Skills, open standard. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li id="en-src-holdfast">André Almeida. <em>holdfast</em>, durable partitioned execution. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li id="en-src-planning-files">Othman Adi. <em>planning-with-files</em>, durable state on disk. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
+<li id="en-src-superpowers">Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li id="en-src-sensors-cli">Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+</ol>
+
+<h2 id="en-part3-sources">Part 3 sources: security, identity and law</h2>
+
+<p>Gathered 30 August 2026 for the working dossier that underlies part 3. Two entries below carry a verification gap that matters to the text, not only to the citation, noted where it applies.</p>
+
+<ol class="sources">
+<li id="en-src-air-canada-canlii">CanLII commentary, 2025CanLIIDocs1963. Analysis of <em>Moffatt v Air Canada</em>, 2024 BCCRT 149. <a href="https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963">canlii.org</a></li>
+<li id="en-src-aba">American Bar Association. <em>BC tribunal confirms companies remain liable for information provided by an AI chatbot</em>, February 2024. <a href="https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/">americanbar.org</a></li>
+<li id="en-src-mccarthy">McCarthy Tétrault. <em>Moffatt v Air Canada: misrepresentation by AI chatbot</em>. <a href="https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot">mccarthy.ca</a></li>
+<li id="en-src-air-canada-original">CanLII, original decision, 2024 BCCRT 149. Address cited in secondary sources, not opened directly. The precedent is Canadian, not Brazilian: no Brazilian case involving an agent with an external effect has been found. <span class="orig-plain">canlii.ca/t/k2spq</span></li>
+<li id="en-src-xoomar">Xoomar. <em>Chatbot liability: the Air Canada case</em>. Secondary source consolidating the Cursor April 2025 phantom-policy incident and the May 2025 AI-hallucination insurance product. <a href="https://xoomar.com/technology/chatbot-liability-air-canada">xoomar.com</a></li>
+<li id="en-src-infosecurity">Infosecurity Magazine. <em>Prompt injection remains unsolved, OWASP researcher tells Infosecurity Europe</em>, July 2026. <a href="https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/">infosecurity-magazine.com</a></li>
+<li id="en-src-helpnetsecurity">Help Net Security. <em>OWASP: prompt injection and the AI security failures no one has solved</em>, June 2026. <a href="https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/">helpnetsecurity.com</a></li>
+<li id="en-src-lethal-trifecta">memx. <em>The lethal trifecta: how AI agents exfiltrate data</em>. Simon Willison's formulation. <a href="https://memx.app/blog/lethal-trifecta-ai-agent-data-exfiltration/">memx.app</a></li>
+<li id="en-src-rule-of-two">Meta, original publication of the rule of two. Two independent secondary sources attribute it to Meta with identical wording, enough to cite the content, not enough to link a primary source. <span class="orig-plain">Not located as of this writing</span></li>
+<li id="en-src-owasp-skills">OWASP. <em>Agentic Skills Top 10</em> project page. Also lists the CVEs used in the supply-chain section of part 3. <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org</a></li>
+<li id="en-src-trydeepteam">trydeepteam. <em>OWASP Top 10 for agentic applications</em>. ASI01, ASI02, ASI03 categories. <a href="https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications">trydeepteam.com</a></li>
+<li id="en-src-secops">secops.group. <em>Securing agentic AI: the OWASP Top 10 and beyond</em>. <a href="https://secops.group/blog/securing-agentic-ai-the-owasp-top-10-and-beyond/">secops.group</a></li>
+<li id="en-src-lasoft">lasoft.org. <em>Who pays when the AI is wrong: rethinking how we trust AI</em>. Secondary source for the SaaStr founder's account of a coding agent deleting a production database during a stated change freeze. <a href="https://lasoft.org/blog/who-pays-when-the-ai-is-wrong-rethinking-how-we-trust-ai/">lasoft.org</a></li>
+<li id="en-src-confidata">Confidata. <em>AI, LGPD and privacy</em>. LGPD article 20, the right to review automated decisions. <a href="https://confidata.com.br/blog/ia-lgpd-inteligencia-artificial-privacidade">confidata.com.br</a></li>
+<li id="en-src-gutemberg">Gutemberg Amorim. <em>LGPD, AI and automated decisions: algorithmic discrimination and the right of review under LGPD article 20</em>. <a href="https://gutembergamorim.com.br/lgpd-ia-decisoes-automatizadas-e-discriminacao-algoritmica-o-direito-de-revisao-no-art-20-da-lgpd/">gutembergamorim.com.br</a></li>
+<li id="en-src-farracha">Farracha de Castro. <em>Automated decisions and artificial intelligence: regulatory perspectives according to the ANPD</em>. ANPD's 2025 to 2026 regulatory agenda, Technical Note 12/2025, the 2026 to 2027 priority map. <a href="https://farrachadecastro.com.br/farracha-de-castro/decisoes-automatizadas-e-inteligencia-artificial-perspectivas-regulatorias-segundo-a-anpd/">farrachadecastro.com.br</a></li>
+<li id="en-src-barbieri">Barbieri Advogados. <em>AI regulation in Brazil</em>. The ANPD's move to independent regulatory agency status, September 2025. <a href="https://www.barbieriadvogados.com/regulamentacao-inteligencia-artificial-brasil/">barbieriadvogados.com</a></li>
+<li id="en-src-csa-deadline">Cloud Security Alliance. <em>Research note: EU AI Act high-risk compliance deadline, 2 August 2026</em>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20/">cloudsecurityalliance.org</a></li>
+<li id="en-src-augmentcode">Augment Code. <em>EU AI Act 2026 guide</em>. <a href="https://www.augmentcode.com/guides/eu-ai-act-2026">augmentcode.com</a></li>
+<li id="en-src-aiact-26">EU AI Act, article 26. Deployer obligations, six-month record retention, fifteen-day incident reporting. <a href="https://artificialintelligenceact.eu/article/26/">artificialintelligenceact.eu</a></li>
+<li id="en-src-aiact-14">EU AI Act, article 14. Human oversight, including the automation-bias clause. <a href="https://artificialintelligenceact.eu/article/14/">artificialintelligenceact.eu</a></li>
+<li id="en-src-aiact-servicedesk">EU AI Act Service Desk. Article 26, official reading. <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26">ai-act-service-desk.ec.europa.eu</a></li>
+<li id="en-src-balancedsec">balancedsec. <em>NIST AI RMF or ISO 42001?</em> NIST AI RMF is self-declared, ISO/IEC 42001 is certifiable via its Statement of Applicability. <a href="https://blog.balancedsec.com/p/nist-ai-rmf-or-iso-42001">blog.balancedsec.com</a></li>
+<li id="en-src-lumenova">Lumenova. <em>Agentic AI risks against OWASP and NIST</em>. NIST's AI Agent Standards Initiative, announced 17 February 2026. <a href="https://www.lumenova.ai/blog/agentic-ai-risks-owasp-nist/">lumenova.ai</a></li>
+<li id="en-src-arxiv-taxonomy">arXiv 2607.02201. <em>A risk taxonomy for agentic systems</em>, comparative survey of governance frameworks against the agentic stack. <a href="https://arxiv.org/pdf/2607.02201">arxiv.org</a></li>
+<li id="en-src-aiuc1">AIUC-1. Positioned as a SOC 2 equivalent for AI agents. Referenced in an academic source, not read directly. <span class="orig-plain">aiuc-1.com</span></li>
+<li id="en-src-otel-blog">OpenTelemetry. <em>Generative AI observability</em>, 2026. <a href="https://opentelemetry.io/blog/2026/genai-observability/">opentelemetry.io</a></li>
+<li id="en-src-digitalapplied">Digital Applied. <em>AI agent observability 2026: tracing and monitoring stack guide</em>. Major agent runtimes already export in the OpenTelemetry convention. <a href="https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide">digitalapplied.com</a></li>
+<li id="en-src-builtin">Built In. <em>Enterprise identity and access management</em>. Copilot, human-initiated and unattended trigger classification, mapped to N0 to N3. <a href="https://builtin.com/articles/enterprise-identity-access-management">builtin.com</a></li>
+<li id="en-src-neuralcoretech">NeuralCoreTech. <em>AI agent identity governance 2026</em>. On-behalf-of versus autonomous delegation patterns, and long-lived embedded API keys as the most common root cause. <a href="https://neuralcoretech.com/ai-agent-identity-governance-2026/">neuralcoretech.com</a></li>
+<li id="en-src-aieconomy">The AI Economy. <em>ServiceNow's AI Control Tower and 2026 enforcement</em>. Governance platforms that can now discover, monitor and shut down agents in third-party clouds. <a href="https://theaieconomy.substack.com/p/servicenow-ai-control-tower-knowledge-2026-enforcement">theaieconomy.substack.com</a></li>
+<li id="en-src-miniorange">miniOrange. <em>IAM trends for AI agents, 2026</em>. The Tuesday-afternoon identity that outlives the developer who created it. <a href="https://www.miniorange.com/blog/iam-trends-ai-agents-2026/">miniorange.com</a></li>
+<li id="en-src-arxiv-delegation">arXiv 2501.09674. <em>Authenticated delegation and agent authorisation</em>. Referenced in an academic source, not read directly. <span class="orig-plain">arxiv.org/abs/2501.09674</span></li>
+</ol>
+
+<div class="foot">
+<p>Harness series · Companion document · Link only where the URL has been verified. Where a source is known but not directly confirmed, it appears without a link and the gap is stated in the entry.</p>
+</div>
+</main>
+<main class="page" id="doc-es" hidden>
+<p class="eyebrow">Harness · Documento complementario</p>
+
+<h1>Fuentes</h1>
+
+<p class="deck">Cada cita en las partes 1 a 4 apunta aquí. Enlace solo donde la URL fue verificada, según el propio estándar de fuentes de este proyecto: una fuente conocida pero no confirmada directamente aparece en texto simple, con la brecha declarada en vez de escondida.</p>
+
+<p class="byline">Fernando Teco Sodré · Actualizado en agosto de 2026</p>
+
+<h2 id="es-foundational">Fuentes fundacionales: ingeniería de harness y MEDIR</h2>
+
+<ol class="sources">
+<li id="es-src-hashimoto">Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 de febrero de 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
+<li id="es-src-lopopolo">Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 de febrero de 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
+<li id="es-src-bockeler-harness">Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 de abril de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
+<li id="es-src-bockeler-sensors">Birgitta Böckeler, Thoughtworks. <em>Maintainability sensors for coding agents</em>, 27 de mayo de 2026. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li id="es-src-anthropic-effective">Anthropic. <em>Effective harnesses for long-running agents</em>, noviembre de 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
+<li id="es-src-anthropic-design">Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
+<li id="es-src-anthropic-skills">Anthropic. <em>Equipping agents for the real world with Agent Skills</em>, octubre de 2025. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li id="es-src-boluk">Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 de febrero de 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
+<li id="es-src-deepseek">DeepSeek. <em>DeepSeek Harness, developer preview</em>, agosto de 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
+<li id="es-src-newstack">The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, agosto de 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
+<li id="es-src-awesome">Comunidad. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
+<li id="es-src-osmani">Addy Osmani. <em>Long-running agents</em>, abril de 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
+<li id="es-src-agentskills">Agent Skills, estándar abierto. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li id="es-src-holdfast">André Almeida. <em>holdfast</em>, ejecución particionada duradera. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li id="es-src-planning-files">Othman Adi. <em>planning-with-files</em>, estado duradero en disco. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
+<li id="es-src-superpowers">Jesse Vincent. <em>superpowers</em>. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li id="es-src-sensors-cli">Código del panel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+</ol>
+
+<h2 id="es-part3-sources">Fuentes de la parte 3: seguridad, identidad y derecho</h2>
+
+<p>Recopiladas el 30 de agosto de 2026 para el dosier de trabajo que fundamenta la parte 3. Dos entradas a continuación cargan una brecha de verificación que importa al texto, no solo a la cita, anotada donde aplica.</p>
+
+<ol class="sources">
+<li id="es-src-air-canada-canlii">Comentario de CanLII, 2025CanLIIDocs1963. Análisis de <em>Moffatt v Air Canada</em>, 2024 BCCRT 149. <a href="https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963">canlii.org</a></li>
+<li id="es-src-aba">American Bar Association. <em>BC tribunal confirms companies remain liable for information provided by an AI chatbot</em>, febrero de 2024. <a href="https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/">americanbar.org</a></li>
+<li id="es-src-mccarthy">McCarthy Tétrault. <em>Moffatt v Air Canada: misrepresentation by AI chatbot</em>. <a href="https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot">mccarthy.ca</a></li>
+<li id="es-src-air-canada-original">CanLII, decisión original, 2024 BCCRT 149. Dirección citada en fuentes secundarias, no abierta directamente. El precedente es canadiense, no brasileño: no se encontró ningún caso brasileño que involucre a un agente con efecto externo. <span class="orig-plain">canlii.ca/t/k2spq</span></li>
+<li id="es-src-xoomar">Xoomar. <em>Chatbot liability: the Air Canada case</em>. Fuente secundaria que consolida el incidente de la política fantasma de Cursor en abril de 2025 y el producto de seguro contra alucinación de IA de mayo de 2025. <a href="https://xoomar.com/technology/chatbot-liability-air-canada">xoomar.com</a></li>
+<li id="es-src-infosecurity">Infosecurity Magazine. <em>Prompt injection remains unsolved, OWASP researcher tells Infosecurity Europe</em>, julio de 2026. <a href="https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/">infosecurity-magazine.com</a></li>
+<li id="es-src-helpnetsecurity">Help Net Security. <em>OWASP: prompt injection and the AI security failures no one has solved</em>, junio de 2026. <a href="https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/">helpnetsecurity.com</a></li>
+<li id="es-src-lethal-trifecta">memx. <em>The lethal trifecta: how AI agents exfiltrate data</em>. Formulación de Simon Willison. <a href="https://memx.app/blog/lethal-trifecta-ai-agent-data-exfiltration/">memx.app</a></li>
+<li id="es-src-rule-of-two">Meta, publicación original de la regla de dos. Dos fuentes secundarias independientes la atribuyen a Meta con formulación idéntica, suficiente para citar el contenido, no suficiente para enlazar una fuente primaria. <span class="orig-plain">No localizada hasta la fecha</span></li>
+<li id="es-src-owasp-skills">OWASP. Página del proyecto <em>Agentic Skills Top 10</em>. También lista los CVE usados en la sección de cadena de suministro de la parte 3. <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org</a></li>
+<li id="es-src-trydeepteam">trydeepteam. <em>OWASP Top 10 for agentic applications</em>. Categorías ASI01, ASI02, ASI03. <a href="https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications">trydeepteam.com</a></li>
+<li id="es-src-secops">secops.group. <em>Securing agentic AI: the OWASP Top 10 and beyond</em>. <a href="https://secops.group/blog/securing-agentic-ai-the-owasp-top-10-and-beyond/">secops.group</a></li>
+<li id="es-src-lasoft">lasoft.org. <em>Who pays when the AI is wrong: rethinking how we trust AI</em>. Fuente secundaria para el relato del fundador de SaaStr sobre un agente de código que borró una base de datos de producción durante una congelación de cambios declarada. <a href="https://lasoft.org/blog/who-pays-when-the-ai-is-wrong-rethinking-how-we-trust-ai/">lasoft.org</a></li>
+<li id="es-src-confidata">Confidata. <em>AI, LGPD and privacy</em>. Artículo 20 de la LGPD, el derecho de revisión de decisiones automatizadas. <a href="https://confidata.com.br/blog/ia-lgpd-inteligencia-artificial-privacidade">confidata.com.br</a></li>
+<li id="es-src-gutemberg">Gutemberg Amorim. <em>LGPD, IA y decisiones automatizadas: discriminación algorítmica y el derecho de revisión en el art. 20 de la LGPD</em>. <a href="https://gutembergamorim.com.br/lgpd-ia-decisoes-automatizadas-e-discriminacao-algoritmica-o-direito-de-revisao-no-art-20-da-lgpd/">gutembergamorim.com.br</a></li>
+<li id="es-src-farracha">Farracha de Castro. <em>Decisiones automatizadas e inteligencia artificial: perspectivas regulatorias según la ANPD</em>. Agenda regulatoria 2025-2026 de la ANPD, Nota Técnica 12/2025, mapa de temas prioritarios 2026-2027. <a href="https://farrachadecastro.com.br/farracha-de-castro/decisoes-automatizadas-e-inteligencia-artificial-perspectivas-regulatorias-segundo-a-anpd/">farrachadecastro.com.br</a></li>
+<li id="es-src-barbieri">Barbieri Advogados. <em>Regulación de inteligencia artificial en Brasil</em>. La transformación de la ANPD en agencia reguladora independiente, septiembre de 2025. <a href="https://www.barbieriadvogados.com/regulamentacao-inteligencia-artificial-brasil/">barbieriadvogados.com</a></li>
+<li id="es-src-csa-deadline">Cloud Security Alliance. <em>Research note: EU AI Act high-risk compliance deadline, 2 August 2026</em>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20/">cloudsecurityalliance.org</a></li>
+<li id="es-src-augmentcode">Augment Code. <em>EU AI Act 2026 guide</em>. <a href="https://www.augmentcode.com/guides/eu-ai-act-2026">augmentcode.com</a></li>
+<li id="es-src-aiact-26">Ley de IA de la UE, artículo 26. Obligaciones de quien despliega, retención de registros por seis meses, notificación de incidente en quince días. <a href="https://artificialintelligenceact.eu/article/26/">artificialintelligenceact.eu</a></li>
+<li id="es-src-aiact-14">Ley de IA de la UE, artículo 14. Supervisión humana, incluida la cláusula de sesgo de automatización. <a href="https://artificialintelligenceact.eu/article/14/">artificialintelligenceact.eu</a></li>
+<li id="es-src-aiact-servicedesk">EU AI Act Service Desk. Artículo 26, lectura oficial. <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26">ai-act-service-desk.ec.europa.eu</a></li>
+<li id="es-src-balancedsec">balancedsec. <em>NIST AI RMF or ISO 42001?</em> El NIST AI RMF es autodeclarado, la ISO/IEC 42001 es certificable mediante su Declaración de Aplicabilidad. <a href="https://blog.balancedsec.com/p/nist-ai-rmf-or-iso-42001">blog.balancedsec.com</a></li>
+<li id="es-src-lumenova">Lumenova. <em>Agentic AI risks against OWASP and NIST</em>. Iniciativa de Estándares para Agentes de IA del NIST, anunciada el 17 de febrero de 2026. <a href="https://www.lumenova.ai/blog/agentic-ai-risks-owasp-nist/">lumenova.ai</a></li>
+<li id="es-src-arxiv-taxonomy">arXiv 2607.02201. <em>A risk taxonomy for agentic systems</em>, estudio comparativo de los marcos de gobernanza frente a la pila agéntica. <a href="https://arxiv.org/pdf/2607.02201">arxiv.org</a></li>
+<li id="es-src-aiuc1">AIUC-1. Posicionado como el equivalente de certificación SOC 2 para agentes de IA. Referenciado en fuente académica, no leído directamente. <span class="orig-plain">aiuc-1.com</span></li>
+<li id="es-src-otel-blog">OpenTelemetry. <em>Generative AI observability</em>, 2026. <a href="https://opentelemetry.io/blog/2026/genai-observability/">opentelemetry.io</a></li>
+<li id="es-src-digitalapplied">Digital Applied. <em>AI agent observability 2026: tracing and monitoring stack guide</em>. Los principales entornos de agente ya exportan en la convención OpenTelemetry. <a href="https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide">digitalapplied.com</a></li>
+<li id="es-src-builtin">Built In. <em>Enterprise identity and access management</em>. Clasificación copiloto, iniciado por humano y ambiental, mapeada contra N0 a N3. <a href="https://builtin.com/articles/enterprise-identity-access-management">builtin.com</a></li>
+<li id="es-src-neuralcoretech">NeuralCoreTech. <em>AI agent identity governance 2026</em>. Patrones en nombre de versus delegación autónoma, y clave de interfaz de larga duración embebida como causa raíz más común. <a href="https://neuralcoretech.com/ai-agent-identity-governance-2026/">neuralcoretech.com</a></li>
+<li id="es-src-aieconomy">The AI Economy. <em>ServiceNow's AI Control Tower and 2026 enforcement</em>. Plataformas de gobernanza que ahora pueden descubrir, monitorear y desconectar agentes en nubes de terceros. <a href="https://theaieconomy.substack.com/p/servicenow-ai-control-tower-knowledge-2026-enforcement">theaieconomy.substack.com</a></li>
+<li id="es-src-miniorange">miniOrange. <em>IAM trends for AI agents, 2026</em>. La identidad creada un martes por la tarde que sobrevive al desarrollador que la creó. <a href="https://www.miniorange.com/blog/iam-trends-ai-agents-2026/">miniorange.com</a></li>
+<li id="es-src-arxiv-delegation">arXiv 2501.09674. <em>Authenticated delegation and agent authorisation</em>. Referenciado en fuente académica, no leído directamente. <span class="orig-plain">arxiv.org/abs/2501.09674</span></li>
+</ol>
+
+<div class="foot">
+<p>Serie Harness · Documento complementario · Enlace solo donde la URL fue verificada. Donde la fuente es conocida pero no confirmada directamente, aparece sin enlace y la brecha se declara en la propia entrada.</p>
+</div>
+</main>
+<script>
+(function(){
+  var bar=document.querySelector('.langbar');
+  var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      el.textContent=info.label[l];
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
+  function set(l){
+    for(var k in mains){mains[k].hidden=(k!==l);}
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
+    document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
+  }
+  var h=location.hash.slice(1);
+  var m=h.match(/^(en|es|pt)-/);
+  var active='en';
+  if(m){
+    active=m[1];
+    set(active);
+    var target=document.getElementById(h);
+    if(target){setTimeout(function(){target.scrollIntoView();},0);}
+  }
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-lang]');
+    if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
+  });
+  function dismissHint(){
+    var d=document.querySelector('.lang-hint');
+    if(d){d.remove();}
+    try{localStorage.setItem('langHintDismissed','1');}catch(e){}
+  }
+  try{
+    if(!m&&!localStorage.getItem('langHintDismissed')){
+      var bl=(navigator.language||'').slice(0,2).toLowerCase();
+      var msgs={pt:{text:'Esta p\u00e1gina tamb\u00e9m est\u00e1 dispon\u00edvel em portugu\u00eas.',btn:'Ver em portugu\u00eas'},es:{text:'Esta p\u00e1gina tambi\u00e9n est\u00e1 disponible en espa\u00f1ol.',btn:'Ver en espa\u00f1ol'}};
+      if(msgs[bl]&&bl!==active){
+        var d=document.createElement('div');
+        d.className='lang-hint';
+        var span=document.createElement('span');
+        span.textContent=msgs[bl].text;
+        var right=document.createElement('span');
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.textContent=msgs[bl].btn;
+        btn.addEventListener('click',function(){dismissHint();set(bl);try{location.hash='';}catch(e){}window.scrollTo(0,0);});
+        var x=document.createElement('button');
+        x.type='button';
+        x.className='x';
+        x.setAttribute('aria-label','Close');
+        x.textContent='\u00d7';
+        x.addEventListener('click',dismissHint);
+        right.appendChild(btn);
+        right.appendChild(x);
+        d.appendChild(span);
+        d.appendChild(right);
+        bar.parentNode.insertBefore(d,bar.nextSibling);
+      }
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
