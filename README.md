@@ -116,4 +116,4 @@ Detalhe técnico importante: os identificadores de âncora e os marcadores de SV
 
 Artigos: todos os direitos reservados, uso mediante autorização.
 
-A skill própria do projeto, `levantando-briefing`, vive em repositório separado, [github.com/tecosodreaboutdigital/levantando-briefing](https://github.com/tecosodreaboutdigital/levantando-briefing), MIT, no mesmo padrão das demais skills citadas no guia compacto.
+A skill própria do projeto, `intake-briefing`, vive em repositório separado, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT, no mesmo padrão das demais skills citadas no guia compacto.

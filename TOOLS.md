@@ -8,7 +8,7 @@ Atualizado em 30 de agosto de 2026. Cresce a cada skill nova que entrar em uso, 
 
 ## Coleções de terceiro instaladas
 
-Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-toolkit.html). Some a `levantando-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
+Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-toolkit.html). Some a `intake-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
 
 | Coleção | Origem | Skills instaladas | Por que entrou |
 |---|---|---|---|
@@ -36,9 +36,9 @@ Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente e
 
 ## A skill própria do projeto
 
-`levantando-briefing` não é instalada de terceiro, é criada por este projeto. Vivia como subpasta aqui dentro até 30 de agosto de 2026, e nesse mesmo dia ganhou repositório próprio, público, MIT: [github.com/tecosodreaboutdigital/levantando-briefing](https://github.com/tecosodreaboutdigital/levantando-briefing). O harness-medir não guarda mais o conteúdo dela, só aponta, no mesmo padrão que aponta para as outras cinco coleções desta página.
+`intake-briefing` não é instalada de terceiro, é criada por este projeto. Vivia como subpasta aqui dentro até 30 de agosto de 2026, e nesse mesmo dia ganhou repositório próprio, público, MIT: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing). O harness-medir não guarda mais o conteúdo dela, só aponta, no mesmo padrão que aponta para as outras cinco coleções desta página.
 
-Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/levantando-briefing/`, fora do controle de versão, buscada do repositório próprio.
+Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/intake-briefing/`, fora do controle de versão, buscada do repositório próprio.
 
 **Risco assumido, dito com honestidade:** essa cópia local pode ficar para trás se o repositório da skill for editado sem atualizar a cópia aqui. É o mesmo tipo de risco que aceitamos para as trinta skills de terceiro, agora também para a nossa.
 

@@ -51,7 +51,7 @@
 <table class="wrap">
 <thead><tr><th>Onde você parou</th><th>Comece por</th></tr></thead>
 <tbody>
-<tr><td>Nenhum guia escrito ainda</td><td>Mapear, com a ficha da <a href="#briefing">levantando-briefing</a></td></tr>
+<tr><td>Nenhum guia escrito ainda</td><td>Mapear, com a ficha da <a href="#briefing">intake-briefing</a></td></tr>
 <tr><td>Guia existe, ninguém segue à risca</td><td>Equipar</td></tr>
 <tr><td>Guia seguido, sem verificação automática</td><td>Inspecionar</td></tr>
 <tr><td>Sensor existe, sem cadência nem teto</td><td>Reforçar</td></tr>
@@ -63,7 +63,7 @@
 
 <p>O ciclo descreve Mapear como o passo que decide o contrato da tarefa antes de qualquer execução, tratado em nível de princípio na <a href="harness-p1.html#pt-medir">parte 1</a>. O problema de mercado é específico: existe fartura de material sobre como especificar bem uma tarefa depois que alguém já decidiu fazê-la, e quase nada sobre como decidir se ela deve ser feita, ou como explorar um domínio de conhecimento antes de travar o escopo. As quatro fichas abaixo cobrem os dois lados dessa lacuna.</p>
 
-<h3 id="briefing">levantando-briefing</h3>
+<h3 id="briefing">intake-briefing</h3>
 
 <p><strong>Problema.</strong> Skills de entrevista técnica partem do princípio de que a decisão de automatizar já foi tomada. Nenhuma delas pergunta quantas vezes por mês a tarefa roda, quanto custa um erro, quem revisa o resultado ou se o ganho é real.</p>
 <p><strong>Na prática.</strong> Um contrato de tarefa em três linhas (o que entrega, o que nunca faz, quando está pronto), uma faixa de autonomia recomendada derivada por tabela a partir de reversibilidade e exposição, e um veredito com três opções: fazer agora, simplificar e refazer o briefing, ou não fazer.</p>
@@ -72,10 +72,10 @@
 <p><strong>Quando não usar.</strong> Quando a decisão de fazer já está tomada e o que falta é levantamento técnico detalhado. Aí entram skills de entrevista como interview-me, que complementam esta e não a substituem.</p>
 <p><strong>Como começar em 15 minutos.</strong> Clone a pasta, rode com uma frase descrevendo a tarefa, responda aos oito blocos e leia o veredito.</p>
 
-<pre><code>git clone https://github.com/tecosodreaboutdigital/levantando-briefing.git
-/levantando-briefing "queremos automatizar a conferência de notas de frete"</code></pre>
+<pre><code>git clone https://github.com/tecosodreaboutdigital/intake-briefing.git
+/intake-briefing "queremos automatizar a conferência de notas de frete"</code></pre>
 
-<p>Repositório: <a href="https://github.com/tecosodreaboutdigital/levantando-briefing">github.com/tecosodreaboutdigital/levantando-briefing</a>. MIT, escrita para este projeto.</p>
+<p>Repositório: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, escrita para este projeto.</p>
 
 <h3>Guia inspirado em Karpathy</h3>
 
@@ -121,7 +121,7 @@
 <p><strong>Para quem.</strong> N1 já se beneficia do princípio, contrato escrito antes de executar. N2 e N3, com time grande e volume alto, se beneficiam de adotar uma ferramenta dedicada da tabela acima.</p>
 <p><strong>Faixa mínima.</strong> Opinativa: N1 para o princípio, N2 para justificar o custo de uma ferramenta específica.</p>
 <p><strong>Quando não usar.</strong> Tarefa pequena, um único executor, baixo volume. A cerimônia custa mais do que evita, e nenhuma das quatro ferramentas foi desenhada para esse caso.</p>
-<p><strong>Como começar em 15 minutos.</strong> Escreva o contrato de três linhas do próprio levantando-briefing (o que entrega, o que nunca faz, quando está pronto) antes de instalar qualquer ferramenta desta categoria. Instale depois, só se o contrato sozinho não bastar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Escreva o contrato de três linhas do próprio intake-briefing (o que entrega, o que nunca faz, quando está pronto) antes de instalar qualquer ferramenta desta categoria. Instale depois, só se o contrato sozinho não bastar.</p>
 
 <h2 id="equipar">4. Equipar</h2>
 
@@ -372,7 +372,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <h2 id="fontes">12. Fontes</h2>
 
 <ol class="sources">
-<li>Fernando Teco Sodré. <em>levantando-briefing</em>, skill de decisão de automação. <a href="https://github.com/tecosodreaboutdigital/levantando-briefing">github.com/tecosodreaboutdigital/levantando-briefing</a></li>
+<li>Fernando Teco Sodré. <em>intake-briefing</em>, skill de decisão de automação. <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a></li>
 <li>Guia inspirado em observações públicas de Karpathy, mantido por terceiros. <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></li>
 <li>Andrej Karpathy. <em>autoresearch</em>, fluxo agêntico de referência, este sim do próprio autor. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
 <li><em>c4-skills</em>, modelo C4 e registro de decisão de arquitetura. <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></li>

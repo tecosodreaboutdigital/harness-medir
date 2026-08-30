@@ -36,15 +36,15 @@ Tradução inglesa em grafia britânica, espanhola por "tú". MEDIR e harness ma
 
 O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por âncora: um link do tipo `harness-p1.html#en-opening` agora seleciona a aba certa antes de rolar, em vez de sempre abrir na aba PT padrão. Sem esse ajuste, um leitor em inglês clicando em qualquer referência cruzada para a parte 1 caía sempre em português.
 
-### Skill levantando-briefing
+### Skill intake-briefing
 
-`github.com/tecosodreaboutdigital/levantando-briefing`, repositório próprio desde 30 de agosto de 2026. Artefato original do projeto, completo, publicado, MIT. Quatro arquivos: SKILL.md, roteiro.md, modelo-briefing.md, README.md.
+`github.com/tecosodreaboutdigital/intake-briefing`, repositório próprio desde 30 de agosto de 2026. Artefato original do projeto, completo, publicado, MIT. Quatro arquivos: SKILL.md, interview-script.md, briefing-template.md, README.md.
 
 Decide se a automação deve existir, antes de discutir como funciona. Oito blocos, tabela determinística de derivação de faixa, veredito com três opções incluindo não fazer, e versionamento com comparação bloco a bloco.
 
 Preenche uma lacuna verificada: existe farto material sobre como especificar, quase nada sobre como decidir se vale.
 
-Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão, ver `TOOLS.md`.
+Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/intake-briefing/`, fora do controle de versão, ver `TOOLS.md`.
 
 ### Guia compacto de ferramentas e skills
 
@@ -52,7 +52,7 @@ Separada do monorepo harness-medir para instalação independente, no mesmo padr
 
 Reescrito por completo em 30 de agosto de 2026. Organizado pelos cinco passos do MEDIR, não por categoria de produto. Dezessete fichas de seis campos, mais seção de diagnóstico de faixa no início para quem chega da parte 1. Cada passo do MEDIR tem crítica registrada, não só recomendação.
 
-Distribuição: Mapear com quatro fichas (levantando-briefing, guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica de Böckeler e Pocock), Equipar com três (superpowers, mattpocock/skills, planning-with-files), Delegar com três (holdfast, classes de ambiente, orquestração programada com LangGraph), Inspecionar com quatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforçar com três (ai-slop-cleaner, limpeza como cadência, coleta de lixo).
+Distribuição: Mapear com quatro fichas (intake-briefing, guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica de Böckeler e Pocock), Equipar com três (superpowers, mattpocock/skills, planning-with-files), Delegar com três (holdfast, classes de ambiente, orquestração programada com LangGraph), Inspecionar com quatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforçar com três (ai-slop-cleaner, limpeza como cadência, coleta de lixo).
 
 Toda ferramenta citada está verificada em `sources/inventory.md`, incluindo três fontes adicionadas nesta reescrita: Semgrep, LangGraph e GitHub Spec Kit com link direto.
 

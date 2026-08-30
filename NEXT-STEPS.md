@@ -6,7 +6,7 @@ Em ordem. Cada item traz o critério de pronto.
 
 ## Concluído em 30 de agosto de 2026
 
-**Repositório GitHub público criado**, em `github.com/tecosodreaboutdigital/harness-medir`. Commit inicial com os 23 arquivos existentes, sem dado sensível. LICENSE (MIT) adicionada dentro de `skills/levantando-briefing/`, consistente com o que o README da skill já declarava. Nada de licença na raiz, porque os artigos seguem todos os direitos reservados.
+**Repositório GitHub público criado**, em `github.com/tecosodreaboutdigital/harness-medir`. Commit inicial com os 23 arquivos existentes, sem dado sensível. LICENSE (MIT) adicionada dentro de `skills/intake-briefing/`, consistente com o que o README da skill já declarava. Nada de licença na raiz, porque os artigos seguem todos os direitos reservados.
 
 **Guia compacto reescrito por completo.** Ver a entrada correspondente em `STATUS.md` para o detalhamento. Critério de pronto batido: dezessete fichas de seis campos, toda ferramenta verificada em `sources/inventory.md` (três fontes novas verificadas nesta rodada: Semgrep, LangGraph, GitHub Spec Kit com link direto), e cada passo do MEDIR com crítica registrada.
 
@@ -14,7 +14,7 @@ Em ordem. Cada item traz o critério de pronto.
 
 **Trinta skills de terceiro instaladas para uso neste projeto**, cinco coleções (superpowers inteira, seleção curada de doze do mattpocock/skills, c4-skills inteira, o guia inspirado em Karpathy, ai-slop-cleaner), todas MIT, todas auditadas contra o checklist do próprio guia compacto antes de instalar. Vivem em `.claude/skills/`, fora do controle de versão. Documentação completa, com registro de uso real a crescer por sessão, em `TOOLS.md`. Crédito visível no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e `harness-toolkit.html`.
 
-**levantando-briefing separada em repositório próprio**, `github.com/tecosodreaboutdigital/levantando-briefing`, público, MIT, no mesmo padrão das demais skills citadas no guia compacto. Removida de `skills/` dentro do harness-medir, que agora só aponta para lá. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão.
+**intake-briefing separada em repositório próprio**, `github.com/tecosodreaboutdigital/intake-briefing`, público, MIT, no mesmo padrão das demais skills citadas no guia compacto. Removida de `skills/` dentro do harness-medir, que agora só aponta para lá. Ativa neste ambiente via cópia local em `.claude/skills/intake-briefing/`, fora do controle de versão.
 
 **Diário de bordo criado**, `docs/logbook.html`, trilíngue, gerado em duas etapas: `build/generate_logbook_metrics.py` reconstrói a série real (palavras publicadas por `git show` em cada commit, linhas de `build/` e dos documentos de governança, tokens somados do `usage` real de cada mensagem no transcript `.jsonl` da sessão, atribuídos ao commit cronologicamente seguinte) e escreve `docs/assets/logbook-metrics.json`; `build/build_logbook.py` monta a página a partir desse JSON, nunca escrita à mão. Dois gráficos SVG empilhados, mesmo eixo X, sem eixo Y duplo. Seis marcos reais registrados (o histórico completo do projeto até aqui, não uma amostra), mais o que ainda não fechou marco. Referenciado em `TOOLS.md` e no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e do guia compacto.
 
