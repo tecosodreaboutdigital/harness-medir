@@ -58,7 +58,8 @@ Três coisas, sempre:
 ## Instalação
 
 ```
-git clone https://github.com/<usuario>/levantando-briefing.git ~/.claude/skills/levantando-briefing
+git clone https://github.com/tecosodreaboutdigital/harness-medir.git
+cp -r harness-medir/skills/levantando-briefing ~/.claude/skills/levantando-briefing
 ```
 
 Para outros ambientes, copie a pasta para onde eles carregam skills. O caminho acima é a convenção de um ambiente específico, não uma exigência do formato.

@@ -54,7 +54,7 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── PROXIMOS-PASSOS.md                 a fila de trabalho, em ordem
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, português, pronta
-├── harness-caixa-de-ferramentas.html  guia compacto, versão antiga, a reescrever
+├── harness-caixa-de-ferramentas.html  guia compacto, organizado pelo MEDIR, pronto
 ├── skills/
 │   └── levantando-briefing/           skill original do projeto, pronta
 ├── fontes/

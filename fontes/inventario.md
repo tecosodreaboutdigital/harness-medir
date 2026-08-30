@@ -42,11 +42,13 @@ Legenda: **V** verificada por leitura direta ou resultado de busca com URL confi
 | V | Equipar | planning-with-files | https://github.com/OthmanAdi/planning-with-files | Estado durável em disco. Cerca de 26 mil estrelas. **Ressalva:** o número de eficácia divulgado mede fidelidade ao padrão, não deriva de objetivo |
 | V | Delegar | holdfast | https://github.com/AndreAlmeidaDC/holdfast | MIT. Execução particionada durável. **Novo:** três commits. Declara limites honestos, exercitado só em um ambiente. Sem dependência de rede, auditável rápido |
 | V | Delegar | DeepSeek Harness | https://github.com/deepseek-ai/deepseek-harness | Runtime aberto, registro apenas-anexação |
+| V | Delegar | LangGraph | https://github.com/langchain-ai/langgraph | LangChain Inc. Orquestração de baixo nível para agentes com estado. É onde laço com teto e política de alçada viram código |
 | V | Inspecionar | sensors-cli | https://github.com/birgitta410/sensors-cli | Painel com histórico de disparos |
 | V | Inspecionar | dependency-cruiser | https://github.com/sverweij/dependency-cruiser | Regras de dependência |
 | V | Inspecionar | Stryker | https://stryker-mutator.io/ | Teste de mutação |
+| V | Inspecionar | Semgrep | https://github.com/semgrep/semgrep | Semgrep, Inc. LGPL 2.1. Análise estática de padrões de segurança, roda local, código não sobe por padrão |
 | V | Reforçar | ai-slop-cleaner | https://github.com/yeachan-heo/oh-my-claudecode | Fonte real da skill de limpeza. Fluxo à prova de regressão, com separação escritor e revisor |
-| V | Referência | GitHub Spec Kit | mencionado em fonte verificada | Deu nome à categoria de especificação antes do código |
+| V | Mapear | GitHub Spec Kit | https://github.com/github/spec-kit | MIT. Deu nome à categoria de especificação antes do código. Kiro, Tessl e OpenSpec citados via a avaliação comparativa de Böckeler, sem link direto verificado |
 | V | Referência | autoresearch | https://github.com/karpathy/autoresearch | Fluxo agêntico de referência, este sim do Karpathy |
 | V | Curadoria | awesome-harness-engineering | https://github.com/ai-boost/awesome-harness-engineering | |
 

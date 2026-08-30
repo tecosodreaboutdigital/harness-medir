@@ -247,6 +247,22 @@ p code{
   background:var(--fill);
   padding:1px 4px;
 }
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
 .gitem{
   border:0;
   margin:0 0 9px;
@@ -324,6 +340,22 @@ p code{
   background:var(--fill);
   padding:1px 4px;
 }
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
 .gitem{font-size:9.5pt;margin:0 0 5pt;border:0;page-break-inside:avoid}
   .gitem .orig{font-size:9pt;font-style:italic}
   pre{font-size:8.5pt;padding:6pt 8pt;background:#eef1f4;border:0;page-break-inside:avoid}
@@ -351,7 +383,7 @@ p code{
 
 <h1>Caixa de ferramentas do harness</h1>
 
-<p class="deck">Inventário comentado do que existe hoje, com repositórios, comandos e três roteiros para sair do zero. Este documento envelhece mais rápido que os artigos da série, e por isso vive separado deles.</p>
+<p class="deck">Inventário comentado do que existe hoje, organizado pelos cinco passos do MEDIR e não por categoria de produto, com repositórios, comandos e três roteiros para sair do zero. Este documento envelhece mais rápido que os artigos da série, e por isso vive separado deles.</p>
 
 <p class="byline">Fernando Teco Sodré · Revisada em agosto de 2026 · Companheiro das partes 1, 2 e 3</p>
 
@@ -361,10 +393,12 @@ p code{
   <p>Neste documento</p>
   <ol>
     <li><a href="#pt-como-usar">Como usar</a></li>
-    <li><a href="#pt-colecoes">Coleções de skills para estudar e copiar</a></li>
-    <li><a href="#pt-spec">Especificação antes do código</a></li>
-    <li><a href="#pt-sensores-lista">Ferramentas de sensor</a></li>
-    <li><a href="#pt-runtimes">Ambientes e runtimes</a></li>
+    <li><a href="#pt-diagnostico">Diagnóstico: em que faixa você está</a></li>
+    <li><a href="#pt-mapear">Mapear</a></li>
+    <li><a href="#pt-equipar">Equipar</a></li>
+    <li><a href="#pt-delegar">Delegar</a></li>
+    <li><a href="#pt-inspecionar">Inspecionar</a></li>
+    <li><a href="#pt-reforcar">Reforçar</a></li>
     <li><a href="#pt-howto-1">Roteiro 1: ler o superpowers em uma hora</a></li>
     <li><a href="#pt-howto-2">Roteiro 2: escrever seu primeiro skill em trinta minutos</a></li>
     <li><a href="#pt-howto-3">Roteiro 3: montar seu primeiro sensor</a></li>
@@ -375,19 +409,113 @@ p code{
 
 <h2 id="pt-como-usar">1. Como usar</h2>
 
-<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, sensores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios.</p>
+<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, sensores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios, organizados pela mesma lógica de quem usa: os cinco passos do ciclo, não a categoria de produto.</p>
 
-<p>Uma orientação sobre método antes de qualquer lista: o valor de estudar coleções alheias não está em instalá-las, está em lê-las. Os melhores materiais deste inventário são úteis mesmo para quem nunca vai escrever uma linha de código, porque mostram como um profissional experiente escreve instruções para uma máquina que tende a se convencer a pular etapas. Isso é transferível para revisão de contrato, fechamento contábil, atendimento e qualquer processo com etapa obrigatória.</p>
+<p>Cada ferramenta ou coleção vem em formato de ficha, sempre com os mesmos seis campos: qual problema resolve, o que você ganha na prática, para quem serve por faixa de autonomia, a faixa mínima em que ela faz sentido, quando não usar, e como começar em quinze minutos. Um inventário que só recomenda é catálogo de fornecedor, então toda ficha traz também o motivo de não escolher aquilo.</p>
+
+<p>Uma orientação sobre método antes de qualquer ficha: o valor de estudar coleções alheias não está em instalá-las, está em lê-las. Os melhores materiais deste inventário são úteis mesmo para quem nunca vai escrever uma linha de código, porque mostram como um profissional experiente escreve instruções para uma máquina que tende a se convencer a pular etapas. Isso é transferível para revisão de contrato, fechamento contábil, atendimento e qualquer processo com etapa obrigatória.</p>
 
 <p>Comece lendo. Instale depois, e apenas o que você entendeu.</p>
 
-<h2 id="pt-colecoes">2. Coleções de skills para estudar e copiar</h2>
+<h2 id="pt-diagnostico">2. Diagnóstico: em que faixa você está</h2>
+
+<p>Se você chegou aqui pela parte 1, já conhece as <a href="harness-p1.html#pt-faixas">quatro faixas de autonomia</a>. A pergunta prática é onde a sua tarefa está agora, não onde você gostaria que ela estivesse. As cinco perguntas abaixo decidem isso na ordem em que a faixa se constrói: uma resposta não se sustenta sem a anterior.</p>
+
+<ul class="checklist">
+<li><strong>Existe, em texto, o que a tarefa entrega e o que ela nunca pode fazer?</strong> Se não, você está em N0. Comece por Mapear.</li>
+<li><strong>Existe um guia escrito que sobrevive de uma execução para a próxima, e alguém segue esse guia à risca?</strong> Se sim à primeira parte e não à segunda, você está em N1. Comece por Equipar.</li>
+<li><strong>Existe verificação automática que roda depois da execução e devolve o que está errado, sem um humano abrir o resultado primeiro?</strong> Se não, você tem guia mas não tem sensor, o que ainda é N1. Comece por Inspecionar.</li>
+<li><strong>Existe teto de tentativas, estado que sobrevive ao reinício da sessão, e evidência que chega antes da entrega?</strong> Se sim a tudo isso, você está em N2. Comece por Reforçar, e organize a cadência antes de aumentar o volume.</li>
+<li><strong>Alguma ação deste fluxo já tem efeito fora do seu controle direto, como enviar, pagar, publicar ou decidir por alguém, sem aprovação humana no meio?</strong> Se sim, a tarefa exige N3, e este documento não cobre isso sozinho. A parte 3 da série trata de permissão fora do modelo.</li>
+</ul>
+
+<table class="wrap">
+<thead><tr><th>Onde você parou</th><th>Comece por</th></tr></thead>
+<tbody>
+<tr><td>Nenhum guia escrito ainda</td><td>Mapear, com a ficha da <a href="#pt-briefing">levantando-briefing</a></td></tr>
+<tr><td>Guia existe, ninguém segue à risca</td><td>Equipar</td></tr>
+<tr><td>Guia seguido, sem verificação automática</td><td>Inspecionar</td></tr>
+<tr><td>Sensor existe, sem cadência nem teto</td><td>Reforçar</td></tr>
+<tr><td>Efeito externo sem aprovação registrada</td><td>Parte 3, ainda não publicada</td></tr>
+</tbody>
+</table>
+
+<h2 id="pt-mapear">3. Mapear</h2>
+
+<p>O ciclo descreve Mapear como o passo que decide o contrato da tarefa antes de qualquer execução, tratado em nível de princípio na <a href="harness-p1.html#pt-medir">parte 1</a>. O problema de mercado é específico: existe fartura de material sobre como especificar bem uma tarefa depois que alguém já decidiu fazê-la, e quase nada sobre como decidir se ela deve ser feita, ou como explorar um domínio de conhecimento antes de travar o escopo. As quatro fichas abaixo cobrem os dois lados dessa lacuna.</p>
+
+<h3 id="pt-briefing">levantando-briefing</h3>
+
+<p><strong>Problema.</strong> Skills de entrevista técnica partem do princípio de que a decisão de automatizar já foi tomada. Nenhuma delas pergunta quantas vezes por mês a tarefa roda, quanto custa um erro, quem revisa o resultado ou se o ganho é real.</p>
+<p><strong>Na prática.</strong> Um contrato de tarefa em três linhas (o que entrega, o que nunca faz, quando está pronto), uma faixa de autonomia recomendada derivada por tabela a partir de reversibilidade e exposição, e um veredito com três opções: fazer agora, simplificar e refazer o briefing, ou não fazer.</p>
+<p><strong>Para quem.</strong> Quem decide, em N0, usa como porta de entrada antes de qualquer ferramenta. Quem já opera em N2 ou N3 usa como auditoria periódica de por que a automação ainda existe.</p>
+<p><strong>Faixa mínima.</strong> N0. Não exige nenhuma automação existente, é o passo anterior a construir qualquer coisa.</p>
+<p><strong>Quando não usar.</strong> Quando a decisão de fazer já está tomada e o que falta é levantamento técnico detalhado. Aí entram skills de entrevista como interview-me, que complementam esta e não a substituem.</p>
+<p><strong>Como começar em 15 minutos.</strong> Clone a pasta, rode com uma frase descrevendo a tarefa, responda aos oito blocos e leia o veredito.</p>
+
+<pre><code>git clone https://github.com/tecosodreaboutdigital/harness-medir.git
+/levantando-briefing "queremos automatizar a conferência de notas de frete"</code></pre>
+
+<p>Repositório: <a href="https://github.com/tecosodreaboutdigital/harness-medir/tree/main/skills/levantando-briefing">github.com/tecosodreaboutdigital/harness-medir</a>. MIT, escrita para este projeto.</p>
+
+<h3>Guia inspirado em Karpathy</h3>
+
+<p><strong>Problema.</strong> Mapear um domínio de código grande demais para caber na cabeça de quem vai delegar a tarefa, sem repetir a mesma exploração a cada sessão nova.</p>
+<p><strong>Na prática.</strong> Skills que organizam levantamento de contexto, leitura de arquitetura e registro de decisão antes de qualquer mudança no sistema.</p>
+<p><strong>Para quem.</strong> N1 em diante, times que herdam sistema que não construíram e precisam que o agente explore antes de agir.</p>
+<p><strong>Faixa mínima.</strong> N1. Exige ambiente que sustente guia e leitura de arquivos, não funciona como conversa isolada.</p>
+<p><strong>Quando não usar.</strong> Repositório pequeno e conhecido, onde o contexto já cabe na cabeça de quem pede a tarefa.</p>
+<p><strong>Como começar em 15 minutos.</strong> Abra a pasta de skills, leia as três ou quatro mais usadas, compare com o seu próprio processo de receber alguém novo no time.</p>
+
+<div class="rule-box"><span class="lbl">Ressalva</span><p>Apesar do nome, não é do Karpathy. É mantido por terceiros, derivado de observações públicas dele, com 208 mil estrelas. Os comandos de instalação do repositório apontam para um dono diferente do atual: confira antes de instalar. O fluxo agêntico que é de fato dele chama-se autoresearch e está nas fontes.</p></div>
+
+<p>Repositório: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
+
+<h3>c4-skills</h3>
+
+<p><strong>Problema.</strong> Decisão de arquitetura tomada em conversa se perde. A próxima pessoa, ou a próxima sessão do mesmo agente, refaz a mesma pergunta.</p>
+<p><strong>Na prática.</strong> O modelo C4 (contexto, contêineres, componentes, código) mais registro de decisão de arquitetura, agnóstico de ambiente: separa o que da arquitetura do porquê ela existe.</p>
+<p><strong>Para quem.</strong> N1 a N3, qualquer situação em que mais de uma pessoa, ou mais de uma sessão, decide sobre a mesma arquitetura ao longo do tempo.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Projeto de uma pessoa só, sem expectativa de que outra pessoa ou outra sessão retome o trabalho depois.</p>
+<p><strong>Como começar em 15 minutos.</strong> Escreva o primeiro diagrama de contexto, uma caixa para o sistema e uma para cada usuário e sistema externo que ele toca, antes da próxima decisão de arquitetura.</p>
+
+<p>Repositório: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+
+<h3>Especificação antes do código</h3>
+
+<p><strong>Problema.</strong> Decidir quanta cerimônia de especificação uma tarefa merece antes de deixar o sistema executar. Existe uma categoria inteira dedicada a isso, prima direta do passo Mapear.</p>
+
+<table class="wrap">
+<thead><tr><th>Ferramenta</th><th>Postura</th></tr></thead>
+<tbody>
+<tr><td>GitHub Spec Kit</td><td>Foi o que deu nome à categoria. MIT, agnóstica de modelo, estrutura em especificar, planejar e dividir em tarefas</td></tr>
+<tr><td>Kiro</td><td>Ambiente próprio, com requisitos, desenho e tarefas como objetos de primeira classe ao lado do código</td></tr>
+<tr><td>Tessl</td><td>Mais ambiciosa: trata a especificação como fonte, e o código como derivado que não deve ser editado à mão</td></tr>
+<tr><td>OpenSpec</td><td>Centrada em mudanças, com menos arquivos gerados e especificações que vivem no repositório</td></tr>
+</tbody>
+</table>
+
+<p>A crítica merece o mesmo espaço que a lista. Böckeler avaliou três dessas ferramentas e encontrou excesso de revisão, falsa sensação de controle e dificuldade de escalar entre problemas de tamanhos diferentes, traçando paralelo com o fracasso histórico do desenvolvimento orientado a modelos. Pocock argumenta contra a categoria inteira, com a tese de que ir da especificação ao código é desinvestir do desenho do sistema em vez de investir nele.</p>
+
+<p><strong>Na prática.</strong> Um contrato de tarefa formal, versionado, que o agente lê antes de propor qualquer plano, em vez de uma instrução solta na conversa.</p>
+<p><strong>Para quem.</strong> N1 já se beneficia do princípio, contrato escrito antes de executar. N2 e N3, com time grande e volume alto, se beneficiam de adotar uma ferramenta dedicada da tabela acima.</p>
+<p><strong>Faixa mínima.</strong> Opinativa: N1 para o princípio, N2 para justificar o custo de uma ferramenta específica.</p>
+<p><strong>Quando não usar.</strong> Tarefa pequena, um único executor, baixo volume. A cerimônia custa mais do que evita, e nenhuma das quatro ferramentas foi desenhada para esse caso.</p>
+<p><strong>Como começar em 15 minutos.</strong> Escreva o contrato de três linhas do próprio levantando-briefing (o que entrega, o que nunca faz, quando está pronto) antes de instalar qualquer ferramenta desta categoria. Instale depois, só se o contrato sozinho não bastar.</p>
+
+<h2 id="pt-equipar">4. Equipar</h2>
+
+<p>Equipar decide o que o agente vê, o que pode tocar e o que sobrevive entre sessões, discutido em profundidade na <a href="harness-p2.html#pt-equipar">parte 2</a>. As três fichas abaixo são as coleções mais estudadas hoje para escrever guia e organizar memória durável.</p>
 
 <h3>superpowers</h3>
 
-<p>De Jesse Vincent. É a coleção mais completa disponível hoje, e a mais interessante do ponto de vista de método, porque não empacota conhecimento técnico e sim disciplina de processo. As skills cobrem levantamento de ideia antes de escrever, planejamento, desenvolvimento guiado por teste, área de trabalho isolada, depuração sistemática em quatro fases, verificação antes de concluir e revisão por um agente novo.</p>
-
-<p>O que vale roubar mesmo sem instalar é o padrão de escrita que descrevi na parte 2: regra inegociável no topo, seguida da lista de racionalizações que o executor provavelmente usará para descumpri-la. A skill de verificação, por exemplo, trata as palavras deveria, provavelmente e parece que como sinais de alerta em um relato de conclusão. É uma lição de escrita de procedimento que qualquer área operacional aproveita.</p>
+<p><strong>Problema.</strong> A maioria das coleções de skills empacota conhecimento técnico específico. Falta uma que empacote disciplina de processo, aplicável a qualquer domínio.</p>
+<p><strong>Na prática.</strong> Skills que cobrem levantamento de ideia antes de escrever, planejamento, desenvolvimento guiado por teste, área de trabalho isolada, depuração sistemática em quatro fases, verificação antes de concluir e revisão por um agente novo. O que vale roubar mesmo sem instalar é o padrão de escrita: regra inegociável no topo, seguida da lista de racionalizações que o executor provavelmente usará para descumpri-la. A skill de verificação trata as palavras deveria, provavelmente e parece que como sinais de alerta em um relato de conclusão.</p>
+<p><strong>Para quem.</strong> N1 em diante. É a coleção de referência para quem está escrevendo o primeiro guia sério e quer ver como fica um bom.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Quando o objetivo é uma skill pequena e específica de domínio. O framework inteiro é mais estrutura do que uma tarefa isolada precisa.</p>
+<p><strong>Como começar em 15 minutos.</strong> Siga o <a href="#pt-howto-1">roteiro 1</a> abaixo, feito justamente para isso.</p>
 
 <p>Licença MIT. Distribuída pelo marketplace oficial de plugins e por vários outros ambientes.</p>
 
@@ -397,61 +525,151 @@ p code{
 
 <h3>mattpocock/skills</h3>
 
-<p>De Matt Pocock. A filosofia é oposta e por isso o par vale ser lido junto: skills pequenas, legíveis e editáveis, explicitamente contra frameworks que tomam conta do processo inteiro, sob o argumento de que quando o processo é opaco os defeitos do próprio processo ficam mais difíceis de resolver.</p>
-
-<p>O conjunto é organizado por problema e não por tecnologia, o que o torna legível para quem não programa. Vale abrir a skill que força uma sessão de perguntas antes de qualquer execução, porque ela é um exemplo direto do passo Mapear: o sistema não avança enquanto as decisões não estiverem explícitas.</p>
+<p><strong>Problema.</strong> Frameworks que tomam conta do processo inteiro tornam os próprios defeitos do processo mais difíceis de enxergar e corrigir, porque o processo virou opaco.</p>
+<p><strong>Na prática.</strong> O oposto do superpowers, e por isso o par vale ser lido junto: skills pequenas, legíveis e editáveis, organizadas por problema e não por tecnologia. Vale abrir a skill que força uma sessão de perguntas antes de qualquer execução, exemplo direto do passo Mapear: o sistema não avança enquanto as decisões não estiverem explícitas.</p>
+<p><strong>Para quem.</strong> N1 a N2, quem prefere compor a própria coleção peça por peça em vez de instalar um framework fechado.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Quem quer uma coleção completa e pronta desde o primeiro dia. O ganho aqui é a legibilidade de cada peça isolada, não a cobertura do conjunto.</p>
+<p><strong>Como começar em 15 minutos.</strong> Abra três skills de tamanhos diferentes e compare quantas linhas cada uma leva para dizer a mesma coisa que uma instrução solta levaria em um parágrafo.</p>
 
 <p>Repositório: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
 
-<h2 id="pt-spec">3. Especificação antes do código</h2>
+<h3>planning-with-files</h3>
 
-<p>Existe uma categoria inteira dedicada a escrever a especificação antes de deixar o sistema executar. Ela é prima direta do passo Mapear, e o debate em torno dela é saudável o bastante para valer conhecer os dois lados.</p>
+<p><strong>Problema.</strong> Um agente sem estado durável reinicia o raciocínio do zero a cada sessão nova, e repete decisões já tomadas ou já descartadas.</p>
+<p><strong>Na prática.</strong> Padrão de manter plano, progresso e decisões em arquivos no disco, não na memória de conversa, para que sobrevivam ao reinício da sessão. É a unidade de durabilidade discutida na parte 2 tornada padrão replicável.</p>
+<p><strong>Para quem.</strong> N1 a N2, qualquer tarefa que atravesse mais de uma sessão.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Tarefa que começa e termina dentro de uma única sessão curta. O overhead de manter arquivo de estado não se paga.</p>
+<p><strong>Como começar em 15 minutos.</strong> Crie um arquivo de plano com três seções (feito, em andamento, próximo) e peça ao agente que o atualize a cada etapa concluída, antes de fechar a sessão.</p>
 
-<table class="wrap">
-<thead><tr><th>Ferramenta</th><th>Postura</th></tr></thead>
-<tbody>
-<tr><td>GitHub Spec Kit</td><td>Foi o que deu nome à categoria. Aberta, agnóstica de modelo, estrutura em especificar, planejar e dividir em tarefas</td></tr>
-<tr><td>Kiro</td><td>Ambiente próprio, com requisitos, desenho e tarefas como objetos de primeira classe ao lado do código</td></tr>
-<tr><td>Tessl</td><td>Mais ambiciosa: trata a especificação como fonte, e o código como derivado que não deve ser editado à mão</td></tr>
-<tr><td>OpenSpec</td><td>Centrada em mudanças, com menos arquivos gerados e especificações que vivem no repositório</td></tr>
-</tbody>
-</table>
+<div class="rule-box"><span class="lbl">Ressalva</span><p>Cerca de 26 mil estrelas, mas o número de eficácia divulgado pelo próprio projeto mede fidelidade ao padrão (quantas sessões seguiram o formato), não deriva de um objetivo de negócio. Trate como evidência de adoção, não como prova de resultado.</p></div>
 
-<p>A crítica merece o mesmo espaço. Böckeler avaliou três dessas ferramentas e encontrou excesso de revisão, falsa sensação de controle e dificuldade de escalar entre problemas de tamanhos diferentes, traçando paralelo com o fracasso histórico do desenvolvimento orientado a modelos. Pocock argumenta contra a categoria inteira, com a tese de que ir da especificação ao código é desinvestir do desenho do sistema em vez de investir nele.</p>
+<p>Repositório: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
 
-<p>A leitura que faço para quem decide: escrever o contrato da tarefa antes de executar é inegociável e barato. Adotar uma ferramenta que transforma esse contrato em cerimônia obrigatória é uma decisão separada, e que só se paga em contexto de volume alto e time grande.</p>
+<h2 id="pt-delegar">5. Delegar</h2>
 
-<h2 id="pt-sensores-lista">4. Ferramentas de sensor</h2>
+<p>Delegar decide como o trabalho é entregue e em que ambiente ele pode rodar, com a matriz completa de classes de ambiente na <a href="harness-p2.html#pt-delegar">parte 2</a>. As três fichas abaixo tratam de execução particionada, nomes de ambiente e o degrau em que teto e alçada viram código.</p>
 
-<p>Estas são as ferramentas usadas no experimento de sensores descrito na parte 2. Servem como referência de categoria, mesmo que a sua área use tecnologia diferente.</p>
+<h3>holdfast</h3>
 
-<table class="wrap">
-<thead><tr><th>Ferramenta</th><th>Que tipo de sensor é</th></tr></thead>
-<tbody>
-<tr><td>dependency-cruiser</td><td>Verificação dura de estrutura: impede que uma parte do sistema dependa de outra que não deveria</td></tr>
-<tr><td>Stryker</td><td>Teste de mutação: altera o trabalho de propósito e verifica se as verificações percebem</td></tr>
-<tr><td>Semgrep</td><td>Análise estática de segurança e de padrões proibidos</td></tr>
-<tr><td>sensors-cli</td><td>Painel que roda vários sensores em intervalo, guarda histórico e devolve ao agente um resumo com tendência</td></tr>
-</tbody>
-</table>
+<p><strong>Problema.</strong> Delegar uma tarefa inteira de uma vez é frágil: se ela falhar na metade, não há ponto de retomada e o trabalho já feito se perde.</p>
+<p><strong>Na prática.</strong> Execução particionada durável: a tarefa é dividida em partes com ponto de checagem entre elas, de forma que uma falha não jogue fora o que já ficou pronto.</p>
+<p><strong>Para quem.</strong> N2, tarefas longas o suficiente para valer a pena um ponto de retomada.</p>
+<p><strong>Faixa mínima.</strong> N2, porque pressupõe estado durável e verificação entre partes.</p>
+<p><strong>Quando não usar.</strong> Tarefa curta que cabe em uma execução só. Particionar aqui é custo sem benefício.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia o código-fonte antes de instalar. É pequeno (três commits até agosto de 2026), sem dependência de rede, e a auditoria completa cabe em uma sessão de leitura.</p>
 
-<p>Esse último merece atenção porque é o mais transferível conceitualmente. Ele resolve dois problemas de uma vez: dá ao humano uma visão de estado, e dá ao sistema um resumo enxuto com a informação de piorou ou melhorou em relação ao último ponto de referência. É o embrião de um painel de saúde de harness.</p>
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>MIT, mas ainda novo: três commits, e o próprio projeto declara ter sido exercitado em apenas um ambiente. Ganha pontos por ser pequeno e auditável rápido, perde por não ter histórico de uso em produção.</p></div>
 
-<h2 id="pt-runtimes">5. Ambientes e runtimes</h2>
+<p>Repositório: <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></p>
 
-<p>Complementa a tabela de classes de ambiente da parte 2, agora com nomes.</p>
+<h3>Classes de ambiente</h3>
 
-<table class="wrap">
-<thead><tr><th>Ambiente</th><th>Observação</th></tr></thead>
-<tbody>
-<tr><td>Claude Code, Codex e equivalentes</td><td>Agente com arquivos e execução. É onde skills e verificação dura funcionam sem construção adicional</td></tr>
-<tr><td>DeepSeek Harness</td><td>Runtime aberto sob licença permissiva, arquitetura em que tudo é plugin, com registro de sessão que só aceita acréscimo. Interessante para quem precisa auditar</td></tr>
-<tr><td>LangChain e LangGraph</td><td>Orquestração programada. É onde laço com teto, política de alçada e recibo passam a ser código e não instrução</td></tr>
-<tr><td>Assistentes com instruções</td><td>Conversa com guia. Excelente para padronizar tom e método, insuficiente para qualquer coisa que exija evidência</td></tr>
-</tbody>
-</table>
+<p><strong>Problema.</strong> A maior parte da frustração com agentes não vem do modelo nem do método: vem de tentar montar um controle que o ambiente escolhido não sustenta.</p>
+<p><strong>Na prática.</strong> Quatro classes, detalhadas na <a href="harness-p2.html#pt-ambientes">parte 2</a>: conversa com instruções, agente com arquivos e execução, orquestração programada, geração assistida de software. Nomes atuais de cada classe: Claude Code, Codex e equivalentes cobrem a segunda; DeepSeek Harness (runtime aberto, registro apenas-anexação) e LangGraph cobrem a terceira; assistentes de conversa cobrem a primeira.</p>
+<p><strong>Para quem.</strong> Quem decide compra ferramenta antes de saber que faixa precisa alcançar. Esta ficha inverte a ordem: primeiro a faixa, depois a classe de ambiente que sustenta aquela faixa.</p>
+<p><strong>Faixa mínima.</strong> Não se aplica, é diagnóstico, não ferramenta.</p>
+<p><strong>Quando não usar.</strong> Nunca pule esta pergunta. Ela é o motivo mais comum de projeto de harness que não sai do papel.</p>
+<p><strong>Como começar em 15 minutos.</strong> Responda: até que faixa esta tarefa precisa chegar? Depois, qual é a classe de ambiente mais simples que sustenta aquela faixa, sem subir mais um degrau do que o necessário.</p>
 
-<h2 id="pt-howto-1">6. Roteiro 1: ler o superpowers em uma hora</h2>
+<h3>Orquestração programada</h3>
+
+<p><strong>Problema.</strong> Teto de tentativas, política de alçada e registro de execução escritos como instrução podem ser reescritos ou ignorados pelo próprio sistema que deveriam limitar.</p>
+<p><strong>Na prática.</strong> Framework de orquestração de agentes com estado, onde essas três coisas deixam de ser texto e passam a ser código fora do alcance do modelo. LangGraph é a referência mais madura hoje.</p>
+<p><strong>Para quem.</strong> N2 a N3, quando o guia sozinho já não impede a violação do teto ou da alçada.</p>
+<p><strong>Faixa mínima.</strong> N2, para justificar a complexidade adicional de orquestrar em código.</p>
+<p><strong>Quando não usar.</strong> Tarefa que roda em uma sessão de agente com arquivos e execução já sustenta a faixa necessária. Orquestrar em código antes disso é construir estrutura para um problema que ainda não existe.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a documentação do conceito de teto (retry ceiling) do framework escolhido antes de qualquer outra parte: é a peça que substitui a promessa de um guia por uma restrição que o sistema não consegue driblar.</p>
+
+<p>Repositório: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
+
+<h2 id="pt-inspecionar">6. Inspecionar</h2>
+
+<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As quatro ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
+
+<h3>dependency-cruiser</h3>
+
+<p><strong>Problema.</strong> Uma parte do sistema passa a depender de outra que não deveria, e ninguém percebe até o efeito colateral aparecer em produção.</p>
+<p><strong>Na prática.</strong> Verificação dura de estrutura: define regras de dependência permitidas e falha a verificação quando alguma é violada, antes da entrega.</p>
+<p><strong>Para quem.</strong> N2 em diante, qualquer sistema com mais de um módulo e mais de um contribuidor.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Sistema de um arquivo só, ou protótipo descartável. A regra de dependência não tem o que proteger ainda.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode a análise sem nenhuma regra escrita primeiro, apenas para ver o mapa de dependências atual. Escreva a primeira regra a partir do que esse mapa revelar de errado.</p>
+
+<p>Repositório: <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></p>
+
+<h3>Stryker</h3>
+
+<p><strong>Problema.</strong> Cobertura de teste alta não garante que os testes verificam alguma coisa: eles podem executar o código sem checar o resultado.</p>
+<p><strong>Na prática.</strong> Teste de mutação: altera o trabalho de propósito, em pequenas doses, e verifica se os testes existentes percebem a alteração. Se não percebem, o teste executa e não verifica.</p>
+<p><strong>Para quem.</strong> N2 a N3, sistemas onde a cobertura de teste já é alta e a próxima pergunta é se ela é confiável.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Base de testes ainda pequena ou inexistente. Escreva teste primeiro, meça a qualidade dele depois.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode contra o arquivo mais crítico do sistema, não contra tudo de uma vez. O relatório de mutantes sobreviventes de um único arquivo já ensina o padrão do problema.</p>
+
+<p>Site: <a href="https://stryker-mutator.io/">stryker-mutator.io</a></p>
+
+<h3>Semgrep</h3>
+
+<p><strong>Problema.</strong> Padrão proibido de código (segredo exposto, função insegura, regra de estilo obrigatória) só é pego se alguém lembrar de procurar por ele manualmente.</p>
+<p><strong>Na prática.</strong> Análise estática rápida que procura padrões de segurança e regras de estilo definidas pela casa, sem precisar de árvore de sintaxe complexa. Roda local, e o código não sobe para fora por padrão.</p>
+<p><strong>Para quem.</strong> N2 a N3, qualquer ambiente que gera código com efeito real e precisa de guardrail automático antes da entrega.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Geração de conteúdo que não é código executável. A ferramenta é para padrão de código, não para prosa nem dado.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode com o conjunto de regras padrão contra o repositório inteiro uma vez, sem customizar nada. Escreva a primeira regra própria só depois de ver o que o padrão já cobre.</p>
+
+<p>Licença LGPL 2.1, mantido por Semgrep, Inc. Repositório: <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></p>
+
+<h3>sensors-cli</h3>
+
+<p><strong>Problema.</strong> Ter vários sensores separados não dá a ninguém, humano ou agente, uma visão de conjunto de se o sistema está melhorando ou piorando ao longo do tempo.</p>
+<p><strong>Na prática.</strong> Painel que roda vários sensores em intervalo, guarda histórico e devolve ao agente um resumo enxuto: piorou ou melhorou em relação ao último ponto de referência. É o mais transferível conceitualmente dos quatro desta seção, o embrião de um painel de saúde de harness.</p>
+<p><strong>Para quem.</strong> N2 a N3, quando já existe mais de um sensor rodando e falta consolidação.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Um único sensor isolado ainda não justifica um painel. Consolide quando o segundo sensor entrar em produção.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte para os sensores que você já tem rodando e leia o resumo de tendência da primeira semana antes de adicionar qualquer sensor novo.</p>
+
+<p>Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das quatro ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
+
+<h2 id="pt-reforcar">7. Reforçar</h2>
+
+<p>Reforçar é o passo que separa quem tem um sistema de quem tem uma configuração, tratado na <a href="harness-p2.html#pt-reforcar">parte 2</a>. As três fichas abaixo tratam da limpeza como disciplina, não como evento.</p>
+
+<h3>ai-slop-cleaner</h3>
+
+<p><strong>Problema.</strong> Guias, sensores e o próprio trabalho produzido acumulam entulho: regra que não se aplica mais, verificação que ninguém lê, repetição desnecessária, restos de tentativa abandonada.</p>
+<p><strong>Na prática.</strong> Fonte real da matriz de cinco regras de limpeza descrita na parte 2: travar o comportamento antes de mexer, preferir remoção a acréscimo, escrever o plano antes de editar, reverter sozinho o que quebrar, separar quem limpa de quem revisa. Fluxo à prova de regressão, com separação entre escritor e revisor.</p>
+<p><strong>Para quem.</strong> N1 em diante, qualquer harness que já produziu conteúdo suficiente para acumular entulho.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Projeto recém-criado, sem histórico ainda para limpar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode uma vez contra a pasta de guias mais antiga do seu projeto e compare o que ele sinaliza com o que você já suspeitava estar obsoleto.</p>
+
+<p>Repositório: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>Limpeza como cadência</h3>
+
+<p><strong>Problema.</strong> Dívida de guia e de código acumulada é empréstimo de juros altos. Deixada compor, vira uma semana perdida em vez de minutos distribuídos.</p>
+<p><strong>Na prática.</strong> Rodar a limpeza em intervalo fixo, independente de haver tarefa em andamento, em vez de esperar um mutirão anual. Um mutirão de limpeza é o sintoma de que a cadência não existe.</p>
+<p><strong>Para quem.</strong> N2 em diante, qualquer harness com sensores já instalados, porque a cadência é o que detecta deriva que nenhuma execução isolada revela.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Nunca é cedo demais para começar pequeno, mas não force cadência antes de ter pelo menos um sensor de verificação dura rodando: sem verificação, limpeza vira mudança silenciosa.</p>
+<p><strong>Como começar em 15 minutos.</strong> Escolha um intervalo (semanal é o mais comum) e agende a primeira execução da ferramenta de limpeza que você já escolheu. A disciplina importa mais que a ferramenta específica.</p>
+
+<h3>Coleta de lixo</h3>
+
+<p><strong>Problema.</strong> Skill que ninguém usa mais, guia que descreve um processo que já mudou, âncora que aponta para uma seção que não existe mais: nada disso quebra a execução, então nada disso aparece sozinho.</p>
+<p><strong>Na prática.</strong> Varredura periódica que procura especificamente por artefato morto, não por defeito ativo: skill sem disparo recente, link quebrado, arquivo referenciado por nenhum outro.</p>
+<p><strong>Para quem.</strong> N2 a N3, harness com histórico longo o suficiente para ter acumulado artefato órfão.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Harness com poucos meses de idade. Ainda não teve tempo de acumular o suficiente para valer a varredura dedicada.</p>
+<p><strong>Como começar em 15 minutos.</strong> Liste todas as skills instaladas e a data do último disparo de cada uma. Qualquer coisa sem disparo há mais de um trimestre entra na fila de revisão, não de remoção automática.</p>
+
+<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Nenhuma dessas três fichas distingue artefato morto de artefato raro. Uma skill que dispara uma vez por trimestre para o fechamento contábil parece morta numa varredura mensal. É por isso que a coleta de lixo aqui entra sempre na fila de revisão humana, nunca na de remoção automática: cadência sem esse cuidado apaga exceção rara em vez de entulho de verdade.</p></div>
+
+<h2 id="pt-howto-1">8. Roteiro 1: ler o superpowers em uma hora</h2>
 
 <p>Este roteiro serve para quem não programa. O objetivo não é usar a ferramenta, é aprender a escrever procedimento para máquina lendo quem já fez bem.</p>
 
@@ -468,7 +686,7 @@ p code{
 
 <p>O passo 5 é o único que importa. Os quatro anteriores existem para calibrar o que uma boa regra parece.</p>
 
-<h2 id="pt-howto-2">7. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
+<h2 id="pt-howto-2">9. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
 
 <p>Use uma tarefa que você já faz repetidamente, que tenha etapas verificáveis e que não seja irreversível. Revisão de documento contra checklist é o exemplo ideal.</p>
 
@@ -497,7 +715,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <div class="rule-box"><span class="lbl">Erro mais comum</span><p>Escrever um SKILL.md gigante na primeira tentativa. Comece pequeno e deixe a falha dizer o que acrescentar. Guia é índice, não enciclopédia.</p></div>
 
-<h2 id="pt-howto-3">8. Roteiro 3: montar seu primeiro sensor</h2>
+<h2 id="pt-howto-3">10. Roteiro 3: montar seu primeiro sensor</h2>
 
 <p>Este roteiro exige alguém capaz de escrever vinte linhas de script, mas não exige programador. Vale para qualquer tarefa que produza números.</p>
 
@@ -513,7 +731,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o sensor nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um sensor cego é pior que nenhum: ele produz confiança sem base.</p>
 
-<h2 id="pt-seguranca">9. Antes de instalar qualquer coisa</h2>
+<h2 id="pt-seguranca">11. Antes de instalar qualquer coisa</h2>
 
 <p>Instalar uma coleção de skills de terceiro é executar instrução de terceiro dentro do seu ambiente. Isso não é motivo para não fazer, é motivo para ler antes.</p>
 
@@ -532,21 +750,30 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
 
-<h2 id="pt-fontes">10. Fontes</h2>
+<h2 id="pt-fontes">12. Fontes</h2>
 
 <ol class="sources">
+<li>Fernando Teco Sodré. <em>levantando-briefing</em>, skill de decisão de automação. <a href="https://github.com/tecosodreaboutdigital/harness-medir/tree/main/skills/levantando-briefing">github.com/tecosodreaboutdigital/harness-medir</a></li>
+<li>Guia inspirado em observações públicas de Karpathy, mantido por terceiros. <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></li>
+<li>Andrej Karpathy. <em>autoresearch</em>, fluxo agêntico de referência, este sim do próprio autor. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
+<li><em>c4-skills</em>, modelo C4 e registro de decisão de arquitetura. <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></li>
+<li>GitHub. <em>Spec Kit</em>. <a href="https://github.com/github/spec-kit">github.com/github/spec-kit</a></li>
+<li>Birgitta Böckeler. <em>Understanding spec-driven development: Kiro, spec-kit e Tessl</em>. <a href="https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">martinfowler.com</a></li>
 <li>Jesse Vincent. <em>superpowers</em>, framework de skills e metodologia. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
 <li>Matt Pocock. <em>skills</em>. <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li><em>planning-with-files</em>, estado durável em disco. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
 <li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
 <li>Agent Skills, padrão aberto. <a href="https://agentskills.io/">agentskills.io</a></li>
 <li>Documentação de Agent Skills. <a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">docs.claude.com</a></li>
-<li>Birgitta Böckeler. <em>Understanding spec-driven development: Kiro, spec-kit e Tessl</em>. <a href="https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">martinfowler.com</a></li>
-<li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
-<li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li><em>holdfast</em>, execução particionada durável. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li>DeepSeek Harness. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai/deepseek-harness</a></li>
+<li>LangChain Inc. <em>LangGraph</em>. <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></li>
 <li>Regras de dependência. <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></li>
 <li>Teste de mutação. <a href="https://stryker-mutator.io/">stryker-mutator.io</a></li>
-<li>DeepSeek Harness. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai/deepseek-harness</a></li>
-<li>Fluxo de trabalho agêntico de referência. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
+<li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
+<li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li><em>ai-slop-cleaner</em>, fonte da matriz de limpeza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>
 

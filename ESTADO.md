@@ -36,19 +36,17 @@ Decide se a automação deve existir, antes de discutir como funciona. Oito bloc
 
 Preenche uma lacuna verificada: existe farto material sobre como especificar, quase nada sobre como decidir se vale.
 
----
-
-## Parcial
-
 ### Guia compacto de ferramentas e skills
 
 `harness-caixa-de-ferramentas.html`
 
-Existe em português, mas em formato antigo que precisa ser refeito. Dois problemas conhecidos:
+Reescrito por completo em 30 de agosto de 2026. Organizado pelos cinco passos do MEDIR, não por categoria de produto. Dezessete fichas de seis campos, mais seção de diagnóstico de faixa no início para quem chega da parte 1. Cada passo do MEDIR tem crítica registrada, não só recomendação.
 
-**Organizado por categoria de produto**, que é a lógica de quem cataloga. Precisa ser organizado pelos cinco passos do MEDIR, que é a lógica de quem usa.
+Distribuição: Mapear com quatro fichas (levantando-briefing, guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica de Böckeler e Pocock), Equipar com três (superpowers, mattpocock/skills, planning-with-files), Delegar com três (holdfast, classes de ambiente, orquestração programada com LangGraph), Inspecionar com quatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforçar com três (ai-slop-cleaner, limpeza como cadência, coleta de lixo).
 
-**As entradas são descritivas, não são fichas.** Falta o formato de seis campos definido em PADROES.md, e falta o material novo levantado depois: holdfast, planning-with-files, o guia inspirado em Karpathy, as skills de arquitetura, a limpeza como padrão com fonte verificada, e a nossa própria skill de briefing.
+Toda ferramenta citada está verificada em `fontes/inventario.md`, incluindo três fontes adicionadas nesta reescrita: Semgrep, LangGraph e GitHub Spec Kit com link direto.
+
+Repositório publicado, público, em `github.com/tecosodreaboutdigital/harness-medir`.
 
 ---
 
@@ -70,7 +68,7 @@ Escrever agora produziria opinião bem escrita, não referência.
 |---|---|---|---|
 | Parte 1 | pronta | pronta | pronta |
 | Parte 2 | pronta | falta | falta |
-| Guia compacto | a refazer | falta | falta |
+| Guia compacto | pronta | falta | falta |
 | Parte 3 | falta | falta | falta |
 | Skill de briefing | pronta | falta | falta |
 

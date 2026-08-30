@@ -4,35 +4,15 @@ Em ordem. Cada item traz o critério de pronto.
 
 ---
 
-## 1. Reescrever o guia compacto
+## Concluído em 30 de agosto de 2026
 
-**Arquivo:** `harness-caixa-de-ferramentas.html`
+**Repositório GitHub público criado**, em `github.com/tecosodreaboutdigital/harness-medir`. Commit inicial com os 23 arquivos existentes, sem dado sensível. LICENSE (MIT) adicionada dentro de `skills/levantando-briefing/`, consistente com o que o README da skill já declarava. Nada de licença na raiz, porque os artigos seguem todos os direitos reservados.
 
-Refazer inteiro, organizado pelos cinco passos do MEDIR em vez de por categoria de produto.
-
-Toda entrada vira ficha de seis campos, conforme `PADROES.md`: qual problema resolve, o que você ganha, para quem serve por faixa, faixa mínima, quando não usar, como começar em quinze minutos.
-
-Distribuição por passo:
-
-| Passo | Fichas |
-|---|---|
-| Mapear | levantando-briefing (nossa), guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica |
-| Equipar | superpowers, mattpocock/skills, planning-with-files |
-| Delegar | holdfast, classes de ambiente, orquestração programada |
-| Inspecionar | dependency-cruiser, Stryker, Semgrep, sensors-cli |
-| Reforçar | ai-slop-cleaner, limpeza como cadência, coleta de lixo |
-
-Manter as três seções que não são fichas: como usar o documento, os três roteiros práticos, e antes de instalar qualquer coisa.
-
-Adicionar seção de diagnóstico no início, para o leitor que chega da parte 1 descobrir em que faixa está.
-
-Manter o aviso de validade datado no topo.
-
-**Pronto quando:** cada uma das dezesseis fichas tem os seis campos preenchidos, toda ferramenta citada consta como verificada em `fontes/inventario.md`, e cada passo do MEDIR tem pelo menos uma crítica registrada.
+**Guia compacto reescrito por completo.** Ver a entrada correspondente em `ESTADO.md` para o detalhamento. Critério de pronto batido: dezessete fichas de seis campos, toda ferramenta verificada em `fontes/inventario.md` (três fontes novas verificadas nesta rodada: Semgrep, LangGraph, GitHub Spec Kit com link direto), e cada passo do MEDIR com crítica registrada.
 
 ---
 
-## 2. Traduzir a parte 2 e o guia compacto
+## 1. Traduzir a parte 2 e o guia compacto
 
 Inglês e espanhol, no mesmo arquivo, com o seletor.
 
@@ -42,7 +22,7 @@ Reutilizar `build/build_all.py` como referência de montagem trilíngue. Os iden
 
 ---
 
-## 3. Traduzir a skill de briefing
+## 2. Traduzir a skill de briefing
 
 Inglês e espanhol, como arquivos separados no repositório da skill, não como seletor.
 
@@ -50,7 +30,7 @@ Nome sugerido: `SKILL.en.md` e `SKILL.es.md`, seguindo a convenção de README m
 
 ---
 
-## 4. Rodada de pesquisa da parte 3
+## 3. Rodada de pesquisa da parte 3
 
 Rodada dedicada, não complemento. O que precisa ser levantado:
 
@@ -65,7 +45,7 @@ Rodada dedicada, não complemento. O que precisa ser levantado:
 
 ---
 
-## 5. Escrever a parte 3
+## 4. Escrever a parte 3
 
 Estrutura prevista, sujeita ao que a pesquisa revelar:
 
@@ -84,7 +64,7 @@ Estrutura prevista, sujeita ao que a pesquisa revelar:
 
 ---
 
-## 6. Consolidar o playbook
+## 5. Consolidar o playbook
 
 Reaproveita as três partes e o guia, e acrescenta o que não existe:
 
