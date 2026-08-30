@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-08-30T18:09:16.655383+00:00",
+  "generated_at": "2026-08-30T18:43:07.166928+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
-    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl"
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
   ],
   "milestones": [
     {
@@ -204,12 +205,52 @@
         "cache_read": 225836728,
         "cache_creation": 1796348
       }
+    },
+    {
+      "hash": "d8ff518",
+      "timestamp": "2026-08-30T15:10:25-03:00",
+      "subject": "Regera o diario de bordo com os marcos reais desta sessao",
+      "words_published": 48835,
+      "code_lines": 4909,
+      "governance_lines": 459,
+      "tokens_bucket": {
+        "input": 40,
+        "output": 9865,
+        "cache_read": 7189601,
+        "cache_creation": 25544
+      },
+      "tokens_cumulative": {
+        "input": 1602,
+        "output": 942702,
+        "cache_read": 233026329,
+        "cache_creation": 1821892
+      }
+    },
+    {
+      "hash": "bb19deb",
+      "timestamp": "2026-08-30T15:42:14-03:00",
+      "subject": "Adiciona impeccable ao guia compacto e a curadoria de skills",
+      "words_published": 49571,
+      "code_lines": 4951,
+      "governance_lines": 461,
+      "tokens_bucket": {
+        "input": 340,
+        "output": 247625,
+        "cache_read": 30527109,
+        "cache_creation": 555600
+      },
+      "tokens_cumulative": {
+        "input": 1942,
+        "output": 1190327,
+        "cache_read": 263553438,
+        "cache_creation": 2377492
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 6,
-    "output": 1137,
-    "cache_read": 1064430,
-    "cache_creation": 3057
+    "input": 12,
+    "output": 1780,
+    "cache_read": 1267160,
+    "cache_creation": 10058
   }
 }

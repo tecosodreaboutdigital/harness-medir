@@ -69,6 +69,16 @@ COMMIT_TXT = {
         'en': 'README, STANDARDS, STATUS, NEXT-STEPS and TOOLS rewritten in English as the primary version, each with a full Portuguese and Spanish translation. Closes the English-primary restructuring across both public repositories.',
         'es': 'README, STANDARDS, STATUS, NEXT-STEPS y TOOLS reescritos en inglés como versión primaria, cada uno con traducción completa al portugués y al español. Cierra la reestructuración hacia el inglés primario en los dos repositorios públicos.',
     },
+    'd8ff518': {
+        'pt': 'Diário de bordo regerado sobre o histórico real completo até aqui, quatro marcos novos documentados: a criação do próprio diário, o início e o fechamento da reestruturação para inglês primário, a tradução do guia compacto. Fecha a sessão 1.',
+        'en': 'Project log regenerated over the full real history so far, four new milestones documented: the log’s own creation, the start and close of the English-primary restructuring, the compact guide’s translation. Closes session 1.',
+        'es': 'Diario de bordo regenerado sobre el historial real completo hasta aquí, cuatro hitos nuevos documentados: la creación del propio diario, el inicio y el cierre de la reestructuración hacia el inglés primario, la traducción de la guía compacta. Cierra la sesión 1.',
+    },
+    'bb19deb': {
+        'pt': 'Sessão 2. Quatro skills recomendadas de fora avaliadas (ponytail, no-ai-slop, taste-skill, impeccable) por relevância, manutenção, contribuidores e licença. Só impeccable adotada, como décima oitava ficha do guia compacto, em Inspecionar.',
+        'en': 'Session 2. Four externally recommended skills evaluated (ponytail, no-ai-slop, taste-skill, impeccable) on relevance, maintenance, contributors and licence. Only impeccable adopted, as the compact guide’s eighteenth entry, in Inspect.',
+        'es': 'Sesión 2. Cuatro skills recomendadas desde afuera evaluadas (ponytail, no-ai-slop, taste-skill, impeccable) por relevancia, mantenimiento, colaboradores y licencia. Solo impeccable adoptada, como la decimoctava ficha de la guía compacta, en Inspeccionar.',
+    },
 }
 
 MONTHS = {
