@@ -16,17 +16,13 @@ Em ordem. Cada item traz o critério de pronto.
 
 **levantando-briefing separada em repositório próprio**, `github.com/tecosodreaboutdigital/levantando-briefing`, público, MIT, no mesmo padrão das demais skills citadas no guia compacto. Removida de `skills/` dentro do harness-medir, que agora só aponta para lá. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão.
 
----
+**Diário de bordo criado**, `docs/diario-de-bordo.html`, trilíngue, gerado em duas etapas: `build/generate_diario_metrics.py` reconstrói a série real (palavras publicadas por `git show` em cada commit, linhas de `build/` e dos documentos de governança, tokens somados do `usage` real de cada mensagem no transcript `.jsonl` da sessão, atribuídos ao commit cronologicamente seguinte) e escreve `docs/assets/diario-metrics.json`; `build/build_diario.py` monta a página a partir desse JSON, nunca escrita à mão. Dois gráficos SVG empilhados, mesmo eixo X, sem eixo Y duplo. Seis marcos reais registrados (o histórico completo do projeto até aqui, não uma amostra), mais o que ainda não fechou marco. Referenciado em `FERRAMENTAS.md` e no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e do guia compacto.
 
-## 1. Diário de bordo
-
-Página HTML viva, trilíngue, documentando a evolução do próprio projeto: tokens consumidos e palavras ou linhas produzidas por marco, timeline de sessões, adaptada do modelo usado no projeto wesafer-aiotp-ForHospitals-Dev, mas em escala menor e com métrica de conteúdo em vez de código de aplicação. Dado real extraído do transcript `.jsonl` desta sessão em `~/.claude/projects/<hash-do-projeto>/`, mesma técnica de lá.
-
-**Pronto quando:** existe em `docs/diario-de-bordo.html` (ou local a decidir), nas três línguas, com pelo menos um marco real registrado, sem eixo Y duplo em nenhum gráfico, e referenciado em `FERRAMENTAS.md` e no rodapé dos artigos.
+**GitHub Pages ativado**, publicando o repositório em `tecosodreaboutdigital.github.io/harness-medir`. `.nojekyll` adicionado para servir os HTML como estão, sem processamento Jekyll. Sem isso, nenhum artigo era de fato legível como página na web, só como código-fonte no visualizador do GitHub.
 
 ---
 
-## 2. Traduzir o guia compacto
+## 1. Traduzir o guia compacto
 
 Inglês e espanhol, no mesmo arquivo `harness-caixa-de-ferramentas.html`, com o seletor.
 
@@ -36,7 +32,7 @@ Reutilizar `build/build_kit.py` como base, no mesmo padrão trilíngue que `buil
 
 ---
 
-## 3. Traduzir a skill de briefing
+## 2. Traduzir a skill de briefing
 
 Inglês e espanhol, como arquivos separados no repositório da skill, não como seletor.
 
@@ -44,7 +40,7 @@ Nome sugerido: `SKILL.en.md` e `SKILL.es.md`, seguindo a convenção de README m
 
 ---
 
-## 4. Rodada de pesquisa da parte 3
+## 3. Rodada de pesquisa da parte 3
 
 Rodada dedicada, não complemento. O que precisa ser levantado:
 
@@ -59,7 +55,7 @@ Rodada dedicada, não complemento. O que precisa ser levantado:
 
 ---
 
-## 5. Escrever a parte 3
+## 4. Escrever a parte 3
 
 Estrutura prevista, sujeita ao que a pesquisa revelar:
 
@@ -78,7 +74,7 @@ Estrutura prevista, sujeita ao que a pesquisa revelar:
 
 ---
 
-## 6. Consolidar o playbook
+## 5. Consolidar o playbook
 
 Reaproveita as três partes e o guia, e acrescenta o que não existe:
 
@@ -101,4 +97,4 @@ Reaproveita as três partes e o guia, e acrescenta o que não existe:
 
 **Grafia do inglês.** Hoje é britânica. Se o alvo for os Estados Unidos, converter.
 
-**Publicação.** Definir onde os HTMLs ficam hospedados e como apontam para os repositórios de skill no GitHub.
+**Publicação.** Resolvida em 30 de agosto de 2026: GitHub Pages ativo em `tecosodreaboutdigital.github.io/harness-medir`. Verificar depois do primeiro build automático se os quatro documentos renderizam corretamente lá (o link mais provável de precisar ajuste é algum caminho relativo entre eles).

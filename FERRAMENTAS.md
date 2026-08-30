@@ -68,4 +68,4 @@ Esta seção é a que separa "instalado" de "usado", e é a que mais vai crescer
 
 ## Onde isso aparece
 
-Rodapé de `harness-p1.html`, `harness-p2.html` e `harness-caixa-de-ferramentas.html`, nos três idiomas onde a peça for trilíngue. E no [diário de bordo](docs/diario-de-bordo.html), quando existir, com o detalhamento por sessão.
+Rodapé de `harness-p1.html`, `harness-p2.html` e `harness-caixa-de-ferramentas.html`, nos três idiomas onde a peça for trilíngue. E no [diário de bordo](docs/diario-de-bordo.html), trilíngue, com o detalhamento por marco, gerado a partir do git e do registro real de uso da sessão, nunca editado à mão.
