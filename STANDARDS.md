@@ -65,17 +65,21 @@ Each diagram carries, in the markdown, its purpose and a rendering note, includi
 
 ## Glossary
 
-Book style. Alphabetical order ignoring accents. No rule between entries. Term in bold, colon, definition on the same line, origin at the end in italic with a link. Hanging indent.
+Single shared page since 30 August 2026: `harness-glossary.html`, trilingual, one entry per term for the whole series (parts 1 to 4, the compact guide). No document keeps its own glossary section any more; a term defined for part 2 is available, unchanged, to parts 3 and 4.
 
-In body text, the term appears with a dotted underline, with a tooltip on hover and a link to the entry.
+Book style. Alphabetical order ignoring accents. No rule between entries. Term in bold, colon, definition on the same line, origin at the end in italic with a link. Hanging indent. Proper names are alphabetised by surname: "Deming, W. Edwards".
 
-Proper names are alphabetised by surname: "Deming, W. Edwards".
+In body text, the term appears with a dotted underline, with a tooltip on hover (the `data-tip` attribute carries the short definition, shown locally, no navigation needed) and a click leads to `harness-glossary.html#<lang>-<slug>`, landing on that exact entry. Never link a term to a local `#g-slug` anchor inside the article itself, that anchor no longer exists there.
+
+When a new part introduces a term, add it to `harness-glossary.html` directly (all three languages), keep the alphabetical position, and link to it from the part's body. Do not duplicate the definition back into the part.
 
 ---
 
 ## References
 
-**Link only where the URL has been verified.** When the source is known but the address has not been checked, the source appears in plain text with no link.
+Single shared page since 30 August 2026: `harness-sources.html`, trilingual, grouped by where the research was gathered (foundational sources, then one group per part). Every citation across every part points here; no document keeps its own numbered source list.
+
+**Link only where the URL has been verified.** When the source is known but the address has not been checked, the entry appears in plain text (class `orig-plain`) with the gap stated in the entry itself, never hidden.
 
 References point to the primary source, never to a consultancy blog or a skill showcase with no visible origin repository.
 
@@ -87,10 +91,10 @@ An inventory that only recommends is not an inventory, it is a vendor catalogue.
 
 Four layers, all implemented:
 
-1. Series bar at the top of every document, next to the language selector.
-2. In-body links: mentions of a tier or of MEDIR lead to the corresponding section of Part 1. Mentions of a tool lead to its entry in the compact guide.
+1. **Series bar**, one shared component (`.topbar`) at the top of every document, centred on the page, sticky while scrolling. One line: the numbered parts joined by `·`, a `|` before the companion documents, then compact guide, glossary and sources also joined by `·`, with the language selector flanked by `{ }` at the end. The current page renders as plain text, not a link; a part not yet published renders dim and unlinked. The bar's labels and link targets switch language together with the language selector, driven by the `SERIES` object and `setSeries()` call inside every page's `set()` function, never hand-duplicated per language.
+2. In-body links: mentions of a tier or of MEDIR lead to the corresponding section of Part 1. Mentions of a tool lead to its entry in the compact guide. Mentions of a glossary term lead to `harness-glossary.html`. Citations lead to `harness-sources.html`.
 3. A "Where you are" block at the end of every piece.
-4. A glossary with a single wording per entry, replicated across documents.
+4. The glossary and the sources page themselves: one wording per entry, one page, linked from everywhere.
 
 ---
 

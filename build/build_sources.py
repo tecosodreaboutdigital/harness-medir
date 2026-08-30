@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-# Monta harness-toolkit.html trilingue (EN/PT/ES) a partir dos tres
-# corpos em build/body_toolkit_en.html, build/body_toolkit_pt.html e
-# build/body_toolkit_es.html. Ingles e a lingua padrao do projeto
-# desde 30 de agosto de 2026 (ver STANDARDS.md), entao os tres corpos
-# sao tratados de forma simetrica aqui: nenhum deles e "extraido do
-# arquivo vigente" como PT era em build_p2.py antes desta reescrita,
-# os tres sao arquivos-fonte editaveis em build/, sem prefixo de
-# idioma nos ids e ancoras, prefixados por scope() no build.
+# Monta harness-sources.html trilingue (EN/PT/ES) a partir dos tres
+# corpos em build/body_sources_en.html, body_sources_pt.html e
+# body_sources_es.html. Segue exatamente o padrao simetrico de
+# build_toolkit.py: os tres corpos sao fonte, sem prefixo de idioma
+# nos ids, prefixados por scope() no build. O envoltorio (head, CSS,
+# a barra de topo unificada) e extraido de harness-p2.html vigente,
+# que ja carrega a barra de serie compartilhada desde 30/08/2026.
 import re, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,11 +13,11 @@ p2 = open(os.path.join(ROOT, 'harness-p2.html'), encoding='utf-8').read()
 shell = p2[:p2.index('<div class="topbar">')]
 shell = shell.replace(
     '<title>Guides and sensors: how an agent learns to correct itself | Part 2</title>',
-    '<title>The harness toolkit | Companion document</title>')
+    '<title>Sources | Harness series</title>')
 
-EN = open(os.path.join(ROOT, 'build', 'body_toolkit_en.html'), encoding='utf-8').read().strip()
-PT = open(os.path.join(ROOT, 'build', 'body_toolkit_pt.html'), encoding='utf-8').read().strip()
-ES = open(os.path.join(ROOT, 'build', 'body_toolkit_es.html'), encoding='utf-8').read().strip()
+EN = open(os.path.join(ROOT, 'build', 'body_sources_en.html'), encoding='utf-8').read().strip()
+PT = open(os.path.join(ROOT, 'build', 'body_sources_pt.html'), encoding='utf-8').read().strip()
+ES = open(os.path.join(ROOT, 'build', 'body_sources_es.html'), encoding='utf-8').read().strip()
 
 def scope(body, pref):
     body = re.sub(r'(\sid=")([a-z0-9\-]+)(")', lambda m: m.group(1) + pref + '-' + m.group(2) + m.group(3), body)
@@ -29,7 +28,7 @@ EN = scope(EN, 'en')
 PT = scope(PT, 'pt')
 ES = scope(ES, 'es')
 
-CUR = 'guide'
+CUR = 'sources'
 SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources']
 FILES = {'p1': 'harness-p1.html', 'p2': 'harness-p2.html', 'p3': 'harness-p3.html',
          'p4': 'harness-p4.html', 'guide': 'harness-toolkit.html',
@@ -42,7 +41,10 @@ def topbar_html(cur):
     pieces = []
     for i, key in enumerate(SERIES_ORDER):
         if i > 0:
-            pieces.append('<span class="sep pipe">|</span>' if key == 'guide' else '<span class="sep">·</span>')
+            if key == 'guide':
+                pieces.append('<span class="sep pipe">|</span>')
+            else:
+                pieces.append('<span class="sep">·</span>')
         label = LABELS_EN[key]
         if key == cur:
             pieces.append('<span class="cur" data-key="%s">%s</span>' % (key, label))
@@ -136,13 +138,12 @@ doc = (shell
  + '<main class="page" id="doc-es" hidden>\n' + ES + '\n</main>\n'
  + js)
 
-out_path = os.path.join(ROOT, 'harness-toolkit.html')
+out_path = os.path.join(ROOT, 'harness-sources.html')
 open(out_path, 'w', encoding='utf-8').write(doc)
 
 ids = set(re.findall(r'\sid="([a-z0-9\-]+)"', doc))
 hr = set(re.findall(r'href="#([a-z0-9\-]+)"', doc))
 print('broken:', sorted(hr - ids))
 for tag, name in ((PT, 'PT'), (EN, 'EN'), (ES, 'ES')):
-    b = re.sub(r'<pre>.*?</pre>', '', tag, flags=re.S)
-    print(name, 'palavras:', len(re.sub(r'<[^>]+>', ' ', b).split()))
+    print(name, 'palavras:', len(re.sub(r'<[^>]+>', ' ', tag).split()))
 print('escrito em:', out_path)
