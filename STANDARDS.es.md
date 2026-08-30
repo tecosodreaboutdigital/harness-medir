@@ -51,6 +51,16 @@ No usar bibliotecas de gráficos. No usar imágenes rasterizadas.
 
 ---
 
+## Diagramas
+
+Todo diagrama nace como especificación en Mermaid, dentro del archivo md correspondiente. El SVG en línea del HTML deriva de esa especificación y nunca la sustituye.
+
+Al cambiar la estructura o una etiqueta, cambia primero el Mermaid, luego regenera el SVG. Cambiar solo el SVG deja la especificación desactualizada, y la próxima sesión trabaja con el mapa equivocado.
+
+Cada diagrama trae, en el md, su propósito y una nota de renderización, incluyendo qué necesita saltar a la vista y la frase que lleva la leyenda.
+
+---
+
 ## Glosario
 
 Estilo de libro. Orden alfabético que ignora los acentos. Sin filete entre entradas. Término en negrita, dos puntos, definición en la misma línea, origen al final en cursiva con enlace. Sangría francesa.

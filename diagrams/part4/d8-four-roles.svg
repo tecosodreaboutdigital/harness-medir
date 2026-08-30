@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" role="img" aria-label="The four roles and the non-accumulation rule: proposes, authorizes, executes, witnesses">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="d8-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">THE FOUR ROLES AND THE NON-ACCUMULATION RULE</text>
+
+<rect x="20" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="95" y="44" text-anchor="middle">PROPOSES</text>
+<rect x="35" y="58" width="120" height="34" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="79" text-anchor="middle">Requester</text>
+<rect x="35" y="128" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="150" text-anchor="middle">Area sponsor</text>
+<text class="svg-sub" x="95" y="163" text-anchor="middle">answers for the</text>
+<text class="svg-sub" x="95" y="174" text-anchor="middle">promised return</text>
+
+<line x1="170" y1="115" x2="188" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d8-arrow)"/>
+
+<rect x="190" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="265" y="44" text-anchor="middle">AUTHORIZES</text>
+<rect x="205" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="265" y="112" text-anchor="middle">Certifier</text>
+<text class="svg-sub" x="265" y="125" text-anchor="middle">approves tier and renewal</text>
+
+<line x1="340" y1="115" x2="358" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d8-arrow)"/>
+
+<rect x="360" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="435" y="44" text-anchor="middle">EXECUTES</text>
+<rect x="375" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="435" y="112" text-anchor="middle">Agent owner</text>
+<text class="svg-sub" x="435" y="125" text-anchor="middle">named person, not a department</text>
+
+<line x1="510" y1="115" x2="528" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d8-arrow)"/>
+
+<rect x="530" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="605" y="44" text-anchor="middle">WITNESSES</text>
+<rect x="545" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="605" y="112" text-anchor="middle">Auditor</text>
+<text class="svg-sub" x="605" y="125" text-anchor="middle">reads the exceptions, not the outputs</text>
+
+<path d="M435,88 C 435,58 265,58 265,88" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="350" y="58" text-anchor="middle">does not accumulate with</text>
+
+<path d="M435,144 C 435,215 605,215 605,144" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="520" y="223" text-anchor="middle">does not accumulate with</text>
+
+<text class="svg-cap" x="350" y="252" text-anchor="middle">THE AUDITOR READS THE EXCEPTIONS THE AGENT CREATED, NOT THE OUTPUTS IT PRODUCED</text>
+</svg>

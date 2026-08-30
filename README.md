@@ -60,7 +60,9 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
 ├── sources/
 │   └── inventory.md                   every source verified, with status
+├── diagrams/                          SVG renderings for Parts 3 and 4's diagrams, ahead of the articles
 ├── docs/
+│   ├── harness-p3-p4-briefing.pt.md   working dossier for Parts 3 and 4, internal, Portuguese only
 │   ├── logbook.html                   trilingual, generated from git and the session's real usage
 │   └── assets/logbook-metrics.json    the log's raw data, never edited by hand
 └── build/                             text bodies and assembly scripts
@@ -72,17 +74,28 @@ The HTML files live at the root on purpose: they reference each other by simple 
 
 ## The series' architecture
 
-Four pieces, with different review cadences.
+Six pieces, with different review cadences, organised around a three-layer framework, and only three.
+
+| Layer | Question it answers | Piece |
+|---|---|---|
+| Build | How you build a reliable agent | Part 2, MEDIR |
+| Operation | What it can do, and who answers for it | Part 3, the separation of powers |
+| Governance | How many agents exist, who owns each one, which ones still pay for themselves | Part 4, the agent office |
+
+Autonomy tiers N0 to N3 cross all three layers as the one shared ruler, the only vocabulary common to all of them, which is what keeps the framework from becoming three unrelated pieces. A fourth layer was deliberately left out: every framework that has died, died from too much vocabulary.
 
 | Piece | Nature | Review |
 |---|---|---|
 | Part 1, why | Argument. Why the environment is worth more than the model | Rare |
 | Part 2, how | Method. Guides, sensors, skill format, examples | Rare |
-| Part 3, governance | Permission, trail, accountability | Rare |
+| Part 3, operation | Permission outside the model, trail, accountability | Rare |
+| Part 4, governance | Life cycle, roles, indicators, where the office sits | Rare |
 | Compact guide | Market inventory, with names and repositories | Quarterly |
 | Playbook | Consolidation, plus the operational templates | Annual, by version |
 
-The compact guide lives apart precisely because it ages faster. The three parts talk about principles and do not depend on it.
+The compact guide lives apart precisely because it ages faster. The four parts talk about principles and do not depend on it.
+
+Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries.
 
 ---
 
@@ -92,7 +105,7 @@ An executive, board member, area director, successor running a family business. 
 
 The series exists so that this person can diagnose what stage they are at, understand what they need to build, and talk as an equal with whoever builds it.
 
-One character runs through all three parts: an operations director at a mid-size manufacturer who single-handedly builds an automation for reconciling freight invoices. She is composed from recurring patterns and does not describe a specific company. In Part 1 she is at N0 and suffers a structural accident. In Part 2 she reaches N1 and discovers that a guide without a sensor is just a well-written recommendation, ending at N2. In Part 3 she faces the first irreversible action.
+One character runs through the series: an operations director at a mid-size manufacturer who single-handedly builds an automation for reconciling freight invoices. She is composed from recurring patterns and does not describe a specific company. In Part 1 she is at N0 and suffers a structural accident. In Part 2 she reaches N1 and discovers that a guide without a sensor is just a well-written recommendation, ending at N2. In Part 3 she faces the first irreversible action. Part 4, not yet written, is where her arc as the agent's sole builder is meant to close.
 
 ---
 

@@ -26,47 +26,50 @@ Em ordem. Cada item traz seu critério de pronto.
 
 **Quatro skills recomendadas de fora, avaliadas, uma adotada.** `ponytail`, `no-ai-slop`, `taste-skill` e `impeccable` foram comparadas por relevância, sinal de manutenção, número de contribuidores e licença antes de qualquer uma tocar este repositório. `ponytail` (117 mil estrelas, com benchmark, mantida ativamente) teria resolvido a ressalva de atribuição indevida que já pesa sobre `karpathy-guidelines`, mas ficou de fora por ora, não descartada. `no-ai-slop` é uma skill de limpeza de prosa genuinamente útil cuja lista de palavras banidas inclui, por acaso, o termo central deste projeto, "harness", e também ficou de fora até decidirmos como fazer a exceção. `taste-skill` foi recusada de vez: suas dez subskills usam exatamente o registro de hype que um projeto sobre evidência em vez de opinião não deveria citar, e seis contribuidores contra 82 mil estrelas é uma base frágil. `impeccable` foi adotada: Apache-2.0, 30 contribuidores, versionada (v4.1.2), deriva da própria skill frontend-design da Anthropic, e suas 61 regras determinísticas de detector combinam com a própria definição de Inspecionar, evidência em vez de opinião, aplicada especificamente a design de frontend. Instalada só como documentação, `SKILL.md` e `reference/`, deixando de propósito a árvore `scripts/` que o CLI dela precisa, ver `TOOLS.md`. Acrescentada como a décima oitava ficha do guia compacto, em Inspecionar, nos três idiomas, ver `sources/inventory.md` para o registro de verificação.
 
----
-
-## 1. Rodada de pesquisa da parte 3
-
-**Superada por um dossiê de trabalho.** `docs/harness-p3-p4-briefing.pt.md`, acrescentado em 30 de agosto de 2026, já levanta sete eixos de pesquisa (um a mais que a lista abaixo) com fontes primárias verificadas, um diagnóstico estrutural, e uma especificação visual, e também propõe uma quarta parte para a série, ainda não refletida em `README.md` ou `STATUS.md`. Só em português, documento de trabalho interno, não voltado ao leitor, a mesma exceção que `sources/inventory.md` já tem. Trate o dossiê como o ponto de partida real desta rodada; a lista abaixo é o escopo original da rodada, mantida como registro.
-
-Rodada dedicada, não complemento. O que ainda falta levantar:
-
-- Literatura de segurança de agentes, com foco em instrução maliciosa que chega dentro de um dado
-- Incidentes reais documentados envolvendo agentes com efeito externo
-- A posição da autoridade brasileira de proteção de dados sobre decisão automatizada
-- Obrigações regulatórias europeias para sistemas classificados como de alto risco
-- Padrões de auditoria e registro aplicáveis a agentes
-- O que já existe de prática estabelecida sobre alçada e aprovação em sistemas autônomos
-
-**Pronto quando:** cada um dos seis eixos tiver ao menos duas fontes primárias verificadas.
+**Preparação das partes 3 e 4, os três primeiros itens da fila do dossiê de trabalho.** `docs/harness-p3-p4-briefing.pt.md` definiu a fila no bloco D, e esta rodada fechou os itens 1 a 3. `README.md`, `STATUS.md`, `NEXT-STEPS.md` e `STANDARDS.md`, nos três idiomas, agora descrevem quatro partes organizadas em torno de um framework de três camadas, construção, operação, governança, atravessadas pelas faixas N0 a N3, em vez de três partes mais dois companheiros, e `STANDARDS.md` ganhou a regra de `Diagramas` que o dossiê propôs: Mermaid primeiro, o SVG deriva e nunca substitui. `sources/inventory.md` ganhou uma seção nova carregando as 32 fontes do dossiê distribuídas em sete eixos de pesquisa mais o achado Air Canada, status V ou P original preservado, com nota explícita nas duas que marcam uma lacuna real e não só um link faltando: a fonte primária da regra de dois, e o fato de ainda não existir precedente brasileiro. Nove arquivos SVG independentes, D1 a D9, foram renderizados no novo diretório `diagrams/` a partir das especificações Mermaid do dossiê, em inglês por ser conteúdo novo, com o vocabulário de governança da parte 4 (dono do agente, homologador, auditor, patrocinador da área, recibo mantido distinto de registro) fixado nesta etapa para que os diagramas e a prosa futura não se afastem. Ver `STATUS.md` para o detalhamento completo e `diagrams/README.md` para o índice.
 
 ---
 
-## 2. Escrever a parte 3
+## 1. Escrever a parte 3
 
-Estrutura prevista, sujeita ao que a pesquisa revelar:
+Pesquisa completa, ver `sources/inventory.md`. A própria seção de fechamento do dossiê, "O que a pesquisa muda na estrutura planejada" no bloco B, revisa o esboço original de dez seções para nove. Reconstruída aqui para acompanhamento, conferir contra o dossiê antes de redigir:
 
-1. A primeira ação irreversível (abertura, com a diretora em N2 diante do primeiro envio a um cliente)
-2. Permissão não é instrução (por que a alçada precisa viver fora do modelo)
-3. Quando a ordem chega dentro do dado
-4. O que precisa estar registrado
-5. Reversão: o que significa desfazer, de fato
-6. Skill de terceiro é código de terceiro
-7. Obrigações legais
-8. Quem responde
-9. O que muda na mesa do seu conselho
-10. Onde você está (o fechamento da série)
+1. Air Canada abre a peça: uma empresa real argumentou em um tribunal real que o assistente dela era uma pessoa legal separada, que responde sozinha, e perdeu
+2. A diretora reentra aqui, em N2, diante da primeira ação irreversível, o contraste com o argumento da Air Canada é o ponto
+3. A separação de poderes, com a regra de dois como ferramenta operacional, o equivalente da matriz de guias e sensores da parte 2
+4. Identidade e um dono nomeado: quem implantou, o que está autorizado a fazer, em nome de quem age agora
+5. Quando a ordem chega dentro do dado
+6. O que precisa estar registrado, e o que reversão significa de fato
+7. Skill de terceiro é código de terceiro, fechando o gancho que a parte 2 deixou aberto
+8. Obrigações legais em duas colunas, Brasil e Europa, o que já vale antes do que ainda está em tramitação
+9. Quem responde, e onde você está, o fechamento da série
 
-**Pronto quando:** as três versões estiverem prontas, o arco da personagem se fechar, e a peça funcionar sozinha para um leitor que não leu as anteriores.
+Duas obrigações de honestidade que o dossiê marca explicitamente: declarar que o precedente Air Canada é estrangeiro, sob pena de um leitor jurídico desqualificar a peça inteira, e datar a afirmação de que a regulamentação específica do artigo 20 da LGPD ainda não foi publicada, porque essa frase pode envelhecer em meses.
+
+**Pronto quando:** as três versões estiverem prontas, o arco da personagem se fechar, a peça funcionar sozinha para um leitor que não leu as anteriores, e os artefatos de matriz de alçada e esquema de recibo estiverem no texto.
+
+---
+
+## 2. Escrever a parte 4
+
+Pesquisa não iniciada, escopo definido no bloco A do dossiê. Tese central: o ciclo de vida do agente, estados e não passos, distinguido do MEDIR com clareza suficiente para que o leitor não confunda os dois.
+
+Estrutura a cobrir, conforme o dossiê, ordem sujeita à redação:
+
+1. O ciclo de vida em si, seis estados de um briefing versionado até o descomissionamento, com as duas transições que quase ninguém implementa, homologação vencida e sem execução no período, ambas levando ao descomissionamento
+2. Os quatro papéis e a regra de não acumulação, a mesma separação de poderes da parte 3, agora no plano organizacional
+3. Os oito indicadores, dois dos quais medem a qualidade da própria governança, não a do agente: a taxa de exceção, e a taxa de reprovação do próprio portão
+4. Onde o escritório senta, e por que não em TI, apresentando as opções realistas com o custo de cada uma
+5. A advertência: esta é a peça com maior risco de virar folheto de fornecedor, e o antídoto é uma restrição explícita atravessando o texto, tudo o que ela propõe precisa funcionar em uma empresa com sete agentes e uma planilha
+6. O argumento de fecho: toda plataforma governa para dentro, e é por isso que o escritório precisa ser função da empresa, não produto que ela compra
+
+**Pronto quando:** as três versões estiverem prontas, o arco da personagem fechar a série, os oito indicadores estiverem definidos com fórmula, e o texto sustentar a restrição de sete agentes e uma planilha do início ao fim.
 
 ---
 
 ## 3. Consolidar o playbook
 
-Reaproveita as três partes e o guia, e acrescenta o que ainda não existe:
+Reaproveita as quatro partes e o guia, e acrescenta o que ainda não existe:
 
 - Modelo de contrato de tarefa
 - Modelo de skill, derivado dos três exemplos da parte 2
@@ -74,6 +77,9 @@ Reaproveita as três partes e o guia, e acrescenta o que ainda não existe:
 - Matriz de risco por faixa
 - Diagnóstico de faixa, versão questionário
 - Trilha de implantação de N0 a N3
+- Modelo de registro de agentes e de ata de homologação
+
+O D10, o laço próprio do escritório por trimestre, não decidido para a parte 4, é candidato forte para abrir o playbook, se ficar de fora da parte 4.
 
 ---
 
@@ -88,3 +94,5 @@ Reaproveita as três partes e o guia, e acrescenta o que ainda não existe:
 **Grafia do inglês.** Hoje é britânica, e essa é a leitura padrão do projeto agora. Se o público-alvo migrar para os Estados Unidos, converter.
 
 **Publicação.** Resolvida em 30 de agosto de 2026: GitHub Pages ativo em `tecosodreaboutdigital.github.io/harness-medir`. Verificar, depois do primeiro build automático, se os documentos renderizam corretamente lá (o link com maior chance de precisar de ajuste é algum caminho relativo entre eles).
+
+**Localizar a fonte primária da regra de dois.** Duas fontes secundárias independentes a atribuem à Meta com a mesma formulação, suficiente para citar o conteúdo na parte 3, não para linkar. Buscar de novo antes de a peça ser fechada, ver `sources/inventory.md`.

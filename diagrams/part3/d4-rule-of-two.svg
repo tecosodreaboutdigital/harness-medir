@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" role="img" aria-label="The rule of two: three questions, a count, a decision, everything ends in a receipt">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="d4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="20" text-anchor="middle">THE RULE OF TWO</text>
+
+<rect x="290" y="34" width="120" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="54" text-anchor="middle">PROPOSED ACTION</text>
+<line x1="350" y1="66" x2="350" y2="55" stroke="#1b1b19" stroke-width=".7"/>
+
+<polygon points="260,95 350,57 440,95 350,133" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="91" text-anchor="middle">Accesses private</text>
+<text class="svg-sub" x="350" y="103" text-anchor="middle">data?</text>
+<line x1="350" y1="66" x2="350" y2="93" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+
+<line x1="350" y1="133" x2="350" y2="155" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<polygon points="260,195 350,157 440,195 350,233" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="191" text-anchor="middle">Processes untrusted</text>
+<text class="svg-sub" x="350" y="203" text-anchor="middle">content?</text>
+
+<line x1="350" y1="233" x2="350" y2="255" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<polygon points="260,295 350,257 440,295 350,333" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="291" text-anchor="middle">Can it communicate</text>
+<text class="svg-sub" x="350" y="303" text-anchor="middle">externally?</text>
+
+<line x1="350" y1="333" x2="350" y2="355" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<polygon points="250,395 350,355 450,395 350,435" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="391" text-anchor="middle">How many answered</text>
+<text class="svg-sub" x="350" y="403" text-anchor="middle">yes?</text>
+
+<line x1="250" y1="395" x2="212" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<text class="svg-sub" x="225" y="378" text-anchor="middle">two or fewer</text>
+<rect x="40" y="372" width="170" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="125" y="390" text-anchor="middle">EXECUTES</text>
+<text class="svg-sub" x="125" y="404" text-anchor="middle">without human approval</text>
+
+<line x1="450" y1="395" x2="488" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<text class="svg-sub" x="470" y="378" text-anchor="middle">three</text>
+<rect x="490" y="372" width="190" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="585" y="390" text-anchor="middle">HUMAN IN THE LOOP</text>
+<text class="svg-sub" x="585" y="404" text-anchor="middle">required before executing</text>
+
+<line x1="125" y1="420" x2="330" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<line x1="585" y1="420" x2="372" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+
+<path d="M295,472 a55,10 0 0 1 110,0 v34 a55,10 0 0 1 -110,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<path d="M295,472 a55,10 0 0 0 110,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="500" text-anchor="middle">RECEIPT</text>
+
+<text class="svg-cap" x="350" y="530" text-anchor="middle">APPROVED OR NOT, EVERYTHING IS RECORDED</text>
+</svg>

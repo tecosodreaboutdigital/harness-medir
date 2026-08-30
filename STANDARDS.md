@@ -51,6 +51,16 @@ Do not use charting libraries. Do not use raster images.
 
 ---
 
+## Diagrams
+
+Every diagram is born as a Mermaid specification, inside the corresponding markdown file. The inline SVG in the HTML derives from that specification and never replaces it.
+
+When structure or a label changes, change the Mermaid first, then regenerate the SVG. Changing only the SVG leaves the specification out of date, and the next session works from the wrong map.
+
+Each diagram carries, in the markdown, its purpose and a rendering note, including what needs to jump out at the reader and the sentence the caption carries.
+
+---
+
 ## Glossary
 
 Book style. Alphabetical order ignoring accents. No rule between entries. Term in bold, colon, definition on the same line, origin at the end in italic with a link. Hanging indent.
