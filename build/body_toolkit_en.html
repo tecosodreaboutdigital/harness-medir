@@ -1,0 +1,402 @@
+<p class="eyebrow">Harness · Companion document · Practical</p>
+
+<h1>The harness toolkit</h1>
+
+<p class="deck">An annotated inventory of what exists today, organised by the five steps of MEDIR rather than by product category, with repositories, commands and three walkthroughs for starting from zero. This document ages faster than the series' articles, which is why it lives apart from them.</p>
+
+<p class="byline">Fernando Teco Sodré · Revised August 2026 · Companion to parts 1, 2 and 3</p>
+
+<div class="rule-box"><span class="lbl">Validity</span><p>Everything here was verified in August 2026. Names, addresses and commands change. The series' articles talk about principles and do not depend on this document. This document depends on the market.</p></div>
+
+<nav class="toc">
+  <p>In this document</p>
+  <ol>
+    <li><a href="#como-usar">How to use this</a></li>
+    <li><a href="#diagnostico">Diagnosis: which tier you are in</a></li>
+    <li><a href="#mapear">Map</a></li>
+    <li><a href="#equipar">Equip</a></li>
+    <li><a href="#delegar">Delegate</a></li>
+    <li><a href="#inspecionar">Inspect</a></li>
+    <li><a href="#reforcar">Reinforce</a></li>
+    <li><a href="#howto-1">Walkthrough 1: read superpowers in an hour</a></li>
+    <li><a href="#howto-2">Walkthrough 2: write your first skill in thirty minutes</a></li>
+    <li><a href="#howto-3">Walkthrough 3: build your first sensor</a></li>
+    <li><a href="#seguranca">Before installing anything</a></li>
+    <li><a href="#fontes">Sources</a></li>
+  </ol>
+</nav>
+
+<h2 id="como-usar">1. How to use this</h2>
+
+<p>This document does not teach the concepts. It assumes part 2 of the series, where guides, sensors, the skill format and the MEDIR cycle live. What is here are the proper names, organised by the same logic a user follows: the five steps of the cycle, not product category.</p>
+
+<p>Each tool or collection comes as an entry, always with the same six fields: what problem it solves, what you get in practice, who it is for by autonomy tier, the minimum tier at which it makes sense, when not to use it, and how to start in fifteen minutes. An inventory that only recommends is a vendor catalogue, so every entry also carries the reason not to choose it.</p>
+
+<p>A note on method before any entry: the value of studying other people's collections is not in installing them, it is in reading them. The best material in this inventory is useful even to someone who will never write a line of code, because it shows how an experienced professional writes instructions for a machine that tends to talk itself into skipping steps. That is transferable to contract review, month-end closing, customer service and any process with a mandatory step.</p>
+
+<p>Start by reading. Install afterwards, and only what you understood.</p>
+
+<h2 id="diagnostico">2. Diagnosis: which tier you are in</h2>
+
+<p>If you arrived here from part 1, you already know the <a href="harness-p1.html#en-levels">four autonomy tiers</a>. The practical question is where your task stands now, not where you wish it stood. The five questions below settle that in the order a tier gets built: one answer does not hold up without the one before it.</p>
+
+<ul class="checklist">
+<li><strong>Does written text exist stating what the task delivers and what it can never do?</strong> If not, you are at N0. Start with Map.</li>
+<li><strong>Does a written guide exist that survives from one run to the next, and does someone follow that guide to the letter?</strong> If yes to the first part and no to the second, you are at N1. Start with Equip.</li>
+<li><strong>Does automatic verification exist that runs after execution and hands back what is wrong, without a human opening the result first?</strong> If not, you have a guide but no sensor, which is still N1. Start with Inspect.</li>
+<li><strong>Does a retry ceiling exist, state that survives the session restarting, and evidence that arrives before delivery?</strong> If yes to all of that, you are at N2. Start with Reinforce, and organise the cadence before increasing volume.</li>
+<li><strong>Does any action in this flow already have an effect outside your direct control, such as sending, paying, publishing or deciding for someone, with no human approval in between?</strong> If yes, the task requires N3, and this document does not cover that alone. Part 3 of the series covers permission outside the model.</li>
+</ul>
+
+<table class="wrap">
+<thead><tr><th>Where you stopped</th><th>Start with</th></tr></thead>
+<tbody>
+<tr><td>No written guide yet</td><td>Map, with the <a href="#briefing">intake-briefing</a> entry</td></tr>
+<tr><td>Guide exists, nobody follows it to the letter</td><td>Equip</td></tr>
+<tr><td>Guide followed, no automatic verification</td><td>Inspect</td></tr>
+<tr><td>Sensor exists, no cadence or ceiling</td><td>Reinforce</td></tr>
+<tr><td>External effect with no recorded approval</td><td>Part 3, not yet published</td></tr>
+</tbody>
+</table>
+
+<h2 id="mapear">3. Map</h2>
+
+<p>The cycle describes Map as the step that decides the task contract before any execution, covered at the level of principle in <a href="harness-p1.html#en-medir">part 1</a>. The market problem is specific: there is an abundance of material on how to specify a task well after someone has already decided to do it, and almost nothing on how to decide whether it should be done at all, or how to explore a knowledge domain before locking down the scope. The four entries below cover both sides of that gap.</p>
+
+<h3 id="briefing">intake-briefing</h3>
+
+<p><strong>Problem.</strong> Interview skills for technical requirements start from the assumption that the decision to automate has already been made. None of them ask how many times a month the task runs, what an error costs, who reviews the result, or whether the gain is real.</p>
+<p><strong>In practice.</strong> A three-line task contract (what it delivers, what it never does, when it is done), a recommended autonomy tier derived from a table based on reversibility and exposure, and a verdict with three options: do it now, simplify and redo the briefing, or do not do it.</p>
+<p><strong>Who it is for.</strong> Whoever decides, at N0, uses it as the entry point before any tool. Whoever already operates at N2 or N3 uses it as a periodic audit of why the automation still exists.</p>
+<p><strong>Minimum tier.</strong> N0. It does not require any existing automation, it is the step before building anything.</p>
+<p><strong>When not to use it.</strong> When the decision to do it has already been made and what is missing is detailed technical discovery. That is where interview skills such as interview-me come in, which complement this one and do not replace it.</p>
+<p><strong>How to start in 15 minutes.</strong> Clone the folder, run it with a sentence describing the task, answer the eight blocks and read the verdict.</p>
+
+<pre><code>git clone https://github.com/tecosodreaboutdigital/intake-briefing.git
+/intake-briefing "we want to automate freight invoice reconciliation"</code></pre>
+
+<p>Repository: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, written for this project.</p>
+
+<h3>A guide inspired by Karpathy</h3>
+
+<p><strong>Problem.</strong> Mapping a code domain too large to fit in the head of whoever is going to delegate the task, without repeating the same exploration in every new session.</p>
+<p><strong>In practice.</strong> Skills that organise context discovery, architecture reading and decision records before any change to the system.</p>
+<p><strong>Who it is for.</strong> N1 upward, teams who inherit a system they did not build and need the agent to explore before acting.</p>
+<p><strong>Minimum tier.</strong> N1. It requires an environment that sustains a guide and file reading, it does not work as an isolated conversation.</p>
+<p><strong>When not to use it.</strong> A small, familiar repository, where the context already fits in the head of whoever is requesting the task.</p>
+<p><strong>How to start in 15 minutes.</strong> Open the skills folder, read the three or four most used, compare them against your own process for bringing someone new onto the team.</p>
+
+<div class="rule-box"><span class="lbl">Caveat</span><p>Despite the name, this is not Karpathy's. It is maintained by a third party, derived from his public observations, with 208 thousand stars. The repository's installation commands point to a different owner than the current one: check before installing. The agentic flow that actually is his is called autoresearch, and it is in the sources.</p></div>
+
+<p>Repository: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
+
+<h3>c4-skills</h3>
+
+<p><strong>Problem.</strong> An architecture decision made in conversation gets lost. The next person, or the next session of the same agent, asks the same question again.</p>
+<p><strong>In practice.</strong> The C4 model (context, containers, components, code) plus architecture decision records, environment-agnostic: it separates the what of the architecture from the why it exists.</p>
+<p><strong>Who it is for.</strong> N1 to N3, any situation where more than one person, or more than one session, decides on the same architecture over time.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A one-person project, with no expectation that another person or another session will pick the work back up later.</p>
+<p><strong>How to start in 15 minutes.</strong> Write the first context diagram, one box for the system and one for each user and external system it touches, before the next architecture decision.</p>
+
+<p>Repository: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+
+<h3>Specification before code</h3>
+
+<p><strong>Problem.</strong> Deciding how much specification ceremony a task deserves before letting the system execute. An entire category exists dedicated to this, a direct cousin of the Map step.</p>
+
+<table class="wrap">
+<thead><tr><th>Tool</th><th>Stance</th></tr></thead>
+<tbody>
+<tr><td>GitHub Spec Kit</td><td>It is what gave the category its name. MIT, model-agnostic, structured around specifying, planning and breaking into tasks</td></tr>
+<tr><td>Kiro</td><td>Its own environment, with requirements, design and tasks as first-class objects alongside the code</td></tr>
+<tr><td>Tessl</td><td>More ambitious: treats the specification as the source, and the code as a derivative that should not be edited by hand</td></tr>
+<tr><td>OpenSpec</td><td>Centred on changes, with fewer generated files and specifications that live in the repository</td></tr>
+</tbody>
+</table>
+
+<p>The critique deserves the same space as the list. Böckeler evaluated three of these tools and found excess review, a false sense of control and difficulty scaling across problems of different sizes, drawing a parallel with the historical failure of model-driven development. Pocock argues against the entire category, with the thesis that going from specification to code is disinvesting from system design rather than investing in it.</p>
+
+<p><strong>In practice.</strong> A formal, versioned task contract that the agent reads before proposing any plan, instead of a loose instruction in the conversation.</p>
+<p><strong>Who it is for.</strong> N1 already benefits from the principle, a written contract before execution. N2 and N3, with a large team and high volume, benefit from adopting a dedicated tool from the table above.</p>
+<p><strong>Minimum tier.</strong> A matter of judgement: N1 for the principle, N2 to justify the cost of a dedicated tool.</p>
+<p><strong>When not to use it.</strong> A small task, a single executor, low volume. The ceremony costs more than it prevents, and none of the four tools was designed for that case.</p>
+<p><strong>How to start in 15 minutes.</strong> Write the three-line contract from intake-briefing itself (what it delivers, what it never does, when it is done) before installing any tool from this category. Install afterwards, only if the contract alone is not enough.</p>
+
+<h2 id="equipar">4. Equip</h2>
+
+<p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The three entries below are the most studied collections today for writing guides and organising durable memory.</p>
+
+<h3>superpowers</h3>
+
+<p><strong>Problem.</strong> Most skill collections package specific technical knowledge. What is missing is one that packages process discipline, applicable to any domain.</p>
+<p><strong>In practice.</strong> Skills that cover idea discovery before writing, planning, test-driven development, an isolated workspace, systematic debugging in four phases, verification before concluding and review by a fresh agent. What is worth stealing even without installing is the writing pattern: a non-negotiable rule at the top, followed by the list of rationalisations the executor will probably use to break it. The verification skill treats the words should, probably and it looks like as red flags in a completion report.</p>
+<p><strong>Who it is for.</strong> N1 upward. It is the reference collection for anyone writing their first serious guide and wanting to see what a good one looks like.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> When the goal is a small, domain-specific skill. The whole framework is more structure than a single task needs.</p>
+<p><strong>How to start in 15 minutes.</strong> Follow <a href="#howto-1">walkthrough 1</a> below, made exactly for this.</p>
+
+<p>MIT licence. Distributed through the official plugin marketplace and several other environments.</p>
+
+<pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
+
+<p>Repository: <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></p>
+
+<h3>mattpocock/skills</h3>
+
+<p><strong>Problem.</strong> Frameworks that take over the whole process make the process's own defects harder to see and correct, because the process has turned opaque.</p>
+<p><strong>In practice.</strong> The opposite of superpowers, and that is why the pair is worth reading together: small, readable, editable skills, organised by problem rather than by technology. It is worth opening the skill that forces a round of questions before any execution, a direct example of the Map step: the system does not move forward until the decisions are explicit.</p>
+<p><strong>Who it is for.</strong> N1 to N2, whoever prefers to assemble their own collection piece by piece instead of installing a closed framework.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> Whoever wants a complete, ready collection from day one. The gain here is the readability of each isolated piece, not the coverage of the set.</p>
+<p><strong>How to start in 15 minutes.</strong> Open three skills of different sizes and compare how many lines each one takes to say the same thing a loose instruction would take a paragraph to say.</p>
+
+<p>Repository: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+
+<h3>planning-with-files</h3>
+
+<p><strong>Problem.</strong> An agent with no durable state restarts its reasoning from zero every new session, and repeats decisions already made or already discarded.</p>
+<p><strong>In practice.</strong> A pattern of keeping plan, progress and decisions in files on disk, not in the conversation's memory, so they survive the session restarting. It is the unit of durability discussed in part 2 turned into a replicable pattern.</p>
+<p><strong>Who it is for.</strong> N1 to N2, any task that spans more than one session.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A task that starts and ends within a single short session. The overhead of keeping a state file does not pay for itself.</p>
+<p><strong>How to start in 15 minutes.</strong> Create a plan file with three sections (done, in progress, next) and ask the agent to update it after every completed step, before closing the session.</p>
+
+<div class="rule-box"><span class="lbl">Caveat</span><p>Around 26 thousand stars, but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
+
+<p>Repository: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
+
+<h2 id="delegar">5. Delegate</h2>
+
+<p>Delegate decides how the work is handed over and in which environment it can run, with the complete matrix of environment classes in <a href="harness-p2.html#en-delegar">part 2</a>. The three entries below cover partitioned execution, environment names and the rung at which the retry ceiling and authority policy turn into code.</p>
+
+<h3>holdfast</h3>
+
+<p><strong>Problem.</strong> Delegating an entire task at once is fragile: if it fails halfway through, there is no point to resume from and the work already done is lost.</p>
+<p><strong>In practice.</strong> Durable partitioned execution: the task is split into parts with a checkpoint between them, so that a failure does not throw away what is already done.</p>
+<p><strong>Who it is for.</strong> N2, tasks long enough that a resume point is worth having.</p>
+<p><strong>Minimum tier.</strong> N2, because it presupposes durable state and verification between parts.</p>
+<p><strong>When not to use it.</strong> A short task that fits in a single run. Partitioning here is cost without benefit.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the source code before installing. It is small (three commits as of August 2026), with no network dependency, and the full audit fits in a single reading session.</p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>MIT, but still new: three commits, and the project itself states it has only been exercised in one environment. It gains points for being small and quick to audit, it loses points for having no track record in production.</p></div>
+
+<p>Repository: <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></p>
+
+<h3>Environment classes</h3>
+
+<p><strong>Problem.</strong> Most of the frustration with agents does not come from the model or the method: it comes from trying to set up a control that the chosen environment cannot sustain.</p>
+<p><strong>In practice.</strong> Four classes, detailed in <a href="harness-p2.html#en-ambientes">part 2</a>: conversation with instructions, agent with files and execution, programmed orchestration, assisted software generation. Current names for each class: Claude Code, Codex and equivalents cover the second; DeepSeek Harness (open runtime, append-only log) and LangGraph cover the third; conversation assistants cover the first.</p>
+<p><strong>Who it is for.</strong> Whoever decides buys a tool before knowing which tier the task needs to reach. This entry reverses the order: the tier first, then the environment class that sustains that tier.</p>
+<p><strong>Minimum tier.</strong> Not applicable, it is a diagnostic, not a tool.</p>
+<p><strong>When not to use it.</strong> Never skip this question. It is the most common reason a harness project never leaves the drawing board.</p>
+<p><strong>How to start in 15 minutes.</strong> Answer: which tier does this task need to reach? Then, what is the simplest environment class that sustains that tier, without climbing one rung more than necessary.</p>
+
+<h3>Programmed orchestration</h3>
+
+<p><strong>Problem.</strong> A retry ceiling, an authority policy and an execution record written as instructions can be rewritten or ignored by the very system they are meant to limit.</p>
+<p><strong>In practice.</strong> A stateful agent orchestration framework, where these three things stop being text and become code outside the model's reach. LangGraph is the most mature reference today.</p>
+<p><strong>Who it is for.</strong> N2 to N3, when the guide alone no longer prevents a breach of the ceiling or the authority limit.</p>
+<p><strong>Minimum tier.</strong> N2, to justify the added complexity of orchestrating in code.</p>
+<p><strong>When not to use it.</strong> A task that runs in a single agent-with-files-and-execution session already sustains the tier needed. Orchestrating in code before that is building structure for a problem that does not exist yet.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the documentation on the retry ceiling concept of the chosen framework before any other part: it is the piece that replaces a guide's promise with a constraint the system cannot talk its way around.</p>
+
+<p>Repository: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
+
+<h2 id="inspecionar">6. Inspect</h2>
+
+<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The four tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
+
+<h3>dependency-cruiser</h3>
+
+<p><strong>Problem.</strong> One part of the system starts depending on another it should not, and nobody notices until the side effect shows up in production.</p>
+<p><strong>In practice.</strong> Hard verification of structure: it defines allowed dependency rules and fails the check when one is violated, before delivery.</p>
+<p><strong>Who it is for.</strong> N2 upward, any system with more than one module and more than one contributor.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single-file system, or a disposable prototype. There is not yet anything for the dependency rule to protect.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the analysis with no rule written first, just to see the current dependency map. Write the first rule based on whatever that map reveals is wrong.</p>
+
+<p>Repository: <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></p>
+
+<h3>Stryker</h3>
+
+<p><strong>Problem.</strong> High test coverage does not guarantee the tests verify anything: they can run the code without checking the result.</p>
+<p><strong>In practice.</strong> Mutation testing: it deliberately alters the work, in small doses, and checks whether the existing tests notice the change. If they do not, the test runs and does not verify.</p>
+<p><strong>Who it is for.</strong> N2 to N3, systems where test coverage is already high and the next question is whether it is reliable.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A test base that is still small or non-existent. Write the tests first, measure their quality afterwards.</p>
+<p><strong>How to start in 15 minutes.</strong> Run it against the system's most critical file, not against everything at once. The surviving-mutants report from a single file already teaches you the pattern of the problem.</p>
+
+<p>Site: <a href="https://stryker-mutator.io/">stryker-mutator.io</a></p>
+
+<h3>Semgrep</h3>
+
+<p><strong>Problem.</strong> A forbidden code pattern (an exposed secret, an unsafe function, a mandatory style rule) only gets caught if someone remembers to look for it by hand.</p>
+<p><strong>In practice.</strong> Fast static analysis that looks for security patterns and house style rules, without needing a complex syntax tree. It runs locally, and the code does not go outside by default.</p>
+<p><strong>Who it is for.</strong> N2 to N3, any environment that generates code with a real effect and needs an automatic guardrail before delivery.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> Generating content that is not executable code. The tool is for code patterns, not for prose or data.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the default rule set against the whole repository once, without customising anything. Write your first custom rule only after seeing what the default set already covers.</p>
+
+<p>Licence LGPL 2.1, maintained by Semgrep, Inc. Repository: <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></p>
+
+<h3>sensors-cli</h3>
+
+<p><strong>Problem.</strong> Having several separate sensors does not give anyone, human or agent, an overall view of whether the system is improving or getting worse over time.</p>
+<p><strong>In practice.</strong> A dashboard that runs several sensors on an interval, keeps history and hands the agent a lean summary: worse or better compared with the last reference point. It is the most conceptually transferable of the four in this section, the embryo of a harness health dashboard.</p>
+<p><strong>Who it is for.</strong> N2 to N3, when more than one sensor is already running and consolidation is what is missing.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single isolated sensor does not yet justify a dashboard. Consolidate once the second sensor goes into production.</p>
+<p><strong>How to start in 15 minutes.</strong> Point it at the sensors you already have running and read the first week's trend summary before adding any new sensor.</p>
+
+<p>Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the four tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
+
+<h2 id="reforcar">7. Reinforce</h2>
+
+<p>Reinforce is the step that separates whoever has a system from whoever has a configuration, covered in <a href="harness-p2.html#en-reforcar">part 2</a>. The three entries below treat cleanup as a discipline, not an event.</p>
+
+<h3>ai-slop-cleaner</h3>
+
+<p><strong>Problem.</strong> Guides, sensors and the work produced all pile up clutter: a rule that no longer applies, a check nobody reads, needless repetition, leftovers from an abandoned attempt.</p>
+<p><strong>In practice.</strong> The real source of the five-rule cleanup matrix described in part 2: lock in the behaviour before touching anything, prefer removal over addition, write the plan before editing, revert on its own whatever breaks, separate whoever cleans from whoever reviews. A regression-proof flow, with the writer and the reviewer kept apart.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness that has already produced enough content to accumulate clutter.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A newly created project, with no history yet to clean up.</p>
+<p><strong>How to start in 15 minutes.</strong> Run it once against your project's oldest guide folder and compare what it flags with what you already suspected was obsolete.</p>
+
+<p>Repository: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>Cleanup as a cadence</h3>
+
+<p><strong>Problem.</strong> Accumulated guide and code debt is a loan at a high interest rate. Left to compound, it turns into a lost week instead of a few minutes spread out.</p>
+<p><strong>In practice.</strong> Running cleanup on a fixed interval, regardless of whether a task is in progress, instead of waiting for an annual push. An annual cleanup push is the symptom that the cadence does not exist.</p>
+<p><strong>Who it is for.</strong> N2 upward, any harness with sensors already installed, because the cadence is what detects drift that no isolated run reveals.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> It is never too early to start small, but do not force a cadence before having at least one hard-verification sensor running: without verification, cleanup turns into a silent change.</p>
+<p><strong>How to start in 15 minutes.</strong> Choose an interval (weekly is the most common) and schedule the first run of whichever cleanup tool you have already chosen. The discipline matters more than the specific tool.</p>
+
+<h3>Garbage collection</h3>
+
+<p><strong>Problem.</strong> A skill nobody uses any more, a guide describing a process that has already changed, an anchor pointing to a section that no longer exists: none of that breaks execution, so none of it surfaces on its own.</p>
+<p><strong>In practice.</strong> A periodic sweep that specifically looks for dead artefacts, not active defects: a skill with no recent trigger, a broken link, a file referenced by nothing else.</p>
+<p><strong>Who it is for.</strong> N2 to N3, a harness with a history long enough to have accumulated orphan artefacts.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A harness only a few months old. It has not yet had time to accumulate enough to warrant a dedicated sweep.</p>
+<p><strong>How to start in 15 minutes.</strong> List every installed skill and the date each one last fired. Anything with no trigger in over a quarter goes into the review queue, not the automatic-removal one.</p>
+
+<div class="rule-box"><span class="lbl">The critique of this section</span><p>None of these three entries tells a dead artefact apart from a rare one. A skill that fires once a quarter for the accounting close looks dead in a monthly sweep. That is why garbage collection here always goes into the human review queue, never the automatic-removal one: a cadence without this care erases a rare exception instead of real clutter.</p></div>
+
+<h2 id="howto-1">8. Walkthrough 1: read superpowers in an hour</h2>
+
+<p>This walkthrough is for whoever does not code. The goal is not to use the tool, it is to learn how to write a procedure for a machine by reading someone who already did it well.</p>
+
+<table class="wrap">
+<thead><tr><th>Step</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Open the repository in your browser and go straight to the skills folder. Ignore the rest</td></tr>
+<tr><td>2</td><td>Open the verify-before-concluding skill. Read the rule at the top and the list of red flags</td></tr>
+<tr><td>3</td><td>Open the systematic-debugging skill. Notice that it is a procedure in phases, and each phase has an exit criterion</td></tr>
+<tr><td>4</td><td>Open the idea-discovery skill. Notice that it forbids starting execution before the decisions are explicit</td></tr>
+<tr><td>5</td><td>On a sheet of paper, write three non-negotiable rules from your own process and the most likely excuse for breaking each one</td></tr>
+</tbody>
+</table>
+
+<p>Step 5 is the only one that matters. The four before it exist to calibrate what a good rule looks like.</p>
+
+<h2 id="howto-2">9. Walkthrough 2: write your first skill in thirty minutes</h2>
+
+<p>Use a task you already do repeatedly, that has verifiable steps and is not irreversible. Reviewing a document against a checklist is the ideal example.</p>
+
+<p><strong>Step 1.</strong> Create a folder named after the task as a gerund verb, all lower case and hyphenated: <code>reviewing-contract-draft</code>.</p>
+
+<p><strong>Step 2.</strong> Inside it, create the <code>SKILL.md</code> file, starting with the header. The description is the single most important field in the whole file, because it is what decides whether the system remembers to use the skill. Write when to use it, not what it does.</p>
+
+<pre><code>---
+name: reviewing-contract-draft
+description: Reviews contract drafts against the house checklist of
+  mandatory clauses. Use when the user sends a contract, draft,
+  amendment or term sheet for a preliminary review.
+---</code></pre>
+
+<p><strong>Step 3.</strong> Write the task contract in three lines: what it delivers, what it never does, and how to know it is finished.</p>
+
+<p><strong>Step 4.</strong> Write the procedure as numbered steps, in the order you would actually do them.</p>
+
+<p><strong>Step 5.</strong> Write the Never section. This is where the non-negotiable rules and the predictable excuses go. It is the section you will rewrite the most over time, and the one that saves the most rework.</p>
+
+<p><strong>Step 6.</strong> Move the long content into files alongside it. The checklist with the fourteen clauses does not go inside SKILL.md, it goes in <code>checklist.md</code> in the same folder, referenced by name. That is progressive disclosure at work: the system only opens it when it needs to.</p>
+
+<p><strong>Step 7.</strong> Run it once with a real case and note where it lost its way.</p>
+
+<p><strong>Step 8.</strong> Ask the system itself to reflect on what the guide was missing and propose the fix. This step is recommended by whoever created the format, and it is the most underrated one: you find out what it actually needed to know, instead of trying to guess everything in advance.</p>
+
+<div class="rule-box"><span class="lbl">The most common mistake</span><p>Writing a giant SKILL.md on the first attempt. Start small and let failure tell you what to add. A guide is an index, not an encyclopedia.</p></div>
+
+<h2 id="howto-3">10. Walkthrough 3: build your first sensor</h2>
+
+<p>This walkthrough needs someone able to write twenty lines of script, but it does not require a programmer. It works for any task that produces numbers.</p>
+
+<p><strong>Step 1.</strong> Identify what can be verified without judgement. A total that must reconcile, a field that cannot be empty, a date inside a range, an item that cannot appear twice. That is hard verification, and it is where to start.</p>
+
+<p><strong>Step 2.</strong> Write the script that recalculates from the source and compares it against the delivered result. Ask the agent itself to write that script. That is precisely the cost shift that made sensors viable: building the tool got cheap.</p>
+
+<p><strong>Step 3.</strong> Write the error message as a correction instruction. This is the part that decides whether the sensor works. It needs to contain what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. A message that only says failed is not a sensor, it is an alarm.</p>
+
+<p><strong>Step 4.</strong> Tie the sensor to the skill's done criterion. Instead of writing done when the numbers are right, write done when the check command returns no mismatches. The criterion stops being an opinion and becomes verifiable.</p>
+
+<p><strong>Step 5.</strong> Set the ceiling. Three attempts, and on the third the system stops, delivers the work marked not checked and explains what did not close.</p>
+
+<p><strong>Step 6.</strong> After a few weeks, look at the history. If the sensor never fired, trigger an error on purpose to confirm it works. If it never flags anything even when it should, remove it, because a blind sensor is worse than none: it produces confidence with no basis.</p>
+
+<h2 id="seguranca">11. Before installing anything</h2>
+
+<p>Installing a third-party skill collection is running someone else's instructions inside your own environment. That is not a reason not to do it, it is a reason to read it first.</p>
+
+<p>The recommendation from whoever publishes the format is explicit: install only from a trusted source, and when the source is less known, audit it before using it. Read the content of the files, pay particular attention to any included code and the resources that come with it, and check whether there are instructions telling the system to reach out to an external network.</p>
+
+<p>Three questions before any installation:</p>
+
+<table class="wrap">
+<thead><tr><th>Question</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>What data can this collection reach once it is active?</td><td>An installed skill operates with the permissions the environment already has</td></tr>
+<tr><td>Is there an instruction to fetch something from outside?</td><td>It is the most direct vector for an instruction coming from outside your control</td></tr>
+<tr><td>Who maintains it, under what licence, and how often?</td><td>An abandoned collection turns into an outdated instruction running silently</td></tr>
+</tbody>
+</table>
+
+<p>Part 3 of the series covers this surface in depth, alongside permission outside the model, an auditable record and accountability.</p>
+
+<h2 id="fontes">12. Sources</h2>
+
+<ol class="sources">
+<li>Fernando Teco Sodré. <em>intake-briefing</em>, automation decision skill. <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a></li>
+<li>A guide inspired by Karpathy's public observations, maintained by a third party. <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></li>
+<li>Andrej Karpathy. <em>autoresearch</em>, the reference agentic flow, this one actually his. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
+<li><em>c4-skills</em>, the C4 model and architecture decision records. <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></li>
+<li>GitHub. <em>Spec Kit</em>. <a href="https://github.com/github/spec-kit">github.com/github/spec-kit</a></li>
+<li>Birgitta Böckeler. <em>Understanding spec-driven development: Kiro, spec-kit and Tessl</em>. <a href="https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">martinfowler.com</a></li>
+<li>Jesse Vincent. <em>superpowers</em>, skills framework and methodology. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li>Matt Pocock. <em>skills</em>. <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li><em>planning-with-files</em>, durable state on disk. <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></li>
+<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li>Agent Skills, open standard. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li>Agent Skills documentation. <a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">docs.claude.com</a></li>
+<li><em>holdfast</em>, durable partitioned execution. <a href="https://github.com/AndreAlmeidaDC/holdfast">github.com/AndreAlmeidaDC/holdfast</a></li>
+<li>DeepSeek Harness. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai/deepseek-harness</a></li>
+<li>LangChain Inc. <em>LangGraph</em>. <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></li>
+<li>Dependency rules. <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></li>
+<li>Mutation testing. <a href="https://stryker-mutator.io/">stryker-mutator.io</a></li>
+<li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
+<li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li>Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li><em>ai-slop-cleaner</em>, the source of the cleanup matrix. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
+<li>Community curation. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
+</ol>
+
+<div class="foot">
+<p>Companion document to the Harness series · Verified in August 2026 · Names, addresses and commands change without notice, confirm at the source before installing.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
+</div>
