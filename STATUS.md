@@ -6,6 +6,8 @@ Situation as of 30 August 2026.
 
 Published at `github.com/tecosodreaboutdigital/harness-medir` (repository) and `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, the HTML files render as pages, not just as source code).
 
+**Branch protection on `main`, configured 30 August 2026.** Set directly via the GitHub API: a pull request is required to merge, at least one approval is required, an approval is dismissed if a new commit lands before merge, force pushes and branch deletion are both blocked. `enforce_admins` was deliberately left off, so the repository owner's existing direct-push workflow to `main` keeps working unchanged. The rule's real effect is on any future contribution arriving from a fork: it must be reviewed and merged by hand, never automatically, which was already true in practice (`allow_auto_merge` was already `false`, and no collaborator besides the owner has write access), but is now enforced by GitHub itself rather than by convention alone.
+
 ---
 
 ## Ready

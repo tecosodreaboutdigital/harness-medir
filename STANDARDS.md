@@ -53,9 +53,11 @@ Do not use charting libraries. Do not use raster images.
 
 ## Diagrams
 
-Every diagram is born as a Mermaid specification, inside the corresponding markdown file. The inline SVG in the HTML derives from that specification and never replaces it.
+Every diagram is born as a Mermaid sketch, inside the corresponding markdown file. There is no rendering pipeline: nothing in this project turns Mermaid into the inline SVG mechanically. The sketch is a plain-text structural plan, readable as a diff and rendered natively by GitHub when the file is viewed there, nothing more.
 
-When structure or a label changes, change the Mermaid first, then regenerate the SVG. Changing only the SVG leaves the specification out of date, and the next session works from the wrong map.
+The inline SVG in the HTML is drawn by hand, in the project's own visual system, matching the sketch's structure. This is deliberate, not a shortcut skipped for lack of tooling: a generic Mermaid renderer outputs its own theme and its own automatic layout, neither of which matches this project's thin-stroke, no-fill, no-colour system, so hand-drawing is the direct path, not a workaround.
+
+When structure or a label changes, change the Mermaid sketch first, then redraw the SVG by hand to match it. Changing only the SVG leaves the sketch out of date, and the next session works from the wrong map.
 
 Each diagram carries, in the markdown, its purpose and a rendering note, including what needs to jump out at the reader and the sentence the caption carries.
 

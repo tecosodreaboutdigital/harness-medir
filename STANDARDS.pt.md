@@ -53,9 +53,11 @@ Não usar bibliotecas de gráfico. Não usar imagens rasterizadas.
 
 ## Diagramas
 
-Todo diagrama nasce como especificação em Mermaid, dentro do arquivo md correspondente. O SVG inline no HTML deriva dessa especificação e nunca a substitui.
+Todo diagrama nasce como rascunho em Mermaid, dentro do arquivo md correspondente. Não existe pipeline de renderização: nada neste projeto transforma o Mermaid no SVG inline de forma mecânica. O rascunho é um plano estrutural em texto puro, legível em diff, e que o GitHub renderiza nativamente quando o arquivo é aberto lá, nada além disso.
 
-Ao alterar estrutura ou rótulo, altere primeiro o Mermaid, depois regenere o SVG. Alterar apenas o SVG deixa a especificação desatualizada e a próxima sessão trabalha com o mapa errado.
+O SVG inline no HTML é desenhado à mão, no sistema visual do projeto, para bater com a estrutura do rascunho. Isso é deliberado, não um atalho por falta de ferramenta: um renderizador genérico de Mermaid produz o tema e o layout automático dele, e nenhum dos dois bate com o sistema de traço fino, sem preenchimento, sem cor deste projeto, então desenhar à mão é o caminho direto, não um contorno.
+
+Ao alterar estrutura ou rótulo, altere primeiro o rascunho em Mermaid, depois redesenhe o SVG à mão pra bater com ele. Alterar apenas o SVG deixa o rascunho desatualizado e a próxima sessão trabalha com o mapa errado.
 
 Cada diagrama traz, no md, o propósito e a nota de renderização, incluindo o que precisa saltar aos olhos e a frase que a legenda carrega.
 
