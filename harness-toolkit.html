@@ -591,7 +591,7 @@ p code{
 
 <h2 id="pt-inspecionar">6. Inspecionar</h2>
 
-<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As quatro ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
+<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As cinco ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -637,7 +637,18 @@ p code{
 
 <p>Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
-<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das quatro ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
+<h3>impeccable</h3>
+
+<p><strong>Problema.</strong> Qualidade de design de frontend costuma ser julgada por gosto, então os mesmos tiques de interface gerada por IA (a mesma fonte padrão, o mesmo gradiente roxo-para-azul, cartão dentro de cartão) se repetem até alguém olhar por acaso e reclamar.</p>
+<p><strong>Na prática.</strong> Sessenta e uma regras determinísticas que pegam uma lista fixa de tiques de frontend gerado por IA sem precisar de um modelo para julgar, mais um conjunto de comandos para crítica guiada por LLM em cima. Deriva da própria skill frontend-design da Anthropic. O passe determinístico precisa de Node e, para a checagem visual, um navegador headless; sem eles as mesmas regras ainda funcionam como crítica comum guiada por LLM, só sem o passe sem LLM.</p>
+<p><strong>Para quem.</strong> N1 para cima, qualquer harness que entrega uma interface voltada ao usuário e hoje não tem nenhuma checagem entre o agente construir e uma pessoa olhar.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Um sistema só de backend, ou uma interface que um designer humano já cuida do início ao fim. As regras miram tiques específicos de frontend gerado por IA, não um processo geral de revisão de design.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte o comando de auditoria para a interface que você entregou mais recentemente, antes de mexer em qualquer coisa nova. O que ele aponta em um trabalho que você já confia é a calibração do que ele vai apontar depois.</p>
+
+<p>Licença Apache 2.0. Repositório: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das cinco ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
 
 <h2 id="pt-reforcar">7. Reforçar</h2>
 
@@ -778,6 +789,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
 <li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Paul Bakaus. <em>impeccable</em>, regras de detector de design de frontend. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, fonte da matriz de limpeza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>
@@ -995,7 +1007,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-inspecionar">6. Inspect</h2>
 
-<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The four tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
+<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The five tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -1041,7 +1053,18 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
-<div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the four tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
+<h3>impeccable</h3>
+
+<p><strong>Problem.</strong> Frontend design quality is usually judged by taste, so the same handful of AI-generated tells (one default font, a purple-to-blue gradient, cards nested inside cards) ships again and again until a person happens to look and object.</p>
+<p><strong>In practice.</strong> Sixty-one deterministic rules that catch a fixed list of AI-generated frontend tells without needing a model to judge them, plus a set of commands for LLM-guided critique on top. It derives from Anthropic's own frontend-design skill. The deterministic pass needs Node and, for the visual check, a headless browser; without them the same rules still work as ordinary LLM-guided critique, just without the no-LLM pass.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness that ships a user-facing interface and has no check today between the agent building it and a person looking at it.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A backend-only system, or an interface a human designer already owns end to end. The rules target AI-generated frontend tells specifically, not a general design-review process.</p>
+<p><strong>How to start in 15 minutes.</strong> Point the audit command at the interface you shipped most recently, before touching anything new. What it flags in work you already trust is the calibration for what it will flag next.</p>
+
+<p>Licence Apache 2.0. Repository: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the five tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
 
 <h2 id="en-reforcar">7. Reinforce</h2>
 
@@ -1182,6 +1205,7 @@ description: Reviews contract drafts against the house checklist of
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
 <li>Sensor dashboard code. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Paul Bakaus. <em>impeccable</em>, frontend design detector rules. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, the source of the cleanup matrix. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Community curation. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>
@@ -1399,7 +1423,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-inspecionar">6. Inspeccionar</h2>
 
-<p>Inspeccionar es el paso que produce evidencia en vez de opinión, con la matriz completa de sensores en la <a href="harness-p2.html#es-inspecionar">parte 2</a>. Las cuatro herramientas siguientes fueron las usadas en el experimento descrito allí, y sirven como referencia de categoría aunque tu área use tecnología distinta.</p>
+<p>Inspeccionar es el paso que produce evidencia en vez de opinión, con la matriz completa de sensores en la <a href="harness-p2.html#es-inspecionar">parte 2</a>. Las cinco herramientas siguientes fueron las usadas en el experimento descrito allí, y sirven como referencia de categoría aunque tu área use tecnología distinta.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -1445,7 +1469,18 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Repositorio: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
-<div class="rule-box"><span class="lbl">Crítica de esta sección</span><p>Un panel lleno de sensores débiles produce exactamente la misma pantalla verde y tranquilizadora que un conjunto de sensores buenos. La pregunta que separa a los dos no es está todo verde, es cuándo fue la última vez que se puso rojo, y por qué. Ninguna de las cuatro herramientas anteriores resuelve esto sola, es disciplina de quien opera el panel, tratada en los riesgos de la <a href="harness-p2.html#es-riscos-2">parte 2</a>.</p></div>
+<h3>impeccable</h3>
+
+<p><strong>Problema.</strong> La calidad del diseño de frontend suele juzgarse por gusto, así que los mismos tics de interfaz generada por IA (la misma fuente por defecto, el mismo degradado morado a azul, tarjetas anidadas dentro de tarjetas) se repiten hasta que alguien los nota por casualidad y objeta.</p>
+<p><strong>En la práctica.</strong> Sesenta y una reglas determinísticas que detectan una lista fija de tics de frontend generado por IA sin necesitar que un modelo los juzgue, más un conjunto de comandos para crítica guiada por LLM encima. Deriva de la propia skill frontend-design de Anthropic. El paso determinístico necesita Node y, para la verificación visual, un navegador headless; sin ellos las mismas reglas igual funcionan como crítica común guiada por LLM, solo sin el paso sin LLM.</p>
+<p><strong>Para quién.</strong> De N1 hacia arriba, cualquier harness que entrega una interfaz de cara al usuario y hoy no tiene ninguna verificación entre que el agente la construya y que una persona la mire.</p>
+<p><strong>Banda mínima.</strong> N1.</p>
+<p><strong>Cuándo no usarlo.</strong> Un sistema solo de backend, o una interfaz que ya cuida un diseñador humano de principio a fin. Las reglas apuntan a tics específicos de frontend generado por IA, no a un proceso general de revisión de diseño.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Apunta el comando de auditoría a la interfaz que entregaste más recientemente, antes de tocar nada nuevo. Lo que señale en un trabajo en el que ya confías es la calibración de lo que señalará después.</p>
+
+<p>Licencia Apache 2.0. Repositorio: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<div class="rule-box"><span class="lbl">Crítica de esta sección</span><p>Un panel lleno de sensores débiles produce exactamente la misma pantalla verde y tranquilizadora que un conjunto de sensores buenos. La pregunta que separa a los dos no es está todo verde, es cuándo fue la última vez que se puso rojo, y por qué. Ninguna de las cinco herramientas anteriores resuelve esto sola, es disciplina de quien opera el panel, tratada en los riesgos de la <a href="harness-p2.html#es-riscos-2">parte 2</a>.</p></div>
 
 <h2 id="es-reforcar">7. Reforzar</h2>
 
@@ -1586,6 +1621,7 @@ description: Revisa borradores de contrato contra el checklist de
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
 <li>Código del panel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Paul Bakaus. <em>impeccable</em>, reglas de detector de diseño de frontend. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, fuente de la matriz de limpieza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curaduría de la comunidad. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>

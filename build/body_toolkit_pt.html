@@ -205,7 +205,7 @@
 
 <h2 id="inspecionar">6. Inspecionar</h2>
 
-<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As quatro ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
+<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As cinco ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -251,7 +251,18 @@
 
 <p>Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
-<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das quatro ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
+<h3>impeccable</h3>
+
+<p><strong>Problema.</strong> Qualidade de design de frontend costuma ser julgada por gosto, então os mesmos tiques de interface gerada por IA (a mesma fonte padrão, o mesmo gradiente roxo-para-azul, cartão dentro de cartão) se repetem até alguém olhar por acaso e reclamar.</p>
+<p><strong>Na prática.</strong> Sessenta e uma regras determinísticas que pegam uma lista fixa de tiques de frontend gerado por IA sem precisar de um modelo para julgar, mais um conjunto de comandos para crítica guiada por LLM em cima. Deriva da própria skill frontend-design da Anthropic. O passe determinístico precisa de Node e, para a checagem visual, um navegador headless; sem eles as mesmas regras ainda funcionam como crítica comum guiada por LLM, só sem o passe sem LLM.</p>
+<p><strong>Para quem.</strong> N1 para cima, qualquer harness que entrega uma interface voltada ao usuário e hoje não tem nenhuma checagem entre o agente construir e uma pessoa olhar.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Um sistema só de backend, ou uma interface que um designer humano já cuida do início ao fim. As regras miram tiques específicos de frontend gerado por IA, não um processo geral de revisão de design.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte o comando de auditoria para a interface que você entregou mais recentemente, antes de mexer em qualquer coisa nova. O que ele aponta em um trabalho que você já confia é a calibração do que ele vai apontar depois.</p>
+
+<p>Licença Apache 2.0. Repositório: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das cinco ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
 
 <h2 id="reforcar">7. Reforçar</h2>
 
@@ -392,6 +403,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
 <li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Paul Bakaus. <em>impeccable</em>, regras de detector de design de frontend. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, fonte da matriz de limpeza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
 </ol>

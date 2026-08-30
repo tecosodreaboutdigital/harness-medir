@@ -62,7 +62,7 @@ Separada del monorepo harness-medir para instalación independiente, en el mismo
 
 `harness-toolkit.html`
 
-Reescrita por completo el 30 de agosto de 2026, y traducida al inglés y al español ese mismo día como parte de la reestructuración de idioma, con el inglés como pestaña predeterminada. Organizada por los cinco pasos del MEDIR, no por categoría de producto. Diecisiete fichas de seis campos, más una sección de diagnóstico de banda al inicio para quienes llegan de la parte 1. Cada paso del MEDIR lleva una crítica registrada, no solo una recomendación.
+Reescrita por completo el 30 de agosto de 2026, y traducida al inglés y al español ese mismo día como parte de la reestructuración de idioma, con el inglés como pestaña predeterminada. Organizada por los cinco pasos del MEDIR, no por categoría de producto. Dieciocho fichas de seis campos, más una sección de diagnóstico de banda al inicio para quienes llegan de la parte 1. Cada paso del MEDIR lleva una crítica registrada, no solo una recomendación. La decimoctava, `impeccable`, se añadió a Inspeccionar después, cuando el proyecto empezó a curar también herramientas de QA de diseño, ver `TOOLS.md`.
 
 Distribución: Mapear con cuatro fichas (intake-briefing, una guía inspirada en Karpathy, c4-skills, especificación antes del código con la crítica de Böckeler y Pocock), Equipar con tres (superpowers, mattpocock/skills, planning-with-files), Delegar con tres (holdfast, clases de entorno, orquestación programada con LangGraph), Inspeccionar con cuatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforzar con tres (ai-slop-cleaner, limpieza como cadencia, recolección de basura).
 

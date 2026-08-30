@@ -10,7 +10,7 @@ Actualizado el 30 de agosto de 2026. Crece con cada skill nueva que entra en uso
 
 ## Colecciones de terceros instaladas
 
-Cinco colecciones, treinta skills, todas con licencia MIT. Instaladas localmente en `.claude/skills/`, fuera del control de versiones (ver `.gitignore`): funcionan en este entorno, pero el código de terceros no entra en el historial público de este repositorio. Cada una se cita como una entrada en la [guía compacta](harness-toolkit.html). Suma `intake-briefing`, la skill propia del proyecto tratada en la sección siguiente, y el entorno tiene 31 skills activas en total.
+Seis colecciones, treinta y una skills, todas con licencia MIT o Apache 2.0. Instaladas localmente en `.claude/skills/`, fuera del control de versiones (ver `.gitignore`): funcionan en este entorno, pero el código de terceros no entra en el historial público de este repositorio. Cada una se cita como una entrada en la [guía compacta](harness-toolkit.html). Suma `intake-briefing`, la skill propia del proyecto tratada en la sección siguiente, y el entorno tiene 32 skills activas en total.
 
 | Colección | Origen | Skills instaladas | Por qué entró |
 |---|---|---|---|
@@ -19,10 +19,11 @@ Cinco colecciones, treinta skills, todas con licencia MIT. Instaladas localmente
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, la colección entera | El modelo C4 y los registros de decisión de arquitectura, relevantes para la ronda de investigación de la parte 3 |
 | Guía inspirada en Karpathy | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | Guía de comportamiento contra errores comunes de LLM. No es realmente de Karpathy, ver la salvedad completa en `sources/inventory.md` |
 | ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | Fuente real de la matriz de cinco reglas de limpieza citada en la sección Reforzar de la parte 2 |
+| impeccable | [github.com/pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 1 | Referencia de QA de diseño para las propias páginas HTML del proyecto: 61 reglas determinísticas de detector para tics comunes de frontend generado por IA, Apache-2.0, 30 colaboradores. Instalada solo como documentación, ver la salvedad abajo |
 
 ---
 
-## Las treinta skills, por colección
+## Las treinta y una skills, por colección
 
 **superpowers:** brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills.
 
@@ -33,6 +34,8 @@ Cinco colecciones, treinta skills, todas con licencia MIT. Instaladas localmente
 **Guía inspirada en Karpathy:** karpathy-guidelines.
 
 **ai-slop-cleaner:** ai-slop-cleaner.
+
+**impeccable:** impeccable. **Instalación parcial, dicho con honestidad:** copiamos `SKILL.md` y cada archivo bajo `reference/`, nada bajo `scripts/`. El propio encabezado de la skill original lista `Bash(npx impeccable *)` y `Bash(node .../scripts/*)` como herramientas permitidas, ligadas a 61 reglas determinísticas de detector que necesitan esos scripts para funcionar sin LLM. Sin ellos, `/impeccable audit` y sus comandos hermanos igual funcionan como crítica guiada por LLM contra las mismas reglas escritas, solo sin el paso determinístico sin LLM. Cada otra skill de esta página es markdown puro por naturaleza; impeccable es la primera en la que elegimos dejar código atrás a propósito, justo porque el propio checklist "antes de instalar cualquier cosa" de la guía compacta (ver abajo) trata un script no revisado que ejecuta el sistema como un costo real, no una mejora gratis.
 
 ---
 
@@ -51,6 +54,8 @@ Tampoco estaba activa en este entorno hasta esta ronda: `.claude/skills/`, que e
 Aplicamos el propio checklist de la guía compacta, la sección "Antes de instalar cualquier cosa": leer el contenido, buscar una instrucción que mande al sistema a buscar algo en una red externa, revisar la licencia antes de decidir.
 
 Un rastreo de patrones de red o ejecución (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`) en las cinco fuentes no encontró ninguna instrucción automática de acceso externo. Los únicos resultados fueron un ejemplo de código didáctico (un `fetch` simulado en una skill de prueba de mattpocock/skills) y ejecución local legítima (`execFileSync` de superpowers, para renderizar un diagrama Mermaid como SVG, sin red de por medio). Ninguna de las cinco fuentes requirió una dependencia externa no declarada para funcionar como skill independiente.
+
+impeccable se auditó aparte, porque el repositorio completo tiene otra forma: un CLI de npm más scripts de detector inyectados en el navegador, no una skill en markdown puro. Leímos el árbol de `scripts/` antes de decidir, en vez de correr `npx impeccable install` primero y leer después. Ejecuta Node y, para el detector visual, un navegador headless, ambos declarados abiertamente en el propio `allowed-tools` de `SKILL.md`, no escondidos. Elegimos no instalar nada de eso: la copia en `.claude/skills/impeccable/` es solo `SKILL.md` y `reference/`, ver la salvedad en la tabla de colecciones arriba.
 
 ---
 
