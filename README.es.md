@@ -60,7 +60,9 @@ Regla de dimensionamiento: el harness debe ser menor que la superficie de fallo 
 ├── harness-toolkit.html               guía compacta, organizada por MEDIR, lista
 ├── sources/
 │   └── inventory.md                   todas las fuentes verificadas, con estado
+├── diagrams/                          renderización SVG de los diagramas de las partes 3 y 4, antes de los artículos
 ├── docs/
+│   ├── harness-p3-p4-briefing.pt.md   dosier de trabajo de las partes 3 y 4, interno, solo en portugués
 │   ├── logbook.html                   trilingüe, generado a partir de git y del uso real de la sesión
 │   └── assets/logbook-metrics.json    el dato bruto del diario, nunca editado a mano
 └── build/                             cuerpos de texto y scripts de ensamblado
@@ -72,17 +74,28 @@ Los archivos HTML viven en la raíz a propósito: se referencian entre sí por r
 
 ## La arquitectura de la serie
 
-Cuatro piezas, con ritmos de revisión distintos.
+Seis piezas, con ritmos de revisión distintos, organizadas alrededor de un marco de tres capas, y solo tres.
+
+| Capa | Pregunta que responde | Pieza |
+|---|---|---|
+| Construcción | Cómo se construye un agente confiable | Parte 2, MEDIR |
+| Operación | Qué puede hacer, y quién responde | Parte 3, la separación de poderes |
+| Gobernanza | Cuántos agentes existen, quién es dueño de cada uno, cuáles todavía se pagan solos | Parte 4, la oficina de agentes |
+
+Las bandas de autonomía N0 a N3 atraviesan las tres capas como regla común, el único vocabulario compartido entre ellas, y es eso lo que impide que el marco se convierta en tres piezas sueltas. Se dejó fuera a propósito una cuarta capa: todo marco que ha muerto, murió por exceso de vocabulario.
 
 | Pieza | Naturaleza | Revisión |
 |---|---|---|
 | Parte 1, por qué | Argumento. Por qué el entorno vale más que el modelo | Poco frecuente |
 | Parte 2, cómo | Método. Guías, sensores, formato de skill, ejemplos | Poco frecuente |
-| Parte 3, gobernanza | Permiso, rastro, responsabilidad | Poco frecuente |
+| Parte 3, operación | Permiso fuera del modelo, rastro, responsabilidad | Poco frecuente |
+| Parte 4, gobernanza | Ciclo de vida, roles, indicadores, dónde se sienta la oficina | Poco frecuente |
 | Guía compacta | Inventario de mercado, con nombres y repositorios | Trimestral |
 | Playbook | Consolidación, más las plantillas operativas | Anual, por versión |
 
-La guía compacta vive aparte justamente porque envejece más rápido. Las tres partes hablan de principios y no dependen de ella.
+La guía compacta vive aparte justamente porque envejece más rápido. Las cuatro partes hablan de principios y no dependen de ella.
+
+La parte 4 se sumó a la serie el 30 de agosto de 2026, cuando la ronda de investigación de la parte 3 expuso una segunda brecha detrás de la primera: MEDIR gobierna una tarea, no un agente, y nada en la serie hasta ese punto gobernaba el conjunto de agentes que una empresa termina operando. Ver `docs/harness-p3-p4-briefing.pt.md` para el dosier de trabajo del que salió esta decisión, interno, solo en portugués, la misma excepción que `sources/inventory.md` ya lleva.
 
 ---
 
@@ -92,7 +105,7 @@ Un ejecutivo, consejero, director de área, sucesor al frente de una empresa fam
 
 La serie existe para que esa persona pueda diagnosticar en qué etapa está, entender qué necesita construir, y conversar de igual a igual con quien lo construye.
 
-Un personaje atraviesa las tres partes: una directora de operaciones de una industria mediana que arma sola una automatización para revisar facturas de flete. Está compuesta a partir de patrones recurrentes y no describe una empresa específica. En la parte 1 está en N0 y sufre un accidente estructural. En la parte 2 llega a N1 y descubre que una guía sin sensor es solo una recomendación bien escrita, y termina en N2. En la parte 3 enfrenta la primera acción irreversible.
+Un personaje atraviesa la serie: una directora de operaciones de una industria mediana que arma sola una automatización para revisar facturas de flete. Está compuesta a partir de patrones recurrentes y no describe una empresa específica. En la parte 1 está en N0 y sufre un accidente estructural. En la parte 2 llega a N1 y descubre que una guía sin sensor es solo una recomendación bien escrita, y termina en N2. En la parte 3 enfrenta la primera acción irreversible. En la parte 4, todavía no escrita, es donde su arco como constructora solitaria del agente debe cerrarse.
 
 ---
 

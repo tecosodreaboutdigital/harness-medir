@@ -70,19 +70,35 @@ Every tool cited is verified in `sources/inventory.md`, including three sources 
 
 Published, public repository at `github.com/tecosodreaboutdigital/harness-medir`.
 
+### Parts 3 and 4 preparation
+
+`sources/inventory.md`, `diagrams/`, `STANDARDS.md`, `README.md`, `STATUS.md`, `NEXT-STEPS.md`.
+
+Follows the working dossier `docs/harness-p3-p4-briefing.pt.md`, added 30 August 2026 with a structural diagnosis, seven research axes and a nine-diagram visual specification, and completes the first three items of its work queue, block D.
+
+The governance documents now describe four parts organised around a three-layer framework, build, operation, governance, crossed by the N0 to N3 tiers as the one shared ruler, instead of three parts plus two companions. `STANDARDS.md` gained a `Diagrams` section: every diagram is born as a Mermaid specification, the inline SVG derives from it and never replaces it, matching the rule the dossier itself proposed.
+
+`sources/inventory.md` gained a new section, 32 sources across the dossier's seven research axes plus the finding that reframes Part 3's opening, all carried over with the original V or P status. Two are flagged with an explicit note, not just a status letter, because the gap they mark changes what Part 3 is allowed to claim: the rule of two's original Meta publication was never read at the primary source, and the Air Canada precedent used to open the piece is Canadian, not Brazilian.
+
+`diagrams/` gained nine standalone SVG files, D1 to D9, rendered from the dossier's Mermaid specifications in the project's visual system, English because this is new content and English is authored first. Governance vocabulary that Part 4 will need, agent owner, certifier, auditor, area sponsor, and receipt kept distinct from record, was fixed at this stage precisely so the diagrams and the eventual prose do not drift apart. See `diagrams/README.md` for the full index and which rendering note each file honours.
+
+What remains from the dossier's queue: writing Part 3, writing Part 4, and consolidating the playbook. See `NEXT-STEPS.md`.
+
 ---
 
 ## Not started
 
-### Part 3 · Agent governance
+### Part 3 · The separation of powers
 
-Scope defined, research base weak. It is the piece with the greatest commercial value and the shallowest foundation.
+Scope defined, research complete via the dossier above, not yet written. It is the piece with the greatest commercial value in the series.
 
-Scope: permission enforced outside the model, malicious instructions arriving inside a piece of data or a third-party skill, an auditable log, reversal, legal obligations, and who answers for what the agent did.
+Central thesis: the model proposes, the policy authorizes, the tool executes, the record witnesses, four functions that cannot live in the same place. The failure mode has a name, concentration, the same probabilistic system inventing the plan, approving the risk and executing the side effect. Nine sections are planned, with five diagrams, see `diagrams/part3/`. Opens with Moffatt v Air Canada, 2024 BCCRT 149: a real company argued in a real tribunal that its chatbot was a separate legal person answerable on its own, and lost, the direct opposite of this series' own thesis.
 
-What still needs researching, and it is a dedicated round, not an add-on: agent security literature, documented real incidents, the Brazilian data-protection authority's position on automated decisions, European regulatory obligations for systems classified as high-risk, and what already exists as agent audit standards.
+### Part 4 · The agent office
 
-Writing it now would produce well-written opinion, not a reference.
+Scope defined in the same dossier, research not started. The piece with the greatest risk of reading as a vendor brochure, because the subject attracts platform vocabulary and the market is already full of control towers.
+
+Central thesis: the agent life cycle, states and not steps, deliberately distinguished from MEDIR, which repeats inside a single task while the life cycle happens once per agent. Six states from a versioned briefing to decommissioning, four roles under a non-accumulation rule that mirrors Part 3's separation of powers at the organisational level, and eight indicators, two of which measure the quality of the governance itself rather than the agent's. Four diagrams are planned, see `diagrams/part4/`, plus a fifth candidate, the office's own quarterly loop, not yet decided. The piece's explicit constraint: everything it proposes has to work in a company with seven agents and a spreadsheet.
 
 ### Translation status
 
@@ -92,12 +108,13 @@ Writing it now would produce well-written opinion, not a reference.
 | Part 2 | ready | ready | ready |
 | Compact guide | ready | ready | ready |
 | Part 3 | missing | missing | missing |
+| Part 4 | missing | missing | missing |
 | Briefing skill | ready | ready | ready |
 | Governance docs | ready | ready | ready |
 
 ### Playbook
 
-Consolidation of the three parts plus the guide, adding what does not exist yet: a task-contract template, a skill template, an execution-receipt template, a risk matrix, a tier diagnostic and a rollout path.
+Consolidation of the four parts plus the guide, adding what does not exist yet: a task-contract template, a skill template, an execution-receipt template, a risk matrix, a tier diagnostic, a rollout path, and an agent-registry and certification-minutes template.
 
 The briefing skill is already its first operational artefact.
 
@@ -120,3 +137,7 @@ The briefing skill is already its first operational artefact.
 **The compact guide lives apart from the articles,** with a visible revision date, because it ages faster.
 
 **The skill repository is renamed intake-briefing, not kept as levantando-briefing.** Unlike harness and MEDIR, "levantando" was never established as a proper noun the reader needed to learn, it was simply the Portuguese verb for the skill's function, so it translates rather than staying fixed.
+
+**The series has four parts, not three, organised around three layers, build, operation, governance, crossed by the N0 to N3 ruler, decided 30 August 2026.** A fourth layer was considered, to hold the ruler itself, and rejected: N0 to N3 already plays that role, and a second axis would duplicate vocabulary with no gain. See `docs/harness-p3-p4-briefing.pt.md`.
+
+**Part 4's governance vocabulary is fixed ahead of the prose:** agent owner, certifier (the state is certified), auditor, area sponsor, and receipt kept distinct from record. Set at diagram-rendering stage so the nine SVG files in `diagrams/` and the eventual article text do not drift apart.

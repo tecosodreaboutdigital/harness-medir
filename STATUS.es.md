@@ -70,19 +70,35 @@ Cada herramienta citada está verificada en `sources/inventory.md`, incluidas tr
 
 Repositorio publicado y público, en `github.com/tecosodreaboutdigital/harness-medir`.
 
+### Preparación de las partes 3 y 4
+
+`sources/inventory.md`, `diagrams/`, `STANDARDS.md`, `README.md`, `STATUS.md`, `NEXT-STEPS.md`.
+
+Sigue el dosier de trabajo `docs/harness-p3-p4-briefing.pt.md`, añadido el 30 de agosto de 2026 con un diagnóstico estructural, siete ejes de investigación y una especificación visual de nueve diagramas, y completa los tres primeros elementos de su cola de trabajo, bloque D.
+
+Los documentos de gobernanza ahora describen cuatro partes organizadas alrededor de un marco de tres capas, construcción, operación, gobernanza, atravesadas por las bandas N0 a N3 como regla común, en lugar de tres partes más dos acompañantes. `STANDARDS.md` ganó una sección `Diagramas`: todo diagrama nace como especificación en Mermaid, el SVG en línea deriva de él y nunca lo sustituye, la misma regla que el propio dosier propuso.
+
+`sources/inventory.md` ganó una sección nueva, 32 fuentes distribuidas en los siete ejes de investigación del dosier más el hallazgo que reformula la apertura de la parte 3, todas traspasadas con el estado V o P original. Dos llevan una nota explícita, no solo una letra de estado, porque el vacío que marcan cambia lo que la parte 3 puede afirmar: la publicación original de Meta sobre la regla de dos nunca se leyó en la fuente primaria, y el precedente Air Canada usado para abrir la pieza es canadiense, no brasileño.
+
+`diagrams/` ganó nueve archivos SVG independientes, D1 a D9, renderizados a partir de las especificaciones Mermaid del dosier en el sistema visual del proyecto, en inglés porque es contenido nuevo y el inglés se escribe primero. El vocabulario de gobernanza que la parte 4 va a necesitar, dueño del agente, homologador, auditor, patrocinador del área, y recibo mantenido distinto de registro, se fijó en esta etapa justamente para que los diagramas y la prosa futura no se distancien entre sí. Ver `diagrams/README.md` para el índice completo y qué nota de renderización cumple cada archivo.
+
+Lo que queda de la cola del dosier: escribir la parte 3, escribir la parte 4, y consolidar el playbook. Ver `NEXT-STEPS.md`.
+
 ---
 
 ## Sin empezar
 
-### Parte 3 · Gobernanza de agentes
+### Parte 3 · La separación de poderes
 
-Alcance definido, base de investigación débil. Es la pieza de mayor valor comercial y la de base más superficial.
+Alcance definido, investigación completa a través del dosier de arriba, todavía no escrita. Es la pieza de mayor valor comercial de la serie.
 
-Alcance: permiso impuesto fuera del modelo, instrucciones maliciosas que llegan dentro de un dato o de una skill de terceros, un registro auditable, reversión, obligaciones legales, y quién responde por lo que hizo el agente.
+Tesis central: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua, cuatro funciones que no pueden vivir en el mismo lugar. El modo de fallo tiene nombre, concentración, el mismo sistema probabilístico inventando el plan, aprobando el riesgo y ejecutando el efecto colateral. Se prevén nueve secciones, con cinco diagramas, ver `diagrams/part3/`. Abre con Moffatt contra Air Canada, 2024 BCCRT 149: una empresa real argumentó en un tribunal real que su chatbot era una persona legal separada que responde sola, y perdió, lo opuesto exacto a la tesis de la propia serie.
 
-Lo que aún falta investigar, y es una ronda dedicada, no un complemento: literatura de seguridad de agentes, incidentes reales documentados, la posición de la autoridad brasileña de protección de datos sobre decisiones automatizadas, obligaciones regulatorias europeas para sistemas clasificados como de alto riesgo, y lo que ya existe como estándar de auditoría de agentes.
+### Parte 4 · La oficina de agentes
 
-Escribirla ahora produciría una opinión bien escrita, no una referencia.
+Alcance definido en el mismo dosier, investigación no iniciada. La pieza con mayor riesgo de convertirse en folleto de proveedor, porque el tema atrae vocabulario de plataforma y el mercado ya está lleno de torres de control.
+
+Tesis central: el ciclo de vida del agente, estados y no pasos, deliberadamente distinguido de MEDIR, que se repite dentro de una sola tarea mientras el ciclo de vida ocurre una vez por agente. Seis estados desde un briefing versionado hasta el desmantelamiento, cuatro roles bajo una regla de no acumulación que refleja la separación de poderes de la parte 3 en el plano organizacional, y ocho indicadores, dos de los cuales miden la calidad de la propia gobernanza, no la del agente. Se prevén cuatro diagramas, ver `diagrams/part4/`, más un quinto candidato, el bucle propio de la oficina por trimestre, todavía no decidido. La restricción explícita de la pieza: todo lo que propone tiene que funcionar en una empresa con siete agentes y una hoja de cálculo.
 
 ### Estado de las traducciones
 
@@ -92,12 +108,13 @@ Escribirla ahora produciría una opinión bien escrita, no una referencia.
 | Parte 2 | lista | lista | lista |
 | Guía compacta | lista | lista | lista |
 | Parte 3 | falta | falta | falta |
+| Parte 4 | falta | falta | falta |
 | Skill de briefing | lista | lista | lista |
 | Documentos de gobernanza | lista | lista | lista |
 
 ### Playbook
 
-Consolidación de las tres partes más la guía, sumando lo que todavía no existe: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo, un diagnóstico de banda y una ruta de implementación.
+Consolidación de las cuatro partes más la guía, sumando lo que todavía no existe: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo, un diagnóstico de banda, una ruta de implementación, y una plantilla de registro de agentes y acta de homologación.
 
 La skill de briefing ya es su primer artefacto operativo.
 
@@ -120,3 +137,7 @@ La skill de briefing ya es su primer artefacto operativo.
 **La guía compacta vive aparte de los artículos,** con una fecha de revisión visible, porque envejece más rápido.
 
 **El repositorio de la skill se renombra a intake-briefing, y no se mantiene como levantando-briefing.** A diferencia de harness y MEDIR, "levantando" nunca se estableció como nombre propio que el lector necesitara aprender, era simplemente el verbo en portugués para la función de la skill, por eso se traduce en lugar de quedar fijo.
+
+**La serie tiene cuatro partes, no tres, organizadas alrededor de tres capas, construcción, operación, gobernanza, atravesadas por la regla N0 a N3, decisión tomada el 30 de agosto de 2026.** Se consideró una cuarta capa, para alojar la propia regla, y se descartó: N0 a N3 ya cumple ese papel, y un segundo eje duplicaría vocabulario sin ganancia. Ver `docs/harness-p3-p4-briefing.pt.md`.
+
+**El vocabulario de gobernanza de la parte 4 se fija antes de la prosa:** dueño del agente, homologador (el estado es homologado), auditor, patrocinador del área, y recibo mantenido distinto de registro. Fijado en la etapa de renderización de los diagramas, justamente para que los nueve archivos SVG en `diagrams/` y el texto futuro del artículo no se distancien entre sí.

@@ -26,47 +26,50 @@ In order. Every item carries its done criterion.
 
 **Four externally recommended skills checked, one adopted.** `ponytail`, `no-ai-slop`, `taste-skill` and `impeccable` were compared on relevance, maintenance signal, contributor count and licence before any of them touched this repository. `ponytail` (117,000 stars, benchmarked, actively maintained) would have resolved `karpathy-guidelines`' own misattribution caveat but was set aside for now rather than adopted. `no-ai-slop` is a genuinely useful prose-cleanup skill whose banned-word list happens to include this project's own core term, "harness", and was also set aside pending a decision on how to except it. `taste-skill` was declined outright: its ten sub-skills read in exactly the hype register a project about evidence over opinion should not cite, and six contributors against 82,000 stars is a thin base. `impeccable` was adopted: Apache-2.0, 30 contributors, versioned (v4.1.2), derives from Anthropic's own frontend-design skill, and its 61 deterministic detector rules fit Inspect's own definition, evidence instead of opinion, applied to frontend design specifically. Installed as documentation only, `SKILL.md` and `reference/`, deliberately leaving out the `scripts/` tree its CLI needs, see `TOOLS.md`. Added as the compact guide's eighteenth entry, in Inspect, across all three languages, see `sources/inventory.md` for the verification record.
 
----
-
-## 1. Part 3 research round
-
-**Superseded by a working dossier.** `docs/harness-p3-p4-briefing.pt.md`, added 30 August 2026, already gathers seven research axes (one more than the list below) with verified primary sources, a structural diagnosis, and a visual specification, and it also proposes a fourth part for the series, not yet reflected in `README.md` or `STATUS.md`. Portuguese only, internal working document, not reader-facing, the same exception `sources/inventory.md` already has. Treat the dossier as the actual starting point for this round; the list below is the round's original scope, kept for record.
-
-A dedicated round, not an add-on. What still needs gathering:
-
-- Agent security literature, focused on malicious instructions arriving inside data
-- Documented real incidents involving agents with an external effect
-- The Brazilian data-protection authority's position on automated decisions
-- European regulatory obligations for systems classified as high-risk
-- Audit and logging standards applicable to agents
-- What established practice already exists on authority and approval in autonomous systems
-
-**Done when:** each of the six axes has at least two verified primary sources.
+**Parts 3 and 4 preparation, the first three items of the working dossier's queue.** `docs/harness-p3-p4-briefing.pt.md` set the queue in its block D, and this round closed items 1 through 3. `README.md`, `STATUS.md`, `NEXT-STEPS.md` and `STANDARDS.md`, in all three languages, now describe four parts organised around a three-layer framework, build, operation, governance, crossed by the N0 to N3 tiers, instead of three parts plus two companions, and `STANDARDS.md` gained the `Diagrams` rule the dossier proposed: Mermaid first, the SVG derives and never replaces it. `sources/inventory.md` gained a new section carrying the dossier's 32 sources across seven research axes plus the Air Canada finding, original V or P status preserved, with an explicit note on the two that mark a real gap rather than a missing link: the rule of two's primary source, and the fact that no Brazilian precedent exists yet. Nine standalone SVG files, D1 to D9, were rendered into the new `diagrams/` directory from the dossier's Mermaid specifications, in English since this is new content, with Part 4's governance vocabulary (agent owner, certifier, auditor, area sponsor, receipt kept distinct from record) fixed at this stage so the diagrams and the eventual prose do not drift. See `STATUS.md` for the full detail and `diagrams/README.md` for the index.
 
 ---
 
-## 2. Write Part 3
+## 1. Write Part 3
 
-Expected structure, subject to what the research reveals:
+Research is complete, see `sources/inventory.md`. The dossier's own closing section, block B's "What the research changes in the planned structure", revises the original ten-section sketch down to nine. Reconstructed here for tracking, confirm against the dossier before drafting:
 
-1. The first irreversible action (opening, with the director at N2 facing the first send to a customer)
-2. Permission is not instruction (why authority needs to live outside the model)
-3. When the order arrives inside the data
-4. What needs to be logged
-5. Reversal: what undoing actually means
-6. A third-party skill is third-party code
-7. Legal obligations
-8. Who answers for it
-9. What changes at your board's table
-10. Where you are (the series' closing)
+1. Air Canada opens the piece: a real company argued in a real tribunal that its assistant was a separate legal person, answerable on its own, and lost
+2. The director re-enters here, at N2, facing the first irreversible action, the contrast against Air Canada's argument is the point
+3. The separation of powers, with the rule of two as its operational tool, the equivalent of Part 2's guides-and-sensors matrix
+4. Identity and a named owner: who deployed it, what it is authorized to do, on whose behalf it is acting right now
+5. When the order arrives inside the data
+6. What needs to be logged, and what reversal actually means
+7. A third-party skill is third-party code, closing the hook Part 2 left open
+8. Legal obligations in two columns, Brazil and Europe, what already applies before what is still pending
+9. Who answers for it, and where you are, the series' closing
 
-**Done when:** all three versions are ready, the character's arc closes, and the piece works alone for a reader who has not read the previous ones.
+Two honesty obligations the dossier flags explicitly: state that the Air Canada precedent is foreign, or a legal reader will discount the whole piece, and date the claim that Brazil's specific regulation for LGPD article 20 has not been published yet, because that sentence can age within months.
+
+**Done when:** all three versions are ready, the character's arc closes, the piece works alone for a reader who has not read the previous ones, and the matrix-of-authority and receipt-schema artefacts it leaves behind are in the text.
+
+---
+
+## 2. Write Part 4
+
+Research not started, scope defined in the dossier's block A. Central thesis: the agent life cycle, states and not steps, distinguished from MEDIR with enough clarity that a reader cannot confuse the two.
+
+Structure to cover, per the dossier, order subject to drafting:
+
+1. The life cycle itself, six states from a versioned briefing to decommissioning, with the two transitions almost nobody implements, expired certification and no execution in the period, both leading to decommissioning
+2. The four roles and the non-accumulation rule, the same separation of powers as Part 3, now on the organisational plane
+3. The eight indicators, two of which measure the governance's own quality rather than the agent's: the exception rate, and the gate's own refusal rate
+4. Where the office sits, and why not in IT, presenting the realistic options with the cost of each
+5. The warning: this is the piece most likely to read as a vendor brochure, and the antidote is an explicit constraint running through the text, everything it proposes has to work in a company with seven agents and a spreadsheet
+6. The closing argument: every platform governs inward, which is why the office has to be a function of the company, not a product it buys
+
+**Done when:** all three versions are ready, the character's arc closes the series, the eight indicators are defined with a formula, and the text holds to the seven-agents-and-a-spreadsheet constraint throughout.
 
 ---
 
 ## 3. Consolidate the playbook
 
-Reuses the three parts and the guide, and adds what does not exist yet:
+Reuses the four parts and the guide, and adds what does not exist yet:
 
 - Task-contract template
 - Skill template, derived from Part 2's three examples
@@ -74,6 +77,9 @@ Reuses the three parts and the guide, and adds what does not exist yet:
 - Risk matrix by tier
 - Tier diagnostic, questionnaire version
 - Rollout path from N0 to N3
+- Agent-registry template and certification-meeting-minutes template
+
+D10, the office's own quarterly loop, not decided for Part 4, is a strong candidate to open the playbook if it stays out of Part 4.
 
 ---
 
@@ -88,3 +94,5 @@ Reuses the three parts and the guide, and adds what does not exist yet:
 **English spelling.** Currently British, now the project's default reading. If the target audience shifts toward the United States, convert it.
 
 **Publication.** Resolved on 30 August 2026: GitHub Pages live at `tecosodreaboutdigital.github.io/harness-medir`. Check after the first automatic build that the documents render correctly there (the link most likely to need adjustment is some relative path between them).
+
+**Locate the rule of two's primary source.** Two independent secondary sources attribute it to Meta with the same wording, sufficient to cite the content in Part 3, not to link it. Search again before that piece is signed off, see `sources/inventory.md`.
