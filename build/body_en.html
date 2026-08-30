@@ -1,0 +1,355 @@
+<main class="page">
+
+<div class="langbar">
+<a href="harness-p1-pt.html">PT</a>
+<a class="on" href="harness-p1-en.html">EN</a>
+<a href="harness-p1-es.html">ES</a>
+</div>
+
+<p class="eyebrow">Harness · Part 1 of 3 · Why</p>
+
+<h1>The best model in the world inside a company with no process</h1>
+
+<p class="deck">The reliability of your AI does not live in the model you bought. It lives in the environment you built around it. That environment has a name, a method, and unlike the model, it belongs to you.</p>
+
+<p class="byline">Fernando Teco Sodré · August 2026 · 14 minute read</p>
+
+<nav class="toc">
+  <p>In this article</p>
+  <ol>
+    <li><a href="#opening">The third week</a></li>
+    <li><a href="#what">What a harness is</a></li>
+    <li><a href="#delegation">You already know how to do this</a></li>
+    <li><a href="#lineage">You have seen this film before</a></li>
+    <li><a href="#who">Who is already doing it, and what the numbers say</a></li>
+    <li><a href="#medir">The MEDIR cycle</a></li>
+    <li><a href="#equiv">What you already run and did not know applied</a></li>
+    <li><a href="#levels">Four bands of autonomy</a></li>
+    <li><a href="#risks">What can go wrong</a></li>
+    <li><a href="#checklist">Twelve questions before you trust it</a></li>
+    <li><a href="#series">What comes in parts 2 and 3</a></li>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</nav>
+
+<h2 id="opening">1. The third week</h2>
+
+<p>An operations director at a mid-sized manufacturer built, on her own, an automation to check freight invoices. She is not technical. She described what she wanted in plain language, pointed at the folder where the invoices arrive, and asked the system to compare each one against the carrier contract and flag any discrepancy. It took her an afternoon.</p>
+
+<p>It worked in the demo. It worked the first week. It worked the second, and she started telling other departments about it. In the third week, it approved a duplicate invoice for forty thousand.</p>
+
+<p>Her reaction was the reaction almost everyone has. First she rewrote the instruction, adding the sentence "check whether the invoice has already been processed". Two weeks later, a similar error with a different supplier. So she switched models, to a newer and more expensive one. The error vanished for a month and came back wearing a different face: the system began rejecting legitimate invoices, and nobody could explain why.</p>
+
+<p>It is tempting to conclude that she asked too much of the technology. That conclusion is wrong, and the correct diagnosis is far more interesting.</p>
+
+<p>She had never written down anywhere what "done" meant. There was no step between the system's decision and its effect on the world, no one and nothing that checked before an invoice moved to payment. There was no record of why: when the error surfaced, no trail existed to reconstruct what the system had seen and in what order. And nothing prevented the same class of error from recurring, because every correction was a patch on the answer, never a change to the environment.</p>
+
+<blockquote><p>She did not hire a bad employee. She hired an excellent one and put them to work with no defined process, no system of record, no spending authority and no audit. No human professional would survive that.</p></blockquote>
+
+<p>The uncomfortable part is that her company has all of it. It has standard operating procedures, internal controls, approval limits, audit trails. None of it was extended to the new worker, because nobody noticed they had hired one.</p>
+
+<h2 id="what">2. What a harness is</h2>
+
+<p>There is an equation that has become consensus among the people running these systems in production, and it fits in four words: agent equals model plus harness.</p>
+
+<p>The {{model}} is the reasoning engine. It proposes the next action. It is what the industry sells, what makes the headlines, what changes name every six weeks. The {{harness}} is everything else: what the system can see, what it can touch, what survives from one session to the next, what counts as evidence that the work is good, and at what moment execution must stop and call someone.</p>
+
+<p>The word denotes the equipment that channels an animal's strength in a useful direction. It is worth keeping in the original, for the same reason nobody translated {{kaizen}}, {{kanban}}, {{poka}} or {{jidoka}}: an imported word signals an imported body of knowledge, and there is nothing to gain from inventing a synonym no one will recognise in the literature.</p>
+
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="Diagram of the harness around the model">
+  <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+  <text class="svg-ttl" x="350" y="24" text-anchor="middle">THE HARNESS</text>
+  <rect x="150" y="40" width="400" height="215" fill="none" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="20" y="128" width="100" height="46" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="70" y="147" text-anchor="middle">REQUEST</text>
+  <text class="svg-sub" x="70" y="162" text-anchor="middle">goal · risk</text>
+  <line x1="122" y1="151" x2="146" y2="151" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a1)"/>
+  <rect x="170" y="62" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="80" text-anchor="middle">CONTRACT</text>
+  <text class="svg-sub" x="227" y="95" text-anchor="middle">what "done" means</text>
+  <rect x="170" y="126" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="144" text-anchor="middle">CONTEXT</text>
+  <text class="svg-sub" x="227" y="159" text-anchor="middle">maps · rules</text>
+  <rect x="170" y="190" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="208" text-anchor="middle">STATE</text>
+  <text class="svg-sub" x="227" y="223" text-anchor="middle">durable memory</text>
+  <circle cx="350" cy="148" r="34" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="350" y="152" text-anchor="middle">MODEL</text>
+  <line x1="287" y1="84" x2="322" y2="128" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="287" y1="148" x2="314" y2="148" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="287" y1="212" x2="322" y2="170" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="378" y1="128" x2="413" y2="84" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="386" y1="148" x2="413" y2="148" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="378" y1="170" x2="413" y2="212" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="415" y="62" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="80" text-anchor="middle">TOOLS</text>
+  <text class="svg-sub" x="472" y="95" text-anchor="middle">what it can touch</text>
+  <rect x="415" y="126" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="144" text-anchor="middle">PERMISSION</text>
+  <text class="svg-sub" x="472" y="159" text-anchor="middle">authority · approval</text>
+  <rect x="415" y="190" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="208" text-anchor="middle">EVIDENCE</text>
+  <text class="svg-sub" x="472" y="223" text-anchor="middle">tests · traces</text>
+  <line x1="554" y1="151" x2="578" y2="151" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a1)"/>
+  <rect x="582" y="128" width="100" height="46" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="632" y="147" text-anchor="middle">RESULT</text>
+  <text class="svg-sub" x="632" y="162" text-anchor="middle">verified</text>
+  <text class="svg-cap" x="350" y="275" text-anchor="middle">THE MODEL REASONS · THE HARNESS CONTROLS · THE TOOLS ACT</text>
+</svg>
+<figcaption>The model sits at the centre but decides little. Everything that determines whether the result is trustworthy lives outside it.</figcaption>
+</figure>
+
+<p>Put the same model inside a chat box and it answers questions. Put the same model inside an environment with file access, automated tests, memory between sessions, permission limits and a reviewer, and it delivers work. The weights did not change. The environment did.</p>
+
+<h2 id="delegation">3. You already know how to do this</h2>
+
+<p>Here is the translation that was missing, and it needs no technical vocabulary at all.</p>
+
+<p>When you delegate something important to someone who has just joined, you do six things almost without thinking. You agree on the expected result and the deadline. You show them where the information lives and who to ask. You give them access to the systems they need, and only those. You ask them to record what was decided. You review before the work leaves the company. And you define what they can sign off alone and what has to come up to you.</p>
+
+<p>You never had to write any of that down, because the person arrived with half of it already installed. They were embarrassed to hand in poor work, they knew their name went on the document, they noticed when something felt off even without being able to explain why, and they carried a memory of what the company had already tried and failed at.</p>
+
+<p>The agent brings none of this. No social accountability, no aesthetic disgust at an ugly solution, no intuition that "we do not do it that way here", no organisational memory. A harness is the attempt to externalise and make explicit what human experience used to carry built in.</p>
+
+<p>Which is why this is not an IT problem. It is a work design problem. And why the person best equipped to solve it in your company is probably not in IT: they are in quality, in operations, in internal control.</p>
+
+<h2 id="lineage">4. You have seen this film before</h2>
+
+<p>The expression harness engineering got its name in February 2026, when Mitchell Hashimoto, co-founder of HashiCorp and creator of Terraform, published a personal account of adopting AI. His definition fits in one sentence: any time you find the agent makes a mistake, you invest the time needed to engineer a solution such that the agent never makes that mistake again. Six days later OpenAI published a field report that gave the term scale, and within weeks Thoughtworks, LangChain and Anthropic were using the same vocabulary.</p>
+
+<p>Worth recording, because it circulates wrong: it was not Andrej Karpathy. He coined {{vibe}} and popularised {{context}}, but the term harness was already in technical circulation, and the person who turned it into a discipline was Hashimoto.</p>
+
+<p>Now read his definition again and answer this: does it remind you of anything?</p>
+
+<p>It is poka-yoke. Not analogous to poka-yoke. It is poka-yoke, the Japanese principle of redesigning the process so the error becomes structurally impossible, rather than asking for more attention from whoever executes. The only difference is that the executor is neither human nor deterministic.</p>
+
+<p>And the coincidence does not stop there. Birgitta Böckeler, of Thoughtworks, describes the harness explicitly as a {{cyb}} governor, combining anticipatory and feedback control to regulate the system toward its desired state, and invokes {{ashby}}: a regulator must have at least as much variety as the system it governs. A control loop with anticipation and feedback is exactly the structure {{shewhart}} formalised in the 1930s and that {{deming}} carried to the world as {{pdca}}.</p>
+
+<p>Harness engineering is not a distant cousin of quality management. It is the same trunk, applied to a worker that fails in a new way.</p>
+
+<blockquote><p>Industry took forty years to accept that quality is not inspected at the end of the line, it is built into the process. Corporate AI is repeating the beginner's error: almost everyone reviewing the agent's output, almost nobody fixing the process that produced it.</p></blockquote>
+
+<p>If your company has real maturity in process management, you hold a structural advantage in adopting agentic AI that you probably have not noticed. The vocabulary is different. The discipline is the same.</p>
+
+<h2 id="who">5. Who is already doing it, and what the numbers say</h2>
+
+<p>This is the part that usually ends the debate about which model to buy.</p>
+
+<h3>The controlled experiment</h3>
+
+<p>In February 2026, researcher Can Bölük did something simple. He took sixteen language models, held everything constant, and changed a single piece of the environment: the format the agent uses to describe a file edit. Nothing in the weights, nothing in the prompt, no training. Just the tool format.</p>
+
+<p>The new format beat the old one in fourteen of the sixteen models. And the weakest models gained the most: one went from 6.7% to 68.3% success rate, a tenfold jump. The model's real capability had been there all along, hidden behind mechanical tool failures. The experiment cost an afternoon and roughly three hundred dollars.</p>
+
+<div class="rule-box"><span class="lbl">The line that sums it up</span><p>You were blaming the pilot for the landing gear.</p></div>
+
+<p>The pattern repeated elsewhere. LangChain improved only its own agent's harness and rose from thirtieth to fifth place on a public benchmark, a gain of 13.7 points, without changing the model. And an academic effort that automated harness evolution recorded improvement in fourteen of fifteen configurations, averaging 14.5%.</p>
+
+<h3>The enterprise scale</h3>
+
+<p>OpenAI published the most detailed account to date. A team that started at three people and ended at seven built an internal product in five months, with zero lines of code written by hand, around one million lines generated and roughly fifteen hundred {{pr}} approved.</p>
+
+<p>What matters is not the number, it is the method. The architecture was organised into layers with strict dependency direction, and those rules were not documentation, they were a block: custom {{linter}}, structural tests and automated gates prevented any delivery that violated the structure. The most elegant detail is this: when a check failed, the error message was written to teach the agent the fix, not merely to record the failure. The system does not just block the error, it trains whoever made it, on the spot.</p>
+
+<p>Two further principles from the same account deserve a place in your vocabulary. The first is progressive disclosure: the agent's guidance document should be an index of about a hundred lines, pointing at where to look, not an encyclopaedia that consumes the whole reading budget. The second is garbage collection: background tasks run on a regular cadence looking for drift and proposing small corrections, because accumulated debt is a high-interest loan, always better paid in instalments than left to compound into a cleanup marathon.</p>
+
+<p>And the sentence that captures the whole problem from an operator's point of view: whatever the agent cannot reach during execution simply does not exist for it.</p>
+
+<h3>Memory, and the judge</h3>
+
+<p>Anthropic solved the problem of agents working for hours with a solution any manager recognises. The first working session sets up the environment: an initialisation script, a progress file recording what has been done, and an initial version marker. Every subsequent session reads that record, advances one piece, and writes the update down. Memory lives outside the conversation, in artefacts, not in the system's head.</p>
+
+<p>They then went further, inspired by an adversarial architecture: they separated who plans, who executes and who evaluates. Three roles, with explicit evaluation criteria. It is the most transferable principle in everything published on the subject so far, and the most ignored in practice: <strong>the one who generates does not evaluate</strong>. Self-assessment is not a shortcut, it is the failure mode.</p>
+
+<h3>The trace as architecture</h3>
+
+<p>In August 2026, DeepSeek open-sourced its own harness under a permissive licence, and the repository passed thirty-three thousand stars within hours. The design choice that matters to anyone accountable for governance is this: everything the model sees is written to an {{append}}, including instructions, reasoning, tool calls, results and every context injection. Resuming, forking, searching and replaying an execution all operate on that same record.</p>
+
+<p>Translated into board language: audit, compliance and rollback stopped being a report and became architecture. Whoever builds without it will discover too late that they cannot explain what happened.</p>
+
+<h2 id="medir">6. The MEDIR cycle</h2>
+
+<p>If harness engineering belongs to the same family as {{pdca2}}, it needs what every method in that family has: an order, a name for each step, and a criterion for knowing when to move on. That is what the cycle below organises.</p>
+
+<figure>
+<svg viewBox="0 0 700 400" role="img" aria-label="The MEDIR cycle: map, equip, delegate, inspect, reinforce">
+  <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+  <rect x="150" y="20" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="42">M · MAP</text>
+  <text class="svg-sub" x="176" y="58">the task contract, the limits and the map of what is known</text>
+  <line x1="370" y1="74" x2="370" y2="92" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a2)"/>
+  <rect x="150" y="94" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="116">E · EQUIP</text>
+  <text class="svg-sub" x="176" y="132">tools, access and durable memory, with a boundary</text>
+  <line x1="370" y1="148" x2="370" y2="166" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a2)"/>
+  <rect x="150" y="168" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="190">D · DELEGATE</text>
+  <text class="svg-sub" x="176" y="206">isolated execution, autonomy calibrated to risk</text>
+  <line x1="370" y1="222" x2="370" y2="240" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a2)"/>
+  <rect x="150" y="242" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="264">I · INSPECT</text>
+  <text class="svg-sub" x="176" y="280">sensors that produce evidence, not opinion</text>
+  <line x1="370" y1="296" x2="370" y2="314" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a2)"/>
+  <rect x="150" y="316" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="338">R · REINFORCE</text>
+  <text class="svg-sub" x="176" y="354">the failure becomes a permanent change to the environment</text>
+  <path d="M150 342 L108 342 L108 46 L146 46" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#a2)"/>
+  <text class="svg-cap" x="56" y="196">THE LOOP CLOSES</text>
+</svg>
+<figcaption>MEDIR. What separates this cycle from a generic PDCA is the last step: you act on the environment, not on the answer.</figcaption>
+</figure>
+
+<p><strong>Map</strong> means writing down, before any execution, what the task delivers, what its limits are, and how to know it has finished. Without that contract the system can silently redefine its own work and still declare success. It is the highest-leverage move in long-running tasks, and the most frequently skipped.</p>
+
+<p><strong>Equip</strong> means deciding what it sees and what it can touch. Fewer tools, better described, with state held outside the conversation. An agent that starts from zero every session is not an agent, it is an expensive form.</p>
+
+<p><strong>Delegate</strong> means executing in an isolated environment, with narrow scope and autonomy proportional to risk. One thing at a time.</p>
+
+<p><strong>Inspect</strong> is the difference between trust and evidence. The sensor must return the exact gap, not a verdict. "Did not pass" teaches nothing. "Invoice 4471 was already processed on 12 March, reference in record X" teaches, and allows immediate repair.</p>
+
+<p><strong>Reinforce</strong> is where the difference lives. The error surfaced by inspection does not become a patch on the answer: it becomes a written rule, a test, a better tool or a tighter permission. The patch fixes one run. The change to the environment improves every run after it.</p>
+
+<p>That is why the loop can close without permanent human supervision. The system gets cheaper to operate with each turn, not more expensive. It is also why it is honest to say you are building something that measures, corrects and repairs itself: not because the model learned, but because the environment became harder to get wrong.</p>
+
+<h2 id="equiv">7. What you already run and did not know applied</h2>
+
+<p>If you come from an environment with mature process management, what follows is not a new technology. It is your own toolkit, under different names.</p>
+
+<table class="wrap">
+<thead><tr><th>What you already run</th><th>Its equivalent in the harness</th></tr></thead>
+<tbody>
+<tr><td>Standard operating procedure</td><td>The agent's guide: rules, conventions and a map of where to look</td></tr>
+<tr><td>Poka-yoke</td><td>Deterministic checks that make the error impossible</td></tr>
+<tr><td>Jidoka, the machine that stops itself</td><td>The agent halts execution when a sensor fires</td></tr>
+<tr><td>{{andon}}</td><td>Escalation to a human, with the context attached</td></tr>
+<tr><td>{{gemba}}</td><td>Reading the execution trace, not just the final output</td></tr>
+<tr><td>{{chart}}</td><td>Continuous drift sensors, outside the task loop</td></tr>
+<tr><td>Kaizen</td><td>The Reinforce step: failure becomes permanent change</td></tr>
+<tr><td>Control plan and approval limits</td><td>Permission policy, enforced outside the model</td></tr>
+<tr><td>Audit trail</td><td>An execution record that only accepts additions</td></tr>
+<tr><td>{{dmaic}}</td><td>MEDIR</td></tr>
+</tbody>
+</table>
+
+<h2 id="levels">8. Four bands of autonomy</h2>
+
+<p>The question every executive asks at this point is how much autonomy to grant. The answer is not a number, it is a condition: you only move up a band when the sensor of the previous band actually works.</p>
+
+<figure>
+<svg viewBox="0 0 700 250" role="img" aria-label="Four bands of harness maturity">
+  <line x1="60" y1="215" x2="660" y2="215" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="60" y="176" width="140" height="38" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="130" y="199" text-anchor="middle">N0 · ASSISTED</text>
+  <text class="svg-sub" x="130" y="168" text-anchor="middle">human reviews everything</text>
+  <rect x="212" y="136" width="140" height="78" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="282" y="180" text-anchor="middle">N1 · GUIDED</text>
+  <text class="svg-sub" x="282" y="128" text-anchor="middle">reversible tasks</text>
+  <rect x="364" y="96" width="140" height="118" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="434" y="160" text-anchor="middle">N2 · MEASURED</text>
+  <text class="svg-sub" x="434" y="88" text-anchor="middle">long-running tasks</text>
+  <rect x="516" y="56" width="140" height="158" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="586" y="140" text-anchor="middle">N3 · GOVERNED</text>
+  <text class="svg-sub" x="586" y="48" text-anchor="middle">external effect, under a gate</text>
+  <text class="svg-cap" x="60" y="238">AUTONOMY GROWS ONLY WHEN THE PREVIOUS BAND'S SENSOR WORKS</text>
+</svg>
+<figcaption>The bands measure the capability of the system, not the certification of a person.</figcaption>
+</figure>
+
+<table class="wrap">
+<thead><tr><th>Band</th><th>What exists in the environment</th><th>Autonomy allowed</th></tr></thead>
+<tbody>
+<tr><td>N0 · Assisted</td><td>An instruction and a model, nothing else</td><td>None. A human reviews every output</td></tr>
+<tr><td>N1 · Guided</td><td>Written guide, defined tools, task contract</td><td>Reversible, low-cost tasks</td></tr>
+<tr><td>N2 · Measured</td><td>Durable state, sensors, loop with a retry ceiling</td><td>Long tasks, with evidence before delivery</td></tr>
+<tr><td>N3 · Governed</td><td>Permission outside the model, full trace, rollback</td><td>Action with external effect, under human approval</td></tr>
+</tbody>
+</table>
+
+<p>The automation from the opening of this article sat at N0 while operating as if it were N3. It had external, financial, irreversible effect, with no guide, no sensor, no approval limit and no trace. The accident was not bad luck. It was a structural consequence.</p>
+
+<div class="rule-box"><span class="lbl">Sizing rule</span><p>The harness must be smaller than the failure surface it controls. A short, reversible task does not need a platform. A task that moves money needs all of it.</p></div>
+
+<h2 id="risks">9. What can go wrong</h2>
+
+<p>This is the section a board needs to read, because every line below has already happened to someone.</p>
+
+<table class="wrap">
+<thead><tr><th>Risk</th><th>How it shows up</th><th>Control</th></tr></thead>
+<tbody>
+<tr><td>Autonomy without a sensor</td><td>The system scales the error as fast as it scales the win</td><td>Sensor before autonomy, always in that order</td></tr>
+<tr><td>Judge and defendant</td><td>The same system executes, evaluates and declares success on a task it redefined itself</td><td>An evaluator separate from the executor, with explicit criteria</td></tr>
+<tr><td>Permission written in the instruction</td><td>Text arriving inside a document, an e-mail or a PDF is read as an order</td><td>Permission enforced outside the model, in the policy layer</td></tr>
+<tr><td>Memory without governance</td><td>Personal data in durable state, outside any retention policy</td><td>Legal basis, retention period and data subject defined before switching on</td></tr>
+<tr><td>Irreversible action without a gate</td><td>Payment, dispatch, deletion or publication without named approval</td><td>Authority by class of action, not by trust in the system</td></tr>
+<tr><td>A loop without a budget</td><td>Silent cost and infinite repetition of the same attempt</td><td>Retry ceiling, cost ceiling and escalation path</td></tr>
+<tr><td>No trace</td><td>You cannot audit, attribute a regression or change vendor</td><td>A record per execution, with a rollback point</td></tr>
+<tr><td>Silent drift</td><td>The environment degrades gradually and nobody notices until the incident</td><td>Maintenance on a cadence, not in marathons</td></tr>
+<tr><td>A harness bigger than the problem</td><td>A platform built before the first task delivers value</td><td>Move up a band only when the task pays for the complexity</td></tr>
+</tbody>
+</table>
+
+<p>There is one further risk that does not fit in a table, and it is the most expensive of the ten. It is treating all of this as a technology matter. The decisions that count here are about authority, accountability and tolerance for error. None of them belong to whoever writes the code.</p>
+
+<h2 id="checklist">10. Twelve questions before you trust it</h2>
+
+<p>Use this before letting any agent touch real work. If several answers are no, a stronger model will not fix it: it will only make the failure more expensive.</p>
+
+<ul class="checklist">
+<li><strong>Map.</strong> Is the definition of done written before execution begins?</li>
+<li><strong>Map.</strong> Can the system find the right knowledge without loading everything?</li>
+<li><strong>Map.</strong> Are the task limits explicit, including what it must not do?</li>
+<li><strong>Equip.</strong> Does every tool have a clear purpose and a predictable failure state?</li>
+<li><strong>Equip.</strong> Are decisions stored outside the conversation?</li>
+<li><strong>Equip.</strong> Is execution isolated from production systems?</li>
+<li><strong>Delegate.</strong> Is the autonomy granted proportional to the cost of the error?</li>
+<li><strong>Inspect.</strong> Does every risky transition produce evidence rather than an opinion?</li>
+<li><strong>Inspect.</strong> Is the evaluator different from the executor?</li>
+<li><strong>Reinforce.</strong> Does every loop have a retry ceiling, a cost ceiling and an escalation path?</li>
+<li><strong>Reinforce.</strong> Does every failure update a guide, a test, a tool or a permission?</li>
+<li><strong>Reinforce.</strong> Can you reconstruct what happened and reverse what was done?</li>
+</ul>
+
+<h2 id="series">11. What comes in parts 2 and 3</h2>
+
+<p>There is a reason this subject is growing now, and it is uncomfortable: agents became good enough to be used, and are not yet reliable enough to be let loose. The entire discipline exists in that gap.</p>
+
+<p>The good news is that the gap is addressable, and most of the work is not technical. It is work design, definition of authority and maintenance discipline, three things mature companies already know how to do.</p>
+
+<p>Part 2 goes one level down: guides and sensors, the only two kinds of control that exist, the difference between deterministic verification and verification by judgement, when to run each, and three complete examples you can build without writing code, from the individual to the corporate.</p>
+
+<p>Part 3 deals with what remains once the system works: permission outside the model, malicious instructions arriving inside data, auditable records, rollback, legal obligations, and the question nobody wants to ask out loud in the room, which is who answers for what the agent did.</p>
+
+<blockquote><p>The model you use today will be replaced within months, and you will have no vote in that decision. The tools, the tests, the written rules, the approval limits and the record of what happened remain yours. That is why the durable advantage is migrating from the {{prompt}} to the system around it.</p></blockquote>
+
+<p>The better your harness, the better for you and the better for your agent. And unlike the model, it improves precisely to the extent that you operate it.</p>
+
+<h2 id="glossary">12. Glossary</h2>
+
+<p>The terms below appear underlined throughout the text. Hover for the short definition, or click to arrive here. The references point to the origin of each concept, not to second-hand summaries.</p>
+
+{{GLOSS}}
+
+<h2 id="sources">13. Sources</h2>
+
+<ol class="sources">
+<li>Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 February 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
+<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 February 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
+<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 April 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
+<li>Anthropic. <em>Effective harnesses for long-running agents</em>, November 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
+<li>Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
+<li>Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 February 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
+<li>DeepSeek. <em>DeepSeek Harness, developer preview</em>, August 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
+<li>The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, August 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
+<li>Community. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
+<li>Addy Osmani. <em>Long-running agents</em>, April 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
+</ol>
+
+<div class="foot">
+<p>Part 1 of 3 · Harness series · The opening scene is composed from recurring patterns and does not describe a specific company.</p>
+</div>
+
+</main>
+</body>
+</html>

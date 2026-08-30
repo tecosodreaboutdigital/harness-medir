@@ -1,0 +1,206 @@
+<p class="eyebrow">Harness · Documento companheiro · Prático</p>
+
+<h1>Caixa de ferramentas do harness</h1>
+
+<p class="deck">Inventário comentado do que existe hoje, com repositórios, comandos e três roteiros para sair do zero. Este documento envelhece mais rápido que os artigos da série, e por isso vive separado deles.</p>
+
+<p class="byline">Fernando Teco Sodré · Revisada em agosto de 2026 · Companheiro das partes 1, 2 e 3</p>
+
+<div class="rule-box"><span class="lbl">Validade</span><p>Tudo aqui foi verificado em agosto de 2026. Nomes, endereços e comandos mudam. Os artigos da série falam de princípios e não dependem deste documento. Este documento depende do mercado.</p></div>
+
+<nav class="toc">
+  <p>Neste documento</p>
+  <ol>
+    <li><a href="#como-usar">Como usar</a></li>
+    <li><a href="#colecoes">Coleções de skills para estudar e copiar</a></li>
+    <li><a href="#spec">Especificação antes do código</a></li>
+    <li><a href="#sensores-lista">Ferramentas de sensor</a></li>
+    <li><a href="#runtimes">Ambientes e runtimes</a></li>
+    <li><a href="#howto-1">Roteiro 1: ler o superpowers em uma hora</a></li>
+    <li><a href="#howto-2">Roteiro 2: escrever seu primeiro skill em trinta minutos</a></li>
+    <li><a href="#howto-3">Roteiro 3: montar seu primeiro sensor</a></li>
+    <li><a href="#seguranca">Antes de instalar qualquer coisa</a></li>
+    <li><a href="#fontes">Fontes</a></li>
+  </ol>
+</nav>
+
+<h2 id="como-usar">1. Como usar</h2>
+
+<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, sensores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios.</p>
+
+<p>Uma orientação sobre método antes de qualquer lista: o valor de estudar coleções alheias não está em instalá-las, está em lê-las. Os melhores materiais deste inventário são úteis mesmo para quem nunca vai escrever uma linha de código, porque mostram como um profissional experiente escreve instruções para uma máquina que tende a se convencer a pular etapas. Isso é transferível para revisão de contrato, fechamento contábil, atendimento e qualquer processo com etapa obrigatória.</p>
+
+<p>Comece lendo. Instale depois, e apenas o que você entendeu.</p>
+
+<h2 id="colecoes">2. Coleções de skills para estudar e copiar</h2>
+
+<h3>superpowers</h3>
+
+<p>De Jesse Vincent. É a coleção mais completa disponível hoje, e a mais interessante do ponto de vista de método, porque não empacota conhecimento técnico e sim disciplina de processo. As skills cobrem levantamento de ideia antes de escrever, planejamento, desenvolvimento guiado por teste, área de trabalho isolada, depuração sistemática em quatro fases, verificação antes de concluir e revisão por um agente novo.</p>
+
+<p>O que vale roubar mesmo sem instalar é o padrão de escrita que descrevi na parte 2: regra inegociável no topo, seguida da lista de racionalizações que o executor provavelmente usará para descumpri-la. A skill de verificação, por exemplo, trata as palavras deveria, provavelmente e parece que como sinais de alerta em um relato de conclusão. É uma lição de escrita de procedimento que qualquer área operacional aproveita.</p>
+
+<p>Licença MIT. Distribuída pelo marketplace oficial de plugins e por vários outros ambientes.</p>
+
+<pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
+
+<p>Repositório: <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></p>
+
+<h3>mattpocock/skills</h3>
+
+<p>De Matt Pocock. A filosofia é oposta e por isso o par vale ser lido junto: skills pequenas, legíveis e editáveis, explicitamente contra frameworks que tomam conta do processo inteiro, sob o argumento de que quando o processo é opaco os defeitos do próprio processo ficam mais difíceis de resolver.</p>
+
+<p>O conjunto é organizado por problema e não por tecnologia, o que o torna legível para quem não programa. Vale abrir a skill que força uma sessão de perguntas antes de qualquer execução, porque ela é um exemplo direto do passo Mapear: o sistema não avança enquanto as decisões não estiverem explícitas.</p>
+
+<p>Repositório: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+
+<h2 id="spec">3. Especificação antes do código</h2>
+
+<p>Existe uma categoria inteira dedicada a escrever a especificação antes de deixar o sistema executar. Ela é prima direta do passo Mapear, e o debate em torno dela é saudável o bastante para valer conhecer os dois lados.</p>
+
+<table class="wrap">
+<thead><tr><th>Ferramenta</th><th>Postura</th></tr></thead>
+<tbody>
+<tr><td>GitHub Spec Kit</td><td>Foi o que deu nome à categoria. Aberta, agnóstica de modelo, estrutura em especificar, planejar e dividir em tarefas</td></tr>
+<tr><td>Kiro</td><td>Ambiente próprio, com requisitos, desenho e tarefas como objetos de primeira classe ao lado do código</td></tr>
+<tr><td>Tessl</td><td>Mais ambiciosa: trata a especificação como fonte, e o código como derivado que não deve ser editado à mão</td></tr>
+<tr><td>OpenSpec</td><td>Centrada em mudanças, com menos arquivos gerados e especificações que vivem no repositório</td></tr>
+</tbody>
+</table>
+
+<p>A crítica merece o mesmo espaço. Böckeler avaliou três dessas ferramentas e encontrou excesso de revisão, falsa sensação de controle e dificuldade de escalar entre problemas de tamanhos diferentes, traçando paralelo com o fracasso histórico do desenvolvimento orientado a modelos. Pocock argumenta contra a categoria inteira, com a tese de que ir da especificação ao código é desinvestir do desenho do sistema em vez de investir nele.</p>
+
+<p>A leitura que faço para quem decide: escrever o contrato da tarefa antes de executar é inegociável e barato. Adotar uma ferramenta que transforma esse contrato em cerimônia obrigatória é uma decisão separada, e que só se paga em contexto de volume alto e time grande.</p>
+
+<h2 id="sensores-lista">4. Ferramentas de sensor</h2>
+
+<p>Estas são as ferramentas usadas no experimento de sensores descrito na parte 2. Servem como referência de categoria, mesmo que a sua área use tecnologia diferente.</p>
+
+<table class="wrap">
+<thead><tr><th>Ferramenta</th><th>Que tipo de sensor é</th></tr></thead>
+<tbody>
+<tr><td>dependency-cruiser</td><td>Verificação dura de estrutura: impede que uma parte do sistema dependa de outra que não deveria</td></tr>
+<tr><td>Stryker</td><td>Teste de mutação: altera o trabalho de propósito e verifica se as verificações percebem</td></tr>
+<tr><td>Semgrep</td><td>Análise estática de segurança e de padrões proibidos</td></tr>
+<tr><td>sensors-cli</td><td>Painel que roda vários sensores em intervalo, guarda histórico e devolve ao agente um resumo com tendência</td></tr>
+</tbody>
+</table>
+
+<p>Esse último merece atenção porque é o mais transferível conceitualmente. Ele resolve dois problemas de uma vez: dá ao humano uma visão de estado, e dá ao sistema um resumo enxuto com a informação de piorou ou melhorou em relação ao último ponto de referência. É o embrião de um painel de saúde de harness.</p>
+
+<h2 id="runtimes">5. Ambientes e runtimes</h2>
+
+<p>Complementa a tabela de classes de ambiente da parte 2, agora com nomes.</p>
+
+<table class="wrap">
+<thead><tr><th>Ambiente</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>Claude Code, Codex e equivalentes</td><td>Agente com arquivos e execução. É onde skills e verificação dura funcionam sem construção adicional</td></tr>
+<tr><td>DeepSeek Harness</td><td>Runtime aberto sob licença permissiva, arquitetura em que tudo é plugin, com registro de sessão que só aceita acréscimo. Interessante para quem precisa auditar</td></tr>
+<tr><td>LangChain e LangGraph</td><td>Orquestração programada. É onde laço com teto, política de alçada e recibo passam a ser código e não instrução</td></tr>
+<tr><td>Assistentes com instruções</td><td>Conversa com guia. Excelente para padronizar tom e método, insuficiente para qualquer coisa que exija evidência</td></tr>
+</tbody>
+</table>
+
+<h2 id="howto-1">6. Roteiro 1: ler o superpowers em uma hora</h2>
+
+<p>Este roteiro serve para quem não programa. O objetivo não é usar a ferramenta, é aprender a escrever procedimento para máquina lendo quem já fez bem.</p>
+
+<table class="wrap">
+<thead><tr><th>Passo</th><th>O que fazer</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Abra o repositório no navegador e vá direto para a pasta de skills. Ignore o restante</td></tr>
+<tr><td>2</td><td>Abra a skill de verificação antes de concluir. Leia a regra do topo e a lista de sinais de alerta</td></tr>
+<tr><td>3</td><td>Abra a skill de depuração sistemática. Repare que ela é um procedimento em fases, e que cada fase tem critério de saída</td></tr>
+<tr><td>4</td><td>Abra a skill de levantamento de ideia. Repare que ela proíbe começar a execução antes de as decisões estarem explícitas</td></tr>
+<tr><td>5</td><td>Escreva, em uma folha, três regras inegociáveis do seu próprio processo e a desculpa mais provável para descumprir cada uma</td></tr>
+</tbody>
+</table>
+
+<p>O passo 5 é o único que importa. Os quatro anteriores existem para calibrar o que uma boa regra parece.</p>
+
+<h2 id="howto-2">7. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
+
+<p>Use uma tarefa que você já faz repetidamente, que tenha etapas verificáveis e que não seja irreversível. Revisão de documento contra checklist é o exemplo ideal.</p>
+
+<p><strong>Passo 1.</strong> Crie uma pasta com o nome da tarefa em forma de verbo no gerúndio, tudo em minúsculas e com hífen: <code>revisando-minuta</code>.</p>
+
+<p><strong>Passo 2.</strong> Dentro dela, crie o arquivo <code>SKILL.md</code>, começando pelo cabeçalho. A descrição é o campo mais importante do arquivo inteiro, porque é ela que decide se o sistema vai lembrar de usar a skill. Escreva quando usar, não o que ela faz.</p>
+
+<pre><code>---
+name: revisando-minuta
+description: Revisa minutas contratuais contra o checklist de cláusulas
+  obrigatórias da casa. Use quando o usuário enviar contrato, minuta,
+  aditivo ou termo para revisão prévia.
+---</code></pre>
+
+<p><strong>Passo 3.</strong> Escreva o contrato da tarefa em três linhas: o que entrega, o que nunca faz, e como saber que terminou.</p>
+
+<p><strong>Passo 4.</strong> Escreva o procedimento em passos numerados, na ordem em que você faria.</p>
+
+<p><strong>Passo 5.</strong> Escreva a seção Nunca. Aqui vão as regras inegociáveis e as desculpas previsíveis. É a seção que você vai mais reescrever ao longo do tempo, e a que mais evita retrabalho.</p>
+
+<p><strong>Passo 6.</strong> Mova o conteúdo longo para arquivos ao lado. O checklist com as catorze cláusulas não vai dentro do SKILL.md, vai em <code>checklist.md</code> na mesma pasta, referenciado por nome. É a divulgação progressiva funcionando: o sistema só abre quando precisa.</p>
+
+<p><strong>Passo 7.</strong> Execute uma vez com um caso real e anote onde ele se perdeu.</p>
+
+<p><strong>Passo 8.</strong> Peça ao próprio sistema que reflita sobre o que faltava no guia e proponha a correção. Esse passo é recomendado por quem criou o formato, e é o mais subestimado: você descobre o que ele de fato precisava saber, em vez de tentar adivinhar tudo de antemão.</p>
+
+<div class="rule-box"><span class="lbl">Erro mais comum</span><p>Escrever um SKILL.md gigante na primeira tentativa. Comece pequeno e deixe a falha dizer o que acrescentar. Guia é índice, não enciclopédia.</p></div>
+
+<h2 id="howto-3">8. Roteiro 3: montar seu primeiro sensor</h2>
+
+<p>Este roteiro exige alguém capaz de escrever vinte linhas de script, mas não exige programador. Vale para qualquer tarefa que produza números.</p>
+
+<p><strong>Passo 1.</strong> Identifique o que pode ser verificado sem julgamento. Total que deve bater, campo que não pode estar vazio, data dentro de um intervalo, item que não pode aparecer duas vezes. Isso é verificação dura, e é onde começar.</p>
+
+<p><strong>Passo 2.</strong> Escreva o script que recalcula a partir da fonte e compara com o resultado entregue. Peça ao próprio agente que escreva esse script. Essa é justamente a mudança de custo que tornou sensores viáveis: fazer a ferramenta ficou barato.</p>
+
+<p><strong>Passo 3.</strong> Escreva a mensagem de erro como instrução de correção. Esta é a parte que decide se o sensor funciona. Ela precisa conter o que está errado, qual é o valor certo, onde fica a fonte, a provável causa e o que fazer em seguida. Uma mensagem que só diz falhou não é um sensor, é um alarme.</p>
+
+<p><strong>Passo 4.</strong> Amarre o sensor ao critério de pronto do skill. Em vez de escrever pronto quando os números estiverem certos, escreva pronto quando o comando de conferência não retornar divergências. O critério deixa de ser opinião e passa a ser verificável.</p>
+
+<p><strong>Passo 5.</strong> Defina o teto. Três tentativas, e na terceira o sistema para, entrega marcado como não conferido e explica o que não fechou.</p>
+
+<p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o sensor nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um sensor cego é pior que nenhum: ele produz confiança sem base.</p>
+
+<h2 id="seguranca">9. Antes de instalar qualquer coisa</h2>
+
+<p>Instalar uma coleção de skills de terceiro é executar instrução de terceiro dentro do seu ambiente. Isso não é motivo para não fazer, é motivo para ler antes.</p>
+
+<p>A recomendação de quem publica o formato é explícita: instale apenas de origem confiável, e quando a origem for menos conhecida, audite antes de usar. Leia o conteúdo dos arquivos, preste atenção especial ao código incluído e aos recursos que vêm junto, e verifique se há instruções mandando o sistema buscar algo em rede externa.</p>
+
+<p>Três perguntas antes de qualquer instalação:</p>
+
+<table class="wrap">
+<thead><tr><th>Pergunta</th><th>Por que importa</th></tr></thead>
+<tbody>
+<tr><td>Que dado esta coleção alcança quando estiver ativa?</td><td>Skill instalada opera com as permissões que o ambiente já tem</td></tr>
+<tr><td>Existe instrução para buscar algo fora?</td><td>É o vetor mais direto de instrução vinda de fora do seu controle</td></tr>
+<tr><td>Quem mantém, sob que licença, e com que frequência?</td><td>Coleção abandonada vira instrução desatualizada rodando em silêncio</td></tr>
+</tbody>
+</table>
+
+<p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
+
+<h2 id="fontes">10. Fontes</h2>
+
+<ol class="sources">
+<li>Jesse Vincent. <em>superpowers</em>, framework de skills e metodologia. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li>Matt Pocock. <em>skills</em>. <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li>Agent Skills, padrão aberto. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li>Documentação de Agent Skills. <a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">docs.claude.com</a></li>
+<li>Birgitta Böckeler. <em>Understanding spec-driven development: Kiro, spec-kit e Tessl</em>. <a href="https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">martinfowler.com</a></li>
+<li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Regras de dependência. <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></li>
+<li>Teste de mutação. <a href="https://stryker-mutator.io/">stryker-mutator.io</a></li>
+<li>DeepSeek Harness. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai/deepseek-harness</a></li>
+<li>Fluxo de trabalho agêntico de referência. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
+<li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
+</ol>
+
+<div class="foot">
+<p>Documento companheiro da série Harness · Verificado em agosto de 2026 · Nomes, endereços e comandos mudam sem aviso, confirme na origem antes de instalar.</p>
+</div>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caixa de ferramentas do harness | Documento companheiro</title>
+<style>
+:root{
+  --ink:#1b1b19;
+  --ink-soft:#4a4a45;
+  --ink-faint:#8a887f;
+  --rule:#c9c7bf;
+  --accent:#5c6b52;
+  --paper:#ffffff;
+  --fill:#eef1f4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:#f2f1ed;
+  color:var(--ink);
+  font-family:"Aptos","Aptos Light","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.62;
+  font-weight:400;
+}
+.page{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  padding:64px 72px 80px;
+}
+
+.langbar{
+  display:flex;
+  justify-content:flex-end;
+  gap:2px;
+  margin:0 0 22px;
+}
+.langbar button{
+  font-size:10px;
+  letter-spacing:.18em;
+  padding:5px 10px;
+  border:.5pt solid var(--rule);
+  color:var(--ink-faint);
+  background:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.langbar button.on{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+}
+.langbar button:hover{border-color:var(--accent);color:var(--ink)}
+
+.langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+main[hidden]{display:none}
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 18px;
+}
+h1{
+  font-size:30px;
+  line-height:1.18;
+  font-weight:600;
+  margin:0 0 14px;
+  letter-spacing:-.01em;
+}
+.deck{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin:0 0 26px;
+  max-width:58ch;
+}
+.byline{
+  font-size:11.5px;
+  color:var(--ink-faint);
+  border-top:.5pt solid var(--rule);
+  border-bottom:.5pt solid var(--rule);
+  padding:9px 0;
+  margin:0 0 34px;
+  letter-spacing:.02em;
+}
+h2{
+  font-size:19px;
+  font-weight:600;
+  line-height:1.3;
+  margin:44px 0 8px;
+  letter-spacing:-.005em;
+}
+h3{font-size:15px;font-weight:600;margin:26px 0 6px}
+p{margin:0 0 14px;text-align:justify;hyphens:auto}
+a{color:var(--ink);text-decoration:none;border-bottom:.5pt solid var(--rule)}
+a:hover{border-bottom-color:var(--accent)}
+.toc{
+  border:.5pt solid var(--rule);
+  padding:20px 24px;
+  margin:0 0 40px;
+}
+.toc p{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin:0 0 12px;
+  text-align:left;
+}
+.toc ol{margin:0;padding-left:18px;font-size:13.5px;line-height:1.9}
+.toc a{border:0}
+.toc a:hover{border-bottom:.5pt solid var(--accent)}
+blockquote{
+  margin:24px 0;
+  padding:14px 18px;
+  border:0;
+  background:var(--fill);
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--ink);
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+blockquote p{text-align:left;margin:0;font-size:12.5px}
+.rule-box{
+  border:0;
+  background:var(--fill);
+  padding:14px 18px;
+  margin:24px 0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+.rule-box p{margin:0;text-align:left;font-size:12.5px;line-height:1.55}
+.rule-box .lbl{
+  display:block;
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+figure{margin:30px 0;page-break-inside:avoid}
+figure svg{width:100%;height:auto;display:block}
+figcaption{
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+  margin-top:10px;
+  line-height:1.5;
+  text-align:left;
+  border:0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  font-size:12.5px;
+}
+th{
+  text-align:center;
+  font-weight:600;
+  font-size:11.5px;
+  padding:7px 9px;
+  border-top:.5pt solid var(--ink);
+  border-bottom:.5pt solid var(--ink);
+}
+td{
+  padding:7px 9px;
+  border-bottom:.5pt solid var(--rule);
+  vertical-align:top;
+  line-height:1.45;
+}
+td:first-child{white-space:nowrap}
+table.wrap td:first-child{white-space:normal}
+ul,ol.body{margin:0 0 16px;padding-left:20px}
+li{margin-bottom:6px}
+.checklist{list-style:none;padding-left:0}
+.checklist li{
+  padding-left:26px;
+  position:relative;
+  margin-bottom:9px;
+  font-size:13.5px;
+}
+.checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;top:4px;
+  width:11px;height:11px;
+  border:.5pt solid var(--ink);
+}
+.checklist strong{font-weight:600}
+
+.g{
+  border-bottom:.5pt dotted var(--accent);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.g::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.g:hover::after,.g:focus::after{opacity:1;visibility:visible}
+
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+.gitem{
+  border:0;
+  margin:0 0 9px;
+  padding-left:1.4em;
+  text-indent:-1.4em;
+  font-size:12.5px;
+  line-height:1.55;
+  text-align:justify;
+}
+.gitem strong{font-weight:600}
+.gitem .orig{color:var(--ink-faint);font-size:11.5px}
+.sources{font-size:11.5px;line-height:1.6;color:var(--ink-soft)}
+.sources li{margin-bottom:8px}
+.next{
+  border-top:.5pt solid var(--ink);
+  margin-top:44px;
+  padding-top:22px;
+}
+.foot{
+  margin-top:44px;
+  padding-top:14px;
+  border-top:.5pt solid var(--rule);
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+}
+svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+
+@media print{
+  @page{size:A4;margin:2cm 1.5cm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .page{max-width:none;padding:0;margin:0}
+  h1{font-size:20pt}
+  .deck{font-size:11.5pt}
+  h2{font-size:14pt;margin:16pt 0 6pt;page-break-after:avoid}
+  h3{font-size:12pt;margin:10pt 0 3pt;page-break-after:avoid}
+  p{orphans:3;widows:3}
+  th{font-size:8pt}
+  td{font-size:9pt}
+  blockquote{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  blockquote p{font-size:9pt}
+  .rule-box{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  .rule-box p{font-size:9pt}
+  figure{margin:14pt 0}
+  figcaption{font-size:9pt;font-style:italic;border:0}
+  .foot{font-size:9pt;font-style:italic}
+  .foot p{font-size:9pt}
+  .g{border-bottom:.5pt dotted #999}
+  .g::after{display:none}
+  
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+.gitem{font-size:9.5pt;margin:0 0 5pt;border:0;page-break-inside:avoid}
+  .gitem .orig{font-size:9pt;font-style:italic}
+  pre{font-size:8.5pt;padding:6pt 8pt;background:#eef1f4;border:0;page-break-inside:avoid}
+  pre code{font-size:8.5pt}
+  p code{font-size:9pt}
+  a{border:0}
+  .langbar{display:none}
+  .toc{page-break-after:always}
+}
+@media (max-width:640px){
+  .page{padding:32px 22px 48px}
+  h1{font-size:24px}
+  p{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="langbar">
+<button type="button" class="on" data-lang="pt">PT</button>
+<button type="button" data-lang="en" disabled title="em preparo">EN</button>
+<button type="button" data-lang="es" disabled title="en preparación">ES</button>
+</div>
+<main class="page" id="doc-pt">
+<p class="eyebrow">Harness · Documento companheiro · Prático</p>
+
+<h1>Caixa de ferramentas do harness</h1>
+
+<p class="deck">Inventário comentado do que existe hoje, com repositórios, comandos e três roteiros para sair do zero. Este documento envelhece mais rápido que os artigos da série, e por isso vive separado deles.</p>
+
+<p class="byline">Fernando Teco Sodré · Revisada em agosto de 2026 · Companheiro das partes 1, 2 e 3</p>
+
+<div class="rule-box"><span class="lbl">Validade</span><p>Tudo aqui foi verificado em agosto de 2026. Nomes, endereços e comandos mudam. Os artigos da série falam de princípios e não dependem deste documento. Este documento depende do mercado.</p></div>
+
+<nav class="toc">
+  <p>Neste documento</p>
+  <ol>
+    <li><a href="#pt-como-usar">Como usar</a></li>
+    <li><a href="#pt-colecoes">Coleções de skills para estudar e copiar</a></li>
+    <li><a href="#pt-spec">Especificação antes do código</a></li>
+    <li><a href="#pt-sensores-lista">Ferramentas de sensor</a></li>
+    <li><a href="#pt-runtimes">Ambientes e runtimes</a></li>
+    <li><a href="#pt-howto-1">Roteiro 1: ler o superpowers em uma hora</a></li>
+    <li><a href="#pt-howto-2">Roteiro 2: escrever seu primeiro skill em trinta minutos</a></li>
+    <li><a href="#pt-howto-3">Roteiro 3: montar seu primeiro sensor</a></li>
+    <li><a href="#pt-seguranca">Antes de instalar qualquer coisa</a></li>
+    <li><a href="#pt-fontes">Fontes</a></li>
+  </ol>
+</nav>
+
+<h2 id="pt-como-usar">1. Como usar</h2>
+
+<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, sensores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios.</p>
+
+<p>Uma orientação sobre método antes de qualquer lista: o valor de estudar coleções alheias não está em instalá-las, está em lê-las. Os melhores materiais deste inventário são úteis mesmo para quem nunca vai escrever uma linha de código, porque mostram como um profissional experiente escreve instruções para uma máquina que tende a se convencer a pular etapas. Isso é transferível para revisão de contrato, fechamento contábil, atendimento e qualquer processo com etapa obrigatória.</p>
+
+<p>Comece lendo. Instale depois, e apenas o que você entendeu.</p>
+
+<h2 id="pt-colecoes">2. Coleções de skills para estudar e copiar</h2>
+
+<h3>superpowers</h3>
+
+<p>De Jesse Vincent. É a coleção mais completa disponível hoje, e a mais interessante do ponto de vista de método, porque não empacota conhecimento técnico e sim disciplina de processo. As skills cobrem levantamento de ideia antes de escrever, planejamento, desenvolvimento guiado por teste, área de trabalho isolada, depuração sistemática em quatro fases, verificação antes de concluir e revisão por um agente novo.</p>
+
+<p>O que vale roubar mesmo sem instalar é o padrão de escrita que descrevi na parte 2: regra inegociável no topo, seguida da lista de racionalizações que o executor provavelmente usará para descumpri-la. A skill de verificação, por exemplo, trata as palavras deveria, provavelmente e parece que como sinais de alerta em um relato de conclusão. É uma lição de escrita de procedimento que qualquer área operacional aproveita.</p>
+
+<p>Licença MIT. Distribuída pelo marketplace oficial de plugins e por vários outros ambientes.</p>
+
+<pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
+
+<p>Repositório: <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></p>
+
+<h3>mattpocock/skills</h3>
+
+<p>De Matt Pocock. A filosofia é oposta e por isso o par vale ser lido junto: skills pequenas, legíveis e editáveis, explicitamente contra frameworks que tomam conta do processo inteiro, sob o argumento de que quando o processo é opaco os defeitos do próprio processo ficam mais difíceis de resolver.</p>
+
+<p>O conjunto é organizado por problema e não por tecnologia, o que o torna legível para quem não programa. Vale abrir a skill que força uma sessão de perguntas antes de qualquer execução, porque ela é um exemplo direto do passo Mapear: o sistema não avança enquanto as decisões não estiverem explícitas.</p>
+
+<p>Repositório: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+
+<h2 id="pt-spec">3. Especificação antes do código</h2>
+
+<p>Existe uma categoria inteira dedicada a escrever a especificação antes de deixar o sistema executar. Ela é prima direta do passo Mapear, e o debate em torno dela é saudável o bastante para valer conhecer os dois lados.</p>
+
+<table class="wrap">
+<thead><tr><th>Ferramenta</th><th>Postura</th></tr></thead>
+<tbody>
+<tr><td>GitHub Spec Kit</td><td>Foi o que deu nome à categoria. Aberta, agnóstica de modelo, estrutura em especificar, planejar e dividir em tarefas</td></tr>
+<tr><td>Kiro</td><td>Ambiente próprio, com requisitos, desenho e tarefas como objetos de primeira classe ao lado do código</td></tr>
+<tr><td>Tessl</td><td>Mais ambiciosa: trata a especificação como fonte, e o código como derivado que não deve ser editado à mão</td></tr>
+<tr><td>OpenSpec</td><td>Centrada em mudanças, com menos arquivos gerados e especificações que vivem no repositório</td></tr>
+</tbody>
+</table>
+
+<p>A crítica merece o mesmo espaço. Böckeler avaliou três dessas ferramentas e encontrou excesso de revisão, falsa sensação de controle e dificuldade de escalar entre problemas de tamanhos diferentes, traçando paralelo com o fracasso histórico do desenvolvimento orientado a modelos. Pocock argumenta contra a categoria inteira, com a tese de que ir da especificação ao código é desinvestir do desenho do sistema em vez de investir nele.</p>
+
+<p>A leitura que faço para quem decide: escrever o contrato da tarefa antes de executar é inegociável e barato. Adotar uma ferramenta que transforma esse contrato em cerimônia obrigatória é uma decisão separada, e que só se paga em contexto de volume alto e time grande.</p>
+
+<h2 id="pt-sensores-lista">4. Ferramentas de sensor</h2>
+
+<p>Estas são as ferramentas usadas no experimento de sensores descrito na parte 2. Servem como referência de categoria, mesmo que a sua área use tecnologia diferente.</p>
+
+<table class="wrap">
+<thead><tr><th>Ferramenta</th><th>Que tipo de sensor é</th></tr></thead>
+<tbody>
+<tr><td>dependency-cruiser</td><td>Verificação dura de estrutura: impede que uma parte do sistema dependa de outra que não deveria</td></tr>
+<tr><td>Stryker</td><td>Teste de mutação: altera o trabalho de propósito e verifica se as verificações percebem</td></tr>
+<tr><td>Semgrep</td><td>Análise estática de segurança e de padrões proibidos</td></tr>
+<tr><td>sensors-cli</td><td>Painel que roda vários sensores em intervalo, guarda histórico e devolve ao agente um resumo com tendência</td></tr>
+</tbody>
+</table>
+
+<p>Esse último merece atenção porque é o mais transferível conceitualmente. Ele resolve dois problemas de uma vez: dá ao humano uma visão de estado, e dá ao sistema um resumo enxuto com a informação de piorou ou melhorou em relação ao último ponto de referência. É o embrião de um painel de saúde de harness.</p>
+
+<h2 id="pt-runtimes">5. Ambientes e runtimes</h2>
+
+<p>Complementa a tabela de classes de ambiente da parte 2, agora com nomes.</p>
+
+<table class="wrap">
+<thead><tr><th>Ambiente</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>Claude Code, Codex e equivalentes</td><td>Agente com arquivos e execução. É onde skills e verificação dura funcionam sem construção adicional</td></tr>
+<tr><td>DeepSeek Harness</td><td>Runtime aberto sob licença permissiva, arquitetura em que tudo é plugin, com registro de sessão que só aceita acréscimo. Interessante para quem precisa auditar</td></tr>
+<tr><td>LangChain e LangGraph</td><td>Orquestração programada. É onde laço com teto, política de alçada e recibo passam a ser código e não instrução</td></tr>
+<tr><td>Assistentes com instruções</td><td>Conversa com guia. Excelente para padronizar tom e método, insuficiente para qualquer coisa que exija evidência</td></tr>
+</tbody>
+</table>
+
+<h2 id="pt-howto-1">6. Roteiro 1: ler o superpowers em uma hora</h2>
+
+<p>Este roteiro serve para quem não programa. O objetivo não é usar a ferramenta, é aprender a escrever procedimento para máquina lendo quem já fez bem.</p>
+
+<table class="wrap">
+<thead><tr><th>Passo</th><th>O que fazer</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Abra o repositório no navegador e vá direto para a pasta de skills. Ignore o restante</td></tr>
+<tr><td>2</td><td>Abra a skill de verificação antes de concluir. Leia a regra do topo e a lista de sinais de alerta</td></tr>
+<tr><td>3</td><td>Abra a skill de depuração sistemática. Repare que ela é um procedimento em fases, e que cada fase tem critério de saída</td></tr>
+<tr><td>4</td><td>Abra a skill de levantamento de ideia. Repare que ela proíbe começar a execução antes de as decisões estarem explícitas</td></tr>
+<tr><td>5</td><td>Escreva, em uma folha, três regras inegociáveis do seu próprio processo e a desculpa mais provável para descumprir cada uma</td></tr>
+</tbody>
+</table>
+
+<p>O passo 5 é o único que importa. Os quatro anteriores existem para calibrar o que uma boa regra parece.</p>
+
+<h2 id="pt-howto-2">7. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
+
+<p>Use uma tarefa que você já faz repetidamente, que tenha etapas verificáveis e que não seja irreversível. Revisão de documento contra checklist é o exemplo ideal.</p>
+
+<p><strong>Passo 1.</strong> Crie uma pasta com o nome da tarefa em forma de verbo no gerúndio, tudo em minúsculas e com hífen: <code>revisando-minuta</code>.</p>
+
+<p><strong>Passo 2.</strong> Dentro dela, crie o arquivo <code>SKILL.md</code>, começando pelo cabeçalho. A descrição é o campo mais importante do arquivo inteiro, porque é ela que decide se o sistema vai lembrar de usar a skill. Escreva quando usar, não o que ela faz.</p>
+
+<pre><code>---
+name: revisando-minuta
+description: Revisa minutas contratuais contra o checklist de cláusulas
+  obrigatórias da casa. Use quando o usuário enviar contrato, minuta,
+  aditivo ou termo para revisão prévia.
+---</code></pre>
+
+<p><strong>Passo 3.</strong> Escreva o contrato da tarefa em três linhas: o que entrega, o que nunca faz, e como saber que terminou.</p>
+
+<p><strong>Passo 4.</strong> Escreva o procedimento em passos numerados, na ordem em que você faria.</p>
+
+<p><strong>Passo 5.</strong> Escreva a seção Nunca. Aqui vão as regras inegociáveis e as desculpas previsíveis. É a seção que você vai mais reescrever ao longo do tempo, e a que mais evita retrabalho.</p>
+
+<p><strong>Passo 6.</strong> Mova o conteúdo longo para arquivos ao lado. O checklist com as catorze cláusulas não vai dentro do SKILL.md, vai em <code>checklist.md</code> na mesma pasta, referenciado por nome. É a divulgação progressiva funcionando: o sistema só abre quando precisa.</p>
+
+<p><strong>Passo 7.</strong> Execute uma vez com um caso real e anote onde ele se perdeu.</p>
+
+<p><strong>Passo 8.</strong> Peça ao próprio sistema que reflita sobre o que faltava no guia e proponha a correção. Esse passo é recomendado por quem criou o formato, e é o mais subestimado: você descobre o que ele de fato precisava saber, em vez de tentar adivinhar tudo de antemão.</p>
+
+<div class="rule-box"><span class="lbl">Erro mais comum</span><p>Escrever um SKILL.md gigante na primeira tentativa. Comece pequeno e deixe a falha dizer o que acrescentar. Guia é índice, não enciclopédia.</p></div>
+
+<h2 id="pt-howto-3">8. Roteiro 3: montar seu primeiro sensor</h2>
+
+<p>Este roteiro exige alguém capaz de escrever vinte linhas de script, mas não exige programador. Vale para qualquer tarefa que produza números.</p>
+
+<p><strong>Passo 1.</strong> Identifique o que pode ser verificado sem julgamento. Total que deve bater, campo que não pode estar vazio, data dentro de um intervalo, item que não pode aparecer duas vezes. Isso é verificação dura, e é onde começar.</p>
+
+<p><strong>Passo 2.</strong> Escreva o script que recalcula a partir da fonte e compara com o resultado entregue. Peça ao próprio agente que escreva esse script. Essa é justamente a mudança de custo que tornou sensores viáveis: fazer a ferramenta ficou barato.</p>
+
+<p><strong>Passo 3.</strong> Escreva a mensagem de erro como instrução de correção. Esta é a parte que decide se o sensor funciona. Ela precisa conter o que está errado, qual é o valor certo, onde fica a fonte, a provável causa e o que fazer em seguida. Uma mensagem que só diz falhou não é um sensor, é um alarme.</p>
+
+<p><strong>Passo 4.</strong> Amarre o sensor ao critério de pronto do skill. Em vez de escrever pronto quando os números estiverem certos, escreva pronto quando o comando de conferência não retornar divergências. O critério deixa de ser opinião e passa a ser verificável.</p>
+
+<p><strong>Passo 5.</strong> Defina o teto. Três tentativas, e na terceira o sistema para, entrega marcado como não conferido e explica o que não fechou.</p>
+
+<p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o sensor nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um sensor cego é pior que nenhum: ele produz confiança sem base.</p>
+
+<h2 id="pt-seguranca">9. Antes de instalar qualquer coisa</h2>
+
+<p>Instalar uma coleção de skills de terceiro é executar instrução de terceiro dentro do seu ambiente. Isso não é motivo para não fazer, é motivo para ler antes.</p>
+
+<p>A recomendação de quem publica o formato é explícita: instale apenas de origem confiável, e quando a origem for menos conhecida, audite antes de usar. Leia o conteúdo dos arquivos, preste atenção especial ao código incluído e aos recursos que vêm junto, e verifique se há instruções mandando o sistema buscar algo em rede externa.</p>
+
+<p>Três perguntas antes de qualquer instalação:</p>
+
+<table class="wrap">
+<thead><tr><th>Pergunta</th><th>Por que importa</th></tr></thead>
+<tbody>
+<tr><td>Que dado esta coleção alcança quando estiver ativa?</td><td>Skill instalada opera com as permissões que o ambiente já tem</td></tr>
+<tr><td>Existe instrução para buscar algo fora?</td><td>É o vetor mais direto de instrução vinda de fora do seu controle</td></tr>
+<tr><td>Quem mantém, sob que licença, e com que frequência?</td><td>Coleção abandonada vira instrução desatualizada rodando em silêncio</td></tr>
+</tbody>
+</table>
+
+<p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
+
+<h2 id="pt-fontes">10. Fontes</h2>
+
+<ol class="sources">
+<li>Jesse Vincent. <em>superpowers</em>, framework de skills e metodologia. <a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li>Matt Pocock. <em>skills</em>. <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></li>
+<li>Anthropic. <em>Equipping agents for the real world with Agent Skills</em>. <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com</a></li>
+<li>Agent Skills, padrão aberto. <a href="https://agentskills.io/">agentskills.io</a></li>
+<li>Documentação de Agent Skills. <a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">docs.claude.com</a></li>
+<li>Birgitta Böckeler. <em>Understanding spec-driven development: Kiro, spec-kit e Tessl</em>. <a href="https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">martinfowler.com</a></li>
+<li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
+<li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Regras de dependência. <a href="https://github.com/sverweij/dependency-cruiser">github.com/sverweij/dependency-cruiser</a></li>
+<li>Teste de mutação. <a href="https://stryker-mutator.io/">stryker-mutator.io</a></li>
+<li>DeepSeek Harness. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai/deepseek-harness</a></li>
+<li>Fluxo de trabalho agêntico de referência. <a href="https://github.com/karpathy/autoresearch">github.com/karpathy/autoresearch</a></li>
+<li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
+</ol>
+
+<div class="foot">
+<p>Documento companheiro da série Harness · Verificado em agosto de 2026 · Nomes, endereços e comandos mudam sem aviso, confirme na origem antes de instalar.</p>
+</div>
+
+</main>
+<script>
+(function(){var b=document.querySelector('.langbar');if(!b)return;
+b.addEventListener('click',function(e){var t=e.target.closest('button[data-lang]:not([disabled])');
+if(!t)return;b.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===t);});window.scrollTo(0,0);});})();
+</script>
+</body>
+</html>
