@@ -1,100 +1,86 @@
-# Próximos passos
+*Read this in [Português](NEXT-STEPS.pt.md) · [Español](NEXT-STEPS.es.md).*
 
-Em ordem. Cada item traz o critério de pronto.
+# Next steps
 
----
-
-## Concluído em 30 de agosto de 2026
-
-**Repositório GitHub público criado**, em `github.com/tecosodreaboutdigital/harness-medir`. Commit inicial com os 23 arquivos existentes, sem dado sensível. LICENSE (MIT) adicionada dentro de `skills/intake-briefing/`, consistente com o que o README da skill já declarava. Nada de licença na raiz, porque os artigos seguem todos os direitos reservados.
-
-**Guia compacto reescrito por completo.** Ver a entrada correspondente em `STATUS.md` para o detalhamento. Critério de pronto batido: dezessete fichas de seis campos, toda ferramenta verificada em `sources/inventory.md` (três fontes novas verificadas nesta rodada: Semgrep, LangGraph, GitHub Spec Kit com link direto), e cada passo do MEDIR com crítica registrada.
-
-**Parte 2 traduzida para inglês e espanhol**, no mesmo arquivo, com o seletor. `build/build_p2.py` reescrito para montagem trilíngue, no mesmo padrão de `build/build_all.py`: extrai o corpo PT do arquivo vigente (que é a fonte da verdade, não `build/body_p2_pt.html`, que estava desatualizado), monta EN e ES a partir de `build/body_p2_en.html` e `build/body_p2_es.html`, prefixa tudo por idioma via `scope()`. Os três botões funcionam e não há âncora quebrada. Como efeito colateral, o JavaScript de troca de idioma de `harness-p1.html` e `harness-p2.html` ganhou roteamento por âncora (`#en-opening` seleciona a aba certa antes de rolar), para que um link cruzado entre as peças em inglês ou espanhol não caia sempre na aba em português.
-
-**Trinta skills de terceiro instaladas para uso neste projeto**, cinco coleções (superpowers inteira, seleção curada de doze do mattpocock/skills, c4-skills inteira, o guia inspirado em Karpathy, ai-slop-cleaner), todas MIT, todas auditadas contra o checklist do próprio guia compacto antes de instalar. Vivem em `.claude/skills/`, fora do controle de versão. Documentação completa, com registro de uso real a crescer por sessão, em `TOOLS.md`. Crédito visível no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e `harness-toolkit.html`.
-
-**intake-briefing separada em repositório próprio**, `github.com/tecosodreaboutdigital/intake-briefing`, público, MIT, no mesmo padrão das demais skills citadas no guia compacto. Removida de `skills/` dentro do harness-medir, que agora só aponta para lá. Ativa neste ambiente via cópia local em `.claude/skills/intake-briefing/`, fora do controle de versão.
-
-**Diário de bordo criado**, `docs/logbook.html`, trilíngue, gerado em duas etapas: `build/generate_logbook_metrics.py` reconstrói a série real (palavras publicadas por `git show` em cada commit, linhas de `build/` e dos documentos de governança, tokens somados do `usage` real de cada mensagem no transcript `.jsonl` da sessão, atribuídos ao commit cronologicamente seguinte) e escreve `docs/assets/logbook-metrics.json`; `build/build_logbook.py` monta a página a partir desse JSON, nunca escrita à mão. Dois gráficos SVG empilhados, mesmo eixo X, sem eixo Y duplo. Seis marcos reais registrados (o histórico completo do projeto até aqui, não uma amostra), mais o que ainda não fechou marco. Referenciado em `TOOLS.md` e no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e do guia compacto.
-
-**GitHub Pages ativado**, publicando o repositório em `tecosodreaboutdigital.github.io/harness-medir`. `.nojekyll` adicionado para servir os HTML como estão, sem processamento Jekyll. Sem isso, nenhum artigo era de fato legível como página na web, só como código-fonte no visualizador do GitHub.
+In order. Every item carries its done criterion.
 
 ---
 
-## 1. Traduzir o guia compacto
+## Completed on 30 August 2026
 
-Inglês e espanhol, no mesmo arquivo `harness-toolkit.html`, com o seletor.
+**Public GitHub repository created**, at `github.com/tecosodreaboutdigital/harness-medir`. Initial commit with the 23 files that existed at the time, no sensitive data. LICENSE (MIT) added inside what was then `skills/levantando-briefing/`, consistent with what the skill's README already declared. No licence at the root, because the articles remain all rights reserved.
 
-Reutilizar `build/build_toolkit.py` como base, no mesmo padrão trilíngue que `build/build_p2.py` passou a seguir: corpo PT extraído do arquivo vigente, corpos EN e ES escritos à parte e prefixados por `scope()`.
+**Compact guide completely rewritten.** See the matching entry in `STATUS.md` for detail. Done criterion met: seventeen six-field entries, every tool verified in `sources/inventory.md` (three new sources verified in that round: Semgrep, LangGraph, GitHub Spec Kit with a direct link), and every MEDIR step carrying a recorded critique.
 
-**Pronto quando:** os três botões funcionam e não há âncora quebrada, incluindo as âncoras que a parte 2 já referencia (`#pt-equipar`, `#pt-delegar`, `#pt-ambientes`, `#pt-inspecionar`, `#pt-riscos-2`, `#pt-reforcar`, `#pt-seguranca`), que passam a precisar de equivalentes `#en-` e `#es-`.
+**Part 2 translated into English and Spanish**, in the same file, with the selector. `build/build_p2.py` rewritten for trilingual assembly, in the same pattern `build/build_all.py` once used: extracts the PT body from the live file (which is the source of truth, not `build/body_p2_pt.html`, which had drifted out of date), assembles EN and ES from `build/body_p2_en.html` and `build/body_p2_es.html`, prefixes everything by language via `scope()`. All three buttons work and there is no broken anchor. As a side effect, the language-switching JavaScript in `harness-p1.html` and `harness-p2.html` gained anchor-based routing (`#en-opening` selects the right tab before scrolling), so a cross-link between the pieces in English or Spanish would not always land on the Portuguese tab.
 
----
+**Thirty third-party skills installed for use on this project**, five collections (superpowers in full, a curated selection of twelve from mattpocock/skills, c4-skills in full, the Karpathy-inspired guide, ai-slop-cleaner), all MIT, all audited against the compact guide's own checklist before installing. They live in `.claude/skills/`, outside version control. Full documentation, with a real-usage log growing per session, in `TOOLS.md`. Credit visible in the footer of `harness-p1.html`, `harness-p2.html` (three languages) and `harness-toolkit.html`.
 
-## 2. Traduzir a skill de briefing
+**The skill separated into its own repository**, at what was then `github.com/tecosodreaboutdigital/levantando-briefing`, public, MIT, in the same pattern as the other skills cited in the compact guide. Removed from `skills/` inside harness-medir, which now only points to it.
 
-Inglês e espanhol, como arquivos separados no repositório da skill, não como seletor.
+**Project log created**, `docs/logbook.html`, trilingual, generated in two steps: `build/generate_logbook_metrics.py` reconstructs the real series (words published per `git show` on each commit, lines in `build/` and the governance documents, tokens summed from the real `usage` of every message in the session's `.jsonl` transcript, attributed to the chronologically next commit) and writes `docs/assets/logbook-metrics.json`; `build/build_logbook.py` assembles the page from that JSON, never written by hand. Two stacked SVG charts, same X axis, no dual Y axis. Six real milestones recorded (the repository's full history so far, not a sample), plus whatever had not closed a milestone yet.
 
-Nome sugerido: `SKILL.en.md` e `SKILL.es.md`, seguindo a convenção de README multilíngue.
+**GitHub Pages enabled**, publishing the repository at `tecosodreaboutdigital.github.io/harness-medir`. `.nojekyll` added to serve the HTML files as they are, with no Jekyll processing. Without it, no article was actually readable as a web page there, only as source code in GitHub's viewer.
 
----
-
-## 3. Rodada de pesquisa da parte 3
-
-Rodada dedicada, não complemento. O que precisa ser levantado:
-
-- Literatura de segurança de agentes, com foco em instrução maliciosa vinda de dado
-- Incidentes reais documentados envolvendo agentes com efeito externo
-- Posição da autoridade brasileira de proteção de dados sobre decisão automatizada
-- Obrigações regulatórias europeias para sistemas classificados como de alto risco
-- Padrões de auditoria e registro aplicáveis a agentes
-- O que existe de prática estabelecida sobre alçada e aprovação em sistemas autônomos
-
-**Pronto quando:** cada um dos seis eixos tem pelo menos duas fontes primárias verificadas.
+**English-primary restructuring across both public repositories.** English became the primary production language, decided partway through this session. Every governance document renamed and rewritten English-first (`PADROES.md` → `STANDARDS.md`, `ESTADO.md` → `STATUS.md`, `PROXIMOS-PASSOS.md` → `NEXT-STEPS.md`, `FERRAMENTAS.md` → `TOOLS.md`, `fontes/inventario.md` → `sources/inventory.md`), each with a Portuguese and Spanish translation alongside it. `harness-caixa-de-ferramentas.html` → `harness-toolkit.html`, `docs/diario-de-bordo.html` → `docs/logbook.html`, matching `build/` scripts renamed and, for the toolkit, rewritten into a trilingual build with English as the default tab. `harness-p1.html`, `harness-p2.html` and `docs/logbook.html` had their default tab flipped from Portuguese to English, in both the built files and the scripts that regenerate them. A browser-language hint banner was added to all four trilingual pages (Portuguese or Spanish browsers get a dismissible offer to switch, anything else falls back to English silently). The skill repository was renamed `levantando-briefing` → `intake-briefing` and every one of its four files rewritten English-first with `.pt.md`/`.es.md` translations, plus a static language-navigation line at the top of each, since GitHub does not execute JavaScript inside rendered Markdown. See `STATUS.md` for the full detail and `STANDARDS.md`'s `Languages` section for the rule itself.
 
 ---
 
-## 4. Escrever a parte 3
+## 1. Part 3 research round
 
-Estrutura prevista, sujeita ao que a pesquisa revelar:
+A dedicated round, not an add-on. What still needs gathering:
 
-1. A primeira ação irreversível (abertura, com a diretora em N2 diante do primeiro envio ao cliente)
-2. Permissão não é instrução (por que alçada precisa viver fora do modelo)
-3. Quando a ordem chega dentro do dado
-4. O que precisa estar registrado
-5. Reversão: o que significa desfazer
-6. Skill de terceiro é código de terceiro
-7. Obrigações legais
-8. Quem responde
-9. O que muda no seu comitê
-10. Onde você está (fechamento da série)
+- Agent security literature, focused on malicious instructions arriving inside data
+- Documented real incidents involving agents with an external effect
+- The Brazilian data-protection authority's position on automated decisions
+- European regulatory obligations for systems classified as high-risk
+- Audit and logging standards applicable to agents
+- What established practice already exists on authority and approval in autonomous systems
 
-**Pronto quando:** as três versões estão prontas, a personagem fecha o arco, e a peça funciona sozinha para um leitor que não leu as anteriores.
+**Done when:** each of the six axes has at least two verified primary sources.
 
 ---
 
-## 5. Consolidar o playbook
+## 2. Write Part 3
 
-Reaproveita as três partes e o guia, e acrescenta o que não existe:
+Expected structure, subject to what the research reveals:
 
-- Modelo de contrato de tarefa
-- Modelo de skill, derivado dos três exemplos da parte 2
-- Modelo de recibo de execução
-- Matriz de risco por faixa
-- Diagnóstico de faixa, versão questionário
-- Trilha de implantação de N0 a N3
+1. The first irreversible action (opening, with the director at N2 facing the first send to a customer)
+2. Permission is not instruction (why authority needs to live outside the model)
+3. When the order arrives inside the data
+4. What needs to be logged
+5. Reversal: what undoing actually means
+6. A third-party skill is third-party code
+7. Legal obligations
+8. Who answers for it
+9. What changes at your board's table
+10. Where you are (the series' closing)
+
+**Done when:** all three versions are ready, the character's arc closes, and the piece works alone for a reader who has not read the previous ones.
 
 ---
 
-## Pendências menores, a decidir a qualquer momento
+## 3. Consolidate the playbook
 
-**Caso real de abertura.** A cena é composta. Se surgir um caso real anonimizado do ecossistema do autor, substituir eleva o texto.
+Reuses the three parts and the guide, and adds what does not exist yet:
 
-**Borda da caixa de índice.** É a única borda de caixa que sobrou nos documentos. Decidir se sai, para ficar coerente com a remoção das demais.
+- Task-contract template
+- Skill template, derived from Part 2's three examples
+- Execution-receipt template
+- Risk matrix by tier
+- Tier diagnostic, questionnaire version
+- Rollout path from N0 to N3
 
-**Fundo das citações em destaque na impressão.** Depende da opção de imprimir gráficos de plano de fundo no navegador. Alternativa sem dependência: filete fino acima e abaixo do bloco.
+---
 
-**Grafia do inglês.** Hoje é britânica. Se o alvo for os Estados Unidos, converter.
+## Minor pending items, to decide at any point
 
-**Publicação.** Resolvida em 30 de agosto de 2026: GitHub Pages ativo em `tecosodreaboutdigital.github.io/harness-medir`. Verificar depois do primeiro build automático se os quatro documentos renderizam corretamente lá (o link mais provável de precisar ajuste é algum caminho relativo entre eles).
+**Real opening case.** The scene is composite. If a real anonymised case from the author's ecosystem comes up, replacing it would raise the text considerably.
+
+**Table-of-contents box border.** It is the only box border left in the documents. Decide whether it goes, to stay consistent with the removal of the others.
+
+**Pull-quote background in print.** Depends on whether the browser is set to print background graphics. A dependency-free alternative: a thin rule above and below the block.
+
+**English spelling.** Currently British, now the project's default reading. If the target audience shifts toward the United States, convert it.
+
+**Publication.** Resolved on 30 August 2026: GitHub Pages live at `tecosodreaboutdigital.github.io/harness-medir`. Check after the first automatic build that the documents render correctly there (the link most likely to need adjustment is some relative path between them).
