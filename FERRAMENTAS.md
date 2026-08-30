@@ -6,9 +6,9 @@ Atualizado em 30 de agosto de 2026. Cresce a cada skill nova que entrar em uso, 
 
 ---
 
-## Coleções instaladas
+## Coleções de terceiro instaladas
 
-Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-caixa-de-ferramentas.html).
+Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-caixa-de-ferramentas.html). Some a `levantando-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
 
 | Coleção | Origem | Skills instaladas | Por que entrou |
 |---|---|---|---|
@@ -31,6 +31,16 @@ Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente e
 **Guia inspirado em Karpathy:** karpathy-guidelines.
 
 **ai-slop-cleaner:** ai-slop-cleaner.
+
+---
+
+## A skill própria do projeto
+
+`levantando-briefing` não é instalada de terceiro, é criada por este projeto: MIT, publicada e versionada em `skills/levantando-briefing/`, a única skill deste inventário que entra no histórico público. Já estava pronta antes desta rodada de instalação, ver `ESTADO.md`.
+
+Até 30 de agosto de 2026 ela existia só como artefato publicado, sem estar ativa neste ambiente: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido nesta rodada: uma cópia dela também vive em `.claude/skills/levantando-briefing/`, fora do controle de versão como as demais, para ficar utilizável de fato e não só documentada.
+
+**Risco assumido, dito com honestidade:** duas cópias do mesmo conteúdo, uma publicada em `skills/levantando-briefing/`, outra local em `.claude/skills/levantando-briefing/`. Editar a skill exige lembrar de editar as duas, ou copiar de novo depois de editar a publicada. Preferimos esse risco pequeno e visível a inventar um mecanismo de sincronização para uma única skill.
 
 ---
 
