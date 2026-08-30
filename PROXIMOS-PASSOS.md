@@ -12,9 +12,19 @@ Em ordem. Cada item traz o critério de pronto.
 
 **Parte 2 traduzida para inglês e espanhol**, no mesmo arquivo, com o seletor. `build/build_p2.py` reescrito para montagem trilíngue, no mesmo padrão de `build/build_all.py`: extrai o corpo PT do arquivo vigente (que é a fonte da verdade, não `build/body_p2_pt.html`, que estava desatualizado), monta EN e ES a partir de `build/body_p2_en.html` e `build/body_p2_es.html`, prefixa tudo por idioma via `scope()`. Os três botões funcionam e não há âncora quebrada. Como efeito colateral, o JavaScript de troca de idioma de `harness-p1.html` e `harness-p2.html` ganhou roteamento por âncora (`#en-opening` seleciona a aba certa antes de rolar), para que um link cruzado entre as peças em inglês ou espanhol não caia sempre na aba em português.
 
+**Trinta skills de terceiro instaladas para uso neste projeto**, cinco coleções (superpowers inteira, seleção curada de doze do mattpocock/skills, c4-skills inteira, o guia inspirado em Karpathy, ai-slop-cleaner), todas MIT, todas auditadas contra o checklist do próprio guia compacto antes de instalar. Vivem em `.claude/skills/`, fora do controle de versão. Documentação completa, com registro de uso real a crescer por sessão, em `FERRAMENTAS.md`. Crédito visível no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e `harness-caixa-de-ferramentas.html`.
+
 ---
 
-## 1. Traduzir o guia compacto
+## 1. Diário de bordo
+
+Página HTML viva, trilíngue, documentando a evolução do próprio projeto: tokens consumidos e palavras ou linhas produzidas por marco, timeline de sessões, adaptada do modelo usado no projeto wesafer-aiotp-ForHospitals-Dev, mas em escala menor e com métrica de conteúdo em vez de código de aplicação. Dado real extraído do transcript `.jsonl` desta sessão em `~/.claude/projects/<hash-do-projeto>/`, mesma técnica de lá.
+
+**Pronto quando:** existe em `docs/diario-de-bordo.html` (ou local a decidir), nas três línguas, com pelo menos um marco real registrado, sem eixo Y duplo em nenhum gráfico, e referenciado em `FERRAMENTAS.md` e no rodapé dos artigos.
+
+---
+
+## 2. Traduzir o guia compacto
 
 Inglês e espanhol, no mesmo arquivo `harness-caixa-de-ferramentas.html`, com o seletor.
 
@@ -24,7 +34,7 @@ Reutilizar `build/build_kit.py` como base, no mesmo padrão trilíngue que `buil
 
 ---
 
-## 2. Traduzir a skill de briefing
+## 3. Traduzir a skill de briefing
 
 Inglês e espanhol, como arquivos separados no repositório da skill, não como seletor.
 
@@ -32,7 +42,7 @@ Nome sugerido: `SKILL.en.md` e `SKILL.es.md`, seguindo a convenção de README m
 
 ---
 
-## 3. Rodada de pesquisa da parte 3
+## 4. Rodada de pesquisa da parte 3
 
 Rodada dedicada, não complemento. O que precisa ser levantado:
 
@@ -47,7 +57,7 @@ Rodada dedicada, não complemento. O que precisa ser levantado:
 
 ---
 
-## 4. Escrever a parte 3
+## 5. Escrever a parte 3
 
 Estrutura prevista, sujeita ao que a pesquisa revelar:
 
@@ -66,7 +76,7 @@ Estrutura prevista, sujeita ao que a pesquisa revelar:
 
 ---
 
-## 5. Consolidar o playbook
+## 6. Consolidar o playbook
 
 Reaproveita as três partes e o guia, e acrescenta o que não existe:
 

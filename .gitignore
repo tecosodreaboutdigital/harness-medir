@@ -2,3 +2,8 @@
 node_modules/
 __pycache__/
 *.pyc
+
+# Skills de terceiro instaladas para uso neste projeto, nao publicadas
+# aqui por licenca propria. Documentadas em FERRAMENTAS.md, com origem
+# e link, mesmo sem o conteudo estar commitado.
+.claude/skills/

@@ -52,6 +52,7 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── PADROES.md                         regras de escrita e formatação, LEIA ANTES DE EDITAR
 ├── ESTADO.md                          o que está pronto e o que falta, detalhado
 ├── PROXIMOS-PASSOS.md                 a fila de trabalho, em ordem
+├── FERRAMENTAS.md                     skills de terceiro instaladas e usadas, com registro de uso real
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, trilíngue, pronta
 ├── harness-caixa-de-ferramentas.html  guia compacto, organizado pelo MEDIR, pronto
@@ -106,6 +107,7 @@ Detalhe técnico importante: os identificadores de âncora e os marcadores de SV
 2. Leia `ESTADO.md` para saber exatamente o que está pronto.
 3. Siga `PROXIMOS-PASSOS.md` na ordem.
 4. Antes de citar qualquer ferramenta, confira `fontes/inventario.md`. Fonte não verificada não entra em documento assinado.
+5. Antes de instalar qualquer skill de terceiro para trabalhar neste projeto, siga o mesmo checklist que o projeto recomenda a terceiros, e registre o resultado em `FERRAMENTAS.md`.
 
 ---
 
