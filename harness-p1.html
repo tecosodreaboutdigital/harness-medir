@@ -229,21 +229,32 @@ li{margin-bottom:6px}
 }
 .g:hover::after,.g:focus::after{opacity:1;visibility:visible}
 
-.serie{
+.topbar{
   display:flex;
-  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
   align-items:baseline;
+  gap:6px;
   font-size:11px;
-  letter-spacing:.14em;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  padding:0 0 16px;
+  padding:10px 0 12px;
   margin:0 0 26px;
   border-bottom:.5pt solid var(--rule);
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:var(--paper);
 }
-.serie a{color:var(--ink-faint);border:0;text-decoration:none}
-.serie a:hover{color:var(--ink)}
-.serie a.cur{color:var(--ink)}
-.serie span{color:var(--rule)}
+.topbar .serie{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px}
+.topbar a{color:var(--ink-faint);border:0;text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.topbar .cur{color:var(--ink)}
+.topbar .pending{color:var(--rule)}
+.topbar .sep{color:var(--rule)}
+.topbar .brace{color:var(--ink-faint);font-weight:300;margin:0 1px}
+.orig-plain{color:var(--ink-faint);font-style:italic}
+@media print{.topbar{display:none}}
 .gitem{
   border:0;
   margin:0 0 9px;
@@ -311,19 +322,26 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 </style>
 </head>
 <body>
+<div class="topbar">
+<nav class="serie">
+<span class="cur" data-key="p1">Part 1</span><span class="sep">·</span>
+<a href="harness-p2.html#en-" data-key="p2">Part 2</a><span class="sep">·</span>
+<a href="harness-p3.html#en-" data-key="p3">Part 3</a><span class="sep">·</span>
+<span class="pending" data-key="p4">Part 4</span><span class="sep pipe">|</span>
+<a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a><span class="sep">·</span>
+<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a><span class="sep">·</span>
+<a href="harness-sources.html#en-" data-key="sources">Sources</a>
+</nav>
+<span class="brace">{</span>
 <div class="langbar">
 <button type="button" data-lang="pt">PT</button>
 <button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
 </div>
-<nav class="serie">
-<a class="cur" href="harness-p1.html">Parte 1</a>
-<a href="harness-p2.html">Parte 2</a>
-<span>Parte 3</span>
-<a href="harness-toolkit.html">Guia compacto</a>
-</nav>
+<span class="brace">}</span>
+</div>
 <main class="page" id="doc-pt" hidden>
-<p class="eyebrow">Harness · Parte 1 de 3 · Por quê</p>
+<p class="eyebrow">Harness · Parte 1 de 4 · Por quê</p>
 
 <h1>O melhor modelo do mundo dentro de uma empresa sem processo</h1>
 
@@ -345,8 +363,6 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
     <li><a href="#pt-riscos">O que pode dar errado</a></li>
     <li><a href="#pt-checklist">Doze perguntas antes de confiar</a></li>
     <li><a href="#pt-serie">O que vem nas partes 2 e 3</a></li>
-    <li><a href="#pt-glossario">Glossário</a></li>
-    <li><a href="#pt-fontes">Fontes</a></li>
   </ol>
 </nav>
 
@@ -368,11 +384,11 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h2 id="pt-o-que-e">2. O que é um harness</h2>
 
-<p>Existe uma equação que virou consenso entre quem constrói esses sistemas em produção, e ela cabe em quatro palavras: <a class="g" href="#pt-g-agente" data-tip="Sistema que combina um modelo de linguagem com ferramentas, memória e regras para executar tarefas de várias etapas.">agente</a> é igual a <a class="g" href="#pt-g-modelo" data-tip="O motor de raciocínio. Prevê a próxima palavra ou a próxima ação, mas não executa nada sozinho.">modelo</a> mais <a class="g" href="#pt-g-harness" data-tip="Tudo o que existe em um agente exceto o modelo: ferramentas, contexto, memória, permissões, sensores e registro.">harness</a>.</p>
+<p>Existe uma equação que virou consenso entre quem constrói esses sistemas em produção, e ela cabe em quatro palavras: <a class="g" href="harness-glossary.html#pt-g-agente" data-tip="Sistema que combina um modelo de linguagem com ferramentas, memória e regras para executar tarefas de várias etapas.">agente</a> é igual a <a class="g" href="harness-glossary.html#pt-g-modelo" data-tip="O motor de raciocínio. Prevê a próxima palavra ou a próxima ação, mas não executa nada sozinho.">modelo</a> mais <a class="g" href="harness-glossary.html#pt-g-harness" data-tip="Tudo o que existe em um agente exceto o modelo: ferramentas, contexto, memória, permissões, sensores e registro.">harness</a>.</p>
 
 <p>O modelo é o motor de raciocínio. Ele propõe a próxima ação. É o que a indústria vende, o que aparece nas manchetes, o que muda de nome a cada seis semanas. O harness é todo o resto: o que o sistema pode ver, o que pode tocar, o que sobrevive de uma sessão para outra, o que conta como evidência de que o trabalho ficou bom, e em que momento a execução precisa parar e chamar alguém.</p>
 
-<p>A palavra vem do inglês e significa o conjunto de equipamentos que canaliza a força de um animal em uma direção útil. Vale manter em inglês, pela mesma razão que ninguém traduziu <a class="g" href="#pt-g-kaizen" data-tip="Melhoria contínua em pequenos incrementos, feita por todos e o tempo todo, em vez de grandes projetos episódicos.">kaizen</a>, <a class="g" href="#pt-g-kanban" data-tip="Sistema visual de sinalização que autoriza a produção ou o movimento apenas quando há demanda real.">kanban</a>, <a class="g" href="#pt-g-poka-yoke" data-tip="À prova de erro. Redesenhar o processo para que o erro se torne impossível, em vez de pedir mais atenção a quem executa.">poka-yoke</a> ou <a class="g" href="#pt-g-jidoka" data-tip="Autonomação. A máquina detecta a anormalidade e para sozinha, para que o defeito não siga adiante.">jidoka</a>: palavra importada sinaliza corpo de conhecimento importado, e não há ganho em inventar um sinônimo que ninguém vai reconhecer na literatura.</p>
+<p>A palavra vem do inglês e significa o conjunto de equipamentos que canaliza a força de um animal em uma direção útil. Vale manter em inglês, pela mesma razão que ninguém traduziu <a class="g" href="harness-glossary.html#pt-g-kaizen" data-tip="Melhoria contínua em pequenos incrementos, feita por todos e o tempo todo, em vez de grandes projetos episódicos.">kaizen</a>, <a class="g" href="harness-glossary.html#pt-g-kanban" data-tip="Sistema visual de sinalização que autoriza a produção ou o movimento apenas quando há demanda real.">kanban</a>, <a class="g" href="harness-glossary.html#pt-g-poka" data-tip="À prova de erro. Redesenhar o processo para que o erro se torne impossível, em vez de pedir mais atenção a quem executa.">poka-yoke</a> ou <a class="g" href="harness-glossary.html#pt-g-jidoka" data-tip="Autonomação. A máquina detecta a anormalidade e para sozinha, para que o defeito não siga adiante.">jidoka</a>: palavra importada sinaliza corpo de conhecimento importado, e não há ganho em inventar um sinônimo que ninguém vai reconhecer na literatura.</p>
 
 <figure>
 <svg viewBox="0 0 700 300" role="img" aria-label="Diagrama do harness em volta do modelo">
@@ -448,13 +464,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A expressão <em>harness engineering</em> ganhou nome em fevereiro de 2026, quando Mitchell Hashimoto, cofundador da HashiCorp e criador do Terraform, publicou um relato pessoal de adoção de IA. A definição dele cabe em uma frase: toda vez que você encontra um erro do agente, você investe o tempo necessário para engenheirar uma solução tal que o agente nunca mais cometa aquele erro. Seis dias depois, a OpenAI publicou um relatório de campo que deu escala ao termo, e em poucas semanas Thoughtworks, LangChain e Anthropic estavam usando o mesmo vocabulário.</p>
 
-<p>Vale registrar, porque circula errado: não foi Andrej Karpathy. Ele cunhou <a class="g" href="#pt-g-vibe-coding" data-tip="Programar aceitando o que a IA gera sem revisar o código. Karpathy descreveu como adequado a projetos descartáveis.">"vibe coding"</a> e popularizou <a class="g" href="#pt-g-context-engineering" data-tip="Disciplina de decidir o que entra no campo de visão do modelo em cada execução: quais documentos, regras e resultados.">"context engineering"</a>, mas o termo harness já circulava antes, em contextos técnicos, e quem o transformou em disciplina foi Hashimoto.</p>
+<p>Vale registrar, porque circula errado: não foi Andrej Karpathy. Ele cunhou <a class="g" href="harness-glossary.html#pt-g-vibe" data-tip="Programar aceitando o que a IA gera sem revisar o código. Karpathy descreveu como adequado a projetos descartáveis.">"vibe coding"</a> e popularizou <a class="g" href="harness-glossary.html#pt-g-context-engineering" data-tip="Disciplina de decidir o que entra no campo de visão do modelo em cada execução: quais documentos, regras e resultados.">"context engineering"</a>, mas o termo harness já circulava antes, em contextos técnicos, e quem o transformou em disciplina foi Hashimoto.</p>
 
 <p>Agora leia de novo a definição dele e responda: isso lembra alguma coisa?</p>
 
 <p>É poka-yoke. Não é análogo a poka-yoke, é poka-yoke, o princípio japonês de redesenhar o processo para que o erro se torne estruturalmente impossível, em vez de pedir mais atenção a quem executa. A única diferença é que o executor não é humano nem uma máquina determinística.</p>
 
-<p>E a coincidência não para aí. Birgitta Böckeler, da Thoughtworks, descreve o harness explicitamente como um governador <a class="g" href="#pt-g-cibernetica" data-tip="Ciência do controle e da comunicação em sistemas. Estuda como um sistema se regula por antecipação e realimentação.">cibernético</a>, combinando controle antecipatório e controle por realimentação para regular o sistema em direção ao estado desejado, e invoca a <a class="g" href="#pt-g-ashby" data-tip="Lei da variedade requerida: um regulador só controla um sistema se tiver ao menos tanta variedade quanto ele.">Lei de Ashby</a>: um regulador precisa ter pelo menos tanta variedade quanto o sistema que governa. Ciclo de controle com antecipação e realimentação é exatamente a estrutura que <a class="g" href="#pt-g-shewhart" data-tip="Físico dos Bell Labs, criador do controle estatístico de processo e do ciclo de controle que originou o PDCA.">Walter Shewhart</a> formalizou nos anos 1930 e que <a class="g" href="#pt-g-deming" data-tip="Estatístico americano que levou o ciclo de Shewhart ao Japão nos anos 1950 e o transformou em base da gestão da qualidade.">Deming</a> levou ao mundo como <a class="g" href="#pt-g-pdca" data-tip="Planejar, fazer, verificar, agir. Ciclo iterativo de melhoria contínua, também chamado de ciclo de Shewhart.">PDCA</a>.</p>
+<p>E a coincidência não para aí. Birgitta Böckeler, da Thoughtworks, descreve o harness explicitamente como um governador <a class="g" href="harness-glossary.html#pt-g-cibernetica" data-tip="Ciência do controle e da comunicação em sistemas. Estuda como um sistema se regula por antecipação e realimentação.">cibernético</a>, combinando controle antecipatório e controle por realimentação para regular o sistema em direção ao estado desejado, e invoca a <a class="g" href="harness-glossary.html#pt-g-ashby" data-tip="Lei da variedade requerida: um regulador só controla um sistema se tiver ao menos tanta variedade quanto ele.">Lei de Ashby</a>: um regulador precisa ter pelo menos tanta variedade quanto o sistema que governa. Ciclo de controle com antecipação e realimentação é exatamente a estrutura que <a class="g" href="harness-glossary.html#pt-g-shewhart" data-tip="Físico dos Bell Labs, criador do controle estatístico de processo e do ciclo de controle que originou o PDCA.">Walter Shewhart</a> formalizou nos anos 1930 e que <a class="g" href="harness-glossary.html#pt-g-deming" data-tip="Estatístico americano que levou o ciclo de Shewhart ao Japão nos anos 1950 e o transformou em base da gestão da qualidade.">Deming</a> levou ao mundo como <a class="g" href="harness-glossary.html#pt-g-pdca" data-tip="Planejar, fazer, verificar, agir. Ciclo iterativo de melhoria contínua, também chamado de ciclo de Shewhart.">PDCA</a>.</p>
 
 <p>Ou seja, harness engineering não é um primo distante da gestão da qualidade. É o mesmo tronco, aplicado a um trabalhador que erra de um jeito novo.</p>
 
@@ -478,9 +494,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h3>A escala empresarial</h3>
 
-<p>A OpenAI publicou o relato mais detalhado até hoje. Uma equipe que começou com três e terminou com sete pessoas construiu um produto interno em cinco meses, com zero linha de código escrita à mão, cerca de um milhão de linhas geradas e aproximadamente mil e quinhentos <a class="g" href="#pt-g-pull-request" data-tip="Proposta de mudança em um sistema, submetida para revisão e aprovação antes de ser incorporada.">pull requests</a> aprovados.</p>
+<p>A OpenAI publicou o relato mais detalhado até hoje. Uma equipe que começou com três e terminou com sete pessoas construiu um produto interno em cinco meses, com zero linha de código escrita à mão, cerca de um milhão de linhas geradas e aproximadamente mil e quinhentos <a class="g" href="harness-glossary.html#pt-g-pr" data-tip="Proposta de mudança em um sistema, submetida para revisão e aprovação antes de ser incorporada.">pull requests</a> aprovados.</p>
 
-<p>O que interessa não é o número, é o método. A arquitetura foi organizada em camadas com direção de dependência estrita, e essas regras não eram documentação, eram bloqueio: <a class="g" href="#pt-g-linter" data-tip="Programa que analisa código automaticamente e aponta violações de regra antes que ele entre em produção.">linters</a> customizados, testes estruturais e travas automáticas impediam a entrega que violasse a estrutura. O detalhe mais elegante é o seguinte: quando a verificação falhava, a mensagem de erro era escrita para ensinar a correção ao agente, não apenas para registrar a falha. O sistema não bloqueia o erro, ele treina quem errou, na hora.</p>
+<p>O que interessa não é o número, é o método. A arquitetura foi organizada em camadas com direção de dependência estrita, e essas regras não eram documentação, eram bloqueio: <a class="g" href="harness-glossary.html#pt-g-linter" data-tip="Programa que analisa código automaticamente e aponta violações de regra antes que ele entre em produção.">linters</a> customizados, testes estruturais e travas automáticas impediam a entrega que violasse a estrutura. O detalhe mais elegante é o seguinte: quando a verificação falhava, a mensagem de erro era escrita para ensinar a correção ao agente, não apenas para registrar a falha. O sistema não bloqueia o erro, ele treina quem errou, na hora.</p>
 
 <p>Dois outros princípios do mesmo relato merecem entrar no seu vocabulário. O primeiro é divulgação progressiva: o documento de orientação do agente deve ser um índice de cerca de cem linhas, apontando onde procurar, e não uma enciclopédia que consome todo o espaço de leitura. O segundo é coleta de lixo: tarefas de fundo rodam em cadência regular procurando desvios e propondo correções pequenas, porque dívida acumulada é como empréstimo de juros altos, sempre melhor pagar em parcelas do que deixar compor até virar mutirão.</p>
 
@@ -490,11 +506,11 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A Anthropic resolveu o problema de agentes que trabalham por horas com uma solução que qualquer gestor reconhece. A primeira sessão de trabalho monta o ambiente: um roteiro de inicialização, um arquivo de progresso que registra o que já foi feito e um marco inicial de versão. Toda sessão seguinte lê esse registro, avança um pedaço e deixa a atualização por escrito. A memória mora fora da conversa, em artefatos, e não na cabeça do sistema.</p>
 
-<p>Depois vieram mais longe, inspirados em uma arquitetura de <a class="g" href="#pt-g-gan" data-tip="Arquitetura em que uma rede gera e outra avalia, e as duas melhoram na disputa. Origem da ideia de separar gerador e avaliador.">redes adversariais</a>: separaram quem planeja, quem executa e quem avalia. Três papéis, com critérios explícitos de avaliação. É o princípio mais transferível de todo o material que existe hoje sobre o assunto, e o mais ignorado na prática: <strong>quem gera não avalia</strong>. Autoavaliação não é atalho, é o modo de falha.</p>
+<p>Depois vieram mais longe, inspirados em uma arquitetura de <a class="g" href="harness-glossary.html#pt-g-gan" data-tip="Arquitetura em que uma rede gera e outra avalia, e as duas melhoram na disputa. Origem da ideia de separar gerador e avaliador.">redes adversariais</a>: separaram quem planeja, quem executa e quem avalia. Três papéis, com critérios explícitos de avaliação. É o princípio mais transferível de todo o material que existe hoje sobre o assunto, e o mais ignorado na prática: <strong>quem gera não avalia</strong>. Autoavaliação não é atalho, é o modo de falha.</p>
 
 <h3>O rastro como arquitetura</h3>
 
-<p>Em agosto de 2026, a DeepSeek abriu o código do próprio harness sob licença permissiva, e o repositório passou de trinta e três mil estrelas em poucas horas. A escolha de projeto que interessa a quem responde por governança é esta: tudo o que o modelo vê fica registrado em um <a class="g" href="#pt-g-append-only" data-tip="Registro em que nada pode ser alterado ou apagado, apenas acrescentado. Base técnica de qualquer trilha de auditoria confiável.">log que só aceita acréscimo</a>, incluindo instruções, raciocínio, chamadas de ferramenta, resultados e cada injeção de contexto. Retomar, bifurcar, buscar e reproduzir a execução operam todos sobre esse mesmo registro.</p>
+<p>Em agosto de 2026, a DeepSeek abriu o código do próprio harness sob licença permissiva, e o repositório passou de trinta e três mil estrelas em poucas horas. A escolha de projeto que interessa a quem responde por governança é esta: tudo o que o modelo vê fica registrado em um <a class="g" href="harness-glossary.html#pt-g-append" data-tip="Registro em que nada pode ser alterado ou apagado, apenas acrescentado. Base técnica de qualquer trilha de auditoria confiável.">log que só aceita acréscimo</a>, incluindo instruções, raciocínio, chamadas de ferramenta, resultados e cada injeção de contexto. Retomar, bifurcar, buscar e reproduzir a execução operam todos sobre esse mesmo registro.</p>
 
 <p>Traduzindo para linguagem de conselho: auditoria, conformidade e reversão deixaram de ser relatório e viraram arquitetura. Quem construir sem isso vai descobrir tarde que não consegue explicar o que aconteceu.</p>
 
@@ -562,13 +578,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tr><td>Procedimento operacional padrão</td><td>O guia do agente: regras, convenções e mapa de onde procurar</td></tr>
 <tr><td>Poka-yoke</td><td>Verificação determinística que impede o erro de existir</td></tr>
 <tr><td>Jidoka, a máquina que para sozinha</td><td>O agente interrompe a execução quando o sensor dispara</td></tr>
-<tr><td><a class="g" href="#pt-g-andon" data-tip="Sinal visual ou sonoro que interrompe a linha e chama ajuda imediata quando um problema aparece.">Andon</a></td><td>Escalonamento para o humano, com o contexto anexado</td></tr>
-<tr><td><a class="g" href="#pt-g-gemba" data-tip="O lugar real onde o trabalho acontece. Ir ao gemba é observar o processo em vez de discutir o relatório.">Gemba</a></td><td>Ler o rastro da execução, e não apenas o resultado final</td></tr>
-<tr><td><a class="g" href="#pt-g-cep" data-tip="Gráfico do controle estatístico de processo que mostra se a variação é normal ou se algo mudou.">Carta de controle</a></td><td>Sensores contínuos de desvio, fora do ciclo da tarefa</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#pt-g-andon" data-tip="Sinal visual ou sonoro que interrompe a linha e chama ajuda imediata quando um problema aparece.">Andon</a></td><td>Escalonamento para o humano, com o contexto anexado</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#pt-g-gemba" data-tip="O lugar real onde o trabalho acontece. Ir ao gemba é observar o processo em vez de discutir o relatório.">Gemba</a></td><td>Ler o rastro da execução, e não apenas o resultado final</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#pt-g-cep" data-tip="Gráfico do controle estatístico de processo que mostra se a variação é normal ou se algo mudou.">Carta de controle</a></td><td>Sensores contínuos de desvio, fora do ciclo da tarefa</td></tr>
 <tr><td>Kaizen</td><td>O passo Reforçar: a falha vira mudança permanente</td></tr>
 <tr><td>Plano de controle e alçadas</td><td>Política de permissões, imposta fora do modelo</td></tr>
 <tr><td>Trilha de auditoria</td><td>Registro de execução que só aceita acréscimo</td></tr>
-<tr><td><a class="g" href="#pt-g-dmaic" data-tip="Definir, medir, analisar, melhorar, controlar. Ciclo estruturado de projetos Seis Sigma.">DMAIC</a></td><td>MEDIR</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#pt-g-dmaic" data-tip="Definir, medir, analisar, melhorar, controlar. Ciclo estruturado de projetos Seis Sigma.">DMAIC</a></td><td>MEDIR</td></tr>
 </tbody>
 </table>
 
@@ -664,7 +680,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A <strong>parte 3</strong> trata do que sobra quando o sistema já funciona: permissão fora do modelo, instrução maliciosa que chega dentro de um dado, registro auditável, reversão, obrigações legais e a pergunta que ninguém quer fazer em voz alta na sala, que é quem responde pelo que o agente fez.</p>
 
-<blockquote><p>O modelo que você usa hoje vai ser substituído em poucos meses, e você não terá voto nessa decisão. As ferramentas, os testes, as regras escritas, os limites de alçada e o registro do que aconteceu continuam sendo seus. É por isso que a vantagem durável está migrando do <a class="g" href="#pt-g-prompt" data-tip="A instrução escrita que se dá ao modelo. É um componente do sistema, não o sistema.">prompt</a> para o sistema em volta dele.</p></blockquote>
+<blockquote><p>O modelo que você usa hoje vai ser substituído em poucos meses, e você não terá voto nessa decisão. As ferramentas, os testes, as regras escritas, os limites de alçada e o registro do que aconteceu continuam sendo seus. É por isso que a vantagem durável está migrando do <a class="g" href="harness-glossary.html#pt-g-prompt" data-tip="A instrução escrita que se dá ao modelo. É um componente do sistema, não o sistema.">prompt</a> para o sistema em volta dele.</p></blockquote>
 
 <p>Quanto melhor for o seu harness, melhor para você e melhor para o seu agente. E, ao contrário do modelo, ele melhora exatamente na medida em que você o opera.</p>
 
@@ -680,59 +696,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 </tbody>
 </table>
 
-<h2 id="pt-glossario">12. Glossário</h2>
-
-<p>Os termos abaixo aparecem sublinhados ao longo do texto. Passe o cursor sobre eles para ver a definição curta, ou clique para chegar aqui. As referências apontam para a origem de cada conceito, não para resumos de segunda mão.</p>
-
-<p class="gitem" id="pt-g-agente"><strong>agente</strong>: Sistema que combina um modelo de linguagem com ferramentas, memória e regras para executar tarefas de várias etapas, decidindo a cada passo qual a próxima ação. A equação corrente é agente igual a modelo mais harness.</p>
-<p class="gitem" id="pt-g-agentsmd"><strong>AGENTS.md</strong>: Arquivo na raiz de um projeto que orienta o agente sobre onde está cada coisa, quais são as convenções e o que não fazer. A boa prática é tratá-lo como índice curto, não como manual. <em class="orig">Especificação comunitária. <a href="https://agents.md/">Fonte</a></em></p>
-<p class="gitem" id="pt-g-andon"><strong>andon</strong>: Sinal visual ou sonoro que mostra o estado do processo e interrompe a linha chamando ajuda imediata quando um problema aparece. Em agentes, equivale ao escalonamento para o humano com o contexto anexado. <em class="orig">Sistema Toyota de Produção. <a href="https://en.wikipedia.org/wiki/Andon_(manufacturing)">Fonte</a></em></p>
-<p class="gitem" id="pt-g-cep"><strong>carta de controle</strong>: Gráfico do controle estatístico de processo que separa a variação normal de uma mudança real, permitindo agir apenas quando algo de fato saiu do padrão. <em class="orig">Walter Shewhart, Bell Labs, anos 1920. <a href="https://en.wikipedia.org/wiki/Statistical_process_control">Fonte</a></em></p>
-<p class="gitem" id="pt-g-cibernetica"><strong>cibernética</strong>: Ciência do controle e da comunicação em sistemas, biológicos ou artificiais. Estuda como um sistema se mantém em direção a um objetivo por meio de antecipação e realimentação. <em class="orig">Norbert Wiener, 1948. <a href="https://en.wikipedia.org/wiki/Cybernetics">Fonte</a></em></p>
-<p class="gitem" id="pt-g-context-engineering"><strong>context engineering</strong>: Disciplina de decidir o que entra no campo de visão do modelo em cada execução: quais documentos, regras, exemplos e resultados anteriores. Antecede o harness e continua operando dentro dele. <em class="orig">Formulação de Birgitta Böckeler para agentes de código. <a href="https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html">Fonte</a></em></p>
-<p class="gitem" id="pt-g-deming"><strong>Deming, W. Edwards</strong>: Estatístico americano que levou o ciclo de Shewhart ao Japão nos anos 1950 e o transformou em fundamento da gestão da qualidade moderna. <em class="orig">1900 a 1993. <a href="https://en.wikipedia.org/wiki/W._Edwards_Deming">Fonte</a></em></p>
-<p class="gitem" id="pt-g-dmaic"><strong>DMAIC</strong>: Definir, medir, analisar, melhorar, controlar. Ciclo estruturado de condução de projetos Seis Sigma, e o parente metodológico mais próximo do MEDIR. <em class="orig">Motorola, anos 1980; consolidado pela General Electric nos anos 1990.</em></p>
-<p class="gitem" id="pt-g-gemba"><strong>gemba</strong>: O lugar real onde o trabalho acontece. Ir ao gemba significa observar o processo diretamente em vez de discutir o relatório sobre ele. Em agentes, equivale a ler o rastro da execução, e não apenas o resultado. <em class="orig">Termo japonês adotado pela manufatura enxuta. <a href="https://en.wikipedia.org/wiki/Gemba">Fonte</a></em></p>
-<p class="gitem" id="pt-g-harness"><strong>harness</strong>: Tudo o que existe em um agente exceto o modelo: as ferramentas que ele pode usar, o contexto que enxerga, a memória que sobrevive entre sessões, as permissões que o limitam, os sensores que o medem e o registro do que fez. A palavra designa o conjunto de equipamentos que canaliza a força de um animal em uma direção útil. <em class="orig">Termo consolidado como disciplina em fevereiro de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Fonte</a></em></p>
-<p class="gitem" id="pt-g-jidoka"><strong>jidoka</strong>: Autonomação, ou automação com toque humano. A máquina detecta a anormalidade, para sozinha e chama ajuda, para que o defeito não siga adiante na linha. <em class="orig">Sistema Toyota de Produção. <a href="https://en.wikipedia.org/wiki/Autonomation">Fonte</a></em></p>
-<p class="gitem" id="pt-g-kaizen"><strong>kaizen</strong>: Melhoria contínua feita em pequenos incrementos, por todos e o tempo todo, em vez de grandes projetos episódicos. É o passo Reforçar do ciclo MEDIR. <em class="orig">Termo japonês difundido a partir do Sistema Toyota de Produção. <a href="https://en.wikipedia.org/wiki/Kaizen">Fonte</a></em></p>
-<p class="gitem" id="pt-g-kanban"><strong>kanban</strong>: Sistema visual de sinalização que autoriza produção ou movimentação apenas quando existe demanda real, evitando acúmulo. <em class="orig">Taiichi Ohno, Sistema Toyota de Produção. <a href="https://en.wikipedia.org/wiki/Kanban">Fonte</a></em></p>
-<p class="gitem" id="pt-g-ashby"><strong>Lei de Ashby</strong>: Lei da variedade requerida: um regulador só consegue controlar um sistema se dispuser de ao menos tanta variedade quanto o sistema que governa. Explica por que padronizar tipos de tarefa torna o controle de agentes viável. <em class="orig">W. Ross Ashby, 1956. <a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)">Fonte</a></em></p>
-<p class="gitem" id="pt-g-linter"><strong>linter</strong>: Programa que analisa código automaticamente e aponta violações de regra antes que ele avance. No contexto de agentes, a mensagem de erro do linter funciona como sensor: quando ela ensina a correção, o agente se conserta sozinho.</p>
-<p class="gitem" id="pt-g-append-only"><strong>log apenas-anexação</strong>: Registro em que nada pode ser alterado ou apagado, apenas acrescentado ao fim. É a base técnica de qualquer trilha de auditoria confiável, e o que permite reconstruir, reproduzir e reverter uma execução.</p>
-<p class="gitem" id="pt-g-modelo"><strong>modelo de linguagem</strong>: O motor de raciocínio. Prevê a continuação mais provável de um texto e, por extensão, propõe a próxima ação. Não executa nada por conta própria: quem executa são as ferramentas que o harness expõe.</p>
-<p class="gitem" id="pt-g-pdca"><strong>PDCA</strong>: Planejar, fazer, verificar, agir. Ciclo iterativo de melhoria contínua de processos, também chamado de ciclo de Shewhart ou ciclo de Deming. É o ancestral direto de qualquer método de controle com realimentação, inclusive o MEDIR. <em class="orig">Walter Shewhart, anos 1930; difundido por Deming a partir dos anos 1950. <a href="https://en.wikipedia.org/wiki/PDCA">Fonte</a></em></p>
-<p class="gitem" id="pt-g-poka-yoke"><strong>poka-yoke</strong>: À prova de erro. Redesenhar o processo ou o dispositivo para que o erro se torne impossível ou seja detectado no instante em que ocorre, em vez de pedir mais atenção a quem executa. É a definição literal do que a engenharia de harness faz com agentes. <em class="orig">Shigeo Shingo, dentro do Sistema Toyota de Produção. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Fonte</a></em></p>
-<p class="gitem" id="pt-g-prompt"><strong>prompt</strong>: A instrução escrita que se dá ao modelo em uma execução. Importante, mas apenas um componente do sistema, e o único que a maioria das pessoas tenta ajustar quando algo falha.</p>
-<p class="gitem" id="pt-g-pull-request"><strong>pull request</strong>: Proposta de mudança em um sistema, submetida para revisão antes de ser incorporada. É o ponto natural de porteiro humano em fluxos de trabalho com agentes.</p>
-<p class="gitem" id="pt-g-gan"><strong>redes adversariais generativas</strong>: Arquitetura em que uma rede gera conteúdo e outra avalia, e ambas melhoram na disputa. Inspirou a separação entre agente gerador e agente avaliador em harnesses de longa duração. <em class="orig">Ian Goodfellow e colegas, 2014.</em></p>
-<p class="gitem" id="pt-g-sandbox"><strong>sandbox</strong>: Ambiente isolado onde a execução acontece sem tocar nos sistemas reais. É o que permite delegar autonomia sem que um erro tenha consequência externa.</p>
-<p class="gitem" id="pt-g-shewhart"><strong>Shewhart, Walter</strong>: Físico e estatístico dos Bell Labs, criador do controle estatístico de processo e da carta de controle, e autor do ciclo que originou o PDCA. <em class="orig">1891 a 1967. <a href="https://en.wikipedia.org/wiki/Walter_A._Shewhart">Fonte</a></em></p>
-<p class="gitem" id="pt-g-tps"><strong>Sistema Toyota de Produção</strong>: Sistema de produção construído sobre dois pilares, o just-in-time e o jidoka, e origem da maior parte do vocabulário de qualidade citado neste artigo. <em class="orig">Taiichi Ohno e Eiji Toyoda, a partir dos anos 1950. <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Fonte</a></em></p>
-<p class="gitem" id="pt-g-vibe-coding"><strong>vibe coding</strong>: Modo de programar em que se aceita o que a IA gera sem revisar, devolvendo os erros para ela corrigir. Karpathy, que cunhou o termo em 2025, o descreveu como adequado a projetos descartáveis de fim de semana. <em class="orig">Andrej Karpathy, 2025.</em></p>
-
-<h2 id="pt-fontes">13. Fontes</h2>
-
-<ol class="sources">
-<li>Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 de fevereiro de 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
-<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 de fevereiro de 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
-<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 de abril de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
-<li>Anthropic. <em>Effective harnesses for long-running agents</em>, novembro de 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
-<li>Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
-<li>Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 de fevereiro de 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
-<li>DeepSeek. <em>DeepSeek Harness, developer preview</em>, agosto de 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
-<li>The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, agosto de 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
-<li>Comunidade. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
-<li>Addy Osmani. <em>Long-running agents</em>, abril de 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
-</ol>
-
 <div class="foot">
-<p>Parte 1 de 3 · Série Harness · A cena de abertura é composta a partir de padrões recorrentes e não descreve uma empresa específica.</p>
+<p>Parte 1 de 4 · Série Harness · A cena de abertura é composta a partir de padrões recorrentes e não descreve uma empresa específica.</p>
 <p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html">diário de bordo</a>.</p>
 </div>
 </main>
 <main class="page" id="doc-en">
-<p class="eyebrow">Harness · Part 1 of 3 · Why</p>
+<p class="eyebrow">Harness · Part 1 of 4 · Why</p>
 
 <h1>The best model in the world inside a company with no process</h1>
 
@@ -754,8 +724,6 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
     <li><a href="#en-risks">What can go wrong</a></li>
     <li><a href="#en-checklist">Twelve questions before you trust it</a></li>
     <li><a href="#en-series">What comes in parts 2 and 3</a></li>
-    <li><a href="#en-glossary">Glossary</a></li>
-    <li><a href="#en-sources">Sources</a></li>
   </ol>
 </nav>
 
@@ -779,9 +747,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>There is an equation that has become consensus among the people running these systems in production, and it fits in four words: agent equals model plus harness.</p>
 
-<p>The <a class="g" href="#en-g-model" data-tip="The reasoning engine. It predicts the next word or the next action, but executes nothing on its own.">model</a> is the reasoning engine. It proposes the next action. It is what the industry sells, what makes the headlines, what changes name every six weeks. The <a class="g" href="#en-g-harness" data-tip="Everything in an agent except the model: tools, context, memory, permissions, sensors and record.">harness</a> is everything else: what the system can see, what it can touch, what survives from one session to the next, what counts as evidence that the work is good, and at what moment execution must stop and call someone.</p>
+<p>The <a class="g" href="harness-glossary.html#en-g-model" data-tip="The reasoning engine. It predicts the next word or the next action, but executes nothing on its own.">model</a> is the reasoning engine. It proposes the next action. It is what the industry sells, what makes the headlines, what changes name every six weeks. The <a class="g" href="harness-glossary.html#en-g-harness" data-tip="Everything in an agent except the model: tools, context, memory, permissions, sensors and record.">harness</a> is everything else: what the system can see, what it can touch, what survives from one session to the next, what counts as evidence that the work is good, and at what moment execution must stop and call someone.</p>
 
-<p>The word denotes the equipment that channels an animal's strength in a useful direction. It is worth keeping in the original, for the same reason nobody translated <a class="g" href="#en-g-kaizen" data-tip="Continuous improvement in small increments, by everyone and all the time, rather than episodic projects.">kaizen</a>, <a class="g" href="#en-g-kanban" data-tip="A visual signalling system that authorises production or movement only when real demand exists.">kanban</a>, <a class="g" href="#en-g-poka" data-tip="Mistake-proofing. Redesign the process so the error becomes impossible, instead of demanding more attention.">poka-yoke</a> or <a class="g" href="#en-g-jidoka" data-tip="Autonomation. The machine detects the abnormality and stops itself, so the defect does not travel on.">jidoka</a>: an imported word signals an imported body of knowledge, and there is nothing to gain from inventing a synonym no one will recognise in the literature.</p>
+<p>The word denotes the equipment that channels an animal's strength in a useful direction. It is worth keeping in the original, for the same reason nobody translated <a class="g" href="harness-glossary.html#en-g-kaizen" data-tip="Continuous improvement in small increments, by everyone and all the time, rather than episodic projects.">kaizen</a>, <a class="g" href="harness-glossary.html#en-g-kanban" data-tip="A visual signalling system that authorises production or movement only when real demand exists.">kanban</a>, <a class="g" href="harness-glossary.html#en-g-poka" data-tip="Mistake-proofing. Redesign the process so the error becomes impossible, instead of demanding more attention.">poka-yoke</a> or <a class="g" href="harness-glossary.html#en-g-jidoka" data-tip="Autonomation. The machine detects the abnormality and stops itself, so the defect does not travel on.">jidoka</a>: an imported word signals an imported body of knowledge, and there is nothing to gain from inventing a synonym no one will recognise in the literature.</p>
 
 <figure>
 <svg viewBox="0 0 700 300" role="img" aria-label="Diagram of the harness around the model">
@@ -845,13 +813,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>The expression harness engineering got its name in February 2026, when Mitchell Hashimoto, co-founder of HashiCorp and creator of Terraform, published a personal account of adopting AI. His definition fits in one sentence: any time you find the agent makes a mistake, you invest the time needed to engineer a solution such that the agent never makes that mistake again. Six days later OpenAI published a field report that gave the term scale, and within weeks Thoughtworks, LangChain and Anthropic were using the same vocabulary.</p>
 
-<p>Worth recording, because it circulates wrong: it was not Andrej Karpathy. He coined <a class="g" href="#en-g-vibe" data-tip="Programming by accepting whatever the AI generates without review. Karpathy called it fit for throwaway projects.">&quot;vibe coding&quot;</a> and popularised <a class="g" href="#en-g-context" data-tip="The discipline of deciding what enters the model&#39;s field of view on each run: documents, rules, results.">&quot;context engineering&quot;</a>, but the term harness was already in technical circulation, and the person who turned it into a discipline was Hashimoto.</p>
+<p>Worth recording, because it circulates wrong: it was not Andrej Karpathy. He coined <a class="g" href="harness-glossary.html#en-g-vibe" data-tip="Programming by accepting whatever the AI generates without review. Karpathy called it fit for throwaway projects.">&quot;vibe coding&quot;</a> and popularised <a class="g" href="harness-glossary.html#en-g-context" data-tip="The discipline of deciding what enters the model&#39;s field of view on each run: documents, rules, results.">&quot;context engineering&quot;</a>, but the term harness was already in technical circulation, and the person who turned it into a discipline was Hashimoto.</p>
 
 <p>Now read his definition again and answer this: does it remind you of anything?</p>
 
 <p>It is poka-yoke. Not analogous to poka-yoke. It is poka-yoke, the Japanese principle of redesigning the process so the error becomes structurally impossible, rather than asking for more attention from whoever executes. The only difference is that the executor is neither human nor deterministic.</p>
 
-<p>And the coincidence does not stop there. Birgitta Böckeler, of Thoughtworks, describes the harness explicitly as a <a class="g" href="#en-g-cyb" data-tip="The science of control and communication in systems. Studies how a system regulates itself by anticipation and feedback.">cybernetic</a> governor, combining anticipatory and feedback control to regulate the system toward its desired state, and invokes <a class="g" href="#en-g-ashby" data-tip="The law of requisite variety: a regulator only controls a system if it has at least as much variety as it does.">Ashby&#39;s Law</a>: a regulator must have at least as much variety as the system it governs. A control loop with anticipation and feedback is exactly the structure <a class="g" href="#en-g-shewhart" data-tip="Bell Labs physicist, creator of statistical process control and of the cycle that became PDCA.">Walter Shewhart</a> formalised in the 1930s and that <a class="g" href="#en-g-deming" data-tip="American statistician who took Shewhart&#39;s cycle to Japan in the 1950s and made it the basis of quality management.">Deming</a> carried to the world as <a class="g" href="#en-g-pdca" data-tip="Plan, do, check, act. The iterative cycle of continuous improvement, also called the Shewhart cycle.">PDCA</a>.</p>
+<p>And the coincidence does not stop there. Birgitta Böckeler, of Thoughtworks, describes the harness explicitly as a <a class="g" href="harness-glossary.html#en-g-cyb" data-tip="The science of control and communication in systems. Studies how a system regulates itself by anticipation and feedback.">cybernetic</a> governor, combining anticipatory and feedback control to regulate the system toward its desired state, and invokes <a class="g" href="harness-glossary.html#en-g-ashby" data-tip="The law of requisite variety: a regulator only controls a system if it has at least as much variety as it does.">Ashby&#39;s Law</a>: a regulator must have at least as much variety as the system it governs. A control loop with anticipation and feedback is exactly the structure <a class="g" href="harness-glossary.html#en-g-shewhart" data-tip="Bell Labs physicist, creator of statistical process control and of the cycle that became PDCA.">Walter Shewhart</a> formalised in the 1930s and that <a class="g" href="harness-glossary.html#en-g-deming" data-tip="American statistician who took Shewhart&#39;s cycle to Japan in the 1950s and made it the basis of quality management.">Deming</a> carried to the world as <a class="g" href="harness-glossary.html#en-g-pdca" data-tip="Plan, do, check, act. The iterative cycle of continuous improvement, also called the Shewhart cycle.">PDCA</a>.</p>
 
 <p>Harness engineering is not a distant cousin of quality management. It is the same trunk, applied to a worker that fails in a new way.</p>
 
@@ -875,9 +843,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h3>The enterprise scale</h3>
 
-<p>OpenAI published the most detailed account to date. A team that started at three people and ended at seven built an internal product in five months, with zero lines of code written by hand, around one million lines generated and roughly fifteen hundred <a class="g" href="#en-g-pr" data-tip="A proposed change to a system, submitted for review and approval before being merged.">pull requests</a> approved.</p>
+<p>OpenAI published the most detailed account to date. A team that started at three people and ended at seven built an internal product in five months, with zero lines of code written by hand, around one million lines generated and roughly fifteen hundred <a class="g" href="harness-glossary.html#en-g-pr" data-tip="A proposed change to a system, submitted for review and approval before being merged.">pull requests</a> approved.</p>
 
-<p>What matters is not the number, it is the method. The architecture was organised into layers with strict dependency direction, and those rules were not documentation, they were a block: custom <a class="g" href="#en-g-linter" data-tip="A program that analyses code automatically and flags rule violations before it reaches production.">linters</a>, structural tests and automated gates prevented any delivery that violated the structure. The most elegant detail is this: when a check failed, the error message was written to teach the agent the fix, not merely to record the failure. The system does not just block the error, it trains whoever made it, on the spot.</p>
+<p>What matters is not the number, it is the method. The architecture was organised into layers with strict dependency direction, and those rules were not documentation, they were a block: custom <a class="g" href="harness-glossary.html#en-g-linter" data-tip="A program that analyses code automatically and flags rule violations before it reaches production.">linters</a>, structural tests and automated gates prevented any delivery that violated the structure. The most elegant detail is this: when a check failed, the error message was written to teach the agent the fix, not merely to record the failure. The system does not just block the error, it trains whoever made it, on the spot.</p>
 
 <p>Two further principles from the same account deserve a place in your vocabulary. The first is progressive disclosure: the agent's guidance document should be an index of about a hundred lines, pointing at where to look, not an encyclopaedia that consumes the whole reading budget. The second is garbage collection: background tasks run on a regular cadence looking for drift and proposing small corrections, because accumulated debt is a high-interest loan, always better paid in instalments than left to compound into a cleanup marathon.</p>
 
@@ -891,13 +859,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h3>The trace as architecture</h3>
 
-<p>In August 2026, DeepSeek open-sourced its own harness under a permissive licence, and the repository passed thirty-three thousand stars within hours. The design choice that matters to anyone accountable for governance is this: everything the model sees is written to an <a class="g" href="#en-g-append" data-tip="A record where nothing can be altered or deleted, only added. The technical basis of any audit trail.">append-only log</a>, including instructions, reasoning, tool calls, results and every context injection. Resuming, forking, searching and replaying an execution all operate on that same record.</p>
+<p>In August 2026, DeepSeek open-sourced its own harness under a permissive licence, and the repository passed thirty-three thousand stars within hours. The design choice that matters to anyone accountable for governance is this: everything the model sees is written to an <a class="g" href="harness-glossary.html#en-g-append" data-tip="A record where nothing can be altered or deleted, only added. The technical basis of any audit trail.">append-only log</a>, including instructions, reasoning, tool calls, results and every context injection. Resuming, forking, searching and replaying an execution all operate on that same record.</p>
 
 <p>Translated into board language: audit, compliance and rollback stopped being a report and became architecture. Whoever builds without it will discover too late that they cannot explain what happened.</p>
 
 <h2 id="en-medir">6. The MEDIR cycle</h2>
 
-<p>If harness engineering belongs to the same family as <a class="g" href="#en-g-pdca" data-tip="Plan, do, check, act. The iterative cycle of continuous improvement, also called the Shewhart cycle.">PDCA</a>, it needs what every method in that family has: an order, a name for each step, and a criterion for knowing when to move on. That is what the cycle below organises.</p>
+<p>If harness engineering belongs to the same family as <a class="g" href="harness-glossary.html#en-g-pdca" data-tip="Plan, do, check, act. The iterative cycle of continuous improvement, also called the Shewhart cycle.">PDCA</a>, it needs what every method in that family has: an order, a name for each step, and a criterion for knowing when to move on. That is what the cycle below organises.</p>
 
 <figure>
 <svg viewBox="0 0 700 400" role="img" aria-label="The MEDIR cycle: map, equip, delegate, inspect, reinforce">
@@ -949,13 +917,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tr><td>Standard operating procedure</td><td>The agent's guide: rules, conventions and a map of where to look</td></tr>
 <tr><td>Poka-yoke</td><td>Deterministic checks that make the error impossible</td></tr>
 <tr><td>Jidoka, the machine that stops itself</td><td>The agent halts execution when a sensor fires</td></tr>
-<tr><td><a class="g" href="#en-g-andon" data-tip="A visual or audible signal that halts the line and calls for immediate help when a problem appears.">Andon</a></td><td>Escalation to a human, with the context attached</td></tr>
-<tr><td><a class="g" href="#en-g-gemba" data-tip="The real place where work happens. Going to the gemba means observing the process, not the report about it.">Gemba</a></td><td>Reading the execution trace, not just the final output</td></tr>
-<tr><td><a class="g" href="#en-g-chart" data-tip="A statistical process control graph showing whether variation is normal or something has changed.">Control chart</a></td><td>Continuous drift sensors, outside the task loop</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#en-g-andon" data-tip="A visual or audible signal that halts the line and calls for immediate help when a problem appears.">Andon</a></td><td>Escalation to a human, with the context attached</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#en-g-gemba" data-tip="The real place where work happens. Going to the gemba means observing the process, not the report about it.">Gemba</a></td><td>Reading the execution trace, not just the final output</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#en-g-chart" data-tip="A statistical process control graph showing whether variation is normal or something has changed.">Control chart</a></td><td>Continuous drift sensors, outside the task loop</td></tr>
 <tr><td>Kaizen</td><td>The Reinforce step: failure becomes permanent change</td></tr>
 <tr><td>Control plan and approval limits</td><td>Permission policy, enforced outside the model</td></tr>
 <tr><td>Audit trail</td><td>An execution record that only accepts additions</td></tr>
-<tr><td><a class="g" href="#en-g-dmaic" data-tip="Define, measure, analyse, improve, control. The structured cycle of Six Sigma projects.">DMAIC</a></td><td>MEDIR</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#en-g-dmaic" data-tip="Define, measure, analyse, improve, control. The structured cycle of Six Sigma projects.">DMAIC</a></td><td>MEDIR</td></tr>
 </tbody>
 </table>
 
@@ -1047,63 +1015,17 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>Part 3 deals with what remains once the system works: permission outside the model, malicious instructions arriving inside data, auditable records, rollback, legal obligations, and the question nobody wants to ask out loud in the room, which is who answers for what the agent did.</p>
 
-<blockquote><p>The model you use today will be replaced within months, and you will have no vote in that decision. The tools, the tests, the written rules, the approval limits and the record of what happened remain yours. That is why the durable advantage is migrating from the <a class="g" href="#en-g-prompt" data-tip="The written instruction given to the model. A component of the system, not the system.">prompt</a> to the system around it.</p></blockquote>
+<blockquote><p>The model you use today will be replaced within months, and you will have no vote in that decision. The tools, the tests, the written rules, the approval limits and the record of what happened remain yours. That is why the durable advantage is migrating from the <a class="g" href="harness-glossary.html#en-g-prompt" data-tip="The written instruction given to the model. A component of the system, not the system.">prompt</a> to the system around it.</p></blockquote>
 
 <p>The better your harness, the better for you and the better for your agent. And unlike the model, it improves precisely to the extent that you operate it.</p>
 
-<h2 id="en-glossary">12. Glossary</h2>
-
-<p>The terms below appear underlined throughout the text. Hover for the short definition, or click to arrive here. The references point to the origin of each concept, not to second-hand summaries.</p>
-
-<p class="gitem" id="en-g-agent"><strong>agent</strong>: A system that combines a language model with tools, memory and rules to carry out multi-step tasks, deciding at each step what to do next. The working equation is agent equals model plus harness.</p>
-<p class="gitem" id="en-g-agentsmd"><strong>AGENTS.md</strong>: A file at the root of a project that tells the agent where things are, what the conventions are and what not to do. Good practice treats it as a short index, not a manual. <em class="orig">Community specification. <a href="https://agents.md/">Source</a></em></p>
-<p class="gitem" id="en-g-andon"><strong>andon</strong>: A visual or audible signal that shows process status and halts the line to call for immediate help when a problem appears. With agents, it is escalation to a human with the context attached. <em class="orig">Toyota Production System. <a href="https://en.wikipedia.org/wiki/Andon_(manufacturing)">Source</a></em></p>
-<p class="gitem" id="en-g-append"><strong>append-only log</strong>: A record in which nothing can be altered or deleted, only added at the end. It is the technical basis of any trustworthy audit trail, and what makes an execution reconstructable, replayable and reversible.</p>
-<p class="gitem" id="en-g-ashby"><strong>Ashby's Law</strong>: The law of requisite variety: a regulator can only control a system if it has at least as much variety as the system it governs. It explains why standardising task types makes agent control achievable. <em class="orig">W. Ross Ashby, 1956. <a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)">Source</a></em></p>
-<p class="gitem" id="en-g-context"><strong>context engineering</strong>: The discipline of deciding what enters the model's field of view on each run: which documents, rules, examples and prior results. It precedes the harness and keeps operating inside it. <em class="orig">Birgitta Bockeler's formulation for coding agents. <a href="https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html">Source</a></em></p>
-<p class="gitem" id="en-g-chart"><strong>control chart</strong>: A statistical process control graph that separates ordinary variation from a real change, so you act only when something has genuinely shifted. <em class="orig">Walter Shewhart, Bell Labs, 1920s. <a href="https://en.wikipedia.org/wiki/Statistical_process_control">Source</a></em></p>
-<p class="gitem" id="en-g-cyb"><strong>cybernetics</strong>: The science of control and communication in systems, biological or artificial. It studies how a system holds course toward a goal through anticipation and feedback. <em class="orig">Norbert Wiener, 1948. <a href="https://en.wikipedia.org/wiki/Cybernetics">Source</a></em></p>
-<p class="gitem" id="en-g-deming"><strong>Deming, W. Edwards</strong>: American statistician who took Shewhart's cycle to Japan in the 1950s and turned it into the foundation of modern quality management. <em class="orig">1900 to 1993. <a href="https://en.wikipedia.org/wiki/W._Edwards_Deming">Source</a></em></p>
-<p class="gitem" id="en-g-dmaic"><strong>DMAIC</strong>: Define, measure, analyse, improve, control. The structured cycle for running Six Sigma projects, and the closest methodological relative of MEDIR. <em class="orig">Motorola, 1980s; consolidated by General Electric in the 1990s.</em></p>
-<p class="gitem" id="en-g-gemba"><strong>gemba</strong>: The real place where work happens. Going to the gemba means observing the process directly instead of discussing the report about it. With agents, it means reading the execution trace, not just the output. <em class="orig">Japanese term adopted by lean manufacturing. <a href="https://en.wikipedia.org/wiki/Gemba">Source</a></em></p>
-<p class="gitem" id="en-g-gan"><strong>generative adversarial networks</strong>: An architecture in which one network generates and another evaluates, both improving through the contest. It inspired the separation between generator and evaluator agents in long-running harnesses. <em class="orig">Ian Goodfellow and colleagues, 2014.</em></p>
-<p class="gitem" id="en-g-harness"><strong>harness</strong>: Everything in an agent except the model: the tools it can use, the context it sees, the memory that survives between sessions, the permissions that bound it, the sensors that measure it and the record of what it did. The word denotes the equipment that channels an animal's strength in a useful direction. <em class="orig">Established as a discipline in February 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Source</a></em></p>
-<p class="gitem" id="en-g-jidoka"><strong>jidoka</strong>: Autonomation, or automation with a human touch. The machine detects the abnormality, stops itself and calls for help, so the defect does not travel down the line. <em class="orig">Toyota Production System. <a href="https://en.wikipedia.org/wiki/Autonomation">Source</a></em></p>
-<p class="gitem" id="en-g-kaizen"><strong>kaizen</strong>: Continuous improvement in small increments, by everyone and all the time, rather than in episodic projects. It is the Reinforce step of the MEDIR cycle. <em class="orig">Japanese term spread through the Toyota Production System. <a href="https://en.wikipedia.org/wiki/Kaizen">Source</a></em></p>
-<p class="gitem" id="en-g-kanban"><strong>kanban</strong>: A visual signalling system that authorises production or movement only when real demand exists, preventing accumulation. <em class="orig">Taiichi Ohno, Toyota Production System. <a href="https://en.wikipedia.org/wiki/Kanban">Source</a></em></p>
-<p class="gitem" id="en-g-model"><strong>language model</strong>: The reasoning engine. It predicts the most likely continuation of a text and, by extension, proposes the next action. It executes nothing on its own: the tools the harness exposes do that.</p>
-<p class="gitem" id="en-g-linter"><strong>linter</strong>: A program that analyses code automatically and flags rule violations before it moves on. With agents, the linter's error message acts as a sensor: when it teaches the fix, the agent repairs itself.</p>
-<p class="gitem" id="en-g-pdca"><strong>PDCA</strong>: Plan, do, check, act. The iterative cycle of continuous process improvement, also known as the Shewhart or Deming cycle. It is the direct ancestor of any feedback-based control method, MEDIR included. <em class="orig">Walter Shewhart, 1930s; spread by Deming from the 1950s. <a href="https://en.wikipedia.org/wiki/PDCA">Source</a></em></p>
-<p class="gitem" id="en-g-poka"><strong>poka-yoke</strong>: Mistake-proofing. Redesigning the process or the device so the error becomes impossible or is caught the instant it occurs, instead of asking for more attention from whoever executes. It is the literal definition of what harness engineering does with agents. <em class="orig">Shigeo Shingo, within the Toyota Production System. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Source</a></em></p>
-<p class="gitem" id="en-g-prompt"><strong>prompt</strong>: The written instruction given to the model on a run. Important, but only one component of the system, and the only one most people try to adjust when something fails.</p>
-<p class="gitem" id="en-g-pr"><strong>pull request</strong>: A proposed change to a system, submitted for review before being merged. It is the natural point for a human gate in agent workflows.</p>
-<p class="gitem" id="en-g-sandbox"><strong>sandbox</strong>: An isolated environment where execution happens without touching real systems. It is what allows autonomy to be delegated without an error having external consequences.</p>
-<p class="gitem" id="en-g-shewhart"><strong>Shewhart, Walter</strong>: Physicist and statistician at Bell Labs, creator of statistical process control and the control chart, and author of the cycle that became PDCA. <em class="orig">1891 to 1967. <a href="https://en.wikipedia.org/wiki/Walter_A._Shewhart">Source</a></em></p>
-<p class="gitem" id="en-g-tps"><strong>Toyota Production System</strong>: A production system built on two pillars, just-in-time and jidoka, and the origin of most of the quality vocabulary cited in this article. <em class="orig">Taiichi Ohno and Eiji Toyoda, from the 1950s. <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Source</a></em></p>
-<p class="gitem" id="en-g-vibe"><strong>vibe coding</strong>: A way of programming in which you accept whatever the AI generates without reviewing it, feeding errors back for it to fix. Karpathy, who coined the term in 2025, described it as suited to throwaway weekend projects. <em class="orig">Andrej Karpathy, 2025.</em></p>
-
-<h2 id="en-sources">13. Sources</h2>
-
-<ol class="sources">
-<li>Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 February 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
-<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 February 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
-<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 April 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
-<li>Anthropic. <em>Effective harnesses for long-running agents</em>, November 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
-<li>Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
-<li>Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 February 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
-<li>DeepSeek. <em>DeepSeek Harness, developer preview</em>, August 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
-<li>The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, August 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
-<li>Community. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
-<li>Addy Osmani. <em>Long-running agents</em>, April 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
-</ol>
-
 <div class="foot">
-<p>Part 1 of 3 · Harness series · The opening scene is composed from recurring patterns and does not describe a specific company.</p>
+<p>Part 1 of 4 · Harness series · The opening scene is composed from recurring patterns and does not describe a specific company.</p>
 <p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
 </div>
 </main>
 <main class="page" id="doc-es" hidden>
-<p class="eyebrow">Harness · Parte 1 de 3 · Por qué</p>
+<p class="eyebrow">Harness · Parte 1 de 4 · Por qué</p>
 
 <h1>El mejor modelo del mundo dentro de una empresa sin proceso</h1>
 
@@ -1125,8 +1047,6 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
     <li><a href="#es-riesgos">Qué puede salir mal</a></li>
     <li><a href="#es-checklist">Doce preguntas antes de confiar</a></li>
     <li><a href="#es-serie">Qué viene en las partes 2 y 3</a></li>
-    <li><a href="#es-glosario">Glosario</a></li>
-    <li><a href="#es-fuentes">Fuentes</a></li>
   </ol>
 </nav>
 
@@ -1150,9 +1070,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>Existe una ecuación que se volvió consenso entre quienes construyen estos sistemas en producción, y cabe en cuatro palabras: agente es igual a modelo más harness.</p>
 
-<p>El <a class="g" href="#es-g-modelo" data-tip="El motor de razonamiento. Predice la siguiente palabra o la siguiente accion, pero no ejecuta nada por si solo.">modelo</a> es el motor de razonamiento. Propone la siguiente acción. Es lo que la industria vende, lo que aparece en los titulares, lo que cambia de nombre cada seis semanas. El <a class="g" href="#es-g-harness" data-tip="Todo lo que existe en un agente excepto el modelo: herramientas, contexto, memoria, permisos, sensores y registro.">harness</a> es todo lo demás: lo que el sistema puede ver, lo que puede tocar, lo que sobrevive de una sesión a otra, lo que cuenta como evidencia de que el trabajo quedó bien, y en qué momento la ejecución debe detenerse y llamar a alguien.</p>
+<p>El <a class="g" href="harness-glossary.html#es-g-modelo" data-tip="El motor de razonamiento. Predice la siguiente palabra o la siguiente accion, pero no ejecuta nada por si solo.">modelo</a> es el motor de razonamiento. Propone la siguiente acción. Es lo que la industria vende, lo que aparece en los titulares, lo que cambia de nombre cada seis semanas. El <a class="g" href="harness-glossary.html#es-g-harness" data-tip="Todo lo que existe en un agente excepto el modelo: herramientas, contexto, memoria, permisos, sensores y registro.">harness</a> es todo lo demás: lo que el sistema puede ver, lo que puede tocar, lo que sobrevive de una sesión a otra, lo que cuenta como evidencia de que el trabajo quedó bien, y en qué momento la ejecución debe detenerse y llamar a alguien.</p>
 
-<p>La palabra viene del inglés y designa el conjunto de equipos que canaliza la fuerza de un animal en una dirección útil. Conviene mantenerla en el original, por la misma razón por la que nadie tradujo <a class="g" href="#es-g-kaizen" data-tip="Mejora continua en pequenos incrementos, por todos y todo el tiempo, en lugar de proyectos episodicos.">kaizen</a>, <a class="g" href="#es-g-kanban" data-tip="Sistema visual de senalizacion que autoriza produccion o movimiento solo cuando existe demanda real.">kanban</a>, <a class="g" href="#es-g-poka" data-tip="A prueba de error. Redisenar el proceso para que el error se vuelva imposible, en vez de pedir mas atencion.">poka-yoke</a> ni <a class="g" href="#es-g-jidoka" data-tip="Autonomacion. La maquina detecta la anormalidad y se detiene sola, para que el defecto no siga adelante.">jidoka</a>: una palabra importada señala un cuerpo de conocimiento importado, y no hay ganancia en inventar un sinónimo que nadie va a reconocer en la literatura.</p>
+<p>La palabra viene del inglés y designa el conjunto de equipos que canaliza la fuerza de un animal en una dirección útil. Conviene mantenerla en el original, por la misma razón por la que nadie tradujo <a class="g" href="harness-glossary.html#es-g-kaizen" data-tip="Mejora continua en pequenos incrementos, por todos y todo el tiempo, en lugar de proyectos episodicos.">kaizen</a>, <a class="g" href="harness-glossary.html#es-g-kanban" data-tip="Sistema visual de senalizacion que autoriza produccion o movimiento solo cuando existe demanda real.">kanban</a>, <a class="g" href="harness-glossary.html#es-g-poka" data-tip="A prueba de error. Redisenar el proceso para que el error se vuelva imposible, en vez de pedir mas atencion.">poka-yoke</a> ni <a class="g" href="harness-glossary.html#es-g-jidoka" data-tip="Autonomacion. La maquina detecta la anormalidad y se detiene sola, para que el defecto no siga adelante.">jidoka</a>: una palabra importada señala un cuerpo de conocimiento importado, y no hay ganancia en inventar un sinónimo que nadie va a reconocer en la literatura.</p>
 
 <figure>
 <svg viewBox="0 0 700 300" role="img" aria-label="Diagrama del harness alrededor del modelo">
@@ -1216,13 +1136,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>La expresión harness engineering recibió nombre en febrero de 2026, cuando Mitchell Hashimoto, cofundador de HashiCorp y creador de Terraform, publicó un relato personal de adopción de IA. Su definición cabe en una frase: cada vez que encuentras un error del agente, inviertes el tiempo necesario para diseñar una solución tal que el agente nunca vuelva a cometerlo. Seis días después, OpenAI publicó un informe de campo que le dio escala al término, y en pocas semanas Thoughtworks, LangChain y Anthropic usaban el mismo vocabulario.</p>
 
-<p>Conviene registrarlo, porque circula mal: no fue Andrej Karpathy. Él acuñó <a class="g" href="#es-g-vibe" data-tip="Programar aceptando lo que la IA genera sin revisar. Karpathy lo describio como apto para proyectos desechables.">&quot;vibe coding&quot;</a> y popularizó <a class="g" href="#es-g-context" data-tip="Disciplina de decidir que entra en el campo de vision del modelo en cada ejecucion: documentos, reglas, resultados.">&quot;context engineering&quot;</a>, pero el término harness ya circulaba antes, en contextos técnicos, y quien lo convirtió en disciplina fue Hashimoto.</p>
+<p>Conviene registrarlo, porque circula mal: no fue Andrej Karpathy. Él acuñó <a class="g" href="harness-glossary.html#es-g-vibe" data-tip="Programar aceptando lo que la IA genera sin revisar. Karpathy lo describio como apto para proyectos desechables.">&quot;vibe coding&quot;</a> y popularizó <a class="g" href="harness-glossary.html#es-g-context" data-tip="Disciplina de decidir que entra en el campo de vision del modelo en cada ejecucion: documentos, reglas, resultados.">&quot;context engineering&quot;</a>, pero el término harness ya circulaba antes, en contextos técnicos, y quien lo convirtió en disciplina fue Hashimoto.</p>
 
 <p>Ahora lee su definición otra vez y responde: ¿te recuerda a algo?</p>
 
 <p>Es poka-yoke. No es análogo a poka-yoke, es poka-yoke, el principio japonés de rediseñar el proceso para que el error se vuelva estructuralmente imposible, en lugar de pedir más atención a quien ejecuta. La única diferencia es que el ejecutor no es humano ni determinista.</p>
 
-<p>Y la coincidencia no termina ahí. Birgitta Böckeler, de Thoughtworks, describe el harness explícitamente como un gobernador <a class="g" href="#es-g-cibernetica" data-tip="Ciencia del control y la comunicacion en sistemas. Estudia como un sistema se regula por anticipacion y realimentacion.">cibernético</a>, combinando control anticipatorio y control por realimentación para regular el sistema hacia el estado deseado, e invoca la <a class="g" href="#es-g-ashby" data-tip="Ley de la variedad requerida: un regulador solo controla un sistema si tiene al menos tanta variedad como el.">Ley de Ashby</a>: un regulador necesita tener al menos tanta variedad como el sistema que gobierna. Un ciclo de control con anticipación y realimentación es exactamente la estructura que <a class="g" href="#es-g-shewhart" data-tip="Fisico de los Bell Labs, creador del control estadistico de proceso y del ciclo que origino el PDCA.">Walter Shewhart</a> formalizó en los años treinta y que <a class="g" href="#es-g-deming" data-tip="Estadistico que llevo el ciclo de Shewhart a Japon en los anos cincuenta y lo volvio base de la gestion de calidad.">Deming</a> llevó al mundo como <a class="g" href="#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>.</p>
+<p>Y la coincidencia no termina ahí. Birgitta Böckeler, de Thoughtworks, describe el harness explícitamente como un gobernador <a class="g" href="harness-glossary.html#es-g-cibernetica" data-tip="Ciencia del control y la comunicacion en sistemas. Estudia como un sistema se regula por anticipacion y realimentacion.">cibernético</a>, combinando control anticipatorio y control por realimentación para regular el sistema hacia el estado deseado, e invoca la <a class="g" href="harness-glossary.html#es-g-ashby" data-tip="Ley de la variedad requerida: un regulador solo controla un sistema si tiene al menos tanta variedad como el.">Ley de Ashby</a>: un regulador necesita tener al menos tanta variedad como el sistema que gobierna. Un ciclo de control con anticipación y realimentación es exactamente la estructura que <a class="g" href="harness-glossary.html#es-g-shewhart" data-tip="Fisico de los Bell Labs, creador del control estadistico de proceso y del ciclo que origino el PDCA.">Walter Shewhart</a> formalizó en los años treinta y que <a class="g" href="harness-glossary.html#es-g-deming" data-tip="Estadistico que llevo el ciclo de Shewhart a Japon en los anos cincuenta y lo volvio base de la gestion de calidad.">Deming</a> llevó al mundo como <a class="g" href="harness-glossary.html#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>.</p>
 
 <p>La ingeniería de harness no es un primo lejano de la gestión de la calidad. Es el mismo tronco, aplicado a un trabajador que falla de una manera nueva.</p>
 
@@ -1246,9 +1166,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h3>La escala empresarial</h3>
 
-<p>OpenAI publicó el relato más detallado hasta hoy. Un equipo que empezó con tres personas y terminó con siete construyó un producto interno en cinco meses, con cero líneas de código escritas a mano, cerca de un millón de líneas generadas y aproximadamente mil quinientas <a class="g" href="#es-g-pr" data-tip="Propuesta de cambio en un sistema, sometida a revision y aprobacion antes de ser incorporada.">pull requests</a> aprobadas.</p>
+<p>OpenAI publicó el relato más detallado hasta hoy. Un equipo que empezó con tres personas y terminó con siete construyó un producto interno en cinco meses, con cero líneas de código escritas a mano, cerca de un millón de líneas generadas y aproximadamente mil quinientas <a class="g" href="harness-glossary.html#es-g-pr" data-tip="Propuesta de cambio en un sistema, sometida a revision y aprobacion antes de ser incorporada.">pull requests</a> aprobadas.</p>
 
-<p>Lo que importa no es el número, es el método. La arquitectura se organizó en capas con dirección de dependencia estricta, y esas reglas no eran documentación, eran bloqueo: <a class="g" href="#es-g-linter" data-tip="Programa que analiza codigo automaticamente y senala violaciones de regla antes de que llegue a produccion.">linters</a> personalizados, pruebas estructurales y barreras automáticas impedían cualquier entrega que violara la estructura. El detalle más elegante es este: cuando la verificación fallaba, el mensaje de error estaba escrito para enseñarle la corrección al agente, no solo para registrar el fallo. El sistema no se limita a bloquear el error, entrena a quien lo cometió, en el momento.</p>
+<p>Lo que importa no es el número, es el método. La arquitectura se organizó en capas con dirección de dependencia estricta, y esas reglas no eran documentación, eran bloqueo: <a class="g" href="harness-glossary.html#es-g-linter" data-tip="Programa que analiza codigo automaticamente y senala violaciones de regla antes de que llegue a produccion.">linters</a> personalizados, pruebas estructurales y barreras automáticas impedían cualquier entrega que violara la estructura. El detalle más elegante es este: cuando la verificación fallaba, el mensaje de error estaba escrito para enseñarle la corrección al agente, no solo para registrar el fallo. El sistema no se limita a bloquear el error, entrena a quien lo cometió, en el momento.</p>
 
 <p>Dos principios más del mismo relato merecen entrar en tu vocabulario. El primero es divulgación progresiva: el documento de orientación del agente debe ser un índice de unas cien líneas, que señale dónde buscar, y no una enciclopedia que consuma todo el espacio de lectura. El segundo es recolección de basura: tareas de fondo corren con cadencia regular buscando desvíos y proponiendo correcciones pequeñas, porque la deuda acumulada es un préstamo de intereses altos, siempre mejor pagarla en cuotas que dejarla componer hasta convertirse en jornada de limpieza.</p>
 
@@ -1262,13 +1182,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h3>El rastro como arquitectura</h3>
 
-<p>En agosto de 2026, DeepSeek liberó el código de su propio harness bajo licencia permisiva, y el repositorio superó las treinta y tres mil estrellas en pocas horas. La decisión de diseño que le interesa a quien responde por gobernanza es esta: todo lo que el modelo ve queda registrado en un <a class="g" href="#es-g-append" data-tip="Registro donde nada puede alterarse ni borrarse, solo anadirse. Base tecnica de cualquier rastro de auditoria.">log que solo acepta añadidos</a>, incluidas instrucciones, razonamiento, llamadas a herramientas, resultados y cada inyección de contexto. Reanudar, bifurcar, buscar y reproducir la ejecución operan todos sobre ese mismo registro.</p>
+<p>En agosto de 2026, DeepSeek liberó el código de su propio harness bajo licencia permisiva, y el repositorio superó las treinta y tres mil estrellas en pocas horas. La decisión de diseño que le interesa a quien responde por gobernanza es esta: todo lo que el modelo ve queda registrado en un <a class="g" href="harness-glossary.html#es-g-append" data-tip="Registro donde nada puede alterarse ni borrarse, solo anadirse. Base tecnica de cualquier rastro de auditoria.">log que solo acepta añadidos</a>, incluidas instrucciones, razonamiento, llamadas a herramientas, resultados y cada inyección de contexto. Reanudar, bifurcar, buscar y reproducir la ejecución operan todos sobre ese mismo registro.</p>
 
 <p>Traducido al lenguaje de consejo: auditoría, cumplimiento y reversión dejaron de ser un informe y se volvieron arquitectura. Quien construya sin eso descubrirá tarde que no puede explicar lo que pasó.</p>
 
 <h2 id="es-medir">6. El ciclo MEDIR</h2>
 
-<p>Si la ingeniería de harness es de la misma familia que el <a class="g" href="#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>, necesita lo que toda metodología de esa familia tiene: un orden, un nombre para cada paso y un criterio para saber cuándo avanzar. Eso es lo que organiza el ciclo de abajo.</p>
+<p>Si la ingeniería de harness es de la misma familia que el <a class="g" href="harness-glossary.html#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>, necesita lo que toda metodología de esa familia tiene: un orden, un nombre para cada paso y un criterio para saber cuándo avanzar. Eso es lo que organiza el ciclo de abajo.</p>
 
 <figure>
 <svg viewBox="0 0 700 400" role="img" aria-label="Ciclo MEDIR: mapear, equipar, delegar, inspeccionar, reforzar">
@@ -1320,13 +1240,13 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tr><td>Procedimiento operativo estándar</td><td>La guía del agente: reglas, convenciones y mapa de dónde buscar</td></tr>
 <tr><td>Poka-yoke</td><td>Verificación determinista que impide que el error exista</td></tr>
 <tr><td>Jidoka, la máquina que se detiene sola</td><td>El agente interrumpe la ejecución cuando el sensor se dispara</td></tr>
-<tr><td><a class="g" href="#es-g-andon" data-tip="Senal visual o sonora que interrumpe la linea y llama ayuda inmediata cuando aparece un problema.">Andon</a></td><td>Escalamiento al humano, con el contexto adjunto</td></tr>
-<tr><td><a class="g" href="#es-g-gemba" data-tip="El lugar real donde ocurre el trabajo. Ir al gemba es observar el proceso, no discutir el informe sobre el.">Gemba</a></td><td>Leer el rastro de la ejecución, y no solo el resultado final</td></tr>
-<tr><td><a class="g" href="#es-g-cep" data-tip="Grafico del control estadistico de proceso que muestra si la variacion es normal o si algo cambio.">Carta de control</a></td><td>Sensores continuos de desvío, fuera del ciclo de la tarea</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-andon" data-tip="Senal visual o sonora que interrumpe la linea y llama ayuda inmediata cuando aparece un problema.">Andon</a></td><td>Escalamiento al humano, con el contexto adjunto</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-gemba" data-tip="El lugar real donde ocurre el trabajo. Ir al gemba es observar el proceso, no discutir el informe sobre el.">Gemba</a></td><td>Leer el rastro de la ejecución, y no solo el resultado final</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-cep" data-tip="Grafico del control estadistico de proceso que muestra si la variacion es normal o si algo cambio.">Carta de control</a></td><td>Sensores continuos de desvío, fuera del ciclo de la tarea</td></tr>
 <tr><td>Kaizen</td><td>El paso Reforzar: el fallo se vuelve cambio permanente</td></tr>
 <tr><td>Plan de control y niveles de aprobación</td><td>Política de permisos, impuesta fuera del modelo</td></tr>
 <tr><td>Rastro de auditoría</td><td>Registro de ejecución que solo acepta añadidos</td></tr>
-<tr><td><a class="g" href="#es-g-dmaic" data-tip="Definir, medir, analizar, mejorar, controlar. Ciclo estructurado de proyectos Seis Sigma.">DMAIC</a></td><td>MEDIR</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-dmaic" data-tip="Definir, medir, analizar, mejorar, controlar. Ciclo estructurado de proyectos Seis Sigma.">DMAIC</a></td><td>MEDIR</td></tr>
 </tbody>
 </table>
 
@@ -1418,58 +1338,12 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>La <strong>parte 3</strong> trata de lo que queda cuando el sistema ya funciona: permiso fuera del modelo, instrucción maliciosa que llega dentro de un dato, registro auditable, reversión, obligaciones legales y la pregunta que nadie quiere hacer en voz alta en la sala, que es quién responde por lo que hizo el agente.</p>
 
-<blockquote><p>El modelo que usas hoy será sustituido en pocos meses, y no tendrás voto en esa decisión. Las herramientas, las pruebas, las reglas escritas, los límites de aprobación y el registro de lo que pasó siguen siendo tuyos. Por eso la ventaja duradera está migrando del <a class="g" href="#es-g-prompt" data-tip="La instruccion escrita que se le da al modelo. Un componente del sistema, no el sistema.">prompt</a> al sistema que lo rodea.</p></blockquote>
+<blockquote><p>El modelo que usas hoy será sustituido en pocos meses, y no tendrás voto en esa decisión. Las herramientas, las pruebas, las reglas escritas, los límites de aprobación y el registro de lo que pasó siguen siendo tuyos. Por eso la ventaja duradera está migrando del <a class="g" href="harness-glossary.html#es-g-prompt" data-tip="La instruccion escrita que se le da al modelo. Un componente del sistema, no el sistema.">prompt</a> al sistema que lo rodea.</p></blockquote>
 
 <p>Cuanto mejor sea tu harness, mejor para ti y mejor para tu agente. Y, a diferencia del modelo, mejora exactamente en la medida en que lo operas.</p>
 
-<h2 id="es-glosario">12. Glosario</h2>
-
-<p>Los términos de abajo aparecen subrayados a lo largo del texto. Pasa el cursor sobre ellos para ver la definición corta, o haz clic para llegar aquí. Las referencias apuntan al origen de cada concepto, no a resúmenes de segunda mano.</p>
-
-<p class="gitem" id="es-g-agente"><strong>agente</strong>: Sistema que combina un modelo de lenguaje con herramientas, memoria y reglas para ejecutar tareas de varias etapas, decidiendo en cada paso cuál es la siguiente acción. La ecuación corriente es agente igual a modelo más harness.</p>
-<p class="gitem" id="es-g-agentsmd"><strong>AGENTS.md</strong>: Archivo en la raíz de un proyecto que orienta al agente sobre dónde está cada cosa, cuáles son las convenciones y qué no hacer. La buena práctica es tratarlo como índice corto, no como manual. <em class="orig">Especificación comunitaria. <a href="https://agents.md/">Fuente</a></em></p>
-<p class="gitem" id="es-g-andon"><strong>andon</strong>: Señal visual o sonora que muestra el estado del proceso e interrumpe la línea llamando ayuda inmediata cuando aparece un problema. En agentes equivale al escalamiento al humano con el contexto adjunto. <em class="orig">Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Andon_(manufacturing)">Fuente</a></em></p>
-<p class="gitem" id="es-g-cep"><strong>carta de control</strong>: Gráfico del control estadístico de proceso que separa la variación normal de un cambio real, permitiendo actuar solo cuando algo de hecho salió del patrón. <em class="orig">Walter Shewhart, Bell Labs, años veinte. <a href="https://en.wikipedia.org/wiki/Statistical_process_control">Fuente</a></em></p>
-<p class="gitem" id="es-g-cibernetica"><strong>cibernética</strong>: Ciencia del control y la comunicación en sistemas, biológicos o artificiales. Estudia cómo un sistema se mantiene rumbo a un objetivo mediante anticipación y realimentación. <em class="orig">Norbert Wiener, 1948. <a href="https://en.wikipedia.org/wiki/Cybernetics">Fuente</a></em></p>
-<p class="gitem" id="es-g-context"><strong>context engineering</strong>: Disciplina de decidir qué entra en el campo de visión del modelo en cada ejecución: qué documentos, reglas, ejemplos y resultados anteriores. Antecede al harness y sigue operando dentro de él. <em class="orig">Formulación de Birgitta Bockeler para agentes de código. <a href="https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html">Fuente</a></em></p>
-<p class="gitem" id="es-g-deming"><strong>Deming, W. Edwards</strong>: Estadístico estadounidense que llevó el ciclo de Shewhart a Japón en los años cincuenta y lo transformó en fundamento de la gestión de la calidad moderna. <em class="orig">1900 a 1993. <a href="https://en.wikipedia.org/wiki/W._Edwards_Deming">Fuente</a></em></p>
-<p class="gitem" id="es-g-dmaic"><strong>DMAIC</strong>: Definir, medir, analizar, mejorar, controlar. Ciclo estructurado de conducción de proyectos Seis Sigma, y el pariente metodológico más cercano de MEDIR. <em class="orig">Motorola, años ochenta; consolidado por General Electric en los noventa.</em></p>
-<p class="gitem" id="es-g-gemba"><strong>gemba</strong>: El lugar real donde ocurre el trabajo. Ir al gemba significa observar el proceso directamente en lugar de discutir el informe sobre él. En agentes equivale a leer el rastro de la ejecución, y no solo el resultado. <em class="orig">Término japonés adoptado por la manufactura esbelta. <a href="https://en.wikipedia.org/wiki/Gemba">Fuente</a></em></p>
-<p class="gitem" id="es-g-harness"><strong>harness</strong>: Todo lo que existe en un agente excepto el modelo: las herramientas que puede usar, el contexto que ve, la memoria que sobrevive entre sesiones, los permisos que lo limitan, los sensores que lo miden y el registro de lo que hizo. La palabra designa el conjunto de equipos que canaliza la fuerza de un animal en una dirección útil. <em class="orig">Consolidado como disciplina en febrero de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">Fuente</a></em></p>
-<p class="gitem" id="es-g-jidoka"><strong>jidoka</strong>: Autonomación, o automatización con toque humano. La máquina detecta la anormalidad, se detiene sola y pide ayuda, para que el defecto no siga adelante en la línea. <em class="orig">Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Autonomation">Fuente</a></em></p>
-<p class="gitem" id="es-g-kaizen"><strong>kaizen</strong>: Mejora continua hecha en pequeños incrementos, por todos y todo el tiempo, en lugar de grandes proyectos episódicos. Es el paso Reforzar del ciclo MEDIR. <em class="orig">Término japonés difundido por el Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Kaizen">Fuente</a></em></p>
-<p class="gitem" id="es-g-kanban"><strong>kanban</strong>: Sistema visual de señalización que autoriza producción o movimiento solo cuando existe demanda real, evitando acumulación. <em class="orig">Taiichi Ohno, Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Kanban">Fuente</a></em></p>
-<p class="gitem" id="es-g-ashby"><strong>Ley de Ashby</strong>: Ley de la variedad requerida: un regulador solo consigue controlar un sistema si dispone de al menos tanta variedad como el sistema que gobierna. Explica por qué estandarizar tipos de tarea vuelve viable el control de agentes. <em class="orig">W. Ross Ashby, 1956. <a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)">Fuente</a></em></p>
-<p class="gitem" id="es-g-linter"><strong>linter</strong>: Programa que analiza código automáticamente y señala violaciones de regla antes de que avance. En agentes, el mensaje de error del linter funciona como sensor: cuando enseña la corrección, el agente se arregla solo.</p>
-<p class="gitem" id="es-g-append"><strong>log de solo anexión</strong>: Registro en el que nada puede alterarse ni borrarse, solo añadirse al final. Es la base técnica de cualquier rastro de auditoría confiable, y lo que permite reconstruir, reproducir y revertir una ejecución.</p>
-<p class="gitem" id="es-g-modelo"><strong>modelo de lenguaje</strong>: El motor de razonamiento. Predice la continuación más probable de un texto y, por extensión, propone la siguiente acción. No ejecuta nada por su cuenta: quien ejecuta son las herramientas que el harness expone.</p>
-<p class="gitem" id="es-g-pdca"><strong>PDCA</strong>: Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua de procesos, también llamado ciclo de Shewhart o ciclo de Deming. Es el ancestro directo de cualquier método de control con realimentación, MEDIR incluido. <em class="orig">Walter Shewhart, años treinta; difundido por Deming desde los cincuenta. <a href="https://en.wikipedia.org/wiki/PDCA">Fuente</a></em></p>
-<p class="gitem" id="es-g-poka"><strong>poka-yoke</strong>: A prueba de error. Rediseñar el proceso o el dispositivo para que el error se vuelva imposible o sea detectado en el instante en que ocurre, en lugar de pedir más atención a quien ejecuta. Es la definición literal de lo que la ingeniería de harness hace con agentes. <em class="orig">Shigeo Shingo, dentro del Sistema de Producción Toyota. <a href="https://en.wikipedia.org/wiki/Poka-yoke">Fuente</a></em></p>
-<p class="gitem" id="es-g-prompt"><strong>prompt</strong>: La instrucción escrita que se le da al modelo en una ejecución. Importante, pero apenas un componente del sistema, y el único que la mayoría intenta ajustar cuando algo falla.</p>
-<p class="gitem" id="es-g-pr"><strong>pull request</strong>: Propuesta de cambio en un sistema, sometida a revisión antes de ser incorporada. Es el punto natural de portero humano en flujos de trabajo con agentes.</p>
-<p class="gitem" id="es-g-gan"><strong>redes generativas antagónicas</strong>: Arquitectura en la que una red genera contenido y otra evalúa, y ambas mejoran en la disputa. Inspiró la separación entre agente generador y agente evaluador en harnesses de larga duración. <em class="orig">Ian Goodfellow y colegas, 2014.</em></p>
-<p class="gitem" id="es-g-sandbox"><strong>sandbox</strong>: Entorno aislado donde ocurre la ejecución sin tocar los sistemas reales. Es lo que permite delegar autonomía sin que un error tenga consecuencia externa.</p>
-<p class="gitem" id="es-g-shewhart"><strong>Shewhart, Walter</strong>: Físico y estadístico de los Bell Labs, creador del control estadístico de proceso y de la carta de control, y autor del ciclo que originó el PDCA. <em class="orig">1891 a 1967. <a href="https://en.wikipedia.org/wiki/Walter_A._Shewhart">Fuente</a></em></p>
-<p class="gitem" id="es-g-tps"><strong>Sistema de Producción Toyota</strong>: Sistema de producción construido sobre dos pilares, el just-in-time y el jidoka, y origen de la mayor parte del vocabulario de calidad citado en este artículo. <em class="orig">Taiichi Ohno y Eiji Toyoda, desde los años cincuenta. <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Fuente</a></em></p>
-<p class="gitem" id="es-g-vibe"><strong>vibe coding</strong>: Modo de programar en que se acepta lo que la IA genera sin revisar, devolviéndole los errores para que los corrija. Karpathy, que acuñó el término en 2025, lo describió como adecuado a proyectos desechables de fin de semana. <em class="orig">Andrej Karpathy, 2025.</em></p>
-
-<h2 id="es-fuentes">13. Fuentes</h2>
-
-<ol class="sources">
-<li>Mitchell Hashimoto. <em>My AI Adoption Journey</em>, 5 de febrero de 2026. <a href="https://mitchellh.com/writing/my-ai-adoption-journey">mitchellh.com</a></li>
-<li>Ryan Lopopolo, OpenAI. <em>Harness engineering: leveraging Codex in an agent-first world</em>, 11 de febrero de 2026. <a href="https://openai.com/index/harness-engineering/">openai.com</a></li>
-<li>Birgitta Böckeler, Thoughtworks. <em>Harness engineering for coding agent users</em>, 2 de abril de 2026. <a href="https://martinfowler.com/articles/harness-engineering.html">martinfowler.com</a></li>
-<li>Anthropic. <em>Effective harnesses for long-running agents</em>, noviembre de 2025. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">anthropic.com</a></li>
-<li>Anthropic. <em>Harness design for long-running application development</em>. <a href="https://anthropic.com/engineering/harness-design-long-running-apps">anthropic.com</a></li>
-<li>Can Bölük. <em>I improved 15 LLMs at coding in one afternoon. Only the harness changed</em>, 12 de febrero de 2026. <a href="https://blog.can.ac/2026/02/12/the-harness-problem/">blog.can.ac</a></li>
-<li>DeepSeek. <em>DeepSeek Harness, developer preview</em>, agosto de 2026. <a href="https://github.com/deepseek-ai/deepseek-harness">github.com/deepseek-ai</a></li>
-<li>The New Stack. <em>DeepSeek open sources an agent harness where everything is a plugin</em>, agosto de 2026. <a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">thenewstack.io</a></li>
-<li>Comunidad. <em>awesome-harness-engineering</em>. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost</a></li>
-<li>Addy Osmani. <em>Long-running agents</em>, abril de 2026. <a href="https://addyosmani.com/blog/long-running-agents/">addyosmani.com</a></li>
-</ol>
-
 <div class="foot">
-<p>Parte 1 de 3 · Serie Harness · La escena de apertura está compuesta a partir de patrones recurrentes y no describe una empresa específica.</p>
+<p>Parte 1 de 4 · Serie Harness · La escena de apertura está compuesta a partir de patrones recurrentes y no describe una empresa específica.</p>
 <p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
 </div>
 
@@ -1478,10 +1352,20 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Guía compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Glossário',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      el.textContent=info.label[l];
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);

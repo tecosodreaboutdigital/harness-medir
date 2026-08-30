@@ -1,0 +1,482 @@
+<p class="eyebrow">Harness · Parte 3 de 4 · Quién</p>
+
+<h1>La separación de poderes: qué puede hacer, y quién responde por ello</h1>
+
+<p class="deck">En la parte 2, la directora de operaciones le dio a su agente una guía de la que no podía escaparse hablando, y un sensor que atrapaba sus propios errores. Todavía no había respondido la única pregunta que un abogado, un regulador o un tribunal realmente hacen: cuando actúa en tu nombre, quién responde por lo que hizo.</p>
+
+<p class="byline">Fernando Teco Sodré · Agosto de 2026 · Lectura de 20 minutos</p>
+
+<nav class="toc">
+  <p>En este artículo</p>
+  <ol>
+    <li><a href="#opening">Una presentación notable</a></li>
+    <li><a href="#return">La primera acción irreversible</a></li>
+    <li><a href="#separation">La separación de poderes, y la regla de dos</a></li>
+    <li><a href="#identity">Identidad y un dueño nombrado</a></li>
+    <li><a href="#injection">Dónde entra la orden dentro del dato</a></li>
+    <li><a href="#record">Qué debe quedar registrado, y qué significa reversión</a></li>
+    <li><a href="#supply-chain">Un skill de terceros es código de terceros</a></li>
+    <li><a href="#law">Dos columnas de obligación legal</a></li>
+    <li><a href="#accountability">Quién responde, y dónde estás</a></li>
+  </ol>
+</nav>
+
+<h2 id="opening">1. Una presentación notable</h2>
+
+<p>En febrero de 2024, un hombre llamado Jake Moffatt abrió el sitio web de Air Canada para preguntar por una tarifa de duelo, el boleto con descuento que las aerolíneas venden a quien viaja porque un familiar murió. El chatbot del sitio le dijo que podía reservar la tarifa normal ahora y solicitar el descuento de duelo después, retroactivamente. Hizo exactamente eso, guardó una captura de pantalla de la conversación como haría cualquier persona cuidadosa, y solicitó el reembolso una vez terminado el funeral.</p>
+
+<p>Air Canada se negó. Su política real exigía que el descuento se solicitara antes del viaje, no después. El chatbot simplemente había inventado una regla más generosa.</p>
+
+<p>Moffatt llevó a la aerolínea ante el Tribunal de Resolución Civil de Columbia Británica, y la defensa de Air Canada es la parte de esta historia que pertenece a una serie sobre agentes. La aerolínea argumentó que el chatbot era una entidad legal separada, responsable de sus propias palabras. La respuesta del tribunal, en acta, fue que Air Canada nunca explicó por qué alguien debería creer eso, y calificó el argumento de presentación notable. El tribunal encontró que la aerolínea tenía un deber de cuidado derivado de la relación comercial, encontró declaración negligente, y ordenó el pago. El monto era casi trivial, unos seiscientos cincuenta dólares canadienses más intereses y costas, alcanzado tras un año y medio de disputa. El precedente no tiene nada de trivial.</p>
+
+<blockquote><p>Si habló en tu nombre, eres dueño de lo que dijo.</p></blockquote>
+
+<p>Vuelve a leer ese caso con esta serie en mente. Dos partes construyeron un personaje que trata a su agente exactamente como a un trabajador recién contratado: equiparlo bien, delegar con un tope, inspeccionar lo que produce. Air Canada es la empresa que intentó el argumento opuesto en un tribunal real, con un abogado real, y perdió. Esta parte existe porque la mayoría de las empresas que despliegan agentes hoy están a un incidente de distancia de hacer el argumento de Air Canada ellas mismas, casi siempre sin darse cuenta de que lo están haciendo.</p>
+
+<p>El caso es canadiense, no brasileño, y esa distinción importa lo suficiente como para decirla dos veces. Ningún tribunal brasileño ha fallado todavía sobre un agente con efecto externo. Hay prioridad de fiscalización anunciada y hay atención regulatoria declarada, ambas cubiertas más adelante en esta pieza, pero no hay decisión que citar. Trata Moffatt v Air Canada por lo que es: un precedente extranjero que muestra la forma del argumento que un tribunal brasileño eventualmente va a escuchar, no prueba de lo que un tribunal brasileño va a decidir.</p>
+
+<h2 id="return">2. La primera acción irreversible</h2>
+
+<p>La directora que abrió la <a href="harness-p1.html#es-apertura">parte 1</a> y cerró la <a href="harness-p2.html#es-onde-voce-esta">parte 2</a> en la banda <a href="harness-p1.html#es-niveles">N2</a> tenía, para entonces, una guía que el sistema no podía esquivar razonando, estado durable que sobrevivía entre sesiones, un sensor que devolvía el vacío exacto en lugar de un veredicto seco, y un tope de intentos. La factura del transportista con credenciales revocadas ya no pasaba. Algo ahora verificaba la lista antes de la entrega.</p>
+
+<p>Lo que todavía le faltaba es exactamente lo que la parte 2 nombró al terminar: nada de lo construido hasta ahí detenía una acción irreversible, nada registraba quién había autorizado qué, y nada protegía contra una instrucción maliciosa que llegara dentro del propio dato que el sistema debía leer. El vacío quedó ahí, sin dueño, tres meses más, porque todavía nada había salido mal.</p>
+
+<p>Entonces el alcance creció, como siempre crece el alcance cuando algo funciona. Los transportistas empezaron a disputar facturas rechazadas respondiendo directamente al aviso automatizado, y alguien decidió que era más rápido dejar que el sistema leyera la disputa y redactara una respuesta, en vez de enrutar cada desacuerdo a una persona. Fue una extensión pequeña. También significó que el sistema ahora podía decir algo, en nombre de la empresa, a alguien fuera de la empresa.</p>
+
+<p>Un transportista escribió disputando un rechazo de cuatro meses antes, citando una cláusula en una tabla de tarifas antigua y preguntando, con cortesía, si la empresa honraría la tarifa original retroactivamente dado que el retraso había sido culpa de la propia empresa. El sistema leyó la tabla de tarifas, leyó la disputa, y encontró defendible la lectura del transportista sobre la cláusula. Redactó una respuesta aceptando el ajuste retroactivo y la dejó en cola para enviar.</p>
+
+<p>Nada de lo construido a lo largo de la parte 2 estaba diseñado para notar que esta era una clase de acción distinta a conciliar un número. La guía cubría cómo conciliar facturas, no cómo comprometer a la empresa con una obligación financiera en correspondencia con un proveedor. El sensor verificaba cifras contra una fuente, y la cifra aquí era internamente consistente con la lectura (equivocada) que el sistema acababa de construir. Nada le había preguntado nunca a la capa de herramientas si estaba, en este caso, autorizada a hablar por la empresa.</p>
+
+<p>Esa respuesta, si hubiera salido, es el chatbot de Air Canada con apuestas menores y un logo distinto. Exactamente la misma forma: un sistema respondió una pregunta que nunca estuvo autorizado a responder, en nombre de la propia empresa, y la respuesta habría sido vinculante en el instante en que llegara a la bandeja de entrada del transportista.</p>
+
+<p>Esta parte trata sobre la pieza que faltaba en ese momento exacto: algo fuera del modelo con el poder de decir que no, y un registro de quién dijo qué, antes de que el mensaje salga del edificio, no después de que un tribunal lo pida.</p>
+
+<h2 id="separation">3. La separación de poderes, y la regla de dos</h2>
+
+<p>La afirmación central de esta parte no es una lista de riesgos. Es una arquitectura, y cabe en una sola línea.</p>
+
+<pre><code>EL MODELO PROPONE  →  LA POLÍTICA AUTORIZA  →  LA HERRAMIENTA EJECUTA  →  EL REGISTRO ATESTIGUA</code></pre>
+
+<p>Cuatro funciones, y la regla que importa es que no pueden vivir en el mismo lugar. El modo de falla tiene nombre: <a class="g" href="harness-glossary.html#es-g-concentration" data-tip="Cuando un mismo sistema propone el plan, autoriza el riesgo y ejecuta el efecto colateral, sin nada independiente verificando ninguna de las tres cosas.">concentración</a>. Es lo que pasa cuando el mismo sistema probabilístico inventa el plan, aprueba el riesgo y lleva a cabo la consecuencia, sin nada fuera de él que pueda estar en desacuerdo.</p>
+
+<figure>
+<svg viewBox="0 0 700 320" role="img" aria-label="La separación de poderes: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="p3d1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+<text class="svg-ttl" x="350" y="24" text-anchor="middle">LA SEPARACIÓN DE PODERES</text>
+<rect x="15" y="138" width="95" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="62" y="157" text-anchor="middle">MODELO</text>
+<text class="svg-sub" x="62" y="171" text-anchor="middle">propone</text>
+<line x1="110" y1="160" x2="143" y2="160" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<polygon points="145,160 215,106 285,160 215,214" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="215" y="157" text-anchor="middle">POLÍTICA</text>
+<text class="svg-sub" x="215" y="171" text-anchor="middle">autoriza</text>
+<line x1="285" y1="160" x2="358" y2="66" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-sub" x="332" y="100" text-anchor="middle">permite</text>
+<line x1="285" y1="160" x2="358" y2="160" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-sub" x="332" y="150" text-anchor="middle">exige aprobación</text>
+<line x1="285" y1="160" x2="358" y2="254" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-sub" x="332" y="220" text-anchor="middle">niega</text>
+<rect x="360" y="45" width="110" height="42" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="415" y="63" text-anchor="middle">HERRAMIENTA</text>
+<text class="svg-sub" x="415" y="77" text-anchor="middle">ejecuta</text>
+<rect x="360" y="139" width="110" height="42" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="415" y="157" text-anchor="middle">HUMANO</text>
+<text class="svg-sub" x="415" y="171" text-anchor="middle">decide</text>
+<rect x="360" y="233" width="110" height="42" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="415" y="251" text-anchor="middle">BLOQUEO</text>
+<text class="svg-sub" x="415" y="265" text-anchor="middle">con motivo</text>
+<line x1="415" y1="139" x2="415" y2="89" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-sub" x="455" y="117" text-anchor="middle">aprueba</text>
+<line x1="415" y1="181" x2="415" y2="231" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-sub" x="452" y="209" text-anchor="middle">rechaza</text>
+<path d="M560,144 a55,11 0 0 1 110,0 v42 a55,11 0 0 1 -110,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<path d="M560,144 a55,11 0 0 0 110,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="615" y="172" text-anchor="middle">REGISTRO</text>
+<text class="svg-sub" x="615" y="186" text-anchor="middle">atestigua</text>
+<line x1="470" y1="66" x2="558" y2="148" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<line x1="470" y1="160" x2="558" y2="168" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<line x1="470" y1="254" x2="558" y2="188" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
+<text class="svg-cap" x="350" y="300" text-anchor="middle">EL MODELO PROPONE · LA POLÍTICA AUTORIZA · LA HERRAMIENTA EJECUTA · EL REGISTRO ATESTIGUA</text>
+</svg>
+<figcaption>El registro está dibujado como un cilindro a propósito. Es el único de los cuatro que no decide ni actúa, solo atestigua, y esa diferencia es todo el sentido de dibujarlo aparte.</figcaption>
+</figure>
+
+<p>Al lado, dibuja lo que la mayoría de los despliegues realmente tienen.</p>
+
+<figure>
+<svg viewBox="0 0 700 200" role="img" aria-label="El modo de falla: concentración, cuando un sistema propone, autoriza y ejecuta a la vez">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="p3d2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+<text class="svg-ttl" x="350" y="24" text-anchor="middle">EL MODO DE FALLA: CONCENTRACIÓN</text>
+<rect x="30" y="78" width="190" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="125" y="97" text-anchor="middle">MODELO</text>
+<text class="svg-sub" x="125" y="111" text-anchor="middle">propone, autoriza y ejecuta</text>
+<line x1="220" y1="100" x2="298" y2="100" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d2-arrow)"/>
+<rect x="300" y="78" width="150" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="375" y="104" text-anchor="middle">EFECTO EN EL MUNDO</text>
+<line x1="450" y1="100" x2="560" y2="100" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#p3d2-arrow)"/>
+<text class="svg-sub" x="505" y="88" text-anchor="middle">ningún registro independiente</text>
+<text class="svg-sub" x="580" y="82" text-anchor="start">Sin rastro</text>
+<text class="svg-sub" x="580" y="100" text-anchor="start">Sin reversión</text>
+<text class="svg-sub" x="580" y="118" text-anchor="start">Sin responsable</text>
+</svg>
+<figcaption>Esto es lo que corría en el chatbot de Air Canada, y lo que corría en la función de respuesta a disputas de la directora hasta que alguien lo notó. Está pensado para verse pobre junto al diagrama de arriba. La pobreza es el argumento.</figcaption>
+</figure>
+
+<p>Tres razones para construir alrededor de esta arquitectura específica en vez de una apelación genérica a la cautela. Es legible para una junta directiva y para el área legal, que es exactamente el público para el que está escrita esta parte. Es técnicamente precisa, porque refleja la separación real entre un punto de decisión, un punto de aplicación y un rastro de auditoría. Y da una prueba de diseño en vez de un ánimo: para cualquier acción, pregunta dónde viven físicamente las cuatro funciones, y si dos de ellas viven en el mismo lugar, encontraste el problema.</p>
+
+<p>Nada de esto es una idea nueva disfrazada para agentes. La segregación de funciones es el concepto más antiguo del control interno, la regla de que quien solicita un pago no puede ser la misma persona que lo aprueba ni la misma que concilia la cuenta después. Cualquiera que haya operado controles internos reconoce este diagrama antes de terminar de leer las etiquetas. El único cambio es que uno de los cuatro asientos ahora, a veces, lo ocupa un modelo en vez de una persona.</p>
+
+<h3>La regla de dos</h3>
+
+<p>Saber que cuatro funciones deben mantenerse separadas no te dice, un martes por la tarde, si la respuesta que tu sistema acaba de redactar necesita un humano antes de salir. Para eso necesitas una prueba con respuesta contable, y la mejor disponible viene de Meta, formulada como tres preguntas sobre cualquier acción propuesta.</p>
+
+<ol>
+<li>¿Accede a datos privados?</li>
+<li>¿Procesa contenido no confiable?</li>
+<li>¿Puede comunicarse externamente?</li>
+</ol>
+
+<p>Responde las tres con honestidad. Sin un humano en el bucle, un agente puede satisfacer como máximo dos de ellas. En el momento en que una acción respondería que sí a las tres, un humano tiene que estar en el bucle antes de que se ejecute, sin excepciones abiertas por urgencia o incomodidad.</p>
+
+<figure>
+<svg viewBox="0 0 700 540" role="img" aria-label="La regla de dos: tres preguntas, un conteo, una decisión, todo termina en un recibo">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="p3d4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+<text class="svg-ttl" x="350" y="20" text-anchor="middle">LA REGLA DE DOS</text>
+<rect x="290" y="34" width="120" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="54" text-anchor="middle">ACCIÓN PROPUESTA</text>
+<polygon points="260,95 350,57 440,95 350,133" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="91" text-anchor="middle">¿Accede a datos</text>
+<text class="svg-sub" x="350" y="103" text-anchor="middle">privados?</text>
+<line x1="350" y1="66" x2="350" y2="55" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<line x1="350" y1="133" x2="350" y2="155" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<polygon points="260,195 350,157 440,195 350,233" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="191" text-anchor="middle">¿Procesa contenido</text>
+<text class="svg-sub" x="350" y="203" text-anchor="middle">no confiable?</text>
+<line x1="350" y1="233" x2="350" y2="255" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<polygon points="260,295 350,257 440,295 350,333" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="291" text-anchor="middle">¿Puede comunicarse</text>
+<text class="svg-sub" x="350" y="303" text-anchor="middle">externamente?</text>
+<line x1="350" y1="333" x2="350" y2="355" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<polygon points="250,395 350,355 450,395 350,435" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="350" y="391" text-anchor="middle">¿Cuántas respuestas</text>
+<text class="svg-sub" x="350" y="403" text-anchor="middle">fueron sí?</text>
+<line x1="250" y1="395" x2="212" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<text class="svg-sub" x="225" y="378" text-anchor="middle">dos o menos</text>
+<rect x="40" y="372" width="170" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="125" y="390" text-anchor="middle">EJECUTA</text>
+<text class="svg-sub" x="125" y="404" text-anchor="middle">sin aprobación humana</text>
+<line x1="450" y1="395" x2="488" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<text class="svg-sub" x="470" y="378" text-anchor="middle">tres</text>
+<rect x="490" y="372" width="190" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="585" y="390" text-anchor="middle">HUMANO EN EL BUCLE</text>
+<text class="svg-sub" x="585" y="404" text-anchor="middle">exigido antes de ejecutar</text>
+<line x1="125" y1="420" x2="330" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<line x1="585" y1="420" x2="372" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+<path d="M295,472 a55,10 0 0 1 110,0 v34 a55,10 0 0 1 -110,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<path d="M295,472 a55,10 0 0 0 110,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="500" text-anchor="middle">RECIBO</text>
+<text class="svg-cap" x="350" y="530" text-anchor="middle">APROBADA O NO, TODO QUEDA REGISTRADO</text>
+</svg>
+<figcaption>Fíjate dónde convergen los dos resultados. Aprobada o no, la acción termina en el mismo recibo. Esa convergencia es deliberada: una decisión que nadie tiene que ir a buscar después.</figcaption>
+</figure>
+
+<p>La respuesta de disputa del transportista responde que sí a las tres preguntas. Leyó la tabla de tarifas y el historial de cuenta del transportista, ambos privados de la empresa. El correo de disputa es contenido no confiable por definición, escrito por alguien fuera de la empresa con interés propio en el resultado. Y el propósito entero de la respuesta era comunicarse externamente. Tres de tres, y nada en lo que existía al final de la parte 2 hizo jamás la pregunta.</p>
+
+<p>No pude localizar la publicación original de la regla de dos en Meta. Dos fuentes secundarias independientes la reportan con formulación idéntica, lo cual alcanza para declarar el contenido con honestidad, no para enlazar una fuente primaria, y esa brecha queda registrada aquí en vez de disimulada.</p>
+
+<h3>Una matriz general de autoridad</h3>
+
+<p>La regla de dos responde si un humano necesita estar en el bucle. Una pregunta separada, más antigua, es cuánta autoridad necesita el propio bucle, y la respuesta honesta pasa por la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="El criterio que organiza la delegación: una acción reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>, no por lo importante que parezca una acción.</p>
+
+<table class="wrap">
+<thead><tr><th>Clase de acción</th><th>Reversibilidad</th><th>Autoridad requerida</th></tr></thead>
+<tbody>
+<tr><td>Leer o consultar dato interno</td><td>Reversible</td><td>Ninguna</td></tr>
+<tr><td>Redactar una comunicación, no enviada</td><td>Reversible</td><td>Ninguna</td></tr>
+<tr><td>Enviar comunicación rutinaria sin compromiso</td><td>Reversible</td><td>Libre, registrada</td></tr>
+<tr><td>Enviar comunicación que compromete dinero, plazos o política</td><td>Irreversible una vez recibida</td><td>Aprobación humana nombrada, siempre</td></tr>
+<tr><td>Modificar un registro financiero o contractual</td><td>Parcialmente reversible</td><td>Aprobación nombrada, registrada</td></tr>
+<tr><td>Borrar un registro o liberar un pago</td><td>Irreversible</td><td>Dos aprobaciones nombradas, una independiente de quien solicitó</td></tr>
+<tr><td>Cualquier acción que responda sí a las tres preguntas de la regla de dos</td><td>Depende de la clase de arriba</td><td>Humano en el bucle, sin importar la clase</td></tr>
+</tbody>
+</table>
+
+<p>La última fila es la que habría atrapado la respuesta del transportista incluso si alguien hubiera clasificado mal la propia clase de acción. La regla de dos y la matriz de reversibilidad son dos redes independientes, y una capa de política bien construida corre ambas, porque cada una sola deja pasar casos que la otra atrapa.</p>
+
+<h2 id="identity">4. Identidad y un dueño nombrado</h2>
+
+<p>Nada de la sección anterior funciona si el sistema que ejecuta una acción no tiene identidad propia para verificarse contra una política. Esta es la parte que casi todo despliegue se salta, porque es invisible hasta el día en que importa.</p>
+
+<p>La descripción más clara de esta deuda viene de la literatura de gestión de identidad, y vale la pena citarla exactamente porque nombra algo que todo el que construye agentes ha visto pasar sin tener una palabra para ello:</p>
+
+<blockquote><p>Las identidades humanas pasaban por gobernanza de identidad, flujos de incorporación, revisiones trimestrales y listas de baja. Las identidades no humanas las creaba un desarrollador un martes por la tarde y sobrevivían en silencio al proyecto, al equipo, y a veces al propio desarrollador.</p></blockquote>
+
+<p>La <a class="g" href="harness-glossary.html#es-g-nhi" data-tip="Cualquier identidad que no pertenece a una persona: cuentas de servicio, claves de interfaz, certificados, robots de automatización, y ahora agentes.">identidad no humana</a> no es una categoría nueva inventada para agentes. Las cuentas de servicio, las claves de interfaz y los robots de automatización cargan exactamente esta deuda desde hace dos décadas, en silencio, porque ninguna lista de baja las buscó jamás. Un agente es simplemente el miembro más nuevo y de crecimiento más rápido de esa familia, y la mayoría de las organizaciones subestiman sustancialmente su propio conteo de identidades no humanas, porque se crean dentro de consolas de nube, canalizaciones de integración y conexiones de software como servicio que nadie rastrea de forma centralizada.</p>
+
+<p>Tres preguntas, hechas sobre cualquier identidad de agente, hacen la mayor parte del trabajo:</p>
+
+<ol>
+<li>¿Quién lo desplegó?</li>
+<li>¿Qué está autorizado a hacer?</li>
+<li>¿En nombre de quién está actuando ahora mismo?</li>
+</ol>
+
+<p>La tercera pregunta es donde la industria convergió en dos patrones distintos, y la diferencia entre ellos es exactamente la diferencia que más le importa a los reguladores. <strong>En nombre de</strong> es el patrón donde el agente se autentica usando la sesión de un humano presente y hereda los permisos de esa persona durante la tarea, el patrón del copiloto. <strong>Autónomo</strong> es el patrón donde el agente tiene identidad y conjunto de permisos propios, independientes de cualquier sesión humana, el patrón de tareas en segundo plano, ejecuciones programadas y comunicación entre agentes. Es también, en las propias palabras de la literatura de identidad, lo que más preocupa a los reguladores, porque no hay humano en el bucle para responsabilizar en el momento en que ocurre la acción.</p>
+
+<p>Esa frase está cerca de ser la tesis de esta parte, escrita por otra persona, en otro campo, por otra razón.</p>
+
+<p>Un puente útil mapea esto directamente sobre las bandas ya establecidas en la <a href="harness-p1.html#es-niveles">parte 1</a>.</p>
+
+<table class="wrap">
+<thead><tr><th>Tipo de activación</th><th>Definición</th><th>Mapea a banda</th></tr></thead>
+<tbody>
+<tr><td>Copiloto</td><td>Asistente atado a un humano presente en la sesión</td><td>N0 a N1</td></tr>
+<tr><td>Iniciado por humano</td><td>Un humano lo inicia, pero no está presente durante la ejecución</td><td>N2</td></tr>
+<tr><td>Ambiental</td><td>Totalmente autónomo, activado por evento o agenda, sin humano en el bucle</td><td>N3</td></tr>
+</tbody>
+</table>
+
+<p>La función de respuesta a disputas que casi comprometió a la empresa de la directora con un cambio retroactivo de tarifa era, sin que nadie lo decidiera explícitamente, un agente ambiental vistiendo la autoridad de uno iniciado por humano. Alguien había aprobado construir una función que leía y redactaba. Nadie había aprobado un sistema que pudiera, sin supervisión, decidir la posición de la empresa y actuar sobre ella.</p>
+
+<p>La causa raíz más común detrás de incidentes relacionados con agentes, según la misma literatura, no tiene nada de glamoroso: una clave de interfaz de larga duración embebida en algún lugar del código o la configuración, sin expiración y con un alcance más amplio del que la tarea necesita. La corrección es igualmente poco glamorosa, un token de alcance estrecho y vida corta emitido por tarea, y vale la pena decirlo con claridad porque la corrección es barata y la falla no lo es.</p>
+
+<p>Un desarrollo más pertenece aquí porque cambia lo que realmente es posible, no solo lo que es aconsejable. Las plataformas de gobernanza empezaron a descubrir, monitorear y apagar agentes que corren en nubes de terceros, no solo dentro de los propios sistemas de una empresa. La prensa especializada describió esto, con precisión, como darle una placa y autoridad real al guardia que antes solo observaba. El interruptor de apagado dejó de ser una aspiración de diseño en algún momento del último año. Ahora es una capacidad que se compra.</p>
+
+<h2 id="injection">5. Dónde entra la orden dentro del dato</h2>
+
+<p>Todo lo construido hasta ahora asume que la capa de política puede distinguir una instrucción legítima de una ilegítima. Esa suposición merece ponerse a prueba, porque la respuesta honesta es que hoy nada puede hacerlo, de forma confiable, y entender por qué cambia lo que construyes a continuación.</p>
+
+<p>Un modelo lee sus propias instrucciones de sistema, la solicitud del usuario y cualquier texto recuperado de una fuente externa como un único flujo de símbolos. No existe ningún mecanismo confiable que marque algunos de esos símbolos como comando y otros como dato inerte. Un texto hostil contrabandeado dentro de un documento, una invitación de calendario o una página web lleva exactamente la misma autoridad que una instrucción legítima del operador, porque para el modelo que lo lee, no hay diferencia visible.</p>
+
+<figure>
+<svg viewBox="0 0 700 440" role="img" aria-label="Dónde entra la orden dentro del dato: una zona confiable y una zona no confiable convergen en un único flujo de símbolos">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="p3d3-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+<text class="svg-ttl" x="350" y="24" text-anchor="middle">DÓNDE ENTRA LA ORDEN DENTRO DEL DATO</text>
+<rect x="30" y="52" width="260" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="160" y="70" text-anchor="middle">ZONA CONFIABLE</text>
+<rect x="50" y="84" width="220" height="36" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="160" y="106" text-anchor="middle">Contrato de la tarea</text>
+<rect x="50" y="138" width="220" height="36" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="160" y="160" text-anchor="middle">Guías y skills propias</text>
+<rect x="410" y="34" width="260" height="210" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="540" y="52" text-anchor="middle">ZONA NO CONFIABLE</text>
+<rect x="430" y="64" width="220" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="540" y="84" text-anchor="middle">Correo, PDF, página web</text>
+<rect x="430" y="104" width="220" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="540" y="124" text-anchor="middle">Respuesta de sistema externo</text>
+<rect x="430" y="144" width="220" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="540" y="164" text-anchor="middle">Skill de terceros</text>
+<rect x="430" y="184" width="220" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="540" y="204" text-anchor="middle">Documento enviado por un cliente</text>
+<line x1="270" y1="120" x2="330" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<line x1="270" y1="174" x2="335" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<line x1="430" y1="96" x2="368" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<line x1="430" y1="136" x2="363" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<line x1="430" y1="176" x2="358" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<line x1="430" y1="216" x2="353" y2="292" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<rect x="190" y="294" width="320" height="58" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="316" text-anchor="middle">FLUJO ÚNICO DE SÍMBOLOS</text>
+<text class="svg-sub" x="350" y="332" text-anchor="middle">ninguna marca confiable separa</text>
+<text class="svg-sub" x="350" y="344" text-anchor="middle">comando de dato</text>
+<line x1="350" y1="352" x2="350" y2="378" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d3-arrow)"/>
+<rect x="290" y="380" width="120" height="36" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="402" text-anchor="middle">ACCIÓN PROPUESTA</text>
+<text class="svg-cap" x="350" y="430" text-anchor="middle">LA FRONTERA EXISTE EN TU DIAGRAMA, NO DENTRO DEL MODELO</text>
+</svg>
+<figcaption>El correo de disputa del transportista estaba justo en la zona no confiable de la derecha. La cláusula de la tabla de tarifas que citaba estaba en la zona confiable de la izquierda. Ambos convergieron en la misma acción propuesta, y nada dentro del modelo trazó jamás la línea entre ellos.</figcaption>
+</figure>
+
+<p>En julio de 2026, un investigador que hablaba en Infosecurity Europe lo dijo con claridad: el problema sigue sin resolverse a nivel fundamental. Dos detalles de ese relato vale la pena llevar adelante, porque cada uno mata una solución que suena obvia hasta que la miras de cerca.</p>
+
+<p>Las listas de permitidos, la corrección instintiva, a veces facilitaron un ataque en lugar de dificultarlo, porque los comandos exactos que un atacante necesitaba ya estaban en la lista aprobada por una razón legítima. Y en casos separados, la propia salida de un agente redefinió el límite de su sandbox, reescribiendo en la práctica la propia contención pensada para detenerlo.</p>
+
+<p>La <a class="g" href="harness-glossary.html#es-g-trifecta" data-tip="Cualquier agente que combine acceso a datos privados, exposición a contenido no confiable y capacidad de comunicación externa puede convertirse en una herramienta de exfiltración mediante una sola instrucción inyectada.">trifecta letal</a> de Simon Willison nombra las mismas tres propiedades que la regla de dos, planteadas como la condición límite para cuando un secuestro se convierte en daño real en vez de una respuesta confusa e inofensiva. Un agente sin datos privados y sin vía de comunicación hacia afuera todavía puede ser engañado, pero el peor resultado es una respuesta sin sentido, no una fuga.</p>
+
+<p>El reconocimiento formal de esto llegó en diciembre de 2025, cuando se publicó el <a class="g" href="harness-glossary.html#es-g-owasp" data-tip="Un marco de seguridad revisado por pares para aplicaciones agénticas, publicado en diciembre de 2025 con la contribución de más de cien especialistas.">OWASP Top 10 para Aplicaciones Agénticas</a> con la contribución de más de cien especialistas, el primer marco revisado por pares dedicado a sistemas autónomos. Tres de sus categorías conciernen directamente a esta parte: ASI01, secuestro de objetivo; ASI02, mal uso de herramientas; ASI03, abuso de identidad y privilegio. La inyección de instrucciones mapea a seis de las diez categorías en total, y la actualización de junio de 2026 del marco dejó de catalogar amenazas hipotéticas y empezó a listar CVE.</p>
+
+<p>Un proyecto hermano, el OWASP Agentic Skills Top 10, existe porque no había ningún marco de seguridad integral para skills de agente antes de él. Su distinción de trabajo vale la pena repetirla: donde una herramienta define qué recursos y acciones están disponibles, un skill define cómo secuenciar esas herramientas para alcanzar un objetivo. Esa distinción cierra exactamente el gancho que la <a href="harness-p2.html#es-riscos-2">parte 2 dejó abierto</a> sobre auditar la guía de un tercero antes de instalarla, y la próxima sección vuelve a ello con la evidencia detrás.</p>
+
+<h2 id="record">6. Qué debe quedar registrado, y qué significa reversión</h2>
+
+<p>Todo lo anterior a esta sección decide si una acción debe ocurrir. Esta sección trata sobre lo que tiene que sobrevivir al momento en que ocurre, sin importar la respuesta.</p>
+
+<figure>
+<svg viewBox="0 0 700 450" role="img" aria-label="La vida de una acción con efecto externo, desde la propuesta hasta una retención mínima de seis meses">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+.svg-note{font-size:8px;letter-spacing:.12em;fill:#1b1b19;font-style:italic}
+</style>
+<defs>
+  <marker id="p3d5-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker>
+  <marker id="p3d5-arrow-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#8a887f" stroke-width="1"/></marker>
+</defs>
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">LA VIDA DE UNA ACCIÓN CON EFECTO EXTERNO</text>
+<g>
+  <rect x="15" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="60" y="44" text-anchor="middle">MODELO</text>
+  <rect x="155" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="200" y="44" text-anchor="middle">POLÍTICA</text>
+  <rect x="295" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="340" y="44" text-anchor="middle">HUMANO</text>
+  <rect x="435" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="480" y="44" text-anchor="middle">HERRAMIENTA</text>
+  <rect x="575" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="620" y="44" text-anchor="middle">REGISTRO</text>
+</g>
+<line x1="60" y1="54" x2="60" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="200" y1="54" x2="200" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="340" y1="54" x2="340" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="480" y1="54" x2="480" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="620" y1="54" x2="620" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="60" y1="80" x2="197" y2="80" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="130" y="75" text-anchor="middle">propone acción con efecto externo</text>
+<line x1="200" y1="120" x2="617" y2="120" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="410" y="115" text-anchor="middle">registra propuesta y clase de acción</text>
+<line x1="200" y1="160" x2="337" y2="160" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="270" y="155" text-anchor="middle">clase irreversible, exige aprobación nombrada</text>
+<line x1="340" y1="200" x2="617" y2="200" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="480" y="195" text-anchor="middle">aprueba, con identificación</text>
+<line x1="200" y1="240" x2="477" y2="240" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="340" y="235" text-anchor="middle">autoriza ejecución</text>
+<line x1="480" y1="284" x2="617" y2="284" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="548" y="272" text-anchor="middle">registra punto de reversión</text>
+<text class="svg-note" x="548" y="298" text-anchor="middle">ANTES DE EJECUTAR, NO DESPUÉS</text>
+<rect x="472" y="262" width="152" height="44" fill="none" stroke="#1b1b19" stroke-width=".9"/>
+<path d="M480,320 C 520,320 520,338 480,338" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="565" y="333" text-anchor="middle">ejecuta</text>
+<line x1="480" y1="368" x2="617" y2="368" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="548" y="363" text-anchor="middle">registra resultado y costo</text>
+<path d="M620,398 C 655,398 655,414 620,414" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#p3d5-arrow-open)"/>
+<text class="svg-sub" x="695" y="430" text-anchor="end">retención mínima de seis meses</text>
+</svg>
+<figcaption>El punto de reversión se registra antes de que la herramienta ejecute, no después, y ese orden lleva una línea más gruesa por una razón. Registrarlo después es el error más común de todos, porque para entonces ya no queda nada contra qué revertir.</figcaption>
+</figure>
+
+<p>El detalle que más importa en esa secuencia es fácil de pasar por alto en una primera lectura. El punto de reversión, sea cual sea el estado que existía en el instante antes de que la herramienta actuara, se escribe en el registro antes de la ejecución, no después. Registrado después, describe un mundo que ya no existe. Registrado antes, es exactamente lo que una reversión necesita.</p>
+
+<p>La empresa de la directora había, por coincidencia, construido suficiente disciplina de sensor de la parte 2 como para que la respuesta de disputa se atrapara antes de salir, no porque alguien hubiera diseñado para este caso específico, sino porque una regla general exigía aprobación nombrada para cualquier cosa que mencionara un ajuste monetario en correspondencia saliente. Una supervisora la leyó, reconoció que la cláusula del transportista había sido reemplazada ocho meses antes por una enmienda firmada que el sistema nunca recibió, y la rechazó. Todo el intercambio, propuesta, la regla que lo señaló, la solicitud de aprobación, el rechazo y el motivo, tomó cuatro minutos reconstruir después, porque todo había quedado escrito en el momento en que ocurrió, en vez de recordado después del hecho.</p>
+
+<p>Contrasta eso con un caso que no intentó nada de esto. En julio de 2025, el fundador de SaaStr documentó un incidente en el que un agente de código borró una base de datos de producción, a pesar de una instrucción explícita de no cambiar código sin permiso, durante lo que él intentaba activamente mantener como una congelación de cambios. La instrucción existía. Era clara. No había nada entre la decisión y el efecto, que es exactamente la brecha que esta parte existe para cerrar.</p>
+
+<p>Un recibo, extendido a partir del que introdujo la <a href="harness-p2.html#es-exemplos">parte 2</a>, lleva lo que una revisión de incidente realmente necesita:</p>
+
+<pre><code>{
+  "ejecucion": "2026-08-29T11:02:07",
+  "clase_de_accion": "comunicacion-externa, ajuste financiero",
+  "reversible": false,
+  "regla_de_dos": {
+    "dato_privado": true,
+    "contenido_no_confiable": true,
+    "comunicacion_externa": true,
+    "respuestas_si": 3
+  },
+  "puerta": "humano-en-el-bucle",
+  "punto_de_reversion_registrado_en": "2026-08-29T11:01:52",
+  "aprobado_por": null,
+  "rechazado_por": "supervisora-cp-04, 2026-08-29T11:04:33",
+  "motivo_del_rechazo": "clausula reemplazada por enmienda firmada el 2026-01-14, fuera del conjunto de fuentes del sistema",
+  "costo": "0,31 USD",
+  "retener_hasta": "2027-02-28"
+}</code></pre>
+
+<p>Este único bloque responde, sin investigación, las cinco preguntas que cualquier revisión de incidente hace primero: qué se propuso, por qué se marcó, quién decidió, cuál fue la decisión y por qué, y cuánto tiempo debe sobrevivir el registro. La fecha de retención no es arbitraria. Refleja un mínimo que la próxima sección explica por completo.</p>
+
+<p>El estándar abierto y neutral de proveedor que vale la pena adoptar para esta telemetría son las <a class="g" href="harness-glossary.html#es-g-otel" data-tip="Vocabulario abierto y neutral de proveedor con nombres de atributo estandarizados para telemetría de agentes, cubriendo el modelo llamado, el conteo de símbolos, la razón de término y, cuando está habilitado, el contenido de instrucciones, llamadas de herramienta y respuestas.">convenciones semánticas de OpenTelemetry para IA generativa</a>, ya exportadas por la mayoría de los entornos de agente relevantes. Esto resuelve la preocupación práctica de cómo auditar un sistema sin quedar cautivo de cualquier proveedor que lo haya construido: el estándar ya existe, y la pregunta de compra pasa a ser si la herramienta exporta a él. La razón por la que esta capa necesita existir queda mejor dicha en la propia documentación del estándar:</p>
+
+<blockquote><p>Los sistemas agénticos fallan de maneras que parecen éxito: salidas incorrectas pero bien formadas, llamadas de herramienta innecesarias, o acciones sintácticamente válidas y semánticamente equivocadas.</p></blockquote>
+
+<h2 id="supply-chain">7. Un skill de terceros es código de terceros</h2>
+
+<p>La <a href="harness-p2.html#es-riscos-2">parte 2</a> cerró con una advertencia de que instalar la guía de otra persona significa correr las instrucciones de otra persona dentro de tu propio entorno, y prometió la evidencia de por qué esa advertencia no es teórica. Aquí está.</p>
+
+<p>El caso más didáctico es postmark-mcp, el primer servidor MCP malicioso capturado en uso real. Su autor publicó primero quince versiones limpias y funcionales, construyendo un historial genuino de legitimidad, antes de agregar en silencio una sola línea de código de exfiltración en una versión posterior. Quince versiones limpias no es descuido. Es paciencia, la misma paciencia de un proveedor que entrega a tiempo durante dos años para ganar un contrato mayor.</p>
+
+<p>No fue un caso aislado. Antiy CERT catalogó una campaña de 1.184 skills maliciosos en febrero de 2026, bajo el nombre ClawHavoc. El escaneo de Snyk ese mismo mes encontró más de 280 skills filtrando claves de API y datos personales. Una auditoría independiente de más de 7.000 servidores MCP encontró que el 36,7 por ciento era potencialmente vulnerable a falsificación de solicitud del lado del servidor, con una prueba de concepto que recuperó claves de acceso de nube reales. Y un conteo de febrero de 2026 encontró más de 135.000 instancias expuestas públicamente con configuración predeterminada insegura.</p>
+
+<p>Junto a la cadena de suministro hay vulnerabilidades en el propio entorno de ejecución. Dos divulgaciones, CVE-2025-59536 y CVE-2026-21852, mostraron que los archivos de configuración a nivel de repositorio funcionan como parte de la capa de ejecución en el entorno de un agente de código: clonar y abrir un proyecto no confiable podía disparar ejecución remota de código y exfiltración de claves antes de que apareciera en pantalla cualquier diálogo de consentimiento. Una divulgación separada, CVE-2026-22708, mostró que el entorno de un agente de código podía envenenarse para que comandos ya en una lista aprobada, como revisar las ramas de un repositorio, entregaran en su lugar una carga arbitraria.</p>
+
+<p>La frase que resume el primer par de CVE para un lector ejecutivo es la que vale la pena recordar: el consentimiento llegó después del daño.</p>
+
+<h2 id="law">8. Dos columnas de obligación legal</h2>
+
+<p>Lo que sigue está organizado por lo que ya aplica hoy antes de lo que todavía está en trámite, porque la pregunta más urgente de un lector brasileño rara vez es sobre una ley futura.</p>
+
+<h3>Brasil</h3>
+
+<p>El artículo 20 de la Ley 13.709/2018, la LGPD, otorga a cualquier titular el derecho de solicitar la revisión de una decisión tomada únicamente mediante tratamiento automatizado de datos personales que afecte sus intereses, incluyendo explícitamente las decisiones destinadas a construir un perfil personal, profesional, de consumo o de crédito. Su primer párrafo agrega un deber de transparencia: el responsable debe, cuando se le solicite, proporcionar información clara y adecuada sobre los criterios y procedimientos utilizados, respetando el secreto comercial e industrial.</p>
+
+<p>Dos requisitos deben cumplirse juntos para que el artículo aplique: la decisión debe tomarse únicamente por medios automatizados, y debe afectar los intereses del titular. La excepción de secreto comercial limita cuánto detalle técnico debe divulgarse, no si debe existir una explicación. Y el requisito de "únicamente automatizado" es exactamente lo que una puerta humana genuina, del tipo que describe la <a href="#separation">sección 3</a>, cambia en su naturaleza jurídica. Un paso de aprobación real no es decoración para este propósito. Cambia qué artículo aplica.</p>
+
+<p>La ANPD ha avanzado en esto de forma constante, no repentina. Su Agenda Regulatoria de 2025 a 2026 nombra la inteligencia artificial y el derecho de revisión de decisiones automatizadas como el punto siete. Una consulta pública reunió 124 contribuciones de titulares, empresas, sociedad civil e instituciones públicas, consolidadas en la Nota Técnica 12 de 2025. En septiembre de 2025 la propia ANPD dejó de ser un órgano vinculado a la presidencia y pasó a ser agencia reguladora independiente. Su mapa de prioridades de diciembre de 2025 para 2026 a 2027 lista la inteligencia artificial entre cuatro prioridades de fiscalización, junto a los derechos de los titulares, niños y adolescentes, y el tratamiento por autoridades públicas, construido a partir de dos años de quejas, reportes de incidentes y acciones de fiscalización, no de preocupación teórica. Ese mismo mes, el poder ejecutivo envió un proyecto de ley que establece un sistema nacional para el desarrollo, regulación y gobernanza de la IA, nombrando a la ANPD como coordinadora.</p>
+
+<p>Lo que todavía no ha ocurrido necesita decirse con claridad, porque la frase puede envejecer en meses: la regulación específica que implementa el artículo 20 no se había publicado al momento de esta redacción. Trata esto como un objetivo en movimiento, no como un hecho consolidado.</p>
+
+<h3>Europa</h3>
+
+<p>El 2 de agosto de 2026 es la fecha vinculante para las obligaciones de sistemas de alto riesgo bajo la Ley de IA de la UE, cubriendo los artículos 9 a 17 para proveedores y el artículo 26 para quienes despliegan. Una propuesta de la Comisión Europea de noviembre de 2025 empujaría algunos de estos plazos hacia adelante, hasta diciembre de 2027 para sistemas autónomos del Anexo III y agosto de 2028 para sistemas del Anexo I integrados en productos regulados. Esa propuesta no se ha convertido en ley. Planifica para agosto de 2026 y trata cualquier retraso como margen de cronograma, no como el plan.</p>
+
+<p>Tres artículos importan directamente a todo lo construido hasta ahora en esta parte.</p>
+
+<p><strong>Artículo 12, registro.</strong> Registro automático de eventos que permita trazabilidad y monitoreo posterior a la comercialización, capturando información suficiente para identificar mal funcionamiento, deriva de desempeño y comportamiento inesperado, operando automáticamente sin entrada manual, y resistente a la manipulación. Eso es, palabra por palabra, el recibo por ejecución y el registro de solo anexión que esta serie ya enseña a construir. La exigencia legal y la buena práctica de ingeniería convergieron aquí, no por diseño.</p>
+
+<p><strong>Artículo 14, supervisión humana.</strong> La persona encargada debe poder entender las capacidades y limitaciones del sistema, monitorear su operación, detectar anomalías, permanecer consciente de la tendencia a confiar o confiar en exceso automáticamente en la salida del sistema, interpretar correctamente el resultado, decidir no usar el sistema o desestimar su salida, intervenir, y detenerlo. La cláusula sobre sesgo de automatización es la frase más valiosa de todo el artículo para los propósitos de esta serie, porque nombra el modo de falla de la propia puerta humana: el revisor que sella sin mirar.</p>
+
+<p>Una puerta con cien por ciento de tasa de aprobación no es una puerta. Es un registro de paso con pasos extra, y se convierte en uno de los indicadores en la parte 4.</p>
+
+<p><strong>Artículo 26, obligaciones de quien despliega.</strong> Estas recaen sobre quien usa el sistema, no sobre quien lo construyó: usarlo estrictamente conforme a las instrucciones del proveedor, asignar supervisión a personal capacitado y con la autoridad necesaria para ejercerla, asegurar que el dato de entrada sea relevante y adecuadamente representativo en la medida en que quien despliega controle sobre él, monitorear la operación, retener los registros que genera durante al menos seis meses, reportar un incidente grave al proveedor dentro de quince días, notificar al proveedor y a la autoridad de vigilancia de mercado de inmediato al identificar un riesgo para la salud, la seguridad o los derechos fundamentales, e informar a los trabajadores antes del despliegue en un lugar de trabajo. El artículo 27 agrega una evaluación de impacto sobre derechos fundamentales para organismos públicos y ciertos desplegadores privados.</p>
+
+<p>Dos lecturas importan para una empresa brasileña. Primera, la mayoría de estas obligaciones recaen sobre quien usa el sistema, lo que significa que comprar un sistema terminado de un tercero no transfiere la responsabilidad. Segunda, seis meses de retención y supervisión con autoridad genuina son requisitos que cualquier empresa puede implementar, y esta serie ya enseñó a construirlos en la <a href="harness-p2.html#es-delegar">parte 2</a>.</p>
+
+<h2 id="accountability">9. Quién responde, y dónde estás</h2>
+
+<p>Vuelve a Air Canada una vez más, porque todo entre aquella apertura y aquí es la respuesta a la pregunta que el tribunal realmente hizo. Si habló en tu nombre, eres dueño de lo que dijo. Todo lo que esta parte construyó, las cuatro funciones separadas, la regla de dos, un dueño nombrado para cada identidad, una frontera trazada alrededor del contenido no confiable, un punto de reversión registrado antes del hecho, un recibo que sobrevive al incidente, es la maquinaria que le permite a una empresa responder esa pregunta en minutos, con evidencia, en vez de argumentar en un tribunal que el sistema era otra persona.</p>
+
+<p>La empresa de la directora respondió en cuatro minutos, esta vez. La de Air Canada tomó dieciocho meses y aun así perdió.</p>
+
+<table class="wrap">
+<thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de junta directiva</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
+<tr><td>Parte 3, esta</td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td>Parte 4</td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Parte 3 de 4 · Serie Harness · La publicación original de la regla de dos en Meta no fue localizada; el contenido está confirmado por dos fuentes secundarias independientes y citado sin enlace, según el propio estándar de fuentes de este proyecto. El personaje de la apertura continúa desde las partes 1 y 2 y está compuesto a partir de patrones recurrentes.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
+</div>

@@ -6,7 +6,7 @@ import re, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 current = open(os.path.join(ROOT, 'harness-p2.html'), encoding='utf-8').read()
-shell = current[:current.index('<div class="langbar">')]
+shell = current[:current.index('<div class="topbar">')]
 
 # ingles e a lingua padrao do projeto desde 30 de agosto de 2026 (ver
 # STANDARDS.md). O arquivo vigente ainda pode trazer o atributo antigo
@@ -21,7 +21,7 @@ LANG_HINT_CSS = """.lang-hint{display:flex;align-items:center;justify-content:sp
 @media print{.lang-hint{display:none}}"""
 shell = shell.replace('main[hidden]{display:none}', LANG_HINT_CSS + '\nmain[hidden]{display:none}')
 
-i = current.index('<main class="page" id="doc-pt">') + len('<main class="page" id="doc-pt">')
+i = current.index('<main class="page" id="doc-pt" hidden>') + len('<main class="page" id="doc-pt" hidden>')
 j = current.index('</main>')
 PT = current[i:j].strip()
 
@@ -39,20 +39,54 @@ def scope(body, pref):
 EN = scope(EN, 'en')
 ES = scope(ES, 'es')
 
-bar = """<div class="langbar">
-<button type="button" data-lang="pt">PT</button>
-<button type="button" class="on" data-lang="en">EN</button>
-<button type="button" data-lang="es">ES</button>
-</div>"""
+CUR = 'p2'
+SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources']
+FILES = {'p1': 'harness-p1.html', 'p2': 'harness-p2.html', 'p3': 'harness-p3.html',
+         'p4': 'harness-p4.html', 'guide': 'harness-toolkit.html',
+         'glossary': 'harness-glossary.html', 'sources': 'harness-sources.html'}
+LABELS_EN = {'p1': 'Part 1', 'p2': 'Part 2', 'p3': 'Part 3', 'p4': 'Part 4',
+             'guide': 'Compact guide', 'glossary': 'Glossary', 'sources': 'Sources'}
+EXISTS = {'p1', 'p2', 'p3', 'guide', 'glossary', 'sources'}  # p4 not written yet
+
+def topbar_html(cur):
+    pieces = []
+    for i, key in enumerate(SERIES_ORDER):
+        if i > 0:
+            pieces.append('<span class="sep pipe">|</span>' if key == 'guide' else '<span class="sep">·</span>')
+        label = LABELS_EN[key]
+        if key == cur:
+            pieces.append('<span class="cur" data-key="%s">%s</span>' % (key, label))
+        elif key in EXISTS:
+            pieces.append('<a href="%s#en-" data-key="%s">%s</a>' % (FILES[key], key, label))
+        else:
+            pieces.append('<span class="pending" data-key="%s">%s</span>' % (key, label))
+    return ('<div class="topbar">\n<nav class="serie">\n' + '\n'.join(pieces) + '\n</nav>\n'
+            '<span class="brace">{</span>\n<div class="langbar">\n'
+            '<button type="button" data-lang="pt">PT</button>\n'
+            '<button type="button" class="on" data-lang="en">EN</button>\n'
+            '<button type="button" data-lang="es">ES</button>\n</div>\n'
+            '<span class="brace">}</span>\n</div>')
+
+bar = topbar_html(CUR)
 
 js = """<script>
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      el.textContent=info.label[l];
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);

@@ -56,6 +56,26 @@ body{
 .langbar button:hover{border-color:var(--accent);color:var(--ink)}
 
 .langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+.topbar{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 0 12px;margin:0 0 22px;border-bottom:.5pt solid var(--rule);position:sticky;top:0;z-index:40;background:var(--paper)}
+.topbar .serie{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px}
+.topbar a{color:var(--ink-faint);border:0;text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.topbar .cur{color:var(--ink)}
+.topbar .pending{color:var(--rule)}
+.topbar .sep{color:var(--rule)}
+.topbar .brace{color:var(--ink-faint);font-weight:300;margin:0 1px}
+.orig-plain{color:var(--ink-faint);font-style:italic}
+@media print{.topbar{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
 .lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
 .lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
 .lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
@@ -378,10 +398,29 @@ p code{
 </style>
 </head>
 <body>
+<div class="topbar">
+<nav class="serie">
+<a href="harness-p1.html#en-" data-key="p1">Part 1</a>
+<span class="sep">·</span>
+<a href="harness-p2.html#en-" data-key="p2">Part 2</a>
+<span class="sep">·</span>
+<a href="harness-p3.html#en-" data-key="p3">Part 3</a>
+<span class="sep">·</span>
+<span class="pending" data-key="p4">Part 4</span>
+<span class="sep pipe">|</span>
+<span class="cur" data-key="guide">Compact guide</span>
+<span class="sep">·</span>
+<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a>
+<span class="sep">·</span>
+<a href="harness-sources.html#en-" data-key="sources">Sources</a>
+</nav>
+<span class="brace">{</span>
 <div class="langbar">
 <button type="button" data-lang="pt">PT</button>
 <button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
+</div>
+<span class="brace">}</span>
 </div>
 <main class="page" id="doc-pt" hidden>
 <p class="eyebrow">Harness · Documento companheiro · Prático</p>
@@ -1635,10 +1674,20 @@ description: Revisa borradores de contrato contra el checklist de
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      el.textContent=info.label[l];
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);
