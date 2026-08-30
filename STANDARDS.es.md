@@ -53,9 +53,11 @@ No usar bibliotecas de gráficos. No usar imágenes rasterizadas.
 
 ## Diagramas
 
-Todo diagrama nace como especificación en Mermaid, dentro del archivo md correspondiente. El SVG en línea del HTML deriva de esa especificación y nunca la sustituye.
+Todo diagrama nace como boceto en Mermaid, dentro del archivo md correspondiente. No existe una canalización de renderización: nada en este proyecto convierte el Mermaid en el SVG en línea de forma mecánica. El boceto es un plan estructural en texto plano, legible en diff, que GitHub renderiza de forma nativa cuando el archivo se abre allí, nada más.
 
-Al cambiar la estructura o una etiqueta, cambia primero el Mermaid, luego regenera el SVG. Cambiar solo el SVG deja la especificación desactualizada, y la próxima sesión trabaja con el mapa equivocado.
+El SVG en línea del HTML se dibuja a mano, en el sistema visual del proyecto, para coincidir con la estructura del boceto. Esto es deliberado, no un atajo por falta de herramienta: un renderizador genérico de Mermaid produce su propio tema y su propio diseño automático, y ninguno de los dos coincide con el sistema de trazo fino, sin relleno, sin color de este proyecto, así que dibujar a mano es el camino directo, no un rodeo.
+
+Al cambiar la estructura o una etiqueta, cambia primero el boceto en Mermaid, luego vuelve a dibujar el SVG a mano para que coincida. Cambiar solo el SVG deja el boceto desactualizado, y la próxima sesión trabaja con el mapa equivocado.
 
 Cada diagrama trae, en el md, su propósito y una nota de renderización, incluyendo qué necesita saltar a la vista y la frase que lleva la leyenda.
 

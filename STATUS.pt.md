@@ -6,6 +6,8 @@ Situação em 30 de agosto de 2026.
 
 Publicado em `github.com/tecosodreaboutdigital/harness-medir` (repositório) e `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, os arquivos HTML renderizam como página, não só como código-fonte).
 
+**Proteção de branch na `main`, configurada em 30 de agosto de 2026.** Definida direto pela API do GitHub: pull request é exigido pra mergear, pelo menos uma aprovação é exigida, uma aprovação é descartada se um commit novo chegar antes do merge, force push e exclusão da branch estão bloqueados. `enforce_admins` foi deliberadamente deixado desligado, então o fluxo de push direto do dono do repositório na `main` continua funcionando sem mudança. O efeito real da regra é sobre qualquer contribuição futura vinda de um fork: precisa ser revisada e mergeada à mão, nunca automaticamente, o que já era verdade na prática (`allow_auto_merge` já era `false`, e nenhum colaborador além do dono tem acesso de escrita), mas agora é imposto pelo próprio GitHub, não só por convenção.
+
 ---
 
 ## Pronto

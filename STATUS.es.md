@@ -6,6 +6,8 @@ Situación al 30 de agosto de 2026.
 
 Publicado en `github.com/tecosodreaboutdigital/harness-medir` (repositorio) y `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, los archivos HTML se renderizan como página, no solo como código fuente).
 
+**Protección de rama en `main`, configurada el 30 de agosto de 2026.** Definida directamente vía la API de GitHub: se exige un pull request para fusionar, se exige al menos una aprobación, una aprobación se descarta si llega un commit nuevo antes de fusionar, el force push y la eliminación de la rama están bloqueados. `enforce_admins` se dejó deliberadamente apagado, así que el flujo de push directo del dueño del repositorio a `main` sigue funcionando sin cambios. El efecto real de la regla recae sobre cualquier contribución futura que llegue desde un fork: debe revisarse y fusionarse a mano, nunca automáticamente, lo cual ya era cierto en la práctica (`allow_auto_merge` ya era `false`, y ningún colaborador aparte del dueño tiene acceso de escritura), pero ahora lo impone el propio GitHub, no solo la convención.
+
 ---
 
 ## Listo
