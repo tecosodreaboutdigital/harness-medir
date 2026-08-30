@@ -56,8 +56,6 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, trilíngue, pronta
 ├── harness-caixa-de-ferramentas.html  guia compacto, organizado pelo MEDIR, pronto
-├── skills/
-│   └── levantando-briefing/           skill original do projeto, pronta
 ├── fontes/
 │   └── inventario.md                  todas as fontes verificadas, com status
 └── build/                             corpos de texto e scripts de montagem
@@ -114,4 +112,5 @@ Detalhe técnico importante: os identificadores de âncora e os marcadores de SV
 ## Licença
 
 Artigos: todos os direitos reservados, uso mediante autorização.
-Skills e modelos em `skills/`: MIT.
+
+A skill própria do projeto, `levantando-briefing`, vive em repositório separado, [github.com/tecosodreaboutdigital/levantando-briefing](https://github.com/tecosodreaboutdigital/levantando-briefing), MIT, no mesmo padrão das demais skills citadas no guia compacto.

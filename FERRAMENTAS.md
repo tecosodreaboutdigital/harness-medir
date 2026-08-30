@@ -36,11 +36,11 @@ Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente e
 
 ## A skill própria do projeto
 
-`levantando-briefing` não é instalada de terceiro, é criada por este projeto: MIT, publicada e versionada em `skills/levantando-briefing/`, a única skill deste inventário que entra no histórico público. Já estava pronta antes desta rodada de instalação, ver `ESTADO.md`.
+`levantando-briefing` não é instalada de terceiro, é criada por este projeto. Vivia como subpasta aqui dentro até 30 de agosto de 2026, e nesse mesmo dia ganhou repositório próprio, público, MIT: [github.com/tecosodreaboutdigital/levantando-briefing](https://github.com/tecosodreaboutdigital/levantando-briefing). O harness-medir não guarda mais o conteúdo dela, só aponta, no mesmo padrão que aponta para as outras cinco coleções desta página.
 
-Até 30 de agosto de 2026 ela existia só como artefato publicado, sem estar ativa neste ambiente: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido nesta rodada: uma cópia dela também vive em `.claude/skills/levantando-briefing/`, fora do controle de versão como as demais, para ficar utilizável de fato e não só documentada.
+Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/levantando-briefing/`, fora do controle de versão, buscada do repositório próprio.
 
-**Risco assumido, dito com honestidade:** duas cópias do mesmo conteúdo, uma publicada em `skills/levantando-briefing/`, outra local em `.claude/skills/levantando-briefing/`. Editar a skill exige lembrar de editar as duas, ou copiar de novo depois de editar a publicada. Preferimos esse risco pequeno e visível a inventar um mecanismo de sincronização para uma única skill.
+**Risco assumido, dito com honestidade:** essa cópia local pode ficar para trás se o repositório da skill for editado sem atualizar a cópia aqui. É o mesmo tipo de risco que aceitamos para as trinta skills de terceiro, agora também para a nossa.
 
 ---
 

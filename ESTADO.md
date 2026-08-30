@@ -32,13 +32,13 @@ O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por â
 
 ### Skill levantando-briefing
 
-`skills/levantando-briefing/`
-
-Artefato original do projeto, completo e pronto para repositório público. Quatro arquivos: SKILL.md, roteiro.md, modelo-briefing.md, README.md.
+`github.com/tecosodreaboutdigital/levantando-briefing`, repositório próprio desde 30 de agosto de 2026. Artefato original do projeto, completo, publicado, MIT. Quatro arquivos: SKILL.md, roteiro.md, modelo-briefing.md, README.md.
 
 Decide se a automação deve existir, antes de discutir como funciona. Oito blocos, tabela determinística de derivação de faixa, veredito com três opções incluindo não fazer, e versionamento com comparação bloco a bloco.
 
 Preenche uma lacuna verificada: existe farto material sobre como especificar, quase nada sobre como decidir se vale.
+
+Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão, ver `FERRAMENTAS.md`.
 
 ### Guia compacto de ferramentas e skills
 

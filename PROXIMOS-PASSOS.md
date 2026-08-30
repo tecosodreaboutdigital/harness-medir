@@ -14,6 +14,8 @@ Em ordem. Cada item traz o critério de pronto.
 
 **Trinta skills de terceiro instaladas para uso neste projeto**, cinco coleções (superpowers inteira, seleção curada de doze do mattpocock/skills, c4-skills inteira, o guia inspirado em Karpathy, ai-slop-cleaner), todas MIT, todas auditadas contra o checklist do próprio guia compacto antes de instalar. Vivem em `.claude/skills/`, fora do controle de versão. Documentação completa, com registro de uso real a crescer por sessão, em `FERRAMENTAS.md`. Crédito visível no rodapé de `harness-p1.html`, `harness-p2.html` (três idiomas) e `harness-caixa-de-ferramentas.html`.
 
+**levantando-briefing separada em repositório próprio**, `github.com/tecosodreaboutdigital/levantando-briefing`, público, MIT, no mesmo padrão das demais skills citadas no guia compacto. Removida de `skills/` dentro do harness-medir, que agora só aponta para lá. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão.
+
 ---
 
 ## 1. Diário de bordo
