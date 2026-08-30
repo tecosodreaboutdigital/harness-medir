@@ -30,6 +30,8 @@ En orden. Cada elemento trae su criterio de listo.
 
 ## 1. Ronda de investigación de la parte 3
 
+**Superada por un dosier de trabajo.** `docs/harness-p3-p4-briefing.pt.md`, añadido el 30 de agosto de 2026, ya reúne siete ejes de investigación (uno más que la lista de abajo) con fuentes primarias verificadas, un diagnóstico estructural, y una especificación visual, y también propone una cuarta parte para la serie, todavía no reflejada en `README.md` ni en `STATUS.md`. Solo en portugués, documento de trabajo interno, no orientado al lector, la misma excepción que ya tiene `sources/inventory.md`. Trata el dosier como el punto de partida real de esta ronda; la lista de abajo es el alcance original de la ronda, mantenida como registro.
+
 Ronda dedicada, no un complemento. Lo que todavía falta reunir:
 
 - Literatura de seguridad de agentes, enfocada en instrucciones maliciosas que llegan dentro de un dato

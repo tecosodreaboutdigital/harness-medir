@@ -30,6 +30,8 @@ Em ordem. Cada item traz seu critério de pronto.
 
 ## 1. Rodada de pesquisa da parte 3
 
+**Superada por um dossiê de trabalho.** `docs/harness-p3-p4-briefing.pt.md`, acrescentado em 30 de agosto de 2026, já levanta sete eixos de pesquisa (um a mais que a lista abaixo) com fontes primárias verificadas, um diagnóstico estrutural, e uma especificação visual, e também propõe uma quarta parte para a série, ainda não refletida em `README.md` ou `STATUS.md`. Só em português, documento de trabalho interno, não voltado ao leitor, a mesma exceção que `sources/inventory.md` já tem. Trate o dossiê como o ponto de partida real desta rodada; a lista abaixo é o escopo original da rodada, mantida como registro.
+
 Rodada dedicada, não complemento. O que ainda falta levantar:
 
 - Literatura de segurança de agentes, com foco em instrução maliciosa que chega dentro de um dado

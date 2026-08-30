@@ -30,6 +30,8 @@ In order. Every item carries its done criterion.
 
 ## 1. Part 3 research round
 
+**Superseded by a working dossier.** `docs/harness-p3-p4-briefing.pt.md`, added 30 August 2026, already gathers seven research axes (one more than the list below) with verified primary sources, a structural diagnosis, and a visual specification, and it also proposes a fourth part for the series, not yet reflected in `README.md` or `STATUS.md`. Portuguese only, internal working document, not reader-facing, the same exception `sources/inventory.md` already has. Treat the dossier as the actual starting point for this round; the list below is the round's original scope, kept for record.
+
 A dedicated round, not an add-on. What still needs gathering:
 
 - Agent security literature, focused on malicious instructions arriving inside data
