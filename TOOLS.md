@@ -1,71 +1,73 @@
-# Ferramentas e skills usadas neste projeto
+*Read this in [Português](TOOLS.pt.md) · [Español](TOOLS.es.md).*
 
-Registro do que este projeto instalou e usa de fato, não só do que cita. Um projeto sobre engenharia de harness que não instrumenta a própria criação seria só um argumento bonito. Este documento é a instrumentação.
+# Tools and skills used on this project
 
-Atualizado em 30 de agosto de 2026. Cresce a cada skill nova que entrar em uso, nunca é reescrito por inteiro.
+A record of what this project has actually installed and uses, not just what it cites. A project about harness engineering that did not instrument its own creation would just be a nice-sounding argument. This document is the instrumentation.
+
+Updated 30 August 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
 
 ---
 
-## Coleções de terceiro instaladas
+## Third-party collections installed
 
-Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-toolkit.html). Some a `intake-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
+Five collections, thirty skills, all MIT-licensed. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. Each is cited as an entry in the [compact guide](harness-toolkit.html). Add `intake-briefing`, the project's own skill covered in the next section, and the environment has 31 active skills in total.
 
-| Coleção | Origem | Skills instaladas | Por que entrou |
+| Collection | Origin | Skills installed | Why it made the cut |
 |---|---|---|---|
-| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, a coleção inteira | É o padrão de regra inegociável mais bandeiras vermelhas que `STANDARDS.md` já adota como padrão de escrita de skill deste projeto |
-| mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, seleção curada | Skills de escrita, clarificação e handoff de sessão. O conjunto de engenharia de software da coleção (TDD, arquitetura de código, merge conflict, TypeScript) ficou de fora por não se aplicar a um projeto de conteúdo, ver a lista completa abaixo |
-| c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, a coleção inteira | Modelo C4 e registro de decisão de arquitetura, relevante para a rodada de pesquisa da parte 3 |
-| Guia inspirado em Karpathy | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | Guia comportamental contra erros comuns de LLM. Não é do Karpathy, ver a ressalva completa em `sources/inventory.md` |
-| ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | Fonte real da matriz de cinco regras de limpeza citada na parte 2, seção Reforçar |
+| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, the whole collection | It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard |
+| mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, curated selection | Writing, clarification and session-handoff skills. The collection's software-engineering set (TDD, code architecture, merge conflicts, TypeScript) was left out as not applicable to a content project, see the full list below |
+| c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, the whole collection | The C4 model and architecture decision records, relevant to the Part 3 research round |
+| Karpathy-inspired guide | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | A behavioural guide against common LLM mistakes. Not actually by Karpathy, see the full caveat in `sources/inventory.md` |
+| ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | The real source of the five-rule cleanup matrix cited in Part 2's Reinforce section |
 
 ---
 
-## As trinta skills, por coleção
+## The thirty skills, by collection
 
 **superpowers:** brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills.
 
 **mattpocock/skills:** claude-handoff, grill-me, handoff, research, retro, teach, to-questionnaire, wait-what, writing-beats, writing-for-agents, writing-fragments, writing-shape.
 
-**c4-skills:** adr-scribe, c4-model (a pasta de origem chama essa skill de `c4designer`, o cabeçalho interno do `SKILL.md` declara o nome `c4-model`; renomeamos a pasta local para bater com o nome declarado).
+**c4-skills:** adr-scribe, c4-model (the origin folder calls this skill `c4designer`, but `SKILL.md`'s own internal header declares the name `c4-model`; we renamed the local folder to match the declared name).
 
-**Guia inspirado em Karpathy:** karpathy-guidelines.
+**Karpathy-inspired guide:** karpathy-guidelines.
 
 **ai-slop-cleaner:** ai-slop-cleaner.
 
 ---
 
-## A skill própria do projeto
+## The project's own skill
 
-`intake-briefing` não é instalada de terceiro, é criada por este projeto. Vivia como subpasta aqui dentro até 30 de agosto de 2026, e nesse mesmo dia ganhou repositório próprio, público, MIT: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing). O harness-medir não guarda mais o conteúdo dela, só aponta, no mesmo padrão que aponta para as outras cinco coleções desta página.
+`intake-briefing` is not installed from a third party, it is created by this project. It lived as a subfolder in here until 30 August 2026, when it gained its own public, MIT repository the same day: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing) (renamed from `levantando-briefing` later that same day, as part of the English-primary restructuring). harness-medir no longer holds its content, only points to it, the same pattern it uses to point at the other five collections on this page.
 
-Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skill de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/intake-briefing/`, fora do controle de versão, buscada do repositório próprio.
+It also was not active in this environment until this round: `.claude/skills/`, which is where this harness discovers project skills, only had the thirty third-party ones. Fixed: a copy of it lives at `.claude/skills/intake-briefing/`, outside version control, pulled from its own repository.
 
-**Risco assumido, dito com honestidade:** essa cópia local pode ficar para trás se o repositório da skill for editado sem atualizar a cópia aqui. É o mesmo tipo de risco que aceitamos para as trinta skills de terceiro, agora também para a nossa.
-
----
-
-## Auditoria antes de instalar
-
-Aplicamos o próprio checklist que o guia compacto recomenda, seção "Antes de instalar qualquer coisa": lemos o conteúdo, procuramos instrução mandando o sistema buscar algo em rede externa, conferimos a licença antes de decidir.
-
-Varredura por padrão de rede ou execução (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`) nas cinco fontes: nenhuma instrução de busca externa automática. Os únicos acertos foram exemplo de código didático (mock de `fetch` numa skill de teste do mattpocock/skills) e execução local legítima (`execFileSync` do superpowers para renderizar diagrama Mermaid em SVG, sem rede). Nenhuma das cinco fontes exigiu dependência externa não declarada para funcionar como skill isolada.
+**Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty third-party skills, now also for our own.
 
 ---
 
-## Uma observação sobre o ambiente
+## Audit before installing
 
-Duas destas coleções, superpowers e o guia inspirado em Karpathy, já estavam disponíveis globalmente neste ambiente antes desta instalação, provavelmente via plugin já configurado na máquina. Instalamos a cópia local do projeto mesmo assim, de propósito: o objetivo é que o trabalho deste projeto continue reproduzível em qualquer máquina que clone o repositório e instale as mesmas trinta skills, sem depender do que está configurado globalmente em uma máquina específica.
+We applied the compact guide's own checklist, the "Before installing anything" section: read the content, look for an instruction telling the system to fetch something from an external network, check the licence before deciding.
 
----
-
-## Registro de uso real
-
-Esta seção é a que separa "instalado" de "usado", e é a que mais vai crescer. Cada entrada nomeia a skill, o artefato que ela ajudou a produzir, e a data.
-
-*Nenhum uso registrado ainda além da instalação em si, feita em 30 de agosto de 2026. Todo o trabalho deste projeto até aqui (repositório, reescrita do guia compacto, tradução da parte 2) foi feito com as ferramentas nativas do harness, sem nenhuma destas trinta skills. A partir de agora, todo uso real entra aqui antes de ser reivindicado em qualquer artigo.*
+A scan for network or execution patterns (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`) across the five sources found no automatic external-fetch instruction. The only hits were a didactic code example (a mocked `fetch` in a mattpocock/skills test skill) and legitimate local execution (superpowers' `execFileSync`, to render a Mermaid diagram to SVG, no network involved). None of the five sources required an undeclared external dependency to function as a standalone skill.
 
 ---
 
-## Onde isso aparece
+## A note on the environment
 
-Rodapé de `harness-p1.html`, `harness-p2.html` e `harness-toolkit.html`, nos três idiomas onde a peça for trilíngue. E no [diário de bordo](docs/logbook.html), trilíngue, com o detalhamento por marco, gerado a partir do git e do registro real de uso da sessão, nunca editado à mão.
+Two of these collections, superpowers and the Karpathy-inspired guide, were already globally available in this environment before this installation, likely via a plugin already configured on the machine. We installed the project's local copy anyway, on purpose: the goal is for this project's work to stay reproducible on any machine that clones the repository and installs the same thirty skills, without depending on what is configured globally on one specific machine.
+
+---
+
+## Real usage log
+
+This section is what separates "installed" from "used", and it is the one that will grow the most. Every entry names the skill, the artefact it helped produce, and the date.
+
+*No usage logged yet beyond the installation itself, done on 30 August 2026. All of this project's work up to that point (the repository, the compact guide rewrite, Part 2's translation, the English-primary restructuring across both repositories) was done with the harness's native tools, without any of these thirty skills. From here on, every real use enters this log before being claimed in any article.*
+
+---
+
+## Where this shows up
+
+Footer of `harness-p1.html`, `harness-p2.html` and `harness-toolkit.html`, in all three languages where the piece is trilingual. And in the [project log](docs/logbook.html), trilingual, with the per-milestone detail, generated from git and the session's real usage log, never edited by hand.

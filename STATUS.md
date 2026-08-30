@@ -1,105 +1,122 @@
-# Estado
+*Read this in [Português](STATUS.pt.md) · [Español](STATUS.es.md).*
 
-Situação em 30 de agosto de 2026.
+# Status
 
-Publicado em `github.com/tecosodreaboutdigital/harness-medir` (repositório) e `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, os HTML renderizam como página, não só como código-fonte).
+Situation as of 30 August 2026.
+
+Published at `github.com/tecosodreaboutdigital/harness-medir` (repository) and `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, the HTML files render as pages, not just as source code).
 
 ---
 
-## Pronto
+## Ready
 
-### Diário de bordo
+### English-primary restructuring
 
-`docs/logbook.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas e tokens consumidos por marco, gerado a partir do git e do transcript real da sessão, nunca escrito à mão. Ver `build/generate_logbook_metrics.py` e `build/build_logbook.py`. Seis marcos até aqui, o histórico completo do repositório, mais o que ainda está em sessão aberta.
+English became this project's primary production language for both public repositories on 30 August 2026, decided partway through what had been a Portuguese-first project. Every governance document, the compact guide and the briefing skill were renamed and rewritten English-first, with Portuguese and Spanish as full translations rather than the other way round. See the `Languages` section of `STANDARDS.md` for the rule itself.
 
-### Parte 1 · O melhor modelo do mundo dentro de uma empresa sem processo
+Mechanically: `PADROES.md` → `STANDARDS.md`, `ESTADO.md` → `STATUS.md`, `PROXIMOS-PASSOS.md` → `NEXT-STEPS.md`, `FERRAMENTAS.md` → `TOOLS.md`, `fontes/inventario.md` → `sources/inventory.md`, `harness-caixa-de-ferramentas.html` → `harness-toolkit.html`, `docs/diario-de-bordo.html` → `docs/logbook.html`, plus the corresponding `build/` scripts and data files. Every cross-reference across both repositories was swept and fixed, including the absolute GitHub blob URLs pointing at the old governance filenames and the language-prefixed anchors linking Part 2 into the compact guide. Historical commit descriptions inside the project log were deliberately left naming the old filenames where that is what was literally true at the time of that commit, with a note added where the later rename needed acknowledging, so the log stays a faithful record rather than a retroactively tidied one.
+
+The already-complete trilingual pieces (`harness-p1.html`, `harness-p2.html`, `docs/logbook.html`) had their default tab flipped from Portuguese to English: the `<html lang>` attribute, the active langbar button and which `<main>` is hidden all moved, both in the built files and in the build scripts that regenerate them, so a rebuild does not silently revert to the Portuguese default.
+
+A browser-language hint was added to all four trilingual HTML pages: if the visitor's browser language is Portuguese or Spanish and does not already match the active tab, and no explicit language-prefixed link is routing the page, a small dismissible banner offers to switch, worded in that language. Any other browser language falls back to English with no banner. GitHub does not execute JavaScript inside rendered Markdown, so the skill repository's twelve files instead carry a static language-navigation line at the top of each.
+
+### Project log
+
+`docs/logbook.html`, trilingual. Documents the project's own evolution: words published and tokens consumed per milestone, generated from git and the real session transcript, never written by hand. See `build/generate_logbook_metrics.py` and `build/build_logbook.py`. Six milestones recorded so far from the repository's full history, plus whatever is still in the open session.
+
+### Part 1 · The best model in the world inside a company with no process
 
 `harness-p1.html`
 
-Trilíngue completa, treze seções mais o bloco de navegação, três diagramas, 26 verbetes de glossário. Cerca de 4.700 palavras em português, 4.500 em inglês, 4.700 em espanhol.
+Fully trilingual, thirteen sections plus the navigation block, three diagrams, 26 glossary entries. About 4,700 words in Portuguese, 4,500 in English, 4,700 in Spanish.
 
-Conteúdo: cena de abertura com a diretora, o que é um harness, a analogia da delegação, a linhagem histórica com correção da atribuição do termo, quatro estudos de caso com números, o ciclo MEDIR, a tabela de equivalências com o vocabulário de qualidade, as faixas N0 a N3, riscos em nível de conselho, checklist de doze perguntas.
+Content: an opening scene with the director, what a harness is, the delegation analogy, the historical lineage with a correction to the term's attribution, four case studies with numbers, the MEDIR cycle, the equivalence table against quality vocabulary, tiers N0 to N3, board-level risks, a twelve-question checklist.
 
-Barra de série e bloco "Onde você está" já implementados.
+Series bar and "Where you are" block already implemented.
 
-### Parte 2 · Guias e sensores: como um agente aprende a se corrigir
+### Part 2 · Guides and sensors: how an agent learns to correct itself
 
 `harness-p2.html`
 
-Trilíngue completa desde 30 de agosto de 2026. Dezessete seções, três diagramas, 26 verbetes por idioma. Cerca de 6.200 palavras em português, 6.350 em inglês, 6.450 em espanhol.
+Fully trilingual since 30 August 2026. Seventeen sections, three diagrams, 26 glossary entries per language. About 6,200 words in Portuguese, 6,350 in English, 6,450 in Spanish.
 
-Reescrita completa depois de uma primeira versão descartada. A versão descartada falhava por abandonar a personagem, não fazer histórico da parte 1 e organizar por conceito em vez de pelo ciclo.
+Completely rewritten after a discarded first version. The discarded version failed by dropping the character, not carrying Part 1's history forward, and organising by concept instead of by the cycle.
 
-Conteúdo: abre na quarta semana com a diretora tendo escrito o guia inteiro e o sistema liberando nota de fornecedor descredenciado. Seções ancoradas em Equipar, Delegar e Inspecionar, com Reforçar no fim. Inclui a matriz de guias e sensores, a comparação entre mensagem de erro que ensina e alarme, o truque do limiar, a unidade de durabilidade, três exemplos completos com SKILL.md real, as classes de ambiente cruzadas com as faixas, e limpeza como cadência.
+Content: opens in week four with the director having written the whole guide and the system releasing an invoice from a de-accredited supplier. Sections anchored on Equip, Delegate and Inspect, with Reinforce at the end. Includes the guides-and-sensors matrix, the comparison between an error message that teaches and an alarm, the threshold trick, the durability unit, three full examples with a real SKILL.md, environment classes crossed with tiers, and cleanup as cadence.
 
-Tradução inglesa em grafia britânica, espanhola por "tú". MEDIR e harness mantidos como nome próprio nos três idiomas, conforme `STANDARDS.md`. Os exemplos de skill (nomes de arquivo, campos, valores) foram traduzidos também, não só a prosa ao redor.
+English translation in British spelling, Spanish by "tú". MEDIR and harness kept as proper nouns in all three languages, per `STANDARDS.md`. The skill examples (file names, fields, values) were translated too, not just the surrounding prose.
 
-O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por âncora: um link do tipo `harness-p1.html#en-opening` agora seleciona a aba certa antes de rolar, em vez de sempre abrir na aba PT padrão. Sem esse ajuste, um leitor em inglês clicando em qualquer referência cruzada para a parte 1 caía sempre em português.
+The language-switching JavaScript in Part 1 and Part 2 gained anchor-based routing: a link like `harness-p1.html#en-opening` now selects the correct tab before scrolling, instead of always opening on the default tab. Without that fix, a reader in English clicking any cross-reference into Part 1 always landed in Portuguese.
 
 ### Skill intake-briefing
 
-`github.com/tecosodreaboutdigital/intake-briefing`, repositório próprio desde 30 de agosto de 2026. Artefato original do projeto, completo, publicado, MIT. Quatro arquivos: SKILL.md, interview-script.md, briefing-template.md, README.md.
+`github.com/tecosodreaboutdigital/intake-briefing`, its own repository since 30 August 2026, renamed from `levantando-briefing` that same day as part of the English-primary restructuring ("levantando" was a plain Portuguese verb, not an established proper noun the way MEDIR and harness are). The project's original artefact, complete, published, MIT. Four files, each with a Portuguese and Spanish translation alongside it: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
 
-Decide se a automação deve existir, antes de discutir como funciona. Oito blocos, tabela determinística de derivação de faixa, veredito com três opções incluindo não fazer, e versionamento com comparação bloco a bloco.
+Decides whether the automation should exist, before discussing how it works. Eight blocks, a deterministic tier-derivation table, a verdict with three options including do not do it, and versioning with block-by-block comparison.
 
-Preenche uma lacuna verificada: existe farto material sobre como especificar, quase nada sobre como decidir se vale.
+Fills a verified gap: there is plenty of material on how to specify well, almost none on how to decide whether it is worth it.
 
-Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/intake-briefing/`, fora do controle de versão, ver `TOOLS.md`.
+Separated from the harness-medir monorepo for independent installation, in the same pattern as the other skills cited in the compact guide. Active in this environment via a local copy at `.claude/skills/intake-briefing/`, outside version control, see `TOOLS.md`.
 
-### Guia compacto de ferramentas e skills
+### Compact guide to tools and skills
 
 `harness-toolkit.html`
 
-Reescrito por completo em 30 de agosto de 2026. Organizado pelos cinco passos do MEDIR, não por categoria de produto. Dezessete fichas de seis campos, mais seção de diagnóstico de faixa no início para quem chega da parte 1. Cada passo do MEDIR tem crítica registrada, não só recomendação.
+Completely rewritten on 30 August 2026, then translated into English and Spanish the same day as part of the language restructuring, with English as the default tab. Organised by the five steps of MEDIR, not by product category. Seventeen six-field entries, plus a tier-diagnosis section at the start for readers arriving from Part 1. Every MEDIR step carries a recorded critique, not just a recommendation.
 
-Distribuição: Mapear com quatro fichas (intake-briefing, guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica de Böckeler e Pocock), Equipar com três (superpowers, mattpocock/skills, planning-with-files), Delegar com três (holdfast, classes de ambiente, orquestração programada com LangGraph), Inspecionar com quatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforçar com três (ai-slop-cleaner, limpeza como cadência, coleta de lixo).
+Distribution: Map with four entries (intake-briefing, a Karpathy-inspired guide, c4-skills, spec-before-code with Böckeler and Pocock's critique), Equip with three (superpowers, mattpocock/skills, planning-with-files), Delegate with three (holdfast, environment classes, scheduled orchestration with LangGraph), Inspect with four (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reinforce with three (ai-slop-cleaner, cleanup as cadence, garbage collection).
 
-Toda ferramenta citada está verificada em `sources/inventory.md`, incluindo três fontes adicionadas nesta reescrita: Semgrep, LangGraph e GitHub Spec Kit com link direto.
+Every tool cited is verified in `sources/inventory.md`, including three sources added in this rewrite: Semgrep, LangGraph and GitHub Spec Kit with a direct link.
 
-Repositório publicado, público, em `github.com/tecosodreaboutdigital/harness-medir`.
+Published, public repository at `github.com/tecosodreaboutdigital/harness-medir`.
 
 ---
 
-## Não iniciado
+## Not started
 
-### Parte 3 · Governança de agentes
+### Part 3 · Agent governance
 
-Escopo definido, base de pesquisa fraca. É a peça de maior valor comercial e a que está com a fundação mais rasa.
+Scope defined, research base weak. It is the piece with the greatest commercial value and the shallowest foundation.
 
-Escopo: permissão imposta fora do modelo, instrução maliciosa que chega dentro de um dado ou de uma skill de terceiro, registro auditável, reversão, obrigações legais, e quem responde pelo que o agente fez.
+Scope: permission enforced outside the model, malicious instructions arriving inside a piece of data or a third-party skill, an auditable log, reversal, legal obligations, and who answers for what the agent did.
 
-O que falta pesquisar, e é rodada dedicada, não complemento: literatura de segurança de agentes, incidentes reais documentados, posição da autoridade brasileira sobre decisão automatizada, obrigações regulatórias europeias para sistemas de alto risco, e o que já existe de padrão de auditoria de agentes.
+What still needs researching, and it is a dedicated round, not an add-on: agent security literature, documented real incidents, the Brazilian data-protection authority's position on automated decisions, European regulatory obligations for systems classified as high-risk, and what already exists as agent audit standards.
 
-Escrever agora produziria opinião bem escrita, não referência.
+Writing it now would produce well-written opinion, not a reference.
 
-### Traduções pendentes
+### Translation status
 
-| Peça | PT | EN | ES |
+| Piece | PT | EN | ES |
 |---|---|---|---|
-| Parte 1 | pronta | pronta | pronta |
-| Parte 2 | pronta | pronta | pronta |
-| Guia compacto | pronta | falta | falta |
-| Parte 3 | falta | falta | falta |
-| Skill de briefing | pronta | falta | falta |
+| Part 1 | ready | ready | ready |
+| Part 2 | ready | ready | ready |
+| Compact guide | ready | ready | ready |
+| Part 3 | missing | missing | missing |
+| Briefing skill | ready | ready | ready |
+| Governance docs | ready | ready | ready |
 
 ### Playbook
 
-Consolidação das três partes mais o guia, acrescido do que ainda não existe: modelo de contrato de tarefa, modelo de skill, modelo de recibo de execução, matriz de risco, diagnóstico de faixa e trilha de implantação.
+Consolidation of the three parts plus the guide, adding what does not exist yet: a task-contract template, a skill template, an execution-receipt template, a risk matrix, a tier diagnostic and a rollout path.
 
-A skill de briefing já é o primeiro artefato operacional dele.
+The briefing skill is already its first operational artefact.
 
 ---
 
-## Decisões tomadas que não devem ser revertidas sem motivo
+## Decisions made that should not be reverted without reason
 
-**O termo harness não é traduzido.** Mantido em inglês pela mesma razão que ninguém traduziu kaizen, kanban ou poka-yoke. Foram descartadas as alternativas arnês, arreio, cabresto e sela: metáfora de contenção vende a ideia errada para um leitor que já teme perder controle.
+**English is this project's primary production language, decided 30 August 2026,** for both public repositories, even though the working conversation with the author stays in Portuguese. See the `Languages` section of `STANDARDS.md`.
 
-**A atribuição correta do termo é Mitchell Hashimoto, fevereiro de 2026**, não Andrej Karpathy. Karpathy cunhou vibe coding e popularizou context engineering, e o nome dele aparece corretamente nesses contextos.
+**The term harness is not translated.** Kept in English for the same reason nobody translated kaizen, kanban or poka-yoke. The alternatives arnês, arreio, cabresto and sela (rough Portuguese equivalents evoking a restraint) were discarded: a containment metaphor sells the wrong idea to a reader who already fears losing control.
 
-**Inspecionar, e não Instrumentar,** no passo I. Instrumentar é tecnicamente mais preciso e coerente com o argumento de que qualidade não se inspeciona no fim da linha, mas Inspecionar é o termo do repertório do autor e a sigla depende dele.
+**The term's correct attribution is Mitchell Hashimoto, February 2026,** not Andrej Karpathy. Karpathy coined vibe coding and popularised context engineering, and his name appears correctly in those contexts.
 
-**Exemplos na escada indivíduo, time, área.** Não usar equipe nem empresa.
+**Inspect, not Instrument, for the I step.** Instrument is technically more precise and consistent with the argument that quality is not inspected at the end of the line, but Inspect is the term from the author's own repertoire and the acronym depends on it.
 
-**Cena de abertura composta,** não real, e isso está declarado no rodapé de cada peça. Se surgir um caso real anonimizado, substituir melhora bastante o texto.
+**Examples on the individual, team, area ladder.** Do not use "company" or a level above area.
 
-**Guia compacto separado dos artigos,** com data de revisão visível, porque envelhece mais rápido.
+**The opening scene is composite,** not real, and that is stated in the footer of every piece. If a real anonymised case from the author's ecosystem comes up, replacing it would improve the text considerably.
+
+**The compact guide lives apart from the articles,** with a visible revision date, because it ages faster.
+
+**The skill repository is renamed intake-briefing, not kept as levantando-briefing.** Unlike harness and MEDIR, "levantando" was never established as a proper noun the reader needed to learn, it was simply the Portuguese verb for the skill's function, so it translates rather than staying fixed.

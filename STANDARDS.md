@@ -1,122 +1,128 @@
-# Padrões
+*Read this in [Português](STANDARDS.pt.md) · [Español](STANDARDS.es.md).*
 
-Regras não negociáveis deste projeto. Leia antes de editar qualquer arquivo.
+# Standards
 
----
-
-## Escrita
-
-**Travessão é proibido em qualquer circunstância.** Não use em nenhum idioma. Substitua por vírgula, dois pontos, parênteses ou ponto final. Esta é a regra mais violada e a mais importante.
-
-**Hífen é permitido**, inclusive hifenização automática no texto justificado.
-
-**Registro da prosa:** narrativo e argumentado, na linha de Adam Grant, Brené Brown, Simon Sinek e Malcolm Gladwell. Nada de despejo de bullets. O texto argumenta, não lista.
-
-**Tom:** direto. Sem introdução longa, sem transição vazia, sem conclusão redundante, sem reforço positivo.
-
-**Correção factual tem prioridade sobre suavização.** Atribuições erradas são corrigidas no texto. Ferramenta sem fonte verificada não é citada.
-
-**Evitar:** "genuinamente", "honestamente", "simplesmente". Evitar a construção "não é X, é Y" em excesso. Evitar aspas de ironia em torno de termos inventados.
+Non-negotiable rules for this project. Read before editing any file.
 
 ---
 
-## Formatação de documento
+## Writing
 
-| Elemento | Especificação |
+**Em dash is forbidden under any circumstance.** Do not use it in any language. Replace it with a comma, colon, parentheses or full stop. This is the most-violated and most important rule.
+
+**Hyphen is allowed**, including automatic hyphenation in justified text.
+
+**Register of the prose:** narrative and argued, in the line of Adam Grant, Brené Brown, Simon Sinek and Malcolm Gladwell. No bullet dumps. The text argues, it does not list.
+
+**Tone:** direct. No long introduction, no empty transition, no redundant conclusion, no positive reinforcement.
+
+**Factual correction outranks smoothing.** Wrong attributions are corrected in the text. A tool without a verified source is not cited.
+
+**Avoid:** filler words such as "genuinely", "honestly", "simply" (and their Portuguese/Spanish equivalents). Avoid overusing the "it's not X, it's Y" construction. Avoid scare quotes around invented terms.
+
+---
+
+## Document formatting
+
+| Element | Specification |
 |---|---|
-| Página | A4, margens 2 cm em cima e embaixo, 1,5 cm nas laterais |
-| Corpo | Aptos ou Aptos Light, 10,5, justificado |
-| Título nível 1 | 14, negrito |
-| Título nível 2 | 12 |
-| Numeração de seções | Número na própria linha do título. Sem rótulo pequeno acima. Sem numeração de subitens |
-| Tabelas | Largura total, cabeçalho centralizado em 8, corpo em 9, sem sombreamento, sem cores alternadas |
-| Notas de figura e rodapé | Sem borda, itálico, tamanho 9 |
-| Citação em destaque | Sem borda nenhuma, fundo cinza azulado claro, tamanho 9, protegida contra quebra de página |
-| Blocos de código | Mesmo fundo das citações, sem borda, 8,5 na impressão |
-| Saída | Somente HTML. Nada de DOCX, nada de Markdown para artigos |
+| Page | A4, 2 cm margins top and bottom, 1.5 cm on the sides |
+| Body | Aptos or Aptos Light, 10.5, justified |
+| Level-1 title | 14, bold |
+| Level-2 title | 12 |
+| Section numbering | Number on the title's own line. No small label above it. No sub-item numbering |
+| Tables | Full width, header centred at 8, body at 9, no shading, no alternating colours |
+| Figure and footnote captions | No border, italic, size 9 |
+| Pull quote | No border at all, light blue-grey background, size 9, protected against page breaks |
+| Code blocks | Same background as pull quotes, no border, 8.5 in print |
+| Output | HTML only. No DOCX, no Markdown for articles |
 
-Exceção à última linha: skills e modelos operacionais nascem em Markdown, porque são artefatos de repositório.
-
----
-
-## Sistema visual
-
-Diagramas em SVG inline, traço de 0,7, sem preenchimento, sem cor. Rótulos em versaletes espaçados. Legendas em itálico 9, sem borda.
-
-Uma exceção deliberada: o diagrama de faixas usa altura crescente das caixas para representar autonomia.
-
-Não usar bibliotecas de gráfico. Não usar imagens rasterizadas.
+Exception to the last line: skills and operational templates are born in Markdown, because they are repository artefacts.
 
 ---
 
-## Glossário
+## Visual system
 
-Estilo de livro. Ordem alfabética ignorando acentos. Sem filete entre verbetes. Termo em negrito, dois pontos, definição na mesma linha, origem ao final em itálico com link. Recuo pendente.
+Inline SVG diagrams, 0.7 stroke, no fill, no colour. Labels in spaced small caps. Captions in italic 9, no border.
 
-No corpo do texto, o termo aparece sublinhado em pontilhado, com dica ao passar o cursor e link para o verbete.
+One deliberate exception: the tier diagram uses increasing box height to represent autonomy.
 
-Nomes próprios entram pelo sobrenome: "Deming, W. Edwards".
-
----
-
-## Referências
-
-**Link só onde a URL foi verificada.** Quando a origem é conhecida mas o endereço não foi conferido, a origem aparece em texto sem link.
-
-Referências apontam para a fonte primária, nunca para blog de consultoria ou vitrine de skills sem repositório de origem visível.
-
-Um inventário que só recomenda não é inventário, é catálogo de fornecedor. Toda ficha traz também quando não usar.
+Do not use charting libraries. Do not use raster images.
 
 ---
 
-## Navegação cruzada
+## Glossary
 
-Quatro camadas, todas implementadas:
+Book style. Alphabetical order ignoring accents. No rule between entries. Term in bold, colon, definition on the same line, origin at the end in italic with a link. Hanging indent.
 
-1. Barra de série no topo de cada documento, ao lado do seletor de idioma.
-2. Links no corpo: menções a faixas ou ao MEDIR levam à seção correspondente da parte 1. Menções a ferramenta levam à ficha no guia compacto.
-3. Bloco "Onde você está" ao fim de cada peça.
-4. Glossário com redação única por verbete, replicada entre documentos.
+In body text, the term appears with a dotted underline, with a tooltip on hover and a link to the entry.
 
----
-
-## Idiomas
-
-Três versões completas por peça, no mesmo arquivo, com seletor.
-
-**Espanhol:** tratamento por "tú", não "usted".
-**Inglês:** grafia britânica.
-**MEDIR** é mantido como nome próprio do método nos três idiomas.
-
-Identificadores de âncora e marcadores de SVG são prefixados por idioma. Nunca gerar conteúdo novo sem passar pela função `scope()`.
+Proper names are alphabetised by surname: "Deming, W. Edwards".
 
 ---
 
-## Ficha de ferramenta no guia compacto
+## References
 
-Seis campos, sempre nesta ordem, em prosa e não em lista solta:
+**Link only where the URL has been verified.** When the source is known but the address has not been checked, the source appears in plain text with no link.
 
-1. Qual problema isso resolve
-2. O que você ganha na prática
-3. Para quem serve, por faixa N0 a N3
-4. Faixa mínima
-5. Quando não usar
-6. Como começar em quinze minutos
+References point to the primary source, never to a consultancy blog or a skill showcase with no visible origin repository.
+
+An inventory that only recommends is not an inventory, it is a vendor catalogue. Every entry also states when not to use it.
 
 ---
 
-## Padrão de escrita de skill
+## Cross-navigation
 
-Herdado das melhores coleções públicas e adotado como padrão do projeto:
+Four layers, all implemented:
 
-**Regra inegociável no topo,** curta e sem ambiguidade.
+1. Series bar at the top of every document, next to the language selector.
+2. In-body links: mentions of a tier or of MEDIR lead to the corresponding section of Part 1. Mentions of a tool lead to its entry in the compact guide.
+3. A "Where you are" block at the end of every piece.
+4. A glossary with a single wording per entry, replicated across documents.
 
-**Bandeiras vermelhas logo abaixo:** as racionalizações que o sistema provavelmente vai usar para justificar não seguir a regra. O alvo não é ensinar a regra, que ele já conhece, é impedir que ele se convença a não segui-la.
+---
 
-**Critério de pronto verificável,** de preferência a saída de um comando e não uma opinião.
+## Languages
 
-**Teto de tentativas** com caminho de saída explícito.
+English is this project's primary production language for both public repositories, decided 30 August 2026. New content is authored in English first; Portuguese and Spanish are full translations produced from it, not the other way round. This does not require redoing content that was already complete in all three languages before that date.
 
-**Seção Nunca** ao final.
+Three complete versions per piece, in the same file, with a selector. English is the default tab.
 
-**Limites honestos** declarados: o que foi exercitado, o que é inferência, o que a skill não faz.
+**Spanish:** "tú" register, not "usted".
+**English:** British spelling.
+**MEDIR** stays as the method's proper noun in all three languages.
+
+Anchor identifiers and SVG markers are prefixed by language. Never generate new content without passing it through the `scope()` function.
+
+A browser-language hint applies on the four trilingual HTML pages: if the visitor's browser language is Portuguese or Spanish and does not match the active tab, and no language-prefixed hash is already routing the page, a dismissible banner in that language offers to switch. Any other browser language falls back to English silently. GitHub renders the skill repository's Markdown files without executing JavaScript, so the equivalent there is a static language-navigation line at the top of every file, not an adaptive one.
+
+---
+
+## Tool entry in the compact guide
+
+Six fields, always in this order, in prose rather than a loose list:
+
+1. What problem this solves
+2. What you gain in practice
+3. Who it is for, by tier N0 to N3
+4. Minimum tier
+5. When not to use it
+6. How to start in fifteen minutes
+
+---
+
+## Skill-writing pattern
+
+Inherited from the best public collections and adopted as this project's standard:
+
+**Non-negotiable rule at the top,** short and unambiguous.
+
+**Red flags right below it:** the rationalisations the system will likely use to justify not following the rule. The target is not teaching the rule, which it already knows, it is stopping it from talking itself out of following it.
+
+**A verifiable done criterion,** preferably the output of a command rather than an opinion.
+
+**An attempt ceiling** with an explicit exit path.
+
+**A Never section** at the end.
+
+**Honest limits** stated: what has been exercised, what is inference, what the skill does not do.
