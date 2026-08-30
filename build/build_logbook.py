@@ -79,6 +79,16 @@ COMMIT_TXT = {
         'en': 'Session 2. Four externally recommended skills evaluated (ponytail, no-ai-slop, taste-skill, impeccable) on relevance, maintenance, contributors and licence. Only impeccable adopted, as the compact guide’s eighteenth entry, in Inspect.',
         'es': 'Sesión 2. Cuatro skills recomendadas desde afuera evaluadas (ponytail, no-ai-slop, taste-skill, impeccable) por relevancia, mantenimiento, colaboradores y licencia. Solo impeccable adoptada, como la decimoctava ficha de la guía compacta, en Inspeccionar.',
     },
+    'dbeb0c1': {
+        'pt': 'Diário de bordo regerado para incluir o marco da curadoria de impeccable.',
+        'en': 'Project log regenerated to include the impeccable curation milestone.',
+        'es': 'Diario de bordo regenerado para incluir el hito de la curaduría de impeccable.',
+    },
+    'c5a3fa0': {
+        'pt': 'Dossiê de trabalho para as partes 3 e 4 adicionado: diagnóstico em três camadas, sete eixos de pesquisa da parte 3 já com fontes verificadas, especificação de dez diagramas. Propõe uma quarta parte para a série, ainda não formalizada em README.md nem em STATUS.md por decisão explícita.',
+        'en': 'Working dossier for parts 3 and 4 added: a three-layer diagnosis, seven research axes for part 3 already with verified sources, a ten-diagram specification. Proposes a fourth part for the series, not yet formalised in README.md or STATUS.md by explicit decision.',
+        'es': 'Dosier de trabajo para las partes 3 y 4 añadido: diagnóstico en tres capas, siete ejes de investigación de la parte 3 ya con fuentes verificadas, especificación de diez diagramas. Propone una cuarta parte para la serie, todavía no formalizada en README.md ni en STATUS.md por decisión explícita.',
+    },
 }
 
 MONTHS = {
