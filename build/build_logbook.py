@@ -49,6 +49,26 @@ COMMIT_TXT = {
         'en': 'levantando-briefing gets its own public repository, in the same pattern as the other cited skills. harness-medir now only points to it.',
         'es': 'levantando-briefing gana repositorio propio y público, en el mismo patrón que las demás skills citadas. harness-medir pasa a solo apuntar hacia allí.',
     },
+    '3000e88': {
+        'pt': 'Diário de bordo criado, trilíngue, gerado do git e do uso real da sessão. GitHub Pages ativado, com .nojekyll para servir os HTML como estão.',
+        'en': 'Project log created, trilingual, generated from git and the session’s real usage. GitHub Pages enabled, with .nojekyll to serve the HTML files as they are.',
+        'es': 'Diario de bordo creado, trilingüe, generado a partir de git y del uso real de la sesión. GitHub Pages activado, con .nojekyll para servir los HTML tal cual.',
+    },
+    '9d3892f': {
+        'pt': 'Início da reestruturação para inglês primário. PADROES.md, ESTADO.md, PROXIMOS-PASSOS.md, FERRAMENTAS.md e as demais peças renomeadas para inglês, idioma padrão das peças já trilíngues trocado de PT para EN, aviso de idioma do navegador adicionado.',
+        'en': 'Start of the English-primary restructuring. PADROES.md, ESTADO.md, PROXIMOS-PASSOS.md, FERRAMENTAS.md and the other pieces renamed to English, default tab of the already-trilingual pieces switched from PT to EN, browser-language hint added.',
+        'es': 'Inicio de la reestructuración hacia el inglés primario. PADROES.md, ESTADO.md, PROXIMOS-PASSOS.md, FERRAMENTAS.md y las demás piezas renombradas al inglés, pestaña predeterminada de las piezas ya trilingües cambiada de PT a EN, pista de idioma del navegador añadida.',
+    },
+    '65d9c1e': {
+        'pt': 'Guia compacto traduzido para inglês e espanhol, com inglês como aba padrão. Repositório da skill de briefing renomeado de levantando-briefing para intake-briefing.',
+        'en': 'Compact guide translated into English and Spanish, with English as the default tab. The briefing skill’s repository renamed from levantando-briefing to intake-briefing.',
+        'es': 'Guía compacta traducida al inglés y al español, con el inglés como pestaña predeterminada. Repositorio de la skill de briefing renombrado de levantando-briefing a intake-briefing.',
+    },
+    '1106102': {
+        'pt': 'README, STANDARDS, STATUS, NEXT-STEPS e TOOLS reescritos em inglês como versão primária, cada um com tradução completa em português e espanhol. Fecha a reestruturação para inglês primário nos dois repositórios públicos.',
+        'en': 'README, STANDARDS, STATUS, NEXT-STEPS and TOOLS rewritten in English as the primary version, each with a full Portuguese and Spanish translation. Closes the English-primary restructuring across both public repositories.',
+        'es': 'README, STANDARDS, STATUS, NEXT-STEPS y TOOLS reescritos en inglés como versión primaria, cada uno con traducción completa al portugués y al español. Cierra la reestructuración hacia el inglés primario en los dos repositorios públicos.',
+    },
 }
 
 MONTHS = {
