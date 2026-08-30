@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T18:43:07.166928+00:00",
+  "generated_at": "2026-08-30T21:04:29.476231+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
@@ -245,12 +245,52 @@
         "cache_read": 263553438,
         "cache_creation": 2377492
       }
+    },
+    {
+      "hash": "dbeb0c1",
+      "timestamp": "2026-08-30T15:44:34-03:00",
+      "subject": "Regera o diario de bordo com o marco da sessao 2",
+      "words_published": 49571,
+      "code_lines": 4961,
+      "governance_lines": 461,
+      "tokens_bucket": {
+        "input": 40,
+        "output": 13416,
+        "cache_read": 4387010,
+        "cache_creation": 38859
+      },
+      "tokens_cumulative": {
+        "input": 1982,
+        "output": 1203743,
+        "cache_read": 267940448,
+        "cache_creation": 2416351
+      }
+    },
+    {
+      "hash": "c5a3fa0",
+      "timestamp": "2026-08-30T18:01:41-03:00",
+      "subject": "Adiciona o dossie de trabalho das partes 3 e 4",
+      "words_published": 49571,
+      "code_lines": 4961,
+      "governance_lines": 463,
+      "tokens_bucket": {
+        "input": 50,
+        "output": 28417,
+        "cache_read": 5902143,
+        "cache_creation": 497724
+      },
+      "tokens_cumulative": {
+        "input": 2032,
+        "output": 1232160,
+        "cache_read": 273842591,
+        "cache_creation": 2914075
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 12,
-    "output": 1780,
-    "cache_read": 1267160,
-    "cache_creation": 10058
+    "input": 26,
+    "output": 12269,
+    "cache_read": 3556618,
+    "cache_creation": 12121
   }
 }
