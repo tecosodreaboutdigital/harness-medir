@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diário de bordo | Harness</title>
+<title>Project log | Harness</title>
 <style>
 :root{
   --ink:#1b1b19;
@@ -56,6 +56,11 @@ body{
 .langbar button:hover{border-color:var(--accent);color:var(--ink)}
 
 .langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
 main[hidden]{display:none}
 
 .kpi-grid{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 30px;border-top:.5pt solid var(--ink);border-bottom:.5pt solid var(--ink)}
@@ -382,11 +387,11 @@ p code{
 </head>
 <body>
 <div class="langbar">
-<button type="button" class="on" data-lang="pt">PT</button>
-<button type="button" data-lang="en">EN</button>
+<button type="button" data-lang="pt">PT</button>
+<button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
 </div>
-<main class="page" id="doc-pt">
+<main class="page" id="doc-pt" hidden>
 <p class="eyebrow">Harness · Diário de bordo · Ao vivo</p>
 
 <h1>Diário de bordo do projeto</h1>
@@ -501,7 +506,7 @@ p code{
 <tr><td>M1<br><span class="mono">a732861</span></td><td>Commit inicial. O repositório vai ao ar com o que já existia: as partes 1 e 2 em português, a skill de briefing, o inventário de fontes.<br><span class="mono">30 ago, 12:36</span></td><td>22.244</td><td>1,9 mi<br><span class="mono">saída: 37.706</span></td></tr>
 <tr><td>M2<br><span class="mono">1271135</span></td><td>Guia compacto reescrito, organizado pelos cinco passos do MEDIR em vez de por categoria de produto. Dezessete fichas de seis campos, diagnóstico de faixa no início, crítica registrada em cada passo.<br><span class="mono">30 ago, 12:46</span></td><td>25.239</td><td>10,3 mi<br><span class="mono">saída: 102.005</span></td></tr>
 <tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Parte 2 traduzida para inglês e espanhol. O documento vira trilíngue, glossário e fontes replicados nos três idiomas, exemplos de skill traduzidos por completo.<br><span class="mono">30 ago, 13:00</span></td><td>38.031</td><td>28,2 mi<br><span class="mono">saída: 167.713</span></td></tr>
-<tr><td>M4<br><span class="mono">111933a</span></td><td>Trinta skills de terceiro instaladas para uso no projeto, auditadas antes de instalar. FERRAMENTAS.md criado como registro vivo do que é usado de fato.<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">saída: 115.235</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Trinta skills de terceiro instaladas para uso no projeto, auditadas antes de instalar. FERRAMENTAS.md criado como registro vivo do que é usado de fato (renomeado TOOLS.md em 30 de agosto de 2026, na reestruturação para inglês primário).<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">saída: 115.235</span></td></tr>
 <tr><td>M5<br><span class="mono">51af961</span></td><td>Correção: a skill própria do projeto, levantando-briefing, estava documentada junto das de terceiro. Separada, e ativada de fato neste ambiente.<br><span class="mono">30 ago, 13:29</span></td><td>38.204</td><td>7,5 mi<br><span class="mono">saída: 22.010</span></td></tr>
 <tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing ganha repositório próprio e público, no mesmo padrão das demais skills citadas. O harness-medir passa a só apontar para ela.<br><span class="mono">30 ago, 13:33</span></td><td>38.204</td><td>24,0 mi<br><span class="mono">saída: 31.645</span></td></tr>
 </tbody>
@@ -509,11 +514,11 @@ p code{
 
 <h2 id="pt-metodologia">4. Metodologia</h2>
 
-<p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_diario_metrics.py</code> e <code>build/build_diario.py</code> no repositório.</p>
+<p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_logbook_metrics.py</code> e <code>build/build_logbook.py</code> no repositório.</p>
 
 <p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1, 2 e o guia compacto, nos idiomas que existiam naquele commit.</p>
 
-<p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventário de fontes), por commit.</p>
+<p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventário de fontes), por commit.</p>
 
 <p><strong>Tokens.</strong> Soma real do campo <code>usage</code> de cada mensagem do assistente no transcript <code>.jsonl</code> desta sessão, em <code>~/.claude/projects/&lt;projeto&gt;/</code>. Cada evento é atribuído ao commit imediatamente seguinte, por ordem cronológica, mesma técnica usada em outro projeto do autor para o mesmo fim.</p>
 
@@ -525,15 +530,15 @@ p code{
 
 <ol class="sources">
 <li>Histórico completo de commits deste repositório. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
 <p>Diário de bordo · Série Harness · Gerado automaticamente a partir do git e do registro de uso real da sessão, nunca editado à mão. Ver metodologia acima antes de citar qualquer número.</p>
 </div>
 </main>
-<main class="page" id="doc-en" hidden>
+<main class="page" id="doc-en">
 <p class="eyebrow">Harness · Project log · Live</p>
 
 <h1>Project log</h1>
@@ -648,7 +653,7 @@ p code{
 <tr><td>M1<br><span class="mono">a732861</span></td><td>Initial commit. The repository goes live with what already existed: parts 1 and 2 in Portuguese, the briefing skill, the source inventory.<br><span class="mono">30 Aug, 12:36</span></td><td>22,244</td><td>1.9m<br><span class="mono">output: 37,706</span></td></tr>
 <tr><td>M2<br><span class="mono">1271135</span></td><td>Compact guide rewritten, organised by the five MEDIR steps instead of by product category. Seventeen six-field entries, a tier diagnostic at the start, a registered critique in every step.<br><span class="mono">30 Aug, 12:46</span></td><td>25,239</td><td>10.3m<br><span class="mono">output: 102,005</span></td></tr>
 <tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Part 2 translated into English and Spanish. The document becomes trilingual, glossary and sources replicated in all three languages, skill examples translated in full.<br><span class="mono">30 Aug, 13:00</span></td><td>38,031</td><td>28.2m<br><span class="mono">output: 167,713</span></td></tr>
-<tr><td>M4<br><span class="mono">111933a</span></td><td>Thirty third-party skills installed for use on the project, audited before installing. FERRAMENTAS.md created as a living record of what is actually used.<br><span class="mono">30 Aug, 13:24</span></td><td>38,204</td><td>44.5m<br><span class="mono">output: 115,235</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Thirty third-party skills installed for use on the project, audited before installing. FERRAMENTAS.md created as a living record of what is actually used (renamed TOOLS.md on 30 August 2026, in the English-primary restructuring).<br><span class="mono">30 Aug, 13:24</span></td><td>38,204</td><td>44.5m<br><span class="mono">output: 115,235</span></td></tr>
 <tr><td>M5<br><span class="mono">51af961</span></td><td>Fix: the project’s own skill, levantando-briefing, was documented alongside the third-party ones. Separated, and actually activated in this environment.<br><span class="mono">30 Aug, 13:29</span></td><td>38,204</td><td>7.5m<br><span class="mono">output: 22,010</span></td></tr>
 <tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing gets its own public repository, in the same pattern as the other cited skills. harness-medir now only points to it.<br><span class="mono">30 Aug, 13:33</span></td><td>38,204</td><td>24.0m<br><span class="mono">output: 31,645</span></td></tr>
 </tbody>
@@ -656,11 +661,11 @@ p code{
 
 <h2 id="en-metodologia">4. Methodology</h2>
 
-<p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_diario_metrics.py</code> and <code>build/build_diario.py</code> in the repository.</p>
+<p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_logbook_metrics.py</code> and <code>build/build_logbook.py</code> in the repository.</p>
 
 <p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1, 2 and the compact guide, in whichever languages existed at that commit.</p>
 
-<p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, source inventory), per commit.</p>
+<p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, source inventory), per commit.</p>
 
 <p><strong>Tokens.</strong> Real sum of the <code>usage</code> field on every assistant message in this session's <code>.jsonl</code> transcript, under <code>~/.claude/projects/&lt;project&gt;/</code>. Each event is assigned to the immediately following commit, in chronological order, the same technique used on another of the author's projects for the same purpose.</p>
 
@@ -672,8 +677,8 @@ p code{
 
 <ol class="sources">
 <li>Full commit history of this repository. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
@@ -795,7 +800,7 @@ p code{
 <tr><td>M1<br><span class="mono">a732861</span></td><td>Commit inicial. El repositorio sale a la luz con lo que ya existía: las partes 1 y 2 en portugués, la skill de briefing, el inventario de fuentes.<br><span class="mono">30 ago, 12:36</span></td><td>22.244</td><td>1,9 mi<br><span class="mono">salida: 37.706</span></td></tr>
 <tr><td>M2<br><span class="mono">1271135</span></td><td>Guía compacta reescrita, organizada por los cinco pasos del MEDIR en vez de por categoría de producto. Diecisiete fichas de seis campos, diagnóstico de banda al inicio, crítica registrada en cada paso.<br><span class="mono">30 ago, 12:46</span></td><td>25.239</td><td>10,3 mi<br><span class="mono">salida: 102.005</span></td></tr>
 <tr><td>M3<br><span class="mono">f5fbfa7</span></td><td>Parte 2 traducida al inglés y al español. El documento se vuelve trilingüe, glosario y fuentes replicados en los tres idiomas, ejemplos de skill traducidos por completo.<br><span class="mono">30 ago, 13:00</span></td><td>38.031</td><td>28,2 mi<br><span class="mono">salida: 167.713</span></td></tr>
-<tr><td>M4<br><span class="mono">111933a</span></td><td>Treinta skills de terceros instaladas para uso en el proyecto, auditadas antes de instalar. FERRAMENTAS.md creado como registro vivo de lo que realmente se usa.<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">salida: 115.235</span></td></tr>
+<tr><td>M4<br><span class="mono">111933a</span></td><td>Treinta skills de terceros instaladas para uso en el proyecto, auditadas antes de instalar. FERRAMENTAS.md creado como registro vivo de lo que realmente se usa (renombrado TOOLS.md el 30 de agosto de 2026, en la reestructuración a inglés primario).<br><span class="mono">30 ago, 13:24</span></td><td>38.204</td><td>44,5 mi<br><span class="mono">salida: 115.235</span></td></tr>
 <tr><td>M5<br><span class="mono">51af961</span></td><td>Corrección: la skill propia del proyecto, levantando-briefing, estaba documentada junto con las de terceros. Separada, y activada de verdad en este entorno.<br><span class="mono">30 ago, 13:29</span></td><td>38.204</td><td>7,5 mi<br><span class="mono">salida: 22.010</span></td></tr>
 <tr><td>M6<br><span class="mono">38444ac</span></td><td>levantando-briefing gana repositorio propio y público, en el mismo patrón que las demás skills citadas. harness-medir pasa a solo apuntar hacia allí.<br><span class="mono">30 ago, 13:33</span></td><td>38.204</td><td>24,0 mi<br><span class="mono">salida: 31.645</span></td></tr>
 </tbody>
@@ -803,11 +808,11 @@ p code{
 
 <h2 id="es-metodologia">4. Metodología</h2>
 
-<p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_diario_metrics.py</code> y <code>build/build_diario.py</code> en el repositorio.</p>
+<p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_logbook_metrics.py</code> y <code>build/build_logbook.py</code> en el repositorio.</p>
 
 <p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1, 2 y la guía compacta, en los idiomas que existían en ese commit.</p>
 
-<p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventario de fuentes), por commit.</p>
+<p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventario de fuentes), por commit.</p>
 
 <p><strong>Tokens.</strong> Suma real del campo <code>usage</code> de cada mensaje del asistente en el transcript <code>.jsonl</code> de esta sesión, en <code>~/.claude/projects/&lt;proyecto&gt;/</code>. Cada evento se asigna al commit inmediatamente siguiente, en orden cronológico, la misma técnica usada en otro proyecto del autor con el mismo fin.</p>
 
@@ -819,8 +824,8 @@ p code{
 
 <ol class="sources">
 <li>Historial completo de commits de este repositorio. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
@@ -838,8 +843,10 @@ p code{
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);
+  var active='en';
   if(m){
-    set(m[1]);
+    active=m[1];
+    set(active);
     var target=document.getElementById(h);
     if(target){setTimeout(function(){target.scrollIntoView();},0);}
   }
@@ -847,6 +854,39 @@ p code{
     var b=e.target.closest('button[data-lang]');
     if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
   });
+  function dismissHint(){
+    var d=document.querySelector('.lang-hint');
+    if(d){d.remove();}
+    try{localStorage.setItem('langHintDismissed','1');}catch(e){}
+  }
+  try{
+    if(!m&&!localStorage.getItem('langHintDismissed')){
+      var bl=(navigator.language||'').slice(0,2).toLowerCase();
+      var msgs={pt:{text:'Esta p\u00e1gina tamb\u00e9m est\u00e1 dispon\u00edvel em portugu\u00eas.',btn:'Ver em portugu\u00eas'},es:{text:'Esta p\u00e1gina tambi\u00e9n est\u00e1 disponible en espa\u00f1ol.',btn:'Ver en espa\u00f1ol'}};
+      if(msgs[bl]&&bl!==active){
+        var d=document.createElement('div');
+        d.className='lang-hint';
+        var span=document.createElement('span');
+        span.textContent=msgs[bl].text;
+        var right=document.createElement('span');
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.textContent=msgs[bl].btn;
+        btn.addEventListener('click',function(){dismissHint();set(bl);try{location.hash='';}catch(e){}window.scrollTo(0,0);});
+        var x=document.createElement('button');
+        x.type='button';
+        x.className='x';
+        x.setAttribute('aria-label','Close');
+        x.textContent='\u00d7';
+        x.addEventListener('click',dismissHint);
+        right.appendChild(btn);
+        right.appendChild(x);
+        d.appendChild(span);
+        d.appendChild(right);
+        bar.parentNode.insertBefore(d,bar.nextSibling);
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>

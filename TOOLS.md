@@ -8,14 +8,14 @@ Atualizado em 30 de agosto de 2026. Cresce a cada skill nova que entrar em uso, 
 
 ## Coleções de terceiro instaladas
 
-Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-caixa-de-ferramentas.html). Some a `levantando-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
+Cinco coleções, trinta skills, todas as licenças MIT. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. Cada uma citada como ficha no [guia compacto](harness-toolkit.html). Some a `levantando-briefing`, a skill própria do projeto tratada na seção seguinte, e o ambiente tem 31 skills ativas ao todo.
 
 | Coleção | Origem | Skills instaladas | Por que entrou |
 |---|---|---|---|
-| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, a coleção inteira | É o padrão de regra inegociável mais bandeiras vermelhas que `PADROES.md` já adota como padrão de escrita de skill deste projeto |
+| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, a coleção inteira | É o padrão de regra inegociável mais bandeiras vermelhas que `STANDARDS.md` já adota como padrão de escrita de skill deste projeto |
 | mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, seleção curada | Skills de escrita, clarificação e handoff de sessão. O conjunto de engenharia de software da coleção (TDD, arquitetura de código, merge conflict, TypeScript) ficou de fora por não se aplicar a um projeto de conteúdo, ver a lista completa abaixo |
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, a coleção inteira | Modelo C4 e registro de decisão de arquitetura, relevante para a rodada de pesquisa da parte 3 |
-| Guia inspirado em Karpathy | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | Guia comportamental contra erros comuns de LLM. Não é do Karpathy, ver a ressalva completa em `fontes/inventario.md` |
+| Guia inspirado em Karpathy | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | Guia comportamental contra erros comuns de LLM. Não é do Karpathy, ver a ressalva completa em `sources/inventory.md` |
 | ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | Fonte real da matriz de cinco regras de limpeza citada na parte 2, seção Reforçar |
 
 ---
@@ -68,4 +68,4 @@ Esta seção é a que separa "instalado" de "usado", e é a que mais vai crescer
 
 ## Onde isso aparece
 
-Rodapé de `harness-p1.html`, `harness-p2.html` e `harness-caixa-de-ferramentas.html`, nos três idiomas onde a peça for trilíngue. E no [diário de bordo](docs/diario-de-bordo.html), trilíngue, com o detalhamento por marco, gerado a partir do git e do registro real de uso da sessão, nunca editado à mão.
+Rodapé de `harness-p1.html`, `harness-p2.html` e `harness-toolkit.html`, nos três idiomas onde a peça for trilíngue. E no [diário de bordo](docs/logbook.html), trilíngue, com o detalhamento por marco, gerado a partir do git e do registro real de uso da sessão, nunca editado à mão.

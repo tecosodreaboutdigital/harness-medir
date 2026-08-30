@@ -4,8 +4,8 @@
 # referencia (git + transcript de sessao), adaptada: metrica de
 # conteudo (palavras, linhas de doc/script) em vez de LOC de aplicacao.
 #
-# Uso: python build/generate_diario_metrics.py
-# Escreve: docs/assets/diario-metrics.json
+# Uso: python build/generate_logbook_metrics.py
+# Escreve: docs/assets/logbook-metrics.json
 
 import json
 import os
@@ -19,9 +19,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Arquivos que contam como "conteudo publicado" (palavras) e como
 # "codigo do harness" (linhas). Um HTML pode nao existir ainda num
 # commit antigo, tratado como zero nesse caso.
-CONTENT_HTML = ['harness-p1.html', 'harness-p2.html', 'harness-caixa-de-ferramentas.html']
-CODE_GLOBS_PREFIXES = ['build/', 'FERRAMENTAS.md', 'fontes/inventario.md']
-GOV_DOCS = ['README.md', 'PADROES.md', 'ESTADO.md', 'PROXIMOS-PASSOS.md']
+CONTENT_HTML = ['harness-p1.html', 'harness-p2.html', 'harness-toolkit.html']
+CODE_GLOBS_PREFIXES = ['build/', 'TOOLS.md', 'sources/inventory.md']
+GOV_DOCS = ['README.md', 'STANDARDS.md', 'STATUS.md', 'NEXT-STEPS.md']
 
 
 def run(args):
@@ -198,7 +198,7 @@ def main():
 
     out_dir = os.path.join(ROOT, 'docs', 'assets')
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, 'diario-metrics.json')
+    out_path = os.path.join(out_dir, 'logbook-metrics.json')
     with open(out_path, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, ensure_ascii=False, indent=2)
 

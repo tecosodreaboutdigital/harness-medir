@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O melhor modelo do mundo dentro de uma empresa sem processo | Parte 1</title>
+<title>The best model in the world inside a company with no process | Part 1</title>
 <style>
 :root{
   --ink:#1b1b19;
@@ -56,6 +56,11 @@ body{
 .langbar button:hover{border-color:var(--accent);color:var(--ink)}
 
 .langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
 main[hidden]{display:none}
 .eyebrow{
   font-size:10px;
@@ -307,17 +312,17 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 </head>
 <body>
 <div class="langbar">
-<button type="button" class="on" data-lang="pt">PT</button>
-<button type="button" data-lang="en">EN</button>
+<button type="button" data-lang="pt">PT</button>
+<button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
 </div>
 <nav class="serie">
 <a class="cur" href="harness-p1.html">Parte 1</a>
 <a href="harness-p2.html">Parte 2</a>
 <span>Parte 3</span>
-<a href="harness-caixa-de-ferramentas.html">Guia compacto</a>
+<a href="harness-toolkit.html">Guia compacto</a>
 </nav>
-<main class="page" id="doc-pt">
+<main class="page" id="doc-pt" hidden>
 <p class="eyebrow">Harness · Parte 1 de 3 · Por quê</p>
 
 <h1>O melhor modelo do mundo dentro de uma empresa sem processo</h1>
@@ -671,7 +676,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tr><td>Parte 1, esta</td><td>Por que o ambiente vale mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de conselho</td></tr>
 <tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
 <tr><td>Parte 3</td><td>Permissão fora do modelo, instrução vinda de dado, registro auditável, reversão e responsabilidade</td></tr>
-<tr><td><a href="harness-caixa-de-ferramentas.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e roteiros, organizados pelos cinco passos do MEDIR</td></tr>
+<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e roteiros, organizados pelos cinco passos do MEDIR</td></tr>
 </tbody>
 </table>
 
@@ -723,10 +728,10 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <div class="foot">
 <p>Parte 1 de 3 · Série Harness · A cena de abertura é composta a partir de padrões recorrentes e não descreve uma empresa específica.</p>
-<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a>, evolução de tokens e palavras no <a href="docs/diario-de-bordo.html">diário de bordo</a>.</p>
+<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html">diário de bordo</a>.</p>
 </div>
 </main>
-<main class="page" id="doc-en" hidden>
+<main class="page" id="doc-en">
 <p class="eyebrow">Harness · Part 1 of 3 · Why</p>
 
 <h1>The best model in the world inside a company with no process</h1>
@@ -1094,7 +1099,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <div class="foot">
 <p>Part 1 of 3 · Harness series · The opening scene is composed from recurring patterns and does not describe a specific company.</p>
-<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a>, token and word growth in the <a href="docs/diario-de-bordo.html">project log</a>.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
 </div>
 </main>
 <main class="page" id="doc-es" hidden>
@@ -1465,7 +1470,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <div class="foot">
 <p>Parte 1 de 3 · Serie Harness · La escena de apertura está compuesta a partir de patrones recurrentes y no describe una empresa específica.</p>
-<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a>, evolución de tokens y palabras en el <a href="docs/diario-de-bordo.html">diario de bordo</a>.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
 </div>
 
 </main>
@@ -1480,8 +1485,10 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);
+  var active='en';
   if(m){
-    set(m[1]);
+    active=m[1];
+    set(active);
     var target=document.getElementById(h);
     if(target){setTimeout(function(){target.scrollIntoView();},0);}
   }
@@ -1489,6 +1496,39 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
     var b=e.target.closest('button[data-lang]');
     if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
   });
+  function dismissHint(){
+    var d=document.querySelector('.lang-hint');
+    if(d){d.remove();}
+    try{localStorage.setItem('langHintDismissed','1');}catch(e){}
+  }
+  try{
+    if(!m&&!localStorage.getItem('langHintDismissed')){
+      var bl=(navigator.language||'').slice(0,2).toLowerCase();
+      var msgs={pt:{text:'Esta página também está disponível em português.',btn:'Ver em português'},es:{text:'Esta página también está disponible en español.',btn:'Ver en español'}};
+      if(msgs[bl]&&bl!==active){
+        var d=document.createElement('div');
+        d.className='lang-hint';
+        var span=document.createElement('span');
+        span.textContent=msgs[bl].text;
+        var right=document.createElement('span');
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.textContent=msgs[bl].btn;
+        btn.addEventListener('click',function(){dismissHint();set(bl);try{location.hash='';}catch(e){}window.scrollTo(0,0);});
+        var x=document.createElement('button');
+        x.type='button';
+        x.className='x';
+        x.setAttribute('aria-label','Close');
+        x.textContent='×';
+        x.addEventListener('click',dismissHint);
+        right.appendChild(btn);
+        right.appendChild(x);
+        d.appendChild(span);
+        d.appendChild(right);
+        bar.parentNode.insertBefore(d,bar.nextSibling);
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>

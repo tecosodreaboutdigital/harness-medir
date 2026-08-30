@@ -49,18 +49,18 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ```
 .
 ├── README.md                          este arquivo
-├── PADROES.md                         regras de escrita e formatação, LEIA ANTES DE EDITAR
-├── ESTADO.md                          o que está pronto e o que falta, detalhado
-├── PROXIMOS-PASSOS.md                 a fila de trabalho, em ordem
-├── FERRAMENTAS.md                     skills de terceiro instaladas e usadas, com registro de uso real
+├── STANDARDS.md                         regras de escrita e formatação, LEIA ANTES DE EDITAR
+├── STATUS.md                          o que está pronto e o que falta, detalhado
+├── NEXT-STEPS.md                 a fila de trabalho, em ordem
+├── TOOLS.md                     skills de terceiro instaladas e usadas, com registro de uso real
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, trilíngue, pronta
-├── harness-caixa-de-ferramentas.html  guia compacto, organizado pelo MEDIR, pronto
-├── fontes/
-│   └── inventario.md                  todas as fontes verificadas, com status
+├── harness-toolkit.html  guia compacto, organizado pelo MEDIR, pronto
+├── sources/
+│   └── inventory.md                  todas as fontes verificadas, com status
 ├── docs/
-│   ├── diario-de-bordo.html           trilíngue, gerado do git e do uso real da sessão
-│   └── assets/diario-metrics.json     dado bruto do diário, nunca editado à mão
+│   ├── logbook.html           trilíngue, gerado do git e do uso real da sessão
+│   └── assets/logbook-metrics.json    dado bruto do diário, nunca editado à mão
 └── build/                             corpos de texto e scripts de montagem
 ```
 
@@ -104,11 +104,11 @@ Detalhe técnico importante: os identificadores de âncora e os marcadores de SV
 
 ## Como continuar
 
-1. Leia `PADROES.md`. Ele contém as regras de escrita e formatação que não podem ser violadas, incluindo a proibição absoluta de travessões.
-2. Leia `ESTADO.md` para saber exatamente o que está pronto.
-3. Siga `PROXIMOS-PASSOS.md` na ordem.
-4. Antes de citar qualquer ferramenta, confira `fontes/inventario.md`. Fonte não verificada não entra em documento assinado.
-5. Antes de instalar qualquer skill de terceiro para trabalhar neste projeto, siga o mesmo checklist que o projeto recomenda a terceiros, e registre o resultado em `FERRAMENTAS.md`.
+1. Leia `STANDARDS.md`. Ele contém as regras de escrita e formatação que não podem ser violadas, incluindo a proibição absoluta de travessões.
+2. Leia `STATUS.md` para saber exatamente o que está pronto.
+3. Siga `NEXT-STEPS.md` na ordem.
+4. Antes de citar qualquer ferramenta, confira `sources/inventory.md`. Fonte não verificada não entra em documento assinado.
+5. Antes de instalar qualquer skill de terceiro para trabalhar neste projeto, siga o mesmo checklist que o projeto recomenda a terceiros, e registre o resultado em `TOOLS.md`.
 
 ---
 
