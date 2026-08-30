@@ -12,12 +12,10 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <rect x="290" y="34" width="120" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="350" y="54" text-anchor="middle">PROPOSED ACTION</text>
-<line x1="350" y1="66" x2="350" y2="55" stroke="#1b1b19" stroke-width=".7"/>
-
 <polygon points="260,95 350,57 440,95 350,133" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-sub" x="350" y="91" text-anchor="middle">Accesses private</text>
 <text class="svg-sub" x="350" y="103" text-anchor="middle">data?</text>
-<line x1="350" y1="66" x2="350" y2="93" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
+<line x1="350" y1="66" x2="350" y2="55" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
 
 <line x1="350" y1="133" x2="350" y2="155" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d4-arrow)"/>
 <polygon points="260,195 350,157 440,195 350,233" fill="none" stroke="#1b1b19" stroke-width=".7"/>
