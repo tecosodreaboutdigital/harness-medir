@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Monta docs/diario-de-bordo.html trilingue a partir de
-# docs/assets/diario-metrics.json (gerado por
-# build/generate_diario_metrics.py). Reusa o envoltorio CSS e o
+# Monta docs/logbook.html trilingue a partir de
+# docs/assets/logbook-metrics.json (gerado por
+# build/generate_logbook_metrics.py). Reusa o envoltorio CSS e o
 # JavaScript trilingue de harness-p2.html, mesmo padrao das outras
 # pecas. Reexecutavel: os graficos e a linha do tempo sao gerados a
 # partir do JSON, nunca escritos a mao.
@@ -11,7 +11,7 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-with open(os.path.join(ROOT, 'docs', 'assets', 'diario-metrics.json'), encoding='utf-8') as fh:
+with open(os.path.join(ROOT, 'docs', 'assets', 'logbook-metrics.json'), encoding='utf-8') as fh:
     DATA = json.load(fh)
 
 MS = DATA['milestones']
@@ -35,9 +35,9 @@ COMMIT_TXT = {
         'es': 'Parte 2 traducida al inglés y al español. El documento se vuelve trilingüe, glosario y fuentes replicados en los tres idiomas, ejemplos de skill traducidos por completo.',
     },
     '111933a': {
-        'pt': 'Trinta skills de terceiro instaladas para uso no projeto, auditadas antes de instalar. FERRAMENTAS.md criado como registro vivo do que é usado de fato.',
-        'en': 'Thirty third-party skills installed for use on the project, audited before installing. FERRAMENTAS.md created as a living record of what is actually used.',
-        'es': 'Treinta skills de terceros instaladas para uso en el proyecto, auditadas antes de instalar. FERRAMENTAS.md creado como registro vivo de lo que realmente se usa.',
+        'pt': 'Trinta skills de terceiro instaladas para uso no projeto, auditadas antes de instalar. FERRAMENTAS.md criado como registro vivo do que é usado de fato (renomeado TOOLS.md em 30 de agosto de 2026, na reestruturação para inglês primário).',
+        'en': 'Thirty third-party skills installed for use on the project, audited before installing. FERRAMENTAS.md created as a living record of what is actually used (renamed TOOLS.md on 30 August 2026, in the English-primary restructuring).',
+        'es': 'Treinta skills de terceros instaladas para uso en el proyecto, auditadas antes de instalar. FERRAMENTAS.md creado como registro vivo de lo que realmente se usa (renombrado TOOLS.md el 30 de agosto de 2026, en la reestructuración a inglés primario).',
     },
     '51af961': {
         'pt': 'Correção: a skill própria do projeto, levantando-briefing, estava documentada junto das de terceiro. Separada, e ativada de fato neste ambiente.',
@@ -271,11 +271,11 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <h2 id="metodologia">4. Metodologia</h2>
 
-<p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_diario_metrics.py</code> e <code>build/build_diario.py</code> no repositório.</p>
+<p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_logbook_metrics.py</code> e <code>build/build_logbook.py</code> no repositório.</p>
 
 <p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1, 2 e o guia compacto, nos idiomas que existiam naquele commit.</p>
 
-<p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventário de fontes), por commit.</p>
+<p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventário de fontes), por commit.</p>
 
 <p><strong>Tokens.</strong> Soma real do campo <code>usage</code> de cada mensagem do assistente no transcript <code>.jsonl</code> desta sessão, em <code>~/.claude/projects/&lt;projeto&gt;/</code>. Cada evento é atribuído ao commit imediatamente seguinte, por ordem cronológica, mesma técnica usada em outro projeto do autor para o mesmo fim.</p>
 
@@ -287,8 +287,8 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <ol class="sources">
 <li>Histórico completo de commits deste repositório. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
@@ -353,11 +353,11 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <h2 id="metodologia">4. Methodology</h2>
 
-<p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_diario_metrics.py</code> and <code>build/build_diario.py</code> in the repository.</p>
+<p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_logbook_metrics.py</code> and <code>build/build_logbook.py</code> in the repository.</p>
 
 <p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1, 2 and the compact guide, in whichever languages existed at that commit.</p>
 
-<p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, source inventory), per commit.</p>
+<p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, source inventory), per commit.</p>
 
 <p><strong>Tokens.</strong> Real sum of the <code>usage</code> field on every assistant message in this session's <code>.jsonl</code> transcript, under <code>~/.claude/projects/&lt;project&gt;/</code>. Each event is assigned to the immediately following commit, in chronological order, the same technique used on another of the author's projects for the same purpose.</p>
 
@@ -369,8 +369,8 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <ol class="sources">
 <li>Full commit history of this repository. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
@@ -435,11 +435,11 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <h2 id="metodologia">4. Metodología</h2>
 
-<p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_diario_metrics.py</code> y <code>build/build_diario.py</code> en el repositorio.</p>
+<p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_logbook_metrics.py</code> y <code>build/build_logbook.py</code> en el repositorio.</p>
 
 <p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1, 2 y la guía compacta, en los idiomas que existían en ese commit.</p>
 
-<p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, PADROES, ESTADO, PROXIMOS-PASSOS, FERRAMENTAS, inventario de fuentes), por commit.</p>
+<p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventario de fuentes), por commit.</p>
 
 <p><strong>Tokens.</strong> Suma real del campo <code>usage</code> de cada mensaje del asistente en el transcript <code>.jsonl</code> de esta sesión, en <code>~/.claude/projects/&lt;proyecto&gt;/</code>. Cada evento se asigna al commit inmediatamente siguiente, en orden cronológico, la misma técnica usada en otro proyecto del autor con el mismo fin.</p>
 
@@ -451,8 +451,8 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <ol class="sources">
 <li>Historial completo de commits de este repositorio. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
-<li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/FERRAMENTAS.md">FERRAMENTAS.md</a></li>
-<li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_diario_metrics.py">build/generate_diario_metrics.py</a></li>
+<li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
+<li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
 </ol>
 
 <div class="foot">
@@ -470,8 +470,8 @@ def main():
     p2 = open(os.path.join(ROOT, 'harness-p2.html'), encoding='utf-8').read()
     shell = p2[:p2.index('<div class="langbar">')]
     shell = shell.replace(
-        '<title>Guias e sensores: como um agente aprende a se corrigir | Parte 2</title>',
-        '<title>Diário de bordo | Harness</title>')
+        '<title>Guides and sensors: how an agent learns to correct itself | Part 2</title>',
+        '<title>Project log | Harness</title>')
 
     extra_css = """
 .kpi-grid{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 30px;border-top:.5pt solid var(--ink);border-bottom:.5pt solid var(--ink)}
@@ -485,8 +485,8 @@ def main():
     shell = shell.replace('.eyebrow{', extra_css + '.eyebrow{')
 
     bar = """<div class="langbar">
-<button type="button" class="on" data-lang="pt">PT</button>
-<button type="button" data-lang="en">EN</button>
+<button type="button" data-lang="pt">PT</button>
+<button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
 </div>"""
 
@@ -501,8 +501,10 @@ def main():
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);
+  var active='en';
   if(m){
-    set(m[1]);
+    active=m[1];
+    set(active);
     var target=document.getElementById(h);
     if(target){setTimeout(function(){target.scrollIntoView();},0);}
   }
@@ -510,6 +512,39 @@ def main():
     var b=e.target.closest('button[data-lang]');
     if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
   });
+  function dismissHint(){
+    var d=document.querySelector('.lang-hint');
+    if(d){d.remove();}
+    try{localStorage.setItem('langHintDismissed','1');}catch(e){}
+  }
+  try{
+    if(!m&&!localStorage.getItem('langHintDismissed')){
+      var bl=(navigator.language||'').slice(0,2).toLowerCase();
+      var msgs={pt:{text:'Esta p\\u00e1gina tamb\\u00e9m est\\u00e1 dispon\\u00edvel em portugu\\u00eas.',btn:'Ver em portugu\\u00eas'},es:{text:'Esta p\\u00e1gina tambi\\u00e9n est\\u00e1 disponible en espa\\u00f1ol.',btn:'Ver en espa\\u00f1ol'}};
+      if(msgs[bl]&&bl!==active){
+        var d=document.createElement('div');
+        d.className='lang-hint';
+        var span=document.createElement('span');
+        span.textContent=msgs[bl].text;
+        var right=document.createElement('span');
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.textContent=msgs[bl].btn;
+        btn.addEventListener('click',function(){dismissHint();set(bl);try{location.hash='';}catch(e){}window.scrollTo(0,0);});
+        var x=document.createElement('button');
+        x.type='button';
+        x.className='x';
+        x.setAttribute('aria-label','Close');
+        x.textContent='\\u00d7';
+        x.addEventListener('click',dismissHint);
+        right.appendChild(btn);
+        right.appendChild(x);
+        d.appendChild(span);
+        d.appendChild(right);
+        bar.parentNode.insertBefore(d,bar.nextSibling);
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>
@@ -520,14 +555,14 @@ def main():
     ES = scope(build_body('es'), 'es')
 
     doc = (shell + bar + '\n'
-           + '<main class="page" id="doc-pt">\n' + PT + '\n</main>\n'
-           + '<main class="page" id="doc-en" hidden>\n' + EN + '\n</main>\n'
+           + '<main class="page" id="doc-pt" hidden>\n' + PT + '\n</main>\n'
+           + '<main class="page" id="doc-en">\n' + EN + '\n</main>\n'
            + '<main class="page" id="doc-es" hidden>\n' + ES + '\n</main>\n'
            + js)
 
     out_dir = os.path.join(ROOT, 'docs')
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, 'diario-de-bordo.html')
+    out_path = os.path.join(out_dir, 'logbook.html')
     with open(out_path, 'w', encoding='utf-8') as fh:
         fh.write(doc)
 

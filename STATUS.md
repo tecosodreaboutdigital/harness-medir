@@ -10,7 +10,7 @@ Publicado em `github.com/tecosodreaboutdigital/harness-medir` (repositório) e `
 
 ### Diário de bordo
 
-`docs/diario-de-bordo.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas e tokens consumidos por marco, gerado a partir do git e do transcript real da sessão, nunca escrito à mão. Ver `build/generate_diario_metrics.py` e `build/build_diario.py`. Seis marcos até aqui, o histórico completo do repositório, mais o que ainda está em sessão aberta.
+`docs/logbook.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas e tokens consumidos por marco, gerado a partir do git e do transcript real da sessão, nunca escrito à mão. Ver `build/generate_logbook_metrics.py` e `build/build_logbook.py`. Seis marcos até aqui, o histórico completo do repositório, mais o que ainda está em sessão aberta.
 
 ### Parte 1 · O melhor modelo do mundo dentro de uma empresa sem processo
 
@@ -32,7 +32,7 @@ Reescrita completa depois de uma primeira versão descartada. A versão descarta
 
 Conteúdo: abre na quarta semana com a diretora tendo escrito o guia inteiro e o sistema liberando nota de fornecedor descredenciado. Seções ancoradas em Equipar, Delegar e Inspecionar, com Reforçar no fim. Inclui a matriz de guias e sensores, a comparação entre mensagem de erro que ensina e alarme, o truque do limiar, a unidade de durabilidade, três exemplos completos com SKILL.md real, as classes de ambiente cruzadas com as faixas, e limpeza como cadência.
 
-Tradução inglesa em grafia britânica, espanhola por "tú". MEDIR e harness mantidos como nome próprio nos três idiomas, conforme `PADROES.md`. Os exemplos de skill (nomes de arquivo, campos, valores) foram traduzidos também, não só a prosa ao redor.
+Tradução inglesa em grafia britânica, espanhola por "tú". MEDIR e harness mantidos como nome próprio nos três idiomas, conforme `STANDARDS.md`. Os exemplos de skill (nomes de arquivo, campos, valores) foram traduzidos também, não só a prosa ao redor.
 
 O JavaScript de troca de idioma da parte 1 e da parte 2 ganhou roteamento por âncora: um link do tipo `harness-p1.html#en-opening` agora seleciona a aba certa antes de rolar, em vez de sempre abrir na aba PT padrão. Sem esse ajuste, um leitor em inglês clicando em qualquer referência cruzada para a parte 1 caía sempre em português.
 
@@ -44,17 +44,17 @@ Decide se a automação deve existir, antes de discutir como funciona. Oito bloc
 
 Preenche uma lacuna verificada: existe farto material sobre como especificar, quase nada sobre como decidir se vale.
 
-Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão, ver `FERRAMENTAS.md`.
+Separada do monorepo harness-medir para instalação independente, no mesmo padrão das demais skills citadas no guia compacto. Ativa neste ambiente via cópia local em `.claude/skills/levantando-briefing/`, fora do controle de versão, ver `TOOLS.md`.
 
 ### Guia compacto de ferramentas e skills
 
-`harness-caixa-de-ferramentas.html`
+`harness-toolkit.html`
 
 Reescrito por completo em 30 de agosto de 2026. Organizado pelos cinco passos do MEDIR, não por categoria de produto. Dezessete fichas de seis campos, mais seção de diagnóstico de faixa no início para quem chega da parte 1. Cada passo do MEDIR tem crítica registrada, não só recomendação.
 
 Distribuição: Mapear com quatro fichas (levantando-briefing, guia inspirado em Karpathy, c4-skills, especificação antes do código com a crítica de Böckeler e Pocock), Equipar com três (superpowers, mattpocock/skills, planning-with-files), Delegar com três (holdfast, classes de ambiente, orquestração programada com LangGraph), Inspecionar com quatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforçar com três (ai-slop-cleaner, limpeza como cadência, coleta de lixo).
 
-Toda ferramenta citada está verificada em `fontes/inventario.md`, incluindo três fontes adicionadas nesta reescrita: Semgrep, LangGraph e GitHub Spec Kit com link direto.
+Toda ferramenta citada está verificada em `sources/inventory.md`, incluindo três fontes adicionadas nesta reescrita: Semgrep, LangGraph e GitHub Spec Kit com link direto.
 
 Repositório publicado, público, em `github.com/tecosodreaboutdigital/harness-medir`.
 
