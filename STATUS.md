@@ -138,6 +138,8 @@ The briefing skill is already its first operational artefact.
 
 ## Decisions made that should not be reverted without reason
 
+**MEDIR stays written as one word, no periods between the letters, decided 31 August 2026.** The author proposed `M.E.D.I.R.` to signal the acronym more clearly on first encounter. Considered and set aside: MEDIR is also the ordinary Portuguese verb for "to measure", and it only reads as that real word, pronounceable and thematically perfect for a project about measuring agent behaviour, because it is written as one word. Dotted letters would force it to be read out letter by letter and lose that. Two lighter fixes were made instead, which address the actual goal (clarity from first encounter, on whichever piece a reader lands on first) without the cost: the word MEDIR now carries the standard glossary tooltip and link on its first mention in Parts 2, 3, 4 and the compact guide (it did not before, the one glossary term that was missing this), and Part 1 and the README both state outright, in the reader's own words, that MEDIR is the Portuguese verb for "to measure". See `harness-glossary.html`'s MEDIR entry and the opening of `README.md`.
+
 **English is this project's primary production language, decided 30 August 2026,** for both public repositories, even though the working conversation with the author stays in Portuguese. See the `Languages` section of `STANDARDS.md`.
 
 **The term harness is not translated.** Kept in English for the same reason nobody translated kaizen, kanban or poka-yoke. The alternatives arnês, arreio, cabresto and sela (rough Portuguese equivalents evoking a restraint) were discarded: a containment metaphor sells the wrong idea to a reader who already fears losing control.

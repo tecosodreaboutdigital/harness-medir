@@ -4,6 +4,8 @@
 
 A content and tooling project about **harness engineering**: the discipline of building the environment around an AI model so it can operate reliably.
 
+MEDIR is not an arbitrary acronym: Mapear, Equipar, Delegar, Inspecionar, Reforçar (Map, Equip, Delegate, Inspect, Reinforce) is also the Portuguese verb for *to measure*. A project about measuring how an agent behaves is named after the word for measuring, on purpose.
+
 Author: Fernando Teco Sodré
 Status: in progress, August 2026
 
