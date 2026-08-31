@@ -13,6 +13,8 @@ Estado: en curso, agosto de 2026
 
 Publicado en [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositorio) y [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, los archivos HTML se renderizan como páginas, no solo como código fuente).
 
+**Empieza a leer:** [Parte 1, por qué](harness-p1.html) · [Parte 2, cómo](harness-p2.html) · [Parte 3, operación](harness-p3.html) · [Parte 4, gobernanza](harness-p4.html) · [Guía compacta](harness-toolkit.html) · [Glosario](harness-glossary.html) · [Fuentes](harness-sources.html) · [Diario de bordo](docs/logbook.html)
+
 ---
 
 ## La tesis
@@ -110,7 +112,7 @@ Inspeccionar, en la tabla de arriba, significa sensores que producen evidencia, 
 Cada commit se vuelve un hito en [docs/logbook.html](docs/logbook.html), trilingüe, generado a partir del historial de git y el uso real de tokens de esta sesión, nunca editado a mano. Dos gráficos, no uno con dos ejes, porque mezclar dos escalas arbitrarias en la misma regla es exactamente el error contra el que la parte 2 advierte a los propios sensores de un agente. Los dos comparten el mismo eje X, el orden de los hitos, así que puedes ver cuándo la escritura se aceleró respecto al costo en tokens, o al revés.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 94.345 palabras a lo largo de treinta y seis hitos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 99.849 palabras a lo largo de cuarenta hitos" width="680">
 </p>
 
 <p align="center"><em>Palabras publicadas en toda la serie, sumadas. Crece en escalones, la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos. Retrato del momento de la última regeneración del diario, ver <a href="docs/logbook.html">docs/logbook.html</a> para la versión actual.</em></p>

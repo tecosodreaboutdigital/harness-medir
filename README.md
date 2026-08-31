@@ -13,6 +13,8 @@ Status: in progress, August 2026
 
 Published at [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repository) and [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, the HTML files render as pages, not just as source code).
 
+**Start reading:** [Part 1, why](harness-p1.html) · [Part 2, how](harness-p2.html) · [Part 3, operation](harness-p3.html) · [Part 4, governance](harness-p4.html) · [Compact guide](harness-toolkit.html) · [Glossary](harness-glossary.html) · [Sources](harness-sources.html) · [Project log](docs/logbook.html)
+
 ---
 
 ## The thesis
@@ -110,7 +112,7 @@ Inspect, in the table above, means sensors that produce evidence, not opinion. T
 Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Two charts, not one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. Both share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or the other way round.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 94,345 words across thirty-six milestones" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 99,849 words across forty milestones" width="680">
 </p>
 
 <p align="center"><em>Words published across the series, summed. It grows in steps, most text is born within a single milestone, not gradually between milestones. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
