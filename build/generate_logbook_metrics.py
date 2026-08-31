@@ -19,7 +19,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Arquivos que contam como "conteudo publicado" (palavras) e como
 # "codigo do harness" (linhas). Um HTML pode nao existir ainda num
 # commit antigo, tratado como zero nesse caso.
-CONTENT_HTML = ['harness-p1.html', 'harness-p2.html', 'harness-toolkit.html']
+CONTENT_HTML = ['harness-p1.html', 'harness-p2.html', 'harness-p3.html', 'harness-toolkit.html',
+                'harness-glossary.html', 'harness-sources.html']
 CODE_GLOBS_PREFIXES = ['build/', 'TOOLS.md', 'sources/inventory.md']
 GOV_DOCS = ['README.md', 'STANDARDS.md', 'STATUS.md', 'NEXT-STEPS.md']
 

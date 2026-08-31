@@ -104,6 +104,31 @@ COMMIT_TXT = {
         'en': 'Fixes the diagrams rule’s wording, which had suggested an automatic Mermaid-to-SVG pipeline this project never used, and records the branch protection configured on main via the GitHub API.',
         'es': 'Corrige la redacción de la regla de diagramas, que sugería una canalización automática de Mermaid a SVG que este proyecto nunca usó, y registra la protección de rama configurada en main vía la API de GitHub.',
     },
+    'b81f378': {
+        'pt': 'Diário de bordo regerado para incluir os marcos M15 a M17: o dossiê de trabalho das partes 3 e 4, o fechamento dos três primeiros itens da fila do dossiê, e a correção da regra de diagramas junto com a proteção de branch.',
+        'en': 'Project log regenerated to include milestones M15 to M17: the parts 3 and 4 working dossier, the closing of the first three items of the dossier’s queue, and the diagrams rule fix alongside the branch protection.',
+        'es': 'Diario de bordo regenerado para incluir los hitos M15 a M17: el dosier de trabajo de las partes 3 y 4, el cierre de los tres primeros elementos de la cola del dosier, y la corrección de la regla de diagramas junto con la protección de rama.',
+    },
+    '67f08a5': {
+        'pt': 'Renderiza os nove SVGs dos diagramas pela primeira vez, via Chrome headless, e corrige cinco bugs reais de sobreposição de coordenada achados só por inspeção visual (texto cortado, conector duplicado, legenda estourando o canvas, linha atravessando caixa, colunas sobrepostas). Gera um PNG por diagrama para publicação no Medium.',
+        'en': 'Renders the nine diagram SVGs for the first time, via headless Chrome, and fixes five real coordinate-overlap bugs found only by visual inspection (text cut by a line, a duplicate connector, a caption overflowing the canvas, a line crossing a box, overlapping columns). Generates one PNG per diagram for Medium publication.',
+        'es': 'Renderiza los nueve SVG de los diagramas por primera vez, vía Chrome headless, y corrige cinco bugs reales de superposición de coordenadas encontrados solo por inspección visual (texto cortado, conector duplicado, leyenda desbordando el lienzo, línea atravesando una caja, columnas superpuestas). Genera un PNG por diagrama para publicación en Medium.',
+    },
+    'd1babbd': {
+        'pt': 'Mergeia direto na main a validação dos diagramas e os PNGs para o Medium, por decisão do autor.',
+        'en': 'Merges the diagram validation and the Medium PNGs directly into main, by the author’s decision.',
+        'es': 'Mergea directamente en main la validación de los diagramas y los PNG para Medium, por decisión del autor.',
+    },
+    '6f1c33e': {
+        'pt': 'Escreve a parte 3 completa nos três idiomas, com os cinco diagramas embutidos e totalmente traduzidos, e refaz a arquitetura de navegação da série: uma barra de topo única, centralizada e reativa ao idioma, e um glossário e uma página de fontes compartilhados, substituindo o que cada artigo carregava separado.',
+        'en': 'Writes part 3 in full, all three languages, with the five diagrams inline and fully translated, and rebuilds the series’ navigation architecture: a single, centred, language-reactive top bar, and a shared glossary and sources page, replacing what each article used to carry on its own.',
+        'es': 'Escribe la parte 3 completa en los tres idiomas, con los cinco diagramas incorporados y totalmente traducidos, y rehace la arquitectura de navegación de la serie: una barra superior única, centrada y reactiva al idioma, y un glosario y una página de fuentes compartidos, reemplazando lo que cada artículo llevaba por separado.',
+    },
+    '395c6cc': {
+        'pt': 'Mergeia direto na main a parte 3 completa e a nova arquitetura de série, por decisão do autor.',
+        'en': 'Merges the completed part 3 and the new series architecture directly into main, by the author’s decision.',
+        'es': 'Mergea directamente en main la parte 3 completa y la nueva arquitectura de serie, por decisión del autor.',
+    },
 }
 
 MONTHS = {
@@ -155,11 +180,34 @@ def svg_growth_chart(marker_prefix, values, x_labels, y_fmt, caption, subcaption
     parts.append('<text class="svg-sub" x="%d" y="%d" text-anchor="end">0</text>' % (left - 6, bottom + 4))
     # polilinha
     parts.append('<polyline points="%s" fill="none" stroke="#1b1b19" stroke-width="1"/>' % pts)
+    # Value labels collide once there are enough milestones that neighbouring
+    # points sit closer together than the label text is wide (seen for real at
+    # 22 milestones: numbers overlapped into an unreadable smear). Space labels
+    # out instead of dropping one on every point, always keeping the first and
+    # last so the story's start and current state are never the ones omitted.
+    max_labels = max(2, int((right - left) / 70))
+    step = max(1, round((n - 1) / (max_labels - 1))) if n > 1 else 1
+    labelled = set(range(0, n, step))
+    labelled.add(0)
+    # the forced last point can land right beside a regular-step point picked
+    # up by range() above (seen for real: two labels touching at the tail,
+    # "68,176 68,176"); drop anything crowding it before adding it back
+    labelled = {i for i in labelled if i == n - 1 or (n - 1 - i) >= max(2, step // 2)}
+    labelled.add(n - 1)
+    # x-axis tick labels (M1, M2...) are short and safe at a tighter spacing,
+    # but still thin them past the point where even "M99" would collide.
+    x_max_labels = max(2, int((right - left) / 26))
+    x_step = max(1, round((n - 1) / (x_max_labels - 1))) if n > 1 else 1
+    x_labelled = set(range(0, n, x_step))
+    x_labelled.add(0)
+    x_labelled.add(n - 1)
     for i, (x, y, v) in enumerate(zip(xs, ys, values)):
         parts.append('<circle cx="%.1f" cy="%.1f" r="3" fill="#1b1b19"/>' % (x, y))
-        label_y = y - 10 if y > top + 16 else y + 16
-        parts.append('<text class="svg-sub" x="%.1f" y="%.1f" text-anchor="middle">%s</text>' % (x, label_y, y_fmt(v)))
-        parts.append('<text class="svg-sub" x="%.1f" y="%d" text-anchor="middle">%s</text>' % (x, H - 40, x_labels[i]))
+        if i in labelled:
+            label_y = y - 10 if y > top + 16 else y + 16
+            parts.append('<text class="svg-sub" x="%.1f" y="%.1f" text-anchor="middle">%s</text>' % (x, label_y, y_fmt(v)))
+        if i in x_labelled:
+            parts.append('<text class="svg-sub" x="%.1f" y="%d" text-anchor="middle">%s</text>' % (x, H - 40, x_labels[i]))
     parts.append('<text class="svg-cap" x="%d" y="%d">%s</text>' % (left, H - 16, subcaption))
     parts.append('</svg>')
     return '\n'.join(parts)
@@ -274,9 +322,9 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <p class="deck">Este projeto argumenta que um harness deve produzir evidência sobre o próprio trabalho, não opinião. Esta página aplica esse argumento a si mesma: quanto texto foi publicado, quanto custou em tokens, marco a marco, com os números extraídos direto do histórico do git e do registro real de uso desta sessão.</p>
 
-<p class="byline">Fernando Teco Sodré · Gerado automaticamente, ver metodologia abaixo · Companheiro das partes 1, 2 e do guia compacto</p>
+<p class="byline">Fernando Teco Sodré · Gerado automaticamente, ver metodologia abaixo · Companheiro das partes 1, 2, 3 e do guia compacto</p>
 
-<div class="rule-box"><span class="lbl">Estado</span><p>Um projeto jovem, uma sessão contínua até aqui. Os seis marcos abaixo são o histórico completo do repositório, não uma amostra. Cada sessão nova que fizer commit vira um marco novo nesta mesma página.</p></div>
+<div class="rule-box"><span class="lbl">Estado</span><p>Os marcos abaixo são o histórico completo do repositório desde o primeiro commit, não uma amostra, já reunindo várias sessões de trabalho. Cada sessão nova que fizer commit vira um marco novo nesta mesma página.</p></div>
 
 <nav class="toc">
   <p>Neste documento</p>
@@ -356,9 +404,9 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p class="deck">This project argues that a harness should produce evidence about its own work, not opinion. This page applies that argument to itself: how much text got published, what it cost in tokens, milestone by milestone, with the numbers pulled straight from git history and this session's real usage record.</p>
 
-<p class="byline">Fernando Teco Sodré · Generated automatically, see methodology below · Companion to parts 1, 2 and the compact guide</p>
+<p class="byline">Fernando Teco Sodré · Generated automatically, see methodology below · Companion to parts 1, 2, 3 and the compact guide</p>
 
-<div class="rule-box"><span class="lbl">Status</span><p>A young project, one continuous session so far. The six milestones below are the repository's entire history, not a sample. Every new session that commits becomes a new milestone on this same page.</p></div>
+<div class="rule-box"><span class="lbl">Status</span><p>The milestones below are the repository's entire history since the first commit, not a sample, already spanning several working sessions. Every new session that commits becomes a new milestone on this same page.</p></div>
 
 <nav class="toc">
   <p>In this document</p>
@@ -438,9 +486,9 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <p class="deck">Este proyecto sostiene que un harness debe producir evidencia sobre su propio trabajo, no opinión. Esta página aplica ese argumento a sí misma: cuánto texto se publicó, cuánto costó en tokens, hito a hito, con los números extraídos directo del historial de git y del registro real de uso de esta sesión.</p>
 
-<p class="byline">Fernando Teco Sodré · Generado automáticamente, ver metodología abajo · Compañero de las partes 1, 2 y de la guía compacta</p>
+<p class="byline">Fernando Teco Sodré · Generado automáticamente, ver metodología abajo · Compañero de las partes 1, 2, 3 y de la guía compacta</p>
 
-<div class="rule-box"><span class="lbl">Estado</span><p>Un proyecto joven, una sesión continua hasta ahora. Los seis hitos de abajo son el historial completo del repositorio, no una muestra. Cada sesión nueva que haga commit se vuelve un hito nuevo en esta misma página.</p></div>
+<div class="rule-box"><span class="lbl">Estado</span><p>Los hitos de abajo son el historial completo del repositorio desde el primer commit, no una muestra, ya reuniendo varias sesiones de trabajo. Cada sesión nueva que haga commit se vuelve un hito nuevo en esta misma página.</p></div>
 
 <nav class="toc">
   <p>En este documento</p>
@@ -523,7 +571,7 @@ def scope(body, pref):
 
 def main():
     p2 = open(os.path.join(ROOT, 'harness-p2.html'), encoding='utf-8').read()
-    shell = p2[:p2.index('<div class="langbar">')]
+    shell = p2[:p2.index('<div class="topbar">')]
     shell = shell.replace(
         '<title>Guides and sensors: how an agent learns to correct itself | Part 2</title>',
         '<title>Project log | Harness</title>')
