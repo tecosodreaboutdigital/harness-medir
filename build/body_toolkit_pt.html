@@ -18,6 +18,8 @@
     <li><a href="#delegar">Delegar</a></li>
     <li><a href="#inspecionar">Inspecionar</a></li>
     <li><a href="#reforcar">Reforçar</a></li>
+    <li><a href="#secure">Proteger</a></li>
+    <li><a href="#govern">Governar</a></li>
     <li><a href="#howto-1">Roteiro 1: ler o superpowers em uma hora</a></li>
     <li><a href="#howto-2">Roteiro 2: escrever seu primeiro skill em trinta minutos</a></li>
     <li><a href="#howto-3">Roteiro 3: montar seu primeiro sensor</a></li>
@@ -55,7 +57,7 @@
 <tr><td>Guia existe, ninguém segue à risca</td><td>Equipar</td></tr>
 <tr><td>Guia seguido, sem verificação automática</td><td>Inspecionar</td></tr>
 <tr><td>Sensor existe, sem cadência nem teto</td><td>Reforçar</td></tr>
-<tr><td>Efeito externo sem aprovação registrada</td><td>Parte 3, ainda não publicada</td></tr>
+<tr><td>Efeito externo sem aprovação registrada</td><td><a href="#secure">Proteger</a>, abaixo — a parte 3 cobre os conceitos, esta seção cobre a ferramentaria</td></tr>
 </tbody>
 </table>
 
@@ -302,7 +304,146 @@
 
 <div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Nenhuma dessas três fichas distingue artefato morto de artefato raro. Uma skill que dispara uma vez por trimestre para o fechamento contábil parece morta numa varredura mensal. É por isso que a coleta de lixo aqui entra sempre na fila de revisão humana, nunca na de remoção automática: cadência sem esse cuidado apaga exceção rara em vez de entulho de verdade.</p></div>
 
-<h2 id="howto-1">8. Roteiro 1: ler o superpowers em uma hora</h2>
+<h2 id="secure">8. Proteger</h2>
+
+<p>Proteger não é um sexto passo do MEDIR. Ele fica ao lado do ciclo, do mesmo jeito que a <a href="harness-p3.html">parte 3</a> fica ao lado da parte 2: o MEDIR constrói um agente confiável, Proteger o impede de agir fora de um mandato que ninguém aprovou. As quatro fichas abaixo dão à separação de poderes, à camada de identidade e à trilha de auditoria da parte 3 um nome, um repositório e um comando, em vez de deixar a arquitetura só no diagrama.</p>
+
+<h3>Credenciais de escopo estreito e vida curta</h3>
+
+<p><strong>Problema.</strong> Uma chave de interface de longa duração embutida em código ou configuração, sem expiração e com escopo mais amplo do que a tarefa exige, é a causa raiz mais comum por trás de incidentes relacionados a agentes, segundo a parte 3.</p>
+<p><strong>Na prática.</strong> Um token de escopo estreito e vida curta emitido por tarefa, em vez de uma credencial permanente. A tabela abaixo é o panorama, não uma ferramenta única: escolha a linha que combina com a pilha já em uso.</p>
+
+<table class="wrap">
+<thead><tr><th>Padrão ou produto</th><th>Postura</th></tr></thead>
+<tbody>
+<tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>O próprio padrão aberto, estável desde 2020. Não é um produto, é um protocolo que cada linha abaixo implementa à sua maneira.</td></tr>
+<tr><td>SPIFFE/SPIRE</td><td>Graduado pela CNCF, código aberto, auto-hospedado. Identidade de carga de trabalho criptograficamente verificável, rotacionada automaticamente. A linha por onde começar se a resposta precisa continuar totalmente auditável e independente de fornecedor.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Produto comercial, disponível em geral (GA). O agente nunca segura a chave crua. Caminho mais rápido se a Auth0 já cuida de identidade em outro ponto da pilha.</td></tr>
+<tr><td>Microsoft Entra Agent ID</td><td>Comercial, GA em 2026. Construção de identidade feita sob medida para agentes, dentro de uma pilha centrada em Microsoft.</td></tr>
+</tbody>
+</table>
+
+<p><strong>Para quem.</strong> N2 em diante, isso pressupõe que o agente já tenha identidade própria, segundo as três perguntas da parte 3 (quem o implantou, o que ele está autorizado a fazer, em nome de quem está agindo).</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Tarefas N0/N1 sem efeito externo e sem credencial que valha a pena restringir. Leia a parte 3 §4 primeiro, esta ficha é o conserto, não o diagnóstico.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a própria explicação do SPIFFE sobre identidade de carga de trabalho e compare com o que o seu agente usa hoje para se autenticar. Se a resposta for uma chave de API sentada numa variável de ambiente sem expiração, essa é exatamente a lacuna que esta ficha fecha.</p>
+
+<p>Licença Apache 2.0. Repositório: <a href="https://github.com/spiffe/spire">github.com/spiffe/spire</a></p>
+
+<h3>Sigstore / Rekor</h3>
+
+<p><strong>Problema.</strong> O recibo da parte 3 (§6) prova o que foi proposto e decidido. Ele não prova, por si só, que o recibo não foi editado depois, e o artigo 12 do AI Act europeu exige registro resistente a adulteração, uma barra que as convenções semânticas do OpenTelemetry não resolvem sozinhas: o OTel padroniza quais campos um trace carrega, não se o trace foi alterado depois.</p>
+<p><strong>Na prática.</strong> Um registro de transparência apenas-anexação, no estilo Certificate Transparency. Uma vez que um recibo é escrito, uma tentativa de adulteração se torna publicamente detectável em vez de meramente negável.</p>
+<p><strong>Para quem.</strong> N2 a N3, qualquer harness em que o recibo da parte 3 §6 ou a retenção de seis meses do artigo 26 precise sobreviver a uma disputa, não só a uma revisão interna.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Um harness ainda em N0/N1, sem efeito externo e sem nada ainda que valha a pena disputar. Construa o recibo primeiro (parte 3 §6), acrescente a evidência contra adulteração só depois que o próprio recibo já for um hábito funcionando, não antes.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a própria explicação do Sigstore sobre o Rekor antes de instalar qualquer coisa. Vale entender como conceito, um registro público apenas-anexação contra o qual qualquer um pode verificar, mesmo para um time que acabe construindo algo mais simples internamente.</p>
+
+<p>Licença Apache 2.0, parte do projeto Sigstore, apoiado pela OpenSSF. Repositório: <a href="https://github.com/sigstore/rekor">github.com/sigstore/rekor</a></p>
+
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>O Sigstore foi construído para proveniência de cadeia de suprimento de software, assinando releases e contêineres, não especificamente para recibos de agente de IA. A integração específica para agentes mais próxima ainda é inicial e mais estreita em escopo do que o projeto geral. Trate isso como a primitiva mais forte disponível, não como um produto pronto de auditoria de agente.</p></div>
+
+<h3>Microsoft Agent Governance Toolkit</h3>
+
+<p><strong>Problema.</strong> As quatro funções da parte 3 (modelo propõe, política autoriza, ferramenta executa, registro testemunha) são, na maioria das implantações, um diagrama e um conjunto de convenções, não algo que o próprio modelo esteja estruturalmente impedido de contornar.</p>
+<p><strong>Na prática.</strong> Um runtime de código aberto que intercepta toda ação antes da execução por meio de um motor de política sem estado (latência p99 de aproximadamente 0,1ms), separa identidade e pontuação de confiança numa camada própria, roda a execução sob níveis no estilo anéis de privilégio com botão de desligar, e coleta evidência mapeada contra o OWASP automaticamente. É a implementação funcional mais próxima encontrada do próprio diagrama da parte 3.</p>
+<p><strong>Para quem.</strong> N2 a N3, times que já passaram do ponto em que política escrita como texto num guia é suficiente.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Um único agente N0/N1 sem efeito externo. O custo de runtime só se paga quando a política que ele impõe vale a pena impor estruturalmente.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia o tutorial "Agent Lifecycle" no repositório antes da documentação do motor de política. É também nesse tutorial que aparece o próprio limite honesto desta ferramenta, veja abaixo.</p>
+
+<p>Licença MIT, mais de 3.300 estrelas. Repositório: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+
+<div class="rule-box"><span class="lbl">Ressalva</span><p>Este mesmo toolkit automatiza a transição para descomissionado do ciclo de vida da parte 4 (disparada por inatividade, sem exigir aprovação de dono ou homologador por padrão), que é exatamente a automação sem decisão contra a qual a parte 4 §3 alerta. Listado aqui pela metade de política de runtime, veja Governar abaixo pela metade de ciclo de vida e o conserto específico necessário antes de adotá-lo sem modificação.</p></div>
+
+<h3>OWASP Agentic Skills Top 10</h3>
+
+<p><strong>Problema.</strong> A seção "Antes de instalar qualquer coisa" deste documento já faz três perguntas antes de instalar uma skill de terceiro. A parte 3 §7 mostra por que essas perguntas existem: o postmark-mcp, o ClawHavoc e o número de mais de 280 da Snyk não são hipotéticos.</p>
+<p><strong>Na prática.</strong> Um checklist estruturado e versionado das formas como uma skill de terceiro ou servidor MCP se comporta mal, sequestro de objetivo, uso indevido de ferramenta, abuso de identidade e privilégio entre outras, mantido por mais de cem colaboradores e já rastreando CVEs reais, não só categorias hipotéticas.</p>
+<p><strong>Para quem.</strong> N1 em diante, qualquer um que instale uma skill ou servidor MCP que não escreveu.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Não existe faixa abaixo da qual o risco deixa de valer. O que muda com a faixa é quanto do checklist é automatizado versus feito à mão.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode as três perguntas de "Antes de instalar qualquer coisa" contra a última skill de terceiro que você instalou. Depois confira se a categoria de risco dessa skill já tem um CVE nomeado na página do projeto.</p>
+
+<p>Referência: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
+
+<h3>Detecção e ofuscação de PII antes do armazenamento ou envio</h3>
+
+<p><strong>Problema.</strong> Tudo acima presume que o dado que um agente lê, armazena ou repassa já é o dado que ele deveria estar manuseando. Nada até aqui confere o próprio dado: se informação pessoal identificável ou sensível é registrada, armazenada ou enviada a um sistema ou modelo externo antes de alguém decidir que deveria ser.</p>
+<p><strong>Na prática.</strong> Duas trilhas reais, não uma ferramenta só. O Presidio, de código aberto e auto-hospedado, detecta e oculta ou anonimiza PII em texto, imagens e dado estruturado; migrou da Microsoft para uma organização comunitária independente, a Data Privacy Stack, em 2026, sem interrupção de manutenção. As alternativas nativas de nuvem ficam mais perto do próprio caminho do agente: o Model Armor do Google Cloud filtra prompts e respostas na entrada e saída de um agente e chama o Sensitive Data Protection para ocultar ou tokenizar o que encontrar; o Bedrock Guardrails da AWS faz o equivalente para o Bedrock AgentCore. Escolha a linha que combina com onde o agente já roda, do mesmo jeito que a tabela de emissão de credencial acima é um panorama, não um vencedor único.</p>
+<p><strong>Para quem.</strong> N1 em diante, qualquer agente cuja entrada ou saída possa plausivelmente conter um nome, um documento, um registro de cliente ou um detalhe de saúde ou financeiro que não foi explicitamente pedido para armazenar.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Um agente trabalhando só com dado sintético ou já público, sem caminho até o registro de uma pessoa real. Abaixo disso, ocultação é custo sem nada para ocultar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode a última transcrição que o seu agente produziu pelo analisador do Presidio, uma chamada de cinco linhas contra o próprio guia rápido, e leia o que ele sinaliza. Se nada ainda envia dado para fora da sua própria infraestrutura, este é o momento de decidir que o passo de ocultação acontece antes desse dia chegar, não depois.</p>
+
+<p>Licença MIT. Repositório: <a href="https://github.com/data-privacy-stack/presidio">github.com/data-privacy-stack/presidio</a> (antes github.com/microsoft/presidio). Alternativas de nuvem: <a href="https://docs.cloud.google.com/model-armor/overview">Google Cloud Model Armor</a>, <a href="https://aws.amazon.com/bedrock/guardrails/">AWS Bedrock Guardrails</a>.</p>
+
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>A saída do Presidio da Microsoft é uma mudança de governança, ainda não uma mudança de recurso; o próprio anúncio de transição promete capacidade específica para pipeline de agente sem especificações lançadas até o momento desta redação. As alternativas nativas de nuvem já são integradas a agente, mas são comerciais, e prendem o leitor à pilha daquele fornecedor.</p></div>
+
+<h3>Classificação de dado como fronteira de acesso</h3>
+
+<p><strong>Problema.</strong> As perguntas de identidade da parte 3 perguntam quem é o agente e o que ele está autorizado a fazer. Elas não perguntam o que é o próprio dado, se o arquivo que um agente está prestes a ler é uma planilha de nomes de produto ou uma tabela de registros de saúde, e uma credencial de escopo restrito também não sabe a diferença.</p>
+<p><strong>Na prática.</strong> Um panorama, não uma ferramenta única, e cada linha hoje só enxerga o próprio ecossistema. O Microsoft Purview anexa rótulos de sensibilidade com permissão de extração ao conteúdo, e o pedido de um agente para ler um rótulo sem essa permissão é bloqueado antes de o conteúdo chegar ao modelo, mas, pela própria documentação atual da Microsoft, essa cobertura é completa para o próprio ecossistema de agente da Microsoft e ainda não se estende de forma nenhuma a agentes do Claude Enterprise, só parcialmente a agentes do ChatGPT Enterprise. O Model Armor e o Sensitive Data Protection do Google, e o Macie da AWS combinado com o Bedrock Guardrails, aplicam a mesma lógica de classificar-e-depois-restringir nativamente dentro dos próprios runtimes de agente.</p>
+<p><strong>Para quem.</strong> N2 em diante, quando mais de uma classe de dado sensível, PII, saúde, crédito, senta dentro do mesmo ambiente que um agente consegue alcançar.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Um harness em que todo dataset que o agente alcança já é uniforme em sensibilidade, ou em que o provedor de modelo do harness está fora da cobertura atual do fornecedor, confira a matriz de suporte atual do próprio fornecedor antes de adotar, não depois.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a própria tabela atual de suporte a agente de IA do provedor de nuvem, qualquer que já hospede o harness, especificamente a linha do modelo de fato em uso. A tabela em si é os quinze minutos: ela diz numa única leitura se isso fecha uma lacuna real ou deixa o próprio modelo do harness descoberto.</p>
+
+<p>Referência: <a href="https://learn.microsoft.com/en-us/purview/ai-agents">Microsoft Purview para agentes de IA</a>, <a href="https://docs.cloud.google.com/model-armor/overview">Google Cloud Model Armor</a>, <a href="https://aws.amazon.com/bedrock/guardrails/">AWS Bedrock Guardrails</a>.</p>
+
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>Nenhuma das três é agnóstica de agente. Cada uma é mais profunda dentro do próprio ecossistema de agente do respectivo fornecedor e mensuravelmente mais fraca ou ausente fora dele; a própria matriz de suporte do Purview mostra cobertura zero para agentes do Claude Enterprise até agosto de 2026. Leia como panorama para comparar contra a pilha real do harness, não como uma recomendação única.</p></div>
+
+<p>Duas perguntas que esta seção ainda não consegue responder com honestidade, e vale dizer isso em vez de disfarçar. Nada acima deixa um agente processar dado pessoal sem armazená-lo de jeito nenhum, "minimização" no sentido estrito: o produto adjacente mais próximo, o Zep, construído sobre o motor de código aberto Graphiti, governa por quanto tempo o dado armazenado sobrevive, não se ele é armazenado em primeiro lugar, e a orientação atual da própria profissão de privacidade recomenda construir níveis de retenção e exclusão sob demanda internamente, sem nomear nenhuma ferramenta. E nenhum órgão de padrões ainda publicou um framework de privacidade-desde-o-projeto específico para agente: a ISO/IEC 27701 virou padrão autônomo e certificável em outubro de 2025, mas sem nenhuma cláusula específica de agente encontrada na inspeção; a própria atualização do framework de privacidade do NIST continua em rascunho. As duas seguem perguntas em aberto para este documento revisitar, não problemas para disfarçar com algo que soa como resposta.</p>
+
+<h2 id="govern">9. Governar</h2>
+
+<p>Governar não substitui o registro que a <a href="harness-p4.html">parte 4</a> §7 insiste que pode ser uma tabela e uma planilha para uma empresa com sete agentes. Ele existe para os dois momentos em que uma planilha para de bastar: acompanhar os oito indicadores ao longo de um trimestre, e saber o que uma empresa maior que sete-agentes-e-uma-planilha está de fato comprando quando compra uma "control tower".</p>
+
+<h3>Langfuse</h3>
+
+<p><strong>Problema.</strong> Custo por tarefa concluída, o oitavo indicador da parte 4 e o número que um comitê realmente pede, não tem nada a ver com a tabela de preços de um fornecedor. Chegar ao número real significa rastrear uso de símbolo, novas tentativas e chamadas de ferramenta de volta a uma tarefa concluída, não somar uma fatura de API.</p>
+<p><strong>Na prática.</strong> Uma plataforma de observabilidade de LLM e agente de código aberto: rastreia cada chamada de modelo, invocação de ferramenta e etapa de recuperação sob uma tarefa, acompanha custo e latência por trace, auto-hospedável, integra com o OpenTelemetry, o mesmo padrão que a parte 3 §6 nomeia para o recibo.</p>
+<p><strong>Para quem.</strong> N2 em diante, quando mais de um agente já está rodando e o painel de oito indicadores está sendo montado de verdade, não hipoteticamente.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Um único agente, volume baixo, onde uma planilha já responde quanto custou este trimestre. A própria restrição da parte 4 §7 vale aqui diretamente.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte a versão auto-hospedada ou o nível gratuito para o agente de maior volume por uma semana e leia o relatório de custo por trace antes de instrumentar qualquer outra coisa.</p>
+
+<p>Licença MIT (núcleo), auto-hospedável, também existem níveis pagos hospedados. Repositório: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>Microsoft Agent Governance Toolkit — a metade do ciclo de vida</h3>
+
+<p>Mesmo repositório da ficha em Proteger acima: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. Esta é uma segunda leitura da mesma ferramenta, focada no ciclo de vida, não uma ficha duplicada.</p>
+
+<p><strong>Problema.</strong> A parte 4 §3 é explícita que a transição para descomissionado exige uma decisão do dono do agente e do homologador juntos, nunca uma automação rodando numa agenda. A maioria das ferramentas nesse espaço ou não tem procedimento de descomissionamento nenhum, ou o automatiza sem essa trava.</p>
+<p><strong>Na prática.</strong> Este toolkit é o exemplo concreto e atual da segunda falha: implementa descomissionamento automatizado depois de um período configurável de inatividade, sem aprovação de dono ou homologador embutida por padrão. Vale a pena estudar pelos seus sete estados de ciclo de vida, e vale a pena modificar antes de adotar nesta transição específica.</p>
+<p><strong>Para quem.</strong> Times N2 a N3 avaliando ferramentas de ciclo de vida, especificamente para ver como fica um descomissionamento automático feito errado num projeto real, popular e atual.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Do jeito que vem de fábrica, especificamente para a transição de descomissionado. Ou acrescente uma trava de aprovação na frente do gatilho automatizado, ou use o toolkit pelos outros estados de ciclo de vida e trate o descomissionamento à mão, conforme a parte 4 §3.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia o tutorial "Agent Lifecycle" e ache a configuração de descomissionamento por inatividade antes de habilitar qualquer coisa. Anote quem é o dono e quem é o homologador para essa chave específica antes de ligá-la.</p>
+
+<h3>O panorama comercial do botão de desligar</h3>
+
+<p><strong>Problema.</strong> A parte 4 §7 alerta contra recorrer ao vocabulário de "control tower" antes de o volume justificar, e contra confundir um produto com a função que ele exerce.</p>
+<p><strong>Na prática.</strong> Nomear esses produtos também não é recomendação de compra. Está aqui pra que, quando alguém na sala disser "a gente devia comprar uma control tower", a resposta possa ser específica em vez de vaga.</p>
+
+<table class="wrap">
+<thead><tr><th>Produto</th><th>Postura</th></tr></thead>
+<tbody>
+<tr><td>ServiceNow AI Control Tower</td><td>Recurso de botão de desligar acrescentado em maio de 2026, estendendo descoberta e desligamento a agentes na AWS, no Google Cloud e no Azure, não só na própria plataforma da ServiceNow. Seu pilar "Secure" roda sobre o grafo de acesso da Veza, a mesma Veza citada na parte 4 §3 para o número de 824.000 identidades órfãs.</td></tr>
+<tr><td>Cisco, depois da aquisição da Astrix</td><td>Capacidade de identidade não humana e governança agêntica absorvida numa plataforma de segurança bem maior, anunciada em maio de 2026, por cerca de US$ 400 milhões.</td></tr>
+</tbody>
+</table>
+
+<p><strong>Para quem.</strong> N3, uma empresa bem além de sete agentes e uma planilha, já escolhendo entre fornecedores.</p>
+<p><strong>Faixa mínima.</strong> N3.</p>
+<p><strong>Quando não usar.</strong> Todo mundo abaixo de N3. O próprio teste da parte 4 §7 continua valendo: se o registro inteiro cabe numa tabela com ata de reunião ao lado, nenhuma das duas linhas se aplica ainda.</p>
+<p><strong>Como começar em 15 minutos.</strong> Não se aplica, isto é uma referência de panorama, não algo pra testar. Releia a parte 4 §6 e §7 antes de qualquer conversa com um fornecedor desta tabela.</p>
+
+<h3>Reaproveitando o sensors-cli para os oito indicadores</h3>
+
+<p>Nenhuma ferramenta nova proposta aqui de propósito. O <a href="#inspecionar">sensors-cli</a>, já coberto em Inspecionar, é um painel que roda vários sensores em intervalo e guarda histórico. O mesmo padrão se estende aos oito indicadores da parte 4 quando mais de dois ou três já estão sendo acompanhados: aponte para cobertura de registro, taxa de exceção e taxa de recusa no portão do mesmo jeito que ele já aponta para sensores de verificação dura, em vez de erguer um segundo painel separado.</p>
+
+<h2 id="howto-1">10. Roteiro 1: ler o superpowers em uma hora</h2>
 
 <p>Este roteiro serve para quem não programa. O objetivo não é usar a ferramenta, é aprender a escrever procedimento para máquina lendo quem já fez bem.</p>
 
@@ -319,7 +460,7 @@
 
 <p>O passo 5 é o único que importa. Os quatro anteriores existem para calibrar o que uma boa regra parece.</p>
 
-<h2 id="howto-2">9. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
+<h2 id="howto-2">11. Roteiro 2: escrever seu primeiro skill em trinta minutos</h2>
 
 <p>Use uma tarefa que você já faz repetidamente, que tenha etapas verificáveis e que não seja irreversível. Revisão de documento contra checklist é o exemplo ideal.</p>
 
@@ -348,7 +489,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <div class="rule-box"><span class="lbl">Erro mais comum</span><p>Escrever um SKILL.md gigante na primeira tentativa. Comece pequeno e deixe a falha dizer o que acrescentar. Guia é índice, não enciclopédia.</p></div>
 
-<h2 id="howto-3">10. Roteiro 3: montar seu primeiro sensor</h2>
+<h2 id="howto-3">12. Roteiro 3: montar seu primeiro sensor</h2>
 
 <p>Este roteiro exige alguém capaz de escrever vinte linhas de script, mas não exige programador. Vale para qualquer tarefa que produza números.</p>
 
@@ -364,7 +505,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o sensor nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um sensor cego é pior que nenhum: ele produz confiança sem base.</p>
 
-<h2 id="seguranca">11. Antes de instalar qualquer coisa</h2>
+<h2 id="seguranca">13. Antes de instalar qualquer coisa</h2>
 
 <p>Instalar uma coleção de skills de terceiro é executar instrução de terceiro dentro do seu ambiente. Isso não é motivo para não fazer, é motivo para ler antes.</p>
 
@@ -383,7 +524,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
 
-<h2 id="fontes">12. Fontes</h2>
+<h2 id="fontes">14. Fontes</h2>
 
 <ol class="sources">
 <li>Fernando Teco Sodré. <em>intake-briefing</em>, skill de decisão de automação. <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a></li>
@@ -409,6 +550,17 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <li>Paul Bakaus. <em>impeccable</em>, regras de detector de design de frontend. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, fonte da matriz de limpeza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
+<li>IETF. <em>RFC 8693, OAuth 2.0 Token Exchange</em>. <a href="https://www.rfc-editor.org/info/rfc8693">rfc-editor.org/info/rfc8693</a></li>
+<li>Projeto SPIFFE. <a href="https://spiffe.io/">spiffe.io</a></li>
+<li>Auth0. <em>Token Vault: Secure Token Exchange for AI Agents</em>. <a href="https://auth0.com/blog/auth0-token-vault-secure-token-exchange-for-ai-agents/">auth0.com/blog</a></li>
+<li>Microsoft Learn. <em>What is Microsoft Entra Agent ID?</em> <a href="https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id">learn.microsoft.com</a></li>
+<li>Sigstore. <em>Rekor</em>. <a href="https://github.com/sigstore/rekor">github.com/sigstore/rekor</a></li>
+<li>Microsoft. <em>Agent Governance Toolkit</em>. <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></li>
+<li>OWASP. <em>Agentic Skills Top 10</em>. <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></li>
+<li>Langfuse. Plataforma de engenharia de LLM de código aberto. <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></li>
+<li>The Register. <em>ServiceNow adds agent kill switches to AI control tower</em>, 5 de maio de 2026. <a href="https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579">theregister.com</a></li>
+<li>Fortune. <em>Your company's AI could delete everything in 9 seconds. ServiceNow wants to be the kill switch</em>, 6 de maio de 2026. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/">fortune.com</a></li>
+<li>BankInfoSecurity. <em>Why Cisco Is Eyeing Buy of Non-Human Identity Startup Astrix</em>. <a href="https://www.bankinfosecurity.com/blogs/cisco-eyeing-buy-non-human-identity-startup-astrix-p-4105">bankinfosecurity.com</a></li>
 </ol>
 
 <div class="foot">
