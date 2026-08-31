@@ -110,7 +110,7 @@ Inspeccionar, en la tabla de arriba, significa sensores que producen evidencia, 
 Cada commit se vuelve un hito en [docs/logbook.html](docs/logbook.html), trilingüe, generado a partir del historial de git y el uso real de tokens de esta sesión, nunca editado a mano. Dos gráficos, no uno con dos ejes, porque mezclar dos escalas arbitrarias en la misma regla es exactamente el error contra el que la parte 2 advierte a los propios sensores de un agente. Los dos comparten el mismo eje X, el orden de los hitos, así que puedes ver cuándo la escritura se aceleró respecto al costo en tokens, o al revés.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 94.127 palabras a lo largo de treinta hitos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 94.476 palabras a lo largo de treinta y cuatro hitos" width="680">
 </p>
 
 <p align="center"><em>Palabras publicadas en toda la serie, sumadas. Crece en escalones, la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos. Retrato del momento de la última regeneración del diario, ver <a href="docs/logbook.html">docs/logbook.html</a> para la versión actual.</em></p>
