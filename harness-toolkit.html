@@ -1236,6 +1236,34 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Reference: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
 
+<h3>PII detection and redaction before storage or transmission</h3>
+
+<p><strong>Problem.</strong> Everything above assumes the data an agent reads, stores or forwards is already the data it should be handling. Nothing so far checks the data itself: whether personally identifiable or sensitive information gets logged, stored or sent to an external system or model before anyone decides it should be.</p>
+<p><strong>In practice.</strong> Two real tracks, not one tool. Presidio, open source and self-hosted, detects and redacts or anonymises PII across text, images and structured data; it moved from Microsoft to an independent community organisation, Data Privacy Stack, in 2026, with no break in maintenance. Cloud-native alternatives sit closer to the agent path itself: Google Cloud's Model Armor screens prompts and responses in and out of an agent and calls Sensitive Data Protection to redact or tokenise what it finds; AWS's Bedrock Guardrails do the equivalent for Bedrock AgentCore. Pick the row that matches where the agent already runs, the same way the credential-issuance table above is a landscape, not a single winner.</p>
+<p><strong>Who it is for.</strong> N1 upward, any agent whose input or output could plausibly contain a name, a document, a customer record or a health or financial detail it was not explicitly asked to store.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> An agent working only on synthetic or already-public data with no path to a real person's record. Below that, redaction is overhead with nothing to redact.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the last transcript your agent produced through Presidio's analyzer, a five-line call against its own quickstart, and read what it flags. If nothing sends data outside your own infrastructure yet, this is the moment to decide the redaction step happens before that day arrives, not after.</p>
+
+<p>Licence MIT. Repository: <a href="https://github.com/data-privacy-stack/presidio">github.com/data-privacy-stack/presidio</a> (formerly github.com/microsoft/presidio). Cloud alternatives: <a href="https://docs.cloud.google.com/model-armor/overview">Google Cloud Model Armor</a>, <a href="https://aws.amazon.com/bedrock/guardrails/">AWS Bedrock Guardrails</a>.</p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>Presidio's move out of Microsoft is a governance change, not yet a feature change, its own transition announcement promises agent-pipeline-specific capability with no shipped specifics as of this writing. The cloud-native alternatives are already agent-integrated but commercial, and tie the reader to that vendor's stack.</p></div>
+
+<h3>Data classification as the access boundary</h3>
+
+<p><strong>Problem.</strong> Part 3's identity questions ask who the agent is and what it is authorised to do. They do not ask what the data itself is, whether the file an agent is about to read is a spreadsheet of product names or a table of health records, and a scoped credential does not know the difference either.</p>
+<p><strong>In practice.</strong> A landscape, not a single tool, and each row currently only sees its own ecosystem. Microsoft Purview attaches sensitivity labels with an extract permission to content, and an agent's request to read a label without that permission is blocked before the content reaches the model, but, by Microsoft's own current documentation, this coverage is full for Microsoft's own agent ecosystem and does not yet extend to Claude Enterprise agents at all, only partially to ChatGPT Enterprise agents. Google's Model Armor and Sensitive Data Protection, and AWS's Macie paired with Bedrock Guardrails, apply the same classify-then-restrict logic natively inside their own agent runtimes.</p>
+<p><strong>Who it is for.</strong> N2 upward, once more than one class of sensitive data, PII, health, credit, sits inside the same environment an agent can reach.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A harness where every dataset the agent can reach is already uniform in sensitivity, or where the harness's model provider is outside the vendor's current coverage, check the vendor's own current support matrix before adopting, not after.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the cloud provider's own current AI-agent support table, whichever one already hosts the harness, specifically the row for the model actually in use. The table itself is the fifteen minutes: it tells you in one read whether this closes a real gap or leaves the harness's own model uncovered.</p>
+
+<p>Reference: <a href="https://learn.microsoft.com/en-us/purview/ai-agents">Microsoft Purview for AI agents</a>, <a href="https://docs.cloud.google.com/model-armor/overview">Google Cloud Model Armor</a>, <a href="https://aws.amazon.com/bedrock/guardrails/">AWS Bedrock Guardrails</a>.</p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>None of these three is agent-agnostic. Each is deepest inside its own vendor's agent ecosystem and measurably weaker or absent outside it, Purview's own support matrix shows zero coverage for Claude Enterprise agents as of August 2026. Read as a landscape to match against the harness's actual stack, not a single recommendation.</p></div>
+
+<p>Two questions this section cannot yet answer honestly, worth stating rather than papering over. Nothing above lets an agent process personal data without storing it at all, "minimisation" in the strict sense: the closest adjacent product, Zep, built on the open-source Graphiti engine, governs how long stored data survives, not whether it gets stored in the first place, and current guidance from the privacy profession itself recommends building retention tiers and callable deletion in house, naming no tool. And no standards body has yet published an agent-specific privacy-by-design framework: ISO/IEC 27701 became a standalone, certifiable standard in October 2025, but with no agent-specific clause found on inspection; NIST's own privacy framework update remains a draft. Both stay open questions for this document to revisit, not problems to paper over with something that sounds like an answer.</p>
+
 <h2 id="en-govern">9. Govern</h2>
 
 <p>Govern does not replace the registry <a href="harness-p4.html">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
