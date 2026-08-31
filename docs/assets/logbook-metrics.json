@@ -1,7 +1,8 @@
 {
-  "generated_at": "2026-08-30T23:58:36.331209+00:00",
+  "generated_at": "2026-08-31T00:53:13.822693+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\46908256-4997-4659-b184-4a6d48768252.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
@@ -447,12 +448,92 @@
         "cache_read": 545393309,
         "cache_creation": 5594050
       }
+    },
+    {
+      "hash": "33a92e9",
+      "timestamp": "2026-08-30T21:06:02-03:00",
+      "subject": "Regera o diario de bordo e corrige tres bugs reais achados no processo",
+      "words_published": 68176,
+      "code_lines": 7368,
+      "governance_lines": 537,
+      "tokens_bucket": {
+        "input": 170,
+        "output": 57517,
+        "cache_read": 67224969,
+        "cache_creation": 105487
+      },
+      "tokens_cumulative": {
+        "input": 3600,
+        "output": 2718492,
+        "cache_read": 612618278,
+        "cache_creation": 5699537
+      }
+    },
+    {
+      "hash": "241f320",
+      "timestamp": "2026-08-30T21:30:31-03:00",
+      "subject": "Atualiza o README nas tres linguas e inclui dois diagramas",
+      "words_published": 68176,
+      "code_lines": 7368,
+      "governance_lines": 559,
+      "tokens_bucket": {
+        "input": 174,
+        "output": 118200,
+        "cache_read": 12056027,
+        "cache_creation": 338496
+      },
+      "tokens_cumulative": {
+        "input": 3774,
+        "output": 2836692,
+        "cache_read": 624674305,
+        "cache_creation": 6038033
+      }
+    },
+    {
+      "hash": "b31515a",
+      "timestamp": "2026-08-30T21:43:36-03:00",
+      "subject": "Adiciona a pesquisa da parte 4, com quatro correcoes e integra as fontes",
+      "words_published": 68176,
+      "code_lines": 7441,
+      "governance_lines": 559,
+      "tokens_bucket": {
+        "input": 104,
+        "output": 146155,
+        "cache_read": 9203214,
+        "cache_creation": 252100
+      },
+      "tokens_cumulative": {
+        "input": 3878,
+        "output": 2982847,
+        "cache_read": 633877519,
+        "cache_creation": 6290133
+      }
+    },
+    {
+      "hash": "d972a35",
+      "timestamp": "2026-08-30T21:47:09-03:00",
+      "subject": "Adiciona o eixo 0 ao dossie da parte 4, observacao de campo corrigida",
+      "words_published": 68176,
+      "code_lines": 7441,
+      "governance_lines": 559,
+      "tokens_bucket": {
+        "input": 26,
+        "output": 37320,
+        "cache_read": 3180400,
+        "cache_creation": 62000
+      },
+      "tokens_cumulative": {
+        "input": 3904,
+        "output": 3020167,
+        "cache_read": 637057919,
+        "cache_creation": 6352133
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 48,
-    "output": 17924,
-    "cache_read": 18485640,
-    "cache_creation": 26964
+    "input": 38,
+    "output": 16675,
+    "cache_read": 5030162,
+    "cache_creation": 75646
   }
 }
