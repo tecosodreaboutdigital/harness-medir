@@ -7,6 +7,8 @@ Proyecto de contenido y herramientas sobre **ingeniería de harness**: la discip
 Autor: Fernando Teco Sodré
 Estado: en curso, agosto de 2026
 
+Publicado en [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositorio) y [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, los archivos HTML se renderizan como páginas, no solo como código fuente).
+
 ---
 
 ## La tesis
@@ -16,6 +18,12 @@ Estado: en curso, agosto de 2026
 Un agente es igual a modelo más harness. El modelo es el motor de razonamiento, y es la parte que la industria vende. El harness es todo lo demás: lo que el sistema ve, lo que puede tocar, lo que sobrevive entre sesiones, lo que cuenta como evidencia, y cuándo la ejecución necesita detenerse y llamar a alguien.
 
 La ingeniería de harness no es un campo nuevo. Es poka-yoke aplicado a un trabajador no determinista, y pertenece al mismo linaje de Shewhart, Deming, PDCA y el Sistema de Producción Toyota.
+
+<p align="center">
+  <img src="diagrams/part4/d6-three-layers.png" alt="Las tres capas del marco, y solo tres, atravesadas por una regla compartida: construcción, operación, gobernanza" width="680">
+</p>
+
+<p align="center"><em>D6 · Las tres capas del marco, y solo tres, atravesadas por la única regla compartida entre ellas. Diagrama todavía solo en inglés, producción primaria, ver la sección Idiomas más abajo.</em></p>
 
 ---
 
@@ -57,10 +65,16 @@ Regla de dimensionamiento: el harness debe ser menor que la superficie de fallo 
 ├── TOOLS.md                           skills de terceros instaladas y usadas, con registro de uso real
 ├── harness-p1.html                    Parte 1, trilingüe, lista
 ├── harness-p2.html                    Parte 2, trilingüe, lista
+├── harness-p3.html                    Parte 3, trilingüe, lista
 ├── harness-toolkit.html               guía compacta, organizada por MEDIR, lista
+├── harness-glossary.html              glosario compartido, trilingüe, cada parte apunta ahí
+├── harness-sources.html               fuentes compartidas, trilingüe, cada parte apunta ahí
 ├── sources/
 │   └── inventory.md                   todas las fuentes verificadas, con estado
-├── diagrams/                          renderización SVG de los diagramas de las partes 3 y 4, antes de los artículos
+├── diagrams/
+│   ├── README.md                      índice, una fila por diagrama, notas de renderización
+│   ├── part3/                         D1 a D5, SVG más un PNG emparejado para Medium
+│   └── part4/                         D6 a D9, SVG más un PNG emparejado para Medium
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   dosier de trabajo de las partes 3 y 4, interno, solo en portugués
 │   ├── logbook.html                   trilingüe, generado a partir de git y del uso real de la sesión
@@ -94,6 +108,14 @@ Las bandas de autonomía N0 a N3 atraviesan las tres capas como regla común, el
 | Playbook | Consolidación, más las plantillas operativas | Anual, por versión |
 
 La guía compacta vive aparte justamente porque envejece más rápido. Las cuatro partes hablan de principios y no dependen de ella.
+
+Una única barra de navegación, fija al desplazarse y reactiva al selector de idioma, atraviesa todas las páginas: las cuatro partes, la guía compacta, y dos compañeros compartidos, `harness-glossary.html` y `harness-sources.html`, que consolidan cada término y cada cita que la serie usa en lugar de repetirlos pieza por pieza.
+
+<p align="center">
+  <img src="diagrams/part3/d1-separation-of-powers.png" alt="La separación de poderes: el modelo propone, la política autoriza, la herramienta ejecuta, el registro testimonia" width="680">
+</p>
+
+<p align="center"><em>D1 · La separación de poderes: el modelo propone, la política autoriza, la herramienta ejecuta, el registro testimonia. Cuatro funciones que no pueden vivir en el mismo lugar, el argumento central de la parte 3. Ver <a href="diagrams/README.md">diagrams/README.md</a> para el índice completo de los nueve diagramas.</em></p>
 
 La parte 4 se sumó a la serie el 30 de agosto de 2026, cuando la ronda de investigación de la parte 3 expuso una segunda brecha detrás de la primera: MEDIR gobierna una tarea, no un agente, y nada en la serie hasta ese punto gobernaba el conjunto de agentes que una empresa termina operando. Ver `docs/harness-p3-p4-briefing.pt.md` para el dosier de trabajo del que salió esta decisión, interno, solo en portugués, la misma excepción que `sources/inventory.md` ya lleva.
 

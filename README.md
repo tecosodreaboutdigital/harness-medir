@@ -7,6 +7,8 @@ A content and tooling project about **harness engineering**: the discipline of b
 Author: Fernando Teco Sodré
 Status: in progress, August 2026
 
+Published at [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repository) and [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, the HTML files render as pages, not just as source code).
+
 ---
 
 ## The thesis
@@ -16,6 +18,12 @@ Status: in progress, August 2026
 An agent equals a model plus a harness. The model is the reasoning engine, and it is the part the industry sells. The harness is everything else: what the system sees, what it can touch, what survives between sessions, what counts as evidence, and when execution needs to stop and call someone.
 
 Harness engineering is not a new field. It is poka-yoke applied to a non-deterministic worker, and it belongs to the same lineage as Shewhart, Deming, PDCA and the Toyota Production System.
+
+<p align="center">
+  <img src="diagrams/part4/d6-three-layers.png" alt="The three layers of the framework, and only three, crossed by one shared ruler: build, operation, governance" width="680">
+</p>
+
+<p align="center"><em>D6 · The three layers of the framework, and only three, crossed by the one ruler shared across them. Diagram authored in English first, see the <code>Languages</code> section below.</em></p>
 
 ---
 
@@ -57,10 +65,16 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── TOOLS.md                           third-party skills installed and used, with a real-usage log
 ├── harness-p1.html                    Part 1, trilingual, ready
 ├── harness-p2.html                    Part 2, trilingual, ready
+├── harness-p3.html                    Part 3, trilingual, ready
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
+├── harness-glossary.html              shared glossary, trilingual, every part links here
+├── harness-sources.html               shared sources, trilingual, every part links here
 ├── sources/
 │   └── inventory.md                   every source verified, with status
-├── diagrams/                          SVG renderings for Parts 3 and 4's diagrams, ahead of the articles
+├── diagrams/
+│   ├── README.md                      index, one row per diagram, rendering notes
+│   ├── part3/                         D1 to D5, SVG plus a matching PNG for Medium
+│   └── part4/                         D6 to D9, SVG plus a matching PNG for Medium
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   working dossier for Parts 3 and 4, internal, Portuguese only
 │   ├── logbook.html                   trilingual, generated from git and the session's real usage
@@ -94,6 +108,14 @@ Autonomy tiers N0 to N3 cross all three layers as the one shared ruler, the only
 | Playbook | Consolidation, plus the operational templates | Annual, by version |
 
 The compact guide lives apart precisely because it ages faster. The four parts talk about principles and do not depend on it.
+
+A single navigation bar, sticky and reactive to the language selector, runs across every page: the four parts, the compact guide, and two shared companions, `harness-glossary.html` and `harness-sources.html`, consolidating every term and every citation the series uses instead of repeating them piece by piece.
+
+<p align="center">
+  <img src="diagrams/part3/d1-separation-of-powers.png" alt="The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses" width="680">
+</p>
+
+<p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of nine.</em></p>
 
 Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries.
 
