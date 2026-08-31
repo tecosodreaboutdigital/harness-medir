@@ -54,9 +54,9 @@ Duas obrigações de honestidade que o dossiê marca explicitamente: declarar qu
 
 ---
 
-## 2. Escrever a parte 4, inglês pronto, tradução pendente
+## 2. Escrever a parte 4, concluído
 
-**Status: inglês escrito e publicado em `harness-p4.html`.** Nove seções (`build/body_p4_en.html`), cinco diagramas embutidos (D6 a D10, o D10 renderizado agora para esta peça), a tabela dos seis estados do ciclo de vida, a tabela dos quatro papéis com a regra de não acumulação, a tabela dos oito indicadores com a admissão de honestidade de que o painel é síntese, o argumento da taxa de reprovação no portão ancorado no SCHUFA que amarra a parte 4 ao fundamento jurídico da parte 3, o precedente da linha de reporte do CISO para onde o escritório senta, a restrição de sete agentes e uma planilha sustentada ao longo de toda a seção de advertência, e a tabela de fechamento no mesmo padrão da parte 3. As abas em português e espanhol são por ora um esboço honesto de "tradução em andamento" (`build/body_p4_pt.html`, `build/body_p4_es.html`), o mesmo estado por que a parte 3 passou mais cedo no mesmo dia de trabalho antes de sua tradução chegar. Dez novos verbetes de glossário acrescentados nos três idiomas; `harness-sources.html` ganhou uma seção da parte 4, 32 fontes.
+**Status: totalmente trilíngue e publicada em `harness-p4.html`, desde 31 de agosto de 2026.** Nove seções, cinco diagramas embutidos (D6 a D10, o D10 renderizado agora para esta peça, depois traduzido e revalidado visualmente nas três línguas antes de ser incorporado), a tabela dos seis estados do ciclo de vida, a tabela dos quatro papéis com a regra de não acumulação, a tabela dos oito indicadores com a admissão de honestidade de que o painel é síntese, o argumento da taxa de reprovação no portão ancorado no SCHUFA que amarra a parte 4 ao fundamento jurídico da parte 3, o precedente da linha de reporte do CISO para onde o escritório senta, a restrição de sete agentes e uma planilha sustentada ao longo de toda a seção de advertência, e a tabela de fechamento no mesmo padrão da parte 3. As contagens de palavras ficam próximas nas três línguas (inglês 6.889, português 7.051, espanhol 7.377), coerente com uma tradução de verdade, não um resumo. Dez novos verbetes de glossário acrescentados nos três idiomas; `harness-sources.html` ganhou uma seção da parte 4, 32 fontes.
 
 Pesquisa completa, ver a seção da parte 4 em `sources/inventory.md` e `docs/research-part4.pt.md`. Tese central realizada: o ciclo de vida do agente, estados e não passos, distinguido do MEDIR com clareza suficiente para que o leitor não confunda os dois.
 
@@ -72,23 +72,27 @@ Estrutura coberta, na ordem em que foi de fato redigida:
 8. O argumento de fecho: toda plataforma governa para dentro, e é por isso que o escritório precisa ser função da empresa, não produto que ela compra
 9. Quem responde, e onde você está: o arco da diretora se fecha ao longo das quatro partes
 
-**Pronto quando:** as três versões estiverem prontas, o arco da personagem fechar a série, os oito indicadores estiverem definidos com fórmula, e o texto sustentar a restrição de sete agentes e uma planilha do início ao fim. **Inglês cumprido, 30 de agosto de 2026; português e espanhol restam.**
+**Pronto quando:** as três versões estiverem prontas, o arco da personagem fechar a série, os oito indicadores estiverem definidos com fórmula, e o texto sustentar a restrição de sete agentes e uma planilha do início ao fim. **Cumprido por completo, 31 de agosto de 2026.**
 
 ---
 
 ## 3. Consolidar o playbook
 
-Reaproveita as quatro partes e o guia, e acrescenta o que ainda não existe:
+Não iniciado, e de propósito fora do escopo da próxima sessão de conteúdo, decidido em 31 de agosto de 2026: as quatro partes são o argumento, o playbook é o ferramental derivado delas, e construí-lo agora, logo depois de fechar a série de artigos, embaçaria essa fronteira. Este item fica como o registro explícito e deliberadamente estacionado do que o playbook vai conter, para que a próxima sessão que pegar essa tarefa não precise reconstruir o plano do zero.
 
-- Modelo de contrato de tarefa
-- Modelo de skill, derivado dos três exemplos da parte 2
-- Modelo de recibo de execução
-- Matriz de risco por faixa
-- Diagnóstico de faixa, versão questionário
-- Trilha de implantação de N0 a N3
-- Modelo de registro de agentes e de ata de homologação
+Reaproveita as quatro partes e o guia, e acrescenta sete modelos operacionais que ainda não existem, cada um rastreável até a peça que já introduziu o conceito por trás dele, não inventado do zero:
 
-O D10, o laço próprio do escritório por trimestre, não decidido para a parte 4, é candidato forte para abrir o playbook, se ficar de fora da parte 4.
+- Modelo de contrato de tarefa, a partir do contrato de tarefa do passo Mapear da parte 1
+- Modelo de skill, derivado dos três exemplos completos da parte 2
+- Modelo de recibo de execução, a partir do recibo original da parte 2, estendido na parte 3 com as respostas da regra de dois e o ponto de reversão
+- Matriz de risco por faixa, a partir da matriz de alçada da parte 3 (classe de ação, reversibilidade, alçada exigida) cruzada com as faixas N0 a N3 da parte 1
+- Diagnóstico de faixa, versão questionário, expandindo o checklist de doze perguntas da parte 1 num instrumento autônomo
+- Trilha de implantação de N0 a N3, a progressão que a parte 1 só esboçou
+- Modelo de registro de agentes e de ata de homologação, a partir dos estados do ciclo de vida e dos quatro papéis da parte 4, o registro respondendo "quantos existem" e a ata formalizando o ato do homologador
+
+O D10, o laço próprio do escritório por trimestre, deixou de ser candidato do playbook: ele já foi publicado dentro da própria parte 4, fechando a seção dos oito indicadores. Ele ainda pode abrir o playbook como uma segunda aparição, legítima, já que ali organiza o documento inteiro em vez de competir consigo mesmo.
+
+**Pronto quando, de fato, for retomado:** os sete modelos existem, cada um referenciado de volta à parte e à seção que o fundamenta, e o playbook abre com o D10 como seu próprio diagrama organizador.
 
 ---
 

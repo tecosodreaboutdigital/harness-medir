@@ -64,7 +64,7 @@ Barra de série e links de glossário e fontes já implementados, conforme a arq
 
 `harness-p4.html`
 
-Inglês completo desde 30 de agosto de 2026, cerca de 6.900 palavras, nove seções, cinco diagramas (D6 a D10, o D10 renderizado agora para esta peça, ver `diagrams/README.md`). Português e espanhol são por ora um esboço honesto de "tradução em andamento", o mesmo estado por que a parte 3 passou mais cedo no mesmo dia antes de sua tradução completa chegar; `harness-p4.html` abre corretamente nas três abas, o inglês é simplesmente o único completo até aqui.
+Totalmente trilíngue desde 31 de agosto de 2026. Nove seções, cinco diagramas (D6 a D10, o D10 renderizado agora para esta peça, ver `diagrams/README.md`), todos embutidos e traduzidos por completo, incluindo cada rótulo de SVG, conferido renderizando cada diagrama isolado nas três línguas antes de incorporá-lo ao artigo, sem estouro, sem sobreposição. Cerca de 6.889 palavras em inglês, 7.051 em português, 7.377 em espanhol, contagens próximas nas três línguas, como se espera de uma tradução de verdade, não de um resumo.
 
 Abre com as 20.225 contas do Instagram tomadas entre 17 de abril e 31 de maio de 2026 por meio de uma única interação mediada por IA que combinou gestão de identidade e recuperação de credencial, o modo de falha por concentração da parte 3 em escala populacional, e não numa única ação. A diretora reentra tocando seis sistemas que todo mundo chama de agente e não consegue responder a pergunta mais simples de um conselheiro: quantos são, e quem é dono de cada um. Tese central: o ciclo de vida do agente, seis estados e não passos, distinguido do MEDIR de forma explícita, com as duas transições que quase ninguém implementa, homologação vencida e sem execução no período, ambas levando ao descomissionamento e ambas exigindo decisão humana, nunca automação. Quatro papéis sob uma regra de não acumulação espelham a separação de poderes da parte 3 no plano organizacional, com fonte nova nesta rodada, o Modelo das Três Linhas do Instituto dos Auditores Internos, adotado em 2013. Oito indicadores são declarados explicitamente como síntese, não padrão de mercado, com o indicador de reprovação no portão ancorado na decisão do caso SCHUFA (TJUE, processo C-634/21, dezembro de 2023), exatamente como funciona o fundamento jurídico da parte 3, o fio que amarra as duas peças. Onde o escritório fica busca o precedente da linha de reporte do CISO, com fonte num levantamento de 2026 e a citação do brigadista de incêndio e os aspersores. A restrição explícita atravessa a peça inteira: tudo que ela propõe precisa funcionar numa empresa com sete agentes e uma planilha, ilustrada por uma descrição genérica e sem atribuição do que os painéis de agente de hoje já fazem e as cinco lacunas além desse piso. Fecha com o arco da diretora ao longo das quatro partes e a tabela de fechamento própria da série.
 
@@ -124,13 +124,13 @@ Em paralelo, a série ganhou a navegação de topo que estava faltando desde a r
 | Parte 2 | pronta | pronta | pronta |
 | Guia compacto | pronta | pronta | pronta |
 | Parte 3 | pronta | pronta | pronta |
-| Parte 4 | falta | pronta | falta |
+| Parte 4 | pronta | pronta | pronta |
 | Skill de briefing | pronta | pronta | pronta |
 | Documentos de governança | pronta | pronta | pronta |
 
 ### Playbook
 
-Consolidação das quatro partes mais o guia, acrescentando o que ainda não existe: um modelo de contrato de tarefa, um modelo de skill, um modelo de recibo de execução, uma matriz de risco, um diagnóstico de faixa, uma trilha de implantação, e um modelo de registro de agentes e ata de homologação.
+Deliberadamente estacionado, fora do escopo da próxima sessão de conteúdo, decidido em 31 de agosto de 2026: as quatro partes são o argumento, o playbook é o ferramental derivado delas, e os dois não deveriam se confundir. O que ele vai conter, cada item rastreado até a parte que já o fundamenta, está registrado no item 3 de `NEXT-STEPS.md`, para que o plano sobreviva sem que ninguém precise reconstruí-lo de memória: um modelo de contrato de tarefa, um modelo de skill, um modelo de recibo de execução, uma matriz de risco por faixa, um diagnóstico de faixa, uma trilha de implantação de N0 a N3, e um modelo de registro de agentes mais ata de homologação. O D10, o laço próprio do escritório por trimestre, é candidato a abrir o documento, como uma segunda aparição legítima já que fecha a seção de indicadores da parte 4.
 
 A skill de briefing já é o primeiro artefato operacional dele.
 

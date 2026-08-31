@@ -66,7 +66,7 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, trilíngue, pronta
 ├── harness-p3.html                    Parte 3, trilíngue, pronta
-├── harness-p4.html                    Parte 4, inglês pronto, PT/ES pendente
+├── harness-p4.html                    Parte 4, trilíngue, pronta
 ├── harness-toolkit.html               guia compacto, organizado pelo MEDIR, pronto
 ├── harness-glossary.html              glossário compartilhado, trilíngue, toda parte aponta pra lá
 ├── harness-sources.html               fontes compartilhadas, trilíngue, toda parte aponta pra lá
@@ -118,7 +118,7 @@ Uma única barra de navegação, fixa ao rolar e reativa ao seletor de idioma, a
 
 <p align="center"><em>D1 · A separação de poderes: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha. Quatro funções que não podem morar no mesmo lugar, o argumento central da parte 3. Ver <a href="diagrams/README.md">diagrams/README.md</a> para o índice completo dos dez diagramas.</em></p>
 
-A parte 4 entrou na série em 30 de agosto de 2026, quando a rodada de pesquisa da parte 3 expôs uma segunda lacuna atrás da primeira: o MEDIR governa uma tarefa, não um agente, e nada na série até esse ponto governava o conjunto de agentes que uma empresa acaba operando. Ver `docs/harness-p3-p4-briefing.pt.md` para o dossiê de trabalho de onde essa decisão veio, interno, só em português, a mesma exceção que `sources/inventory.md` já carrega. O texto em inglês está completo desde o mesmo dia; a tradução para português e espanhol é o próximo marco de conteúdo do projeto.
+A parte 4 entrou na série em 30 de agosto de 2026, quando a rodada de pesquisa da parte 3 expôs uma segunda lacuna atrás da primeira: o MEDIR governa uma tarefa, não um agente, e nada na série até esse ponto governava o conjunto de agentes que uma empresa acaba operando. Ver `docs/harness-p3-p4-briefing.pt.md` para o dossiê de trabalho de onde essa decisão veio, interno, só em português, a mesma exceção que `sources/inventory.md` já carrega. Totalmente trilíngue desde 31 de agosto de 2026, a quarta e última parte da série.
 
 ---
 

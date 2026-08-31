@@ -64,7 +64,7 @@ Series bar and glossary and sources links already implemented, per the shared ar
 
 `harness-p4.html`
 
-English complete since 30 August 2026, about 6,900 words, nine sections, five diagrams (D6 to D10, D10 newly rendered for this piece, see `diagrams/README.md`). Portuguese and Spanish are an honest "translation in progress" stub for now, the same state Part 3 passed through earlier the same day before its own full translation landed; `harness-p4.html` reads correctly in all three tabs, English is simply the only complete one so far.
+Fully trilingual since 31 August 2026. Nine sections, five diagrams (D6 to D10, D10 newly rendered for this piece, see `diagrams/README.md`), all inline and fully translated including every SVG label, checked by rendering each diagram standalone in all three languages before merging it into the article, no overflow, no overlap. About 6,889 words in English, 7,051 in Portuguese, 7,377 in Spanish, the word counts running close across all three, as expected of a real translation rather than a summary.
 
 Opens with the 20,225 Instagram accounts taken over between 17 April and 31 May 2026 through a single AI-mediated interaction that combined identity management and credential recovery, Part 3's concentration failure mode at population scale rather than in one action. The director re-enters running six systems everyone calls agents and cannot answer a board member's simplest question: how many, and who owns each one. Central thesis: the agent life cycle, six states rather than steps, distinguished from MEDIR explicitly, with the two transitions almost nobody implements, expired certification and no execution in the period, both leading to decommissioning and both requiring a human decision, never an automation. Four roles under a non-accumulation rule mirror Part 3's separation of powers on the organisational plane, sourced this round to the Institute of Internal Auditors' Three Lines Model, adopted 2013. Eight indicators are declared explicitly as synthesis, not market standard, with the gate-rejection-rate indicator grounded in the SCHUFA holding (CJEU, case C-634/21, December 2023) exactly the way Part 3's legal ground works, the thread tying the two pieces together. Where the office sits draws the CISO reporting-line precedent, sourced to a 2026 benchmark and the fire-marshal-and-sprinklers quote. The explicit constraint runs through the whole piece: everything proposed has to work in a company with seven agents and a spreadsheet, illustrated by an unattributed, generic description of what today's agent dashboards already do and the five gaps past that floor. Closes with the director's arc across all four parts and the series' own closing table.
 
@@ -124,13 +124,13 @@ Separately, the series gained the top navigation it had been missing since the f
 | Part 2 | ready | ready | ready |
 | Compact guide | ready | ready | ready |
 | Part 3 | ready | ready | ready |
-| Part 4 | missing | ready | missing |
+| Part 4 | ready | ready | ready |
 | Briefing skill | ready | ready | ready |
 | Governance docs | ready | ready | ready |
 
 ### Playbook
 
-Consolidation of the four parts plus the guide, adding what does not exist yet: a task-contract template, a skill template, an execution-receipt template, a risk matrix, a tier diagnostic, a rollout path, and an agent-registry and certification-minutes template.
+Deliberately parked, not scoped for the next content session, decided 31 August 2026: the four parts are the argument, the playbook is the toolkit derived from them, and the two should not blur together. What it will contain, each item traced to the part that already grounds it, is recorded in `NEXT-STEPS.md`'s item 3, so the plan survives without anyone having to rebuild it from memory: a task-contract template, a skill template, an execution-receipt template, a risk matrix by tier, a tier diagnostic, a rollout path from N0 to N3, and an agent-registry plus certification-minutes template. D10, the office's own quarterly loop, is a candidate to open the document, as a legitimate second appearance since it closes Part 4's indicators section already.
 
 The briefing skill is already its first operational artefact.
 

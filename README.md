@@ -66,7 +66,7 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── harness-p1.html                    Part 1, trilingual, ready
 ├── harness-p2.html                    Part 2, trilingual, ready
 ├── harness-p3.html                    Part 3, trilingual, ready
-├── harness-p4.html                    Part 4, English ready, PT/ES pending
+├── harness-p4.html                    Part 4, trilingual, ready
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
 ├── harness-glossary.html              shared glossary, trilingual, every part links here
 ├── harness-sources.html               shared sources, trilingual, every part links here
@@ -118,7 +118,7 @@ A single navigation bar, sticky and reactive to the language selector, runs acro
 
 <p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of ten.</em></p>
 
-Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries. Its English text is complete as of the same day; Portuguese and Spanish translation is the project's next content milestone.
+Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries. Fully trilingual since 31 August 2026, the series' fourth and closing part.
 
 ---
 

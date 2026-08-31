@@ -54,9 +54,9 @@ Dos obligaciones de honestidad que el dosier marca explícitamente: declarar que
 
 ---
 
-## 2. Escribir la parte 4, inglés hecho, traducción pendiente
+## 2. Escribir la parte 4, hecho
 
-**Estado: inglés escrito y publicado en `harness-p4.html`.** Nueve secciones (`build/body_p4_en.html`), cinco diagramas incorporados (D6 a D10, el D10 renderizado ahora para esta pieza), la tabla de los seis estados del ciclo de vida, la tabla de los cuatro roles con la regla de no acumulación, la tabla de los ocho indicadores con la admisión de honestidad de que el panel es síntesis, el argumento de la tasa de rechazo en el portón anclado en el SCHUFA que une la parte 4 al fundamento legal de la parte 3, el precedente de la línea de reporte del CISO para dónde se sienta la oficina, la restricción de siete agentes y una hoja de cálculo sostenida a lo largo de toda la sección de advertencia, y la tabla de cierre en el mismo patrón que la parte 3. Las pestañas en portugués y español son por ahora un boceto honesto de "traducción en curso" (`build/body_p4_pt.html`, `build/body_p4_es.html`), el mismo estado por el que pasó la parte 3 más temprano el mismo día de trabajo antes de que llegara su propia traducción. Diez nuevas entradas de glosario añadidas en los tres idiomas; `harness-sources.html` ganó una sección de la parte 4, 32 fuentes.
+**Estado: totalmente trilingüe y publicada en `harness-p4.html`, desde el 31 de agosto de 2026.** Nueve secciones, cinco diagramas incorporados (D6 a D10, el D10 renderizado ahora para esta pieza, luego traducido y revalidado visualmente en los tres idiomas antes de incorporarse), la tabla de los seis estados del ciclo de vida, la tabla de los cuatro roles con la regla de no acumulación, la tabla de los ocho indicadores con la admisión de honestidad de que el panel es síntesis, el argumento de la tasa de rechazo en el portón anclado en el SCHUFA que une la parte 4 al fundamento legal de la parte 3, el precedente de la línea de reporte del CISO para dónde se sienta la oficina, la restricción de siete agentes y una hoja de cálculo sostenida a lo largo de toda la sección de advertencia, y la tabla de cierre en el mismo patrón que la parte 3. Los conteos de palabras quedan cercanos en los tres idiomas (inglés 6.889, portugués 7.051, español 7.377), coherente con una traducción de verdad, no un resumen. Diez nuevas entradas de glosario añadidas en los tres idiomas; `harness-sources.html` ganó una sección de la parte 4, 32 fuentes.
 
 Investigación completa, ver la sección de la parte 4 en `sources/inventory.md` y `docs/research-part4.pt.md`. Tesis central realizada: el ciclo de vida del agente, estados y no pasos, distinguido de MEDIR con claridad suficiente para que el lector no confunda los dos.
 
@@ -72,23 +72,27 @@ Estructura cubierta, en el orden en que realmente se redactó:
 8. El argumento de cierre: toda plataforma gobierna hacia adentro, y por eso la oficina tiene que ser función de la empresa, no un producto que compra
 9. Quién responde, y dónde estás: el arco de la directora se cierra a lo largo de las cuatro partes
 
-**Listo cuando:** las tres versiones estén listas, el arco del personaje cierre la serie, los ocho indicadores estén definidos con fórmula, y el texto sostenga la restricción de siete agentes y una hoja de cálculo de principio a fin. **Inglés cumplido, 30 de agosto de 2026; quedan el portugués y el español.**
+**Listo cuando:** las tres versiones estén listas, el arco del personaje cierre la serie, los ocho indicadores estén definidos con fórmula, y el texto sostenga la restricción de siete agentes y una hoja de cálculo de principio a fin. **Cumplido por completo, 31 de agosto de 2026.**
 
 ---
 
 ## 3. Consolidar el playbook
 
-Reutiliza las cuatro partes y la guía, y agrega lo que todavía no existe:
+No iniciado, y deliberadamente fuera del alcance de la próxima sesión de contenido, decidido el 31 de agosto de 2026: las cuatro partes son el argumento, el playbook es el conjunto de herramientas derivado de ellas, y construirlo ahora, justo al cerrar la serie de artículos, difuminaría esa frontera. Este elemento queda como el registro explícito y deliberadamente aparcado de lo que el playbook va a contener, para que la próxima sesión que retome esta tarea no tenga que reconstruir el plan desde cero.
 
-- Plantilla de contrato de tarea
-- Plantilla de skill, derivada de los tres ejemplos de la parte 2
-- Plantilla de recibo de ejecución
-- Matriz de riesgo por banda
-- Diagnóstico de banda, versión cuestionario
-- Ruta de implementación de N0 a N3
-- Plantilla de registro de agentes y de acta de homologación
+Reutiliza las cuatro partes y la guía, y agrega siete plantillas operativas que todavía no existen, cada una rastreable hasta la pieza que ya introdujo el concepto detrás de ella, no inventada desde cero:
 
-El D10, el bucle propio de la oficina por trimestre, no decidido para la parte 4, es un candidato fuerte para abrir el playbook, si queda fuera de la parte 4.
+- Plantilla de contrato de tarea, a partir del contrato de tarea del paso Mapear de la parte 1
+- Plantilla de skill, derivada de los tres ejemplos completos de la parte 2
+- Plantilla de recibo de ejecución, a partir del recibo original de la parte 2, extendido en la parte 3 con las respuestas de la regla de dos y el punto de reversión
+- Matriz de riesgo por banda, a partir de la matriz de autoridad de la parte 3 (clase de acción, reversibilidad, autoridad requerida) cruzada con las bandas N0 a N3 de la parte 1
+- Diagnóstico de banda, versión cuestionario, expandiendo la lista de doce preguntas de la parte 1 en un instrumento autónomo
+- Ruta de implementación de N0 a N3, la progresión que la parte 1 solo esbozó
+- Plantilla de registro de agentes y de acta de homologación, a partir de los estados del ciclo de vida y los cuatro roles de la parte 4, el registro respondiendo "cuántos existen" y el acta formalizando el acto del certificador
+
+El D10, el bucle propio de la oficina por trimestre, dejó de ser candidato del playbook: ya se publicó dentro de la propia parte 4, cerrando la sección de los ocho indicadores. Todavía puede abrir el playbook como una segunda aparición, legítima, ya que ahí organiza el documento entero en vez de competir consigo mismo.
+
+**Listo cuando, de hecho, se retome:** las siete plantillas existen, cada una referenciada de vuelta a la parte y la sección que la fundamenta, y el playbook abre con el D10 como su propio diagrama organizador.
 
 ---
 

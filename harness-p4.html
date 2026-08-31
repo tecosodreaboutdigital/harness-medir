@@ -432,11 +432,529 @@ p code{
 
 <h1>O escritório de agentes: quantos existem, quem é dono de cada um, e quais ainda se pagam</h1>
 
-<p class="deck">Tradução em andamento. O texto completo desta parte já está publicado em inglês, a língua de produção primária do projeto; a versão em português chega em uma próxima sessão, como tradução integral, não como resumo.</p>
+<p class="deck">Na parte 3, a diretora fechou o ano com quatro funções que já não moravam no mesmo lugar: um modelo que propunha, uma política que autorizava, uma ferramenta que executava, um registro que testemunhava. O que toda essa maquinaria não conseguia responder, para a própria empresa dela, era uma pergunta de som bem menor que acaba sendo a mais difícil da série inteira: quantos desses agentes a empresa realmente tem rodando agora, e quem responde por cada um.</p>
 
-<p class="byline">Fernando Teco Sodré · Agosto de 2026</p>
+<p class="byline">Fernando Teco Sodré · Agosto de 2026 · Leitura de 26 minutos</p>
 
-<p><a href="harness-p4.html#en-opening">Ler a versão completa em inglês</a>.</p>
+<nav class="toc">
+  <p>Neste artigo</p>
+  <ol>
+    <li><a href="#pt-opening">Uma concentração em escala</a></li>
+    <li><a href="#pt-return">A diretora volta à cena, e desta vez ninguém contou</a></li>
+    <li><a href="#pt-lifecycle">O ciclo de vida: estados, não passos</a></li>
+    <li><a href="#pt-roles">Os quatro papéis, e a regra que se repete</a></li>
+    <li><a href="#pt-indicators">Oito indicadores, declarados como síntese</a></li>
+    <li><a href="#pt-office">Onde o escritório se senta</a></li>
+    <li><a href="#pt-warning">O aviso: sete agentes e uma planilha</a></li>
+    <li><a href="#pt-platforms">Toda plataforma governa para dentro</a></li>
+    <li><a href="#pt-accountability">Quem responde, e onde você está</a></li>
+  </ol>
+</nav>
+
+<h2 id="pt-opening">1. Uma concentração em escala</h2>
+
+<p>Entre 17 de abril e 31 de maio de 2026, atacantes tomaram o controle de 20.225 contas do Instagram, incluindo a conta da Casa Branca de um ex-presidente dos Estados Unidos, o perfil pessoal de um sargento-mor-chefe da Força Espacial dos Estados Unidos e a conta oficial de uma marca de cosméticos. Fizeram isso explorando uma única decisão de design no sistema de recuperação de conta assistido por IA da Meta.</p>
+
+<p>O chatbot que cuidava da recuperação, conhecido internamente como High Touch Support, conseguia fazer duas coisas dentro da mesma interação: anexar um novo endereço de e-mail a uma conta existente, e disparar uma mensagem de redefinição de senha para esse endereço. Nada conferia se a pessoa que pedia tinha, em algum momento, sido dona da conta. Anexe um endereço que você controla, espere o link de redefinição, e a conta é sua. A Meta desativou a capacidade autônoma do bot em 31 de maio de 2026, assim que o padrão foi documentado, e devolveu o passo sensível a um revisor humano. A notificação da violação chegou ao gabinete do procurador-geral do Maine em 5 de junho de 2026.</p>
+
+<p>É o modo de falha da <a href="harness-p3.html#pt-separation">parte 3</a> acontecendo no mundo, em escala, com nome e data anexados. Duas funções que nunca deveriam dividir uma sala, gestão de identidade e recuperação de credencial, dividiram uma, dentro de uma única interação mediada por IA, e a distância entre ler uma conta e ser dono dela colapsou para um único endereço de e-mail. A leitura que mais importa, feita pelos pesquisadores que documentaram o caso, é a frase que vale carregar adiante: aqui a IA era a infraestrutura de suporte sendo abusada, não uma ferramenta que os atacantes empunhavam. O sistema construído para verificar quem você é virou a coisa que um atacante manipulou para decidir quem você é.</p>
+
+<p>A parte 3 deixou pra você um teste exatamente para essa falha, uma ação de cada vez: pergunte onde as quatro funções moram, e se duas delas moram no mesmo lugar, você achou o problema. Esse teste ainda funciona aqui. Aplique-o ao bot de recuperação de conta e a concentração fica visível em menos de um minuto. Mas vinte mil contas não falharam uma de cada vez, na frente de alguém rodando esse teste. Falharam porque ninguém rodava o teste sobre toda a população de agentes que a empresa opera, só dentro daquele que todo mundo por acaso estava olhando. Esse é o problema que esta parte existe para resolver, e ele não escala do jeito que o problema da parte 3 escalava. Ache um agente concentrado e você achou um bug. Deixe de contar quantos agentes você tem, e você nem consegue fazer a pergunta.</p>
+
+<p>Três partes já construíram três camadas do mesmo framework, e a quarta o completa.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" role="img" aria-label="As tres camadas do framework, e so tres, atravessadas por uma regua compartilhada: construcao, operacao, governanca">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="pt-p4d6-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="20" text-anchor="middle">TRÊS CAMADAS, E SÓ TRÊS</text>
+
+<rect x="180" y="34" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="58" text-anchor="middle">GOVERNANÇA · ESCRITÓRIO DE AGENTES</text>
+<text class="svg-sub" x="360" y="76" text-anchor="middle">Quantos existem, quem é dono de cada um,</text>
+<text class="svg-sub" x="360" y="90" text-anchor="middle">quais ainda se pagam</text>
+
+<line x1="360" y1="154" x2="360" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d6-arrow)"/>
+
+<rect x="180" y="156" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="180" text-anchor="middle">OPERAÇÃO · SEPARAÇÃO DE PODERES</text>
+<text class="svg-sub" x="360" y="198" text-anchor="middle">O que ele pode fazer,</text>
+<text class="svg-sub" x="360" y="212" text-anchor="middle">e quem responde por isso</text>
+
+<line x1="360" y1="276" x2="360" y2="250" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d6-arrow)"/>
+
+<rect x="180" y="278" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="302" text-anchor="middle">CONSTRUÇÃO · O CICLO MEDIR</text>
+<text class="svg-sub" x="360" y="320" text-anchor="middle">Como você constrói</text>
+<text class="svg-sub" x="360" y="334" text-anchor="middle">um agente confiável</text>
+
+<rect x="70" y="30" width="46" height="342" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="93" y="200" text-anchor="middle" transform="rotate(-90 93 200)">FAIXAS N0 A N3</text>
+
+<line x1="116" y1="79" x2="178" y2="79" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="116" y1="201" x2="178" y2="201" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="116" y1="323" x2="178" y2="323" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+
+<text class="svg-cap" x="350" y="390" text-anchor="middle">A ÚNICA RÉGUA COMPARTILHADA PELAS TRÊS CAMADAS</text>
+</svg>
+<figcaption>A <a href="harness-p1.html#pt-faixas">régua de N0 a N3</a> é o único elemento que toca as três camadas, e o único vocabulário que este framework se permite compartilhar entre elas. Uma quarta camada seria o erro que todo framework morto já cometeu: vocabulário demais. Três é a disciplina, não um acidente.</figcaption>
+</figure>
+
+<p><a href="harness-p2.html">A parte 2</a> respondeu como você constrói um agente confiável. <a href="harness-p3.html">A parte 3</a> respondeu o que ele pode fazer, e quem responde quando faz algo que não devia. Esta parte responde a pergunta que um conselho de fato faz assim que uma empresa tem mais de um agente rodando, e quase toda empresa que passou do primeiro piloto tem: quantos existem, quem é dono de cada um, e quais ainda valem o que custam. O MEDIR governa uma tarefa. A separação de poderes governa uma ação. Nenhuma das duas conta.</p>
+
+<h2 id="pt-return">2. A diretora volta à cena, e desta vez ninguém contou</h2>
+
+<p>Na altura em que essa cena acontece, a empresa onde a diretora trabalha está rodando seis sistemas que todo mundo no prédio chama de agentes, e discorda se um sétimo, um assistente de agendamento que compras comprou sem avisar ninguém no grupo dela, conta como sexto, sétimo ou nem conta. O agente de conciliação de faturas da <a href="harness-p1.html">parte 1</a> e da <a href="harness-p2.html">parte 2</a> ainda está rodando, agora carregando o guia, o sensor e o teto de tentativas que levou um ano pra conquistar. O sistema de resposta a contestação da parte 3 também ainda está rodando, agora contido pela regra de dois e por um humano que lê antes de enviar. O suporte construiu um assistente de triagem com as próprias ferramentas. O RH está pilotando um assistente de integração cuja configuração ninguém no grupo dela jamais viu.</p>
+
+<p>Um membro do conselho pergunta, numa revisão trimestral de rotina, uma pergunta que soa quase simples demais pra ser a difícil: quantos desses a empresa realmente tem rodando agora, e quem é responsável por cada um. Ela tem, até ali, um agente de fato bem governado, sem dúvida o sistema mais bem governado que a empresa possui. Ela não tem resposta pra pergunta que de fato foi feita. Ninguém na sala tem. O assistente de triagem do suporte e o piloto do RH nunca estiveram na revisão dela, porque nenhum dos dois times pensou em perguntar se a dela era a revisão de que precisavam.</p>
+
+<p>Essa é a descoberta que um agente bem administrado, tomado sozinho, esconde de quem o construiu. Você pode vencer a auditoria de separação de poderes em cada ação que um único agente toma e ainda assim falhar na pergunta bem mais simples que uma diretora ou um regulador eventualmente faz: quantos de vocês existem. A parte 3 presumiu que um agente já tinha nome, dono e escopo, e construiu a maquinaria que governa o que ele faz dentro desse escopo. Nada construído até ali jamais perguntou quem conta os agentes, ou o que acontece com um deles depois que a janela de retenção de seis meses dos seus recibos passou em silêncio e ninguém mais olhou pra ele desde então.</p>
+
+<p>A segunda pergunta do membro do conselho é a que de fato dói: dos que a empresa tem, quais ainda se pagam. Ela também não consegue responder essa, não porque o dado não exista em algum lugar dentro da empresa, mas porque nada, em lugar nenhum, jamais pediu ao painel de um agente que reportasse um retorno ao lado de um custo.</p>
+
+<p>O que faltava, de novo, não era um controle sobre uma única ação. Era algo que tratasse o próprio agente, não a tarefa que ele executa, como o objeto sendo governado: algo que abre quando o agente é proposto e só fecha quando ele é formalmente aposentado, passando por estados intermediários que precisam ser conquistados e, em pelo menos dois casos, expiram se ninguém os renovar. Chame isso do que o resto desta parte constrói: um <a class="g" href="harness-glossary.html#pt-g-agent-office" data-tip="A função de governança que responde quantos agentes existem, quem é dono de cada um, e quais ainda se pagam. Uma função que a empresa organiza, não um produto que ela compra.">escritório de agentes</a>.</p>
+
+<h2 id="pt-lifecycle">3. O ciclo de vida: estados, não passos</h2>
+
+<p>O MEDIR e o <a class="g" href="harness-glossary.html#pt-g-lifecycle" data-tip="Os estados pelos quais um agente passa uma única vez, de um briefing versionado até o descomissionamento. Distinto do MEDIR, que se repete dentro de uma única tarefa.">ciclo de vida</a> são fáceis de confundir, e a confusão é cara o bastante pra merecer ser nomeada diretamente antes de seguir adiante. O MEDIR se repete, muitas vezes dentro de uma única tarefa: mapear, equipar, delegar, inspecionar, reforçar, e de novo na próxima execução. O ciclo de vida acontece uma vez por agente, e ele passa por estados, não passos. Um passo termina e passa a bola pro próximo. Um estado persiste até que algo o encerre, e alguns desses estados carregam um relógio que um passo nunca carrega.</p>
+
+<table class="wrap">
+<thead><tr><th>Estado</th><th>Quem decide</th><th>Tem data de validade</th></tr></thead>
+<tbody>
+<tr><td>Briefing</td><td>Solicitante e revisor</td><td>Versionado</td></tr>
+<tr><td>Homologado</td><td>Homologador</td><td>Sim, com data de revalidação</td></tr>
+<tr><td>Em operação</td><td>Dono do agente</td><td>Contínua</td></tr>
+<tr><td>Em observação</td><td>Auditor</td><td>Sim, uma janela fixa</td></tr>
+<tr><td>Suspenso</td><td>Homologador ou auditor</td><td>Até decisão</td></tr>
+<tr><td>Descomissionado</td><td>Dono do agente e homologador</td><td>Terminal</td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 344" role="img" aria-label="O ciclo de vida do agente: estados, nao passos, de um briefing versionado ate o descomissionamento">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="pt-p4d7-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">O CICLO DE VIDA DO AGENTE: ESTADOS, NÃO PASSOS</text>
+
+<line x1="0" y1="150" x2="13" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<rect x="15" y="128" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="72" y="146" text-anchor="middle">BRIEFING</text>
+<text class="svg-sub" x="72" y="160" text-anchor="middle">versionado</text>
+
+<rect x="175" y="128" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="233" y="154" text-anchor="middle">HOMOLOGADO</text>
+
+<rect x="335" y="128" width="125" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="397" y="154" text-anchor="middle">EM OPERAÇÃO</text>
+
+<rect x="335" y="240" width="125" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="397" y="266" text-anchor="middle">EM OBSERVAÇÃO</text>
+
+<rect x="175" y="240" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="233" y="266" text-anchor="middle">SUSPENSO</text>
+
+<rect x="545" y="184" width="140" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="615" y="210" text-anchor="middle">DESCOMISSIONADO</text>
+
+<line x1="55" y1="172" x2="55" y2="212" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="55" y="224" text-anchor="middle">veredito: não construir</text>
+
+<line x1="130" y1="150" x2="173" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="152" y="140" text-anchor="middle">revisor aprova a faixa</text>
+
+<line x1="290" y1="150" x2="333" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="312" y="140" text-anchor="middle">dono ativa</text>
+
+<line x1="397" y1="172" x2="397" y2="238" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="465" y="205" text-anchor="middle">indicador dispara</text>
+
+<line x1="424" y1="240" x2="424" y2="174" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="480" y="245" text-anchor="middle">volta ao normal</text>
+
+<line x1="335" y1="262" x2="292" y2="262" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="312" y="252" text-anchor="middle">risco confirmado</text>
+
+<line x1="336" y1="168" x2="248" y2="238" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="280" y="195" text-anchor="middle">incidente</text>
+
+<line x1="215" y1="240" x2="215" y2="174" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="150" y="205" text-anchor="middle">correção, revalidado</text>
+
+<path d="M292,140 C 340,78 470,78 543,190" fill="none" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="400" y="80" text-anchor="middle">validade vencida sem renovação</text>
+
+<line x1="460" y1="150" x2="543" y2="196" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="500" y="170" text-anchor="middle">sem execução no período</text>
+
+<path d="M290,278 C 415,335 495,275 543,222" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+<text class="svg-sub" x="415" y="312" text-anchor="middle">decisão do homologador</text>
+
+<line x1="685" y1="206" x2="698" y2="206" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d7-arrow)"/>
+
+<text class="svg-cap" x="350" y="330" text-anchor="middle">AS DUAS TRANSIÇÕES QUE QUASE NINGUÉM IMPLEMENTA SÃO AS LINHAS MAIS GROSSAS</text>
+</svg>
+<figcaption>Duas transições carregam uma linha mais grossa de propósito, porque quase ninguém constrói nenhuma das duas: a homologação vencendo sem renovação, e nenhuma execução registrada durante todo o período de observação. As duas levam ao descomissionamento, e nenhuma delas é automática.</figcaption>
+</figure>
+
+<p>A homologação, onde existe hoje, é concedida uma vez e nunca revisitada. Ninguém pediu ao agente que provasse, seis meses depois, que os motivos pelos quais foi aprovado ainda se sustentam. O mercado já rodou esse experimento, só que não em agentes. Identidades não humanas, contas de serviço, chaves de interface, robôs de automação, carregam exatamente essa dívida há duas décadas, em silêncio, e os números de 2026 finalmente puseram um valor no que essa dívida silenciosa parece em escala. Uma pesquisa setorial de governança de identidade achou 824.000 identidades ativas órfãs na base analisada, algo em torno de oito por cento do total de usuários de um provedor de identidade típico, cada uma ainda segurando direitos de acesso vivos. A proporção entre identidades de máquina e humanas hoje corre perto de dezessete pra um, e contas dormentes quase dobraram num único ano. A frase que explica o motivo vale citar exatamente, porque é a versão agêntica de uma frase que esta série já usou uma vez sobre uma terça-feira:</p>
+
+<blockquote><p>Projetos terminam, credenciais não, porque nenhum plano de projeto diz apague as identidades que criamos.</p></blockquote>
+
+<p>A leitura que importa é uma metáfora que uma diretora entende na primeira audição: isto não descreve proliferação. Descreve um balanço patrimonial em que a maior parte do passivo nunca entrou nos livros. E há um termo da mesma literatura que vale adotar diretamente, porque nomeia algo que esta série vem rondando desde a parte 1 sem uma palavra pra isso: <a class="g" href="harness-glossary.html#pt-g-dark-matter" data-tip="Contas invisíveis à governança mas ativas na infraestrutura, porque nada jamais foi procurar por elas. Processos agênticos entram nessa categoria nativamente.">matéria escura de identidade</a>, o conjunto de contas invisíveis à governança mas ativas na infraestrutura, porque nada jamais foi procurar por elas. Processos agênticos entram nessa categoria nativamente, não como exceção.</p>
+
+<p>O campo vizinho já resolveu os dois problemas que esta parte se propõe a resolver, e resolveu os dois dentro do mesmo programa. Recertificação periódica de acesso senta ao lado de automação de ciclo de vida, gestão de papéis e segregação de funções como capacidade padrão em qualquer programa maduro de governança de identidade, esta última descrita em termos que esta série já usou: impedir uma combinação que deixasse uma pessoa iniciar e aprovar a mesma transação. Isso não é coincidência que valha a pena passar batido. O estado homologado e a regra de não acumulação da próxima seção nunca foram ideias novas. São uma disciplina já existente, estendida a um novo tipo de executor.</p>
+
+<p>Uma crítica de 2026 importa o bastante pra mudar uma recomendação. Organizações que ainda dependem de homologação trimestral continuam descobrindo acesso obsoleto depois do fato, não antes de ele virar risco. O conserto não é um calendário mais curto. É um gatilho diferente: revalidação por evento, um dono saindo, um escopo mudando, uma credencial expirando, em vez de só por data. Revalidação por calendário é o piso do qual uma empresa nunca deveria cair abaixo. Revalidação disparada por evento é o alvo em direção ao qual ela deveria estar construindo.</p>
+
+<p>Descomissionamento é a maior lacuna do mercado, não só nos painéis. Todo mundo sabe ligar um agente. Quase ninguém tem um procedimento pra desligar um, e três casos reais mostram o que essa lacuna custa de fato. A violação da Colonial Pipeline em 2021 começou numa conta VPN antiga e inativa, sem segundo fator. Uma vítima de ransomware em 2025 foi invadida por uma conta fantasma de fornecedor que nunca tinha sido formalmente desativada. E em 2026, mais de cinquenta contas dormentes do GitHub, criadas de dois a cinco anos antes e deliberadamente mantidas quietas, foram usadas pra enumerar organizações e clonar repositórios privados antes que alguém notasse o padrão. Esse terceiro caso inverte o quadro, e vale parar um instante nele: a dormência não era negligência. Era estratégia. Uma conta que parece morta pode estar esperando.</p>
+
+<p>Nada disso autoriza um gatilho automático, e a nuance importa o bastante pra merecer ser dita como aviso à parte. Achar uma conta obsoleta é a parte fácil. Qualquer relatório lista, com prazer, toda credencial que não faz login há quatrocentos dias. O julgamento que vem depois é a parte difícil: essa conta está de fato morta, ou algo ainda depende dela em silêncio. Apague uma conta morta que um job noturno de faturamento vem usando toda noite, e a produção quebra, a governança não melhora. É exatamente por isso que a transição para descomissionado no diagrama acima exige uma decisão do dono do agente e do homologador juntos, nunca uma automação rodando numa agenda. Nenhuma execução no período é um sinal pra ir olhar. Nunca é, sozinho, um gatilho pra apagar.</p>
+
+<h2 id="pt-roles">4. Os quatro papéis, e a regra que se repete</h2>
+
+<p>Uma diretora não adota um framework que permanece princípio. Um framework conquista adoção no momento em que vira organograma, e esta é a seção que faz esse trabalho.</p>
+
+<table class="wrap">
+<thead><tr><th>Papel</th><th>Responsabilidade</th><th>Não pode se combinar com</th></tr></thead>
+<tbody>
+<tr><td>Dono do agente</td><td>Responde pelo que o agente faz. Uma pessoa nomeada, não um departamento</td><td>Homologador</td></tr>
+<tr><td>Homologador</td><td>Aprova a faixa e a data de revalidação</td><td>Dono do agente</td></tr>
+<tr><td>Auditor</td><td>Lê as exceções que o agente criou, não os resultados que produziu</td><td>Dono do agente</td></tr>
+<tr><td>Patrocinador da área</td><td>Responde pelo retorno prometido no briefing</td><td>Nenhum</td></tr>
+</tbody>
+</table>
+
+<p>A <a class="g" href="harness-glossary.html#pt-g-non-accumulation" data-tip="A regra de que os quatro papéis de governança de agente não podem se combinar na mesma pessoa. A contrapartida organizacional da separação de poderes da parte 3.">regra de não acumulação</a> é a separação de poderes da parte 3, deslocada do plano técnico para o organizacional, e essa repetição é deliberada: é o que dá às duas partes um único argumento coerente, em vez de dois separados.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" role="img" aria-label="Os quatro papeis e a regra de nao acumulacao: propoe, autoriza, executa, testemunha">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="pt-p4d8-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">OS QUATRO PAPÉIS E A REGRA DE NÃO ACUMULAÇÃO</text>
+
+<rect x="20" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="95" y="44" text-anchor="middle">PROPÕE</text>
+<rect x="35" y="58" width="120" height="34" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="79" text-anchor="middle">Solicitante</text>
+<rect x="35" y="128" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="150" text-anchor="middle">Patrocinador da área</text>
+<text class="svg-sub" x="95" y="163" text-anchor="middle">responde pelo</text>
+<text class="svg-sub" x="95" y="174" text-anchor="middle">retorno prometido</text>
+
+<line x1="170" y1="115" x2="188" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d8-arrow)"/>
+
+<rect x="190" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="265" y="44" text-anchor="middle">AUTORIZA</text>
+<rect x="205" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="265" y="112" text-anchor="middle">Homologador</text>
+<text class="svg-sub" x="265" y="125" text-anchor="middle">aprova faixa e renovação</text>
+
+<line x1="340" y1="115" x2="358" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d8-arrow)"/>
+
+<rect x="360" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="435" y="44" text-anchor="middle">EXECUTA</text>
+<rect x="375" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="435" y="112" text-anchor="middle">Dono do agente</text>
+<text class="svg-sub" x="435" y="125" text-anchor="middle">pessoa nomeada, não um setor</text>
+
+<line x1="510" y1="115" x2="528" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d8-arrow)"/>
+
+<rect x="530" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="605" y="44" text-anchor="middle">TESTEMUNHA</text>
+<rect x="545" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="605" y="112" text-anchor="middle">Auditor</text>
+<text class="svg-sub" x="605" y="125" text-anchor="middle">lê as exceções, não as saídas</text>
+
+<path d="M435,88 C 435,58 265,58 265,88" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="350" y="58" text-anchor="middle">não acumula com</text>
+
+<path d="M435,144 C 435,215 605,215 605,144" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="520" y="223" text-anchor="middle">não acumula com</text>
+
+<text class="svg-cap" x="350" y="252" text-anchor="middle">O AUDITOR LÊ AS EXCEÇÕES QUE O AGENTE CRIOU, NÃO AS SAÍDAS QUE ELE PRODUZIU</text>
+</svg>
+<figcaption>Os quatro grupos reaproveitam os próprios verbos da parte 3: propõe, autoriza, executa, testemunha. A repetição é deliberada. Mostra que a separação de poderes técnica e a organizacional são a mesma ideia, desenhada em dois planos diferentes.</figcaption>
+</figure>
+
+<p>O precedente pra essa estrutura exata já existe, plenamente formado, e não veio de lugar nenhum perto da governança de IA. O <a class="g" href="harness-glossary.html#pt-g-three-lines" data-tip="Quadro do Instituto dos Auditores Internos que separa a gestão dona do risco (primeira linha), as funções que monitoram e desafiam essa gestão (segunda linha), e a garantia independente que reporta ao órgão de governança (terceira linha).">Modelo das Três Linhas</a> do Instituto dos Auditores Internos, adotado em 2013 e revisado em 2020 e 2023, mapeia sobre esses quatro papéis quase sem folga. A primeira linha opera e é dona do risco que gera, exatamente o trabalho do <a class="g" href="harness-glossary.html#pt-g-agent-owner" data-tip="O papel que opera um agente e responde pelo risco que ele gera. Uma pessoa nomeada, nunca um departamento, nunca combinado com o papel de homologador.">dono do agente</a>. A segunda linha assiste, monitora e desafia a primeira, exatamente o trabalho do <a class="g" href="harness-glossary.html#pt-g-certifier" data-tip="O papel que aprova a faixa de autonomia de um agente e define a data de validade da homologação. Não pode ser exercido pelo dono do agente.">homologador</a>. A terceira linha fornece garantia independente e objetiva e reporta ao órgão de governança, exatamente o trabalho do auditor. O próprio órgão de governança delega e supervisiona, exatamente o trabalho do <a class="g" href="harness-glossary.html#pt-g-area-sponsor" data-tip="O papel que responde pelo retorno que o briefing de um agente prometeu, conferido na revalidação contra o retorno que ele de fato entregou.">patrocinador da área</a> e do comitê.</p>
+
+<p>A própria definição do Instituto para a terceira linha carrega a frase que sustenta a regra de não acumulação, uma linha que as próprias notas de trabalho desta parte carregavam sem citação até esta pesquisa fechar a lacuna:</p>
+
+<blockquote><p>A diferença principal entre a terceira linha e as duas primeiras é o alto grau de independência organizacional e objetividade, já que as duas primeiras fazem parte da gestão e a terceira é sinônimo de auditoria interna.</p></blockquote>
+
+<p>A própria linguagem da COSO para segregação de funções lê quase como se tivesse sido escrita para esta série, e não para contadores: autorizar uma transação e registrá-la precisam ser funções separadas, e uma matriz de alçada existe especificamente pra definir quem detém o poder de tomar cada decisão, com o propósito explícito de impedir um ato não autorizado. Matriz de alçada é, palavra por palavra, o mesmo termo que a <a href="harness-p3.html#pt-separation">parte 3</a> já usava. Essa correspondência vale a pena dizer sem rodeios em vez de deixar passar em silêncio: esta série não está inventando um instrumento. Está estendendo um que já existe há décadas a um novo tipo de executor.</p>
+
+<p>Dois artigos acadêmicos já tornaram essa conexão explícita especificamente para IA, e vale nomeá-los porque quase nada escrito para um leitor brasileiro os cita ainda: um argumenta que desenvolvedores de IA de fronteira precisam de uma função de auditoria interna no sentido literal das Três Linhas, o outro aplica o mesmo modelo diretamente ao risco de IA como estrutura, não como metáfora.</p>
+
+<p>Um achado negativo também pertence aqui, dito com honestidade total, porque é um achado, não um buraco. Nenhum framework de governança de IA em uso amplo, nem o NIST AI Risk Management Framework, nem a ISO 42001, nem o AIUC-1, nem a própria iniciativa de padrões de agente do NIST, nomeia papéis equivalentes a esses quatro como estrutura fixa. Cada um deles nomeia funções organizacionais, controles e evidências, no abstrato. Esta parte está tomando emprestado um modelo maduro do controle interno e aplicando a um objeto que os frameworks específicos de IA ainda tratam de forma genérica. Dito sem rodeios, isso não é uma fraqueza. É um diferencial.</p>
+
+<p>Uma confirmação indireta vem do próprio mercado. Uma pesquisa de 2026 com 650 líderes de segurança achou que apenas seis por cento das organizações rodando agentes tinham atualizado os próprios frameworks de governança pra corresponder ao que esses agentes de fato fazem. Noventa e quatro por cento, em outras palavras, estão governando uma população que já cresceu além do papel que a descreve.</p>
+
+<h2 id="pt-indicators">5. Oito indicadores, declarados como síntese</h2>
+
+<p>Uma diretora também não adota um framework que não produz relatório nenhum. Oito indicadores fazem esse trabalho aqui, e dois deles medem algo diferente dos outros seis: não o quão bem um agente está se comportando, mas o quão bem a governança que o observa está de fato funcionando.</p>
+
+<table class="wrap">
+<thead><tr><th>Indicador</th><th>O que revela</th></tr></thead>
+<tbody>
+<tr><td>Cobertura do registro</td><td>Agentes registrados contra agentes descobertos. Mede a sombra</td></tr>
+<tr><td>Faixa contra ambiente</td><td>Quantos operam acima do que o ambiente sustenta. O acidente estrutural da parte 1, medido</td></tr>
+<tr><td>Homologação vencida</td><td>Um carimbo permanente disfarçado de governança</td></tr>
+<tr><td>Taxa de exceção</td><td>Com que frequência o agente suprimiu uma regra ou elevou um limite. Um indicador antecedente, que sobe antes do incidente</td></tr>
+<tr><td>Taxa de recusa no portão</td><td>Se ninguém nunca é recusado, o portão é teatro. Uma medida objetiva do viés de automação</td></tr>
+<tr><td>Retorno realizado contra prometido</td><td>Fecha o ciclo com a própria promessa do briefing</td></tr>
+<tr><td>Nenhuma execução no período</td><td>Um candidato a descomissionamento, nunca um gatilho automático por si só</td></tr>
+<tr><td>Custo por tarefa concluída</td><td>Raro num painel principal, e o número que o comitê realmente pede</td></tr>
+</tbody>
+</table>
+
+<p>Os dois indicadores mais importantes dessa tabela são os que medem a própria qualidade do escritório, não a do agente. A taxa de exceção é o sensor que observa o sensor. A taxa de recusa no portão transforma o aviso europeu sobre confiança excessiva num número que um comitê consegue de fato ver.</p>
+
+<p>A lógica de tratar um quase-acidente como indicador antecedente tem um século, não é novidade do software, e a honestidade que o próprio campo aprendeu a aplicar vale a pena herdar em vez de reaprender do jeito difícil. O triângulo de acidentes de 1931 de Herbert William <a class="g" href="harness-glossary.html#pt-g-heinrich" data-tip="Pesquisador americano de segurança industrial cujo triângulo de acidentes de 1931 propôs que uma proporção fixa de quase-acidentes precede cada lesão grave. A proporção é questionada, a lógica subjacente não.">Heinrich</a> propôs uma proporção fixa, trezentos quase-acidentes para vinte e nove lesões leves para uma grave, e argumentou que quase-acidentes são aviso antecipado, e valem a pena acompanhar antes de virarem o próprio incidente. Pesquisas posteriores questionam a proporção fixa, que varia por setor e por local de trabalho, e esta peça herda essa cautela em vez de repetir o número como se ele ainda valesse em todo lugar. O que sobrevive à crítica não é a proporção. É a lógica: um evento de perda quase sempre é precedido por um aviso. Suprimir uma regra ou elevar um limite é o quase-acidente de um agente. Ainda não causou dano, e é o melhor aviso disponível de que o dano está a caminho.</p>
+
+<p>Este próximo é o melhor achado da peça inteira, e transforma um indicador que soa como opinião num fundamentado em decisão judicial. Em dezembro de 2023, o Tribunal de Justiça da União Europeia decidiu, no caso SCHUFA, processo C-634/21, que "unicamente automatizado", no sentido do artigo 22 do GDPR, não exige envolvimento humano zero. Um humano que formalmente assina embaixo mas na prática defere inteiramente ao algoritmo ainda deixa a decisão unicamente automatizada. Revisão humana genuína, carregando autoridade pra de fato reverter o resultado, é o que muda o caráter jurídico de uma decisão de unicamente automatizada para parcialmente automatizada. Uma leitura doutrinária do mesmo caso, cruzada com decisões correlatas sobre trabalho de plataforma, declara o padrão de que esta parte mais precisa: a revisão nominal falha diante do artigo quando se resume a um carimbo aplicado sem critério interpretativo e sem autoridade pra divergir da resposta da máquina.</p>
+
+<p>Separada da própria decisão, a orientação geral sobre o que conta como revisão significativa segundo o mesmo artigo nomeia quatro condições que vale carregar pro desenho de qualquer portão: autoridade pra alterar ou reverter a decisão, acesso a todo o dado que a decisão usou, um entendimento de fato da lógica e dos critérios por trás dela, e a capacidade de pesar informação que o sistema automatizado nunca processou. Cite essas duas coisas separadamente. Uma é a decisão de um tribunal. A outra é orientação geral que a própria decisão do tribunal não declarou.</p>
+
+<p>A consequência que este indicador agora pode afirmar em terreno jurídico, não em opinião, é a frase mais afiada desta parte: um portão com taxa de aprovação de cem por cento não é apenas teatro de governança. É evidência de que a decisão por trás dele continua unicamente automatizada, com tudo o que o artigo 22 implica na Europa, e, por analogia direta, tudo o que o <a href="harness-p3.html#pt-law">artigo 20 da LGPD</a> brasileira já implica também. Esse é o fio que amarra a parte 3 à parte 4 pela mesma lei. É a Air Canada desta parte.</p>
+
+<p>Os números por trás do retorno realizado chegam numa abundância quase constrangedora, e o mais útil deles carrega uma nuance que vale a pena declarar com cuidado em vez de comprimir num único valor. O People Readiness Report de 2026 da Kyndryl, com base em 1.100 líderes em oito países, achou que cinquenta e sete por cento das empresas dizem que a IA está incorporada em processos centrais de negócio ou implantada amplamente. Desses cinquenta e sete, apenas trinta e dois por cento alcançaram ao menos uma de suas duas metas primárias declaradas, e apenas onze por cento alcançaram as duas. São dois cortes diferentes da mesma pergunta, não um número suavizado numa manchete, e a distância entre o primeiro valor e o último é de quarenta e seis pontos: a distância entre implantar e de fato obter o resultado que a implantação prometia.</p>
+
+<table class="wrap">
+<thead><tr><th>Número</th><th>Fonte</th></tr></thead>
+<tbody>
+<tr><td>95% dos pilotos de IA generativa não mostram impacto mensurável no resultado financeiro</td><td>MIT, <em>The GenAI Divide</em>, 2025</td></tr>
+<tr><td>89% dos pilotos de agentes nunca chegam à produção</td><td>Deloitte, 2026</td></tr>
+<tr><td>42% das empresas abandonaram a maior parte dos próprios projetos de IA em 2025</td><td>S&amp;P Global</td></tr>
+<tr><td>25% das iniciativas entregam o retorno esperado</td><td>IBM</td></tr>
+<tr><td>21% das empresas do S&amp;P 500 conseguem nomear um benefício mensurável de IA</td><td>Morgan Stanley</td></tr>
+</tbody>
+</table>
+
+<p>Acompanhar o retorno realizado por agente é o que permite a uma empresa desligar um cedo, antes de ele ter consumido um orçamento que valha a pena discutir, em vez de descobrir a lacuna um ano depois num relatório que ninguém pediu. Nenhuma execução no período, o sétimo indicador, é o aviso de descomissionamento da seção 3 reformulado como um número que um comitê consegue acompanhar trimestre a trimestre, em vez de uma história que alguém precisa lembrar de contar.</p>
+
+<p><a class="g" href="harness-glossary.html#pt-g-cost-per-task" data-tip="A unidade econômica recomendada pela FinOps Foundation para cargas de trabalho agênticas, porque uma única ação do usuário pode disparar muitas chamadas de modelo subjacentes.">Custo por tarefa concluída</a> é o mais bem fundamentado dos oito, porque uma disciplina inteira já convergiu para ele de forma independente. O framework de 2026 da FinOps Foundation trata a IA como categoria tecnológica distinta e recomenda unidades econômicas construídas em torno dela: custo por consulta, custo por usuário por mês, custo por fluxo concluído, custo por transação de negócio. Para cargas de trabalho agênticas especificamente, a própria formulação da fundação chega perto de uma definição:</p>
+
+<blockquote><p>Custo por tarefa concluída é a medida mais significativa, porque uma única ação do usuário pode disparar muitas chamadas de modelo subjacentes.</p></blockquote>
+
+<p>A urgência por trás dessa recomendação fica visível na velocidade com que a própria disciplina se move. Noventa e oito por cento dos praticantes de FinOps hoje gerenciam gasto com IA, subindo de sessenta e três por cento um ano antes e trinta e um por cento no ano anterior a esse, segundo a pesquisa State of FinOps de 2026, com 1.192 respondentes que juntos gerenciam mais de oitenta e três bilhões de dólares em gasto de nuvem. A aritmética explica por que o preço na tabela de um fornecedor é o número errado pra planejar: fluxos agênticos disparam algo entre dez e vinte chamadas de modelo por tarefa de usuário, a recuperação de contexto infla a janela entregue ao modelo de três a cinco vezes, e um agente sempre ligado continua consumindo o tempo todo em que está ativo, com ou sem tarefa. Planeje pelo produto de tarefas, passos e símbolos. Nunca pelo preço de tabela.</p>
+
+<p>Uma admissão pertence ao corpo desta peça, não escondida numa nota de rodapé, porque é o mesmo movimento de honestidade que a parte 3 fez sobre a regra de dois, e a série não pode fazer esse movimento uma vez e depois parar em silêncio. Nenhuma fonte externa propõe esses oito indicadores como conjunto. Cinco têm fundamentação sólida fora desta série: cobertura, homologação vencida, recusa no portão, retorno realizado, custo por tarefa concluída. Dois se apoiam em analogia emprestada de outra disciplina inteiramente: taxa de exceção da teoria do quase-acidente, nenhuma execução da teoria de contas dormentes. Um, faixa contra ambiente, é interno a esta série, o próprio acidente estrutural da parte 1, medido em vez de apenas observado. Este painel não é um padrão de mercado. É uma síntese, e cada linha acima declara exatamente de onde veio. Dito ao contrário, essa admissão também é a posição: ninguém mais publicou esse painel ainda. Esta parte está propondo o primeiro.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" role="img" aria-label="O laco trimestral do escritorio: briefing, homologacao, operacao, recibos, indicadores, revalidacao, e de volta ao briefing">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="pt-p4d10-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="18" text-anchor="middle">O LAÇO TRIMESTRAL DO ESCRITÓRIO</text>
+
+<rect x="9" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="54" y="126" text-anchor="middle">BRIEFING</text>
+
+<line x1="99" y1="122" x2="107" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+
+<rect x="109" y="100" width="130" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="174" y="126" text-anchor="middle">HOMOLOGAÇÃO</text>
+
+<line x1="239" y1="122" x2="247" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+
+<rect x="249" y="100" width="95" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="296" y="126" text-anchor="middle">OPERAÇÃO</text>
+
+<line x1="344" y1="122" x2="352" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+
+<rect x="354" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="399" y="126" text-anchor="middle">RECIBOS</text>
+
+<line x1="444" y1="122" x2="452" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+
+<rect x="454" y="100" width="105" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="506" y="126" text-anchor="middle">INDICADORES</text>
+
+<line x1="559" y1="122" x2="567" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+
+<rect x="569" y="100" width="122" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="630" y="126" text-anchor="middle">REVALIDAÇÃO</text>
+
+<path d="M630,144 C630,196 54,196 54,144" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d10-arrow)"/>
+<text class="svg-sub" x="342" y="212" text-anchor="middle">retorno realizado conferido contra o retorno que o briefing prometeu</text>
+
+<text class="svg-cap" x="350" y="238" text-anchor="middle">ESSE LAÇO RODA POR TRIMESTRE, NÃO POR TAREFA. O MEDIR RODA DENTRO DE CADA CAIXA ACIMA, NÃO ENTRE ELAS</text>
+</svg>
+<figcaption>Este ciclo roda por trimestre, não por tarefa. O MEDIR roda dentro de cada caixa acima, nunca entre elas, e essa é a distinção inteira que esta parte existe para proteger.</figcaption>
+</figure>
+
+<h2 id="pt-office">6. Onde o escritório se senta</h2>
+
+<p>Esta é a pergunta que todo leitor das primeiras cinco seções já está fazendo, e quase nada escrito sobre governança de agentes de fato responde. A posição que vale a pena defender é simples de declarar e mais difícil de sustentar: não dentro de TI. Isto é uma função de controle, a mesma categoria de auditoria interna ou qualidade, e uma função de controle que reporta ao executor que deveria conferir perde a própria independência no instante em que faz isso.</p>
+
+<p>O precedente não é hipotético, e vem acompanhado de quinze anos de um debate que continua aberto, o que já é a própria evidência: não há resposta universal, só um problema estrutural que segue recorrendo sob um nome novo. Pra onde o diretor de segurança da informação (CISO) reporta hoje, segundo um levantamento de 2026 da IANS Research e da Artico Search, é revelador: sessenta e quatro por cento para TI, o CIO ou o CTO; onze por cento para o principal executivo; cinco por cento cada para o diretor financeiro, o diretor de risco, o jurídico e outros papéis de negócio.</p>
+
+<p>A formulação mais afiada de por que esse primeiro número é um problema, não um fato neutro, vem de um consultor de segurança e ex-procurador federal, e é a melhor analogia que todo este esforço de pesquisa encontrou:</p>
+
+<blockquote><p>O CIO é recompensado por eficiência e economia de custo, e o CISO é responsável por identificar riscos que muitas vezes exigem gasto novo. É como pedir para o inspetor de incêndio reportar à pessoa cujo bônus depende de cortar o número de sprinklers.</p></blockquote>
+
+<p>Essa frase sustenta, enfim, uma linha que as próprias notas de trabalho desta parte carregavam sem citação: uma função de controle subordinada àquilo que supervisiona deixa de ser independente, por mais bem-intencionado que todo mundo na sala esteja. A posição emergente para 2026 é reportar diretamente ao principal executivo ou ao comitê de risco do conselho, especificamente para garantir independência das funções supervisionadas.</p>
+
+<p>Uma leitura diferente, honesta, precisa sentar ao lado dessa, ou esta seção lê como panfleto em vez de argumento. Uma corrente de pensamento dentro do mesmo debate argumenta que enquadrar a relação como um conflito de orçamento inerente é improdutivo e datado, que o objetivo real não é evitar atrito mas desenhar alinhamento, e que a própria linha de reporte é um meio, não um fim. As duas leituras podem ser verdadeiras em empresas diferentes. Nenhuma das duas é motivo pra pular a decisão de desenho.</p>
+
+<p>Dado específico de IA, e não de segurança em geral, afia o mesmo argumento. Uma pesquisa de 2026 com 650 líderes de segurança achou que praticamente todos tinham absorvido responsabilidades de governança de IA sem serem convidados, e setenta e nove por cento disseram que o próprio papel tinha se expandido além do que o mandato e os recursos de fato sustentam. Setenta e um por cento disseram que a IA hoje toca sistemas centrais de negócio. Apenas dezesseis por cento disseram governar esse acesso bem. A própria conclusão da pesquisa vale a pena citar porque é o argumento desta parte, declarado de forma independente por alguém em outro campo, por outro motivo:</p>
+
+<blockquote><p>A pessoa que carrega o título não carrega a autoridade, e as pessoas que carregam a autoridade não respondem pelos resultados. É aí que o modelo quebra.</p></blockquote>
+
+<p>A recomendação que vem das organizações que de fato acertam isso não é atribuir um único dono, em lugar nenhum, nem mesmo em risco. É um modelo operacional distribuído que atravessa funções, com um comitê que inclui jurídico, compliance, dado, compras, recursos humanos e as unidades de negócio que de fato fazem a implantação. Esse achado enfraquece a opção de dono único em qualquer departamento isolado e reforça uma terceira opção que vale declarar sem rodeios, com o custo de cada opção nomeado, em vez de uma recomendação entregue sem ele.</p>
+
+<p>Dentro de operações é rápido de montar e fica perto de onde os agentes de fato são construídos, e carrega exatamente o problema do CISO dentro de TI: a função reporta à pessoa cujo orçamento deveria restringir. Dentro de risco e compliance é independente por construção, e corre o risco oposto: distante o bastante do detalhe técnico pra que a homologação vire seu próprio carimbo, exatamente a falha que esta parte inteira existe para prevenir, um nível abaixo. Uma célula de reporte duplo, reportando operacionalmente a quem a hospeda no dia a dia e formalmente a um comitê de governança ou risco para independência, é a opção que de fato cabe numa empresa pequena demais pra construir um departamento próprio, e é a que mais se aproxima da restrição que a próxima seção deixa explícita.</p>
+
+<p>Um dado adjacente pertence aqui porque antecipa o que acontece quando essa decisão vai pelo caminho fácil em vez do certo. Setenta e oito por cento dos times de FinOps reportam ao CTO ou ao CIO; apenas oito por cento reportam ao CFO. A gestão de custo de IA está sendo tratada como capacidade tecnológica, não como função financeira, o mesmo padrão do debate do CISO, uma função de controle posta dentro do executor que deveria observar, pelo mesmo motivo, provavelmente rumo ao mesmo resultado.</p>
+
+<h2 id="pt-warning">7. O aviso: sete agentes e uma planilha</h2>
+
+<p>Esta é a parte da série com maior chance de azedar e virar folheto de consultoria, e vale a pena dizer isso antes de escrever mais uma frase dela. O assunto convida vocabulário de plataforma, e o mercado que vende exatamente sobre esse medo já está barulhento: torres de controle, governança de ponta a ponta, uma força de trabalho autônoma, ferramentas que prometem descobrir e desligar agentes fora de controle. Nenhum desse vocabulário está exatamente errado. Está mirando numa empresa bem maior do que a maioria das empresas que precisam desta parte.</p>
+
+<p>O antídoto é uma única restrição, mantida explicitamente por tudo o que segue: tudo o que esta parte propõe precisa funcionar numa empresa com sete agentes e uma planilha. Um registro é uma tabela. Homologação é uma reunião com ata. Revalidação é uma data no calendário. Ferramenta entra quando o volume de fato justifica o custo, não antes, o que é a própria regra de dimensionamento da <a href="harness-p1.html">parte 1</a>, aplicada aqui à própria governança em vez de a um único agente.</p>
+
+<p>Olhe pra qualquer painel de operação de agentes sendo construído hoje, e ele converge para os mesmos quatro objetos, e para aí. Uma missão, com escopo e time declarados. Uma execução, carregando um identificador, um passo e um estado. Uma contagem de símbolos, um valor de cache e um custo, atrelados a essa execução. E os artefatos e erros que essa execução deixou pra trás. Esse é um piso razoável e honesto, e a maior parte do que está sendo lançado agora não vai além dele.</p>
+
+<p>Uma distinção dentro desse piso vale a pena declarar como princípio geral, porque é fácil de construir errado e caro de reconstruir depois que o histórico de um agente passa a depender dela: missão e execução não são o mesmo objeto, e colapsar as duas é um erro. Uma única missão pode gerar muitas execuções, e uma execução que falhou não invalida a missão que a gerou. Essa é a mesma distinção que o passo <a href="harness-p2.html#pt-delegar">Delegar</a> da parte 2 já tinha traçado, entre a unidade de despacho e a unidade de durabilidade, chegando aqui de forma independente, por uma direção diferente.</p>
+
+<p>Duas escolhas de desenho, visíveis em ferramentas construídas nessa linha, merecem ser registradas como recomendações em si mesmas, sem produto ou empresa atrelados a elas, porque são princípios, não endossos. Uma execução que falhou deveria continuar visível na fila, bem ao lado da que ainda está rodando. Um painel que esconde a falha produz exatamente a ilusão de qualidade contra a qual a <a href="harness-p2.html">parte 2</a> alertou, e é o jeito mais barato do mundo de fabricar um painel que lê verde. E todo agente precisa do próprio botão de desligar, com um estado obrigatório mantido estruturalmente separado de um opcional. Isso é autoridade expressa numa interface, não enterrada numa instrução, a separação de poderes da parte 3 tornada literal: a política não mora no texto que o modelo lê. Mora num controle que o modelo simplesmente não alcança.</p>
+
+<p>O que falta nesse mesmo piso não é uma crítica ao trabalho de nenhum time específico. É a forma do escritório que esta parte vem descrevendo desde o início, e cinco lacunas mostram exatamente onde o piso para e onde o escritório precisa começar.</p>
+
+<table class="wrap">
+<thead><tr><th>Lacuna</th><th>Fundamentada em</th></tr></thead>
+<tbody>
+<tr><td>Um dono nomeado por agente. Um papel não é uma pessoa, e um papel não responde por nada</td><td>824.000 identidades órfãs sem dono em nenhum sistema de RH</td></tr>
+<tr><td>Homologação como um estado com data de validade, não um evento único</td><td>Recertificação periódica como prática padrão da própria governança de identidade</td></tr>
+<tr><td>Descomissionamento. Todo mundo sabe ligar; quase ninguém tem um procedimento pra desligar</td><td>Contas dormentes quase dobrando em um ano, e três invasões documentadas</td></tr>
+<tr><td>O caso de uso aprovado conferido contra o que está de fato rodando. Uma lista não é um registro de governança</td><td>O número amplamente citado de que boa parte das organizações não consegue sequer produzir um inventário de IA</td></tr>
+<tr><td>Resultado de negócio, não apenas resultado de execução. Símbolos e passos são um resultado técnico, não um resultado de negócio</td><td>Os quarenta e seis pontos de distância da Kyndryl entre implantar e obter o resultado pretendido</td></tr>
+</tbody>
+</table>
+
+<p>A última fecha o ciclo mais bonito da série inteira. Essa coluna é o bloco sete da skill de briefing que este projeto já usa, o retorno prometido, chegando ao vencimento. O escritório é onde essa promessa é conferida, não onde é arquivada. É exatamente por isso que o ciclo trimestral da seção anterior termina de volta no briefing, e não num relatório que ninguém reabre.</p>
+
+<h2 id="pt-platforms">8. Toda plataforma governa para dentro</h2>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="Toda plataforma governa para dentro: um registro mestre fica acima e fora das paredes de cada plataforma">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="pt-p4d9-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">TODA PLATAFORMA GOVERNA PARA DENTRO</text>
+
+<path d="M260,32 a90,12 0 0 1 180,0 v30 a90,12 0 0 1 -180,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<path d="M260,32 a90,12 0 0 0 180,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="56" text-anchor="middle">REGISTRO MESTRE</text>
+<text class="svg-sub" x="350" y="70" text-anchor="middle">independente das plataformas</text>
+
+<line x1="290" y1="82" x2="99" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="325" y1="82" x2="266" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="375" y1="82" x2="433" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="410" y1="82" x2="600" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-p4d9-arrow)"/>
+
+<rect x="20" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="35" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="152" text-anchor="middle">Plataforma A</text>
+<rect x="35" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="232" text-anchor="middle">agentes</text>
+<line x1="99" y1="212" x2="99" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="187" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="202" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="152" text-anchor="middle">Plataforma B</text>
+<rect x="202" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="232" text-anchor="middle">agentes</text>
+<line x1="266" y1="212" x2="266" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="354" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="369" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="152" text-anchor="middle">Construído internamente</text>
+<rect x="369" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="232" text-anchor="middle">agentes</text>
+<line x1="433" y1="212" x2="433" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="521" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="536" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="146" text-anchor="middle">Planilha e</text>
+<text class="svg-sub" x="600" y="158" text-anchor="middle">automação simples</text>
+<rect x="536" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="232" text-anchor="middle">agentes</text>
+<line x1="600" y1="212" x2="600" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<line x1="99" y1="244" x2="290" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="266" y1="244" x2="325" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="433" y1="244" x2="375" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#pt-p4d9-arrow)"/>
+<line x1="600" y1="244" x2="410" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#pt-p4d9-arrow)"/>
+
+<text class="svg-cap" x="350" y="292" text-anchor="middle">CADA PLATAFORMA É PROFUNDA, CRÍVEL E LIMITADA PELAS PRÓPRIAS PAREDES. A SUA RESPONSABILIDADE NÃO É</text>
+</svg>
+<figcaption>As paredes de cada plataforma são desenhadas deliberadamente visíveis, e o registro mestre se senta claramente acima e fora de todas elas. Qualquer que seja a plataforma em que um agente roda, o registro que responde por ele não mora dentro das paredes dessa plataforma.</figcaption>
+</figure>
+
+<p>Um hábito de vocabulário precisa ser decidido antes de esta peça se fechar, porque é a diferença entre um argumento e um discurso de venda. O mercado já tem suas próprias palavras pra esse problema, e elas não vão embora: torre de controle, governança de ponta a ponta, uma força de trabalho autônoma, ferramentas construídas pra descobrir e desligar o que estiver fora de controle. Esta parte não deveria competir com esse vocabulário, e também não deveria zombar dele. Deveria fazer o único movimento que só ela está posicionada pra fazer: separar a função do produto. Uma torre de controle é um produto. Um escritório é uma função. Um produto se compra. Uma função se organiza. Só a segunda sobrevive ao dia em que o produto é substituído, e todo produto acaba sendo substituído.</p>
+
+<p>Há uma palavra que esta peça evitou de propósito em todas as seções acima, e nomeia diretamente agora só pra descartá-la: plataforma. Use essa palavra pra descrever o que esta parte propõe, e a peça inteira lê como folheto na primeira passada, não importa o que os oito indicadores e as cinco lacunas de fato argumentem.</p>
+
+<p>O motivo pelo qual o escritório precisa ser uma função da empresa, e nunca um produto que a empresa compra, é a frase que a própria arquitetura de todo fornecedor de plataforma já prova sem querer. Toda plataforma governa para dentro, cada uma profunda, confiável e de fato útil, e cada uma limitada pelas próprias paredes no instante em que a história de um agente atravessa pra uma plataforma diferente, um sistema construído internamente, ou uma planilha que ninguém rotulou como infraestrutura. Sua responsabilidade não para em nenhuma dessas paredes. Nunca ia parar. É por isso que o escritório precisa existir como algo que a empresa organiza, não algo que ela compra.</p>
+
+<h2 id="pt-accountability">9. Quem responde, e onde você está</h2>
+
+<p>Volte mais uma vez às vinte mil contas com que esta parte abriu. Nenhum tribunal ainda decidiu sobre esse incidente do jeito que um tribunal canadense decidiu sobre o chatbot da Air Canada, e nenhum caso brasileiro aparece em lugar nenhum na pesquisa desta parte tampouco, a mesma limitação que a <a href="harness-p3.html#pt-opening">parte 3</a> já carregava e nomeou em vez de esconder. O que os dois incidentes compartilham é a mesma lição vinda de duas direções diferentes. A Air Canada perdeu porque ninguém conseguiu mostrar que as quatro funções algum dia foram separadas para uma ação. O bot de recuperação de conta falhou pelo mesmo motivo, em escala populacional: ninguém conseguiu mostrar que a empresa sequer sabia quantos agentes como ele estavam rodando, quanto mais quem era dono de cada um.</p>
+
+<p>A empresa da diretora consegue responder à pergunta do conselho agora, e o que mudou não foi uma plataforma que ela comprou. Foi um registro que é uma tabela, homologações que são reuniões com ata, oito indicadores compilados uma vez por trimestre em vez de montados em pânico, e um comitê com independência real e autoridade real, sentado em algum lugar que não dentro do time cujo orçamento deveria observar. Pergunte a ela hoje quantos agentes a empresa roda, quem é dono de cada um, e quais ainda se pagam, e a resposta leva minutos, com evidência por trás, em vez de uma reunião pra descobrir quem talvez saiba.</p>
+
+<p>Quatro partes atrás, ela herdou um agente que ninguém tinha de fato desenhado e que ela não conseguia explicar quando dava errado. Ela deixa esta série rodando uma pequena população deles, cada um com um dono, uma faixa homologada, uma data de revalidação já no calendário, e um comitê que lê as exceções em vez do resumo dos melhores momentos. Esse é o argumento inteiro que esta série vem fazendo desde a parte 1, dito mais uma vez na forma mais curta: um agente que ninguém governa não é um atalho. É uma dívida sem data de vencimento, acumulando juros em silêncio até o dia em que algo a força a vencer.</p>
+
+<table class="wrap">
+<thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
+<tr><td>Parte 4, esta aqui</td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Parte 4 de 4 · Série Harness · O número de 43 por cento de inventário de IA na seção 5 é amplamente atribuído à Gartner; o relatório de origem não pôde ser localizado apesar de busca direta, e é nomeado aqui com essa ressalva, não como fato consolidado. A descrição do painel de agentes na seção 7 é deliberadamente genérica, extraída de padrões visíveis nas ferramentas de hoje, não de um único produto, time ou pessoa. Nenhum caso brasileiro aparece entre os incidentes desta parte, a mesma limitação que a parte 3 já carregava. A personagem da abertura continua das partes 1 a 3 e é composta a partir de padrões recorrentes.</p>
+<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html">diário de bordo</a>.</p>
+</div>
 </main>
 <main class="page" id="doc-en">
 <p class="eyebrow">Harness · Part 4 of 4 · Governance</p>
@@ -909,11 +1427,529 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h1>La oficina de agentes: cuántos existen, quién es dueño de cada uno, y cuáles todavía se pagan a sí mismos</h1>
 
-<p class="deck">Traducción en curso. El texto completo de esta parte ya está publicado en inglés, la lengua de producción primaria del proyecto; la versión en español llega en una próxima sesión, como traducción íntegra, no como resumen.</p>
+<p class="deck">En la parte 3, la directora cerró el año con cuatro funciones que ya no vivían en el mismo lugar: un modelo que proponía, una política que autorizaba, una herramienta que ejecutaba, un registro que atestiguaba. Lo que toda esa maquinaria no podía responder, para su propia empresa, era una pregunta que suena mucho más pequeña de lo que es, y que termina siendo la más difícil de toda la serie: cuántos de estos tiene la empresa corriendo ahora mismo, y quién responde por cada uno.</p>
 
-<p class="byline">Fernando Teco Sodré · Agosto de 2026</p>
+<p class="byline">Fernando Teco Sodré · Agosto de 2026 · Lectura de 26 minutos</p>
 
-<p><a href="harness-p4.html#en-opening">Leer la versión completa en inglés</a>.</p>
+<nav class="toc">
+  <p>En este artículo</p>
+  <ol>
+    <li><a href="#es-opening">Una concentración a escala</a></li>
+    <li><a href="#es-return">La directora vuelve a entrar, y esta vez nadie contó</a></li>
+    <li><a href="#es-lifecycle">El ciclo de vida: estados, no pasos</a></li>
+    <li><a href="#es-roles">Los cuatro roles, y la regla que se repite</a></li>
+    <li><a href="#es-indicators">Ocho indicadores, declarados como síntesis</a></li>
+    <li><a href="#es-office">Dónde se sienta la oficina</a></li>
+    <li><a href="#es-warning">La advertencia: siete agentes y una planilla</a></li>
+    <li><a href="#es-platforms">Cada plataforma gobierna hacia adentro</a></li>
+    <li><a href="#es-accountability">Quién responde, y dónde estás</a></li>
+  </ol>
+</nav>
+
+<h2 id="es-opening">1. Una concentración a escala</h2>
+
+<p>Entre el 17 de abril y el 31 de mayo de 2026, atacantes tomaron el control de 20.225 cuentas de Instagram, incluida la cuenta de la Casa Blanca de un expresidente estadounidense, el perfil personal de un sargento mayor jefe de la Fuerza Espacial de Estados Unidos y la cuenta oficial de una marca de cosméticos. Lo lograron explotando una sola decisión de diseño en el sistema de recuperación de cuentas asistido por IA de Meta.</p>
+
+<p>El chatbot que gestionaba la recuperación, conocido internamente como High Touch Support, podía hacer dos cosas dentro de la misma interacción: vincular una nueva dirección de correo a una cuenta existente, y disparar un mensaje de restablecimiento de contraseña a esa dirección. Nada verificaba si la persona que lo pedía había sido alguna vez la dueña de la cuenta. Vincular una dirección que controlas, esperar el enlace de restablecimiento, y la cuenta es tuya. Meta desactivó la capacidad autónoma del bot el 31 de mayo de 2026, en cuanto quedó documentado el patrón, y devolvió el paso sensible a un revisor humano. La notificación de la brecha llegó a la oficina del fiscal general de Maine el 5 de junio de 2026.</p>
+
+<p>Este es <a href="harness-p3.html#es-separation">el modo de falla de la parte 3</a> ocurriendo en el mundo, a escala, con un nombre y una fecha encima. Dos funciones que nunca debían compartir cuarto, la gestión de identidad y la recuperación de credenciales, compartieron una, dentro de una sola interacción mediada por IA, y la distancia entre leer una cuenta y ser su dueño se redujo a una sola dirección de correo. La lectura que más importa, de los investigadores que lo documentaron, es la frase que vale la pena llevar adelante: aquí la IA era la infraestructura de soporte siendo abusada, no una herramienta que los atacantes empuñaban. El sistema construido para verificar quién eres se convirtió en lo que un atacante manipuló para decidir quién eres.</p>
+
+<p>La parte 3 te dejó una prueba para exactamente esta falla, una acción a la vez: pregunta dónde se sientan las cuatro funciones, y si dos de ellas se sientan en el mismo lugar, encontraste el problema. Esa prueba todavía funciona aquí. Aplícala al bot de recuperación de cuenta y la concentración se ve en menos de un minuto. Pero veinte mil cuentas no fallaron una a la vez, frente a alguien corriendo esa prueba. Fallaron porque nadie la estaba corriendo sobre toda la población de agentes que la empresa opera, solo dentro del único que todos por casualidad estaban mirando. Ese es el problema que esta parte existe para resolver, y no escala como el problema de la parte 3. Encuentra un agente concentrado y encontraste un error. No cuentes cuántos agentes tienes en total, y ni siquiera puedes hacer la pregunta.</p>
+
+<p>Tres partes ya construyeron tres capas del mismo marco, y la cuarta lo completa.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" role="img" aria-label="Las tres capas del framework, y solo tres, atravesadas por una regla compartida: construccion, operacion, gobernanza">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="es-p4d6-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="20" text-anchor="middle">TRES CAPAS, Y SOLO TRES</text>
+
+<rect x="180" y="34" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="58" text-anchor="middle">GOBERNANZA · OFICINA DE AGENTES</text>
+<text class="svg-sub" x="360" y="76" text-anchor="middle">Cuántos existen, quién es dueño de cada uno,</text>
+<text class="svg-sub" x="360" y="90" text-anchor="middle">cuáles todavía se pagan solos</text>
+
+<line x1="360" y1="154" x2="360" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d6-arrow)"/>
+
+<rect x="180" y="156" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="180" text-anchor="middle">OPERACIÓN · SEPARACIÓN DE PODERES</text>
+<text class="svg-sub" x="360" y="198" text-anchor="middle">Qué puede hacer,</text>
+<text class="svg-sub" x="360" y="212" text-anchor="middle">y quién responde por ello</text>
+
+<line x1="360" y1="276" x2="360" y2="250" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d6-arrow)"/>
+
+<rect x="180" y="278" width="360" height="90" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="360" y="302" text-anchor="middle">CONSTRUCCIÓN · EL CICLO MEDIR</text>
+<text class="svg-sub" x="360" y="320" text-anchor="middle">Cómo construyes</text>
+<text class="svg-sub" x="360" y="334" text-anchor="middle">un agente confiable</text>
+
+<rect x="70" y="30" width="46" height="342" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="93" y="200" text-anchor="middle" transform="rotate(-90 93 200)">NIVELES N0 A N3</text>
+
+<line x1="116" y1="79" x2="178" y2="79" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="116" y1="201" x2="178" y2="201" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="116" y1="323" x2="178" y2="323" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+
+<text class="svg-cap" x="350" y="390" text-anchor="middle">LA ÚNICA REGLA COMPARTIDA POR LAS TRES CAPAS</text>
+</svg>
+<figcaption>La <a href="harness-p1.html#es-niveles">regla N0 a N3</a> es el único elemento que toca las tres capas, y el único vocabulario que este marco se permite compartir entre ellas. Una cuarta capa sería el error que ya cometió todo marco muerto: demasiado vocabulario. Tres es la disciplina, no un accidente.</figcaption>
+</figure>
+
+<p><a href="harness-p2.html">La parte 2</a> respondió cómo construyes un agente confiable. <a href="harness-p3.html">La parte 3</a> respondió qué puede hacer, y quién responde cuando hace algo que no debía. Esta parte responde la pregunta que una junta directiva realmente hace en cuanto una empresa tiene más de un agente corriendo, y casi toda empresa pasado su primer piloto la tiene: cuántos existen, quién es dueño de cada uno, y cuáles todavía valen lo que cuestan. MEDIR gobierna una tarea. La separación de poderes gobierna una acción. Ninguna de las dos cuenta.</p>
+
+<h2 id="es-return">2. La directora vuelve a entrar, y esta vez nadie contó</h2>
+
+<p>Para cuando ocurre esta escena, la empresa donde trabaja la directora tiene seis sistemas que todos en el edificio llaman agentes, y no se ponen de acuerdo sobre si un séptimo, un asistente de agenda que compras corporativas adquirió sin avisarle a nadie en su grupo, cuenta como sexto, séptimo o ninguno de los dos. El agente de conciliación de facturas de <a href="harness-p1.html">la parte 1</a> y <a href="harness-p2.html">la parte 2</a> sigue corriendo, cargando ahora la guía, el sensor y el tope de reintentos que tardaron un año en ganarse. El sistema de respuesta a disputas de la parte 3 también sigue corriendo, ahora contenido por la regla de dos y un humano que lee antes de que se envíe. Soporte construyó su propio asistente de triaje sobre herramientas propias. Recursos humanos está pilotando un asistente de incorporación cuya configuración nadie en su grupo ha visto jamás.</p>
+
+<p>Un miembro de la junta hace, en una revisión trimestral de rutina, una pregunta que suena casi demasiado simple para ser la difícil: cuántos de estos tiene la empresa corriendo ahora mismo, y quién responde por cada uno. Ella tiene, para entonces, un agente genuinamente bien gobernado, tal vez el sistema mejor gobernado que posee la empresa. No tiene una respuesta para la pregunta que en realidad se hizo. Nadie en la sala la tiene. El asistente de triaje de soporte y el piloto de recursos humanos nunca estuvieron en su revisión, porque ningún equipo pensó en preguntar si la de ella era la revisión que necesitaban.</p>
+
+<p>Este es el descubrimiento que un agente bien administrado, tomado solo, le esconde a la persona que lo construyó. Puedes ganar la auditoría de separación de poderes sobre cada acción que da un solo agente y aun así fallar la pregunta mucho más simple que un director o un regulador eventualmente hace: cuántos son ustedes. La parte 3 asumió que un agente ya tenía nombre, dueño y alcance, y construyó la maquinaria que gobierna lo que hace dentro de ese alcance. Nada de lo construido hasta ahora preguntó jamás quién cuenta los agentes, ni qué pasa con uno después de que la ventana de retención de seis meses de sus recibos venció en silencio y nadie lo ha mirado desde entonces.</p>
+
+<p>La segunda pregunta del miembro de la junta es la que en verdad duele: de los que tiene la empresa, cuáles todavía se pagan a sí mismos. Tampoco puede responder esa, no porque el dato no exista en algún lugar de la empresa, sino porque nada, en ningún lado, le pidió jamás al panel de un agente que reportara un retorno junto a un costo.</p>
+
+<p>Lo que faltaba, otra vez, no era un control sobre una acción individual. Era algo que tratara al agente mismo, no la tarea que ejecuta, como el objeto que se gobierna: algo que se abre cuando se propone el agente y solo se cierra cuando se da de baja formalmente, moviéndose entre estados intermedios que hay que ganarse y que, en al menos dos casos, expiran si nadie los renueva. Llámalo como el resto de esta parte lo va a construir: una <a class="g" href="harness-glossary.html#es-g-agent-office" data-tip="La función de gobernanza que responde cuántos agentes existen, quién es dueño de cada uno, y cuáles todavía se pagan a sí mismos. Una función que la empresa organiza, no un producto que compra.">oficina de agentes</a>.</p>
+
+<h2 id="es-lifecycle">3. El ciclo de vida: estados, no pasos</h2>
+
+<p>MEDIR y el <a class="g" href="harness-glossary.html#es-g-lifecycle" data-tip="Los estados por los que un agente pasa una sola vez, desde un briefing versionado hasta la baja definitiva. Distinto de MEDIR, que se repite dentro de una sola tarea.">ciclo de vida</a> son fáciles de confundir, y la confusión sale lo bastante cara como para nombrarla directamente antes de seguir. MEDIR se repite, muchas veces dentro de una sola tarea: mapear, equipar, delegar, inspeccionar, reforzar, y otra vez en la siguiente corrida. El ciclo de vida pasa una sola vez por agente, y avanza por estados, no por pasos. Un paso termina y le pasa el testigo al siguiente. Un estado persiste hasta que algo lo termina, y algunos de estos estados llevan un reloj que un paso jamás lleva.</p>
+
+<table class="wrap">
+<thead><tr><th>Estado</th><th>Quién decide</th><th>Tiene fecha de validez</th></tr></thead>
+<tbody>
+<tr><td>Briefing</td><td>Solicitante y revisor</td><td>Versionado</td></tr>
+<tr><td>Certificado</td><td>Certificador</td><td>Sí, con fecha de revalidación</td></tr>
+<tr><td>En operación</td><td>Dueño del agente</td><td>Continuo</td></tr>
+<tr><td>En observación</td><td>Auditor</td><td>Sí, ventana fija</td></tr>
+<tr><td>Suspendido</td><td>Certificador o auditor</td><td>Hasta que se decida</td></tr>
+<tr><td>Dado de baja</td><td>Dueño del agente y certificador</td><td>Terminal</td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 344" role="img" aria-label="El ciclo de vida del agente: estados, no pasos, desde un briefing versionado hasta la baja definitiva">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="es-p4d7-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">EL CICLO DE VIDA DEL AGENTE: ESTADOS, NO PASOS</text>
+
+<line x1="0" y1="150" x2="13" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<rect x="15" y="128" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="72" y="146" text-anchor="middle">BRIEFING</text>
+<text class="svg-sub" x="72" y="160" text-anchor="middle">versionado</text>
+
+<rect x="175" y="128" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="233" y="154" text-anchor="middle">CERTIFICADO</text>
+
+<rect x="335" y="128" width="125" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="397" y="154" text-anchor="middle">EN OPERACIÓN</text>
+
+<rect x="335" y="240" width="125" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="397" y="266" text-anchor="middle">EN OBSERVACIÓN</text>
+
+<rect x="175" y="240" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="233" y="266" text-anchor="middle">SUSPENDIDO</text>
+
+<rect x="545" y="184" width="140" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="615" y="210" text-anchor="middle">DADO DE BAJA</text>
+
+<line x1="55" y1="172" x2="55" y2="212" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="55" y="224" text-anchor="middle">veredicto: no construir</text>
+
+<line x1="130" y1="150" x2="173" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="152" y="140" text-anchor="middle">el revisor aprueba el nivel</text>
+
+<line x1="290" y1="150" x2="333" y2="150" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="312" y="140" text-anchor="middle">el dueño activa</text>
+
+<line x1="397" y1="172" x2="397" y2="238" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="465" y="205" text-anchor="middle">el indicador se dispara</text>
+
+<line x1="424" y1="240" x2="424" y2="174" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="480" y="245" text-anchor="middle">vuelta a lo normal</text>
+
+<line x1="335" y1="262" x2="292" y2="262" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="312" y="252" text-anchor="middle">riesgo confirmado</text>
+
+<line x1="336" y1="168" x2="248" y2="238" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="280" y="195" text-anchor="middle">incidente</text>
+
+<line x1="215" y1="240" x2="215" y2="174" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="150" y="205" text-anchor="middle">corrección, revalidado</text>
+
+<path d="M292,140 C 340,78 470,78 543,190" fill="none" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="400" y="80" text-anchor="middle">validez vencida sin renovación</text>
+
+<line x1="460" y1="150" x2="543" y2="196" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="500" y="170" text-anchor="middle">sin ejecución en el período</text>
+
+<path d="M290,278 C 415,335 495,275 543,222" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+<text class="svg-sub" x="415" y="312" text-anchor="middle">decisión del certificador</text>
+
+<line x1="685" y1="206" x2="698" y2="206" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d7-arrow)"/>
+
+<text class="svg-cap" x="350" y="330" text-anchor="middle">LAS DOS TRANSICIONES QUE CASI NADIE IMPLEMENTA SON LAS LÍNEAS MÁS GRUESAS</text>
+</svg>
+<figcaption>Dos transiciones llevan una línea más gruesa a propósito, porque casi nadie construye ninguna de las dos: la certificación que expira sin renovarse, y ninguna ejecución registrada en toda la ventana de observación. Ambas llevan a la baja, y ninguna es automática.</figcaption>
+</figure>
+
+<p>La certificación, donde existe hoy, se otorga una sola vez y nunca se revisita. Nadie le pidió al agente probar, seis meses después, que las razones por las que se aprobó siguen siendo válidas. El mercado ya corrió este experimento, solo que no con agentes. Las identidades no humanas, cuentas de servicio, claves de interfaz, robots de automatización, cargan exactamente esta deuda desde hace dos décadas, en silencio, y las cifras de 2026 finalmente le pusieron número a lo que se ve la deuda silenciosa a escala. Una encuesta de la industria sobre gobernanza de identidad encontró 824.000 identidades activas huérfanas en su base analizada, cerca del ocho por ciento del total de usuarios de un proveedor de identidad típico, cada una todavía con derechos de acceso vigentes. La proporción de identidades máquina contra identidades humanas ronda hoy diecisiete a uno, y las cuentas inactivas casi se duplicaron en un solo año. La frase que explica por qué vale la pena citarla textual, porque es la versión agéntica de una frase que esta serie ya usó una vez sobre un martes:</p>
+
+<blockquote><p>Los proyectos terminan, las credenciales no, porque ningún plan de proyecto dice borra las identidades que creamos.</p></blockquote>
+
+<p>La lectura que importa es una metáfora que una directora entiende a la primera: esto no describe proliferación. Describe un balance donde la mayor parte del pasivo nunca llegó a los libros. Y hay un término de esa misma literatura que vale la pena adoptar directamente, porque nombra algo que esta serie viene rondando desde la parte 1 sin tener palabra para ello: la <a class="g" href="harness-glossary.html#es-g-dark-matter" data-tip="Cuentas invisibles para la gobernanza pero activas en la infraestructura, porque nada las buscó nunca. Los procesos agénticos caen en esta categoría de forma nativa.">materia oscura de identidad</a>, el conjunto de cuentas invisibles para la gobernanza pero activas en la infraestructura, porque nada las buscó nunca. Los procesos agénticos caen en esa categoría de forma nativa, no como excepción.</p>
+
+<p>El campo vecino ya resolvió los dos problemas que esta parte propone resolver, y los resolvió dentro del mismo programa. La recertificación periódica de acceso convive con la automatización del ciclo de vida, la gestión de roles y la segregación de funciones como capacidad estándar en cualquier programa maduro de gobernanza de identidad, la última descrita con los mismos términos que esta serie ya usó: prevenir una combinación que le permitiera a una sola persona iniciar y aprobar la misma transacción. Eso no es una coincidencia para pasar por alto. El estado certificado y la regla de no acumulación de la próxima sección nunca fueron ideas novedosas. Son una disciplina existente, extendida a un nuevo tipo de ejecutor.</p>
+
+<p>Una crítica de 2026 importa lo suficiente como para cambiar una recomendación. Las organizaciones que todavía dependen de la certificación trimestral siguen descubriendo accesos obsoletos después del hecho, no antes de que se conviertan en riesgo. La corrección no es un calendario más corto. Es un disparador distinto: revalidación por evento, un dueño que se va, un alcance que cambia, una credencial que expira, en lugar de solo por fecha. La revalidación por calendario es el piso del que una empresa nunca debería caer por debajo. La revalidación disparada por evento es el objetivo hacia el que debería construir.</p>
+
+<p>Dar de baja es la brecha más grande del mercado, no solo de los paneles. Todo el mundo sabe cómo encender un agente. Casi nadie tiene un procedimiento para apagar uno, y tres casos reales muestran lo que esa brecha en verdad cuesta. La brecha de Colonial Pipeline en 2021 comenzó en una cuenta VPN vieja e inactiva, sin segundo factor. Una víctima de ransomware de 2025 fue vulnerada a través de una cuenta fantasma de proveedor que jamás se había desactivado formalmente. Y en 2026, más de cincuenta cuentas inactivas de GitHub, creadas entre dos y cinco años antes y mantenidas deliberadamente en silencio, se usaron para enumerar organizaciones y clonar repositorios privados antes de que alguien notara el patrón. Ese tercer caso invierte el cuadro y vale la pena detenerse en él: la inactividad no era descuido. Era estrategia. Una cuenta que parece muerta puede estar esperando.</p>
+
+<p>Nada de esto autoriza un disparador automático, y el matiz importa lo suficiente como para plantearlo como advertencia propia. Encontrar una cuenta obsoleta es la parte fácil. Cualquier reporte enumera con gusto cada credencial que no inició sesión en cuatrocientos días. El juicio que viene después es la parte difícil: esta cuenta está realmente muerta, o algo todavía depende de ella en silencio. Borra una cuenta muerta que un proceso de facturación nocturno lleva usando todas las noches, y la producción se rompe, la gobernanza no mejora. Por eso exactamente la transición a dado de baja en el diagrama de arriba exige una decisión conjunta del dueño del agente y el certificador, nunca una automatización corriendo en calendario. Ninguna ejecución en el período es una señal para ir a mirar. Nunca, por sí sola, un disparador para borrar.</p>
+
+<h2 id="es-roles">4. Los cuatro roles, y la regla que se repite</h2>
+
+<p>Una directora no adopta un marco que se queda en principio. Un marco se gana la adopción en el momento en que se convierte en organigrama, y esta es la sección que hace ese trabajo.</p>
+
+<table class="wrap">
+<thead><tr><th>Rol</th><th>Responsabilidad</th><th>No puede combinarse con</th></tr></thead>
+<tbody>
+<tr><td>Dueño del agente</td><td>Responde por lo que hace el agente. Una persona nombrada, no un departamento</td><td>Certificador</td></tr>
+<tr><td>Certificador</td><td>Aprueba el nivel y la fecha de revalidación</td><td>Dueño del agente</td></tr>
+<tr><td>Auditor</td><td>Lee las excepciones que creó el agente, no los resultados que produjo</td><td>Dueño del agente</td></tr>
+<tr><td>Patrocinador del área</td><td>Responde por el retorno prometido en el briefing</td><td>Ninguno</td></tr>
+</tbody>
+</table>
+
+<p>La <a class="g" href="harness-glossary.html#es-g-non-accumulation" data-tip="La regla de que los cuatro roles de gobernanza del agente no pueden combinarse en la misma persona. La contrapartida organizacional de la separación de poderes de la parte 3.">regla de no acumulación</a> es la separación de poderes de la parte 3, trasladada del plano técnico al organizacional, y esa repetición es deliberada: es lo que le da a las dos partes un solo argumento coherente en vez de dos separados.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" role="img" aria-label="Los cuatro roles y la regla de no acumulacion: propone, autoriza, ejecuta, testifica">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="es-p4d8-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">LOS CUATRO ROLES Y LA REGLA DE NO ACUMULACIÓN</text>
+
+<rect x="20" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="95" y="44" text-anchor="middle">PROPONE</text>
+<rect x="35" y="58" width="120" height="34" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="79" text-anchor="middle">Solicitante</text>
+<rect x="35" y="128" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="95" y="150" text-anchor="middle">Patrocinador del área</text>
+<text class="svg-sub" x="95" y="163" text-anchor="middle">responde por el</text>
+<text class="svg-sub" x="95" y="174" text-anchor="middle">retorno prometido</text>
+
+<line x1="170" y1="115" x2="188" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d8-arrow)"/>
+
+<rect x="190" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="265" y="44" text-anchor="middle">AUTORIZA</text>
+<rect x="205" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="265" y="112" text-anchor="middle">Certificador</text>
+<text class="svg-sub" x="265" y="125" text-anchor="middle">aprueba nivel y renovación</text>
+
+<line x1="340" y1="115" x2="358" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d8-arrow)"/>
+
+<rect x="360" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="435" y="44" text-anchor="middle">EJECUTA</text>
+<rect x="375" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="435" y="112" text-anchor="middle">Dueño del agente</text>
+<text class="svg-sub" x="435" y="125" text-anchor="middle">persona nombrada, no un área</text>
+
+<line x1="510" y1="115" x2="528" y2="115" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d8-arrow)"/>
+
+<rect x="530" y="28" width="150" height="172" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="605" y="44" text-anchor="middle">TESTIFICA</text>
+<rect x="545" y="90" width="120" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="605" y="112" text-anchor="middle">Auditor</text>
+<text class="svg-sub" x="605" y="125" text-anchor="middle">lee las excepciones, no las salidas</text>
+
+<path d="M435,88 C 435,58 265,58 265,88" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="350" y="58" text-anchor="middle">no se acumula con</text>
+
+<path d="M435,144 C 435,215 605,215 605,144" fill="none" stroke="#1b1b19" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-sub" x="520" y="223" text-anchor="middle">no se acumula con</text>
+
+<text class="svg-cap" x="350" y="252" text-anchor="middle">EL AUDITOR LEE LAS EXCEPCIONES QUE EL AGENTE CREÓ, NO LAS SALIDAS QUE PRODUJO</text>
+</svg>
+<figcaption>Los cuatro grupos reusan los propios verbos de la parte 3: propone, autoriza, ejecuta, atestigua. La repetición es deliberada. Muestra que la separación de poderes técnica y la organizacional son la misma idea, dibujada en dos planos distintos.</figcaption>
+</figure>
+
+<p>El precedente para esta estructura exacta ya existe, plenamente formado, y no vino de ningún lugar cercano a la gobernanza de IA. El <a class="g" href="harness-glossary.html#es-g-three-lines" data-tip="El marco del Instituto de Auditores Internos que separa la gestión dueña del riesgo (primera línea), las funciones que monitorean y desafían esa gestión (segunda línea), y el aseguramiento independiente que reporta al órgano de gobernanza (tercera línea).">Modelo de las Tres Líneas</a> del Instituto de Auditores Internos, adoptado en 2013 y revisado en 2020 y 2023, calza sobre estos cuatro roles casi sin holgura. La primera línea opera y es dueña del riesgo que genera, exactamente el trabajo del <a class="g" href="harness-glossary.html#es-g-agent-owner" data-tip="El rol que opera un agente y responde por el riesgo que genera. Una persona nombrada, nunca combinada con el rol de certificador.">dueño del agente</a>. La segunda línea asiste, monitorea y desafía a la primera, exactamente el trabajo del <a class="g" href="harness-glossary.html#es-g-certifier" data-tip="El rol que aprueba el nivel de autonomía de un agente y fija la fecha de validez de su certificación. No puede recaer en el dueño del agente.">certificador</a>. La tercera línea provee aseguramiento independiente y objetivo, y reporta al órgano de gobernanza, exactamente el trabajo del auditor. El propio órgano de gobernanza delega y supervisa, exactamente el trabajo del <a class="g" href="harness-glossary.html#es-g-area-sponsor" data-tip="El rol que responde por el retorno que prometió el briefing de un agente, contrastado en la revalidación contra el retorno efectivamente entregado.">patrocinador del área</a> y del comité.</p>
+
+<p>La propia definición del Instituto para la tercera línea lleva la frase que sustenta la regla de no acumulación, una línea que las notas de trabajo de esta parte venían arrastrando sin cita hasta que esta investigación cerró el vacío:</p>
+
+<blockquote><p>La diferencia principal entre la tercera línea y las dos primeras es el alto grado de independencia y objetividad organizacional, ya que las dos primeras son parte de la gestión y la tercera es sinónimo de auditoría interna.</p></blockquote>
+
+<p>El propio lenguaje de COSO para la segregación de funciones se lee casi como si estuviera escrito para esta serie y no para contadores: autorizar una transacción y registrarla tienen que ser funciones separadas, y existe una matriz de autoridad específicamente para definir quién tiene el poder de tomar cada decisión, con el propósito explícito de prevenir un acto no autorizado. Matriz de autoridad es, palabra por palabra, lo que <a href="harness-p3.html#es-separation">la parte 3</a> llamó la matriz de autoridad. Esa correspondencia vale la pena decirla con claridad en vez de dejarla pasar en silencio: esta serie no está inventando un instrumento. Está extendiendo uno que existe desde hace décadas hacia un nuevo tipo de ejecutor.</p>
+
+<p>Dos artículos académicos ya hicieron explícita esta conexión para la IA específicamente, y vale la pena nombrarlos porque casi nada escrito para un lector brasileño los cita todavía: uno argumenta que los desarrolladores de IA de frontera necesitan una función de auditoría interna en el sentido literal de las Tres Líneas, el otro aplica el mismo modelo directamente al riesgo de IA como estructura, no como metáfora.</p>
+
+<p>Un hallazgo negativo también pertenece aquí, dicho con total honestidad, porque es un hallazgo, no un vacío. Ningún marco de gobernanza de IA de uso amplio, ni el NIST AI Risk Management Framework, ni la ISO 42001, ni AIUC-1, ni la propia iniciativa de estándares de agentes de NIST, nombra roles equivalentes a estos cuatro como estructura fija. Cada uno nombra funciones organizacionales, controles y evidencia, en abstracto. Esta parte está tomando prestado un modelo maduro del control interno y aplicándolo a un objeto que los marcos específicos de IA todavía tratan de forma genérica. Dicho con claridad, eso no es una debilidad. Es un diferencial.</p>
+
+<p>Una confirmación indirecta viene del propio mercado. Una encuesta de 2026 a 650 líderes de seguridad encontró que solo el seis por ciento de las organizaciones que corren agentes había actualizado sus propios marcos de gobernanza para que coincidieran con lo que esos agentes en verdad hacen. Noventa y cuatro por ciento, en otras palabras, están gobernando una población que ya superó el papeleo que la describe.</p>
+
+<h2 id="es-indicators">5. Ocho indicadores, declarados como síntesis</h2>
+
+<p>Una directora tampoco adopta un marco que no produce ningún reporte. Ocho indicadores hacen ese trabajo aquí, y dos de ellos miden algo distinto de los otros seis: no qué tan bien se comporta un agente, sino qué tan bien está funcionando en verdad la gobernanza que lo observa.</p>
+
+<table class="wrap">
+<thead><tr><th>Indicador</th><th>Qué revela</th></tr></thead>
+<tbody>
+<tr><td>Cobertura del registro</td><td>Agentes registrados contra agentes descubiertos. Mide la sombra</td></tr>
+<tr><td>Nivel contra entorno</td><td>Cuántos operan por encima de lo que el entorno puede sostener. El accidente estructural de la parte 1, medido</td></tr>
+<tr><td>Certificación vencida</td><td>Un sello permanente disfrazado de gobernanza</td></tr>
+<tr><td>Tasa de excepciones</td><td>Con qué frecuencia el agente suprimió una regla o subió un umbral. Un indicador anticipado, que sube antes que el incidente</td></tr>
+<tr><td>Tasa de rechazo en la puerta</td><td>Si nunca se rechaza a nadie, la puerta es teatro. Una medida objetiva del sesgo de automatización</td></tr>
+<tr><td>Retorno realizado contra prometido</td><td>Cierra el círculo con la propia promesa del briefing</td></tr>
+<tr><td>Ninguna ejecución en el período</td><td>Un candidato a la baja, nunca un disparador automático por sí solo</td></tr>
+<tr><td>Costo por tarea completada</td><td>Poco frecuente en un panel principal, y el número que el comité en verdad pide</td></tr>
+</tbody>
+</table>
+
+<p>Los dos indicadores que más importan en esa tabla son los que miden la calidad de la propia oficina, no la del agente. La tasa de excepciones es el sensor que vigila al sensor. La tasa de rechazo en la puerta convierte la advertencia europea sobre la confianza excesiva en un número que un comité puede realmente ver.</p>
+
+<p>La lógica detrás de tratar un casi accidente como indicador anticipado tiene un siglo, no es nueva del software, y la honestidad que el propio campo aprendió a aplicar vale la pena heredarla en vez de reaprenderla por las malas. El triángulo de accidentes de 1931 de Herbert William <a class="g" href="harness-glossary.html#es-g-heinrich" data-tip="Investigador de seguridad industrial cuyo triángulo de accidentes de 1931 propuso que una proporción fija de casi accidentes precede a cada lesión grave. La proporción se cuestiona; la lógica de fondo no.">Heinrich</a> propuso una proporción fija, trescientos casi accidentes por veintinueve lesiones menores por una grave, y argumentó que los casi accidentes son advertencia temprana, que vale la pena rastrear antes de que se conviertan en el incidente mismo. Investigación posterior cuestiona la proporción fija, que varía por industria y por lugar de trabajo, y esta pieza hereda esa cautela en vez de repetir el número como si todavía valiera en todos lados. Lo que sobrevive a la crítica no es la proporción. Es la lógica: un evento de pérdida casi siempre está precedido por una advertencia. Suprimir una regla o subir un umbral es el casi accidente de un agente. Todavía no causó daño, y es la mejor advertencia disponible de que el daño viene en camino.</p>
+
+<p>Este que sigue es el mejor hallazgo de toda la pieza, y convierte un indicador que se lee como opinión en uno fundado en una decisión judicial. En diciembre de 2023, el Tribunal de Justicia de la Unión Europea falló, en el caso SCHUFA, causa C-634/21, que "únicamente automatizada" en el sentido del artículo 22 del RGPD no exige cero involucramiento humano. Un humano que formalmente firma pero en la práctica se remite por completo al algoritmo sigue dejando la decisión como únicamente automatizada. La revisión humana genuina, con autoridad para en verdad revertir el resultado, es lo que cambia el carácter legal de una decisión de únicamente automatizada a parcialmente automatizada. Una lectura doctrinal del mismo caso, contrastada contra fallos relacionados sobre trabajo de plataformas, plantea el estándar que esta parte más necesita: la revisión nominal no cumple el artículo cuando equivale a un sello aplicado sin criterios interpretativos y sin autoridad para apartarse de la respuesta de la máquina.</p>
+
+<p>Separado del fallo mismo, la guía general sobre qué cuenta como revisión significativa bajo el mismo artículo nombra cuatro condiciones que vale la pena llevar al diseño de cualquier puerta: autoridad para alterar o revertir la decisión, acceso a todo el dato que usó la decisión, una comprensión real de la lógica y los criterios detrás de ella, y la capacidad de sopesar información que el sistema automatizado nunca procesó. Cita estas dos cosas por separado. Una es una decisión de un tribunal. La otra es guía general que el fallo del tribunal no planteó él mismo.</p>
+
+<p>La consecuencia que este indicador ahora puede afirmar sobre terreno legal, no de opinión, es la frase más filosa de esta parte: una puerta con cien por ciento de tasa de aprobación no es solo teatro de gobernanza. Es evidencia de que la decisión detrás sigue siendo únicamente automatizada, con todo lo que implica el artículo 22 en Europa, y por analogía directa, todo lo que ya implica <a href="harness-p3.html#es-law">el artículo 20 de la LGPD brasileña</a>. Ese es el hilo que une la parte 3 con la parte 4 por la misma ley. Es el Air Canada de esta parte.</p>
+
+<p>Los números detrás del retorno realizado llegan en una abundancia casi vergonzosa, y el más útil lleva un matiz que vale la pena plantear con cuidado en vez de comprimirlo en una sola cifra. El Reporte de Preparación de las Personas 2026 de Kyndryl, elaborado a partir de 1.100 líderes en ocho países, encontró que cincuenta y siete por ciento de las empresas dice que la IA está integrada en procesos centrales del negocio o desplegada de forma amplia. De ese cincuenta y siete, solo treinta y dos por ciento alcanzó al menos una de sus dos metas primarias declaradas, y solo once por ciento alcanzó ambas. Esos son dos recortes distintos de la misma pregunta, no un número suavizado en un titular, y la brecha entre la primera cifra y la última es de cuarenta y seis puntos: la distancia entre desplegar y en verdad obtener el resultado que el despliegue prometía.</p>
+
+<table class="wrap">
+<thead><tr><th>Cifra</th><th>Fuente</th></tr></thead>
+<tbody>
+<tr><td>95% de los pilotos de IA generativa no muestran impacto medible en ganancias y pérdidas</td><td>MIT, <em>The GenAI Divide</em>, 2025</td></tr>
+<tr><td>89% de los pilotos de agentes nunca llega a producción</td><td>Deloitte, 2026</td></tr>
+<tr><td>42% de las empresas abandonó la mayoría de sus proyectos de IA en 2025</td><td>S&amp;P Global</td></tr>
+<tr><td>25% de las iniciativas entrega el retorno esperado</td><td>IBM</td></tr>
+<tr><td>21% de las empresas del S&amp;P 500 puede nombrar un beneficio medible de IA</td><td>Morgan Stanley</td></tr>
+</tbody>
+</table>
+
+<p>Rastrear el retorno realizado por agente es lo que le permite a una empresa apagar uno temprano, antes de que consumió un presupuesto que valga la pena discutir, en vez de descubrir la brecha un año después en un reporte que nadie pidió. Ninguna ejecución en el período, el séptimo indicador, es la advertencia de baja de la sección 3 reformulada como un número que un comité puede vigilar trimestre a trimestre, en lugar de una historia que alguien tiene que acordarse de contar.</p>
+
+<p>El <a class="g" href="harness-glossary.html#es-g-cost-per-task" data-tip="La unidad económica recomendada por la FinOps Foundation para cargas de trabajo agénticas, porque una sola acción del usuario puede disparar muchas llamadas al modelo subyacentes.">costo por tarea completada</a> es el mejor fundado de los ocho, porque una disciplina entera ya convergió en él de forma independiente. El marco 2026 de la FinOps Foundation trata la IA como una categoría tecnológica distinta y recomienda unidades económicas construidas alrededor de ella: costo por consulta, costo por usuario al mes, costo por flujo completado, costo por transacción de negocio. Para cargas de trabajo agénticas específicamente, la propia formulación de la fundación se acerca a una definición:</p>
+
+<blockquote><p>El costo por tarea completada es la medida más significativa, porque una sola acción del usuario puede disparar muchas llamadas al modelo subyacentes.</p></blockquote>
+
+<p>La urgencia detrás de esa recomendación se ve en lo rápido que se mueve la propia disciplina. Noventa y ocho por ciento de los profesionales de FinOps ahora gestionan el gasto en IA, frente a sesenta y tres por ciento un año antes y treinta y uno el año anterior a ese, según la encuesta 2026 State of FinOps a 1.192 encuestados que entre todos administran más de ochenta y tres mil millones de dólares en gasto de nube. La aritmética explica por qué el precio en la lista de un proveedor es el número equivocado para planificar: los flujos agénticos disparan entre diez y veinte llamadas al modelo por tarea de usuario, la recuperación de contexto infla la ventana entregada al modelo de tres a cinco veces, y un agente siempre activo sigue consumiendo todo el tiempo que está vivo, haya tarea o no. Planifica por el producto de tareas, pasos y tokens. Nunca por el precio de lista.</p>
+
+<p>Una admisión pertenece al cuerpo de esta pieza, no escondida en una nota al pie, porque es el mismo gesto de honestidad que la parte 3 hizo con la regla de dos, y la serie no puede hacer ese gesto una vez y después dejar de hacerlo en silencio. Ninguna fuente externa propone estos ocho indicadores como conjunto. Cinco tienen fundamento sólido fuera de esta serie: cobertura, certificación vencida, rechazo en la puerta, retorno realizado, costo por tarea completada. Dos descansan sobre analogía tomada de otra disciplina por completo: tasa de excepciones de la teoría de casi accidentes, ninguna ejecución de la teoría de cuentas inactivas. Uno, nivel contra entorno, es interno a esta serie, el propio accidente estructural de la parte 1, medido en vez de solo observado. Este panel no es un estándar de mercado. Es una síntesis, y cada línea de arriba declara exactamente de dónde vino. Dicho al revés, esa admisión es también la postura: nadie más ha publicado todavía este panel. Esta parte está proponiendo el primero.</p>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" role="img" aria-label="El bucle trimestral de la oficina: briefing, certificacion, operacion, recibos, indicadores, revalidacion, y de vuelta al briefing">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="es-p4d10-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="18" text-anchor="middle">EL BUCLE TRIMESTRAL DE LA OFICINA</text>
+
+<rect x="9" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="54" y="126" text-anchor="middle">BRIEFING</text>
+
+<line x1="99" y1="122" x2="107" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+
+<rect x="109" y="100" width="130" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="174" y="126" text-anchor="middle">CERTIFICACIÓN</text>
+
+<line x1="239" y1="122" x2="247" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+
+<rect x="249" y="100" width="95" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="296" y="126" text-anchor="middle">OPERACIÓN</text>
+
+<line x1="344" y1="122" x2="352" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+
+<rect x="354" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="399" y="126" text-anchor="middle">RECIBOS</text>
+
+<line x1="444" y1="122" x2="452" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+
+<rect x="454" y="100" width="105" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="506" y="126" text-anchor="middle">INDICADORES</text>
+
+<line x1="559" y1="122" x2="567" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+
+<rect x="569" y="100" width="122" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="630" y="126" text-anchor="middle">REVALIDACIÓN</text>
+
+<path d="M630,144 C630,196 54,196 54,144" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d10-arrow)"/>
+<text class="svg-sub" x="342" y="212" text-anchor="middle">retorno realizado contrastado contra el retorno que el briefing prometió</text>
+
+<text class="svg-cap" x="350" y="238" text-anchor="middle">ESTE BUCLE CORRE POR TRIMESTRE, NO POR TAREA. MEDIR CORRE DENTRO DE CADA CASILLA, NO ENTRE ELLAS</text>
+</svg>
+<figcaption>Este ciclo corre por trimestre, no por tarea. MEDIR corre dentro de cada casilla de arriba, nunca entre ellas, que es toda la distinción que esta parte existe para proteger.</figcaption>
+</figure>
+
+<h2 id="es-office">6. Dónde se sienta la oficina</h2>
+
+<p>Esta es la pregunta que ya se está haciendo todo lector de las primeras cinco secciones, y casi nada de lo escrito sobre gobernanza de agentes en verdad la responde. La postura que vale la pena defender es simple de plantear y más difícil de sostener: no dentro de TI. Esta es una función de control, la misma categoría que auditoría interna o calidad, y una función de control que reporta al ejecutor que se supone debe vigilar pierde su independencia en el instante en que lo hace.</p>
+
+<p>El precedente no es hipotético, y viene con quince años de un debate que sigue abierto, lo cual es en sí mismo la evidencia: no hay respuesta universal, solo un problema estructural que sigue recurriendo bajo un nombre nuevo. Dónde reporta hoy el director de seguridad de la información, según un referente de 2026 de IANS Research y Artico Search, es revelador: sesenta y cuatro por ciento a TI, al director de informática o de tecnología; once por ciento al director ejecutivo; cinco por ciento cada uno al director financiero, al director de riesgo, a legal y a otros roles del negocio.</p>
+
+<p>La formulación más filosa de por qué ese primer número es un problema, no un hecho neutral, viene de un consultor de seguridad y exfiscal federal, y es la mejor analogía que dio toda esta investigación:</p>
+
+<blockquote><p>Al director de informática se le premia por eficiencia y ahorro de costos, y al director de seguridad se le hace responsable de identificar riesgos que a menudo exigen gasto nuevo. Es como pedirle al jefe de bomberos que reporte a la persona cuyo bono depende de recortar el número de rociadores.</p></blockquote>
+
+<p>Esa frase sustenta, por fin, una línea que las notas de trabajo de esta parte venían arrastrando sin cita: una función de control subordinada a lo que supervisa deja de ser independiente, por muy bien intencionados que estén todos en la sala. La postura que emerge para 2026 es el reporte directo al director ejecutivo o al comité de riesgo de la junta, específicamente para asegurar independencia de las funciones que se están supervisando.</p>
+
+<p>Una lectura distinta, honesta, tiene que sentarse al lado de esa, o esta sección se lee como panfleto en vez de argumento. Una corriente dentro del mismo debate sostiene que enmarcar la relación como un conflicto de presupuesto inherente es improductivo y anticuado, que la meta real no es evitar la fricción sino diseñar alineación, y que la línea de reporte en sí es un medio, no un fin. Ambas lecturas pueden ser ciertas en empresas distintas. Ninguna es razón para saltarse la decisión de diseño.</p>
+
+<p>El dato específico de IA, no de seguridad en general, afila el mismo argumento. Una encuesta de 2026 a 650 líderes de seguridad encontró que prácticamente todos habían absorbido responsabilidades de gobernanza de IA sin que nadie se lo pidiera, y setenta y nueve por ciento dijo que su rol se había expandido más allá de lo que su mandato y sus recursos en verdad sostienen. Setenta y uno por ciento dijo que la IA ya toca los sistemas centrales del negocio. Solo dieciséis por ciento dijo gobernar bien ese acceso. La propia conclusión de la encuesta vale la pena citarla porque es el argumento de esta parte, planteado de forma independiente por alguien en otro campo y por otra razón:</p>
+
+<blockquote><p>La persona que tiene el título no tiene la autoridad, y las personas que tienen la autoridad no responden por los resultados. Ahí es donde se rompe el modelo.</p></blockquote>
+
+<p>La recomendación que sale de las organizaciones que en verdad están haciendo esto bien no es asignar un solo dueño en ningún lado, ni siquiera en riesgo. Es un modelo operativo distribuido que abarca funciones, con un comité que incluye legal, cumplimiento, dato, compras, recursos humanos y las unidades de negocio que en verdad están desplegando. Ese hallazgo debilita la opción de un solo dueño en cualquier departamento y fortalece una tercera opción que vale la pena plantear con claridad, con el costo de cada opción nombrado en vez de una recomendación entregada sin ninguno.</p>
+
+<p>Dentro de operaciones es rápido de montar y está cerca de donde en verdad se construyen los agentes, y carga exactamente el mismo problema del director de seguridad dentro de TI: la función reporta a la persona cuyo presupuesto se supone debe limitar. Dentro de riesgo y cumplimiento es independiente por construcción, y arriesga la falla opuesta: lo bastante lejos del detalle técnico como para que la certificación se convierta en su propio sello de goma, exactamente la falla que toda esta parte existe para prevenir, un nivel más abajo. Una célula de doble reporte, reportando operativamente a quien la aloja día a día y formalmente a un comité de gobernanza o de riesgo para la independencia, es la opción que en verdad calza en una empresa demasiado pequeña para construir un departamento independiente, y es la que más se acerca a la restricción que la próxima sección hace explícita.</p>
+
+<p>Un dato adyacente pertenece aquí porque anticipa lo que pasa cuando esta decisión toma el camino fácil en vez del correcto. Setenta y ocho por ciento de los equipos de FinOps reportan al director de tecnología o de informática; solo ocho por ciento reporta al director financiero. La gestión del costo de IA se está tratando como capacidad tecnológica en vez de función financiera, el mismo patrón del debate del director de seguridad, una función de control ubicada dentro del ejecutor que se supone debe vigilar, por la misma razón, probablemente rumbo al mismo resultado.</p>
+
+<h2 id="es-warning">7. La advertencia: siete agentes y una planilla</h2>
+
+<p>Esta es la parte de la serie con más chances de agriarse en folleto de consultoría, y vale la pena decirlo antes de escribir otra frase de ella. El tema invita vocabulario de plataforma, y el mercado que le vende a ese miedo exacto ya suena fuerte: torres de control, gobernanza de punta a punta, una fuerza de trabajo autónoma, herramientas que prometen descubrir y apagar agentes fuera de control. Nada de ese vocabulario está exactamente equivocado. Simplemente está apuntado a una empresa mucho más grande que la mayoría de las que necesitan esta parte.</p>
+
+<p>El antídoto es una sola restricción, sostenida de forma explícita a lo largo de todo lo que sigue: todo lo que propone esta parte tiene que funcionar en una empresa con siete agentes y una planilla. Un registro es una tabla. La certificación es una reunión con minuta. La revalidación es una fecha en un calendario. Las herramientas entran cuando el volumen en verdad las justifica, no antes, que es la propia regla de dimensionamiento de <a href="harness-p1.html">la parte 1</a>, aplicada aquí a la gobernanza misma en vez de a un solo agente.</p>
+
+<p>Mira cualquier panel de operaciones de agentes que se esté construyendo hoy, y converge en los mismos cuatro objetos, y ahí se detiene. Una misión, con su alcance y su equipo declarados. Una ejecución, con un identificador, un paso y un estado. Un conteo de tokens, una cifra de caché y un costo, atados a esa ejecución. Y los artefactos y errores que esa ejecución dejó atrás. Ese es un piso razonable y honesto, y la mayor parte de lo que se está lanzando ahora mismo no va más allá.</p>
+
+<p>Una distinción dentro de ese piso vale la pena plantearla como principio general, porque es fácil de construir mal y caro de reconstruir una vez que la historia de un agente depende de ella: misión y ejecución no son el mismo objeto, y colapsarlas es un error. Una sola misión puede generar muchas ejecuciones, y una ejecución fallida no invalida la misión que la generó. Es la misma distinción que ya trazó el paso Delegar de <a href="harness-p2.html#es-delegar">la parte 2</a>, entre la unidad de despacho y la unidad de durabilidad, llegando aquí de forma independiente, desde otra dirección.</p>
+
+<p>Dos decisiones de diseño, visibles en herramientas construidas en esta línea, merecen quedar escritas como recomendaciones propias, sin ningún producto ni empresa atado a ellas, porque son principios, no aprobaciones. Una ejecución fallida debería seguir visible en la cola, justo al lado de la que todavía corre. Un panel que esconde la falla produce exactamente la ilusión de calidad que <a href="harness-p2.html">la parte 2</a> advirtió, y es la forma más barata del mundo de fabricar un panel que se lee en verde. Y cada agente necesita su propio interruptor de apagado, con un estado obligatorio mantenido estructuralmente separado de uno opcional. Eso es autoridad expresada en una interfaz, no enterrada en una instrucción, la separación de poderes de la parte 3 hecha literal: la política no vive en el texto que lee el modelo. Vive en un control al que el modelo no puede llegar en absoluto.</p>
+
+<p>Lo que falta en ese mismo piso no es una crítica al trabajo de ningún equipo. Es la forma de la oficina que esta parte viene describiendo desde el principio, y cinco brechas muestran exactamente dónde termina el piso y dónde tiene que empezar la oficina.</p>
+
+<table class="wrap">
+<thead><tr><th>Brecha</th><th>Fundada en</th></tr></thead>
+<tbody>
+<tr><td>Un dueño nombrado por agente. Un rol no es una persona, y un rol no responde por nada</td><td>824.000 identidades huérfanas sin dueño en ningún sistema de recursos humanos</td></tr>
+<tr><td>La certificación como estado con fecha de validez, no como evento único</td><td>La recertificación periódica como práctica estándar de la gobernanza de identidad</td></tr>
+<tr><td>Dar de baja. Todo el mundo sabe encender; casi nadie tiene un procedimiento para apagar</td><td>Las cuentas inactivas casi duplicándose en un año, y tres intrusiones documentadas</td></tr>
+<tr><td>El caso de uso aprobado contrastado contra lo que en verdad está corriendo. Una lista no es un registro de gobernanza</td><td>La cifra ampliamente citada de que buena parte de las organizaciones no puede producir un inventario de IA</td></tr>
+<tr><td>Resultado de negocio, no solo resultado de ejecución. Tokens y pasos son un resultado técnico, no uno de negocio</td><td>La brecha de cuarenta y seis puntos de Kyndryl entre desplegar y obtener el resultado buscado</td></tr>
+</tbody>
+</table>
+
+<p>La última cierra el círculo más lindo de toda la serie. Esa columna es el bloque siete del skill de briefing que este proyecto ya usa, el retorno prometido, que vuelve a vencerse. La oficina es donde esa promesa se verifica, no donde se archiva. Por eso exactamente el ciclo trimestral de la sección anterior termina de vuelta en el briefing, y no en un reporte que nadie vuelve a abrir.</p>
+
+<h2 id="es-platforms">8. Cada plataforma gobierna hacia adentro</h2>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="Toda plataforma gobierna hacia adentro: un registro maestro se sienta encima y fuera de las paredes de cada plataforma">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="es-p4d9-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="16" text-anchor="middle">TODA PLATAFORMA GOBIERNA HACIA ADENTRO</text>
+
+<path d="M260,32 a90,12 0 0 1 180,0 v30 a90,12 0 0 1 -180,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<path d="M260,32 a90,12 0 0 0 180,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="350" y="56" text-anchor="middle">REGISTRO MAESTRO</text>
+<text class="svg-sub" x="350" y="70" text-anchor="middle">independiente de las plataformas</text>
+
+<line x1="290" y1="82" x2="99" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="325" y1="82" x2="266" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="375" y1="82" x2="433" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="410" y1="82" x2="600" y2="128" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-p4d9-arrow)"/>
+
+<rect x="20" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="35" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="152" text-anchor="middle">Plataforma A</text>
+<rect x="35" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="99" y="232" text-anchor="middle">agentes</text>
+<line x1="99" y1="212" x2="99" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="187" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="202" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="152" text-anchor="middle">Plataforma B</text>
+<rect x="202" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="266" y="232" text-anchor="middle">agentes</text>
+<line x1="266" y1="212" x2="266" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="354" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="369" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="152" text-anchor="middle">Construido internamente</text>
+<rect x="369" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="433" y="232" text-anchor="middle">agentes</text>
+<line x1="433" y1="212" x2="433" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<rect x="521" y="112" width="157" height="150" fill="none" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<rect x="536" y="128" width="127" height="40" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="146" text-anchor="middle">Hoja de cálculo y</text>
+<text class="svg-sub" x="600" y="158" text-anchor="middle">automatización simple</text>
+<rect x="536" y="212" width="127" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-sub" x="600" y="232" text-anchor="middle">agentes</text>
+<line x1="600" y1="212" x2="600" y2="170" stroke="#1b1b19" stroke-width=".5"/>
+
+<line x1="99" y1="244" x2="290" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="266" y1="244" x2="325" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="433" y1="244" x2="375" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#es-p4d9-arrow)"/>
+<line x1="600" y1="244" x2="410" y2="90" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#es-p4d9-arrow)"/>
+
+<text class="svg-cap" x="350" y="292" text-anchor="middle">CADA PLATAFORMA ES PROFUNDA, CREÍBLE Y LIMITADA POR SUS PROPIAS PAREDES. TU RESPONSABILIDAD NO LO ES</text>
+</svg>
+<figcaption>Las paredes de cada plataforma están dibujadas deliberadamente visibles, y el registro maestro se sienta claramente por encima y por fuera de cada una de ellas. Sin importar en qué plataforma corra un agente, el registro que responde por él no vive dentro de las paredes de esa plataforma.</figcaption>
+</figure>
+
+<p>Un hábito de vocabulario necesita decidirse antes de que esta pieza se cierre, porque es la diferencia entre un argumento y un discurso de venta. El mercado ya tiene sus propias palabras para este problema, y no se van a ir: torre de control, gobernanza de punta a punta, una fuerza de trabajo autónoma, herramientas construidas para descubrir y apagar lo que esté fuera de control. Esta parte no debería competir con ese vocabulario, y tampoco debería burlarse de él. Debería hacer el único movimiento que solo ella está en posición de hacer: separar la función del producto. Una torre de control es un producto. Una oficina es una función. Un producto se compra. Una función se organiza. Solo la segunda sobrevive el día en que reemplazan el producto, y todo producto eventualmente se reemplaza.</p>
+
+<p>Una palabra que esta pieza evitó a propósito en cada sección anterior, y que nombra directamente recién ahora solo para descartarla: plataforma. Usa esa palabra para describir lo que propone esta parte, y toda la pieza se lee como folleto en la primera pasada, sin importar lo que en verdad argumenten los ocho indicadores y las cinco brechas.</p>
+
+<p>La razón por la que la oficina tiene que ser una función de la empresa, y nunca un producto que la empresa compra, es la frase que la propia arquitectura de todo proveedor de plataforma ya prueba sin querer. Cada plataforma gobierna hacia adentro, cada una profunda, creíble y genuinamente útil, y cada una limitada por sus propias paredes en el instante en que la historia de un agente cruza hacia otra plataforma, un sistema construido internamente, o una planilla que nadie etiquetó como infraestructura. Tu responsabilidad no se detiene en ninguna de esas paredes. Nunca iba a hacerlo. Por eso la oficina tiene que existir como algo que la empresa organiza, no algo que compra.</p>
+
+<h2 id="es-accountability">9. Quién responde, y dónde estás</h2>
+
+<p>Vuelve una vez más a las veinte mil cuentas con las que abrió esta parte. Ningún tribunal ha fallado todavía sobre ese incidente como falló un tribunal canadiense sobre el chatbot de Air Canada, y tampoco aparece ningún caso brasileño en ningún lado de la investigación de esta parte, la misma limitación que <a href="harness-p3.html#es-opening">la parte 3</a> ya cargó y nombró en vez de esconder. Lo que ambos incidentes comparten es la misma lección desde dos direcciones distintas. Air Canada perdió porque nadie pudo mostrar que las cuatro funciones alguna vez se separaron para una sola acción. El bot de recuperación de cuentas falló por la misma razón, a escala de población: nadie pudo mostrar que la empresa siquiera supiera cuántos agentes como ese estaban corriendo, y mucho menos quién era dueño de cada uno.</p>
+
+<p>La empresa de la directora ya puede responder la pregunta de la junta, y lo que cambió no es una plataforma que compró. Es un registro que es una tabla, certificaciones que son reuniones con minuta, ocho indicadores compilados una vez por trimestre en vez de armados en pánico, y un comité con independencia real y autoridad real, sentado en algún lugar distinto de dentro del equipo cuyo presupuesto se supone debe vigilar. Pregúntale hoy cuántos agentes corre la empresa, quién es dueño de cada uno, y cuáles todavía se pagan a sí mismos, y la respuesta toma minutos, con evidencia detrás, en vez de una reunión para averiguar quién podría saber.</p>
+
+<p>Cuatro partes atrás, ella heredó un agente que nadie había diseñado en verdad y que no sabía explicar cuando algo salía mal. Termina esta serie corriendo una pequeña población de ellos, cada uno con un dueño, un nivel certificado, una fecha de revalidación ya en el calendario, y un comité que lee las excepciones en vez del resumen de logros. Ese es todo el argumento que esta serie viene haciendo desde la parte 1, dicho una vez más en su forma más corta: un agente que nadie gobierna no es un atajo. Es una deuda sin fecha de vencimiento, acumulando interés en silencio hasta el día en que algo la fuerza a vencer.</p>
+
+<table class="wrap">
+<thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, los niveles de autonomía y los riesgos a nivel de junta directiva</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td>Parte 4, esta</td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Parte 4 de 4 · Serie Harness · La cifra del 43 por ciento sobre inventario de IA en la sección 5 se atribuye ampliamente a Gartner; el reporte de origen no pudo localizarse pese a una búsqueda directa, y se nombra aquí con esa salvedad en vez de como un hecho establecido. La descripción del panel de agentes en la sección 7 es deliberadamente genérica, tomada de patrones visibles en las herramientas actuales y no de ningún producto, equipo o persona en particular. Ningún caso brasileño aparece entre los incidentes de esta parte, la misma limitación que ya cargó la parte 3. El personaje de la apertura continúa desde las partes 1 a 3 y está compuesto a partir de patrones recurrentes.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
+</div>
 </main>
 <script>
 (function(){
