@@ -144,6 +144,79 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 
 ---
 
+## Part 4 research: life cycle, roles, indicators, and where the office sits
+
+Gathered 30 August 2026 for `docs/research-part4.pt.md`, answering the block A scope from the working dossier that had fixed the thesis, roles, indicators and closing argument with no source at all. A follow-up round the same day verified two load-bearing claims against a primary source (the SCHUFA holding, the Kyndryl figures) and attempted, without success, to verify a third (the Gartner 43% figure), see its note below.
+
+### Axis 1: the agent life cycle
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | CloudEagle, why every team is quietly building non-human identity debt | https://www.cloudeagle.ai/blogs/why-every-team-is-quietly-building-up-non-human-identity-debt | Veza's 2026 identity survey: 824,000 orphaned active identities in the analysed base, about 8% of a provider's total users, still holding live access; machine-to-human identity ratio near 17 to 1. "Projects end, credentials do not, because no project plan says delete the identities we created" |
+| V | nhimg.org, IGA solutions in 2026 expose the limits of legacy access reviews | https://nhimg.org/articles/iga-solutions-in-2026-expose-the-limits-of-legacy-access-reviews/ | Quarterly certification finds stale access after the fact, not before it becomes risk; recertification should trend event-driven, not just calendar-driven |
+| V | Waldo Security, best IGA solutions in 2026 | https://www.waldosecurity.com/post/best-identity-governance-administration-iga-solutions-in-2026 | Second reading of the same point |
+| V | Obsidian Security, service account security best practices | https://www.obsidiansecurity.com/blog/service-account-security-best-practices | How an orphaned account is born: a pilot's microservice is retired, its service account keeps running in production with administrative database rights |
+| V | SC World, non-human identities are outgrowing your governance model | https://www.scworld.com/risk-advisory/non-human-identities-are-outgrowing-your-governance-model | Second reading of the same accumulation mechanism |
+| V | The Hacker News, the hidden risk of orphan accounts | https://thehackernews.com/2026/01/the-hidden-risk-of-orphan-accounts.html | Coins "identity dark matter", accounts invisible to governance but active in infrastructure; states agentic AI processes fall natively into this category |
+
+### Axis 2: the four roles and the non-accumulation rule
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | NC State ERM, COSO's take on the three lines of defense | https://erm.ncsu.edu/library/article/cosos-take-on-the-three-lines-of-defense | The Three Lines Model (Institute of Internal Auditors, formalised 2013, revised 2020 and 2023) maps onto the four roles almost exactly: first line operates, second line assists and challenges, third line is independent assurance reporting to the governing body |
+| V | Deloitte, modernising the three lines of defence model | https://www.deloitte.com/mt/en/services/consulting-risk/perspectives/modernising-the-three-lines-of-defence-model.html | Second reading of the same model |
+| V | Pathlock, the COSO framework | https://pathlock.com/blog/internal-controls/coso-framework/ | Segregation of duties defined as keeping authorising and recording as separate functions; the authority matrix's stated purpose is preventing unauthorised action, matching Part 3's matrix of authority almost word for word |
+| V | arXiv 2305.17038, frontier AI developers need an internal audit function | https://arxiv.org/pdf/2305.17038 | Academic application of the Three Lines Model to frontier AI risk |
+| V | arXiv 2212.08364, three lines of defense against risks from AI | https://arxiv.org/pdf/2212.08364 | Second academic application of the same model |
+| V | Echelon Cyber, the AI governance gap no one's talking about | https://echeloncyber.com/intelligence/entry/the-ai-governance-gap-no-ones-talking-about-why-your-ciso-cant-own-this-alone | Splunk 2026 survey, 650 security leaders: only 6% of organisations running agents updated their governance frameworks to match what those agents actually do. No AI governance framework (NIST AI RMF, ISO 42001, AIUC-1, NIST's agent standards initiative) names roles equivalent to the four proposed here, treated in the text as a positioning point, not a gap |
+
+### Axis 3: the eight indicators
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| P | Airia, shadow AI statistics every CISO needs in 2026 | https://airia.com/blog/shadow-ai-statistics-key-data-points-every-ciso-needs-in-2026/ | Aggregator citing Gartner (43% of organisations cannot produce an AI inventory) and Microsoft (78% of workplace AI users bring their own tools). The 43% figure's primary Gartner report was searched for directly, including on gartner.com, and not found. Stays **P**; attribute in the article to "widely cited Gartner research", not to Gartner directly |
+| V | OSHA Community, Heinrich's safety triangle | https://oshacommunity.com/osha/heinrichs-safety-triangle/ | Replaces a patent-document citation from the first research round. Heinrich's 1931 accident triangle, 300 near misses to 29 minor injuries to 1 major injury. Modern literature questions the fixed ratio but not the underlying logic, that a loss event is almost always preceded by a warning |
+| V | Legiscope, GDPR Article 22 automated decision-making | https://www.legiscope.com/blog/gdpr-article-22-automated-decision-making.html | The SCHUFA holding itself, CJEU, Dec 2023, case C-634/21: "solely automated" does not require zero human involvement; a human who formally signs off but in practice defers entirely to the algorithm still leaves the decision "solely automated" |
+| V | Masaryk University Journal of Law and Technology, doctrinal analysis of SCHUFA | https://journals.muni.cz/mujlt/article/view/41367 | Formulation tied directly to SCHUFA's own reasoning, cross-read with Uber, Deliveroo and CaixaBank case law: nominal human review fails Article 22 when it amounts to rubber-stamping without interpretive criteria or authority to deviate |
+| V | GDPR Local, automated decision-making under GDPR | https://gdprlocal.com/automated-decision-making-gdpr/ | General EDPB guidance on meaningful human review, four criteria, not specific to SCHUFA. Cite separately from the SCHUFA holding above, never as if one source made both points |
+| P | CJEU, case C-634/21 (SCHUFA), original decision | not located | Referenced in the two sources above, not read directly |
+| V | MIT, *The GenAI Divide*, 2025, via Legal.io | https://www.legal.io/blog/5719519/MIT-Report-Finds-95-of-AI-Pilots-Fail-to-Deliver-ROI-Exposing-GenAI-Divide | 95% of generative AI pilots show no measurable P&L impact |
+| V | Kyndryl, 2026 People Readiness Report, via PR Newswire | https://www.prnewswire.com/news-releases/kyndryl-report-ai-adoption-accelerates-as-workforce-readiness-becomes-the-roi-difference-maker-302810837.html | Primary source, verified this round, 1,100 leaders across eight countries. 57% say AI is embedded in core processes or deployed broadly; of those, 32% achieved at least one of their top two AI goals and only 11% achieved both, two different cuts of the data, not one number |
+| V | Terminal X, AI ROI in 2026, why most enterprise AI fails | https://www.terminal-x.ai/research/ai-roi-in-2026-why-most-enterprise-ai-fails-and-what-actually-works | Additional ROI-gap figures (S&P Global, IBM, Morgan Stanley); aggregator, individual numbers **P** |
+| V | Beri.net, AI agent adoption in the enterprise, Gartner and IDC | https://www.beri.net/article/ai-agent-adoption-enterprise-2026-gartner-idc | Second aggregator, same caveat |
+| V | Microsoft Tech Community, AfterLogin, forgotten account cleanup | https://techcommunity.microsoft.com/blog/educatordeveloperblog/afterlogin-we-turned-forgotten-account-cleanup-into-a-haunted-house-game-with-mi/4539781 | The nuance that keeps "no execution in the period" from becoming an auto-delete trigger: finding a stale account is easy, judging whether it is truly dead or something still depends on it silently is the hard part |
+| V | N-iX, FinOps for AI | https://www.n-ix.com/finops-for-ai/ | FinOps Foundation's 2026 framework treats AI as its own technology category; for agentic workloads, cost per completed task is the recommended unit |
+| V | Compresr, AI FinOps definitive guide | https://compresr.ai/blog/ai-finops-definitive-guide-costs-and-value | Second reading of cost-per-task as the agentic unit-economics measure |
+| V | We The Flywheel, AI FinOps and GPU cost management 2026 | https://wetheflywheel.com/en/guides/ai-finops-gpu-cost-management-2026/ | State of FinOps 2026 survey, 1,192 respondents managing over $83bn in cloud spend: 98% of FinOps practitioners now manage AI spend, up from 63% a year earlier. Agentic flows fire 10 to 20 model calls per user task; plan by tasks times steps times tokens, not list price |
+
+No external source proposes these eight indicators as a set. Five have solid external grounding (coverage, expired certification, gate rejection rate, realised return, cost per mission), two rest on analogy from another discipline (exception rate via near-miss theory, no-execution via dormant-account theory), and one is internal to the series (tier against environment). Part 4's text must say this explicitly, the same honesty move Part 3 made for the rule of two.
+
+### Axis 4: where the office sits
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | CSO Online, it's time to rethink CISO reporting lines | https://www.csoonline.com/article/4136293/its-time-to-rethink-ciso-reporting-lines.html | IANS Research and Artico Search 2026 benchmark: 64% of CISOs report into IT (CIO or CTO), 11% to the CEO, 5% each to the CFO, chief risk officer, legal and other business roles. Quotes a security consultant and former federal prosecutor: asking the CISO to report to the person whose bonus depends on cutting the number of sprinklers is asking the fire inspector to do the same |
+| V | CSO Online, the endless CISO reporting line debate | https://www.csoonline.com/article/4158505/the-endless-ciso-reporting-line-debate-and-what-it-says-about-cybersecurity-leadership.html | The honest counterpoint: framing the relationship as a structural budget conflict is outdated, alignment is the goal, the reporting line is a means, not an end |
+| V | VantEdge Search, CISO elevation in 2026 | https://www.vantedgesearch.com/resources/blogs/ciso-elevation-in-2026-why-cybersecurity-leadership-is-moving-to-the-c-suite-and-board-tables/ | Emerging position for 2026: direct reporting to the CEO or the board's risk committee, specifically to secure independence from the functions being overseen |
+| V | Echelon Cyber, the AI governance gap no one's talking about | https://echeloncyber.com/intelligence/entry/the-ai-governance-gap-no-ones-talking-about-why-your-ciso-cant-own-this-alone | Same Splunk 650-leader survey as axis 2: 79% say their role expanded past its mandate and resources, 71% say AI touches core business systems, only 16% govern that access well. "The person who holds the title doesn't hold the authority, and the people who hold the authority don't answer for the outcomes." Recommends a distributed operating model over a single owner, even in risk |
+| V | Build MVP Fast, AI FinOps function, token budget, org chart 2026 | https://www.buildmvpfast.com/blog/ai-finops-function-token-budget-org-chart-2026 | Adjacent parallel for the cost section: 78% of FinOps teams report to the CTO or CIO, only 8% to the CFO, the same pattern of a control function sitting inside the executor |
+
+### Axis 5: vocabulary calibration
+
+No new sources needed. Reuses the "kill switch" sources already verified in the Part 3 block above (control tower, end-to-end governance, autonomous-workforce vocabulary). Deliberate word to avoid in the article: "platform." A product is bought, a function is organised, and only the second survives the vendor being replaced.
+
+### Axis 6: narrative cases
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | Cloud Security Alliance, Meta AI support bot account takeover 2026 | https://labs.cloudsecurityalliance.org/research/csa-research-note-meta-ai-support-bot-account-takeover-20260/ | Verified in full against the primary source. Between 17 April and 31 May 2026, attackers took over 20,225 Instagram accounts, including the Obama White House account, a US Space Force Chief Master Sergeant's profile and Sephora's brand account, by exploiting Meta's High Touch Support chatbot: it could both link a new email to an existing account and trigger a password-reset message to that email in the same interaction, without verifying the requester owned the account. Breach notification filed with the Maine Attorney General 5 June 2026. Meta disabled the bot's autonomous capability 31 May 2026, routing sensitive changes to human review |
+| V | The Hacker News, the hidden risk of orphan accounts | https://thehackernews.com/2026/01/the-hidden-risk-of-orphan-accounts.html | Reused from axis 1. Colonial Pipeline 2021, an old inactive VPN account with no two-factor authentication, as a decommissioning-adjacent case |
+| V | The Hacker News, dormant GitHub accounts help attackers | https://thehackernews.com/2026/07/dormant-github-accounts-help-attackers.html | Over fifty accounts created two to five years earlier, deliberately kept dormant before being used to enumerate organisations and clone private repositories: dormancy as attacker strategy, not neglect |
+
+Same limitation as Part 3: no Brazilian case was found. Every narrative case above is foreign, and Part 4's text must say so.
+
+---
+
 ## Do not cite
 
 Skill showcases with no visible origin repository, no licence and no verifiable maintenance. Dozens of these exist, especially for code cleanup. The risk is twofold: unauditable content, and installing a third-party skill means executing a third party's instructions inside your own environment.
