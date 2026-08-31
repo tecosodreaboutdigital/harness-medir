@@ -32,7 +32,7 @@ En orden. Cada elemento trae su criterio de listo.
 
 ---
 
-## 1. Escribir la parte 3 — hecho
+## 1. Escribir la parte 3, hecho
 
 **Estado: escrita y publicada en `harness-p3.html`, en los tres idiomas.** Las nueve secciones de abajo están todas en el cuerpo (`build/body_p3_en.html`, `_pt.html`, `_es.html`), con los cinco diagramas incorporados y traducidos por completo (incluida cada etiqueta de SVG, verificada renderizando cada diagrama aislado en los tres idiomas, sin desborde, sin superposición), los artefactos de matriz de autoridad y esquema de recibo en el texto, las dos obligaciones de honestidad honradas, y el arco del personaje de Air Canada cerrándose en la sección 9. Los conteos de palabras quedan cercanos entre los tres (EN 5.131, PT 5.468, ES 5.676), consistente con una traducción real y no un resumen. Se mantiene abajo como registro de seguimiento.
 
@@ -54,20 +54,25 @@ Dos obligaciones de honestidad que el dosier marca explícitamente: declarar que
 
 ---
 
-## 2. Escribir la parte 4
+## 2. Escribir la parte 4, inglés hecho, traducción pendiente
 
-Investigación no iniciada, alcance definido en el bloque A del dosier. Tesis central: el ciclo de vida del agente, estados y no pasos, distinguido de MEDIR con claridad suficiente para que el lector no confunda los dos.
+**Estado: inglés escrito y publicado en `harness-p4.html`.** Nueve secciones (`build/body_p4_en.html`), cinco diagramas incorporados (D6 a D10, el D10 renderizado ahora para esta pieza), la tabla de los seis estados del ciclo de vida, la tabla de los cuatro roles con la regla de no acumulación, la tabla de los ocho indicadores con la admisión de honestidad de que el panel es síntesis, el argumento de la tasa de rechazo en el portón anclado en el SCHUFA que une la parte 4 al fundamento legal de la parte 3, el precedente de la línea de reporte del CISO para dónde se sienta la oficina, la restricción de siete agentes y una hoja de cálculo sostenida a lo largo de toda la sección de advertencia, y la tabla de cierre en el mismo patrón que la parte 3. Las pestañas en portugués y español son por ahora un boceto honesto de "traducción en curso" (`build/body_p4_pt.html`, `build/body_p4_es.html`), el mismo estado por el que pasó la parte 3 más temprano el mismo día de trabajo antes de que llegara su propia traducción. Diez nuevas entradas de glosario añadidas en los tres idiomas; `harness-sources.html` ganó una sección de la parte 4, 32 fuentes.
 
-Estructura a cubrir, según el dosier, orden sujeto a la redacción:
+Investigación completa, ver la sección de la parte 4 en `sources/inventory.md` y `docs/research-part4.pt.md`. Tesis central realizada: el ciclo de vida del agente, estados y no pasos, distinguido de MEDIR con claridad suficiente para que el lector no confunda los dos.
 
-1. El ciclo de vida en sí, seis estados desde un briefing versionado hasta el desmantelamiento, con las dos transiciones que casi nadie implementa, homologación vencida y sin ejecución en el período, ambas llevando al desmantelamiento
-2. Los cuatro roles y la regla de no acumulación, la misma separación de poderes de la parte 3, ahora en el plano organizacional
-3. Los ocho indicadores, dos de los cuales miden la calidad de la propia gobernanza, no la del agente: la tasa de excepción, y la tasa de rechazo del propio portón
-4. Dónde se sienta la oficina, y por qué no en TI, presentando las opciones realistas con el costo de cada una
-5. La advertencia: esta es la pieza con mayor riesgo de convertirse en folleto de proveedor, y el antídoto es una restricción explícita que atraviesa el texto, todo lo que propone tiene que funcionar en una empresa con siete agentes y una hoja de cálculo
-6. El argumento de cierre: toda plataforma gobierna hacia adentro, y por eso la oficina tiene que ser función de la empresa, no un producto que compra
+Estructura cubierta, en el orden en que realmente se redactó:
 
-**Listo cuando:** las tres versiones estén listas, el arco del personaje cierre la serie, los ocho indicadores estén definidos con fórmula, y el texto sostenga la restricción de siete agentes y una hoja de cálculo de principio a fin.
+1. Abre con la toma de las 20.225 cuentas de Instagram, el modo de fallo por concentración de la parte 3 a escala poblacional
+2. La directora reingresa operando seis sistemas que nadie ha contado, incapaz de responder la pregunta más simple de un consejero
+3. El ciclo de vida en sí, seis estados desde un briefing versionado hasta el desmantelamiento, con las dos transiciones que casi nadie implementa, certificación vencida y sin ejecución en el período, ambas llevando al desmantelamiento
+4. Los cuatro roles y la regla de no acumulación, la misma separación de poderes de la parte 3, ahora en el plano organizacional, con fuente en el Modelo de las Tres Líneas del Instituto de Auditores Internos
+5. Los ocho indicadores, dos de los cuales miden la calidad de la propia gobernanza, no la del agente: la tasa de excepción, y la tasa de rechazo del propio portón, cerrados por el D10, el bucle trimestral de la oficina
+6. Dónde se sienta la oficina, y por qué no en TI, presentando las opciones realistas con el costo de cada una
+7. La advertencia: el antídoto contra convertirse en folleto de proveedor es una restricción explícita que atraviesa el texto, todo lo que propone tiene que funcionar en una empresa con siete agentes y una hoja de cálculo
+8. El argumento de cierre: toda plataforma gobierna hacia adentro, y por eso la oficina tiene que ser función de la empresa, no un producto que compra
+9. Quién responde, y dónde estás: el arco de la directora se cierra a lo largo de las cuatro partes
+
+**Listo cuando:** las tres versiones estén listas, el arco del personaje cierre la serie, los ocho indicadores estén definidos con fórmula, y el texto sostenga la restricción de siete agentes y una hoja de cálculo de principio a fin. **Inglés cumplido, 30 de agosto de 2026; quedan el portugués y el español.**
 
 ---
 

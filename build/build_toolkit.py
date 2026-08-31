@@ -36,7 +36,7 @@ FILES = {'p1': 'harness-p1.html', 'p2': 'harness-p2.html', 'p3': 'harness-p3.htm
          'glossary': 'harness-glossary.html', 'sources': 'harness-sources.html'}
 LABELS_EN = {'p1': 'Part 1', 'p2': 'Part 2', 'p3': 'Part 3', 'p4': 'Part 4',
              'guide': 'Compact guide', 'glossary': 'Glossary', 'sources': 'Sources'}
-EXISTS = {'p1', 'p2', 'p3', 'guide', 'glossary', 'sources'}  # p4 not written yet
+EXISTS = {'p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources'}  # p4 now written
 
 def topbar_html(cur):
     pieces = []

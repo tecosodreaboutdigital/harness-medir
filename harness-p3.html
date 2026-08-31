@@ -81,6 +81,11 @@ body{
 .lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
 .lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
 @media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
 main[hidden]{display:none}
 .eyebrow{
   font-size:10px;
@@ -406,7 +411,7 @@ p code{
 <span class="sep">·</span>
 <span class="cur" data-key="p3">Part 3</span>
 <span class="sep">·</span>
-<span class="pending" data-key="p4">Part 4</span>
+<a href="harness-p4.html#en-" data-key="p4">Part 4</a>
 <span class="sep pipe">|</span>
 <a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a>
 <span class="sep">·</span>
