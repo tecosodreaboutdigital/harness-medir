@@ -110,6 +110,24 @@ D10, the office's own quarterly loop, is no longer a playbook candidate: it ship
 
 ---
 
+## 4. Audit skill citations for consistency, and close the Part 3 and Part 4 gap
+
+Raised 31 August 2026, from a direct question about one specific skill that exposed a broader pattern worth fixing deliberately, not one at a time by accident.
+
+**The specific case that started it.** `research`, from the `mattpocock/skills` collection, is one of the twelve skills this project already installed, already audited (the collection passed `TOOLS.md`'s network/execution-pattern scan and licence check), and already marked **V** in `sources/inventory.md`. It is real, in use, and cleared. But it is never named anywhere in the project's own text: the compact guide's `mattpocock/skills` card spotlights a different skill from the same twelve (the one that forces a questioning session before execution) as its worked example, and Part 2's prose does not mention it either. This session used it directly, repeatedly, at real scale, to research and verify the primary-source gaps closed in the two citation-correction rounds earlier on 31 August: it held up well across every use, its output was consistently well-sourced and saved to a sensible location, with one minor inefficiency worth a note if it gets written up, its own instruction to "spin up a background agent" causes one redundant layer of delegation when it is invoked from inside a call that is already a background agent. Being installed and audited at the collection level is not the same thing as being individually verified and cited. Give `research` its own line, in the compact guide and, if it fits the argument naturally, in Part 2's prose, the same way `ai-slop-cleaner`, `holdfast` and `sensors-cli` each get one.
+
+**The broader gap this exposed.** Part 2 cites specific, named third-party skills that ground its own argument: `ai-slop-cleaner` for the five-rule cleanup discipline, `holdfast` for durable partitioned execution, `sensors-cli` for a firing-history dashboard, `superpowers` and `agentskills` for the skill format itself, each one checked against `sources/inventory.md` and linked with the project's `.src` citation convention added on 31 August. Parts 3 and 4 have no equivalent. Neither cites a single concrete, installable tool for what each part actually argues: Part 3 for enforcing permission outside the model, logging, or catching prompt injection before it reaches a tool call; Part 4 for an agent registry, identity governance, or the quarterly indicator compilation the office is supposed to run. The compact guide's own MEDIR organisation does not fix this either, since its cards are not scoped per part. A reader who finishes Part 3 or Part 4 persuaded by the argument has nowhere in this project to go find a real, checked tool that helps build what the part just described, exactly the gap Part 2 does not have.
+
+**The process to repeat, every time a skill or tool is considered for citation, not only for this round:**
+1. Is it actually installed and does it pass `TOOLS.md`'s existing checklist (licence, a scan for undeclared network or execution patterns)? If not installed yet, that is the first step, not a shortcut past it.
+2. Is it individually named and discussed somewhere in this project's own text, not just present inside a collection's generic card or a bullet list nobody reads closely? A skill riding along inside an installed collection is not the same claim as a skill this project actually recommends.
+3. Does real usage exist to check it against, not just a read of its `SKILL.md`? A skill nobody here has actually run is a documentation claim, not a verified one.
+4. Which part's argument does it actually ground, concretely, the same way `holdfast` grounds Part 2's partitioned-execution discussion? A tool cited without a specific claim it supports is decoration, not evidence.
+
+**Done when:** `research` has its own citation, in the compact guide and, if the fit is real and not forced, in Part 2. At least one concrete, checked, named skill or tool is cited by Part 3 for its own argument, and at least one for Part 4, each passing all four checks above. `sources/inventory.md` and `TOOLS.md` updated to match whatever gets added.
+
+---
+
 ## Minor pending items, to decide at any point
 
 **Real opening case.** The scene is composite. If a real anonymised case from the author's ecosystem comes up, replacing it would raise the text considerably.
@@ -120,4 +138,4 @@ D10, the office's own quarterly loop, is no longer a playbook candidate: it ship
 
 **English spelling.** Currently British, now the project's default reading. If the target audience shifts toward the United States, convert it.
 
-**Locate the rule of two's primary source.** Two independent secondary sources attribute it to Meta with the same wording, sufficient to cite the content in Part 3, not to link it. Search again before that piece is signed off, see `sources/inventory.md`.
+**Locate the rule of two's primary source. Done, 31 August 2026.** Found and read directly: Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 October 2025, `ai.meta.com/blog/practical-ai-agent-security/`. Linked in Part 3, all three languages, and in `harness-sources.html`; `sources/inventory.md` updated from **P** to **V**.
