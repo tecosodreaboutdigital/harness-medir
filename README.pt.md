@@ -4,6 +4,8 @@
 
 Projeto de conteúdo e ferramental sobre **engenharia de harness**: a disciplina de construir o ambiente em volta de um modelo de IA para que ele opere de forma confiável.
 
+MEDIR não é uma sigla arbitrária: Mapear, Equipar, Delegar, Inspecionar, Reforçar é também o verbo comum medir. Um projeto sobre medir como um agente se comporta ganhou o verbo medir como nome, de propósito.
+
 Autor: Fernando Teco Sodré
 Estado: em andamento, agosto de 2026
 
