@@ -497,7 +497,7 @@ Banderas rojas:
 
 <p>Las guías y los sensores acumulan basura como cualquier otro sistema. Reglas que ya no aplican, verificaciones que nadie lee, ejemplos de un proceso que cambió. Y el trabajo producido acumula la suya propia: repetición innecesaria, capas que no sirven para nada, restos de intentos abandonados.</p>
 
-<p>Hoy existe toda una categoría de herramientas para esta limpieza. Convergen en cinco reglas, y las reglas valen más que cualquier producto concreto:</p>
+<p>Esta disciplina ya está documentada casi regla por regla en <a class="src" href="harness-sources.html#es-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, proyecto oh-my-claudecode, github.com/Yeachan-Heo/oh-my-claudecode. Sustenta cuatro de las cinco reglas citadas; reversion automatica no documentada en este skill.">al menos una herramienta real de limpieza</a>, y las reglas valen más que cualquier producto concreto:</p>
 
 <table class="wrap">
 <thead><tr><th>Regla</th><th>Por qué existe</th></tr></thead>
@@ -505,7 +505,7 @@ Banderas rojas:
 <tr><td>Fijar el comportamiento antes de tocar nada</td><td>Escribir la verificación primero, para que la limpieza no se vuelva un cambio silencioso</td></tr>
 <tr><td>Preferir eliminar a añadir</td><td>Una limpieza que añade no es limpieza</td></tr>
 <tr><td>Escribir el plan antes de editar</td><td>Sin plan, la limpieza se convierte en una reforma sin fin</td></tr>
-<tr><td>Revertir solo lo que se rompa</td><td>Cada cambio que hace fallar la verificación vuelve atrás automáticamente</td></tr>
+<tr><td>Revertir de inmediato si se rompe la verificación</td><td>Disciplina a seguir, no una función automática documentada: todo cambio que rompe la verificación debe deshacerse enseguida</td></tr>
 <tr><td>Separar a quien limpia de quien revisa</td><td>El mismo principio de quien genera no evalúa</td></tr>
 </tbody>
 </table>
