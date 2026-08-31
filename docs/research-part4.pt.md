@@ -12,12 +12,70 @@ Dossiê de trabalho. Levantado em 30 de agosto de 2026.
 
 | Eixo | Estado | Fontes | Observação |
 |---|---|---|---|
+| 0. Observação de campo | Terceiro | 0 | Protótipo alheio, sem autorização. Vale como convergência independente, nunca como origem do modelo |
 | 1. Ciclo de vida do agente | Forte | 6 | Números de mercado melhores do que eu esperava |
 | 2. Os quatro papéis | Forte | 5 | Precedente exato encontrado, e um achado sobre o que o mercado **não** nomeou |
 | 3. Os oito indicadores | Média | 9 | Cinco sustentados por fonte externa, três são síntese do autor. Ver ressalva |
 | 4. Onde o escritório senta | Forte | 4 | Precedente do CISO é ainda melhor do que o previsto, com citação memorável |
 | 5. Calibração de vocabulário | Suficiente | 2 | Não precisa de mais |
 | 6. Casos narrativos | Forte | 3 | Encontrado o equivalente do Air Canada, e ele é melhor |
+
+---
+
+## Eixo 0. Observação de campo: um protótipo de terceiro
+
+**Estatuto desta fonte, declarado antes de tudo.** O que segue não é fonte primária deste projeto. É um protótipo construído por outra pessoa, mostrado informalmente ao autor por mensagem, ainda não publicado, e cujo criador estava pedindo sugestões e não oferecendo material para citação.
+
+Consequências práticas, e nenhuma é negociável:
+
+1. **A parte 4 não pode afirmar que seu modelo foi derivado de uma implementação real.** Essa afirmação seria falsa.
+2. **Nada do protótipo pode ser reproduzido no artigo sem permissão escrita do autor:** nem captura de tela, nem nome do produto, nem descrição que permita identificá-lo.
+3. **O valor desta observação é outro, e é legítimo:** ela é evidência convergente. Alguém competente, trabalhando de forma independente e sem contato com esta série, chegou a quatro objetos que mapeiam contra o MEDIR sem adaptação. Convergência independente é um argumento mais forte do que exemplo próprio, justamente porque não pode ser acusada de circularidade.
+
+Se o autor do protótipo autorizar por escrito, isso vira estudo de caso creditado e a peça ganha muito. Sem autorização, entra apenas como observação genérica, sem identificação, no formato descrito no fim deste eixo.
+
+### O que a convergência mostra
+
+O protótipo observado opera com quatro objetos, e eles se mapeiam no ciclo sem adaptação.
+
+| Objeto observado | Passo | O que resolve |
+|---|---|---|
+| Missão, com escopo e equipe declarados | Mapear | O contrato da tarefa instanciado antes da execução |
+| Execução, com identificador, etapa e estado | Delegar | A unidade de despacho rastreável, distinta da missão que a originou |
+| Contagem de símbolos, cache e economia por execução | Inspecionar | Sensor de custo exposto na tela principal, o que é raro |
+| Artefatos e erros por execução | Inspecionar e Reforçar | O rastro que permite reconstruir o que aconteceu |
+
+A distinção entre missão e execução é a mais importante das quatro. Uma missão pode gerar várias execuções, e uma execução falha não invalida a missão. É a mesma separação entre unidade de despacho e unidade de durabilidade que a parte 2 trata no passo Delegar, e ela apareceu de forma independente.
+
+### Dois acertos que valem virar recomendação de projeto
+
+Estes podem ser escritos como princípio, sem nenhuma referência ao protótipo, porque são recomendações e não citações.
+
+**Execução falhada permanece visível na fila,** ao lado da que está rodando. Painel que esconde falha produz exatamente a ilusão de qualidade que a parte 2 alerta e que o eixo 3 mede pela taxa de reprovação. Esconder falha é a forma mais barata de fabricar um painel verde.
+
+**Interruptor por agente, com estado obrigatório separado do opcional.** Isso é alçada expressa em interface, não em instrução. É a separação de poderes da parte 3 materializada: a política não está no texto que o modelo lê, está em um controle que ele não alcança.
+
+### As cinco lacunas, e o que cada uma tem de base
+
+Estas são as lacunas do modelo conceitual observado. Elas valem como projeto de escritório em geral, não como crítica a um trabalho específico, e é assim que devem ser escritas.
+
+| Lacuna | Base neste dossiê |
+|---|---|
+| **Dono nomeado por agente.** Papéis não são pessoas, e papel não responde por nada | Eixo 1: 824.000 identidades ativas sem dono em nenhum sistema de RH, todas com direitos vivos |
+| **Homologação como estado com validade,** e não como evento | Eixo 1: recertificação periódica é padrão em governança de identidade, com trimestral já sendo o piso |
+| **Descomissionamento.** Todo mundo sabe ligar, quase ninguém tem procedimento para desligar | Eixo 1 e eixo 6: contas dormentes quase dobraram em um ano, três casos documentados de invasão por conta esquecida |
+| **Caso de uso aprovado confrontado com o que roda.** É a diferença entre lista e registro de governança | Eixo 3, indicador 1: 43% das organizações não conseguem produzir um inventário de IA |
+| **Resultado de negócio, não só de execução.** Símbolos e etapas são resultado técnico | Eixo 3, indicador 6: 46 pontos entre implantar e obter o resultado pretendido |
+
+A última fecha o laço mais bonito da série: essa coluna é o bloco 7 da skill de briefing, o retorno prometido. O escritório é onde a promessa volta para ser conferida, e é por isso que o D10 termina no briefing e não em um relatório.
+
+### Como escrever isso no artigo
+
+**Sem autorização, que é o cenário padrão.** Uma frase de observação genérica, sem identificar nada: painéis de operação de agentes construídos hoje convergem para missão, execução, custo e artefato, e param aí. As cinco lacunas seguem como projeto de escritório, apoiadas nos números dos eixos seguintes, sem referência a implementação alguma.
+
+**Com autorização escrita.** Estudo de caso creditado, com nome do autor e do projeto, revisado por ele antes da publicação. Nesse caso use desenho esquemático e nunca captura de tela: tela de protótipo envelhece rápido e desvia a atenção para a ferramenta em vez do método.
+
+**Registro para a próxima sessão:** enquanto a autorização não existir e não estiver arquivada no repositório, vale o primeiro cenário.
 
 ---
 
