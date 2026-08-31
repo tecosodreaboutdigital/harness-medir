@@ -45,7 +45,7 @@ Seis colecciones, treinta y una skills, todas con licencia MIT o Apache 2.0. Ins
 
 Tampoco estaba activa en este entorno hasta esta ronda: `.claude/skills/`, que es donde este harness descubre las skills del proyecto, solo tenía las treinta de terceros. Corregido: una copia de ella vive en `.claude/skills/intake-briefing/`, fuera del control de versiones, traída de su propio repositorio.
 
-**Riesgo aceptado, dicho con honestidad:** esta copia local puede quedarse atrás si el repositorio de la skill se edita sin actualizar la copia de aquí. Es el mismo tipo de riesgo que aceptamos para las treinta skills de terceros, ahora también para la nuestra.
+**Riesgo aceptado, dicho con honestidad:** esta copia local puede quedarse atrás si el repositorio de la skill se edita sin actualizar la copia de aquí. Es el mismo tipo de riesgo que aceptamos para las treinta skills de terceros, ahora también para la nuestra. Ya pasó una vez: el repositorio ganó `AGENTS.md`, `llms.txt`, `.claude-plugin/` y `briefings/`, más una sección `Installation` multiherramienta reescrita, el 31 de agosto de 2026, mientras esta copia local todavía tenía el retrato del 30 de agosto. Resincronizada ese mismo día; ver la propia sección `Instalación` del `README.md` para el detalle multiherramienta que salió de esa ronda.
 
 ---
 

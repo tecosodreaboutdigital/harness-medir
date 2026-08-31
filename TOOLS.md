@@ -45,7 +45,7 @@ Six collections, thirty-one skills, all MIT or Apache-2.0. Installed locally in 
 
 It also was not active in this environment until this round: `.claude/skills/`, which is where this harness discovers project skills, only had the thirty third-party ones. Fixed: a copy of it lives at `.claude/skills/intake-briefing/`, outside version control, pulled from its own repository.
 
-**Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty third-party skills, now also for our own.
+**Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty third-party skills, now also for our own. It already happened once: the repository gained `AGENTS.md`, `llms.txt`, `.claude-plugin/` and `briefings/`, plus a rewritten multi-tool `Installation` section, on 31 August 2026, while this local copy still held the 30 August snapshot. Resynced the same day; see `README.md`'s own `Installation` section for the multi-tool detail that came out of that round.
 
 ---
 

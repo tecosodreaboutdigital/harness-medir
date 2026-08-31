@@ -41,6 +41,41 @@ The rule it enforces is narrow and testable: before any agent installs, recommen
 
 ---
 
+## Installation
+
+The project's own skill, `intake-briefing`, lives in a separate repository, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT. `SKILL.md` follows the open [Agent Skills](https://agentskills.io) format, so the same file runs unmodified in any tool that reads it, only the target folder changes.
+
+As a personal skill, cloned directly:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git ~/.claude/skills/intake-briefing
+```
+
+Cursor, Codex CLI and Google Antigravity converge on `.agents/skills/`:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git .agents/skills/intake-briefing
+```
+
+Google AI Studio's agent environments (the Playground) use that same `.agents/skills/<name>/SKILL.md` convention, but load it by mounting this repository straight from GitHub into the workspace, or by pasting the files into the Playground UI, not by a local `git clone`.
+
+For any other environment, copy the folder to wherever it loads skills from. The paths above are conventions, not a requirement of the format.
+
+As a Claude Code plugin, from its own marketplace:
+
+```
+/plugin marketplace add tecosodreaboutdigital/intake-briefing
+/plugin install intake-briefing@intake-briefing
+```
+
+Both methods work from the same repository layout; nothing needs to be rearranged between them.
+
+Verified 31 August 2026 against each vendor's own documentation. This is a snapshot, not a live status: recheck the vendor's docs before relying on it much later.
+
+This is the pattern every future repository under this account for an agent, an automation or a skill follows: install as a personal skill, install via `.agents/skills/`, or install as a Claude Code plugin, all from the same layout.
+
+---
+
 ## The MEDIR cycle
 
 This project's own method, in the PDCA and DMAIC family. It works without adaptation in Portuguese, English and Spanish.
@@ -195,4 +230,4 @@ Important technical detail: anchor identifiers and SVG markers are prefixed by l
 
 Articles: all rights reserved, use by authorisation.
 
-The project's own skill, `intake-briefing`, lives in a separate repository, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT, in the same pattern as the other skills cited in the compact guide.
+The project's own skill, `intake-briefing`, MIT, in the same pattern as the other skills cited in the compact guide. See Installation above for how to install it in any agent.
