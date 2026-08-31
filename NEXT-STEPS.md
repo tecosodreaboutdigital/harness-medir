@@ -54,9 +54,9 @@ Two honesty obligations the dossier flags explicitly: state that the Air Canada 
 
 ---
 
-## 2. Write Part 4, English done, translation pending
+## 2. Write Part 4, done
 
-**Status: English written and live at `harness-p4.html`.** Nine sections (`build/body_p4_en.html`), five diagrams inline (D6 to D10, D10 newly rendered for this piece), the six-state life cycle table, the four-role table with the non-accumulation rule, the eight-indicator table with the honesty admission that the panel is synthesis, the SCHUFA-grounded gate-rejection-rate argument tying part 4 to part 3's legal ground, the CISO-reporting-line precedent for where the office sits, the seven-agents-and-a-spreadsheet constraint held through the warning section, and the closing table matching part 3's pattern. Portuguese and Spanish tabs are an honest "translation in progress" stub for now (`build/body_p4_pt.html`, `build/body_p4_es.html`), the same state part 3 passed through earlier in the same working day before its own translation landed. Ten new glossary terms added across all three languages; `harness-sources.html` gained a Part 4 section, 32 sources.
+**Status: fully trilingual and live at `harness-p4.html`, since 31 August 2026.** Nine sections, five diagrams inline (D6 to D10, D10 newly rendered for this piece, then translated and visually re-validated in all three languages before merging), the six-state life cycle table, the four-role table with the non-accumulation rule, the eight-indicator table with the honesty admission that the panel is synthesis, the SCHUFA-grounded gate-rejection-rate argument tying part 4 to part 3's legal ground, the CISO-reporting-line precedent for where the office sits, the seven-agents-and-a-spreadsheet constraint held through the warning section, and the closing table matching part 3's pattern. Word counts run close across all three (English 6,889, Portuguese 7,051, Spanish 7,377), consistent with a real translation rather than a summary. Ten new glossary terms added across all three languages; `harness-sources.html` gained a Part 4 section, 32 sources.
 
 Research is complete, see `sources/inventory.md`'s Part 4 section and `docs/research-part4.pt.md`. Central thesis realised: the agent life cycle, states and not steps, distinguished from MEDIR with enough clarity that a reader cannot confuse the two.
 
@@ -72,23 +72,27 @@ Structure covered, in the order actually drafted:
 8. The closing argument: every platform governs inward, which is why the office has to be a function of the company, not a product it buys
 9. Who answers, and where you stand: the director's arc closes across all four parts
 
-**Done when:** all three versions are ready, the character's arc closes the series, the eight indicators are defined with a formula, and the text holds to the seven-agents-and-a-spreadsheet constraint throughout. **English met, 30 August 2026; Portuguese and Spanish remain.**
+**Done when:** all three versions are ready, the character's arc closes the series, the eight indicators are defined with a formula, and the text holds to the seven-agents-and-a-spreadsheet constraint throughout. **Met in full, 31 August 2026.**
 
 ---
 
 ## 3. Consolidate the playbook
 
-Reuses the four parts and the guide, and adds what does not exist yet:
+Not started, and not scoped for the next content session either, decided 31 August 2026: the four parts are the argument, the playbook is the toolkit derived from them, and building it now, right after finishing the article series, would blur that boundary. This entry stays as the explicit, deliberately parked record of what the playbook will contain, so the next session that does pick it up does not have to re-derive the plan from scratch.
 
-- Task-contract template
-- Skill template, derived from Part 2's three examples
-- Execution-receipt template
-- Risk matrix by tier
-- Tier diagnostic, questionnaire version
-- Rollout path from N0 to N3
-- Agent-registry template and certification-meeting-minutes template
+Reuses the four parts and the guide, and adds seven operational templates that do not exist yet, each one traceable to the piece that already introduced its underlying concept, not invented fresh:
 
-D10, the office's own quarterly loop, not decided for Part 4, is a strong candidate to open the playbook if it stays out of Part 4.
+- Task-contract template, from the task contract in Part 1's Map step
+- Skill template, derived from Part 2's three worked examples of the skill format
+- Execution-receipt template, from Part 2's original receipt, extended in Part 3 with the rule-of-two answers and the reversal point
+- Risk matrix by tier, from Part 3's matrix of authority (class of action, reversibility, authority required) crossed with Part 1's N0 to N3 tiers
+- Tier diagnostic, questionnaire version, expanding Part 1's twelve-question checklist into a standalone instrument
+- Rollout path from N0 to N3, the progression Part 1 only sketched
+- Agent-registry template and certification-meeting-minutes template, from Part 4's life cycle states and four roles, the registry answering "how many exist" and the minutes formalising the certifier's act
+
+D10, the office's own quarterly loop, is no longer a playbook candidate: it shipped inside Part 4 itself, closing the eight-indicators section. It can still open the playbook as a second appearance, legitimately, since it organises the whole document there rather than competing with itself.
+
+**Done when it is actually picked up:** all seven templates exist, each cross-referenced back to the part and section that grounds it, and the playbook opens with D10 as its own organising diagram.
 
 ---
 

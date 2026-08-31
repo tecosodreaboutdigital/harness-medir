@@ -64,7 +64,7 @@ Barra de la serie y enlaces de glosario y fuentes ya implementados, según la ar
 
 `harness-p4.html`
 
-Inglés completo desde el 30 de agosto de 2026, cerca de 6.900 palabras, nueve secciones, cinco diagramas (D6 a D10, el D10 renderizado ahora para esta pieza, ver `diagrams/README.md`). El portugués y el español son por ahora un boceto honesto de "traducción en curso", el mismo estado por el que pasó la parte 3 más temprano ese mismo día antes de que llegara su propia traducción completa; `harness-p4.html` se lee bien en las tres pestañas, el inglés es simplemente el único completo hasta ahora.
+Totalmente trilingüe desde el 31 de agosto de 2026. Nueve secciones, cinco diagramas (D6 a D10, el D10 renderizado ahora para esta pieza, ver `diagrams/README.md`), todos incorporados y traducidos por completo, incluida cada etiqueta de SVG, verificada renderizando cada diagrama aislado en los tres idiomas antes de incorporarlo al artículo, sin desbordes, sin superposiciones. Cerca de 6.889 palabras en inglés, 7.051 en portugués, 7.377 en español, conteos cercanos en los tres idiomas, como se espera de una traducción de verdad, no de un resumen.
 
 Abre con las 20.225 cuentas de Instagram tomadas entre el 17 de abril y el 31 de mayo de 2026 mediante una sola interacción mediada por IA que combinó gestión de identidad y recuperación de credenciales, el modo de fallo por concentración de la parte 3 a escala poblacional, en lugar de en una sola acción. La directora reingresa operando seis sistemas que todos llaman agentes y no puede responder la pregunta más simple de un consejero: cuántos hay, y quién es dueño de cada uno. Tesis central: el ciclo de vida del agente, seis estados y no pasos, distinguido de MEDIR de forma explícita, con las dos transiciones que casi nadie implementa, certificación vencida y sin ejecución en el período, ambas llevando al desmantelamiento y ambas exigiendo una decisión humana, nunca una automatización. Cuatro roles bajo una regla de no acumulación reflejan la separación de poderes de la parte 3 en el plano organizacional, con una fuente nueva esta ronda, el Modelo de las Tres Líneas del Instituto de Auditores Internos, adoptado en 2013. Ocho indicadores se declaran explícitamente como síntesis, no estándar de mercado, con el indicador de tasa de rechazo en el portón fundamentado en la decisión del caso SCHUFA (TJUE, asunto C-634/21, diciembre de 2023), exactamente como funciona el fundamento legal de la parte 3, el hilo que une a las dos piezas. Dónde se ubica la oficina recurre al precedente de la línea de reporte del CISO, con fuente en un relevamiento de 2026 y la cita del jefe de bomberos y los rociadores. La restricción explícita atraviesa toda la pieza: todo lo que propone tiene que funcionar en una empresa con siete agentes y una hoja de cálculo, ilustrada con una descripción genérica y sin atribución de lo que ya hacen hoy los paneles de agentes y las cinco brechas más allá de ese piso. Cierra con el arco de la directora a lo largo de las cuatro partes y la tabla de cierre propia de la serie.
 
@@ -124,13 +124,13 @@ En paralelo, la serie ganó la navegación superior que le faltaba desde la rees
 | Parte 2 | lista | lista | lista |
 | Guía compacta | lista | lista | lista |
 | Parte 3 | lista | lista | lista |
-| Parte 4 | falta | lista | falta |
+| Parte 4 | lista | lista | lista |
 | Skill de briefing | lista | lista | lista |
 | Documentos de gobernanza | lista | lista | lista |
 
 ### Playbook
 
-Consolidación de las cuatro partes más la guía, sumando lo que todavía no existe: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo, un diagnóstico de banda, una ruta de implementación, y una plantilla de registro de agentes y acta de homologación.
+Deliberadamente aparcado, fuera del alcance de la próxima sesión de contenido, decidido el 31 de agosto de 2026: las cuatro partes son el argumento, el playbook es el conjunto de herramientas derivado de ellas, y los dos no deberían confundirse. Lo que va a contener, cada elemento rastreado hasta la parte que ya lo fundamenta, está registrado en el elemento 3 de `NEXT-STEPS.md`, para que el plan sobreviva sin que nadie tenga que reconstruirlo de memoria: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo por banda, un diagnóstico de banda, una ruta de implementación de N0 a N3, y una plantilla de registro de agentes más acta de homologación. El D10, el bucle propio de la oficina por trimestre, es candidato para abrir el documento, como una segunda aparición legítima ya que cierra la sección de indicadores de la parte 4.
 
 La skill de briefing ya es su primer artefacto operativo.
 
