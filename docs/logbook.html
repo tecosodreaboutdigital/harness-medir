@@ -81,6 +81,21 @@ body{
 .lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
 .lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
 @media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
 main[hidden]{display:none}
 
 .kpi-grid{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 30px;border-top:.5pt solid var(--ink);border-bottom:.5pt solid var(--ink)}
@@ -438,13 +453,13 @@ p code{
 <p>Quatro números resumem o projeto neste instante. Todos recalculados a cada execução do gerador, nenhum digitado à mão.</p>
 
 <div class="kpi-grid">
-<div class="kpi"><span class="kpi-n">651,6 mi</span><span class="kpi-l">tokens transacionados até agora</span></div>
-<div class="kpi"><span class="kpi-n">68.176</span><span class="kpi-l">palavras publicadas (PT+EN+ES)</span></div>
-<div class="kpi"><span class="kpi-n">8.000</span><span class="kpi-l">linhas de script e documento de governança</span></div>
-<div class="kpi"><span class="kpi-n">26</span><span class="kpi-l">marcos (commits) registrados</span></div>
+<div class="kpi"><span class="kpi-n">925,9 mi</span><span class="kpi-l">tokens transacionados até agora</span></div>
+<div class="kpi"><span class="kpi-n">94.127</span><span class="kpi-l">palavras publicadas (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">9.857</span><span class="kpi-l">linhas de script e documento de governança</span></div>
+<div class="kpi"><span class="kpi-n">30</span><span class="kpi-l">marcos (commits) registrados</span></div>
 </div>
 
-<p>Dos tokens acima, cerca de 5,1 mi ainda não fecharam marco: são desta sessão em andamento, ainda não commitados no momento em que este diário foi gerado.</p>
+<p>Dos tokens acima, cerca de 10,6 mi ainda não fecharam marco: são desta sessão em andamento, ainda não commitados no momento em que este diário foi gerado.</p>
 
 <h2 id="pt-evolucao">2. Evolução</h2>
 
@@ -454,70 +469,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Palavras publicadas por marco">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">76.357</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">105.422</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,151.7 100.1,151.7 122.2,124.9 144.2,124.6 166.3,124.6 188.4,124.6 210.5,124.4 232.5,113.8 254.6,91.7 276.7,91.7 298.8,91.7 320.8,90.1 342.9,90.1 365.0,90.1 387.1,90.1 409.2,90.1 431.2,90.1 453.3,90.1 475.4,90.1 497.5,90.1 519.5,51.1 541.6,51.1 563.7,51.1 585.8,51.1 607.8,51.1 629.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="141.7" text-anchor="middle">20.197</text>
+<polyline points="78.0,163.3 97.1,163.3 116.3,143.9 135.4,143.7 154.5,143.7 173.7,143.7 192.8,143.6 211.9,135.9 231.1,119.9 250.2,119.9 269.3,119.9 288.5,118.8 307.6,118.8 326.7,118.8 345.9,118.8 365.0,118.8 384.1,118.8 403.3,118.8 422.4,118.8 441.5,118.8 460.7,90.5 479.8,90.5 498.9,90.5 518.1,90.5 537.2,90.5 556.3,90.5 575.5,90.5 594.6,73.0 613.7,51.3 632.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="153.3" text-anchor="middle">20.197</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="124.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="114.6" text-anchor="middle">33.137</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="124.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="113.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="81.7" text-anchor="middle">48.835</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="80.1" text-anchor="middle">49.571</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="80.1" text-anchor="middle">49.571</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="41.1" text-anchor="middle">68.176</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="41.1" text-anchor="middle">68.176</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="143.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="133.7" text-anchor="middle">33.137</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="143.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="135.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="109.9" text-anchor="middle">48.835</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="108.8" text-anchor="middle">49.571</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="108.8" text-anchor="middle">49.571</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="80.5" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="80.5" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="73.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="51.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="41.3" text-anchor="middle">94.026</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">94.127</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">agora</text>
 <text class="svg-cap" x="78" y="244">PALAVRAS PUBLICADAS, ACUMULADO POR MARCO</text>
 </svg>
@@ -528,70 +552,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumidos por marco">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">729,7 mi</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">1037,0 mi</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,193.6 100.1,191.3 122.2,185.1 144.2,175.4 166.3,173.7 188.4,168.5 210.5,159.1 232.5,151.7 254.6,146.7 276.7,143.9 298.8,142.3 320.8,135.4 342.9,134.5 365.0,133.0 387.1,131.8 409.2,126.6 431.2,123.2 453.3,121.9 475.4,119.4 497.5,119.3 519.5,72.9 541.6,72.6 563.7,57.8 585.8,55.1 607.8,53.0 629.9,52.3 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="193.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="183.6" text-anchor="middle">1,9 mi</text>
+<polyline points="78.0,193.7 97.1,192.1 116.3,187.8 135.4,180.9 154.5,179.7 173.7,176.0 192.8,169.4 211.9,164.3 231.1,160.7 250.2,158.7 269.3,157.6 288.5,152.8 307.6,152.1 326.7,151.1 345.9,150.3 365.0,146.6 384.1,144.2 403.3,143.3 422.4,141.5 441.5,141.4 460.7,108.8 479.8,108.6 498.9,98.2 518.1,96.3 537.2,94.8 556.3,94.3 575.5,92.6 594.6,80.4 613.7,65.0 632.9,52.8 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="193.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="183.7" text-anchor="middle">1,9 mi</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="191.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="185.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="175.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="173.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="163.7" text-anchor="middle">92,5 mi</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="168.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="159.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="146.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="136.7" text-anchor="middle">215,5 mi</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="143.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="142.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="135.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="134.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="124.5" text-anchor="middle">271,6 mi</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="133.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="131.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="126.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="123.2" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="113.2" text-anchor="middle">322,8 mi</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="121.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="119.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="119.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="72.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="62.9" text-anchor="middle">552,1 mi</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="72.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="57.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="55.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="53.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="43.0" text-anchor="middle">643,2 mi</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="52.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="192.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="187.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="180.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="179.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="169.7" text-anchor="middle">92,5 mi</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="176.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="169.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="164.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="160.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="150.7" text-anchor="middle">215,5 mi</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="158.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="157.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="152.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="152.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="142.1" text-anchor="middle">271,6 mi</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="151.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="150.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="146.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="144.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="134.2" text-anchor="middle">322,8 mi</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="143.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="141.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="141.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="108.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="98.8" text-anchor="middle">552,1 mi</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="108.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="98.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="96.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="94.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="84.8" text-anchor="middle">643,2 mi</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="94.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="92.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="80.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="65.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="55.0" text-anchor="middle">836,3 mi</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="52.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">651,6 mi</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">925,9 mi</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">agora</text>
 <text class="svg-cap" x="78" y="244">TOKENS CONSUMIDOS, ACUMULADO POR MARCO, MESMO EIXO X ACIMA</text>
 </svg>
@@ -631,6 +664,10 @@ p code{
 <tr><td>M24<br><span class="mono">241f320</span></td><td>README atualizado nas três línguas: ganha uma linha apontando para o GitHub Pages publicado, a árvore de arquivos passa a listar a parte 3 e os dois companheiros compartilhados, e dois diagramas (D6, as três camadas do framework, e D1, a separação de poderes) entram como imagem, usando o PNG de fundo branco em vez do SVG de fundo transparente, ilegível no tema escuro do GitHub.<br><span class="mono">30 ago, 21:30</span></td><td>68.176</td><td>12,5 mi<br><span class="mono">saída: 118.200</span></td></tr>
 <tr><td>M25<br><span class="mono">b31515a</span></td><td>A pesquisa da parte 4 chega pronta, seis eixos, entregue pelo autor fora da sessão, e passa por verificação de fonte primária nos dois achados mais carregados: o caso SCHUFA do TJUE, que torna a taxa de reprovação no portão exposição jurídica, e o caso das 20.225 contas do Instagram, que abre a peça. Quatro ajustes aplicados, as três fontes do SCHUFA separadas, a fonte de patente do quase-acidente trocada pelo triângulo de Heinrich, o par Kyndryl verificado na origem, o número da Gartner não localizado e mantido como parcial, e vinte e nove fontes integradas ao inventário.<br><span class="mono">30 ago, 21:43</span></td><td>68.176</td><td>9,6 mi<br><span class="mono">saída: 146.155</span></td></tr>
 <tr><td>M26<br><span class="mono">d972a35</span></td><td>Eixo 0 adicionado ao dossiê da parte 4: uma observação de campo, um protótipo de terceiro mostrado informalmente ao autor. Uma correção recebida do próprio autor evitou um erro que teria sido grave, descrever o protótipo como fonte primária do projeto; o texto final trata a convergência como evidência independente, sem citar produto, empresa ou pessoa, e sem reprodução sem autorização escrita.<br><span class="mono">30 ago, 21:47</span></td><td>68.176</td><td>3,3 mi<br><span class="mono">saída: 37.320</span></td></tr>
+<tr><td>M27<br><span class="mono">c4bd34c</span></td><td>Diário de bordo regerado com quatro marcos novos: a regeração anterior que corrigiu três bugs, o README enriquecido com diagramas embutidos, a pesquisa da parte 4 verificada e integrada ao inventário de fontes, o eixo 0 corrigido. Vinte e seis marcos completos, 68.176 palavras publicadas.<br><span class="mono">30 ago, 21:55</span></td><td>68.176</td><td>10,6 mi<br><span class="mono">saída: 33.719</span></td></tr>
+<tr><td>M28<br><span class="mono">f7dd32b</span></td><td>Parte 4 escrita por completo em inglês: o caso das 20.225 contas do Instagram como abertura, ciclo de vida do agente, quatro papéis ancorados no Modelo das Três Linhas do IIA, oito indicadores declarados como síntese, o indicador de reprovação no portão fundamentado no caso SCHUFA do TJUE. D10 desenhado do zero e validado por renderização. De brinde, quatro bugs reais preexistentes corrigidos: travessão proibido pelas próprias normas do projeto, e seis entradas do glossário fora de ordem alfabética em português e espanhol.<br><span class="mono">30 ago, 22:35</span></td><td>79.750</td><td>79,5 mi<br><span class="mono">saída: 490.187</span></td></tr>
+<tr><td>M29<br><span class="mono">afff681</span></td><td>Parte 4 completada em português (7.051 palavras) e espanhol (7.377 palavras), traduzida por dois agentes em paralelo a partir do inglês publicado. Os cinco diagramas traduzidos e validados à parte, um por um, renderizados isoladamente antes de entrar no artigo; achei e corrigi uma legenda truncada em espanhol nesse processo. A evolução para um playbook documentada, sem construir, nos dois locais que o projeto já usa para trabalho planejado.<br><span class="mono">31 ago, 06:23</span></td><td>94.026</td><td>99,8 mi<br><span class="mono">saída: 201.119</span></td></tr>
+<tr><td>M30<br><span class="mono">d3d8f18</span></td><td>O autor propôs trocar MEDIR por M.E.D.I.R. em toda a prosa, para deixar a sigla mais clara desde a partida. Levantamento honesto antes de executar: 245 ocorrências, nenhuma em minúscula fora de detalhe técnico. Recomendação dada e aceita, manter MEDIR sem pontos, porque a palavra só soa como o verbo medir de verdade escrita inteira. No lugar, duas correções reais: a palavra MEDIR passa a levar o tratamento de glossário que nunca tinha em nenhum lugar, e a parte 1 e o README passam a dizer explicitamente que MEDIR também é medir.<br><span class="mono">31 ago, 06:49</span></td><td>94.127</td><td>79,0 mi<br><span class="mono">saída: 143.024</span></td></tr>
 </tbody>
 </table>
 
@@ -687,13 +724,13 @@ p code{
 <p>Four numbers summarise the project at this instant. All recalculated on every run of the generator, none typed by hand.</p>
 
 <div class="kpi-grid">
-<div class="kpi"><span class="kpi-n">651.6m</span><span class="kpi-l">tokens transacted so far</span></div>
-<div class="kpi"><span class="kpi-n">68,176</span><span class="kpi-l">words published (PT+EN+ES)</span></div>
-<div class="kpi"><span class="kpi-n">8,000</span><span class="kpi-l">lines of script and governance document</span></div>
-<div class="kpi"><span class="kpi-n">26</span><span class="kpi-l">milestones (commits) recorded</span></div>
+<div class="kpi"><span class="kpi-n">925.9m</span><span class="kpi-l">tokens transacted so far</span></div>
+<div class="kpi"><span class="kpi-n">94,127</span><span class="kpi-l">words published (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">9,857</span><span class="kpi-l">lines of script and governance document</span></div>
+<div class="kpi"><span class="kpi-n">30</span><span class="kpi-l">milestones (commits) recorded</span></div>
 </div>
 
-<p>Of the tokens above, about 5.1m have not closed a milestone yet: they belong to this ongoing session, not committed yet at the moment this log was generated.</p>
+<p>Of the tokens above, about 10.6m have not closed a milestone yet: they belong to this ongoing session, not committed yet at the moment this log was generated.</p>
 
 <h2 id="en-evolucao">2. Growth</h2>
 
@@ -703,70 +740,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Words published per milestone">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">76,357</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">105,422</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,151.7 100.1,151.7 122.2,124.9 144.2,124.6 166.3,124.6 188.4,124.6 210.5,124.4 232.5,113.8 254.6,91.7 276.7,91.7 298.8,91.7 320.8,90.1 342.9,90.1 365.0,90.1 387.1,90.1 409.2,90.1 431.2,90.1 453.3,90.1 475.4,90.1 497.5,90.1 519.5,51.1 541.6,51.1 563.7,51.1 585.8,51.1 607.8,51.1 629.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="141.7" text-anchor="middle">20,197</text>
+<polyline points="78.0,163.3 97.1,163.3 116.3,143.9 135.4,143.7 154.5,143.7 173.7,143.7 192.8,143.6 211.9,135.9 231.1,119.9 250.2,119.9 269.3,119.9 288.5,118.8 307.6,118.8 326.7,118.8 345.9,118.8 365.0,118.8 384.1,118.8 403.3,118.8 422.4,118.8 441.5,118.8 460.7,90.5 479.8,90.5 498.9,90.5 518.1,90.5 537.2,90.5 556.3,90.5 575.5,90.5 594.6,73.0 613.7,51.3 632.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="153.3" text-anchor="middle">20,197</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="124.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="114.6" text-anchor="middle">33,137</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="124.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="113.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="81.7" text-anchor="middle">48,835</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="80.1" text-anchor="middle">49,571</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="80.1" text-anchor="middle">49,571</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="41.1" text-anchor="middle">68,176</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="41.1" text-anchor="middle">68,176</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="143.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="133.7" text-anchor="middle">33,137</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="143.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="135.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="109.9" text-anchor="middle">48,835</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="108.8" text-anchor="middle">49,571</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="108.8" text-anchor="middle">49,571</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="80.5" text-anchor="middle">68,176</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="80.5" text-anchor="middle">68,176</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="73.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="51.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="41.3" text-anchor="middle">94,026</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">68,176</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">94,127</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">now</text>
 <text class="svg-cap" x="78" y="244">WORDS PUBLISHED, CUMULATIVE BY MILESTONE</text>
 </svg>
@@ -777,70 +823,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumed per milestone">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">729.7m</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">1037.0m</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,193.6 100.1,191.3 122.2,185.1 144.2,175.4 166.3,173.7 188.4,168.5 210.5,159.1 232.5,151.7 254.6,146.7 276.7,143.9 298.8,142.3 320.8,135.4 342.9,134.5 365.0,133.0 387.1,131.8 409.2,126.6 431.2,123.2 453.3,121.9 475.4,119.4 497.5,119.3 519.5,72.9 541.6,72.6 563.7,57.8 585.8,55.1 607.8,53.0 629.9,52.3 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="193.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="183.6" text-anchor="middle">1.9m</text>
+<polyline points="78.0,193.7 97.1,192.1 116.3,187.8 135.4,180.9 154.5,179.7 173.7,176.0 192.8,169.4 211.9,164.3 231.1,160.7 250.2,158.7 269.3,157.6 288.5,152.8 307.6,152.1 326.7,151.1 345.9,150.3 365.0,146.6 384.1,144.2 403.3,143.3 422.4,141.5 441.5,141.4 460.7,108.8 479.8,108.6 498.9,98.2 518.1,96.3 537.2,94.8 556.3,94.3 575.5,92.6 594.6,80.4 613.7,65.0 632.9,52.8 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="193.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="183.7" text-anchor="middle">1.9m</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="191.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="185.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="175.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="173.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="163.7" text-anchor="middle">92.5m</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="168.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="159.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="146.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="136.7" text-anchor="middle">215.5m</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="143.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="142.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="135.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="134.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="124.5" text-anchor="middle">271.6m</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="133.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="131.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="126.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="123.2" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="113.2" text-anchor="middle">322.8m</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="121.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="119.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="119.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="72.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="62.9" text-anchor="middle">552.1m</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="72.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="57.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="55.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="53.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="43.0" text-anchor="middle">643.2m</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="52.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="192.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="187.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="180.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="179.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="169.7" text-anchor="middle">92.5m</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="176.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="169.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="164.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="160.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="150.7" text-anchor="middle">215.5m</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="158.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="157.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="152.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="152.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="142.1" text-anchor="middle">271.6m</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="151.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="150.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="146.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="144.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="134.2" text-anchor="middle">322.8m</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="143.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="141.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="141.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="108.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="98.8" text-anchor="middle">552.1m</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="108.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="98.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="96.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="94.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="84.8" text-anchor="middle">643.2m</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="94.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="92.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="80.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="65.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="55.0" text-anchor="middle">836.3m</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="52.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">651.6m</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">925.9m</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">now</text>
 <text class="svg-cap" x="78" y="244">TOKENS CONSUMED, CUMULATIVE BY MILESTONE, SAME X AXIS AS ABOVE</text>
 </svg>
@@ -880,6 +935,10 @@ p code{
 <tr><td>M24<br><span class="mono">241f320</span></td><td>README updated in all three languages: gains a line pointing at the published GitHub Pages site, the file tree now lists part 3 and the two shared companions, and two diagrams (D6, the framework’s three layers, and D1, the separation of powers) are embedded as images, using the white-background PNG rather than the transparent-background SVG, illegible in GitHub’s dark theme.<br><span class="mono">30 Aug, 21:30</span></td><td>68,176</td><td>12.5m<br><span class="mono">output: 118,200</span></td></tr>
 <tr><td>M25<br><span class="mono">b31515a</span></td><td>Part 4’s research arrives complete, six axes, delivered by the author outside the session, and goes through primary-source verification on its two most load-bearing findings: the CJEU’s SCHUFA case, which turns the gate rejection rate into legal exposure, and the 20,225-account Instagram case, which opens the piece. Four adjustments applied, the three SCHUFA sources separated, the near-miss patent source swapped for Heinrich’s triangle, the Kyndryl pair verified at the source, the Gartner figure not located and kept partial, and twenty-nine sources integrated into the inventory.<br><span class="mono">30 Aug, 21:43</span></td><td>68,176</td><td>9.6m<br><span class="mono">output: 146,155</span></td></tr>
 <tr><td>M26<br><span class="mono">d972a35</span></td><td>Axis 0 added to Part 4’s dossier: a field observation, a third party’s prototype shown informally to the author. A correction from the author himself caught an error that would have been serious, describing the prototype as this project’s primary source; the final text treats the convergence as independent evidence instead, naming no product, company or person, and reproducing nothing without written authorisation.<br><span class="mono">30 Aug, 21:47</span></td><td>68,176</td><td>3.3m<br><span class="mono">output: 37,320</span></td></tr>
+<tr><td>M27<br><span class="mono">c4bd34c</span></td><td>Project log regenerated with four new milestones: the previous regeneration that fixed three bugs, the README enriched with embedded diagrams, part 4’s research verified and integrated into the source inventory, axis 0 corrected. Twenty-six milestones complete, 68,176 words published.<br><span class="mono">30 Aug, 21:55</span></td><td>68,176</td><td>10.6m<br><span class="mono">output: 33,719</span></td></tr>
+<tr><td>M28<br><span class="mono">f7dd32b</span></td><td>Part 4 written in full in English: the 20,225-account Instagram case as the opening, the agent life cycle, four roles anchored in the IIA’s Three Lines Model, eight indicators declared as synthesis, the gate-rejection-rate indicator grounded in the CJEU’s SCHUFA ruling. D10 designed from scratch and validated by rendering. As a bonus, four real pre-existing bugs fixed: an em dash forbidden by the project’s own rules, and six glossary entries out of alphabetical order in Portuguese and Spanish.<br><span class="mono">30 Aug, 22:35</span></td><td>79,750</td><td>79.5m<br><span class="mono">output: 490,187</span></td></tr>
+<tr><td>M29<br><span class="mono">afff681</span></td><td>Part 4 completed in Portuguese (7,051 words) and Spanish (7,377 words), translated by two parallel agents from the published English. The five diagrams translated and validated separately, one by one, rendered standalone before entering the article; caught and fixed a truncated Spanish caption in that process. The playbook’s evolution documented, without building it, in the two places the project already uses for planned work.<br><span class="mono">31 Aug, 06:23</span></td><td>94,026</td><td>99.8m<br><span class="mono">output: 201,119</span></td></tr>
+<tr><td>M30<br><span class="mono">d3d8f18</span></td><td>The author proposed replacing MEDIR with M.E.D.I.R. throughout the prose, to make the acronym clearer from the start. An honest count before acting: 245 occurrences, none lowercase outside technical detail. Recommendation given and accepted, keep MEDIR without periods, because the word only sounds like the real verb measure when written whole. Two real fixes went in instead: the word MEDIR now carries the glossary treatment it never had anywhere, and part 1 and the README now state explicitly that MEDIR is also the verb to measure.<br><span class="mono">31 Aug, 06:49</span></td><td>94,127</td><td>79.0m<br><span class="mono">output: 143,024</span></td></tr>
 </tbody>
 </table>
 
@@ -936,13 +995,13 @@ p code{
 <p>Cuatro números resumen el proyecto en este instante. Todos recalculados en cada ejecución del generador, ninguno escrito a mano.</p>
 
 <div class="kpi-grid">
-<div class="kpi"><span class="kpi-n">651,6 mi</span><span class="kpi-l">tokens transaccionados hasta ahora</span></div>
-<div class="kpi"><span class="kpi-n">68.176</span><span class="kpi-l">palabras publicadas (PT+EN+ES)</span></div>
-<div class="kpi"><span class="kpi-n">8.000</span><span class="kpi-l">líneas de script y documento de gobernanza</span></div>
-<div class="kpi"><span class="kpi-n">26</span><span class="kpi-l">hitos (commits) registrados</span></div>
+<div class="kpi"><span class="kpi-n">925,9 mi</span><span class="kpi-l">tokens transaccionados hasta ahora</span></div>
+<div class="kpi"><span class="kpi-n">94.127</span><span class="kpi-l">palabras publicadas (PT+EN+ES)</span></div>
+<div class="kpi"><span class="kpi-n">9.857</span><span class="kpi-l">líneas de script y documento de gobernanza</span></div>
+<div class="kpi"><span class="kpi-n">30</span><span class="kpi-l">hitos (commits) registrados</span></div>
 </div>
 
-<p>De los tokens de arriba, unos 5,1 mi todavía no cerraron hito: son de esta sesión en curso, aún no confirmados en el momento en que se generó este diario.</p>
+<p>De los tokens de arriba, unos 10,6 mi todavía no cerraron hito: son de esta sesión en curso, aún no confirmados en el momento en que se generó este diario.</p>
 
 <h2 id="es-evolucao">2. Evolución</h2>
 
@@ -952,70 +1011,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Palabras publicadas por hito">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">76.357</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">105.422</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,151.7 100.1,151.7 122.2,124.9 144.2,124.6 166.3,124.6 188.4,124.6 210.5,124.4 232.5,113.8 254.6,91.7 276.7,91.7 298.8,91.7 320.8,90.1 342.9,90.1 365.0,90.1 387.1,90.1 409.2,90.1 431.2,90.1 453.3,90.1 475.4,90.1 497.5,90.1 519.5,51.1 541.6,51.1 563.7,51.1 585.8,51.1 607.8,51.1 629.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="141.7" text-anchor="middle">20.197</text>
+<polyline points="78.0,163.3 97.1,163.3 116.3,143.9 135.4,143.7 154.5,143.7 173.7,143.7 192.8,143.6 211.9,135.9 231.1,119.9 250.2,119.9 269.3,119.9 288.5,118.8 307.6,118.8 326.7,118.8 345.9,118.8 365.0,118.8 384.1,118.8 403.3,118.8 422.4,118.8 441.5,118.8 460.7,90.5 479.8,90.5 498.9,90.5 518.1,90.5 537.2,90.5 556.3,90.5 575.5,90.5 594.6,73.0 613.7,51.3 632.9,51.1 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="153.3" text-anchor="middle">20.197</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="124.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="114.6" text-anchor="middle">33.137</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="124.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="124.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="113.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="81.7" text-anchor="middle">48.835</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="91.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="80.1" text-anchor="middle">49.571</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="80.1" text-anchor="middle">49.571</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="90.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="41.1" text-anchor="middle">68.176</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="41.1" text-anchor="middle">68.176</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="163.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="143.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="133.7" text-anchor="middle">33.137</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="143.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="143.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="135.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="109.9" text-anchor="middle">48.835</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="119.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="108.8" text-anchor="middle">49.571</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="108.8" text-anchor="middle">49.571</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="118.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="80.5" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="80.5" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="90.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="73.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="51.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="41.3" text-anchor="middle">94.026</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="51.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">68.176</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">94.127</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">ahora</text>
 <text class="svg-cap" x="78" y="244">PALABRAS PUBLICADAS, ACUMULADO POR HITO</text>
 </svg>
@@ -1026,70 +1094,79 @@ p code{
 <svg viewBox="0 0 700 260" role="img" aria-label="Tokens consumidos por hito">
 <line x1="78" y1="194" x2="652" y2="194" stroke="#c9c7bf" stroke-width=".7"/>
 <line x1="78" y1="34" x2="652" y2="34" stroke="#c9c7bf" stroke-width=".5" stroke-dasharray="2,3"/>
-<text class="svg-sub" x="72" y="38" text-anchor="end">729,7 mi</text>
+<text class="svg-sub" x="72" y="38" text-anchor="end">1037,0 mi</text>
 <text class="svg-sub" x="72" y="198" text-anchor="end">0</text>
-<polyline points="78.0,193.6 100.1,191.3 122.2,185.1 144.2,175.4 166.3,173.7 188.4,168.5 210.5,159.1 232.5,151.7 254.6,146.7 276.7,143.9 298.8,142.3 320.8,135.4 342.9,134.5 365.0,133.0 387.1,131.8 409.2,126.6 431.2,123.2 453.3,121.9 475.4,119.4 497.5,119.3 519.5,72.9 541.6,72.6 563.7,57.8 585.8,55.1 607.8,53.0 629.9,52.3 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
-<circle cx="78.0" cy="193.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="78.0" y="183.6" text-anchor="middle">1,9 mi</text>
+<polyline points="78.0,193.7 97.1,192.1 116.3,187.8 135.4,180.9 154.5,179.7 173.7,176.0 192.8,169.4 211.9,164.3 231.1,160.7 250.2,158.7 269.3,157.6 288.5,152.8 307.6,152.1 326.7,151.1 345.9,150.3 365.0,146.6 384.1,144.2 403.3,143.3 422.4,141.5 441.5,141.4 460.7,108.8 479.8,108.6 498.9,98.2 518.1,96.3 537.2,94.8 556.3,94.3 575.5,92.6 594.6,80.4 613.7,65.0 632.9,52.8 652.0,51.1" fill="none" stroke="#1b1b19" stroke-width="1"/>
+<circle cx="78.0" cy="193.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="78.0" y="183.7" text-anchor="middle">1,9 mi</text>
 <text class="svg-sub" x="78.0" y="220" text-anchor="middle">M1</text>
-<circle cx="100.1" cy="191.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="100.1" y="220" text-anchor="middle">M2</text>
-<circle cx="122.2" cy="185.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="122.2" y="220" text-anchor="middle">M3</text>
-<circle cx="144.2" cy="175.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="144.2" y="220" text-anchor="middle">M4</text>
-<circle cx="166.3" cy="173.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="166.3" y="163.7" text-anchor="middle">92,5 mi</text>
-<text class="svg-sub" x="166.3" y="220" text-anchor="middle">M5</text>
-<circle cx="188.4" cy="168.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="188.4" y="220" text-anchor="middle">M6</text>
-<circle cx="210.5" cy="159.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="210.5" y="220" text-anchor="middle">M7</text>
-<circle cx="232.5" cy="151.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="232.5" y="220" text-anchor="middle">M8</text>
-<circle cx="254.6" cy="146.7" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="254.6" y="136.7" text-anchor="middle">215,5 mi</text>
-<text class="svg-sub" x="254.6" y="220" text-anchor="middle">M9</text>
-<circle cx="276.7" cy="143.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="276.7" y="220" text-anchor="middle">M10</text>
-<circle cx="298.8" cy="142.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="298.8" y="220" text-anchor="middle">M11</text>
-<circle cx="320.8" cy="135.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="320.8" y="220" text-anchor="middle">M12</text>
-<circle cx="342.9" cy="134.5" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="342.9" y="124.5" text-anchor="middle">271,6 mi</text>
-<text class="svg-sub" x="342.9" y="220" text-anchor="middle">M13</text>
-<circle cx="365.0" cy="133.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M14</text>
-<circle cx="387.1" cy="131.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="387.1" y="220" text-anchor="middle">M15</text>
-<circle cx="409.2" cy="126.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="409.2" y="220" text-anchor="middle">M16</text>
-<circle cx="431.2" cy="123.2" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="431.2" y="113.2" text-anchor="middle">322,8 mi</text>
-<text class="svg-sub" x="431.2" y="220" text-anchor="middle">M17</text>
-<circle cx="453.3" cy="121.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="453.3" y="220" text-anchor="middle">M18</text>
-<circle cx="475.4" cy="119.4" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="475.4" y="220" text-anchor="middle">M19</text>
-<circle cx="497.5" cy="119.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="497.5" y="220" text-anchor="middle">M20</text>
-<circle cx="519.5" cy="72.9" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="519.5" y="62.9" text-anchor="middle">552,1 mi</text>
-<text class="svg-sub" x="519.5" y="220" text-anchor="middle">M21</text>
-<circle cx="541.6" cy="72.6" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="541.6" y="220" text-anchor="middle">M22</text>
-<circle cx="563.7" cy="57.8" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="563.7" y="220" text-anchor="middle">M23</text>
-<circle cx="585.8" cy="55.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="585.8" y="220" text-anchor="middle">M24</text>
-<circle cx="607.8" cy="53.0" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="607.8" y="43.0" text-anchor="middle">643,2 mi</text>
-<text class="svg-sub" x="607.8" y="220" text-anchor="middle">M25</text>
-<circle cx="629.9" cy="52.3" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="629.9" y="220" text-anchor="middle">M26</text>
+<circle cx="97.1" cy="192.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="97.1" y="220" text-anchor="middle">M2</text>
+<circle cx="116.3" cy="187.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="116.3" y="220" text-anchor="middle">M3</text>
+<circle cx="135.4" cy="180.9" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="135.4" y="220" text-anchor="middle">M4</text>
+<circle cx="154.5" cy="179.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="154.5" y="169.7" text-anchor="middle">92,5 mi</text>
+<text class="svg-sub" x="154.5" y="220" text-anchor="middle">M5</text>
+<circle cx="173.7" cy="176.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="173.7" y="220" text-anchor="middle">M6</text>
+<circle cx="192.8" cy="169.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="192.8" y="220" text-anchor="middle">M7</text>
+<circle cx="211.9" cy="164.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="211.9" y="220" text-anchor="middle">M8</text>
+<circle cx="231.1" cy="160.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="231.1" y="150.7" text-anchor="middle">215,5 mi</text>
+<text class="svg-sub" x="231.1" y="220" text-anchor="middle">M9</text>
+<circle cx="250.2" cy="158.7" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="250.2" y="220" text-anchor="middle">M10</text>
+<circle cx="269.3" cy="157.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="269.3" y="220" text-anchor="middle">M11</text>
+<circle cx="288.5" cy="152.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="288.5" y="220" text-anchor="middle">M12</text>
+<circle cx="307.6" cy="152.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="307.6" y="142.1" text-anchor="middle">271,6 mi</text>
+<text class="svg-sub" x="307.6" y="220" text-anchor="middle">M13</text>
+<circle cx="326.7" cy="151.1" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="326.7" y="220" text-anchor="middle">M14</text>
+<circle cx="345.9" cy="150.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="345.9" y="220" text-anchor="middle">M15</text>
+<circle cx="365.0" cy="146.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="365.0" y="220" text-anchor="middle">M16</text>
+<circle cx="384.1" cy="144.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="384.1" y="134.2" text-anchor="middle">322,8 mi</text>
+<text class="svg-sub" x="384.1" y="220" text-anchor="middle">M17</text>
+<circle cx="403.3" cy="143.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="403.3" y="220" text-anchor="middle">M18</text>
+<circle cx="422.4" cy="141.5" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="422.4" y="220" text-anchor="middle">M19</text>
+<circle cx="441.5" cy="141.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="441.5" y="220" text-anchor="middle">M20</text>
+<circle cx="460.7" cy="108.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="460.7" y="98.8" text-anchor="middle">552,1 mi</text>
+<text class="svg-sub" x="460.7" y="220" text-anchor="middle">M21</text>
+<circle cx="479.8" cy="108.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="479.8" y="220" text-anchor="middle">M22</text>
+<circle cx="498.9" cy="98.2" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="498.9" y="220" text-anchor="middle">M23</text>
+<circle cx="518.1" cy="96.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="518.1" y="220" text-anchor="middle">M24</text>
+<circle cx="537.2" cy="94.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="537.2" y="84.8" text-anchor="middle">643,2 mi</text>
+<text class="svg-sub" x="537.2" y="220" text-anchor="middle">M25</text>
+<circle cx="556.3" cy="94.3" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="556.3" y="220" text-anchor="middle">M26</text>
+<circle cx="575.5" cy="92.6" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="575.5" y="220" text-anchor="middle">M27</text>
+<circle cx="594.6" cy="80.4" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="594.6" y="220" text-anchor="middle">M28</text>
+<circle cx="613.7" cy="65.0" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="613.7" y="55.0" text-anchor="middle">836,3 mi</text>
+<text class="svg-sub" x="613.7" y="220" text-anchor="middle">M29</text>
+<circle cx="632.9" cy="52.8" r="3" fill="#1b1b19"/>
+<text class="svg-sub" x="632.9" y="220" text-anchor="middle">M30</text>
 <circle cx="652.0" cy="51.1" r="3" fill="#1b1b19"/>
-<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">651,6 mi</text>
+<text class="svg-sub" x="652.0" y="41.1" text-anchor="middle">925,9 mi</text>
 <text class="svg-sub" x="652.0" y="220" text-anchor="middle">ahora</text>
 <text class="svg-cap" x="78" y="244">TOKENS CONSUMIDOS, ACUMULADO POR HITO, MISMO EJE X DE ARRIBA</text>
 </svg>
@@ -1129,6 +1206,10 @@ p code{
 <tr><td>M24<br><span class="mono">241f320</span></td><td>README actualizado en los tres idiomas: gana una línea que apunta al GitHub Pages publicado, el árbol de archivos ahora lista la parte 3 y los dos compañeros compartidos, y dos diagramas (D6, las tres capas del marco, y D1, la separación de poderes) se incorporan como imagen, usando el PNG de fondo blanco en vez del SVG de fondo transparente, ilegible en el tema oscuro de GitHub.<br><span class="mono">30 ago, 21:30</span></td><td>68.176</td><td>12,5 mi<br><span class="mono">salida: 118.200</span></td></tr>
 <tr><td>M25<br><span class="mono">b31515a</span></td><td>La investigación de la parte 4 llega completa, seis ejes, entregada por el autor fuera de la sesión, y pasa por verificación de fuente primaria en sus dos hallazgos más cargados: el caso SCHUFA del TJUE, que convierte la tasa de rechazo en la puerta en exposición jurídica, y el caso de las 20.225 cuentas de Instagram, que abre la pieza. Cuatro ajustes aplicados, las tres fuentes del SCHUFA separadas, la fuente de patente del cuasi-accidente cambiada por el triángulo de Heinrich, el par de Kyndryl verificado en el origen, el número de Gartner no localizado y mantenido como parcial, y veintinueve fuentes integradas al inventario.<br><span class="mono">30 ago, 21:43</span></td><td>68.176</td><td>9,6 mi<br><span class="mono">salida: 146.155</span></td></tr>
 <tr><td>M26<br><span class="mono">d972a35</span></td><td>Eje 0 añadido al dosier de la parte 4: una observación de campo, un prototipo de un tercero mostrado informalmente al autor. Una corrección del propio autor evitó un error que habría sido grave, describir el prototipo como fuente primaria del proyecto; el texto final trata la convergencia como evidencia independiente, sin nombrar producto, empresa o persona, y sin reproducir nada sin autorización escrita.<br><span class="mono">30 ago, 21:47</span></td><td>68.176</td><td>3,3 mi<br><span class="mono">salida: 37.320</span></td></tr>
+<tr><td>M27<br><span class="mono">c4bd34c</span></td><td>Diario de bordo regenerado con cuatro hitos nuevos: la regeneración anterior que corrigió tres bugs, el README enriquecido con diagramas incorporados, la investigación de la parte 4 verificada e integrada al inventario de fuentes, el eje 0 corregido. Veintiséis hitos completos, 68.176 palabras publicadas.<br><span class="mono">30 ago, 21:55</span></td><td>68.176</td><td>10,6 mi<br><span class="mono">salida: 33.719</span></td></tr>
+<tr><td>M28<br><span class="mono">f7dd32b</span></td><td>Parte 4 escrita por completo en inglés: el caso de las 20.225 cuentas de Instagram como apertura, ciclo de vida del agente, cuatro roles anclados en el Modelo de las Tres Líneas del IIA, ocho indicadores declarados como síntesis, el indicador de rechazo en el portón fundamentado en el caso SCHUFA del TJUE. D10 diseñado desde cero y validado por renderizado. De regalo, cuatro bugs reales preexistentes corregidos: un guion largo prohibido por las propias normas del proyecto, y seis entradas del glosario fuera de orden alfabético en portugués y español.<br><span class="mono">30 ago, 22:35</span></td><td>79.750</td><td>79,5 mi<br><span class="mono">salida: 490.187</span></td></tr>
+<tr><td>M29<br><span class="mono">afff681</span></td><td>Parte 4 completada en portugués (7.051 palabras) y español (7.377 palabras), traducida por dos agentes en paralelo a partir del inglés publicado. Los cinco diagramas traducidos y validados aparte, uno por uno, renderizados aislados antes de entrar al artículo; encontré y corregí una leyenda truncada en español en ese proceso. La evolución hacia un playbook documentada, sin construirla, en los dos lugares que el proyecto ya usa para trabajo planeado.<br><span class="mono">31 ago, 06:23</span></td><td>94.026</td><td>99,8 mi<br><span class="mono">salida: 201.119</span></td></tr>
+<tr><td>M30<br><span class="mono">d3d8f18</span></td><td>El autor propuso cambiar MEDIR por M.E.D.I.R. en toda la prosa, para dejar la sigla más clara desde el principio. Conteo honesto antes de actuar: 245 apariciones, ninguna en minúscula fuera de detalle técnico. Recomendación dada y aceptada, mantener MEDIR sin puntos, porque la palabra solo suena como el verbo medir de verdad cuando está escrita entera. En su lugar, dos correcciones reales: la palabra MEDIR ahora lleva el tratamiento de glosario que nunca tuvo en ningún lado, y la parte 1 y el README ahora dicen explícitamente que MEDIR también es medir.<br><span class="mono">31 ago, 06:49</span></td><td>94.127</td><td>79,0 mi<br><span class="mono">salida: 143.024</span></td></tr>
 </tbody>
 </table>
 
