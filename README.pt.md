@@ -13,6 +13,8 @@ Estado: em andamento, agosto de 2026
 
 Publicado em [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositório) e [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, os arquivos HTML renderizam como páginas, não só como código-fonte).
 
+**Comece a ler:** [Parte 1, por quê](harness-p1.html) · [Parte 2, como](harness-p2.html) · [Parte 3, operação](harness-p3.html) · [Parte 4, governança](harness-p4.html) · [Guia compacto](harness-toolkit.html) · [Glossário](harness-glossary.html) · [Fontes](harness-sources.html) · [Diário de bordo](docs/logbook.html)
+
 ---
 
 ## A tese
@@ -110,7 +112,7 @@ Inspecionar, na tabela acima, significa sensores que produzem evidência, não o
 Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Dois gráficos, não um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios sensores de um agente. Os dois compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou o contrário.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 94.345 palavras ao longo de trinta e seis marcos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 99.849 palavras ao longo de quarenta marcos" width="680">
 </p>
 
 <p align="center"><em>Palavras publicadas em toda a série, somadas. Cresce em degraus, a maior parte do texto nasce dentro de um único marco, não gradualmente entre marcos. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>

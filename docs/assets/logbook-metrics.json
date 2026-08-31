@@ -1,9 +1,11 @@
 {
-  "generated_at": "2026-08-31T13:49:17.293556+00:00",
+  "generated_at": "2026-08-31T16:33:39.582781+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\46908256-4997-4659-b184-4a6d48768252.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\aac61ff0-ff50-42f9-8b0b-de3773bd541f.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b8483cb7-107f-4e13-a062-36f399ca1ce7.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\d6866966-e558-4b5e-b4a9-b907f0feeb66.jsonl",
@@ -731,12 +733,92 @@
         "cache_read": 1099054046,
         "cache_creation": 10353396
       }
+    },
+    {
+      "hash": "dd880e9",
+      "timestamp": "2026-08-31T10:51:37-03:00",
+      "subject": "Regera o diario de bordo, marcos M35 e M36",
+      "words_published": 94345,
+      "code_lines": 9415,
+      "governance_lines": 661,
+      "tokens_bucket": {
+        "input": 72,
+        "output": 22504,
+        "cache_read": 15390282,
+        "cache_creation": 866983
+      },
+      "tokens_cumulative": {
+        "input": 6712,
+        "output": 4888875,
+        "cache_read": 1114444328,
+        "cache_creation": 11220379
+      }
+    },
+    {
+      "hash": "d34b9d1",
+      "timestamp": "2026-08-31T11:22:03-03:00",
+      "subject": "Corrige legendas desatualizadas e separa as fontes da parte 1 e 2",
+      "words_published": 94654,
+      "code_lines": 9451,
+      "governance_lines": 661,
+      "tokens_bucket": {
+        "input": 274,
+        "output": 158259,
+        "cache_read": 19383381,
+        "cache_creation": 360693
+      },
+      "tokens_cumulative": {
+        "input": 6986,
+        "output": 5047134,
+        "cache_read": 1133827709,
+        "cache_creation": 11581072
+      }
+    },
+    {
+      "hash": "691efb3",
+      "timestamp": "2026-08-31T12:45:59-03:00",
+      "subject": "Corrige navegacao entre partes, erros de fato e adiciona citacoes ao corpo",
+      "words_published": 96744,
+      "code_lines": 9454,
+      "governance_lines": 661,
+      "tokens_bucket": {
+        "input": 456,
+        "output": 292396,
+        "cache_read": 43344200,
+        "cache_creation": 644051
+      },
+      "tokens_cumulative": {
+        "input": 7442,
+        "output": 5339530,
+        "cache_read": 1177171909,
+        "cache_creation": 12225123
+      }
+    },
+    {
+      "hash": "441f26b",
+      "timestamp": "2026-08-31T13:22:03-03:00",
+      "subject": "Localiza fontes primarias para 11 afirmacoes sem citacao verificada",
+      "words_published": 99849,
+      "code_lines": 9471,
+      "governance_lines": 661,
+      "tokens_bucket": {
+        "input": 334,
+        "output": 172372,
+        "cache_read": 72752065,
+        "cache_creation": 390242
+      },
+      "tokens_cumulative": {
+        "input": 7776,
+        "output": 5511902,
+        "cache_read": 1249923974,
+        "cache_creation": 12615365
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 16,
-    "output": 10251,
-    "cache_read": 2715485,
-    "cache_creation": 847391
+    "input": 90,
+    "output": 53015,
+    "cache_read": 24369047,
+    "cache_creation": 98070
   }
 }
