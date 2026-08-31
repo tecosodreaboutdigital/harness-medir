@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-08-30T22:15:16.391391+00:00",
+  "generated_at": "2026-08-30T23:58:36.331209+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
   ],
   "milestones": [
@@ -346,12 +347,112 @@
         "cache_read": 317415390,
         "cache_creation": 3729695
       }
+    },
+    {
+      "hash": "b81f378",
+      "timestamp": "2026-08-30T19:16:54-03:00",
+      "subject": "Regera o diario de bordo, marcos M15 a M17",
+      "words_published": 49571,
+      "code_lines": 5073,
+      "governance_lines": 519,
+      "tokens_bucket": {
+        "input": 36,
+        "output": 16182,
+        "cache_read": 5804101,
+        "cache_creation": 34013
+      },
+      "tokens_cumulative": {
+        "input": 2466,
+        "output": 1702028,
+        "cache_read": 323219491,
+        "cache_creation": 3763708
+      }
+    },
+    {
+      "hash": "67f08a5",
+      "timestamp": "2026-08-30T19:36:09-03:00",
+      "subject": "Valida os SVGs dos diagramas por renderizacao e gera os PNGs para o Medium",
+      "words_published": 49571,
+      "code_lines": 5073,
+      "governance_lines": 519,
+      "tokens_bucket": {
+        "input": 178,
+        "output": 192430,
+        "cache_read": 10631151,
+        "cache_creation": 504325
+      },
+      "tokens_cumulative": {
+        "input": 2644,
+        "output": 1894458,
+        "cache_read": 333850642,
+        "cache_creation": 4268033
+      }
+    },
+    {
+      "hash": "d1babbd",
+      "timestamp": "2026-08-30T19:36:52-03:00",
+      "subject": "Merge: valida SVGs dos diagramas e gera PNGs para o Medium",
+      "words_published": 49571,
+      "code_lines": 5073,
+      "governance_lines": 519,
+      "tokens_bucket": {
+        "input": 8,
+        "output": 4353,
+        "cache_read": 720972,
+        "cache_creation": 5334
+      },
+      "tokens_cumulative": {
+        "input": 2652,
+        "output": 1898811,
+        "cache_read": 334571614,
+        "cache_creation": 4273367
+      }
+    },
+    {
+      "hash": "6f1c33e",
+      "timestamp": "2026-08-30T20:47:38-03:00",
+      "subject": "Publica a parte 3 completa e unifica a barra de serie, o glossario e as fontes",
+      "words_published": 68176,
+      "code_lines": 7319,
+      "governance_lines": 537,
+      "tokens_bucket": {
+        "input": 774,
+        "output": 761624,
+        "cache_read": 209297723,
+        "cache_creation": 1317753
+      },
+      "tokens_cumulative": {
+        "input": 3426,
+        "output": 2660435,
+        "cache_read": 543869337,
+        "cache_creation": 5591120
+      }
+    },
+    {
+      "hash": "395c6cc",
+      "timestamp": "2026-08-30T20:47:48-03:00",
+      "subject": "Merge: parte 3 completa, barra de serie unificada, glossario e fontes compartilhados",
+      "words_published": 68176,
+      "code_lines": 7319,
+      "governance_lines": 537,
+      "tokens_bucket": {
+        "input": 4,
+        "output": 540,
+        "cache_read": 1523972,
+        "cache_creation": 2930
+      },
+      "tokens_cumulative": {
+        "input": 3430,
+        "output": 2660975,
+        "cache_read": 545393309,
+        "cache_creation": 5594050
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 8,
-    "output": 1224,
-    "cache_read": 1260880,
-    "cache_creation": 2062
+    "input": 48,
+    "output": 17924,
+    "cache_read": 18485640,
+    "cache_creation": 26964
   }
 }
