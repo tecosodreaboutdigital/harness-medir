@@ -210,7 +210,7 @@
 
 <h2 id="inspecionar">6. Inspecionar</h2>
 
-<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As cinco ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
+<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As seis ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -266,6 +266,19 @@
 <p><strong>Como começar em 15 minutos.</strong> Aponte o comando de auditoria para a interface que você entregou mais recentemente, antes de mexer em qualquer coisa nova. O que ele aponta em um trabalho que você já confia é a calibração do que ele vai apontar depois.</p>
 
 <p>Licença Apache 2.0. Repositório: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<h3>research</h3>
+
+<p><strong>Problema.</strong> Uma afirmação escrita num guia ou num artigo só vale o que a fonte por trás dela vale, e achar, abrir e ler essa fonte à mão é o passo mais fácil de pular sob prazo apertado.</p>
+<p><strong>Na prática.</strong> Uma skill que pesquisa uma pergunta contra fontes primárias reais e salva os achados como um arquivo markdown no repositório, não um resumo na janela de chat que desaparece quando a sessão termina. Este projeto a usou diretamente, repetidamente, em escala real, para pesquisar e verificar as lacunas de fonte primária fechadas em duas rodadas de correção de citação, e ela se saiu bem: saída consistentemente bem fundamentada, salva num local sensato toda vez.</p>
+<p><strong>Para quem é.</strong> N1 pra cima, qualquer harness onde uma afirmação precisa de uma fonte checável antes de entrar em qualquer coisa publicada.</p>
+<p><strong>Tier mínimo.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Uma pergunta sem ângulo de pesquisa nenhum, onde a resposta já é conhecida ou trivialmente verificável. O próprio custo da skill, uma rodada de pesquisa dedicada, é desperdiçado nisso.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte-a para uma afirmação do próprio texto do seu projeto que nunca teve uma citação real, e leia onde ela salva o resultado antes de confiar na resposta.</p>
+
+<p>Parte da coleção mattpocock/skills, já coberta em <a href="#equipar">Equipar</a> acima. Repositório: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>A própria instrução de "suba um agente de fundo" causa uma camada redundante de delegação quando invocada de dentro de uma chamada que já é um agente de fundo, uma ineficiência pequena que vale saber, não um motivo para não usar.</p></div>
 
 <div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das cinco ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
 
@@ -561,6 +574,10 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <li>The Register. <em>ServiceNow adds agent kill switches to AI control tower</em>, 5 de maio de 2026. <a href="https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579">theregister.com</a></li>
 <li>Fortune. <em>Your company's AI could delete everything in 9 seconds. ServiceNow wants to be the kill switch</em>, 6 de maio de 2026. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/">fortune.com</a></li>
 <li>BankInfoSecurity. <em>Why Cisco Is Eyeing Buy of Non-Human Identity Startup Astrix</em>. <a href="https://www.bankinfosecurity.com/blogs/cisco-eyeing-buy-non-human-identity-startup-astrix-p-4105">bankinfosecurity.com</a></li>
+<li>Data Privacy Stack. <em>Presidio</em>, detecção e redação de PII, código aberto. <a href="https://github.com/data-privacy-stack/presidio">github.com/data-privacy-stack/presidio</a></li>
+<li>Microsoft Learn. <em>Use Microsoft Purview to manage data security &amp; compliance for AI agents</em>. <a href="https://learn.microsoft.com/en-us/purview/ai-agents">learn.microsoft.com</a></li>
+<li>Google Cloud. <em>Model Armor overview</em>. <a href="https://docs.cloud.google.com/model-armor/overview">docs.cloud.google.com</a></li>
+<li>AWS. <em>Amazon Bedrock Guardrails</em>. <a href="https://aws.amazon.com/bedrock/guardrails/">aws.amazon.com</a></li>
 </ol>
 
 <div class="foot">

@@ -210,7 +210,7 @@
 
 <h2 id="inspecionar">6. Inspect</h2>
 
-<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The five tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
+<p>Inspect is the step that produces evidence instead of opinion, with the complete sensor matrix in <a href="harness-p2.html#en-inspecionar">part 2</a>. The six tools below are the ones used in the experiment described there, and they serve as a category reference even if your field uses different technology.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -266,6 +266,19 @@
 <p><strong>How to start in 15 minutes.</strong> Point the audit command at the interface you shipped most recently, before touching anything new. What it flags in work you already trust is the calibration for what it will flag next.</p>
 
 <p>Licence Apache 2.0. Repository: <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></p>
+
+<h3>research</h3>
+
+<p><strong>Problem.</strong> A claim written into a guide or an article is only as good as the source behind it, and finding, opening and reading that source by hand is the step most likely to get skipped under deadline.</p>
+<p><strong>In practice.</strong> A skill that researches a question against real primary sources and saves the findings as a markdown file in the repository, not a summary in the chat window that disappears when the session ends. This project used it directly, repeatedly, at real scale, to research and verify the primary-source gaps closed across two rounds of citation correction, and it held up well: consistently well-sourced output, saved to a sensible location every time.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness where a claim needs a checkable source before it goes into anything published.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A question with no real research angle, where the answer is already known or trivially verifiable. The skill's own overhead, a dedicated research pass, is wasted on that.</p>
+<p><strong>How to start in 15 minutes.</strong> Point it at one claim from your own project's existing text that has never had a real citation, and read where it saves the result before trusting the answer.</p>
+
+<p>Part of the mattpocock/skills collection, already covered in <a href="#equipar">Equip</a> above. Repository: <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>Its own instruction to spin up a background agent causes one redundant layer of delegation when it is invoked from inside a call that is already a background agent, a minor inefficiency worth knowing about, not a reason not to use it.</p></div>
 
 <div class="rule-box"><span class="lbl">The critique of this section</span><p>A dashboard full of weak sensors produces exactly the same reassuring green screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why. None of the five tools above solves this alone, it is the discipline of whoever operates the dashboard, covered in the risks section of <a href="harness-p2.html#en-riscos-2">part 2</a>.</p></div>
 
@@ -561,6 +574,10 @@ description: Reviews contract drafts against the house checklist of
 <li>The Register. <em>ServiceNow adds agent kill switches to AI control tower</em>, 5 May 2026. <a href="https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579">theregister.com</a></li>
 <li>Fortune. <em>Your company's AI could delete everything in 9 seconds. ServiceNow wants to be the kill switch</em>, 6 May 2026. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/">fortune.com</a></li>
 <li>BankInfoSecurity. <em>Why Cisco Is Eyeing Buy of Non-Human Identity Startup Astrix</em>. <a href="https://www.bankinfosecurity.com/blogs/cisco-eyeing-buy-non-human-identity-startup-astrix-p-4105">bankinfosecurity.com</a></li>
+<li>Data Privacy Stack. <em>Presidio</em>, open-source PII detection and redaction. <a href="https://github.com/data-privacy-stack/presidio">github.com/data-privacy-stack/presidio</a></li>
+<li>Microsoft Learn. <em>Use Microsoft Purview to manage data security &amp; compliance for AI agents</em>. <a href="https://learn.microsoft.com/en-us/purview/ai-agents">learn.microsoft.com</a></li>
+<li>Google Cloud. <em>Model Armor overview</em>. <a href="https://docs.cloud.google.com/model-armor/overview">docs.cloud.google.com</a></li>
+<li>AWS. <em>Amazon Bedrock Guardrails</em>. <a href="https://aws.amazon.com/bedrock/guardrails/">aws.amazon.com</a></li>
 </ol>
 
 <div class="foot">

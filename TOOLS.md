@@ -69,7 +69,9 @@ Two of these collections, superpowers and the Karpathy-inspired guide, were alre
 
 This section is what separates "installed" from "used", and it is the one that will grow the most. Every entry names the skill, the artefact it helped produce, and the date.
 
-*No usage logged yet beyond the installation itself, done on 30 August 2026. All of this project's work up to that point (the repository, the compact guide rewrite, Part 2's translation, the English-primary restructuring across both repositories) was done with the harness's native tools, without any of these thirty skills. From here on, every real use enters this log before being claimed in any article.*
+*No usage logged for the first day beyond the installation itself, done on 30 August 2026. All of this project's work up to that point (the repository, the compact guide rewrite, Part 2's translation, the English-primary restructuring across both repositories) was done with the harness's native tools, without any of these thirty skills.*
+
+**`research`, 31 August 2026.** Used directly, repeatedly, at real scale, across the day's two rounds of citation correction and the later adversarial research pass on Parts 3 and 4: researching a claim against real primary sources and saving the findings as a markdown file, rather than a chat summary that disappears when the session ends. It held up well every time, consistently well-sourced output, saved to a sensible location. One real inefficiency logged rather than hidden: its own instruction to spin up a background agent adds one redundant layer of delegation when it is invoked from a call that is already a background agent. Now cited on its own in the compact guide's Inspect section, closing the gap `NEXT-STEPS.md`'s item 4 named: installed and audited at the collection level is not the same claim as individually verified and cited.
 
 ---
 

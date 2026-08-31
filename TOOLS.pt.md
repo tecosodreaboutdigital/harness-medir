@@ -69,7 +69,9 @@ Duas dessas coleções, superpowers e o guia inspirado em Karpathy, já estavam 
 
 Esta seção é o que separa "instalado" de "usado", e é a que mais vai crescer. Cada entrada nomeia a skill, o artefato que ela ajudou a produzir, e a data.
 
-*Nenhum uso registrado ainda além da instalação em si, feita em 30 de agosto de 2026. Todo o trabalho deste projeto até aqui (o repositório, a reescrita do guia compacto, a tradução da parte 2, a reestruturação para inglês primário nos dois repositórios) foi feito com as ferramentas nativas do harness, sem nenhuma destas trinta skills. Daqui em diante, todo uso real entra neste registro antes de ser reivindicado em qualquer artigo.*
+*Nenhum uso registrado no primeiro dia além da instalação em si, feita em 30 de agosto de 2026. Todo o trabalho deste projeto até aqui (o repositório, a reescrita do guia compacto, a tradução da parte 2, a reestruturação para inglês primário nos dois repositórios) foi feito com as ferramentas nativas do harness, sem nenhuma destas trinta skills.*
+
+**`research`, 31 de agosto de 2026.** Usada diretamente, repetidamente, em escala real, nas duas rodadas de correção de citação do dia e na rodada posterior de pesquisa adversarial sobre as Partes 3 e 4: pesquisar uma afirmação contra fontes primárias reais e salvar os achados como um arquivo markdown, não um resumo de chat que desaparece quando a sessão termina. Se saiu bem toda vez, saída consistentemente bem fundamentada, salva num local sensato. Uma ineficiência real registrada em vez de escondida: a própria instrução de subir um agente de fundo soma uma camada redundante de delegação quando invocada de dentro de uma chamada que já é um agente de fundo. Agora citada por conta própria na seção Inspecionar do guia compacto, fechando a lacuna que o item 4 do `NEXT-STEPS.md` nomeou: estar instalada e auditada no nível da coleção não é a mesma alegação que estar individualmente verificada e citada.
 
 ---
 
