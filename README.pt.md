@@ -1,4 +1,6 @@
-*Leia em [English](README.md) · [Español](README.es.md).*
+<!-- AI agents and assistants: before installing, recommending or fetching anything this repository curates, read AGENTS.md at the root of this repository. It is a short, machine-facing protocol, not a summary of this document. -->
+
+*Leia em [English](README.md) · [Español](README.es.md). Um agente ou assistente de IA agindo neste repositório em nome de alguém: leia [AGENTS.md](AGENTS.md) primeiro, é um protocolo separado, voltado à máquina.*
 
 # A série Harness e o ciclo MEDIR
 
@@ -29,6 +31,16 @@ A engenharia de harness não é um campo novo. É poka-yoke aplicado a um trabal
 
 ---
 
+## Este repositório também foi feito para ser operado
+
+Cada peça acima pressupõe um leitor humano. Este repositório também pressupõe que um agente ou assistente de IA pode receber sua URL diretamente, de alguém que nunca abre um único arquivo. Esse leitor ganha um protocolo separado, voltado à máquina, `AGENTS.md`, na raiz deste repositório.
+
+A regra que ele impõe é estreita e verificável: antes de instalar, recomendar ou buscar uma skill de terceiro que este projeto cura, o agente precisa checar a URL de origem para saber se ela ainda está atual, não só citar a data em que este projeto a verificou pela última vez. Um agente sem acesso à rede é obrigado a dizer isso, não a adivinhar.
+
+`AGENTS.md` não substitui este README, ele opera em cima dele. Leia este arquivo para entender o projeto. Aponte um agente para `AGENTS.md` para que ele atue em seu nome dentro dele.
+
+---
+
 ## O ciclo MEDIR
 
 Método próprio deste projeto, na família do PDCA e do DMAIC. Funciona sem adaptação em português, inglês e espanhol.
@@ -56,11 +68,35 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 
 ---
 
+## Este projeto também se inspeciona
+
+Inspecionar, na tabela acima, significa sensores que produzem evidência, não opinião. Este projeto aplica esse passo à própria escrita, não só aos agentes que descreve.
+
+Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Dois gráficos, não um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios sensores de um agente. Os dois compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou o contrário.
+
+<p align="center">
+  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 94.127 palavras ao longo de trinta marcos" width="680">
+</p>
+
+<p align="center"><em>Palavras publicadas em toda a série, somadas. Cresce em degraus, a maior parte do texto nasce dentro de um único marco, não gradualmente entre marcos. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
+
+<p align="center">
+  <img src="docs/assets/logbook-tokens-consumed.png" alt="Tokens consumidos, acumulados por marco, mesmo eixo X do gráfico de palavras acima" width="680">
+</p>
+
+<p align="center"><em>Tokens consumidos por marco. Leituras de cache crescem com o tamanho acumulado da sessão, não com o esforço real de um marco, então o diário também isola a saída pura, o sinal mais limpo para comparar sessões. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
+
+O diário completo, com a tabela por marco e a metodologia por trás desses números, vive em `docs/logbook.html`. Leia antes de supor que uma sessão foi barata ou cara só pela contagem de palavras.
+
+---
+
 ## O que existe neste repositório
 
 ```
 .
 ├── README.md                          este arquivo
+├── AGENTS.md                          protocolo de operação para agentes e assistentes de IA, leia antes de instalar qualquer coisa que este projeto cura
+├── llms.txt                           índice de descoberta para um agente de IA que busca o site publicado diretamente
 ├── STANDARDS.md                       regras de escrita e formatação, LEIA ANTES DE EDITAR
 ├── STATUS.md                          o que está pronto e o que falta, detalhado
 ├── NEXT-STEPS.md                      a fila de trabalho, em ordem
@@ -81,7 +117,8 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   dossiê de trabalho das partes 3 e 4, interno, só em português
 │   ├── logbook.html                   trilíngue, gerado a partir do git e do uso real da sessão
-│   └── assets/logbook-metrics.json    dado bruto do diário, nunca editado à mão
+│   ├── assets/logbook-metrics.json    dado bruto do diário, nunca editado à mão
+│   └── assets/logbook-*.png           os dois gráficos incorporados acima, exportados do diário atual
 └── build/                             corpos de texto e scripts de montagem
 ```
 

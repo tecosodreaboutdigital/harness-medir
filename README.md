@@ -1,4 +1,6 @@
-*Read this in [Português](README.pt.md) · [Español](README.es.md).*
+<!-- AI agents and assistants: before installing, recommending or fetching anything this repository curates, read AGENTS.md at the root of this repository. It is a short, machine-facing protocol, not a summary of this document. -->
+
+*Read this in [Português](README.pt.md) · [Español](README.es.md). An AI agent or assistant acting on this repository on someone's behalf: read [AGENTS.md](AGENTS.md) first, it is a separate, machine-facing protocol.*
 
 # The Harness series and the MEDIR cycle
 
@@ -29,6 +31,16 @@ Harness engineering is not a new field. It is poka-yoke applied to a non-determi
 
 ---
 
+## This repository is also built to be operated
+
+Every piece above assumes a human reader. This repository also assumes an AI agent or assistant might be handed its URL directly, by someone who never opens a single file. That reader gets a separate, machine-facing protocol, `AGENTS.md`, at the root of this repository.
+
+The rule it enforces is narrow and testable: before any agent installs, recommends or fetches a third-party skill this project curates, it must check the origin URL for whether it is still current, not just cite the date this project last verified it. An agent that cannot reach the network is required to say so, not to guess.
+
+`AGENTS.md` does not replace this README, it operates on top of it. Read this file to understand the project. Point an agent at `AGENTS.md` to have it act on your behalf inside it.
+
+---
+
 ## The MEDIR cycle
 
 This project's own method, in the PDCA and DMAIC family. It works without adaptation in Portuguese, English and Spanish.
@@ -56,11 +68,35 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 
 ---
 
+## This project also inspects itself
+
+Inspect, in the table above, means sensors that produce evidence, not opinion. This project applies that step to its own writing, not only to the agents it describes.
+
+Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Two charts, not one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. Both share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or the other way round.
+
+<p align="center">
+  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 94,127 words across thirty milestones" width="680">
+</p>
+
+<p align="center"><em>Words published across the series, summed. It grows in steps, most text is born within a single milestone, not gradually between milestones. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
+
+<p align="center">
+  <img src="docs/assets/logbook-tokens-consumed.png" alt="Tokens consumed, cumulative by milestone, same X axis as the words chart above" width="680">
+</p>
+
+<p align="center"><em>Tokens consumed per milestone. Cache reads grow with the session's accumulated size, not with a milestone's real effort, so the log also isolates pure output, the cleaner signal for comparing sessions. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
+
+The full log, with the per-milestone table and the methodology behind these numbers, lives at `docs/logbook.html`. Read it before assuming a session was cheap or expensive from its word count alone.
+
+---
+
 ## What is in this repository
 
 ```
 .
 ├── README.md                          this file
+├── AGENTS.md                          operating protocol for AI agents and assistants, read before installing anything this project curates
+├── llms.txt                           discovery index for an AI agent fetching the published site directly
 ├── STANDARDS.md                       writing and formatting rules, READ BEFORE EDITING
 ├── STATUS.md                          what is ready and what is missing, in detail
 ├── NEXT-STEPS.md                      the work queue, in order
@@ -81,7 +117,8 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   working dossier for Parts 3 and 4, internal, Portuguese only
 │   ├── logbook.html                   trilingual, generated from git and the session's real usage
-│   └── assets/logbook-metrics.json    the log's raw data, never edited by hand
+│   ├── assets/logbook-metrics.json    the log's raw data, never edited by hand
+│   └── assets/logbook-*.png           the two charts embedded above, exported from the current logbook
 └── build/                             text bodies and assembly scripts
 ```
 
