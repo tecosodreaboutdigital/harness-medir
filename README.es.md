@@ -41,6 +41,41 @@ La regla que impone es estrecha y verificable: antes de instalar, recomendar o b
 
 ---
 
+## Instalación
+
+La skill propia del proyecto, `intake-briefing`, vive en un repositorio aparte, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT. `SKILL.md` sigue el formato abierto [Agent Skills](https://agentskills.io), así que el mismo archivo corre sin modificación en cualquier herramienta que lo lea, solo cambia la carpeta de destino.
+
+Como skill personal, clonada directamente:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git ~/.claude/skills/intake-briefing
+```
+
+Cursor, Codex CLI y Google Antigravity convergen en `.agents/skills/`:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git .agents/skills/intake-briefing
+```
+
+Los entornos de agente de Google AI Studio (el Playground) usan esa misma convención `.agents/skills/<nombre>/SKILL.md`, pero cargan montando este repositorio directamente desde GitHub en el workspace, o pegando los archivos en la UI del Playground, no mediante un `git clone` local.
+
+Para cualquier otro entorno, copia la carpeta a donde cargue skills. Las rutas de arriba son convenciones, no un requisito del formato.
+
+Como plugin de Claude Code, desde su propio marketplace:
+
+```
+/plugin marketplace add tecosodreaboutdigital/intake-briefing
+/plugin install intake-briefing@intake-briefing
+```
+
+Los dos métodos parten del mismo layout de repositorio; no hace falta reorganizar nada entre ellos.
+
+Verificado el 31 de agosto de 2026 contra la documentación de cada proveedor. Esto es un retrato, no un estado en vivo: revisa de nuevo la documentación del proveedor antes de confiar en esto mucho tiempo después.
+
+Este es el patrón que sigue cualquier repositorio futuro de esta cuenta sobre un agente, una automatización o una skill: instalar como skill personal, instalar vía `.agents/skills/`, o instalar como plugin de Claude Code, todos desde el mismo layout.
+
+---
+
 ## El ciclo MEDIR
 
 Método propio de este proyecto, en la familia del PDCA y el DMAIC. Funciona sin adaptación en portugués, inglés y español.
@@ -195,4 +230,4 @@ Detalle técnico importante: los identificadores de ancla y los marcadores SVG l
 
 Artículos: todos los derechos reservados, uso mediante autorización.
 
-La skill propia del proyecto, `intake-briefing`, vive en un repositorio aparte, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT, en el mismo patrón que las demás skills citadas en la guía compacta.
+La skill propia del proyecto, `intake-briefing`, MIT, en el mismo patrón que las demás skills citadas en la guía compacta. Ver Instalación arriba para instalarla en cualquier agente.

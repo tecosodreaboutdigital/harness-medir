@@ -41,6 +41,41 @@ A regra que ele impõe é estreita e verificável: antes de instalar, recomendar
 
 ---
 
+## Instalação
+
+A skill própria do projeto, `intake-briefing`, vive em repositório separado, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT. O `SKILL.md` segue o formato aberto [Agent Skills](https://agentskills.io), então o mesmo arquivo roda sem alteração em qualquer ferramenta que o leia, só a pasta de destino muda.
+
+Como skill pessoal, clonada direto:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git ~/.claude/skills/intake-briefing
+```
+
+Cursor, Codex CLI e Google Antigravity convergem em `.agents/skills/`:
+
+```
+git clone https://github.com/tecosodreaboutdigital/intake-briefing.git .agents/skills/intake-briefing
+```
+
+Os ambientes de agente do Google AI Studio (o Playground) usam essa mesma convenção `.agents/skills/<nome>/SKILL.md`, mas carregam montando este repositório direto do GitHub no workspace, ou colando os arquivos na UI do Playground, não por um `git clone` local.
+
+Para qualquer outro ambiente, copie a pasta para onde ele carrega skills. Os caminhos acima são convenções, não uma exigência do formato.
+
+Como plugin do Claude Code, a partir do próprio marketplace:
+
+```
+/plugin marketplace add tecosodreaboutdigital/intake-briefing
+/plugin install intake-briefing@intake-briefing
+```
+
+Os dois métodos partem do mesmo layout de repositório; nada precisa ser reorganizado entre eles.
+
+Verificado em 31 de agosto de 2026 contra a documentação de cada fornecedor. Isto é um retrato, não um status ao vivo: reconfira a documentação do fornecedor antes de confiar nisso por muito tempo depois.
+
+Este é o padrão que qualquer repositório futuro desta conta sobre agente, automação ou skill segue: instalar como skill pessoal, instalar via `.agents/skills/`, ou instalar como plugin do Claude Code, todos a partir do mesmo layout.
+
+---
+
 ## O ciclo MEDIR
 
 Método próprio deste projeto, na família do PDCA e do DMAIC. Funciona sem adaptação em português, inglês e espanhol.
@@ -195,4 +230,4 @@ Detalhe técnico importante: os identificadores de âncora e os marcadores de SV
 
 Artigos: todos os direitos reservados, uso mediante autorização.
 
-A skill própria do projeto, `intake-briefing`, vive em repositório separado, [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing), MIT, no mesmo padrão das demais skills citadas no guia compacto.
+A skill própria do projeto, `intake-briefing`, MIT, no mesmo padrão das demais skills citadas no guia compacto. Ver Instalação acima para instalar em qualquer agente.
