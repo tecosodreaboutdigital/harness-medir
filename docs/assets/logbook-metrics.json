@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-08-31T00:53:13.822693+00:00",
+  "generated_at": "2026-08-31T09:59:34.220429+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\46908256-4997-4659-b184-4a6d48768252.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\ee67d6e0-ff77-4fe6-96c3-67ea21b93690.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
   ],
   "milestones": [
@@ -528,12 +529,92 @@
         "cache_read": 637057919,
         "cache_creation": 6352133
       }
+    },
+    {
+      "hash": "c4bd34c",
+      "timestamp": "2026-08-30T21:55:08-03:00",
+      "subject": "Regera o diario de bordo, marcos M23 a M26",
+      "words_published": 68176,
+      "code_lines": 7461,
+      "governance_lines": 559,
+      "tokens_bucket": {
+        "input": 74,
+        "output": 33719,
+        "cache_read": 10459158,
+        "cache_creation": 106468
+      },
+      "tokens_cumulative": {
+        "input": 3978,
+        "output": 3053886,
+        "cache_read": 647517077,
+        "cache_creation": 6458601
+      }
+    },
+    {
+      "hash": "f7dd32b",
+      "timestamp": "2026-08-30T22:35:14-03:00",
+      "subject": "Escreve a parte 4 em ingles, integra fontes e conserta bugs reais",
+      "words_published": 79750,
+      "code_lines": 8244,
+      "governance_lines": 569,
+      "tokens_bucket": {
+        "input": 574,
+        "output": 490187,
+        "cache_read": 78059033,
+        "cache_creation": 904635
+      },
+      "tokens_cumulative": {
+        "input": 4552,
+        "output": 3544073,
+        "cache_read": 725576110,
+        "cache_creation": 7363236
+      }
+    },
+    {
+      "hash": "afff681",
+      "timestamp": "2026-08-31T06:23:43-03:00",
+      "subject": "Completa a parte 4 em portugues e espanhol, deixa o playbook documentado",
+      "words_published": 94026,
+      "code_lines": 9280,
+      "governance_lines": 573,
+      "tokens_bucket": {
+        "input": 416,
+        "output": 201119,
+        "cache_read": 98596359,
+        "cache_creation": 1022672
+      },
+      "tokens_cumulative": {
+        "input": 4968,
+        "output": 3745192,
+        "cache_read": 824172469,
+        "cache_creation": 8385908
+      }
+    },
+    {
+      "hash": "d3d8f18",
+      "timestamp": "2026-08-31T06:49:06-03:00",
+      "subject": "Estuda M.E.D.I.R. com pontos, decide manter MEDIR e fecha as lacunas reais",
+      "words_published": 94127,
+      "code_lines": 9280,
+      "governance_lines": 577,
+      "tokens_bucket": {
+        "input": 270,
+        "output": 143024,
+        "cache_read": 78675202,
+        "cache_creation": 176572
+      },
+      "tokens_cumulative": {
+        "input": 5238,
+        "output": 3888216,
+        "cache_read": 902847671,
+        "cache_creation": 8562480
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 38,
-    "output": 16675,
-    "cache_read": 5030162,
-    "cache_creation": 75646
+    "input": 34,
+    "output": 9971,
+    "cache_read": 10582135,
+    "cache_creation": 22721
   }
 }
