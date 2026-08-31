@@ -1,34 +1,39 @@
 # -*- coding: utf-8 -*-
-# Monta harness-glossary.html trilingue (EN/PT/ES) a partir dos tres
-# corpos em build/body_glossary_en.html, body_glossary_pt.html e
-# body_glossary_es.html. Segue exatamente o padrao simetrico de
-# build_toolkit.py: os tres corpos sao fonte, sem prefixo de idioma
-# nos ids, prefixados por scope() no build. O envoltorio (head, CSS,
-# a barra de topo unificada) e extraido de harness-p2.html vigente,
-# que ja carrega a barra de serie compartilhada desde 30/08/2026.
+# Monta harness-p4.html trilingue (EN/PT/ES) a partir dos tres corpos
+# em build/body_p4_en.html, body_p4_pt.html e body_p4_es.html. EN e a
+# fonte completa (lingua primaria do projeto); PT e ES sao um stub
+# honesto ("traducao em andamento", ver build/body_p4_pt.html), nao
+# texto fabricado. Segue exatamente o padrao de build_p3.py. O
+# envoltorio (head, CSS, a barra de topo unificada) e extraido de
+# harness-p3.html vigente. Esta e a primeira regeneracao em que 'p4'
+# entra em EXISTS, o que torna a parte 4 um link vivo na barra de
+# serie deste arquivo. Os outros arquivos da serie (p1, p2, toolkit,
+# glossary, sources) precisam de patch equivalente separadamente,
+# ver NEXT-STEPS.md.
 import re, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-p2 = open(os.path.join(ROOT, 'harness-p2.html'), encoding='utf-8').read()
-shell = p2[:p2.index('<div class="topbar">')]
+p3 = open(os.path.join(ROOT, 'harness-p3.html'), encoding='utf-8').read()
+shell = p3[:p3.index('<div class="topbar">')]
 shell = shell.replace(
-    '<title>Guides and sensors: how an agent learns to correct itself | Part 2</title>',
-    '<title>Glossary | Harness series</title>')
+    '<title>The separation of powers: what it can do, and who answers for it | Part 3</title>',
+    '<title>The agent office: how many exist, who owns them, and which ones still pay for themselves | Part 4</title>')
 
-EN = open(os.path.join(ROOT, 'build', 'body_glossary_en.html'), encoding='utf-8').read().strip()
-PT = open(os.path.join(ROOT, 'build', 'body_glossary_pt.html'), encoding='utf-8').read().strip()
-ES = open(os.path.join(ROOT, 'build', 'body_glossary_es.html'), encoding='utf-8').read().strip()
+EN = open(os.path.join(ROOT, 'build', 'body_p4_en.html'), encoding='utf-8').read().strip()
+PT = open(os.path.join(ROOT, 'build', 'body_p4_pt.html'), encoding='utf-8').read().strip()
+ES = open(os.path.join(ROOT, 'build', 'body_p4_es.html'), encoding='utf-8').read().strip()
 
 def scope(body, pref):
     body = re.sub(r'(\sid=")([a-z0-9\-]+)(")', lambda m: m.group(1) + pref + '-' + m.group(2) + m.group(3), body)
     body = re.sub(r'(href="#)([a-z0-9\-]+)(")', lambda m: m.group(1) + pref + '-' + m.group(2) + m.group(3), body)
+    body = re.sub(r'(url\(#)([a-z0-9\-]+)(\))', lambda m: m.group(1) + pref + '-' + m.group(2) + m.group(3), body)
     return body
 
 EN = scope(EN, 'en')
 PT = scope(PT, 'pt')
 ES = scope(ES, 'es')
 
-CUR = 'glossary'
+CUR = 'p4'
 SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources']
 FILES = {'p1': 'harness-p1.html', 'p2': 'harness-p2.html', 'p3': 'harness-p3.html',
          'p4': 'harness-p4.html', 'guide': 'harness-toolkit.html',
@@ -138,7 +143,7 @@ doc = (shell
  + '<main class="page" id="doc-es" hidden>\n' + ES + '\n</main>\n'
  + js)
 
-out_path = os.path.join(ROOT, 'harness-glossary.html')
+out_path = os.path.join(ROOT, 'harness-p4.html')
 open(out_path, 'w', encoding='utf-8').write(doc)
 
 ids = set(re.findall(r'\sid="([a-z0-9\-]+)"', doc))

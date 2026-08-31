@@ -60,6 +60,16 @@ Opens with Moffatt v Air Canada, 2024 BCCRT 149: a real company argued in a real
 
 Series bar and glossary and sources links already implemented, per the shared architecture above.
 
+### Part 4 · The agent office: how many exist, who owns them, and which ones still pay for themselves
+
+`harness-p4.html`
+
+English complete since 30 August 2026, about 6,900 words, nine sections, five diagrams (D6 to D10, D10 newly rendered for this piece, see `diagrams/README.md`). Portuguese and Spanish are an honest "translation in progress" stub for now, the same state Part 3 passed through earlier the same day before its own full translation landed; `harness-p4.html` reads correctly in all three tabs, English is simply the only complete one so far.
+
+Opens with the 20,225 Instagram accounts taken over between 17 April and 31 May 2026 through a single AI-mediated interaction that combined identity management and credential recovery, Part 3's concentration failure mode at population scale rather than in one action. The director re-enters running six systems everyone calls agents and cannot answer a board member's simplest question: how many, and who owns each one. Central thesis: the agent life cycle, six states rather than steps, distinguished from MEDIR explicitly, with the two transitions almost nobody implements, expired certification and no execution in the period, both leading to decommissioning and both requiring a human decision, never an automation. Four roles under a non-accumulation rule mirror Part 3's separation of powers on the organisational plane, sourced this round to the Institute of Internal Auditors' Three Lines Model, adopted 2013. Eight indicators are declared explicitly as synthesis, not market standard, with the gate-rejection-rate indicator grounded in the SCHUFA holding (CJEU, case C-634/21, December 2023) exactly the way Part 3's legal ground works, the thread tying the two pieces together. Where the office sits draws the CISO reporting-line precedent, sourced to a 2026 benchmark and the fire-marshal-and-sprinklers quote. The explicit constraint runs through the whole piece: everything proposed has to work in a company with seven agents and a spreadsheet, illustrated by an unattributed, generic description of what today's agent dashboards already do and the five gaps past that floor. Closes with the director's arc across all four parts and the series' own closing table.
+
+Ten glossary terms added this round (agent office, agent owner, certifier, area sponsor, non-accumulation rule, life cycle, dark matter of identity, Heinrich, cost per completed task, Three Lines Model), all three languages, alphabetised; fixing them also corrected five pre-existing alphabetisation bugs in the Portuguese glossary and one in the Spanish glossary, left over from an earlier round that translated terms without re-sorting. `harness-sources.html` gained a Part 4 section, 32 sources including the still-unlocated CJEU primary decision, same V/P discipline as Part 3.
+
 ### Skill intake-briefing
 
 `github.com/tecosodreaboutdigital/intake-briefing`, its own repository since 30 August 2026, renamed from `levantando-briefing` that same day as part of the English-primary restructuring ("levantando" was a plain Portuguese verb, not an established proper noun the way MEDIR and harness are). The project's original artefact, complete, published, MIT. Four files, each with a Portuguese and Spanish translation alongside it: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
@@ -92,9 +102,9 @@ The governance documents now describe four parts organised around a three-layer 
 
 `sources/inventory.md` gained a new section, 32 sources across the dossier's seven research axes plus the finding that reframes Part 3's opening, all carried over with the original V or P status. Two are flagged with an explicit note, not just a status letter, because the gap they mark changes what Part 3 is allowed to claim: the rule of two's original Meta publication was never read at the primary source, and the Air Canada precedent used to open the piece is Canadian, not Brazilian.
 
-`diagrams/` gained nine standalone SVG files, D1 to D9, rendered from the dossier's Mermaid specifications in the project's visual system, English because this is new content and English is authored first. Governance vocabulary that Part 4 will need, agent owner, certifier, auditor, area sponsor, and receipt kept distinct from record, was fixed at this stage precisely so the diagrams and the eventual prose do not drift apart. See `diagrams/README.md` for the full index and which rendering note each file honours.
+`diagrams/` gained nine standalone SVG files, D1 to D9, rendered from the dossier's Mermaid specifications in the project's visual system, English because this is new content and English is authored first. Governance vocabulary that Part 4 needed, agent owner, certifier, auditor, area sponsor, and receipt kept distinct from record, was fixed at this stage precisely so the diagrams and the eventual prose did not drift apart. A tenth, D10, the office's own quarterly loop, was added once Part 4's drafting confirmed it earned its place, closing the indicators section rather than opening the piece. See `diagrams/README.md` for the full index and which rendering note each file honours.
 
-What remains from the dossier's queue: writing Part 4 and consolidating the playbook. Part 3 is done, see below.
+What remains from the dossier's queue: Part 4's Portuguese and Spanish translation, and consolidating the playbook. Parts 3 and 4 are both written in English, see below.
 
 ### Diagrams D1 to D9 validated by rendering, and a shared series architecture
 
@@ -106,12 +116,6 @@ Separately, the series gained the top navigation it had been missing since the f
 
 ## Not started
 
-### Part 4 · The agent office
-
-Scope defined in the same dossier, research not started. The piece with the greatest risk of reading as a vendor brochure, because the subject attracts platform vocabulary and the market is already full of control towers.
-
-Central thesis: the agent life cycle, states and not steps, deliberately distinguished from MEDIR, which repeats inside a single task while the life cycle happens once per agent. Six states from a versioned briefing to decommissioning, four roles under a non-accumulation rule that mirrors Part 3's separation of powers at the organisational level, and eight indicators, two of which measure the quality of the governance itself rather than the agent's. Four diagrams are planned, see `diagrams/part4/`, plus a fifth candidate, the office's own quarterly loop, not yet decided. The piece's explicit constraint: everything it proposes has to work in a company with seven agents and a spreadsheet.
-
 ### Translation status
 
 | Piece | PT | EN | ES |
@@ -120,7 +124,7 @@ Central thesis: the agent life cycle, states and not steps, deliberately disting
 | Part 2 | ready | ready | ready |
 | Compact guide | ready | ready | ready |
 | Part 3 | ready | ready | ready |
-| Part 4 | missing | missing | missing |
+| Part 4 | missing | ready | missing |
 | Briefing skill | ready | ready | ready |
 | Governance docs | ready | ready | ready |
 

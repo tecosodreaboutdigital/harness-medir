@@ -854,7 +854,7 @@ flowchart LR
     V --> B
 ```
 
-**Decisão pendente.** Incluir apenas se a parte 4 tiver espaço sem virar folheto. Se ficar de fora aqui, ele é forte como abertura do playbook.
+**Decisão tomada, 30/08/2026: incluído na parte 4.** Fecha a seção dos oito indicadores, não abre a peça, conforme a nota de posição acima. Renderizado como `diagrams/part4/d10-quarterly-loop.svg`, validado por renderização sem bugs de sobreposição.
 
 ---
 

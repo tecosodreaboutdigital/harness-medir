@@ -66,6 +66,7 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── harness-p1.html                    Part 1, trilingual, ready
 ├── harness-p2.html                    Part 2, trilingual, ready
 ├── harness-p3.html                    Part 3, trilingual, ready
+├── harness-p4.html                    Part 4, English ready, PT/ES pending
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
 ├── harness-glossary.html              shared glossary, trilingual, every part links here
 ├── harness-sources.html               shared sources, trilingual, every part links here
@@ -74,7 +75,7 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 ├── diagrams/
 │   ├── README.md                      index, one row per diagram, rendering notes
 │   ├── part3/                         D1 to D5, SVG plus a matching PNG for Medium
-│   └── part4/                         D6 to D9, SVG plus a matching PNG for Medium
+│   └── part4/                         D6 to D10, SVG plus a matching PNG for Medium
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   working dossier for Parts 3 and 4, internal, Portuguese only
 │   ├── logbook.html                   trilingual, generated from git and the session's real usage
@@ -115,9 +116,9 @@ A single navigation bar, sticky and reactive to the language selector, runs acro
   <img src="diagrams/part3/d1-separation-of-powers.png" alt="The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses" width="680">
 </p>
 
-<p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of nine.</em></p>
+<p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of ten.</em></p>
 
-Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries.
+Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries. Its English text is complete as of the same day; Portuguese and Spanish translation is the project's next content milestone.
 
 ---
 
@@ -127,7 +128,7 @@ An executive, board member, area director, successor running a family business. 
 
 The series exists so that this person can diagnose what stage they are at, understand what they need to build, and talk as an equal with whoever builds it.
 
-One character runs through the series: an operations director at a mid-size manufacturer who single-handedly builds an automation for reconciling freight invoices. She is composed from recurring patterns and does not describe a specific company. In Part 1 she is at N0 and suffers a structural accident. In Part 2 she reaches N1 and discovers that a guide without a sensor is just a well-written recommendation, ending at N2. In Part 3 she faces the first irreversible action. Part 4, not yet written, is where her arc as the agent's sole builder is meant to close.
+One character runs through the series: an operations director at a mid-size manufacturer who single-handedly builds an automation for reconciling freight invoices. She is composed from recurring patterns and does not describe a specific company. In Part 1 she is at N0 and suffers a structural accident. In Part 2 she reaches N1 and discovers that a guide without a sensor is just a well-written recommendation, ending at N2. In Part 3 she faces the first irreversible action. Part 4 closes her arc: she stops being the agent's sole builder and becomes the person who can tell a board how many agents the company runs, who owns each one, and which still pay for themselves.
 
 ---
 

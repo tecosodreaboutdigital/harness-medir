@@ -60,6 +60,16 @@ Abre com Moffatt contra Air Canada, 2024 BCCRT 149: uma empresa real argumentou 
 
 Barra de série e links de glossário e fontes já implementados, conforme a arquitetura compartilhada acima.
 
+### Parte 4 · O escritório de agentes: quantos existem, quem é dono de cada um, e quais ainda se pagam
+
+`harness-p4.html`
+
+Inglês completo desde 30 de agosto de 2026, cerca de 6.900 palavras, nove seções, cinco diagramas (D6 a D10, o D10 renderizado agora para esta peça, ver `diagrams/README.md`). Português e espanhol são por ora um esboço honesto de "tradução em andamento", o mesmo estado por que a parte 3 passou mais cedo no mesmo dia antes de sua tradução completa chegar; `harness-p4.html` abre corretamente nas três abas, o inglês é simplesmente o único completo até aqui.
+
+Abre com as 20.225 contas do Instagram tomadas entre 17 de abril e 31 de maio de 2026 por meio de uma única interação mediada por IA que combinou gestão de identidade e recuperação de credencial, o modo de falha por concentração da parte 3 em escala populacional, e não numa única ação. A diretora reentra tocando seis sistemas que todo mundo chama de agente e não consegue responder a pergunta mais simples de um conselheiro: quantos são, e quem é dono de cada um. Tese central: o ciclo de vida do agente, seis estados e não passos, distinguido do MEDIR de forma explícita, com as duas transições que quase ninguém implementa, homologação vencida e sem execução no período, ambas levando ao descomissionamento e ambas exigindo decisão humana, nunca automação. Quatro papéis sob uma regra de não acumulação espelham a separação de poderes da parte 3 no plano organizacional, com fonte nova nesta rodada, o Modelo das Três Linhas do Instituto dos Auditores Internos, adotado em 2013. Oito indicadores são declarados explicitamente como síntese, não padrão de mercado, com o indicador de reprovação no portão ancorado na decisão do caso SCHUFA (TJUE, processo C-634/21, dezembro de 2023), exatamente como funciona o fundamento jurídico da parte 3, o fio que amarra as duas peças. Onde o escritório fica busca o precedente da linha de reporte do CISO, com fonte num levantamento de 2026 e a citação do brigadista de incêndio e os aspersores. A restrição explícita atravessa a peça inteira: tudo que ela propõe precisa funcionar numa empresa com sete agentes e uma planilha, ilustrada por uma descrição genérica e sem atribuição do que os painéis de agente de hoje já fazem e as cinco lacunas além desse piso. Fecha com o arco da diretora ao longo das quatro partes e a tabela de fechamento própria da série.
+
+Dez verbetes de glossário acrescentados nesta rodada (escritório de agentes, dono do agente, homologador, patrocinador da área, regra de não acumulação, ciclo de vida, matéria escura de identidade, Heinrich, custo por tarefa concluída, Modelo das Três Linhas), nos três idiomas, em ordem alfabética; corrigi-los também consertou cinco bugs de alfabetização preexistentes no glossário em português e um no espanhol, resquício de uma rodada anterior que traduziu termos sem reordená-los. `harness-sources.html` ganhou uma seção da parte 4, 32 fontes incluindo a decisão primária do TJUE ainda não localizada, na mesma marcação V ou P da parte 3.
+
 ### Skill intake-briefing
 
 `github.com/tecosodreaboutdigital/intake-briefing`, repositório próprio desde 30 de agosto de 2026, renomeada de `levantando-briefing` nesse mesmo dia, como parte da reestruturação para inglês primário ("levantando" era um verbo comum em português, não um nome próprio estabelecido como MEDIR e harness são). Artefato original do projeto, completo, publicado, MIT. Quatro arquivos, cada um com uma tradução em português e espanhol ao lado: `SKILL.md`, `interview-script.md`, `briefing-template.md`, `README.md`.
@@ -92,9 +102,9 @@ Os documentos de governança agora descrevem quatro partes organizadas em torno 
 
 `sources/inventory.md` ganhou uma seção nova, 32 fontes distribuídas nos sete eixos de pesquisa do dossiê mais o achado que reformula a abertura da parte 3, todas carregadas com o status V ou P original. Duas trazem uma nota explícita, não só uma letra de status, porque a lacuna que marcam muda o que a parte 3 pode afirmar: a publicação original da Meta sobre a regra de dois nunca foi lida na fonte primária, e o precedente Air Canada usado para abrir a peça é canadense, não brasileiro.
 
-`diagrams/` ganhou nove arquivos SVG independentes, D1 a D9, renderizados a partir das especificações Mermaid do dossiê no sistema visual do projeto, em inglês porque é conteúdo novo e o inglês é escrito primeiro. O vocabulário de governança que a parte 4 vai precisar, dono do agente, homologador, auditor, patrocinador da área, e recibo mantido distinto de registro, foi fixado nesta etapa justamente para que os diagramas e a prosa futura não se afastem um do outro. Ver `diagrams/README.md` para o índice completo e qual nota de renderização cada arquivo atende.
+`diagrams/` ganhou nove arquivos SVG independentes, D1 a D9, renderizados a partir das especificações Mermaid do dossiê no sistema visual do projeto, em inglês porque é conteúdo novo e o inglês é escrito primeiro. O vocabulário de governança que a parte 4 precisou, dono do agente, homologador, auditor, patrocinador da área, e recibo mantido distinto de registro, foi fixado nesta etapa justamente para que os diagramas e a prosa não se afastassem um do outro. Um décimo, o D10, o laço trimestral do próprio escritório, foi acrescentado assim que a redação da parte 4 confirmou que ele merecia lugar, fechando a seção de indicadores em vez de abrir a peça. Ver `diagrams/README.md` para o índice completo e qual nota de renderização cada arquivo atende.
 
-O que resta da fila do dossiê: escrever a parte 4, e consolidar o playbook. A parte 3 está pronta, ver abaixo.
+O que resta da fila do dossiê: a tradução da parte 4 para português e espanhol, e consolidar o playbook. As partes 3 e 4 já estão escritas em inglês, ver abaixo.
 
 ### Diagramas D1 a D9 validados por renderização, e uma arquitetura de série compartilhada
 
@@ -106,12 +116,6 @@ Em paralelo, a série ganhou a navegação de topo que estava faltando desde a r
 
 ## Não iniciado
 
-### Parte 4 · O escritório de agentes
-
-Escopo definido no mesmo dossiê, pesquisa não iniciada. A peça com maior risco de virar folheto de fornecedor, porque o assunto atrai vocabulário de plataforma e o mercado já está cheio de torre de controle.
-
-Tese central: o ciclo de vida do agente, estados e não passos, deliberadamente distinguido do MEDIR, que se repete dentro de uma única tarefa enquanto o ciclo de vida acontece uma vez por agente. Seis estados de um briefing versionado até o descomissionamento, quatro papéis sob uma regra de não acumulação que espelha a separação de poderes da parte 3 no plano organizacional, e oito indicadores, dois dos quais medem a qualidade da própria governança, não a do agente. Quatro diagramas estão previstos, ver `diagrams/part4/`, mais um quinto candidato, o laço próprio do escritório por trimestre, ainda não decidido. A restrição explícita da peça: tudo o que ela propõe precisa funcionar em uma empresa com sete agentes e uma planilha.
-
 ### Estado das traduções
 
 | Peça | PT | EN | ES |
@@ -120,7 +124,7 @@ Tese central: o ciclo de vida do agente, estados e não passos, deliberadamente 
 | Parte 2 | pronta | pronta | pronta |
 | Guia compacto | pronta | pronta | pronta |
 | Parte 3 | pronta | pronta | pronta |
-| Parte 4 | falta | falta | falta |
+| Parte 4 | falta | pronta | falta |
 | Skill de briefing | pronta | pronta | pronta |
 | Documentos de governança | pronta | pronta | pronta |
 

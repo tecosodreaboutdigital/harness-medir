@@ -32,7 +32,7 @@ In order. Every item carries its done criterion.
 
 ---
 
-## 1. Write Part 3 — done
+## 1. Write Part 3, done
 
 **Status: written and live at `harness-p3.html`, all three languages.** The nine sections below are all in the body (`build/body_p3_en.html`, `_pt.html`, `_es.html`), with the five diagrams inline and fully translated (including every SVG label, checked by rendering each diagram standalone in all three languages, no overflow, no overlap), the matrix-of-authority and receipt-schema artefacts in the text, both honesty obligations honoured, and the Air Canada character arc closing in section 9. Word counts run close across the three (EN 5,131, PT 5,468, ES 5,676), consistent with a real translation rather than a summary. Kept as tracking record below.
 
@@ -54,20 +54,25 @@ Two honesty obligations the dossier flags explicitly: state that the Air Canada 
 
 ---
 
-## 2. Write Part 4
+## 2. Write Part 4, English done, translation pending
 
-Research not started, scope defined in the dossier's block A. Central thesis: the agent life cycle, states and not steps, distinguished from MEDIR with enough clarity that a reader cannot confuse the two.
+**Status: English written and live at `harness-p4.html`.** Nine sections (`build/body_p4_en.html`), five diagrams inline (D6 to D10, D10 newly rendered for this piece), the six-state life cycle table, the four-role table with the non-accumulation rule, the eight-indicator table with the honesty admission that the panel is synthesis, the SCHUFA-grounded gate-rejection-rate argument tying part 4 to part 3's legal ground, the CISO-reporting-line precedent for where the office sits, the seven-agents-and-a-spreadsheet constraint held through the warning section, and the closing table matching part 3's pattern. Portuguese and Spanish tabs are an honest "translation in progress" stub for now (`build/body_p4_pt.html`, `build/body_p4_es.html`), the same state part 3 passed through earlier in the same working day before its own translation landed. Ten new glossary terms added across all three languages; `harness-sources.html` gained a Part 4 section, 32 sources.
 
-Structure to cover, per the dossier, order subject to drafting:
+Research is complete, see `sources/inventory.md`'s Part 4 section and `docs/research-part4.pt.md`. Central thesis realised: the agent life cycle, states and not steps, distinguished from MEDIR with enough clarity that a reader cannot confuse the two.
 
-1. The life cycle itself, six states from a versioned briefing to decommissioning, with the two transitions almost nobody implements, expired certification and no execution in the period, both leading to decommissioning
-2. The four roles and the non-accumulation rule, the same separation of powers as Part 3, now on the organisational plane
-3. The eight indicators, two of which measure the governance's own quality rather than the agent's: the exception rate, and the gate's own refusal rate
-4. Where the office sits, and why not in IT, presenting the realistic options with the cost of each
-5. The warning: this is the piece most likely to read as a vendor brochure, and the antidote is an explicit constraint running through the text, everything it proposes has to work in a company with seven agents and a spreadsheet
-6. The closing argument: every platform governs inward, which is why the office has to be a function of the company, not a product it buys
+Structure covered, in the order actually drafted:
 
-**Done when:** all three versions are ready, the character's arc closes the series, the eight indicators are defined with a formula, and the text holds to the seven-agents-and-a-spreadsheet constraint throughout.
+1. Opens with the 20,225-account Instagram takeover, part 3's concentration failure mode at population scale
+2. The director re-enters running six systems nobody has counted, unable to answer a board member's simplest question
+3. The life cycle itself, six states from a versioned briefing to decommissioning, with the two transitions almost nobody implements, expired certification and no execution in the period, both leading to decommissioning
+4. The four roles and the non-accumulation rule, the same separation of powers as Part 3, now on the organisational plane, sourced to the IIA's Three Lines Model
+5. The eight indicators, two of which measure the governance's own quality rather than the agent's: the exception rate, and the gate's own refusal rate, closed by D10, the office's quarterly loop
+6. Where the office sits, and why not in IT, presenting the realistic options with the cost of each
+7. The warning: the antidote to reading as a vendor brochure is an explicit constraint running through the text, everything it proposes has to work in a company with seven agents and a spreadsheet
+8. The closing argument: every platform governs inward, which is why the office has to be a function of the company, not a product it buys
+9. Who answers, and where you stand: the director's arc closes across all four parts
+
+**Done when:** all three versions are ready, the character's arc closes the series, the eight indicators are defined with a formula, and the text holds to the seven-agents-and-a-spreadsheet constraint throughout. **English met, 30 August 2026; Portuguese and Spanish remain.**
 
 ---
 

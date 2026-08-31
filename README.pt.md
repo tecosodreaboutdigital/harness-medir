@@ -66,6 +66,7 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── harness-p1.html                    Parte 1, trilíngue, pronta
 ├── harness-p2.html                    Parte 2, trilíngue, pronta
 ├── harness-p3.html                    Parte 3, trilíngue, pronta
+├── harness-p4.html                    Parte 4, inglês pronto, PT/ES pendente
 ├── harness-toolkit.html               guia compacto, organizado pelo MEDIR, pronto
 ├── harness-glossary.html              glossário compartilhado, trilíngue, toda parte aponta pra lá
 ├── harness-sources.html               fontes compartilhadas, trilíngue, toda parte aponta pra lá
@@ -74,7 +75,7 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 ├── diagrams/
 │   ├── README.md                      índice, uma linha por diagrama, notas de renderização
 │   ├── part3/                         D1 a D5, SVG mais um PNG pareado para o Medium
-│   └── part4/                         D6 a D9, SVG mais um PNG pareado para o Medium
+│   └── part4/                         D6 a D10, SVG mais um PNG pareado para o Medium
 ├── docs/
 │   ├── harness-p3-p4-briefing.pt.md   dossiê de trabalho das partes 3 e 4, interno, só em português
 │   ├── logbook.html                   trilíngue, gerado a partir do git e do uso real da sessão
@@ -115,9 +116,9 @@ Uma única barra de navegação, fixa ao rolar e reativa ao seletor de idioma, a
   <img src="diagrams/part3/d1-separation-of-powers.png" alt="A separação de poderes: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha" width="680">
 </p>
 
-<p align="center"><em>D1 · A separação de poderes: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha. Quatro funções que não podem morar no mesmo lugar, o argumento central da parte 3. Ver <a href="diagrams/README.md">diagrams/README.md</a> para o índice completo dos nove diagramas.</em></p>
+<p align="center"><em>D1 · A separação de poderes: o modelo propõe, a política autoriza, a ferramenta executa, o registro testemunha. Quatro funções que não podem morar no mesmo lugar, o argumento central da parte 3. Ver <a href="diagrams/README.md">diagrams/README.md</a> para o índice completo dos dez diagramas.</em></p>
 
-A parte 4 entrou na série em 30 de agosto de 2026, quando a rodada de pesquisa da parte 3 expôs uma segunda lacuna atrás da primeira: o MEDIR governa uma tarefa, não um agente, e nada na série até esse ponto governava o conjunto de agentes que uma empresa acaba operando. Ver `docs/harness-p3-p4-briefing.pt.md` para o dossiê de trabalho de onde essa decisão veio, interno, só em português, a mesma exceção que `sources/inventory.md` já carrega.
+A parte 4 entrou na série em 30 de agosto de 2026, quando a rodada de pesquisa da parte 3 expôs uma segunda lacuna atrás da primeira: o MEDIR governa uma tarefa, não um agente, e nada na série até esse ponto governava o conjunto de agentes que uma empresa acaba operando. Ver `docs/harness-p3-p4-briefing.pt.md` para o dossiê de trabalho de onde essa decisão veio, interno, só em português, a mesma exceção que `sources/inventory.md` já carrega. O texto em inglês está completo desde o mesmo dia; a tradução para português e espanhol é o próximo marco de conteúdo do projeto.
 
 ---
 
@@ -127,7 +128,7 @@ Um executivo, conselheiro, diretor de área, sucessor à frente de uma empresa f
 
 A série existe para que essa pessoa consiga diagnosticar em que estágio está, entender o que precisa construir, e conversar de igual para igual com quem constrói.
 
-Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem sensor é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. Na parte 4, ainda não escrita, é onde o arco dela como construtora solitária do agente deve se fechar.
+Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem sensor é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. A parte 4 fecha o arco dela: ela deixa de ser a construtora solitária do agente e se torna a pessoa capaz de dizer a um conselho quantos agentes a empresa opera, quem é dono de cada um, e quais ainda se pagam.
 
 ---
 

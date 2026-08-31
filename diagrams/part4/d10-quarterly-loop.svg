@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" role="img" aria-label="The office's quarterly loop: briefing, certification, operation, receipts, indicators, revalidation, and back to briefing">
+<style>
+text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+</style>
+<defs><marker id="d10-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
+<text class="svg-ttl" x="350" y="18" text-anchor="middle">THE OFFICE'S QUARTERLY LOOP</text>
+
+<rect x="9" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="54" y="126" text-anchor="middle">BRIEFING</text>
+
+<line x1="99" y1="122" x2="107" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+
+<rect x="109" y="100" width="130" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="174" y="126" text-anchor="middle">CERTIFICATION</text>
+
+<line x1="239" y1="122" x2="247" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+
+<rect x="249" y="100" width="95" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="296" y="126" text-anchor="middle">OPERATION</text>
+
+<line x1="344" y1="122" x2="352" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+
+<rect x="354" y="100" width="90" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="399" y="126" text-anchor="middle">RECEIPTS</text>
+
+<line x1="444" y1="122" x2="452" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+
+<rect x="454" y="100" width="105" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="506" y="126" text-anchor="middle">INDICATORS</text>
+
+<line x1="559" y1="122" x2="567" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+
+<rect x="569" y="100" width="122" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+<text class="svg-lbl" x="630" y="126" text-anchor="middle">REVALIDATION</text>
+
+<path d="M630,144 C630,196 54,196 54,144" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
+<text class="svg-sub" x="342" y="212" text-anchor="middle">realised return checked against the return the briefing promised</text>
+
+<text class="svg-cap" x="350" y="238" text-anchor="middle">THIS LOOP RUNS BY QUARTER, NOT BY TASK. MEDIR RUNS INSIDE EACH BOX ABOVE, NOT BETWEEN THEM</text>
+</svg>
