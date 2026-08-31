@@ -1,0 +1,27 @@
+# harness-medir
+
+> A content and tooling project on harness engineering and the MEDIR cycle (Map, Equip, Delegate, Inspect, Reinforce): the discipline of building the environment around an AI model so it can operate reliably. Written for an executive or a non-technical reader, and built so an AI agent can also act on it directly.
+
+Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this project's primary language; Portuguese and Spanish translations exist for every part of the series and every governance document.
+
+## Start here
+
+- [AGENTS.md](AGENTS.md): operating protocol for an AI agent or assistant acting on this repository. Read this before installing, recommending or fetching any third-party skill this project curates.
+- [README.md](README.md): the thesis, the MEDIR cycle, the autonomy tiers N0 to N3, and the full map of this repository.
+
+## The series
+
+- [Part 1](harness-p1.html): why the environment is worth more than the model.
+- [Part 2](harness-p2.html): the MEDIR method, the build layer.
+- [Part 3](harness-p3.html): the separation of powers, the operation layer.
+- [Part 4](harness-p4.html): the agent office, the governance layer.
+- [Compact guide](harness-toolkit.html): the curated tool and skill inventory, reviewed quarterly.
+
+## Reference
+
+- [Glossary](harness-glossary.html): every term the series uses, one definition each.
+- [Sources](harness-sources.html): every citation the series uses, human-facing.
+- [sources/inventory.md](sources/inventory.md): the same citations plus every curated third-party skill, with a verification status and date.
+- [TOOLS.md](TOOLS.md): the skills this project itself installed and actually used, with a real-usage log.
+- [STANDARDS.md](STANDARDS.md): writing and formatting rules, non-negotiable.
+- [Project log](docs/logbook.html): words published and tokens consumed, per milestone, generated from git and real session usage.
