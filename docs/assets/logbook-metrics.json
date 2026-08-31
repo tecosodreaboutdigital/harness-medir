@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T12:59:01.097502+00:00",
+  "generated_at": "2026-08-31T13:49:17.293556+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\46908256-4997-4659-b184-4a6d48768252.jsonl",
@@ -691,12 +691,52 @@
         "cache_read": 1010850899,
         "cache_creation": 10009572
       }
+    },
+    {
+      "hash": "05e82dd",
+      "timestamp": "2026-08-31T10:03:56-03:00",
+      "subject": "Regera o diario de bordo, marcos M33 e M34",
+      "words_published": 94476,
+      "code_lines": 9322,
+      "governance_lines": 659,
+      "tokens_bucket": {
+        "input": 96,
+        "output": 44425,
+        "cache_read": 13332921,
+        "cache_creation": 58067
+      },
+      "tokens_cumulative": {
+        "input": 6240,
+        "output": 4639369,
+        "cache_read": 1024183820,
+        "cache_creation": 10067639
+      }
+    },
+    {
+      "hash": "f613e93",
+      "timestamp": "2026-08-31T10:37:09-03:00",
+      "subject": "Adiciona icone do diario na topbar de toda pagina, corrige dois bugs reais de geracao",
+      "words_published": 94345,
+      "code_lines": 9405,
+      "governance_lines": 661,
+      "tokens_bucket": {
+        "input": 400,
+        "output": 227002,
+        "cache_read": 74870226,
+        "cache_creation": 285757
+      },
+      "tokens_cumulative": {
+        "input": 6640,
+        "output": 4866371,
+        "cache_read": 1099054046,
+        "cache_creation": 10353396
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 4,
-    "output": 342,
-    "cache_read": 524330,
-    "cache_creation": 2098
+    "input": 16,
+    "output": 10251,
+    "cache_read": 2715485,
+    "cache_creation": 847391
   }
 }
