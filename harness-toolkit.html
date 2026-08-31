@@ -887,6 +887,8 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
     <li><a href="#en-delegar">Delegate</a></li>
     <li><a href="#en-inspecionar">Inspect</a></li>
     <li><a href="#en-reforcar">Reinforce</a></li>
+    <li><a href="#en-secure">Secure</a></li>
+    <li><a href="#en-govern">Govern</a></li>
     <li><a href="#en-howto-1">Walkthrough 1: read superpowers in an hour</a></li>
     <li><a href="#en-howto-2">Walkthrough 2: write your first skill in thirty minutes</a></li>
     <li><a href="#en-howto-3">Walkthrough 3: build your first sensor</a></li>
@@ -924,7 +926,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <tr><td>Guide exists, nobody follows it to the letter</td><td>Equip</td></tr>
 <tr><td>Guide followed, no automatic verification</td><td>Inspect</td></tr>
 <tr><td>Sensor exists, no cadence or ceiling</td><td>Reinforce</td></tr>
-<tr><td>External effect with no recorded approval</td><td>Part 3, not yet published</td></tr>
+<tr><td>External effect with no recorded approval</td><td><a href="#en-secure">Secure</a>, below — part 3 covers the concepts, this section covers the tooling</td></tr>
 </tbody>
 </table>
 
@@ -1171,7 +1173,118 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <div class="rule-box"><span class="lbl">The critique of this section</span><p>None of these three entries tells a dead artefact apart from a rare one. A skill that fires once a quarter for the accounting close looks dead in a monthly sweep. That is why garbage collection here always goes into the human review queue, never the automatic-removal one: a cadence without this care erases a rare exception instead of real clutter.</p></div>
 
-<h2 id="en-howto-1">8. Walkthrough 1: read superpowers in an hour</h2>
+<h2 id="en-secure">8. Secure</h2>
+
+<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The four entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
+
+<h3>Short-lived, scoped credentials</h3>
+
+<p><strong>Problem.</strong> A long-lived interface key embedded in code or configuration, with no expiry and broader scope than the task needs, is the most common root cause behind agent-related incidents, per part 3.</p>
+<p><strong>In practice.</strong> A narrow-scope, short-lived token issued per task instead of a standing credential. The table below is the landscape, not a single tool: pick the row that fits the stack already in place.</p>
+
+<table class="wrap">
+<thead><tr><th>Standard or product</th><th>Stance</th></tr></thead>
+<tbody>
+<tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>The open standard itself, stable since 2020. Not a product, a protocol every row below implements in its own way.</td></tr>
+<tr><td>SPIFFE/SPIRE</td><td>CNCF-graduated, open source, self-hosted. Cryptographically verifiable workload identity, rotated automatically. The row to start with if the answer needs to stay fully auditable and vendor-independent.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Commercial, GA product. The agent never holds the raw key. Fastest path if Auth0 already handles identity elsewhere in the stack.</td></tr>
+<tr><td>Microsoft Entra Agent ID</td><td>Commercial, GA in 2026. Purpose-built identity construct for agents, inside a Microsoft-centric stack.</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it is for.</strong> N2 upward, this presupposes the agent already has an identity of its own, per part 3's three questions (who deployed it, what is it authorised to do, on whose behalf is it acting).</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> N0/N1 tasks with no external effect and no credential worth scoping down. Read part 3 §4 first, this entry is the fix, not the diagnosis.</p>
+<p><strong>How to start in 15 minutes.</strong> Read SPIFFE's own explanation of workload identity and compare it against whatever your agent currently authenticates with. If the answer is an API key sitting in an environment variable with no expiry, that gap is exactly what this entry closes.</p>
+
+<p>Licence Apache 2.0. Repository: <a href="https://github.com/spiffe/spire">github.com/spiffe/spire</a></p>
+
+<h3>Sigstore / Rekor</h3>
+
+<p><strong>Problem.</strong> Part 3's receipt (§6) proves what was proposed and decided. It does not, by itself, prove the receipt was not edited afterwards, and Article 12 of the EU AI Act requires logging resistant to tampering, a bar OpenTelemetry's semantic conventions do not address on their own: OTel standardises which fields a trace carries, not whether the trace was altered later.</p>
+<p><strong>In practice.</strong> An append-only, Certificate-Transparency-style transparency log. Once a receipt is written, a tamper attempt becomes publicly detectable instead of merely deniable.</p>
+<p><strong>Who it is for.</strong> N2 to N3, any harness where the receipt from part 3 §6 or the six-month retention from Article 26 needs to survive a dispute, not just an internal review.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A harness still at N0/N1 with no external effect and nothing yet worth disputing. Build the receipt first (part 3 §6), add tamper-evidence once the receipt itself is a working habit, not before.</p>
+<p><strong>How to start in 15 minutes.</strong> Read Sigstore's own explanation of Rekor before installing anything. It is worth understanding as a concept, a public append-only log anyone can verify against, even for a team that ends up building something simpler in house.</p>
+
+<p>Licence Apache 2.0, part of the Sigstore project, backed by OpenSSF. Repository: <a href="https://github.com/sigstore/rekor">github.com/sigstore/rekor</a></p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>Sigstore was built for software supply-chain provenance, signing releases and containers, not specifically for AI agent receipts. The closest agent-specific integration is early and narrower in scope than the general project. Treat this as the strongest available primitive, not a ready-made agent-audit product.</p></div>
+
+<h3>Microsoft Agent Governance Toolkit</h3>
+
+<p><strong>Problem.</strong> Part 3's four functions (model proposes, policy authorises, tool executes, record witnesses) are, in most deployments, a diagram and a set of conventions, not something the model itself is structurally prevented from bypassing.</p>
+<p><strong>In practice.</strong> An open-source runtime that intercepts every action before execution through a stateless policy engine (roughly 0.1ms p99 latency), separates identity and trust scoring into its own layer, runs execution under privilege-ring-style levels with a kill switch, and collects OWASP-mapped evidence automatically. It is the closest working implementation found of part 3's own diagram.</p>
+<p><strong>Who it is for.</strong> N2 to N3, teams past the point where policy written as text in a guide is enough.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single N0/N1 agent with no external effect. The runtime overhead only pays for itself once the policy it enforces is worth enforcing structurally.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial in the repository before the policy-engine docs. That tutorial is also where this tool's own honest limit shows up, see below.</p>
+
+<p>Licence MIT, 3,300+ stars. Repository: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+
+<div class="rule-box"><span class="lbl">Caveat</span><p>This same toolkit automates the transition into decommissioned from part 4's life cycle (inactivity-triggered, no owner or certifier sign-off required by default), which is precisely the automation-without-a-decision that part 4 §3 warns against. Listed here for the runtime-policy half, see Govern below for the life-cycle half and the specific fix needed before adopting it unmodified.</p></div>
+
+<h3>OWASP Agentic Skills Top 10</h3>
+
+<p><strong>Problem.</strong> The "Before installing anything" section of this document already asks three questions before installing a third-party skill. Part 3 §7 shows why those questions exist: postmark-mcp, ClawHavoc and the Snyk 280-plus figure are not hypothetical.</p>
+<p><strong>In practice.</strong> A structured, versioned checklist of the ways a third-party skill or MCP server misbehaves, goal hijacking, tool misuse, identity and privilege abuse among others, maintained by over a hundred contributors and already tracking real CVEs, not only hypothetical categories.</p>
+<p><strong>Who it is for.</strong> N1 upward, anyone installing a skill or MCP server they did not write themselves.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> There is no tier below which the risk stops applying. What changes with tier is how much of the checklist gets automated versus done by hand.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the three questions from "Before installing anything" against the last third-party skill you installed. Then check whether that skill's category of risk already has a named CVE on the project page.</p>
+
+<p>Reference: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
+
+<h2 id="en-govern">9. Govern</h2>
+
+<p>Govern does not replace the registry <a href="harness-p4.html">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
+
+<h3>Langfuse</h3>
+
+<p><strong>Problem.</strong> Cost per completed task, part 4's eighth indicator and the number a committee actually asks for, is nowhere near a vendor's rate card. Getting the real figure means tracing token usage, retries and tool calls back to one completed task, not summing an API bill.</p>
+<p><strong>In practice.</strong> An open-source LLM and agent observability platform: traces every model call, tool invocation and retrieval step under one task, tracks cost and latency per trace, self-hostable, integrates with OpenTelemetry, the same standard part 3 §6 names for the receipt.</p>
+<p><strong>Who it is for.</strong> N2 upward, once more than one agent is running and the eight-indicator panel is being compiled for real, not hypothetically.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single agent, low volume, where a spreadsheet already answers what it cost this quarter. Part 4 §7's own constraint applies here directly.</p>
+<p><strong>How to start in 15 minutes.</strong> Point the self-hosted or free-tier version at your highest-volume agent for one week and read the cost-per-trace report before instrumenting anything else.</p>
+
+<p>Licence MIT (core), self-hostable, hosted paid tiers also exist. Repository: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>Microsoft Agent Governance Toolkit — the life-cycle half</h3>
+
+<p>Same repository as the entry in Secure above: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. This is a second reading of the same tool, focused on the life cycle, not a duplicate entry.</p>
+
+<p><strong>Problem.</strong> Part 4 §3 is explicit that the transition into decommissioned requires a decision from the agent owner and the certifier together, never an automation running on a schedule. Most tooling in this space either has no decommissioning procedure at all, or automates it without that gate.</p>
+<p><strong>In practice.</strong> This toolkit is the concrete, current example of the second failure: it implements automated decommissioning after a configurable inactivity period, with no owner or certifier sign-off built in by default. Worth studying for its seven life-cycle states, and worth modifying before adopting on this one transition specifically.</p>
+<p><strong>Who it is for.</strong> N2 to N3 teams evaluating life-cycle tooling, specifically to see what automatic decommissioning done wrong looks like in a real, popular, current project.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> As shipped, for the decommissioned transition specifically. Either add an approval gate in front of the automated trigger, or use the toolkit for its other life-cycle states and handle decommissioning by hand per part 4 §3.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial and find the inactivity-decommission setting before enabling anything. Write down who the owner and the certifier are for that specific switch before turning it on.</p>
+
+<h3>The commercial kill-switch landscape</h3>
+
+<p><strong>Problem.</strong> Part 4 §7 warns against reaching for "control tower" vocabulary before volume justifies it, and against confusing a product with the function it performs.</p>
+<p><strong>In practice.</strong> Naming these is not a recommendation to buy either. It is here so that when someone in the room says "we should get a control tower," the answer can be specific instead of vague.</p>
+
+<table class="wrap">
+<thead><tr><th>Product</th><th>Stance</th></tr></thead>
+<tbody>
+<tr><td>ServiceNow AI Control Tower</td><td>Kill-switch feature added May 2026, extending discovery and shutdown to agents on AWS, Google Cloud and Azure, not only ServiceNow's own platform. Its "Secure" pillar runs on Veza's access graph, the same Veza cited in part 4 §3 for the 824,000 orphaned-identity figure.</td></tr>
+<tr><td>Cisco, post-Astrix acquisition</td><td>Non-human-identity and agentic-governance capability absorbed into a much larger security platform, announced May 2026, roughly $400 million.</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it is for.</strong> N3, a company well past seven agents and a spreadsheet, already choosing between vendors.</p>
+<p><strong>Minimum tier.</strong> N3.</p>
+<p><strong>When not to use it.</strong> Everyone below N3. Part 4 §7's own test still applies: if the whole registry fits in a table with meeting minutes next to it, neither row applies yet.</p>
+<p><strong>How to start in 15 minutes.</strong> Not applicable, this is a landscape reference, not something to trial. Re-read part 4 §6 and §7 before any conversation with a vendor from this table.</p>
+
+<h3>Reusing sensors-cli for the eight indicators</h3>
+
+<p>No new tool proposed here on purpose. <a href="#en-inspecionar">sensors-cli</a>, already covered in Inspect, is a dashboard that runs several sensors on an interval and keeps history. The same pattern extends to part 4's eight indicators once more than two or three are being tracked: point it at registry coverage, exception rate and gate rejection rate the same way it already points at hard-verification sensors, instead of standing up a second, separate dashboard.</p>
+
+<h2 id="en-howto-1">10. Walkthrough 1: read superpowers in an hour</h2>
 
 <p>This walkthrough is for whoever does not code. The goal is not to use the tool, it is to learn how to write a procedure for a machine by reading someone who already did it well.</p>
 
@@ -1188,7 +1301,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Step 5 is the only one that matters. The four before it exist to calibrate what a good rule looks like.</p>
 
-<h2 id="en-howto-2">9. Walkthrough 2: write your first skill in thirty minutes</h2>
+<h2 id="en-howto-2">11. Walkthrough 2: write your first skill in thirty minutes</h2>
 
 <p>Use a task you already do repeatedly, that has verifiable steps and is not irreversible. Reviewing a document against a checklist is the ideal example.</p>
 
@@ -1217,7 +1330,7 @@ description: Reviews contract drafts against the house checklist of
 
 <div class="rule-box"><span class="lbl">The most common mistake</span><p>Writing a giant SKILL.md on the first attempt. Start small and let failure tell you what to add. A guide is an index, not an encyclopedia.</p></div>
 
-<h2 id="en-howto-3">10. Walkthrough 3: build your first sensor</h2>
+<h2 id="en-howto-3">12. Walkthrough 3: build your first sensor</h2>
 
 <p>This walkthrough needs someone able to write twenty lines of script, but it does not require a programmer. It works for any task that produces numbers.</p>
 
@@ -1233,7 +1346,7 @@ description: Reviews contract drafts against the house checklist of
 
 <p><strong>Step 6.</strong> After a few weeks, look at the history. If the sensor never fired, trigger an error on purpose to confirm it works. If it never flags anything even when it should, remove it, because a blind sensor is worse than none: it produces confidence with no basis.</p>
 
-<h2 id="en-seguranca">11. Before installing anything</h2>
+<h2 id="en-seguranca">13. Before installing anything</h2>
 
 <p>Installing a third-party skill collection is running someone else's instructions inside your own environment. That is not a reason not to do it, it is a reason to read it first.</p>
 
@@ -1252,7 +1365,7 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Part 3 of the series covers this surface in depth, alongside permission outside the model, an auditable record and accountability.</p>
 
-<h2 id="en-fontes">12. Sources</h2>
+<h2 id="en-fontes">14. Sources</h2>
 
 <ol class="sources">
 <li>Fernando Teco Sodré. <em>intake-briefing</em>, automation decision skill. <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a></li>
@@ -1278,6 +1391,17 @@ description: Reviews contract drafts against the house checklist of
 <li>Paul Bakaus. <em>impeccable</em>, frontend design detector rules. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, the source of the cleanup matrix. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Community curation. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
+<li>IETF. <em>RFC 8693, OAuth 2.0 Token Exchange</em>. <a href="https://www.rfc-editor.org/info/rfc8693">rfc-editor.org/info/rfc8693</a></li>
+<li>SPIFFE project. <a href="https://spiffe.io/">spiffe.io</a></li>
+<li>Auth0. <em>Token Vault: Secure Token Exchange for AI Agents</em>. <a href="https://auth0.com/blog/auth0-token-vault-secure-token-exchange-for-ai-agents/">auth0.com/blog</a></li>
+<li>Microsoft Learn. <em>What is Microsoft Entra Agent ID?</em> <a href="https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id">learn.microsoft.com</a></li>
+<li>Sigstore. <em>Rekor</em>. <a href="https://github.com/sigstore/rekor">github.com/sigstore/rekor</a></li>
+<li>Microsoft. <em>Agent Governance Toolkit</em>. <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></li>
+<li>OWASP. <em>Agentic Skills Top 10</em>. <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></li>
+<li>Langfuse. Open-source LLM engineering platform. <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></li>
+<li>The Register. <em>ServiceNow adds agent kill switches to AI control tower</em>, 5 May 2026. <a href="https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579">theregister.com</a></li>
+<li>Fortune. <em>Your company's AI could delete everything in 9 seconds. ServiceNow wants to be the kill switch</em>, 6 May 2026. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/">fortune.com</a></li>
+<li>BankInfoSecurity. <em>Why Cisco Is Eyeing Buy of Non-Human Identity Startup Astrix</em>. <a href="https://www.bankinfosecurity.com/blogs/cisco-eyeing-buy-non-human-identity-startup-astrix-p-4105">bankinfosecurity.com</a></li>
 </ol>
 
 <div class="foot">
