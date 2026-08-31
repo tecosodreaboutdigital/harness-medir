@@ -69,7 +69,9 @@ Dos de estas colecciones, superpowers y la guía inspirada en Karpathy, ya estab
 
 Esta sección es lo que separa "instalada" de "usada", y es la que más va a crecer. Cada entrada nombra la skill, el artefacto que ayudó a producir, y la fecha.
 
-*Todavía no hay uso registrado más allá de la instalación en sí, hecha el 30 de agosto de 2026. Todo el trabajo de este proyecto hasta ese punto (el repositorio, la reescritura de la guía compacta, la traducción de la parte 2, la reestructuración hacia el inglés primario en los dos repositorios) se hizo con las herramientas nativas del harness, sin ninguna de estas treinta skills. De aquí en adelante, todo uso real entra en este registro antes de reclamarse en cualquier artículo.*
+*No hay uso registrado el primer día más allá de la instalación en sí, hecha el 30 de agosto de 2026. Todo el trabajo de este proyecto hasta ese punto (el repositorio, la reescritura de la guía compacta, la traducción de la parte 2, la reestructuración hacia el inglés primario en los dos repositorios) se hizo con las herramientas nativas del harness, sin ninguna de estas treinta skills.*
+
+**`research`, 31 de agosto de 2026.** Usada directamente, repetidamente, a escala real, en las dos rondas de corrección de citas del día y en la ronda posterior de investigación adversarial sobre las Partes 3 y 4: investigar una afirmación contra fuentes primarias reales y guardar los hallazgos como un archivo markdown, no un resumen de chat que desaparece cuando termina la sesión. Funcionó bien cada vez, salida consistentemente bien fundamentada, guardada en un lugar sensato. Una ineficiencia real registrada en vez de escondida: su propia instrucción de levantar un agente en segundo plano suma una capa redundante de delegación cuando se invoca desde dentro de una llamada que ya es un agente en segundo plano. Ahora citada por sí sola en la sección Inspeccionar de la guía compacta, cerrando la brecha que el ítem 4 de `NEXT-STEPS.md` nombró: estar instalada y auditada a nivel de colección no es la misma afirmación que estar individualmente verificada y citada.
 
 ---
 
