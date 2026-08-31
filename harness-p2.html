@@ -240,6 +240,36 @@ li{margin-bottom:6px}
 }
 .g:hover::after,.g:focus::after{opacity:1;visibility:visible}
 
+.src{
+  border-bottom:.5pt solid var(--ink-faint);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.src::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.src:hover::after,.src:focus::after{opacity:1;visibility:visible}
+
 pre{
   background:var(--fill);
   padding:14px 16px;
@@ -332,7 +362,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   .foot p{font-size:9pt}
   .g{border-bottom:.5pt dotted #999}
   .g::after{display:none}
-  
+  .src{border-bottom:.5pt solid #999}
+  .src::after{display:none}
+
 pre{
   background:var(--fill);
   padding:14px 16px;
@@ -467,7 +499,7 @@ p code{
 
 <p>Por mais complexo que um sistema desses pareça, você só tem dois tipos de controle sobre ele. Pode influenciar o que ele faz antes de agir, ou pode observar o que ele fez depois de agir. Não existe terceiro lugar. Tudo o que a indústria chama de regra, política, teste, revisão, gancho, portão ou auditoria cai em uma dessas duas categorias.</p>
 
-<p>A formulação mais limpa dessas duas categorias vem de Birgitta Böckeler, da Thoughtworks, e usa dois nomes que vale adotar.</p>
+<p>A formulação mais limpa dessas duas categorias vem de <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, da Thoughtworks, e usa dois nomes que vale adotar.</p>
 
 <p><a class="g" href="harness-glossary.html#pt-g-guia" data-tip="Controle que age antes da execucao, para aumentar a chance de acerto na primeira tentativa.">Guias</a> são os controles que antecipam. Aumentam a probabilidade de acerto na primeira tentativa: regras escritas, convenções, exemplos, o mapa de onde procurar cada coisa, o contrato da tarefa. Foi o que a diretora construiu na quarta semana.</p>
 
@@ -479,7 +511,7 @@ p code{
 
 <h2 id="pt-duro-julgamento">3. Verificação dura e verificação por julgamento</h2>
 
-<p>Guias e sensores se dividem outra vez, agora por natureza. Böckeler chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
+<p>Guias e sensores se dividem outra vez, agora por natureza. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
 
 <p><strong>Verificação dura</strong> é determinística e rápida. Roda em segundos, custa quase nada, e dá sempre a mesma resposta para a mesma entrada. Um script que confere se um número bate com a fonte. Uma regra que impede um documento de sair sem campo obrigatório. Um teste automatizado.</p>
 
@@ -516,7 +548,7 @@ p code{
 
 <p>A regra de investimento é simples e economiza muito dinheiro: <strong>o que puder ser verificado de forma dura, verifique de forma dura</strong>. Julgamento é caro, lento e não determinístico, e deve ser reservado ao que a verificação dura não alcança, que é o campo semântico.</p>
 
-<p>Existe também um efeito de custo que mudou recentemente. Verificação automática sempre existiu e sempre foi subutilizada, porque configurar regras dava trabalho demais para o retorno. Böckeler observa que a balança virou: hoje é barato pedir ao próprio sistema que escreva as regras e os scripts de conferência, o que derruba o custo de entrada, enquanto o benefício subiu, porque essas verificações pegam justamente os erros típicos de máquina que um humano não cometeria.</p>
+<p>Existe também um efeito de custo que mudou recentemente. Verificação automática sempre existiu e sempre foi subutilizada, porque configurar regras dava trabalho demais para o retorno. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que a balança virou: hoje é barato pedir ao próprio sistema que escreva as regras e os scripts de conferência, o que derruba o custo de entrada, enquanto o benefício subiu, porque essas verificações pegam justamente os erros típicos de máquina que um humano não cometeria.</p>
 
 <h2 id="pt-equipar">4. Equipar: o que ele vê e o que ele toca</h2>
 
@@ -530,13 +562,13 @@ p code{
 
 <p>Um sistema desses tem um espaço de leitura finito. Quando ele enche, as instruções do começo vão sendo empurradas para fora, e o que aconteceu no início da tarefa deixa de existir. Não há aviso. O sistema simplesmente passa a trabalhar sem aquilo.</p>
 
-<p>A analogia que melhor explica isso a quem decide vem de quem construiu ferramenta para resolver o problema:</p>
+<p>A analogia que melhor explica isso a quem decide vem de <a class="src" href="harness-sources.html#pt-src-planning-files" data-tip="Othman Adi. planning-with-files, estado duravel em disco, github.com/OthmanAdi/planning-with-files.">quem construiu ferramenta para resolver o problema</a>:</p>
 
 <blockquote><p>Janela de contexto é memória volátil. Sistema de arquivos é disco. Tudo o que importa vai para o disco.</p></blockquote>
 
 <p>Na prática, isso significa manter fora da conversa três coisas: o plano com as etapas e o que já foi concluído, as decisões tomadas e por quê, e o registro do que foi feito em cada sessão. A sessão seguinte lê esses arquivos, entende onde parou e avança. Não é uma recontagem da conversa anterior, é o estado real do trabalho.</p>
 
-<p>É a mesma solução que a Anthropic descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
+<p>É a mesma solução que a <a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Mesma fonte que a parte 1 cita para essa tecnica.">Anthropic</a> descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
 
 <div class="rule-box"><span class="lbl">Teste rápido</span><p>Se você encerrar a sessão agora e abrir outra amanhã, o trabalho continua de onde parou ou recomeça? Se recomeça, você não tem estado durável, tem histórico de conversa. São coisas diferentes.</p></div>
 
@@ -546,7 +578,7 @@ p code{
 
 <p>Falta o formato. Como se escreve, na prática, o guia que o sistema lê.</p>
 
-<p>A resposta virou padrão aberto e é mais simples do que parece. Um <a class="g" href="harness-glossary.html#pt-g-skill" data-tip="Pasta com um arquivo SKILL.md, instrucoes, arquivos de apoio e codigo opcional. Formato aberto.">skill</a> é uma pasta com um arquivo chamado SKILL.md dentro. Esse arquivo começa com um cabeçalho de duas linhas, nome e descrição, e o corpo traz as instruções. A pasta pode conter arquivos adicionais e código executável.</p>
+<p>A resposta virou <a class="src" href="harness-sources.html#pt-src-agentskills" data-tip="Agent Skills, padrao aberto, agentskills.io.">padrão aberto</a> e é mais simples do que parece. Um <a class="g" href="harness-glossary.html#pt-g-skill" data-tip="Pasta com um arquivo SKILL.md, instrucoes, arquivos de apoio e codigo opcional. Formato aberto.">skill</a> é uma pasta com um arquivo chamado SKILL.md dentro. Esse arquivo começa com um cabeçalho de duas linhas, nome e descrição, e o corpo traz as instruções. A pasta pode conter arquivos adicionais e código executável.</p>
 
 <p>O que faz esse formato funcionar é a <a class="g" href="harness-glossary.html#pt-g-divulgacao" data-tip="O agente carrega so a informacao que a tarefa exige, em niveis: resumo, corpo, anexos.">divulgação progressiva</a>, e ela resolve o problema de espaço que derruba a maior parte das tentativas caseiras.</p>
 
@@ -579,11 +611,11 @@ p code{
 
 <p>Há um quarto elemento, e é onde a verificação dura mora: o skill pode carregar código. O sistema executa esse código sem precisar lê-lo, e o resultado é determinístico. Conferir um total, validar um formato, comparar contra uma lista, tudo isso é mais barato e mais confiável em código do que em raciocínio.</p>
 
-<p>A analogia oficial de quem criou o formato é a mesma que usei na parte 1, o que é uma boa confirmação de que a tradução estava certa: construir um skill é como montar o guia de integração de alguém que acabou de ser contratado.</p>
+<p>A analogia oficial de <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem criou o formato</a> é a mesma que usei na parte 1, o que é uma boa confirmação de que a tradução estava certa: construir um skill é como montar o guia de integração de alguém que acabou de ser contratado.</p>
 
 <h3>A regra inegociável e as bandeiras vermelhas</h3>
 
-<p>Existe uma técnica de escrita de guia que aparece nas coleções mais usadas hoje e que vale roubar, porque resolve um problema que ninguém formula direito.</p>
+<p>Existe uma técnica de escrita de guia que aparece nas <a class="src" href="harness-sources.html#pt-src-superpowers" data-tip="Jesse Vincent. superpowers, github.com/obra/superpowers.">coleções mais usadas hoje</a> e que vale roubar, porque resolve um problema que ninguém formula direito.</p>
 
 <p>O padrão é este: cada guia abre com uma regra inegociável, curta e sem ambiguidade, e logo abaixo traz uma lista de bandeiras vermelhas. As bandeiras não descrevem erros técnicos. Descrevem as racionalizações que o sistema provavelmente vai usar para justificar não seguir a regra. Coisas como só desta vez, ou o teste que passou na primeira tentativa sem nunca ter falhado, ou as palavras deveria, provavelmente e parece que aparecendo em um relato de verificação.</p>
 
@@ -599,7 +631,7 @@ p code{
 
 <h3>A unidade de durabilidade</h3>
 
-<p>O princípio que organiza isso é a melhor formulação de engenharia que encontrei sobre o assunto:</p>
+<p>O princípio que organiza isso é <a class="src" href="harness-sources.html#pt-src-holdfast" data-tip="Andre Almeida. holdfast, execucao particionada duravel, github.com/AndreAlmeidaDC/holdfast.">a melhor formulação de engenharia que encontrei</a> sobre o assunto:</p>
 
 <blockquote><p>A unidade de durabilidade tem que ser menor que a unidade de despacho, e o estado pertence a arquivos, não à memória de nenhum sistema.</p></blockquote>
 
@@ -656,7 +688,7 @@ Padrão provável: transposição de dígitos (84 / 48).
 Corrija o valor no relatório usando o número da fonte e rode
 a conferência novamente antes de entregar.</code></pre>
 
-<p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. Böckeler descreve isso como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
+<p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler descreve isso</a> como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
 
 <div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu sensor como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um sensor, é um alarme.</p></div>
 
@@ -736,7 +768,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A analogia útil é a de uma linha de inspeção. Se ela nunca acusa nada, ou o processo é perfeito, o que é improvável, ou os instrumentos estão medindo a coisa errada. Se acusa o tempo todo, ou o padrão está errado, ou a sensibilidade está exagerada e o resultado vira ruído que todo mundo aprende a ignorar.</p>
 
-<p>A solução é registrar o histórico de disparos de cada sensor e responder com dado em vez de opinião.</p>
+<p>A solução é <a class="src" href="harness-sources.html#pt-src-sensors-cli" data-tip="Codigo do painel de sensores, github.com/birgitta410/sensors-cli.">registrar o histórico de disparos de cada sensor</a> e responder com dado em vez de opinião.</p>
 
 <table class="wrap">
 <thead><tr><th>O que o histórico mostra</th><th>O que isso significa</th><th>O que fazer</th></tr></thead>
@@ -905,7 +937,7 @@ Bandeiras vermelhas:
 
 <div class="rule-box"><span class="lbl">A sequência mínima</span><p>Escreva o contrato da tarefa. Execute. Anote onde falhou. Escreva a regra que evita aquela falha. Execute de novo. Só quando a mesma falha voltar apesar da regra, construa o sensor que a mede. Sensor antes de falha recorrente é otimização prematura.</p></div>
 
-<p>Há um atalho recomendado por quem criou o formato de skill e que quase ninguém usa: peça ao próprio sistema que registre, ao final de uma tarefa, o que funcionou e onde ele se perdeu, e que transforme isso em conteúdo do guia. Quando ele erra usando um guia, peça que reflita sobre o que faltava. Você descobre o que ele de fato precisava saber, em vez de tentar antecipar tudo de cima.</p>
+<p>Há um atalho recomendado por <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem criou o formato de skill</a> e que quase ninguém usa: peça ao próprio sistema que registre, ao final de uma tarefa, o que funcionou e onde ele se perdeu, e que transforme isso em conteúdo do guia. Quando ele erra usando um guia, peça que reflita sobre o que faltava. Você descobre o que ele de fato precisava saber, em vez de tentar antecipar tudo de cima.</p>
 
 <h3>Limpeza como cadência, não como mutirão</h3>
 
@@ -936,7 +968,7 @@ Bandeiras vermelhas:
 
 <p><strong>Painel verde como prova.</strong> O mais perigoso dos quatro, porque é confortável. Um conjunto de sensores fracos produz exatamente a mesma tela tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que isso ficou vermelho, e por quê.</p>
 
-<p><strong>Guia de terceiro.</strong> Instalar uma coleção de skills de outra pessoa é executar instrução de outra pessoa dentro do seu ambiente. A recomendação de quem publica o formato é explícita: instale apenas de origem confiável e audite antes de usar, com atenção especial a trechos que mandam o sistema buscar algo em rede externa. Isso não é motivo para não usar. É motivo para ler antes, e o <a href="harness-toolkit.html#pt-seguranca">guia compacto</a> traz as três perguntas que essa leitura precisa responder.</p>
+<p><strong>Guia de terceiro.</strong> Instalar uma coleção de skills de outra pessoa é executar instrução de outra pessoa dentro do seu ambiente. A recomendação de <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem publica o formato</a> é explícita: instale apenas de origem confiável e audite antes de usar, com atenção especial a trechos que mandam o sistema buscar algo em rede externa. Isso não é motivo para não usar. É motivo para ler antes, e o <a href="harness-toolkit.html#pt-seguranca">guia compacto</a> traz as três perguntas que essa leitura precisa responder.</p>
 
 <blockquote><p>Um agente instrumentado não é um agente seguro. Instrumentação diz se o trabalho ficou bom. Ela não diz se o trabalho podia ter sido feito.</p></blockquote>
 
@@ -947,12 +979,13 @@ Bandeiras vermelhas:
 <p>O que ela ainda não tem é o que a parte 3 trata. Nada no que construímos até aqui impede uma ação irreversível. Nada registra quem autorizou o quê. E nada protege contra a situação em que a instrução maliciosa chega dentro do próprio dado que o sistema foi encarregado de ler.</p>
 
 <table class="wrap">
-<thead><tr><th>Peça</th><th>O que ela entrega</th></tr></thead>
+<thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
 <tbody>
-<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente vale mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de conselho</td></tr>
-<tr><td>Parte 2, esta</td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
-<tr><td>Parte 3</td><td>Permissão fora do modelo, instrução vinda de dado, registro auditável, reversão e responsabilidade</td></tr>
-<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e roteiros, organizados pelos cinco passos do MEDIR</td></tr>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
+<tr><td>Parte 2, esta aqui</td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
+<tr><td><a href="harness-p4.html">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
 </tbody>
 </table>
 
@@ -1013,7 +1046,7 @@ Bandeiras vermelhas:
 
 <p>However complex a system like this seems, you only have two kinds of control over it. You can influence what it does before it acts, or you can observe what it did after it acted. There is no third place. Everything the industry calls a rule, a policy, a test, a review, a hook, a gate or an audit falls into one of these two categories.</p>
 
-<p>The cleanest formulation of these two categories comes from Birgitta Böckeler, at Thoughtworks, and it is worth adopting her two names.</p>
+<p>The cleanest formulation of these two categories comes from <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, at Thoughtworks, and it is worth adopting her two names.</p>
 
 <p><a class="g" href="harness-glossary.html#en-g-guia" data-tip="A control that acts before execution, to raise the odds of getting it right on the first try.">Guides</a> are the controls that anticipate. They raise the probability of getting it right on the first attempt: written rules, conventions, examples, a map of where to look for each thing, the task contract. That is what the director built in the fourth week.</p>
 
@@ -1025,7 +1058,7 @@ Bandeiras vermelhas:
 
 <h2 id="en-duro-julgamento">3. Hard verification and judgement verification</h2>
 
-<p>Guides and sensors split again, this time by nature. Böckeler calls it computational and inferential. In plain business language, I prefer hard verification and judgement verification.</p>
+<p>Guides and sensors split again, this time by nature. <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> calls it computational and inferential. In plain business language, I prefer hard verification and judgement verification.</p>
 
 <p><strong>Hard verification</strong> is deterministic and fast. It runs in seconds, costs almost nothing, and gives the same answer for the same input every time. A script that checks whether a number matches the source. A rule that stops a document leaving without a required field. An automated test.</p>
 
@@ -1062,7 +1095,7 @@ Bandeiras vermelhas:
 
 <p>The investment rule is simple and saves a great deal of money: <strong>whatever can be verified hard, verify hard</strong>. Judgement is expensive, slow and non-deterministic, and should be reserved for what hard verification cannot reach, which is the semantic ground.</p>
 
-<p>There is also a cost effect that has recently shifted. Automated verification always existed and was always under-used, because setting up rules cost more effort than the return justified. Böckeler observes that the balance has flipped: today it is cheap to ask the system itself to write the rules and the checking scripts, which drives the cost of entry down, while the benefit has gone up, because these checks catch precisely the typical machine mistakes a human would not make.</p>
+<p>There is also a cost effect that has recently shifted. Automated verification always existed and was always under-used, because setting up rules cost more effort than the return justified. <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observes that the balance has flipped: today it is cheap to ask the system itself to write the rules and the checking scripts, which drives the cost of entry down, while the benefit has gone up, because these checks catch precisely the typical machine mistakes a human would not make.</p>
 
 <h2 id="en-equipar">4. Equip: what it sees and what it can touch</h2>
 
@@ -1076,23 +1109,23 @@ Bandeiras vermelhas:
 
 <p>A system like this has a finite reading space. When it fills up, the instructions from the start get pushed out, and whatever happened early in the task stops existing. There is no warning. The system simply carries on working without it.</p>
 
-<p>The analogy that explains this best to someone deciding comes from whoever built the tool to solve the problem:</p>
+<p>The analogy that explains this best to someone deciding comes from <a class="src" href="harness-sources.html#en-src-planning-files" data-tip="Othman Adi. planning-with-files, durable state on disk, github.com/OthmanAdi/planning-with-files.">whoever built the tool to solve the problem</a>:</p>
 
 <blockquote><p>The context window is volatile memory. The file system is disk. Everything that matters goes to disk.</p></blockquote>
 
 <p>In practice, this means keeping three things out of the conversation: the plan with its steps and what has already been completed, the decisions made and why, and the record of what happened in each session. The next session reads these files, understands where it left off, and moves forward. It is not a recap of the previous conversation, it is the real state of the work.</p>
 
-<p>It is the same solution Anthropic described for long-running agents, with a first session that sets up the environment and every following one reading the record and advancing a piece further. And it is exactly what was missing from the director's automation: when the error appeared, there was no trail to reconstruct what the system had seen and in what order.</p>
+<p>It is the same solution <a class="src" href="harness-sources.html#en-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Same source part 1 cites for this technique.">Anthropic</a> described for long-running agents, with a first session that sets up the environment and every following one reading the record and advancing a piece further. And it is exactly what was missing from the director's automation: when the error appeared, there was no trail to reconstruct what the system had seen and in what order.</p>
 
 <div class="rule-box"><span class="lbl">A quick test</span><p>If you end the session now and open another tomorrow, does the work continue from where it stopped, or does it start over? If it starts over, you do not have durable state, you have a conversation history. Those are different things.</p></div>
 
-<p>Tools ready for this are in the <a href="harness-toolkit.html#pt-equipar">compact guide</a>, in the Equip section.</p>
+<p>Tools ready for this are in the <a href="harness-toolkit.html#en-equipar">compact guide</a>, in the Equip section.</p>
 
 <h2 id="en-skill">5. The anatomy of a skill</h2>
 
 <p>What is missing is the format. How, in practice, do you write the guide the system reads.</p>
 
-<p>The answer became an open standard, and it is simpler than it sounds. A <a class="g" href="harness-glossary.html#en-g-skill" data-tip="A folder with a SKILL.md file, instructions, supporting files and optional code. An open format.">skill</a> is a folder with a file called SKILL.md inside it. That file opens with a two-line header, name and description, and the body carries the instructions. The folder can hold additional files and executable code.</p>
+<p>The answer became an <a class="src" href="harness-sources.html#en-src-agentskills" data-tip="Agent Skills, open standard, agentskills.io.">open standard</a>, and it is simpler than it sounds. A <a class="g" href="harness-glossary.html#en-g-skill" data-tip="A folder with a SKILL.md file, instructions, supporting files and optional code. An open format.">skill</a> is a folder with a file called SKILL.md inside it. That file opens with a two-line header, name and description, and the body carries the instructions. The folder can hold additional files and executable code.</p>
 
 <p>What makes this format work is <a class="g" href="harness-glossary.html#en-g-divulgacao" data-tip="The agent loads only the information the task requires, in tiers: first the summary, then the body, then the attachments.">progressive disclosure</a>, and it solves the space problem that sinks most home-grown attempts.</p>
 
@@ -1125,11 +1158,11 @@ Bandeiras vermelhas:
 
 <p>There is a fourth element, and it is where hard verification lives: a skill can carry code. The system executes that code without needing to read it, and the result is deterministic. Checking a total, validating a format, comparing against a list, all of that is cheaper and more reliable in code than in reasoning.</p>
 
-<p>The official analogy from whoever created the format is the same one I used in part 1, which is a good confirmation that the translation was right: building a skill is like putting together the onboarding guide for someone who has just been hired.</p>
+<p>The official analogy from <a class="src" href="harness-sources.html#en-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">whoever created the format</a> is the same one I used in part 1, which is a good confirmation that the translation was right: building a skill is like putting together the onboarding guide for someone who has just been hired.</p>
 
 <h3>The non-negotiable rule and the red flags</h3>
 
-<p>There is a guide-writing technique that shows up in the most used collections today and is worth stealing, because it solves a problem almost nobody states correctly.</p>
+<p>There is a guide-writing technique that shows up in <a class="src" href="harness-sources.html#en-src-superpowers" data-tip="Jesse Vincent. superpowers, github.com/obra/superpowers.">the most used collections today</a> and is worth stealing, because it solves a problem almost nobody states correctly.</p>
 
 <p>The pattern is this: every guide opens with a non-negotiable rule, short and unambiguous, and right below it lists a set of red flags. The flags do not describe technical mistakes. They describe the rationalisations the system will probably reach for to justify not following the rule. Things like just this once, or the test that passed on the first try without ever having failed, or the words should, probably and it looks like showing up in a verification report.</p>
 
@@ -1145,7 +1178,7 @@ Bandeiras vermelhas:
 
 <h3>The unit of durability</h3>
 
-<p>The principle that organises this is the best piece of engineering writing I have found on the subject:</p>
+<p>The principle that organises this is <a class="src" href="harness-sources.html#en-src-holdfast" data-tip="Andre Almeida. holdfast, durable partitioned execution, github.com/AndreAlmeidaDC/holdfast.">the best piece of engineering writing I have found</a> on the subject:</p>
 
 <blockquote><p>The unit of durability has to be smaller than the unit of dispatch, and state belongs to files, not to any system's memory.</p></blockquote>
 
@@ -1179,7 +1212,7 @@ Bandeiras vermelhas:
 
 <p>When the ceiling is reached, the correct behaviour is neither to fail silently nor to keep trying. It is to stop, deliver whatever exists marked as incomplete, and explain what did not close. That is exactly what a good professional does.</p>
 
-<p>Tools for this are in the <a href="harness-toolkit.html#pt-delegar">compact guide</a>, in the Delegate section.</p>
+<p>Tools for this are in the <a href="harness-toolkit.html#en-delegar">compact guide</a>, in the Delegate section.</p>
 
 <h2 id="en-inspecionar">7. Inspect: the sensor that teaches</h2>
 
@@ -1202,7 +1235,7 @@ Likely pattern: digit transposition (84 / 48).
 Correct the value in the report using the source figure and run
 the check again before delivering.</code></pre>
 
-<p>The second contains everything needed for self-correction with no new human instruction: what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. Böckeler describes this as a good form of context injection, and reports an experiment that proves the point: when this kind of guidance was missing from a specific rule, the system started routinely working around it, and went back to behaving properly as soon as the guidance was written.</p>
+<p>The second contains everything needed for self-correction with no new human instruction: what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describes this</a> as a good form of context injection, and reports an experiment that proves the point: when this kind of guidance was missing from a specific rule, the system started routinely working around it, and went back to behaving properly as soon as the guidance was written.</p>
 
 <div class="rule-box"><span class="lbl">The practical rule</span><p>Write your sensor's error message as if you were explaining to a new colleague what to do next. If it does not work for that, it is not a sensor, it is an alarm.</p></div>
 
@@ -1282,7 +1315,7 @@ the check again before delivering.</code></pre>
 
 <p>The useful analogy is an inspection line. If it never flags anything, either the process is perfect, which is unlikely, or the instruments are measuring the wrong thing. If it flags everything, either the standard is wrong, or the sensitivity is overdone and the result turns into noise everyone learns to ignore.</p>
 
-<p>The solution is to keep a firing history for each sensor and answer with data instead of opinion.</p>
+<p>The solution is to <a class="src" href="harness-sources.html#en-src-sensors-cli" data-tip="Sensor dashboard code, github.com/birgitta410/sensors-cli.">keep a firing history for each sensor</a> and answer with data instead of opinion.</p>
 
 <table class="wrap">
 <thead><tr><th>What the history shows</th><th>What it means</th><th>What to do</th></tr></thead>
@@ -1450,7 +1483,7 @@ Red flags:
 
 <div class="rule-box"><span class="lbl">The minimum sequence</span><p>Write the task contract. Run it. Note where it failed. Write the rule that prevents that failure. Run it again. Only once the same failure returns despite the rule, build the sensor that measures it. A sensor built before a failure has recurred is premature optimisation.</p></div>
 
-<p>There is a shortcut recommended by whoever created the skill format that almost nobody uses: ask the system itself, at the end of a task, to record what worked and where it got lost, and turn that into content for the guide. When it makes a mistake while using a guide, ask it to reflect on what was missing. You find out what it actually needed to know, instead of trying to anticipate everything from the top down.</p>
+<p>There is a shortcut recommended by <a class="src" href="harness-sources.html#en-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">whoever created the skill format</a> that almost nobody uses: ask the system itself, at the end of a task, to record what worked and where it got lost, and turn that into content for the guide. When it makes a mistake while using a guide, ask it to reflect on what was missing. You find out what it actually needed to know, instead of trying to anticipate everything from the top down.</p>
 
 <h3>Cleanup as a cadence, not a big push</h3>
 
@@ -1481,7 +1514,7 @@ Red flags:
 
 <p><strong>A green dashboard as proof.</strong> The most dangerous of the four, because it is comfortable. A set of weak sensors produces exactly the same reassuring screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why.</p>
 
-<p><strong>A third party's guide.</strong> Installing a collection of someone else's skills is running someone else's instructions inside your own environment. The recommendation from whoever publishes the format is explicit: install only from a trusted source, and when the source is less known, audit it before using it, paying particular attention to anything telling the system to reach out to an external network. This is not a reason not to use it. It is a reason to read it first, and the <a href="harness-toolkit.html#pt-seguranca">compact guide</a> carries the three questions that reading needs to answer.</p>
+<p><strong>A third party's guide.</strong> Installing a collection of someone else's skills is running someone else's instructions inside your own environment. The recommendation from <a class="src" href="harness-sources.html#en-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">whoever publishes the format</a> is explicit: install only from a trusted source, and when the source is less known, audit it before using it, paying particular attention to anything telling the system to reach out to an external network. This is not a reason not to use it. It is a reason to read it first, and the <a href="harness-toolkit.html#en-seguranca">compact guide</a> carries the three questions that reading needs to answer.</p>
 
 <blockquote><p>An instrumented agent is not a safe agent. Instrumentation tells you whether the work turned out well. It does not tell you whether the work should have been done at all.</p></blockquote>
 
@@ -1496,7 +1529,8 @@ Red flags:
 <tbody>
 <tr><td><a href="harness-p1.html">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
 <tr><td>Part 2, this one</td><td>Guides and sensors, the skill format, three complete examples and the environment classes</td></tr>
-<tr><td>Part 3</td><td>Permission outside the model, instructions arriving inside data, an auditable record, rollback and accountability</td></tr>
+<tr><td><a href="harness-p3.html">Part 3</a></td><td>The separation of powers, the rule of two, identity, injection, the record, and the legal ground in Brazil and Europe</td></tr>
+<tr><td><a href="harness-p4.html">Part 4</a></td><td>The agent as a managed object: a life cycle, four roles, eight indicators and where the office that runs all of it should sit</td></tr>
 <tr><td><a href="harness-toolkit.html">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
 </tbody>
 </table>
@@ -1558,7 +1592,7 @@ Red flags:
 
 <p>Por más complejo que parezca un sistema de estos, solo tienes dos tipos de control sobre él. Puedes influir en lo que hace antes de actuar, o puedes observar lo que hizo después de actuar. No existe un tercer lugar. Todo lo que la industria llama regla, política, prueba, revisión, gancho, puerta o auditoría cae en una de esas dos categorías.</p>
 
-<p>La formulación más limpia de estas dos categorías viene de Birgitta Böckeler, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
+<p>La formulación más limpia de estas dos categorías viene de <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
 
 <p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actua antes de la ejecucion, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
 
@@ -1570,7 +1604,7 @@ Red flags:
 
 <h2 id="es-duro-julgamento">3. Verificación dura y verificación por juicio</h2>
 
-<p>Guías y sensores se dividen otra vez, ahora por naturaleza. Böckeler lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
+<p>Guías y sensores se dividen otra vez, ahora por naturaleza. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
 
 <p><strong>La verificación dura</strong> es determinista y rápida. Corre en segundos, cuesta casi nada, y da siempre la misma respuesta para la misma entrada. Un script que confirma si un número coincide con la fuente. Una regla que impide que un documento salga sin un campo obligatorio. Una prueba automatizada.</p>
 
@@ -1607,7 +1641,7 @@ Red flags:
 
 <p>La regla de inversión es simple y ahorra mucho dinero: <strong>lo que se pueda verificar de forma dura, verifícalo de forma dura</strong>. El juicio es caro, lento y no determinista, y debe reservarse para lo que la verificación dura no alcanza, que es el terreno semántico.</p>
 
-<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. Böckeler observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
+<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
 
 <h2 id="es-equipar">4. Equipar: qué ve y qué puede tocar</h2>
 
@@ -1621,23 +1655,23 @@ Red flags:
 
 <p>Un sistema de estos tiene un espacio de lectura finito. Cuando se llena, las instrucciones del principio se van empujando hacia afuera, y lo que pasó al inicio de la tarea deja de existir. No hay aviso. El sistema simplemente sigue trabajando sin eso.</p>
 
-<p>La analogía que mejor explica esto a quien decide viene de quien construyó la herramienta para resolver el problema:</p>
+<p>La analogía que mejor explica esto a quien decide viene de <a class="src" href="harness-sources.html#es-src-planning-files" data-tip="Othman Adi. planning-with-files, estado duradero en disco, github.com/OthmanAdi/planning-with-files.">quien construyó la herramienta para resolver el problema</a>:</p>
 
 <blockquote><p>La ventana de contexto es memoria volátil. El sistema de archivos es disco. Todo lo que importa va al disco.</p></blockquote>
 
 <p>En la práctica, esto significa mantener fuera de la conversación tres cosas: el plan con sus etapas y lo que ya se completó, las decisiones tomadas y por qué, y el registro de lo que se hizo en cada sesión. La sesión siguiente lee esos archivos, entiende dónde se quedó y avanza. No es un resumen de la conversación anterior, es el estado real del trabajo.</p>
 
-<p>Es la misma solución que Anthropic describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
+<p>Es la misma solución que <a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Misma fuente que cita la parte 1 para esta tecnica.">Anthropic</a> describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
 
 <div class="rule-box"><span class="lbl">Prueba rápida</span><p>Si cierras la sesión ahora y abres otra mañana, ¿el trabajo continúa donde se quedó o empieza de nuevo? Si empieza de nuevo, no tienes estado duradero, tienes historial de conversación. Son cosas distintas.</p></div>
 
-<p>Hay herramientas listas para esto en la <a href="harness-toolkit.html#pt-equipar">guía compacta</a>, en la sección de Equipar.</p>
+<p>Hay herramientas listas para esto en la <a href="harness-toolkit.html#es-equipar">guía compacta</a>, en la sección de Equipar.</p>
 
 <h2 id="es-skill">5. La anatomía de un skill</h2>
 
 <p>Falta el formato. Cómo se escribe, en la práctica, la guía que el sistema lee.</p>
 
-<p>La respuesta se volvió un estándar abierto y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
+<p>La respuesta se volvió un <a class="src" href="harness-sources.html#es-src-agentskills" data-tip="Agent Skills, estandar abierto, agentskills.io.">estándar abierto</a> y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
 
 <p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la informacion que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
 
@@ -1670,11 +1704,11 @@ Red flags:
 
 <p>Hay un cuarto elemento, y ahí es donde vive la verificación dura: el skill puede cargar código. El sistema ejecuta ese código sin necesidad de leerlo, y el resultado es determinista. Confirmar un total, validar un formato, comparar contra una lista, todo eso es más barato y más fiable en código que en razonamiento.</p>
 
-<p>La analogía oficial de quien creó el formato es la misma que usé en la parte 1, lo cual es una buena confirmación de que la traducción era correcta: construir un skill es como armar la guía de incorporación de alguien que acaba de ser contratado.</p>
+<p>La analogía oficial de <a class="src" href="harness-sources.html#es-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quien creó el formato</a> es la misma que usé en la parte 1, lo cual es una buena confirmación de que la traducción era correcta: construir un skill es como armar la guía de incorporación de alguien que acaba de ser contratado.</p>
 
 <h3>La regla innegociable y las banderas rojas</h3>
 
-<p>Existe una técnica de escritura de guías que aparece en las colecciones más usadas hoy y que vale la pena copiar, porque resuelve un problema que casi nadie formula bien.</p>
+<p>Existe una técnica de escritura de guías que aparece en <a class="src" href="harness-sources.html#es-src-superpowers" data-tip="Jesse Vincent. superpowers, github.com/obra/superpowers.">las colecciones más usadas hoy</a> y que vale la pena copiar, porque resuelve un problema que casi nadie formula bien.</p>
 
 <p>El patrón es este: cada guía se abre con una regla innegociable, corta y sin ambigüedad, y justo debajo trae una lista de banderas rojas. Las banderas no describen errores técnicos. Describen las racionalizaciones que el sistema probablemente va a usar para justificar no seguir la regla. Cosas como solo por esta vez, o la prueba que pasó al primer intento sin haber fallado jamás, o las palabras debería, probablemente y parece que apareciendo en un informe de verificación.</p>
 
@@ -1690,7 +1724,7 @@ Red flags:
 
 <h3>La unidad de durabilidad</h3>
 
-<p>El principio que organiza esto es la mejor formulación de ingeniería que he encontrado sobre el tema:</p>
+<p>El principio que organiza esto es <a class="src" href="harness-sources.html#es-src-holdfast" data-tip="Andre Almeida. holdfast, ejecucion particionada duradera, github.com/AndreAlmeidaDC/holdfast.">la mejor formulación de ingeniería que he encontrado</a> sobre el tema:</p>
 
 <blockquote><p>La unidad de durabilidad tiene que ser más pequeña que la unidad de despacho, y el estado pertenece a los archivos, no a la memoria de ningún sistema.</p></blockquote>
 
@@ -1724,7 +1758,7 @@ Red flags:
 
 <p>Cuando se alcanza el tope, el comportamiento correcto no es fallar en silencio ni seguir intentando. Es detenerse, entregar lo que existe marcado como incompleto, y explicar qué no se cerró. Es exactamente lo que hace un buen profesional.</p>
 
-<p>Hay herramientas para esto en la <a href="harness-toolkit.html#pt-delegar">guía compacta</a>, en la sección de Delegar.</p>
+<p>Hay herramientas para esto en la <a href="harness-toolkit.html#es-delegar">guía compacta</a>, en la sección de Delegar.</p>
 
 <h2 id="es-inspecionar">7. Inspeccionar: el sensor que enseña</h2>
 
@@ -1747,7 +1781,7 @@ Patrón probable: transposición de dígitos (84 / 48).
 Corrige el valor del informe usando el número de la fuente y
 vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
-<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. Böckeler describe esto como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
+<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describe esto</a> como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
 
 <div class="rule-box"><span class="lbl">La regla práctica</span><p>Escribe el mensaje de error de tu sensor como si le estuvieras explicando a un colega nuevo qué hacer a continuación. Si no sirve para eso, no es un sensor, es una alarma.</p></div>
 
@@ -1827,7 +1861,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p>La analogía útil es la de una línea de inspección. Si nunca marca nada, o el proceso es perfecto, lo cual es improbable, o los instrumentos están midiendo lo que no es. Si marca todo el tiempo, o el estándar está mal, o la sensibilidad está exagerada y el resultado se convierte en ruido que todo el mundo aprende a ignorar.</p>
 
-<p>La solución es registrar el historial de disparos de cada sensor y responder con datos en vez de opinión.</p>
+<p>La solución es <a class="src" href="harness-sources.html#es-src-sensors-cli" data-tip="Codigo del panel de sensores, github.com/birgitta410/sensors-cli.">registrar el historial de disparos de cada sensor</a> y responder con datos en vez de opinión.</p>
 
 <table class="wrap">
 <thead><tr><th>Qué muestra el historial</th><th>Qué significa</th><th>Qué hacer</th></tr></thead>
@@ -2000,7 +2034,7 @@ Banderas rojas:
 
 <div class="rule-box"><span class="lbl">La secuencia mínima</span><p>Escribe el contrato de la tarea. Ejecuta. Anota dónde falló. Escribe la regla que evita ese fallo. Ejecuta de nuevo. Solo cuando el mismo fallo regrese a pesar de la regla, construye el sensor que lo mide. Un sensor antes de un fallo recurrente es optimización prematura.</p></div>
 
-<p>Hay un atajo recomendado por quien creó el formato de skill y que casi nadie usa: pídele al propio sistema que registre, al final de una tarea, qué funcionó y dónde se perdió, y que lo convierta en contenido de la guía. Cuando se equivoca usando una guía, pídele que reflexione sobre qué faltaba. Descubres lo que de verdad necesitaba saber, en vez de intentar anticiparlo todo desde arriba.</p>
+<p>Hay un atajo recomendado por <a class="src" href="harness-sources.html#es-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quien creó el formato de skill</a> y que casi nadie usa: pídele al propio sistema que registre, al final de una tarea, qué funcionó y dónde se perdió, y que lo convierta en contenido de la guía. Cuando se equivoca usando una guía, pídele que reflexione sobre qué faltaba. Descubres lo que de verdad necesitaba saber, en vez de intentar anticiparlo todo desde arriba.</p>
 
 <h3>La limpieza como cadencia, no como mutirón</h3>
 
@@ -2031,7 +2065,7 @@ Banderas rojas:
 
 <p><strong>El panel en verde como prueba.</strong> El más peligroso de los cuatro, porque es cómodo. Un conjunto de sensores débiles produce exactamente la misma pantalla tranquilizadora que un conjunto de sensores buenos. La pregunta que separa a los dos no es está todo en verde, es cuándo fue la última vez que esto se puso en rojo, y por qué.</p>
 
-<p><strong>Guía de un tercero.</strong> Instalar una colección de skills de otra persona es ejecutar la instrucción de otra persona dentro de tu propio entorno. La recomendación de quien publica el formato es explícita: instala solo de una fuente confiable, y cuando la fuente sea menos conocida, audítala antes de usarla, con atención especial a los fragmentos que le dicen al sistema que busque algo en una red externa. Esto no es motivo para no usarla. Es motivo para leerla antes, y la <a href="harness-toolkit.html#pt-seguranca">guía compacta</a> trae las tres preguntas que esa lectura necesita responder.</p>
+<p><strong>Guía de un tercero.</strong> Instalar una colección de skills de otra persona es ejecutar la instrucción de otra persona dentro de tu propio entorno. La recomendación de <a class="src" href="harness-sources.html#es-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quien publica el formato</a> es explícita: instala solo de una fuente confiable, y cuando la fuente sea menos conocida, audítala antes de usarla, con atención especial a los fragmentos que le dicen al sistema que busque algo en una red externa. Esto no es motivo para no usarla. Es motivo para leerla antes, y la <a href="harness-toolkit.html#es-seguranca">guía compacta</a> trae las tres preguntas que esa lectura necesita responder.</p>
 
 <blockquote><p>Un agente instrumentado no es un agente seguro. La instrumentación dice si el trabajo salió bien. No dice si el trabajo debía haberse hecho.</p></blockquote>
 
@@ -2044,9 +2078,10 @@ Banderas rojas:
 <table class="wrap">
 <thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
 <tbody>
-<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno vale más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de consejo</td></tr>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de junta directiva</td></tr>
 <tr><td>Parte 2, esta</td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
-<tr><td>Parte 3</td><td>Permiso fuera del modelo, instrucción que llega dentro del dato, registro auditable, reversión y responsabilidad</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td><a href="harness-p4.html">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
 <tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
 </tbody>
 </table>
