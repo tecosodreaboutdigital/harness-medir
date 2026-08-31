@@ -781,7 +781,7 @@ p code{
 <tbody>
 <tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>O próprio padrão aberto, estável desde 2020. Não é um produto, é um protocolo que cada linha abaixo implementa à sua maneira.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>Graduado pela CNCF, código aberto, auto-hospedado. Identidade de carga de trabalho criptograficamente verificável, rotacionada automaticamente. A linha por onde começar se a resposta precisa continuar totalmente auditável e independente de fornecedor.</td></tr>
-<tr><td>Auth0 Token Vault</td><td>Produto comercial, disponível em geral (GA). O agente nunca segura a chave crua. Caminho mais rápido se a Auth0 já cuida de identidade em outro ponto da pilha.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Produto comercial. O agente nunca segura a chave crua, trocando-a por um token curto e com escopo em vez disso. Caminho mais rápido se a Auth0 já cuida de identidade em outro ponto da pilha.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Comercial, GA em 2026. Construção de identidade feita sob medida para agentes, dentro de uma pilha centrada em Microsoft.</td></tr>
 </tbody>
 </table>
@@ -815,9 +815,9 @@ p code{
 <p><strong>Quando não usar.</strong> Um único agente N0/N1 sem efeito externo. O custo de runtime só se paga quando a política que ele impõe vale a pena impor estruturalmente.</p>
 <p><strong>Como começar em 15 minutos.</strong> Leia o tutorial "Agent Lifecycle" no repositório antes da documentação do motor de política. É também nesse tutorial que aparece o próprio limite honesto desta ferramenta, veja abaixo.</p>
 
-<p>Licença MIT, mais de 3.300 estrelas. Repositório: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+<p>Licença MIT, mais de 6.000 estrelas. Repositório: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
 
-<div class="rule-box"><span class="lbl">Ressalva</span><p>Este mesmo toolkit automatiza a transição para descomissionado do ciclo de vida da parte 4 (disparada por inatividade, sem exigir aprovação de dono ou homologador por padrão), que é exatamente a automação sem decisão contra a qual a parte 4 §3 alerta. Listado aqui pela metade de política de runtime, veja Governar abaixo pela metade de ciclo de vida e o conserto específico necessário antes de adotá-lo sem modificação.</p></div>
+<div class="rule-box"><span class="lbl">Ressalva</span><p>O módulo de ciclo de vida deste mesmo toolkit detecta automaticamente candidatos a descomissionamento e a órfão por inatividade e por timeout de heartbeat, mas a chamada que de fato descomissiona um agente é separada e explícita, e não checa registro de aprovação nenhum sozinha. Listado aqui pela metade de política de runtime, veja Governar abaixo pela metade de ciclo de vida e o controle que um time precisa ligar deliberadamente, já que o toolkit não faz isso sozinho.</p></div>
 
 <h3>OWASP Agentic Skills Top 10</h3>
 
@@ -877,12 +877,12 @@ p code{
 
 <p>Mesmo repositório da ficha em Proteger acima: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. Esta é uma segunda leitura da mesma ferramenta, focada no ciclo de vida, não uma ficha duplicada.</p>
 
-<p><strong>Problema.</strong> A parte 4 §3 é explícita que a transição para descomissionado exige uma decisão do dono do agente e do homologador juntos, nunca uma automação rodando numa agenda. A maioria das ferramentas nesse espaço ou não tem procedimento de descomissionamento nenhum, ou o automatiza sem essa trava.</p>
-<p><strong>Na prática.</strong> Este toolkit é o exemplo concreto e atual da segunda falha: implementa descomissionamento automatizado depois de um período configurável de inatividade, sem aprovação de dono ou homologador embutida por padrão. Vale a pena estudar pelos seus sete estados de ciclo de vida, e vale a pena modificar antes de adotar nesta transição específica.</p>
-<p><strong>Para quem.</strong> Times N2 a N3 avaliando ferramentas de ciclo de vida, especificamente para ver como fica um descomissionamento automático feito errado num projeto real, popular e atual.</p>
+<p><strong>Problema.</strong> A parte 4 §3 é explícita que a transição para descomissionado exige uma decisão do dono do agente e do homologador juntos, nunca uma automação rodando numa agenda. A maioria das ferramentas nesse espaço ou não tem procedimento de descomissionamento nenhum, ou deixa a trava inteiramente por conta de quem monta a automação.</p>
+<p><strong>Na prática.</strong> Este toolkit é um exemplo concreto e atual desse segundo risco, não da falha em si: detecta automaticamente agentes além de um limiar configurável de inatividade ou de um timeout de heartbeat, mas a chamada que de fato descomissiona ou marca como órfão é separada, explícita, e também não checa registro de aprovação nenhum. Nada vem de fábrica com a falha sem trava. Nada vem de fábrica com a trava tampouco. Vale a pena estudar pelos próprios estados de ciclo de vida, e vale a pena ligar o passo de aprovação deliberadamente antes de conectar a detecção à chamada de descomissionamento.</p>
+<p><strong>Para quem.</strong> Times N2 a N3 avaliando ferramentas de ciclo de vida, especificamente para ver como é fácil ligar detecção automática e uma ação sem trava num projeto real, popular e atual.</p>
 <p><strong>Faixa mínima.</strong> N2.</p>
-<p><strong>Quando não usar.</strong> Do jeito que vem de fábrica, especificamente para a transição de descomissionado. Ou acrescente uma trava de aprovação na frente do gatilho automatizado, ou use o toolkit pelos outros estados de ciclo de vida e trate o descomissionamento à mão, conforme a parte 4 §3.</p>
-<p><strong>Como começar em 15 minutos.</strong> Leia o tutorial "Agent Lifecycle" e ache a configuração de descomissionamento por inatividade antes de habilitar qualquer coisa. Anote quem é o dono e quem é o homologador para essa chave específica antes de ligá-la.</p>
+<p><strong>Quando não usar.</strong> Do jeito que vem de fábrica, só a lista de candidatos. Ligue um passo de aprovação entre a detecção e a chamada de descomissionamento antes de conectar as duas, conforme a parte 4 §3, já que o toolkit não faz isso por você.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia o tutorial "Agent Lifecycle" e ache onde a lista de candidatos alimenta a chamada de descomissionamento. Anote quem é o dono e quem é o homologador para essa trava específica antes de ligá-la.</p>
 
 <h3>O panorama comercial do botão de desligar</h3>
 
@@ -1369,7 +1369,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <tbody>
 <tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>The open standard itself, stable since 2020. Not a product, a protocol every row below implements in its own way.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>CNCF-graduated, open source, self-hosted. Cryptographically verifiable workload identity, rotated automatically. The row to start with if the answer needs to stay fully auditable and vendor-independent.</td></tr>
-<tr><td>Auth0 Token Vault</td><td>Commercial, GA product. The agent never holds the raw key. Fastest path if Auth0 already handles identity elsewhere in the stack.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Commercial. The agent never holds the raw key, exchanging it for a short-lived, scoped token instead. Fastest path if Auth0 already handles identity elsewhere in the stack.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Commercial, GA in 2026. Purpose-built identity construct for agents, inside a Microsoft-centric stack.</td></tr>
 </tbody>
 </table>
@@ -1403,9 +1403,9 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A single N0/N1 agent with no external effect. The runtime overhead only pays for itself once the policy it enforces is worth enforcing structurally.</p>
 <p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial in the repository before the policy-engine docs. That tutorial is also where this tool's own honest limit shows up, see below.</p>
 
-<p>Licence MIT, 3,300+ stars. Repository: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+<p>Licence MIT, over 6,000 stars. Repository: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>This same toolkit automates the transition into decommissioned from part 4's life cycle (inactivity-triggered, no owner or certifier sign-off required by default), which is precisely the automation-without-a-decision that part 4 §3 warns against. Listed here for the runtime-policy half, see Govern below for the life-cycle half and the specific fix needed before adopting it unmodified.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>This same toolkit's life-cycle module automatically detects decommission and orphan candidates by inactivity and heartbeat timeout, but the call that actually decommissions an agent is separate and explicit, and does not itself check for an approval record. Listed here for the runtime-policy half, see Govern below for the life-cycle half and the gate a team has to wire in deliberately, since the toolkit does not.</p></div>
 
 <h3>OWASP Agentic Skills Top 10</h3>
 
@@ -1465,12 +1465,12 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Same repository as the entry in Secure above: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. This is a second reading of the same tool, focused on the life cycle, not a duplicate entry.</p>
 
-<p><strong>Problem.</strong> Part 4 §3 is explicit that the transition into decommissioned requires a decision from the agent owner and the certifier together, never an automation running on a schedule. Most tooling in this space either has no decommissioning procedure at all, or automates it without that gate.</p>
-<p><strong>In practice.</strong> This toolkit is the concrete, current example of the second failure: it implements automated decommissioning after a configurable inactivity period, with no owner or certifier sign-off built in by default. Worth studying for its seven life-cycle states, and worth modifying before adopting on this one transition specifically.</p>
-<p><strong>Who it is for.</strong> N2 to N3 teams evaluating life-cycle tooling, specifically to see what automatic decommissioning done wrong looks like in a real, popular, current project.</p>
+<p><strong>Problem.</strong> Part 4 §3 is explicit that the transition into decommissioned requires a decision from the agent owner and the certifier together, never an automation running on a schedule. Most tooling in this space either has no decommissioning procedure at all, or leaves the gate entirely to whoever wires the automation together.</p>
+<p><strong>In practice.</strong> This toolkit is a concrete, current example of that second risk, not of the failure itself: it automatically detects agents past a configurable inactivity threshold or a heartbeat timeout, but the call that actually decommissions or orphans an agent is separate, explicit, and does not check for an approval record either. Nothing ships the ungated failure by default. Nothing ships the gate by default either. Worth studying for its own life-cycle states, and worth wiring the approval step in deliberately before connecting detection to the decommissioning call.</p>
+<p><strong>Who it is for.</strong> N2 to N3 teams evaluating life-cycle tooling, specifically to see how easily automatic detection and an ungated action can be wired together in a real, popular, current project.</p>
 <p><strong>Minimum tier.</strong> N2.</p>
-<p><strong>When not to use it.</strong> As shipped, for the decommissioned transition specifically. Either add an approval gate in front of the automated trigger, or use the toolkit for its other life-cycle states and handle decommissioning by hand per part 4 §3.</p>
-<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial and find the inactivity-decommission setting before enabling anything. Write down who the owner and the certifier are for that specific switch before turning it on.</p>
+<p><strong>When not to use it.</strong> As shipped, the candidate list on its own. Wire an approval step between detection and the decommissioning call before connecting the two, per part 4 §3, since the toolkit does not do this for you.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial and find where the candidate list feeds into the decommissioning call. Write down who the owner and the certifier are for that specific gate before wiring it in.</p>
 
 <h3>The commercial kill-switch landscape</h3>
 
@@ -1957,7 +1957,7 @@ description: Reviews contract drafts against the house checklist of
 <tbody>
 <tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>El propio estándar abierto, estable desde 2020. No es un producto, es un protocolo que cada fila de abajo implementa a su manera.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>Graduado por la CNCF, código abierto, autoalojado. Identidad de carga de trabajo verificable criptográficamente, rotada automáticamente. La fila por donde empezar si la respuesta necesita seguir siendo totalmente auditable e independiente de proveedor.</td></tr>
-<tr><td>Auth0 Token Vault</td><td>Producto comercial, disponible en general. El agente nunca tiene la clave en bruto. El camino más rápido si Auth0 ya maneja la identidad en otra parte de la pila.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Producto comercial. El agente nunca tiene la clave en bruto, la intercambia por un token corto y con alcance limitado en su lugar. El camino más rápido si Auth0 ya maneja la identidad en otra parte de la pila.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Comercial, disponible en general desde 2026. Construcción de identidad hecha a medida para agentes, dentro de una pila centrada en Microsoft.</td></tr>
 </tbody>
 </table>
@@ -1991,9 +1991,9 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Un solo agente N0/N1 sin efecto externo. La sobrecarga del runtime solo se paga sola una vez que la política que aplica vale la pena aplicarla de forma estructural.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" del repositorio antes de la documentación del motor de políticas. Ese tutorial es también donde aparece el límite honesto propio de esta herramienta, ver más abajo.</p>
 
-<p>Licencia MIT, más de 3.300 estrellas. Repositorio: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+<p>Licencia MIT, más de 6.000 estrellas. Repositorio: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
 
-<div class="rule-box"><span class="lbl">Salvedad</span><p>Este mismo toolkit automatiza la transición a dado de baja del ciclo de vida de la parte 4 (disparada por inactividad, sin que se requiera por defecto la firma de un dueño ni de un certificador), que es precisamente la automatización sin decisión contra la que advierte la parte 4 §3. Se lista aquí por la mitad de política de runtime, ver Gobernar más abajo para la mitad del ciclo de vida y la corrección específica necesaria antes de adoptarlo sin modificar.</p></div>
+<div class="rule-box"><span class="lbl">Salvedad</span><p>El módulo de ciclo de vida de este mismo toolkit detecta automáticamente candidatos a baja y a huérfano por inactividad y por tiempo de espera de heartbeat, pero la llamada que realmente da de baja a un agente es separada y explícita, y no verifica ningún registro de aprobación por sí sola. Se lista aquí por la mitad de política de runtime, ver Gobernar más abajo para la mitad del ciclo de vida y el control que un equipo tiene que conectar deliberadamente, ya que el toolkit no lo hace por sí solo.</p></div>
 
 <h3>OWASP Agentic Skills Top 10</h3>
 
@@ -2053,12 +2053,12 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Mismo repositorio que la ficha en Proteger, más arriba: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. Esta es una segunda lectura de la misma herramienta, enfocada en el ciclo de vida, no una ficha duplicada.</p>
 
-<p><strong>Problema.</strong> La parte 4 §3 es explícita en que la transición a dado de baja exige una decisión conjunta del dueño del agente y el certificador, nunca una automatización corriendo en calendario. La mayoría de las herramientas en este espacio o no tienen ningún procedimiento de baja, o lo automatizan sin esa puerta.</p>
-<p><strong>En la práctica.</strong> Este toolkit es el ejemplo concreto y actual de la segunda falla: implementa la baja automatizada después de un período de inactividad configurable, sin que se requiera por defecto la firma de un dueño ni de un certificador. Vale la pena estudiarlo por sus siete estados de ciclo de vida, y vale la pena modificarlo antes de adoptarlo en esta transición específica.</p>
-<p><strong>Para quién.</strong> Equipos de N2 a N3 que evalúan herramientas de ciclo de vida, específicamente para ver cómo luce una baja automática mal hecha en un proyecto real, popular y actual.</p>
+<p><strong>Problema.</strong> La parte 4 §3 es explícita en que la transición a dado de baja exige una decisión conjunta del dueño del agente y el certificador, nunca una automatización corriendo en calendario. La mayoría de las herramientas en este espacio o no tienen ningún procedimiento de baja, o dejan la puerta enteramente en manos de quien conecta la automatización.</p>
+<p><strong>En la práctica.</strong> Este toolkit es un ejemplo concreto y actual de ese segundo riesgo, no de la falla en sí: detecta automáticamente agentes más allá de un umbral configurable de inactividad o de un tiempo de espera de heartbeat, pero la llamada que realmente da de baja o marca como huérfano es separada, explícita, y tampoco verifica ningún registro de aprobación. Nada viene de fábrica con la falla sin control. Nada viene de fábrica con el control tampoco. Vale la pena estudiarlo por sus propios estados de ciclo de vida, y vale la pena conectar el paso de aprobación deliberadamente antes de unir la detección con la llamada de baja.</p>
+<p><strong>Para quién.</strong> Equipos de N2 a N3 que evalúan herramientas de ciclo de vida, específicamente para ver qué tan fácil es conectar detección automática con una acción sin control en un proyecto real, popular y actual.</p>
 <p><strong>Banda mínima.</strong> N2.</p>
-<p><strong>Cuándo no usarlo.</strong> Tal como viene, para la transición a dado de baja específicamente. O bien agrega una puerta de aprobación delante del disparador automatizado, o usa el toolkit para sus otros estados de ciclo de vida y maneja la baja a mano según la parte 4 §3.</p>
-<p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" y encuentra el ajuste de baja por inactividad antes de habilitar nada. Anota quién es el dueño y quién el certificador para ese interruptor específico antes de activarlo.</p>
+<p><strong>Cuándo no usarlo.</strong> Tal como viene, solo la lista de candidatos. Conecta un paso de aprobación entre la detección y la llamada de baja antes de unir las dos, según la parte 4 §3, ya que el toolkit no lo hace por ti.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" y encuentra dónde la lista de candidatos alimenta la llamada de baja. Anota quién es el dueño y quién el certificador para esa puerta específica antes de conectarla.</p>
 
 <h3>El panorama comercial de interruptores de apagado</h3>
 

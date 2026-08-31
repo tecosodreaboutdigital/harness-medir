@@ -331,7 +331,7 @@
 <tbody>
 <tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>The open standard itself, stable since 2020. Not a product, a protocol every row below implements in its own way.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>CNCF-graduated, open source, self-hosted. Cryptographically verifiable workload identity, rotated automatically. The row to start with if the answer needs to stay fully auditable and vendor-independent.</td></tr>
-<tr><td>Auth0 Token Vault</td><td>Commercial, GA product. The agent never holds the raw key. Fastest path if Auth0 already handles identity elsewhere in the stack.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Commercial. The agent never holds the raw key, exchanging it for a short-lived, scoped token instead. Fastest path if Auth0 already handles identity elsewhere in the stack.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Commercial, GA in 2026. Purpose-built identity construct for agents, inside a Microsoft-centric stack.</td></tr>
 </tbody>
 </table>
@@ -365,9 +365,9 @@
 <p><strong>When not to use it.</strong> A single N0/N1 agent with no external effect. The runtime overhead only pays for itself once the policy it enforces is worth enforcing structurally.</p>
 <p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial in the repository before the policy-engine docs. That tutorial is also where this tool's own honest limit shows up, see below.</p>
 
-<p>Licence MIT, 3,300+ stars. Repository: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+<p>Licence MIT, over 6,000 stars. Repository: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>This same toolkit automates the transition into decommissioned from part 4's life cycle (inactivity-triggered, no owner or certifier sign-off required by default), which is precisely the automation-without-a-decision that part 4 §3 warns against. Listed here for the runtime-policy half, see Govern below for the life-cycle half and the specific fix needed before adopting it unmodified.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>This same toolkit's life-cycle module automatically detects decommission and orphan candidates by inactivity and heartbeat timeout, but the call that actually decommissions an agent is separate and explicit, and does not itself check for an approval record. Listed here for the runtime-policy half, see Govern below for the life-cycle half and the gate a team has to wire in deliberately, since the toolkit does not.</p></div>
 
 <h3>OWASP Agentic Skills Top 10</h3>
 
@@ -427,12 +427,12 @@
 
 <p>Same repository as the entry in Secure above: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. This is a second reading of the same tool, focused on the life cycle, not a duplicate entry.</p>
 
-<p><strong>Problem.</strong> Part 4 §3 is explicit that the transition into decommissioned requires a decision from the agent owner and the certifier together, never an automation running on a schedule. Most tooling in this space either has no decommissioning procedure at all, or automates it without that gate.</p>
-<p><strong>In practice.</strong> This toolkit is the concrete, current example of the second failure: it implements automated decommissioning after a configurable inactivity period, with no owner or certifier sign-off built in by default. Worth studying for its seven life-cycle states, and worth modifying before adopting on this one transition specifically.</p>
-<p><strong>Who it is for.</strong> N2 to N3 teams evaluating life-cycle tooling, specifically to see what automatic decommissioning done wrong looks like in a real, popular, current project.</p>
+<p><strong>Problem.</strong> Part 4 §3 is explicit that the transition into decommissioned requires a decision from the agent owner and the certifier together, never an automation running on a schedule. Most tooling in this space either has no decommissioning procedure at all, or leaves the gate entirely to whoever wires the automation together.</p>
+<p><strong>In practice.</strong> This toolkit is a concrete, current example of that second risk, not of the failure itself: it automatically detects agents past a configurable inactivity threshold or a heartbeat timeout, but the call that actually decommissions or orphans an agent is separate, explicit, and does not check for an approval record either. Nothing ships the ungated failure by default. Nothing ships the gate by default either. Worth studying for its own life-cycle states, and worth wiring the approval step in deliberately before connecting detection to the decommissioning call.</p>
+<p><strong>Who it is for.</strong> N2 to N3 teams evaluating life-cycle tooling, specifically to see how easily automatic detection and an ungated action can be wired together in a real, popular, current project.</p>
 <p><strong>Minimum tier.</strong> N2.</p>
-<p><strong>When not to use it.</strong> As shipped, for the decommissioned transition specifically. Either add an approval gate in front of the automated trigger, or use the toolkit for its other life-cycle states and handle decommissioning by hand per part 4 §3.</p>
-<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial and find the inactivity-decommission setting before enabling anything. Write down who the owner and the certifier are for that specific switch before turning it on.</p>
+<p><strong>When not to use it.</strong> As shipped, the candidate list on its own. Wire an approval step between detection and the decommissioning call before connecting the two, per part 4 §3, since the toolkit does not do this for you.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the "Agent Lifecycle" tutorial and find where the candidate list feeds into the decommissioning call. Write down who the owner and the certifier are for that specific gate before wiring it in.</p>
 
 <h3>The commercial kill-switch landscape</h3>
 

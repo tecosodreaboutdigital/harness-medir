@@ -331,7 +331,7 @@
 <tbody>
 <tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>El propio estándar abierto, estable desde 2020. No es un producto, es un protocolo que cada fila de abajo implementa a su manera.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>Graduado por la CNCF, código abierto, autoalojado. Identidad de carga de trabajo verificable criptográficamente, rotada automáticamente. La fila por donde empezar si la respuesta necesita seguir siendo totalmente auditable e independiente de proveedor.</td></tr>
-<tr><td>Auth0 Token Vault</td><td>Producto comercial, disponible en general. El agente nunca tiene la clave en bruto. El camino más rápido si Auth0 ya maneja la identidad en otra parte de la pila.</td></tr>
+<tr><td>Auth0 Token Vault</td><td>Producto comercial. El agente nunca tiene la clave en bruto, la intercambia por un token corto y con alcance limitado en su lugar. El camino más rápido si Auth0 ya maneja la identidad en otra parte de la pila.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Comercial, disponible en general desde 2026. Construcción de identidad hecha a medida para agentes, dentro de una pila centrada en Microsoft.</td></tr>
 </tbody>
 </table>
@@ -365,9 +365,9 @@
 <p><strong>Cuándo no usarlo.</strong> Un solo agente N0/N1 sin efecto externo. La sobrecarga del runtime solo se paga sola una vez que la política que aplica vale la pena aplicarla de forma estructural.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" del repositorio antes de la documentación del motor de políticas. Ese tutorial es también donde aparece el límite honesto propio de esta herramienta, ver más abajo.</p>
 
-<p>Licencia MIT, más de 3.300 estrellas. Repositorio: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
+<p>Licencia MIT, más de 6.000 estrellas. Repositorio: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a></p>
 
-<div class="rule-box"><span class="lbl">Salvedad</span><p>Este mismo toolkit automatiza la transición a dado de baja del ciclo de vida de la parte 4 (disparada por inactividad, sin que se requiera por defecto la firma de un dueño ni de un certificador), que es precisamente la automatización sin decisión contra la que advierte la parte 4 §3. Se lista aquí por la mitad de política de runtime, ver Gobernar más abajo para la mitad del ciclo de vida y la corrección específica necesaria antes de adoptarlo sin modificar.</p></div>
+<div class="rule-box"><span class="lbl">Salvedad</span><p>El módulo de ciclo de vida de este mismo toolkit detecta automáticamente candidatos a baja y a huérfano por inactividad y por tiempo de espera de heartbeat, pero la llamada que realmente da de baja a un agente es separada y explícita, y no verifica ningún registro de aprobación por sí sola. Se lista aquí por la mitad de política de runtime, ver Gobernar más abajo para la mitad del ciclo de vida y el control que un equipo tiene que conectar deliberadamente, ya que el toolkit no lo hace por sí solo.</p></div>
 
 <h3>OWASP Agentic Skills Top 10</h3>
 
@@ -427,12 +427,12 @@
 
 <p>Mismo repositorio que la ficha en Proteger, más arriba: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. Esta es una segunda lectura de la misma herramienta, enfocada en el ciclo de vida, no una ficha duplicada.</p>
 
-<p><strong>Problema.</strong> La parte 4 §3 es explícita en que la transición a dado de baja exige una decisión conjunta del dueño del agente y el certificador, nunca una automatización corriendo en calendario. La mayoría de las herramientas en este espacio o no tienen ningún procedimiento de baja, o lo automatizan sin esa puerta.</p>
-<p><strong>En la práctica.</strong> Este toolkit es el ejemplo concreto y actual de la segunda falla: implementa la baja automatizada después de un período de inactividad configurable, sin que se requiera por defecto la firma de un dueño ni de un certificador. Vale la pena estudiarlo por sus siete estados de ciclo de vida, y vale la pena modificarlo antes de adoptarlo en esta transición específica.</p>
-<p><strong>Para quién.</strong> Equipos de N2 a N3 que evalúan herramientas de ciclo de vida, específicamente para ver cómo luce una baja automática mal hecha en un proyecto real, popular y actual.</p>
+<p><strong>Problema.</strong> La parte 4 §3 es explícita en que la transición a dado de baja exige una decisión conjunta del dueño del agente y el certificador, nunca una automatización corriendo en calendario. La mayoría de las herramientas en este espacio o no tienen ningún procedimiento de baja, o dejan la puerta enteramente en manos de quien conecta la automatización.</p>
+<p><strong>En la práctica.</strong> Este toolkit es un ejemplo concreto y actual de ese segundo riesgo, no de la falla en sí: detecta automáticamente agentes más allá de un umbral configurable de inactividad o de un tiempo de espera de heartbeat, pero la llamada que realmente da de baja o marca como huérfano es separada, explícita, y tampoco verifica ningún registro de aprobación. Nada viene de fábrica con la falla sin control. Nada viene de fábrica con el control tampoco. Vale la pena estudiarlo por sus propios estados de ciclo de vida, y vale la pena conectar el paso de aprobación deliberadamente antes de unir la detección con la llamada de baja.</p>
+<p><strong>Para quién.</strong> Equipos de N2 a N3 que evalúan herramientas de ciclo de vida, específicamente para ver qué tan fácil es conectar detección automática con una acción sin control en un proyecto real, popular y actual.</p>
 <p><strong>Banda mínima.</strong> N2.</p>
-<p><strong>Cuándo no usarlo.</strong> Tal como viene, para la transición a dado de baja específicamente. O bien agrega una puerta de aprobación delante del disparador automatizado, o usa el toolkit para sus otros estados de ciclo de vida y maneja la baja a mano según la parte 4 §3.</p>
-<p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" y encuentra el ajuste de baja por inactividad antes de habilitar nada. Anota quién es el dueño y quién el certificador para ese interruptor específico antes de activarlo.</p>
+<p><strong>Cuándo no usarlo.</strong> Tal como viene, solo la lista de candidatos. Conecta un paso de aprobación entre la detección y la llamada de baja antes de unir las dos, según la parte 4 §3, ya que el toolkit no lo hace por ti.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Lee el tutorial "Agent Lifecycle" y encuentra dónde la lista de candidatos alimenta la llamada de baja. Anota quién es el dueño y quién el certificador para esa puerta específica antes de conectarla.</p>
 
 <h3>El panorama comercial de interruptores de apagado</h3>
 
