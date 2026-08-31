@@ -70,12 +70,15 @@
 <p><strong>Para quién.</strong> Quien decide, en N0, lo usa como puerta de entrada antes de cualquier herramienta. Quien ya opera en N2 o N3 lo usa como auditoría periódica de por qué la automatización todavía existe.</p>
 <p><strong>Banda mínima.</strong> N0. No exige ninguna automatización existente, es el paso anterior a construir cualquier cosa.</p>
 <p><strong>Cuándo no usarlo.</strong> Cuando la decisión de hacerlo ya está tomada y lo que falta es un levantamiento técnico detallado. Ahí entran skills de entrevista como interview-me, que complementan esta y no la sustituyen.</p>
-<p><strong>Cómo empezar en 15 minutos.</strong> Clona la carpeta, ejecútalo con una frase que describa la tarea, responde a los ocho bloques y lee el veredicto.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Clona la carpeta, ejecútalo con una frase que describa la tarea, responde a los ocho bloques y lee el veredicto. <code>SKILL.md</code> sigue el formato abierto <a href="https://agentskills.io">Agent Skills</a>, así que el mismo archivo corre sin modificación en Cursor, Codex CLI y Google Antigravity (<code>.agents/skills/</code>) o en el Playground de Google AI Studio, no solo en Claude Code. También se instala como plugin de Claude Code, desde su propio marketplace.</p>
 
 <pre><code>git clone https://github.com/tecosodreaboutdigital/intake-briefing.git
 /intake-briefing "queremos automatizar la conciliación de facturas de flete"</code></pre>
 
-<p>Repositorio: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, escrita para este proyecto.</p>
+<pre><code>/plugin marketplace add tecosodreaboutdigital/intake-briefing
+/plugin install intake-briefing@intake-briefing</code></pre>
+
+<p>Repositorio: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, escrita para este proyecto. La instalación completa multiherramienta, verificada el 31 de agosto de 2026 contra la documentación de cada proveedor, vive en el propio README del repositorio.</p>
 
 <h3>Guía inspirada en Karpathy</h3>
 
