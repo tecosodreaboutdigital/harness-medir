@@ -646,21 +646,59 @@ def main():
 @media (max-width:640px){.kpi{flex:1 1 48%}}
 """
     shell = shell.replace('.eyebrow{', extra_css + '.eyebrow{')
+    # .topbar .icon-link ja vem no shell extraido de harness-p2.html,
+    # nao precisa de injecao propria aqui (um replace incondicional
+    # duplicaria a regra, o mesmo bug corrigido acima para LANG_HINT_CSS).
 
-    bar = """<div class="langbar">
+    # docs/logbook.html vive uma pasta abaixo da raiz, entao os links
+    # para as outras seis pecas levam o prefixo ../. O icone do proprio
+    # diario aparece como item corrente (cur), sem link, como nas
+    # outras paginas quando o item e a propria pagina.
+    SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources']
+    FILES = {'p1': '../harness-p1.html', 'p2': '../harness-p2.html', 'p3': '../harness-p3.html',
+             'p4': '../harness-p4.html', 'guide': '../harness-toolkit.html',
+             'glossary': '../harness-glossary.html', 'sources': '../harness-sources.html'}
+    LABELS_EN = {'p1': 'Part 1', 'p2': 'Part 2', 'p3': 'Part 3', 'p4': 'Part 4',
+                 'guide': 'Compact guide', 'glossary': 'Glossary', 'sources': 'Sources'}
+    topbar_pieces = []
+    for i, key in enumerate(SERIES_ORDER):
+        if i > 0:
+            topbar_pieces.append('<span class="sep pipe">|</span>' if key == 'guide' else '<span class="sep">·</span>')
+        topbar_pieces.append('<a href="%s#en-" data-key="%s">%s</a>' % (FILES[key], key, LABELS_EN[key]))
+    topbar_pieces.append('<span class="sep pipe">|</span>')
+    topbar_pieces.append('<span class="cur icon-link" data-key="logbook" data-icon="1" title="Project log" '
+                          'aria-label="Project log"><svg viewBox="0 0 16 16" width="14" height="14" '
+                          'aria-hidden="true" focusable="false"><polyline points="1,13 5,13 5,9 9,9 9,4 15,4" '
+                          'fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>')
+    topbar = ('<div class="topbar">\n<nav class="serie">\n' + '\n'.join(topbar_pieces) + '\n</nav>\n'
+              '<span class="brace">{</span>\n')
+
+    bar = topbar + """<div class="langbar">
 <button type="button" data-lang="pt">PT</button>
 <button type="button" class="on" data-lang="en">EN</button>
 <button type="button" data-lang="es">ES</button>
+</div>
+<span class="brace">}</span>
 </div>"""
 
     js = """<script>
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'../harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'../harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'../harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'../harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'../harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'../harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'../harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},logbook:{file:'',label:{en:'Project log',pt:'Di\\u00e1rio de bordo',es:'Diario de bordo'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      if(el.dataset.icon){el.title=info.label[l];}else{el.textContent=info.label[l];}
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
   }
   var h=location.hash.slice(1);
   var m=h.match(/^(en|es|pt)-/);

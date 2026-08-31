@@ -70,12 +70,15 @@
 <p><strong>Who it is for.</strong> Whoever decides, at N0, uses it as the entry point before any tool. Whoever already operates at N2 or N3 uses it as a periodic audit of why the automation still exists.</p>
 <p><strong>Minimum tier.</strong> N0. It does not require any existing automation, it is the step before building anything.</p>
 <p><strong>When not to use it.</strong> When the decision to do it has already been made and what is missing is detailed technical discovery. That is where interview skills such as interview-me come in, which complement this one and do not replace it.</p>
-<p><strong>How to start in 15 minutes.</strong> Clone the folder, run it with a sentence describing the task, answer the eight blocks and read the verdict.</p>
+<p><strong>How to start in 15 minutes.</strong> Clone the folder, run it with a sentence describing the task, answer the eight blocks and read the verdict. <code>SKILL.md</code> follows the open <a href="https://agentskills.io">Agent Skills</a> format, so the same file runs unmodified in Cursor, Codex CLI and Google Antigravity (<code>.agents/skills/</code>) or Google AI Studio's Playground, not only Claude Code. It also installs as a Claude Code plugin, from its own marketplace.</p>
 
 <pre><code>git clone https://github.com/tecosodreaboutdigital/intake-briefing.git
 /intake-briefing "we want to automate freight invoice reconciliation"</code></pre>
 
-<p>Repository: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, written for this project.</p>
+<pre><code>/plugin marketplace add tecosodreaboutdigital/intake-briefing
+/plugin install intake-briefing@intake-briefing</code></pre>
+
+<p>Repository: <a href="https://github.com/tecosodreaboutdigital/intake-briefing">github.com/tecosodreaboutdigital/intake-briefing</a>. MIT, written for this project. The full multi-tool installation, verified 31 August 2026 against each vendor's own documentation, lives in the repository's own README.</p>
 
 <h3>A guide inspired by Karpathy</h3>
 

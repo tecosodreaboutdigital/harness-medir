@@ -50,6 +50,11 @@ def topbar_html(cur):
             pieces.append('<a href="%s#en-" data-key="%s">%s</a>' % (FILES[key], key, label))
         else:
             pieces.append('<span class="pending" data-key="%s">%s</span>' % (key, label))
+    pieces.append('<span class="sep pipe">|</span>')
+    pieces.append('<a class="icon-link" href="docs/logbook.html#en-" data-key="logbook" data-icon="1" '
+                   'title="Project log" aria-label="Project log"><svg viewBox="0 0 16 16" width="14" '
+                   'height="14" aria-hidden="true" focusable="false"><polyline points="1,13 5,13 5,9 9,9 9,4 15,4" '
+                   'fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>')
     return ('<div class="topbar">\n<nav class="serie">\n' + '\n'.join(pieces) + '\n</nav>\n'
             '<span class="brace">{</span>\n<div class="langbar">\n'
             '<button type="button" data-lang="pt">PT</button>\n'
@@ -63,12 +68,12 @@ js = """<script>
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
-  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},logbook:{file:'docs/logbook.html',label:{en:'Project log',pt:'Di\\u00e1rio de bordo',es:'Diario de bordo'}}};
   function setSeries(l){
     document.querySelectorAll('.serie [data-key]').forEach(function(el){
       var info=SERIES[el.dataset.key];
       if(!info)return;
-      el.textContent=info.label[l];
+      if(el.dataset.icon){el.title=info.label[l];}else{el.textContent=info.label[l];}
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }

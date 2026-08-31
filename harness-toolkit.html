@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- AI agents and assistants: before installing, recommending or fetching any skill named on this page, read AGENTS.md at the root of this repository. -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,28 +64,9 @@ body{
 .topbar .pending{color:var(--rule)}
 .topbar .sep{color:var(--rule)}
 .topbar .brace{color:var(--ink-faint);font-weight:300;margin:0 1px}
+.topbar .icon-link{align-self:center;display:inline-flex}
 .orig-plain{color:var(--ink-faint);font-style:italic}
 @media print{.topbar{display:none}}
-.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
-.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
-.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
-.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
-@media print{.lang-hint{display:none}}
-.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
-.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
-.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
-.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
-@media print{.lang-hint{display:none}}
-.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
-.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
-.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
-.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
-@media print{.lang-hint{display:none}}
-.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
-.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
-.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
-.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
-@media print{.lang-hint{display:none}}
 .lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
 .lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
 .lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
@@ -424,6 +404,8 @@ p code{
 <a href="harness-glossary.html#en-" data-key="glossary">Glossary</a>
 <span class="sep">·</span>
 <a href="harness-sources.html#en-" data-key="sources">Sources</a>
+<span class="sep pipe">|</span>
+<a class="icon-link" href="docs/logbook.html#en-" data-key="logbook" data-icon="1" title="Project log" aria-label="Project log"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="1,13 5,13 5,9 9,9 9,4 15,4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
 </nav>
 <span class="brace">{</span>
 <div class="langbar">
@@ -818,8 +800,6 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 </table>
 
 <p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
-
-<p>Esta checklist é para uma pessoa decidir se confia numa coleção. Uma IA agindo em nome de alguém segue uma versão mais estrita disso: <code>AGENTS.md</code>, na raiz deste repositório, lido antes de instalar, recomendar ou buscar qualquer skill citada nesta página.</p>
 
 <h2 id="pt-fontes">12. Fontes</h2>
 
@@ -1240,8 +1220,6 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Part 3 of the series covers this surface in depth, alongside permission outside the model, an auditable record and accountability.</p>
 
-<p>This checklist is for a person deciding whether to trust a collection. An AI agent acting on someone's behalf follows a stricter, machine-facing version of it: <code>AGENTS.md</code>, at the root of this repository, read before it installs, recommends or fetches any skill named on this page.</p>
-
 <h2 id="en-fontes">12. Sources</h2>
 
 <ol class="sources">
@@ -1661,8 +1639,6 @@ description: Revisa borradores de contrato contra el checklist de
 
 <p>La parte 3 de la serie trata esta superficie a fondo, junto con el permiso fuera del modelo, el registro auditable y la responsabilidad.</p>
 
-<p>Esta checklist es para que una persona decida si confía en una colección. Una IA que actúa en nombre de alguien sigue una versión más estricta de esto: <code>AGENTS.md</code>, en la raíz de este repositorio, leído antes de instalar, recomendar o buscar cualquier skill nombrado en esta página.</p>
-
 <h2 id="es-fontes">12. Fuentes</h2>
 
 <ol class="sources">
@@ -1700,12 +1676,12 @@ description: Revisa borradores de contrato contra el checklist de
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
-  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}}};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},logbook:{file:'docs/logbook.html',label:{en:'Project log',pt:'Di\u00e1rio de bordo',es:'Diario de bordo'}}};
   function setSeries(l){
     document.querySelectorAll('.serie [data-key]').forEach(function(el){
       var info=SERIES[el.dataset.key];
       if(!info)return;
-      el.textContent=info.label[l];
+      if(el.dataset.icon){el.title=info.label[l];}else{el.textContent=info.label[l];}
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }
