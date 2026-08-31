@@ -492,7 +492,7 @@ Red flags:
 
 <p>Guides and sensors pile up clutter like any other system. Rules that no longer apply, checks nobody reads, examples from a process that has since changed. And the work produced piles up its own: needless repetition, layers that serve nothing, leftovers from abandoned attempts.</p>
 
-<p>There is an entire category of tools for this cleanup today. They converge on five rules, and the rules are worth more than any specific product:</p>
+<p>This discipline is already documented rule for rule in <a class="src" href="harness-sources.html#en-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, oh-my-claudecode project, github.com/Yeachan-Heo/oh-my-claudecode. Underlies four of the five rules cited here; automatic rollback not documented in this skill.">at least one real cleanup tool</a>, and the rules are worth more than any specific product:</p>
 
 <table class="wrap">
 <thead><tr><th>Rule</th><th>Why it exists</th></tr></thead>
@@ -500,7 +500,7 @@ Red flags:
 <tr><td>Lock in the behaviour before touching anything</td><td>Write the check first, so cleanup does not turn into a silent change</td></tr>
 <tr><td>Prefer removal over addition</td><td>Cleanup that adds is not cleanup</td></tr>
 <tr><td>Write the plan before editing</td><td>Without a plan, cleanup turns into a never-ending remodel</td></tr>
-<tr><td>Revert on its own whatever breaks</td><td>Every change that trips the check rolls back automatically</td></tr>
+<tr><td>Revert immediately if the check breaks</td><td>A discipline to follow, not a documented automatic feature: every change that trips the check should be undone right away</td></tr>
 <tr><td>Separate the one who cleans from the one who reviews</td><td>The same principle of the one who generates does not evaluate</td></tr>
 </tbody>
 </table>
