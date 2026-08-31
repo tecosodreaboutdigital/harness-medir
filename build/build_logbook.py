@@ -392,7 +392,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <p class="deck">Este projeto argumenta que um harness deve produzir evidência sobre o próprio trabalho, não opinião. Esta página aplica esse argumento a si mesma: quanto texto foi publicado, quanto custou em tokens, marco a marco, com os números extraídos direto do histórico do git e do registro real de uso desta sessão.</p>
 
-<p class="byline">Fernando Teco Sodré · Gerado automaticamente, ver metodologia abaixo · Companheiro das partes 1, 2, 3 e do guia compacto</p>
+<p class="byline">Fernando Teco Sodré · Gerado automaticamente, ver metodologia abaixo · Companheiro das partes 1 a 4 e do guia compacto</p>
 
 <div class="rule-box"><span class="lbl">Estado</span><p>Os marcos abaixo são o histórico completo do repositório desde o primeiro commit, não uma amostra, já reunindo várias sessões de trabalho. Cada sessão nova que fizer commit vira um marco novo nesta mesma página.</p></div>
 
@@ -423,7 +423,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <figure>
 {words_chart}
-<figcaption>Palavras publicadas nos três artigos (partes 1, 2 e guia compacto, somados). Cresce em degrau porque a maior parte do texto nasce dentro de um marco só, não gradualmente entre marcos.</figcaption>
+<figcaption>Palavras publicadas nas sete peças da série (partes 1 a 4, guia compacto, glossário e fontes, somados). Cresce em degrau porque a maior parte do texto nasce dentro de um marco só, não gradualmente entre marcos.</figcaption>
 </figure>
 
 <figure>
@@ -446,7 +446,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_logbook_metrics.py</code> e <code>build/build_logbook.py</code> no repositório.</p>
 
-<p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1, 2 e o guia compacto, nos idiomas que existiam naquele commit.</p>
+<p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1 a 4, o guia compacto, o glossário e as fontes, nos idiomas que existiam naquele commit.</p>
 
 <p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventário de fontes), por commit.</p>
 
@@ -474,7 +474,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p class="deck">This project argues that a harness should produce evidence about its own work, not opinion. This page applies that argument to itself: how much text got published, what it cost in tokens, milestone by milestone, with the numbers pulled straight from git history and this session's real usage record.</p>
 
-<p class="byline">Fernando Teco Sodré · Generated automatically, see methodology below · Companion to parts 1, 2, 3 and the compact guide</p>
+<p class="byline">Fernando Teco Sodré · Generated automatically, see methodology below · Companion to parts 1 to 4 and the compact guide</p>
 
 <div class="rule-box"><span class="lbl">Status</span><p>The milestones below are the repository's entire history since the first commit, not a sample, already spanning several working sessions. Every new session that commits becomes a new milestone on this same page.</p></div>
 
@@ -505,7 +505,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <figure>
 {words_chart}
-<figcaption>Words published across the three articles (parts 1, 2 and the compact guide, summed). It grows in steps because most of the text is born within a single milestone, not gradually between milestones.</figcaption>
+<figcaption>Words published across the series' seven pieces (parts 1 to 4, the compact guide, the glossary and the sources, summed). It grows in steps because most of the text is born within a single milestone, not gradually between milestones.</figcaption>
 </figure>
 
 <figure>
@@ -528,7 +528,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_logbook_metrics.py</code> and <code>build/build_logbook.py</code> in the repository.</p>
 
-<p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1, 2 and the compact guide, in whichever languages existed at that commit.</p>
+<p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1 to 4, the compact guide, the glossary and the sources, in whichever languages existed at that commit.</p>
 
 <p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, source inventory), per commit.</p>
 
@@ -556,7 +556,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <p class="deck">Este proyecto sostiene que un harness debe producir evidencia sobre su propio trabajo, no opinión. Esta página aplica ese argumento a sí misma: cuánto texto se publicó, cuánto costó en tokens, hito a hito, con los números extraídos directo del historial de git y del registro real de uso de esta sesión.</p>
 
-<p class="byline">Fernando Teco Sodré · Generado automáticamente, ver metodología abajo · Compañero de las partes 1, 2, 3 y de la guía compacta</p>
+<p class="byline">Fernando Teco Sodré · Generado automáticamente, ver metodología abajo · Compañero de las partes 1 a 4 y de la guía compacta</p>
 
 <div class="rule-box"><span class="lbl">Estado</span><p>Los hitos de abajo son el historial completo del repositorio desde el primer commit, no una muestra, ya reuniendo varias sesiones de trabajo. Cada sesión nueva que haga commit se vuelve un hito nuevo en esta misma página.</p></div>
 
@@ -587,7 +587,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <figure>
 {words_chart}
-<figcaption>Palabras publicadas en los tres artículos (partes 1, 2 y guía compacta, sumadas). Crece en escalón porque la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos.</figcaption>
+<figcaption>Palabras publicadas en las siete piezas de la serie (partes 1 a 4, guía compacta, glosario y fuentes, sumadas). Crece en escalón porque la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos.</figcaption>
 </figure>
 
 <figure>
@@ -610,7 +610,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_logbook_metrics.py</code> y <code>build/build_logbook.py</code> en el repositorio.</p>
 
-<p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1, 2 y la guía compacta, en los idiomas que existían en ese commit.</p>
+<p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1 a 4, la guía compacta, el glosario y las fuentes, en los idiomas que existían en ese commit.</p>
 
 <p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventario de fuentes), por commit.</p>
 
