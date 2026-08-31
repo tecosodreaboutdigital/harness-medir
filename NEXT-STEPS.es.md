@@ -110,6 +110,24 @@ El D10, el bucle propio de la oficina por trimestre, dejó de ser candidato del 
 
 ---
 
+## 4. Auditar las citas de skills por consistencia, y cerrar la brecha de las partes 3 y 4
+
+Planteado el 31 de agosto de 2026, a partir de una pregunta directa sobre una skill específica que expuso un patrón más amplio, que vale la pena corregir a propósito, no una por una por accidente.
+
+**El caso específico que lo empezó.** `research`, de la colección `mattpocock/skills`, es una de las doce skills que este proyecto ya instaló, ya auditó (la colección pasó el escaneo de patrones de red/ejecución y la verificación de licencia de `TOOLS.md`) y ya marcó como **V** en `sources/inventory.md`. Es real, está en uso, y fue autorizada. Pero nunca se la nombra en ningún lugar del texto del proyecto: la tarjeta de `mattpocock/skills` en la guía compacta destaca una skill distinta de las doce (la que fuerza una sesión de preguntas antes de cualquier ejecución) como su ejemplo práctico, y la prosa de la parte 2 tampoco la menciona. Esta sesión la usó directamente, repetidas veces, a escala real, para investigar y verificar las brechas de fuente primaria cerradas en las dos rondas de corrección de citas más temprano el 31 de agosto: se sostuvo bien en cada uso, su salida fue consistentemente bien fundamentada y guardada en un lugar sensato, con una ineficiencia menor que vale la pena anotar si esto se convierte en texto publicado, su propia instrucción de "activar un agente en segundo plano" causa una capa redundante de delegación cuando se invoca desde dentro de una llamada que ya es un agente en segundo plano. Estar instalada y auditada a nivel de colección no es lo mismo que estar individualmente verificada y citada. Darle a `research` su propia línea, en la guía compacta y, si encaja de forma natural en el argumento, en la prosa de la parte 2, de la misma forma que `ai-slop-cleaner`, `holdfast` y `sensors-cli` reciben cada una la suya.
+
+**La brecha más amplia que esto expuso.** La parte 2 cita skills de terceros específicas y nombradas que fundamentan su propio argumento: `ai-slop-cleaner` por la disciplina de limpieza de cinco reglas, `holdfast` por la ejecución particionada durable, `sensors-cli` por el panel con historial de disparos, `superpowers` y `agentskills` por el propio formato de skill, cada una verificada contra `sources/inventory.md` y enlazada con la convención de cita `.src` del proyecto, añadida el 31 de agosto. Las partes 3 y 4 no tienen equivalente. Ninguna de las dos cita una sola herramienta concreta e instalable para lo que la parte realmente argumenta: la parte 3, para imponer permiso fuera del modelo, registrar, o detectar inyección de prompt antes de que llegue a una llamada de herramienta; la parte 4, para un registro de agentes, gobernanza de identidad, o la compilación trimestral de indicadores que se supone debe correr la oficina. La propia organización por MEDIR de la guía compacta tampoco resuelve esto, ya que sus tarjetas no están organizadas por parte. Un lector que termina la parte 3 o la parte 4 convencido por el argumento no tiene adónde ir en este proyecto para encontrar una herramienta real y verificada que ayude a construir lo que la parte acaba de describir, exactamente la brecha que la parte 2 no tiene.
+
+**El proceso para repetir, cada vez que se considere una skill o herramienta para citar, no solo en esta ronda:**
+1. ¿Está de hecho instalada y pasa la lista de verificación ya existente de `TOOLS.md` (licencia, escaneo de patrones de red o ejecución no declarados)? Si todavía no está instalada, ese es el primer paso, no un atajo para saltárselo.
+2. ¿Se la nombra y discute individualmente en algún lugar del propio texto del proyecto, no solo presente dentro de la tarjeta genérica de una colección o en una lista que nadie lee con atención? Una skill que va de polizón dentro de una colección instalada no es la misma afirmación que una skill que este proyecto de verdad recomienda.
+3. ¿Existe uso real contra el cual verificarla, no solo una lectura de su `SKILL.md`? Una skill que nadie aquí ha corrido de verdad es una afirmación de documentación, no una verificada.
+4. ¿Qué argumento de qué parte fundamenta de hecho, concretamente, de la misma forma que `holdfast` fundamenta la discusión de ejecución particionada de la parte 2? Una herramienta citada sin una afirmación específica que sustente es decoración, no evidencia.
+
+**Hecho cuando:** `research` tenga su propia cita, en la guía compacta y, si el encaje es real y no forzado, en la parte 2. Al menos una skill o herramienta concreta, verificada y nombrada esté citada por la parte 3 por su propio argumento, y al menos una por la parte 4, cada una pasando las cuatro verificaciones anteriores. `sources/inventory.md` y `TOOLS.md` actualizados para coincidir con lo que se añada.
+
+---
+
 ## Pendientes menores, a decidir en cualquier momento
 
 **Caso real de apertura.** La escena es compuesta. Si surge un caso real anonimizado del ecosistema del autor, reemplazarla elevaría considerablemente el texto.
@@ -120,4 +138,4 @@ El D10, el bucle propio de la oficina por trimestre, dejó de ser candidato del 
 
 **Ortografía del inglés.** Hoy es británica, y esa es la lectura predeterminada del proyecto. Si el público objetivo se desplaza hacia Estados Unidos, convertirla.
 
-**Localizar la fuente primaria de la regla de dos.** Dos fuentes secundarias independientes la atribuyen a Meta con la misma formulación, suficiente para citar el contenido en la parte 3, no para enlazarla. Buscar de nuevo antes de cerrar esa pieza, ver `sources/inventory.md`.
+**Localizar la fuente primaria de la regla de dos. Hecho, 31 de agosto de 2026.** Encontrada y leída directamente: Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 de octubre de 2025, `ai.meta.com/blog/practical-ai-agent-security/`. Enlazada en la parte 3, en los tres idiomas, y en `harness-sources.html`; `sources/inventory.md` actualizado de **P** a **V**.

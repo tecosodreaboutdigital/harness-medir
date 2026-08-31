@@ -110,6 +110,24 @@ O D10, o laço próprio do escritório por trimestre, deixou de ser candidato do
 
 ---
 
+## 4. Auditar as citações de skills por consistência, e fechar a lacuna das partes 3 e 4
+
+Levantado em 31 de agosto de 2026, a partir de uma pergunta direta sobre uma skill específica que expôs um padrão maior, que vale corrigir de propósito, não uma de cada vez por acidente.
+
+**O caso específico que começou isso.** `research`, da coleção `mattpocock/skills`, é uma das doze skills que este projeto já instalou, já auditou (a coleção passou pela varredura de padrões de rede/execução e checagem de licença do `TOOLS.md`) e já marcou como **V** em `sources/inventory.md`. Ela é real, está em uso, e foi liberada. Mas nunca é citada nominalmente em lugar nenhum do texto do projeto: o card de `mattpocock/skills` no guia compacto destaca uma skill diferente das doze (a que força uma sessão de perguntas antes de qualquer execução) como seu exemplo prático, e a prosa da parte 2 também não a menciona. Esta sessão a usou diretamente, repetidas vezes, em escala real, para pesquisar e verificar as lacunas de fonte primária fechadas nas duas rodadas de correção de citação mais cedo em 31 de agosto: ela se saiu bem em todo uso, sua saída foi consistentemente bem fundamentada e salva num lugar sensato, com uma ineficiência pequena que vale registrar se isso virar texto publicado — sua própria instrução de "acionar um agente em segundo plano" causa uma camada redundante de delegação quando é chamada de dentro de uma chamada que já é um agente em segundo plano. Estar instalada e auditada no nível da coleção não é a mesma coisa que estar individualmente verificada e citada. Dar à `research` sua própria linha, no guia compacto e, se couber naturalmente no argumento, na prosa da parte 2, do mesmo jeito que `ai-slop-cleaner`, `holdfast` e `sensors-cli` cada uma ganha uma.
+
+**A lacuna maior que isso expôs.** A parte 2 cita skills de terceiro específicas e nomeadas que fundamentam o próprio argumento: `ai-slop-cleaner` pela disciplina de limpeza de cinco regras, `holdfast` pela execução particionada durável, `sensors-cli` pelo painel com histórico de disparos, `superpowers` e `agentskills` pelo próprio formato de skill, cada uma checada contra `sources/inventory.md` e linkada com a convenção de citação `.src` do projeto, adicionada em 31 de agosto. As partes 3 e 4 não têm equivalente. Nenhuma das duas cita uma única ferramenta concreta e instalável para o que a parte de fato argumenta: a parte 3, pra impor permissão fora do modelo, registrar, ou pegar injeção de prompt antes que chegue numa chamada de ferramenta; a parte 4, pra um registro de agentes, governança de identidade, ou a compilação trimestral de indicadores que o escritório deveria rodar. A própria organização por MEDIR do guia compacto também não resolve isso, já que seus cards não são organizados por parte. Um leitor que termina a parte 3 ou a parte 4 convencido pelo argumento não tem pra onde ir neste projeto pra achar uma ferramenta real e checada que ajude a construir o que a parte acabou de descrever, exatamente a lacuna que a parte 2 não tem.
+
+**O processo pra repetir, toda vez que uma skill ou ferramenta for considerada pra citação, não só nesta rodada:**
+1. Ela está de fato instalada e passa pelo checklist já existente do `TOOLS.md` (licença, varredura de padrões de rede ou execução não declarados)? Se ainda não está instalada, esse é o primeiro passo, não um atalho pra pular ele.
+2. Ela é nomeada e discutida individualmente em algum lugar do próprio texto do projeto, não só presente dentro do card genérico de uma coleção ou numa lista que ninguém lê com atenção? Uma skill carona dentro de uma coleção instalada não é a mesma alegação que uma skill que este projeto de fato recomenda.
+3. Existe uso real pra checar contra, não só uma leitura do `SKILL.md` dela? Uma skill que ninguém aqui rodou de verdade é uma alegação de documentação, não uma verificada.
+4. Qual argumento de qual parte ela de fato fundamenta, concretamente, do mesmo jeito que `holdfast` fundamenta a discussão de execução particionada da parte 2? Uma ferramenta citada sem uma alegação específica que ela sustenta é decoração, não evidência.
+
+**Feito quando:** `research` tiver sua própria citação, no guia compacto e, se o encaixe for real e não forçado, na parte 2. Pelo menos uma skill ou ferramenta concreta, checada e nomeada estiver citada pela parte 3 pelo próprio argumento, e pelo menos uma pela parte 4, cada uma passando pelas quatro checagens acima. `sources/inventory.md` e `TOOLS.md` atualizados pra bater com o que for adicionado.
+
+---
+
 ## Pendências menores, a decidir a qualquer momento
 
 **Caso real de abertura.** A cena é composta. Se surgir um caso real anonimizado do ecossistema do autor, substituí-la elevaria bastante o texto.
@@ -120,4 +138,4 @@ O D10, o laço próprio do escritório por trimestre, deixou de ser candidato do
 
 **Grafia do inglês.** Hoje é britânica, e essa é a leitura padrão do projeto agora. Se o público-alvo migrar para os Estados Unidos, converter.
 
-**Localizar a fonte primária da regra de dois.** Duas fontes secundárias independentes a atribuem à Meta com a mesma formulação, suficiente para citar o conteúdo na parte 3, não para linkar. Buscar de novo antes de a peça ser fechada, ver `sources/inventory.md`.
+**Localizar a fonte primária da regra de dois. Feito, 31 de agosto de 2026.** Encontrada e lida diretamente: Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 de outubro de 2025, `ai.meta.com/blog/practical-ai-agent-security/`. Linkada na parte 3, nas três línguas, e em `harness-sources.html`; `sources/inventory.md` atualizado de **P** para **V**.

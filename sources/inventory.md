@@ -23,7 +23,7 @@ This ledger stays in English only: it is an internal verification tool for whoev
 | V | Hashimoto, *My AI Adoption Journey*, Feb 2026 | https://mitchellh.com/writing/my-ai-adoption-journey |
 | V | Anthropic, *Equipping agents for the real world with Agent Skills* | https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills |
 | V | Anthropic, *Effective harnesses for long-running agents* | https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents |
-| P | Anthropic, *Harness design for long-running application development* | https://anthropic.com/engineering/harness-design-long-running-apps |
+| V | Anthropic, *Harness design for long-running application development*. Read directly 31 August 2026: describes the GAN-inspired generator/evaluator split cited in Part 1, a different article from *Effective harnesses for long-running agents* above, which does not cover this split | https://anthropic.com/engineering/harness-design-long-running-apps |
 | V | Bölük, *Only the harness changed*, Feb 2026 | https://blog.can.ac/2026/02/12/the-harness-problem/ |
 | V | Osmani, *Long-running agents*, Apr 2026 | https://addyosmani.com/blog/long-running-agents/ |
 | V | Agent Skills, open standard | https://agentskills.io/ |
@@ -61,7 +61,7 @@ This ledger stays in English only: it is an internal verification tool for whoev
 
 ## Part 3 and 4 research: governance, security and law
 
-Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.md`. Status and notes preserved from that dossier's seven research axes plus the finding that reframed Part 3's opening. Two sources are marked **P** for a reason that matters to the text, not just to the citation: the rule of two's original Meta publication and the Air Canada tribunal's original decision were never read at the primary source, only confirmed through secondary sources, see the note on each row.
+Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.md`. Status and notes preserved from that dossier's seven research axes plus the finding that reframed Part 3's opening. Two sources were marked **P** for a reason that mattered to the text, not just to the citation: the rule of two's original Meta publication and the Air Canada tribunal's original decision were never read at the primary source, only confirmed through secondary sources. **Both found and upgraded to V on 31 August 2026**, see the note on each row.
 
 ### Axis 1: the architecture of the problem
 
@@ -70,7 +70,7 @@ Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.
 | V | Infosecurity Europe, OWASP researcher on prompt injection, Jul 2026 | https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/ | Allow lists sometimes helped an attacker, because the commands it needed were already approved. Sandbox output has redefined its own containment |
 | V | Help Net Security, OWASP prompt injection coverage | https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/ | Names the rule of two, attributed to Meta |
 | V | memx, the lethal trifecta | https://memx.app/blog/lethal-trifecta-ai-agent-data-exfiltration/ | Simon Willison's formulation: private data, untrusted content, external communication |
-| P | Meta, original publication of the rule of two | not located | Two independent secondary sources attribute it to Meta with the same wording, sufficient to cite the content, not to link it. Locate before Part 3 is signed off, see `docs/harness-p3-p4-briefing.pt.md` |
+| V | Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 Oct 2025 | https://ai.meta.com/blog/practical-ai-agent-security/ | Found and read directly 31 August 2026, confirming the wording two independent secondary sources had already attributed to Meta. Linked in Part 3 and `harness-sources.html`, all three languages |
 | V | OWASP Agentic Skills Top 10 project page | https://owasp.org/www-project-agentic-skills-top-10/ | Also lists the CVEs used in axis 2 |
 | V | trydeepteam, OWASP Top 10 for agentic applications | https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications | ASI01, ASI02, ASI03 categories |
 | P | OWASP Top 10 agentic framework, genai.owasp.org | not located | Referenced in an academic source, not read directly |
@@ -124,7 +124,7 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 | V | balancedsec, NIST AI RMF or ISO 42001 | https://blog.balancedsec.com/p/nist-ai-rmf-or-iso-42001 | NIST AI RMF is self-declared, ISO/IEC 42001 is certifiable via its Statement of Applicability |
 | V | Lumenova, agentic AI risks against OWASP and NIST | https://www.lumenova.ai/blog/agentic-ai-risks-owasp-nist/ | NIST's AI Agent Standards Initiative, announced 17 Feb 2026, four gaps in existing frameworks |
 | V | arXiv 2607.02201, agentic risk taxonomy | https://arxiv.org/pdf/2607.02201 | Comparative survey of governance frameworks against the agentic stack |
-| P | AIUC-1 | https://www.aiuc-1.com/ | Positioned as a SOC 2 equivalent for AI agents. Referenced in an academic source, not read directly |
+| V | AIUC-1 | https://www.aiuc-1.com/ | Positioned as a SOC 2 equivalent for AI agents. Referenced in an academic source, not read directly in the first research round; site found and opened directly 31 August 2026, confirming the positioning |
 | V | OpenTelemetry, generative AI observability | https://opentelemetry.io/blog/2026/genai-observability/ | Open, vendor-neutral semantic conventions for agent telemetry |
 | V | Digital Applied, AI agent observability stack guide | https://www.digitalapplied.com/blog/ai-agent-observability-2026-tracing-monitoring-stack-guide | **Reverified 31 Aug 2026: the article describes OpenTelemetry-convention adoption as still emerging, not "already exported by most/major runtimes"** as this project's text overstated; corrected to "growing adoption" |
 
@@ -143,7 +143,7 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 | V | miniOrange, IAM trends for AI agents 2026 | https://www.miniorange.com/blog/iam-trends-ai-agents-2026/ | The Tuesday-afternoon identity that outlives the developer who created it |
 | V | Built In, enterprise identity and access management | https://builtin.com/articles/enterprise-identity-access-management | Same source as axis 6, reused for the three-question identity checklist |
 | V | NeuralCoreTech, AI agent identity governance 2026 | https://neuralcoretech.com/ai-agent-identity-governance-2026/ | Same source as axis 6, reused for long-lived embedded API keys as the most common root cause |
-| P | arXiv 2501.09674, authenticated delegation and agent authorisation | https://arxiv.org/abs/2501.09674 | Referenced in an academic source, not read directly |
+| V | arXiv 2501.09674, *Authenticated Delegation and Authorized AI Agents* | https://arxiv.org/abs/2501.09674 | Referenced in an academic source, not read directly in the first research round; paper found and opened directly 31 August 2026 |
 
 ### The Air Canada case and adjacent cases
 
@@ -152,7 +152,7 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 | V | CanLII commentary, 2025CanLIIDocs1963 | https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963 | Analysis of Moffatt v Air Canada, 2024 BCCRT 149 |
 | V | American Bar Association, BC tribunal confirms companies remain liable | https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/ | Air Canada argued the chatbot was a separate legal entity, and lost |
 | V | McCarthy, Moffatt v Air Canada, misrepresentation by AI chatbot | https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot/ | Third independent reading of the same decision |
-| P | CanLII, original decision, 2024 BCCRT 149 | https://canlii.ca/t/k2spq | Address cited in secondary sources, not opened directly. **This precedent is Canadian, not Brazilian.** No Brazilian case involving an agent with an external effect was found in this round, only announced enforcement priority and declared regulatory attention, see axis 3. Part 3 must state the precedent's origin explicitly |
+| V | CanLII, original decision, *Moffatt v Air Canada*, 2024 BCCRT 149 | https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html | Address cited in secondary sources in the first research round, not opened directly; found and opened directly 31 August 2026. **This precedent is Canadian, not Brazilian.** No Brazilian case involving an agent with an external effect was found in this round, only announced enforcement priority and declared regulatory attention, see axis 3. Part 3 states the precedent's origin explicitly |
 | V | Xoomar, chatbot liability, the Air Canada case | https://xoomar.com/technology/chatbot-liability-air-canada | Secondary source consolidating the Cursor April 2025 phantom-policy incident and the May 2025 AI-hallucination insurance product |
 
 ---
@@ -194,7 +194,7 @@ Gathered 30 August 2026 for `docs/research-part4.pt.md`, answering the block A s
 | V | Legiscope, GDPR Article 22 automated decision-making | https://www.legiscope.com/blog/gdpr-article-22-automated-decision-making.html | The SCHUFA holding itself, CJEU, Dec 2023, case C-634/21: "solely automated" does not require zero human involvement; a human who formally signs off but in practice defers entirely to the algorithm still leaves the decision "solely automated" |
 | V | Masaryk University Journal of Law and Technology, doctrinal analysis of SCHUFA | https://journals.muni.cz/mujlt/article/view/41367 | Formulation tied directly to SCHUFA's own reasoning, cross-read with Uber, Deliveroo and CaixaBank case law: nominal human review fails Article 22 when it amounts to rubber-stamping without interpretive criteria or authority to deviate |
 | V | GDPR Local, automated decision-making under GDPR | https://gdprlocal.com/automated-decision-making-gdpr/ | General EDPB guidance on meaningful human review, four criteria, not specific to SCHUFA. Cite separately from the SCHUFA holding above, never as if one source made both points |
-| P | CJEU, case C-634/21 (SCHUFA), original decision | not located | Referenced in the two sources above, not read directly |
+| V | CJEU, case C-634/21 (SCHUFA), official press release | https://curia.europa.eu/jcms/upload/docs/application/pdf/2023-12/cp230186en.pdf | Referenced in the two sources above in the first research round, not read directly; the court's own official press release found and opened directly 31 August 2026 |
 | V | MIT, *The GenAI Divide*, 2025, via Legal.io | https://www.legal.io/blog/5719519/MIT-Report-Finds-95-of-AI-Pilots-Fail-to-Deliver-ROI-Exposing-GenAI-Divide | 95% of generative AI pilots show no measurable P&L impact |
 | V | Kyndryl, 2026 People Readiness Report, via PR Newswire | https://www.prnewswire.com/news-releases/kyndryl-report-ai-adoption-accelerates-as-workforce-readiness-becomes-the-roi-difference-maker-302810837.html | Primary source, verified this round, 1,100 leaders across eight countries. 57% say AI is embedded in core processes or deployed broadly; of those, 32% achieved at least one of their top two AI goals and only 11% achieved both, two different cuts of the data, not one number |
 | V | Deloitte, Agentic AI strategy, Tech Trends 2026 | https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html | Found 31 Aug 2026, replacing an unsourced "89% of pilots never reach production" that had circulated without a locatable Deloitte original. Deloitte's real, quotable pipeline: 30% exploring, 38% piloting, 14% ready to deploy, only 11% actively in production. The circulating "89%" is the arithmetic complement of 11% (100−11), invented by aggregator sites, not a Deloitte figure; even a generous 11-of-38 reading gives ~71%, not 89% |
