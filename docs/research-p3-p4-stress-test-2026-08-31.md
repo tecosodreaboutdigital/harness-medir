@@ -1,8 +1,10 @@
 ---
 title: Adversarial research dossier — Part 3 and Part 4 concept stress-test
 date: 31 August 2026
-status: draft, awaiting cross-review by additional AI reviewers before any edit lands in harness-p3.html / harness-p4.html
+status: acted on. Every 🔴/🟠/🟡 finding below has been applied to harness-p3.html and harness-p4.html (English, then Portuguese and Spanish), cross-checked against an independently produced package from the author's other AI tools first. Kept as the research record, not re-edited to match the published text.
 ---
+
+**Both open questions this dossier left unresolved were closed the same day, in a follow-up research pass.** Article 73: the amending regulation's own text (opened directly on EUR-Lex) limits the deferral to Chapter III's first three sections, where article 26 lives; article 73 sits in Chapter IX, never named in that clause — the article 26/73 pages' apparent inconsistency was not a site bug, each page was correct for its own chapter. One secondary source (verifywise.ai) still reads article 73 as covered, with no provision cited, noted in the text rather than dropped. BlueRock's registry: the "12,000+/33%" figure is real, current, and confirmed open on 31 August 2026 at `mcp-trust.com` (also mirrored at `bluerock.io/products/mcp-trust-registry`; the earlier `bluerock.io/mcp-trust-registry` URL was simply the wrong path) — it is the same continuous measurement grown to a larger sample, not a figure the registry contradicted. Both corrections are live in `harness-p3.html` and `harness-sources.html`, all three languages.
 
 # Adversarial research dossier: stress-testing the strong concepts in Part 3 and Part 4
 
