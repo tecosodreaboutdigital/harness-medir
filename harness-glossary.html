@@ -240,6 +240,36 @@ li{margin-bottom:6px}
 }
 .g:hover::after,.g:focus::after{opacity:1;visibility:visible}
 
+.src{
+  border-bottom:.5pt solid var(--ink-faint);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.src::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.src:hover::after,.src:focus::after{opacity:1;visibility:visible}
+
 pre{
   background:var(--fill);
   padding:14px 16px;
@@ -332,7 +362,9 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   .foot p{font-size:9pt}
   .g{border-bottom:.5pt dotted #999}
   .g::after{display:none}
-  
+  .src{border-bottom:.5pt solid #999}
+  .src::after{display:none}
+
 pre{
   background:var(--fill);
   padding:14px 16px;
