@@ -60,7 +60,7 @@ Abre com Moffatt contra Air Canada, 2024 BCCRT 149: uma empresa real argumentou 
 
 Barra de série e links de glossário e fontes já implementados, conforme a arquitetura compartilhada acima.
 
-### Parte 4 · O escritório de agentes: quantos existem, quem é proprietário de cada um, e quais ainda se pagam
+### Parte 4 · O escritório de agentes: quantos existem, quem é proprietário de cada um, e quais ainda valem o que custam
 
 `harness-p4.html`
 

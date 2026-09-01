@@ -171,7 +171,7 @@ Seis peças, com ritmos de revisão diferentes, organizadas em torno de um frame
 |---|---|---|
 | Construção | Como se constrói um agente confiável | Parte 2, MEDIR |
 | Operação | O que ele pode fazer, e quem responde | Parte 3, a separação de poderes |
-| Governança | Quantos agentes existem, quem é proprietário de cada um, quais ainda se pagam | Parte 4, o escritório de agentes |
+| Governança | Quantos agentes existem, quem é proprietário de cada um, quais ainda valem o que custam | Parte 4, o escritório de agentes |
 
 As faixas de autonomia N0 a N3 atravessam as três camadas como régua comum, o único vocabulário compartilhado entre elas, e é isso que impede o framework de virar três peças soltas. Uma quarta camada foi deliberadamente deixada de fora: todo framework que morreu, morreu por excesso de vocabulário.
 
@@ -204,7 +204,7 @@ Um executivo, conselheiro, diretor de área, sucessor à frente de uma empresa f
 
 A série existe para que essa pessoa consiga diagnosticar em que estágio está, entender o que precisa construir, e conversar de igual para igual com quem constrói.
 
-Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem verificador é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. A parte 4 fecha o arco dela: ela deixa de ser a construtora solitária do agente e se torna a pessoa capaz de dizer a um conselho quantos agentes a empresa opera, quem é proprietário de cada um, e quais ainda se pagam.
+Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem verificador é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. A parte 4 fecha o arco dela: ela deixa de ser a construtora solitária do agente e se torna a pessoa capaz de dizer a um conselho quantos agentes a empresa opera, quem é proprietário de cada um, e quais ainda valem o que custam.
 
 ---
 
