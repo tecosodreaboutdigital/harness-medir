@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-08-31T21:21:12.968794+00:00",
+  "generated_at": "2026-09-01T01:08:57.098791+00:00",
   "session_files": [
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\46908256-4997-4659-b184-4a6d48768252.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
+    "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\5cca66f1-772b-46bc-aa39-3590a003ce38.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\94076374-cedf-44d4-a224-b04b4df17067.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "C:\\Users\\teco.sodre/.claude/projects\\c--Users-teco-sodre-Dropbox-negocios-parcerias-e-clientes-AboutDigital-harness-medir\\aac61ff0-ff50-42f9-8b0b-de3773bd541f.jsonl",
@@ -1014,12 +1015,72 @@
         "cache_read": 1649045528,
         "cache_creation": 15159919
       }
+    },
+    {
+      "hash": "d2dba82",
+      "timestamp": "2026-08-31T18:25:16-03:00",
+      "subject": "Regera o diario de bordo, marcos M41 a M50, atualiza os graficos do README",
+      "words_published": 114396,
+      "code_lines": 10154,
+      "governance_lines": 693,
+      "tokens_bucket": {
+        "input": 276,
+        "output": 120336,
+        "cache_read": 82986500,
+        "cache_creation": 235515
+      },
+      "tokens_cumulative": {
+        "input": 9850,
+        "output": 6890210,
+        "cache_read": 1732032028,
+        "cache_creation": 15395434
+      }
+    },
+    {
+      "hash": "7a801ab",
+      "timestamp": "2026-08-31T21:43:15-03:00",
+      "subject": "Revisao de portugues: sensor->verificador, dono->proprietario do agente, trifeta->trinca, no laco->human in the loop",
+      "words_published": 114446,
+      "code_lines": 10155,
+      "governance_lines": 693,
+      "tokens_bucket": {
+        "input": 583,
+        "output": 675842,
+        "cache_read": 67837733,
+        "cache_creation": 852461
+      },
+      "tokens_cumulative": {
+        "input": 10433,
+        "output": 7566052,
+        "cache_read": 1799869761,
+        "cache_creation": 16247895
+      }
+    },
+    {
+      "hash": "cc88efb",
+      "timestamp": "2026-08-31T22:00:58-03:00",
+      "subject": "Refina semantica de portugues: maquinaria->engrenagem, se pagam->valem o que custam",
+      "words_published": 114454,
+      "code_lines": 10155,
+      "governance_lines": 693,
+      "tokens_bucket": {
+        "input": 74,
+        "output": 65951,
+        "cache_read": 11236754,
+        "cache_creation": 65636
+      },
+      "tokens_cumulative": {
+        "input": 10507,
+        "output": 7632003,
+        "cache_read": 1811106515,
+        "cache_creation": 16313531
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 180,
-    "output": 97035,
-    "cache_read": 53674610,
-    "cache_creation": 182864
+    "input": 50,
+    "output": 27223,
+    "cache_read": 8467087,
+    "cache_creation": 108005
   }
 }
