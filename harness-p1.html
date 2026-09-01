@@ -418,7 +418,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h2 id="pt-o-que-e">2. O que é um harness</h2>
 
-<p>Existe uma equação que virou consenso entre quem constrói esses sistemas em produção, e ela cabe em quatro palavras: <a class="g" href="harness-glossary.html#pt-g-agente" data-tip="Sistema que combina um modelo de linguagem com ferramentas, memória e regras para executar tarefas de várias etapas.">agente</a> é igual a <a class="g" href="harness-glossary.html#pt-g-modelo" data-tip="O motor de raciocínio. Prevê a próxima palavra ou a próxima ação, mas não executa nada sozinho.">modelo</a> mais <a class="g" href="harness-glossary.html#pt-g-harness" data-tip="Tudo o que existe em um agente exceto o modelo: ferramentas, contexto, memória, permissões, sensores e registro.">harness</a>.</p>
+<p>Existe uma equação que virou consenso entre quem constrói esses sistemas em produção, e ela cabe em quatro palavras: <a class="g" href="harness-glossary.html#pt-g-agente" data-tip="Sistema que combina um modelo de linguagem com ferramentas, memória e regras para executar tarefas de várias etapas.">agente</a> é igual a <a class="g" href="harness-glossary.html#pt-g-modelo" data-tip="O motor de raciocínio. Prevê a próxima palavra ou a próxima ação, mas não executa nada sozinho.">modelo</a> mais <a class="g" href="harness-glossary.html#pt-g-harness" data-tip="Tudo o que existe em um agente exceto o modelo: ferramentas, contexto, memória, permissões, verificadores e registro.">harness</a>.</p>
 
 <p>O modelo é o motor de raciocínio. Ele propõe a próxima ação. É o que a indústria vende, o que aparece nas manchetes, o que muda de nome a cada seis semanas. O harness é todo o resto: o que o sistema pode ver, o que pode tocar, o que sobrevive de uma sessão para outra, o que conta como evidência de que o trabalho ficou bom, e em que momento a execução precisa parar e chamar alguém.</p>
 
@@ -530,7 +530,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p><a class="src" href="harness-sources.html#pt-src-lopopolo" data-tip="Ryan Lopopolo, OpenAI, &quot;Harness engineering: leveraging Codex in an agent-first world&quot;, 11 de fevereiro de 2026.">A OpenAI</a> publicou o relato mais detalhado até hoje. Uma equipe que começou com três e terminou com sete pessoas construiu um produto interno em cinco meses, com zero linha de código escrita à mão, cerca de um milhão de linhas geradas e aproximadamente mil e quinhentos <a class="g" href="harness-glossary.html#pt-g-pr" data-tip="Proposta de mudança em um sistema, submetida para revisão e aprovação antes de ser incorporada.">pull requests</a> aprovados.</p>
 
-<p>O que interessa não é o número, é o método. A arquitetura foi organizada em camadas com direção de dependência estrita, e essas regras não eram documentação, eram bloqueio: <a class="g" href="harness-glossary.html#pt-g-linter" data-tip="Programa que analisa código automaticamente e aponta violações de regra antes que ele entre em produção.">linters</a> customizados, testes estruturais e travas automáticas impediam a entrega que violasse a estrutura. O detalhe mais elegante é o seguinte: quando a verificação falhava, a mensagem de erro era escrita para ensinar a correção ao agente, não apenas para registrar a falha. O sistema não bloqueia o erro, ele treina quem errou, na hora.</p>
+<p>O que interessa é o método, não o número. A arquitetura foi organizada em camadas com direção de dependência estrita, e essas regras não eram documentação, eram bloqueio: <a class="g" href="harness-glossary.html#pt-g-linter" data-tip="Programa que analisa código automaticamente e aponta violações de regra antes que ele entre em produção.">linters</a> customizados, testes estruturais e travas automáticas impediam a entrega que violasse a estrutura. O detalhe mais elegante é o seguinte: quando a verificação falhava, a mensagem de erro era escrita para ensinar a correção ao agente, não apenas para registrar a falha. O sistema não bloqueia o erro, ele treina quem errou, na hora.</p>
 
 <p>Dois outros princípios do mesmo relato merecem entrar no seu vocabulário. O primeiro é divulgação progressiva: o documento de orientação do agente deve ser um índice de cerca de cem linhas, apontando onde procurar, e não uma enciclopédia que consome todo o espaço de leitura. O segundo é coleta de lixo: tarefas de fundo rodam em cadência regular procurando desvios e propondo correções pequenas, porque dívida acumulada é como empréstimo de juros altos, sempre melhor pagar em parcelas do que deixar compor até virar mutirão.</p>
 
@@ -540,7 +540,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p><a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic, &quot;Effective harnesses for long-running agents&quot;, novembro de 2025.">A Anthropic</a> resolveu o problema de agentes que trabalham por horas com uma solução que qualquer gestor reconhece. A primeira sessão de trabalho monta o ambiente: um roteiro de inicialização, um arquivo de progresso que registra o que já foi feito e um marco inicial de versão. Toda sessão seguinte lê esse registro, avança um pedaço e deixa a atualização por escrito. A memória mora fora da conversa, em artefatos, e não na cabeça do sistema.</p>
 
-<p>Depois vieram mais longe, inspirados em uma <a class="src" href="harness-sources.html#pt-src-anthropic-design" data-tip="Anthropic, &quot;Harness design for long-running application development&quot;.">arquitetura</a> de <a class="g" href="harness-glossary.html#pt-g-gan" data-tip="Arquitetura em que uma rede gera e outra avalia, e as duas melhoram na disputa. Origem da ideia de separar gerador e avaliador.">redes adversariais</a>: separaram quem planeja, quem executa e quem avalia. Três papéis, com critérios explícitos de avaliação. É o princípio mais transferível de todo o material que existe hoje sobre o assunto, e o mais ignorado na prática: <strong>quem gera não avalia</strong>. Autoavaliação não é atalho, é o modo de falha.</p>
+<p>Depois vieram mais longe, inspirados em uma <a class="src" href="harness-sources.html#pt-src-anthropic-design" data-tip="Anthropic, &quot;Harness design for long-running application development&quot;.">arquitetura</a> de <a class="g" href="harness-glossary.html#pt-g-gan" data-tip="Arquitetura em que uma rede gera e outra avalia, e as duas melhoram na disputa. Origem da ideia de separar gerador e avaliador.">redes adversariais</a>: separaram quem planeja, quem executa e quem avalia. Três papéis, com critérios explícitos de avaliação. É o princípio mais transferível de todo o material que existe hoje sobre o assunto, e o mais ignorado na prática: <strong>quem gera não avalia</strong>. Autoavaliação vira o modo de falha, não um atalho.</p>
 
 <h3>O rastro como arquitetura</h3>
 
@@ -578,7 +578,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
   <rect x="150" y="242" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
   <text class="svg-lbl" x="176" y="264">I · INSPECIONAR</text>
-  <text class="svg-sub" x="176" y="280">sensores que produzem evidência, não opinião</text>
+  <text class="svg-sub" x="176" y="280">verificadores que produzem evidência, não opinião</text>
 
   <line x1="370" y1="296" x2="370" y2="314" stroke="#1b1b19" stroke-width=".7" marker-end="url(#pt-a2)"/>
 
@@ -594,11 +594,11 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p><strong>Mapear</strong> é escrever, antes de qualquer execução, o que a tarefa entrega, quais são os limites e como saber que terminou. Sem esse contrato, o sistema pode redefinir silenciosamente o próprio trabalho e ainda assim declarar sucesso. É a jogada de maior alavancagem em tarefas longas, e a mais pulada.</p>
 
-<p><strong>Equipar</strong> é decidir o que ele vê e o que ele pode tocar. Menos ferramentas, melhor descritas, com estado guardado fora da conversa. Um agente que recomeça do zero a cada sessão não é um agente, é um formulário caro.</p>
+<p><strong>Equipar</strong> é decidir o que ele vê e o que ele pode tocar. Menos ferramentas, melhor descritas, com estado guardado fora da conversa. Um agente que recomeça do zero a cada sessão é um formulário caro, não um agente.</p>
 
 <p><strong>Delegar</strong> é executar em ambiente isolado, com escopo estreito e autonomia proporcional ao risco. Uma coisa de cada vez.</p>
 
-<p><strong>Inspecionar</strong> é a diferença entre confiança e evidência. O sensor precisa devolver a lacuna exata, não um veredito. "Não passou" não ensina nada. "A nota 4471 já foi processada em 12/03, referência no registro X" ensina, e permite reparo imediato.</p>
+<p><strong>Inspecionar</strong> é a diferença entre confiança e evidência. O verificador precisa devolver a lacuna exata, não um veredito. "Não passou" não ensina nada. "A nota 4471 já foi processada em 12/03, referência no registro X" ensina, e permite reparo imediato.</p>
 
 <p><strong>Reforçar</strong> é onde mora a diferença. O erro que apareceu na inspeção não vira um remendo na resposta: vira uma regra escrita, um teste, uma ferramenta melhor ou uma permissão mais estreita. O remendo conserta uma execução. A mudança no ambiente melhora todas as próximas.</p>
 
@@ -613,10 +613,10 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tbody>
 <tr><td>Procedimento operacional padrão</td><td>O guia do agente: regras, convenções e mapa de onde procurar</td></tr>
 <tr><td>Poka-yoke</td><td>Verificação determinística que impede o erro de existir</td></tr>
-<tr><td>Jidoka, a máquina que para sozinha</td><td>O agente interrompe a execução quando o sensor dispara</td></tr>
+<tr><td>Jidoka, a máquina que para sozinha</td><td>O agente interrompe a execução quando o verificador dispara</td></tr>
 <tr><td><a class="g" href="harness-glossary.html#pt-g-andon" data-tip="Sinal visual ou sonoro que interrompe a linha e chama ajuda imediata quando um problema aparece.">Andon</a></td><td>Escalonamento para o humano, com o contexto anexado</td></tr>
 <tr><td><a class="g" href="harness-glossary.html#pt-g-gemba" data-tip="O lugar real onde o trabalho acontece. Ir ao gemba é observar o processo em vez de discutir o relatório.">Gemba</a></td><td>Ler o rastro da execução, e não apenas o resultado final</td></tr>
-<tr><td><a class="g" href="harness-glossary.html#pt-g-cep" data-tip="Gráfico do controle estatístico de processo que mostra se a variação é normal ou se algo mudou.">Carta de controle</a></td><td>Sensores contínuos de desvio, fora do ciclo da tarefa</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#pt-g-cep" data-tip="Gráfico do controle estatístico de processo que mostra se a variação é normal ou se algo mudou.">Carta de controle</a></td><td>Verificadores contínuos de desvio, fora do ciclo da tarefa</td></tr>
 <tr><td>Kaizen</td><td>O passo Reforçar: a falha vira mudança permanente</td></tr>
 <tr><td>Plano de controle e alçadas</td><td>Política de permissões, imposta fora do modelo</td></tr>
 <tr><td>Trilha de auditoria</td><td>Registro de execução que só aceita acréscimo</td></tr>
@@ -626,7 +626,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h2 id="pt-faixas">8. Quatro faixas de autonomia</h2>
 
-<p>A pergunta que todo executivo faz nesse ponto é quanta autonomia dar. A resposta não é um número, é uma condição: você só sobe de faixa quando o sensor da faixa anterior está funcionando de fato.</p>
+<p>A pergunta que todo executivo faz nesse ponto é quanta autonomia dar. A resposta não está num número: está numa condição, você só sobe de faixa quando o verificador da faixa anterior está funcionando de fato.</p>
 
 <figure>
 <svg viewBox="0 0 700 250" role="img" aria-label="Quatro faixas de maturidade de harness">
@@ -647,7 +647,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   <text class="svg-lbl" x="586" y="140" text-anchor="middle">N3 · GOVERNADO</text>
   <text class="svg-sub" x="586" y="48" text-anchor="middle">efeito externo, sob porteiro</text>
 
-  <text class="svg-cap" x="60" y="238">AUTONOMIA CRESCE APENAS QUANDO O SENSOR DA FAIXA ANTERIOR ESTÁ FUNCIONANDO</text>
+  <text class="svg-cap" x="60" y="238">AUTONOMIA CRESCE APENAS QUANDO O VERIFICADOR DA FAIXA ANTERIOR ESTÁ FUNCIONANDO</text>
 </svg>
 <figcaption>As faixas medem a capacidade do sistema, não a certificação de uma pessoa.</figcaption>
 </figure>
@@ -657,12 +657,12 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <tbody>
 <tr><td>N0 · Assistido</td><td>Instrução e modelo, mais nada</td><td>Nenhuma. Humano revisa cada saída</td></tr>
 <tr><td>N1 · Guiado</td><td>Guia escrito, ferramentas definidas, contrato de tarefa</td><td>Tarefas reversíveis e de baixo custo</td></tr>
-<tr><td>N2 · Medido</td><td>Estado durável, sensores, laço com teto de tentativas</td><td>Tarefas longas, com evidência antes da entrega</td></tr>
+<tr><td>N2 · Medido</td><td>Estado durável, verificadores, laço com teto de tentativas</td><td>Tarefas longas, com evidência antes da entrega</td></tr>
 <tr><td>N3 · Governado</td><td>Permissão fora do modelo, rastro completo, reversão</td><td>Ação com efeito externo, sob aprovação humana</td></tr>
 </tbody>
 </table>
 
-<p>A automação da diretora do começo deste artigo estava em N0 operando como se fosse N3. Ela tinha efeito externo, financeiro e irreversível, sem guia, sem sensor, sem alçada e sem rastro. O acidente não foi azar. Foi consequência estrutural.</p>
+<p>A automação da diretora do começo deste artigo estava em N0 operando como se fosse N3. Ela tinha efeito externo, financeiro e irreversível, sem guia, sem verificador, sem alçada e sem rastro. O acidente não foi azar. Foi consequência estrutural.</p>
 
 <div class="rule-box"><span class="lbl">Regra de dimensionamento</span><p>O harness deve ser menor que a superfície de falha que ele controla. Uma tarefa curta e reversível não precisa de plataforma. Uma tarefa que move dinheiro precisa de tudo.</p></div>
 
@@ -673,7 +673,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <table class="wrap">
 <thead><tr><th>Risco</th><th>Como aparece na prática</th><th>Controle</th></tr></thead>
 <tbody>
-<tr><td>Autonomia sem sensor</td><td>O sistema escala o erro na mesma velocidade em que escala o acerto</td><td>Sensor antes de autonomia, sempre nessa ordem</td></tr>
+<tr><td>Autonomia sem verificador</td><td>O sistema escala o erro na mesma velocidade em que escala o acerto</td><td>Verificador antes de autonomia, sempre nessa ordem</td></tr>
 <tr><td>Juiz e réu</td><td>O mesmo sistema executa, avalia e declara sucesso em uma tarefa que redefiniu sozinho</td><td>Avaliador separado do executor, com critério explícito</td></tr>
 <tr><td>Permissão escrita na instrução</td><td>Um texto que chega dentro de um dado, um e-mail ou um PDF, é lido como ordem</td><td>Permissão imposta fora do modelo, na camada de política</td></tr>
 <tr><td>Memória sem governança</td><td>Dado pessoal em estado durável, fora de política de retenção</td><td>Base legal, prazo e titular definidos antes de ligar</td></tr>
@@ -712,7 +712,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A boa notícia é que o intervalo é endereçável, e a maior parte do trabalho não é técnica. É desenho de trabalho, definição de alçada e disciplina de manutenção, três coisas que empresas maduras já sabem fazer.</p>
 
-<p>A <strong>parte 2</strong> desce um nível: guias e sensores, os dois únicos tipos de controle que existem, a diferença entre verificação determinística e verificação por julgamento, quando rodar cada uma, e três exemplos completos que você pode montar sem escrever código, do individual ao corporativo.</p>
+<p>A <strong>parte 2</strong> desce um nível: guias e verificadores, os dois únicos tipos de controle que existem, a diferença entre verificação determinística e verificação por julgamento, quando rodar cada uma, e três exemplos completos que você pode montar sem escrever código, do individual ao corporativo.</p>
 
 <p>A <strong>parte 3</strong> trata do que sobra quando o sistema já funciona: permissão fora do modelo, instrução maliciosa que chega dentro de um dado, registro auditável, reversão, obrigações legais e a pergunta que ninguém quer fazer em voz alta na sala, que é quem responde pelo que o agente fez.</p>
 
@@ -726,7 +726,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
 <tbody>
 <tr><td>Parte 1, esta aqui</td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
-<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guias e verificadores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
 <tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
 <tr><td><a href="harness-p4.html">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
 <tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>

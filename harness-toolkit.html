@@ -472,7 +472,7 @@ p code{
     <li><a href="#pt-govern">Governar</a></li>
     <li><a href="#pt-howto-1">Roteiro 1: ler o superpowers em uma hora</a></li>
     <li><a href="#pt-howto-2">Roteiro 2: escrever seu primeiro skill em trinta minutos</a></li>
-    <li><a href="#pt-howto-3">Roteiro 3: montar seu primeiro sensor</a></li>
+    <li><a href="#pt-howto-3">Roteiro 3: montar seu primeiro verificador</a></li>
     <li><a href="#pt-seguranca">Antes de instalar qualquer coisa</a></li>
     <li><a href="#pt-fontes">Fontes</a></li>
   </ol>
@@ -480,7 +480,7 @@ p code{
 
 <h2 id="pt-como-usar">1. Como usar</h2>
 
-<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, sensores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios, organizados pela mesma lógica de quem usa: os cinco passos do ciclo, não a categoria de produto.</p>
+<p>Este documento não ensina os conceitos. Ele pressupõe a parte 2 da série, onde estão guias, verificadores, o formato de skill e o ciclo MEDIR. Aqui estão os nomes próprios, organizados pela mesma lógica de quem usa: os cinco passos do ciclo, não a categoria de produto.</p>
 
 <p>Cada ferramenta ou coleção vem em formato de ficha, sempre com os mesmos seis campos: qual problema resolve, o que você ganha na prática, para quem serve por faixa de autonomia, a faixa mínima em que ela faz sentido, quando não usar, e como começar em quinze minutos. Um inventário que só recomenda é catálogo de fornecedor, então toda ficha traz também o motivo de não escolher aquilo.</p>
 
@@ -495,7 +495,7 @@ p code{
 <ul class="checklist">
 <li><strong>Existe, em texto, o que a tarefa entrega e o que ela nunca pode fazer?</strong> Se não, você está em N0. Comece por Mapear.</li>
 <li><strong>Existe um guia escrito que sobrevive de uma execução para a próxima, e alguém segue esse guia à risca?</strong> Se sim à primeira parte e não à segunda, você está em N1. Comece por Equipar.</li>
-<li><strong>Existe verificação automática que roda depois da execução e devolve o que está errado, sem um humano abrir o resultado primeiro?</strong> Se não, você tem guia mas não tem sensor, o que ainda é N1. Comece por Inspecionar.</li>
+<li><strong>Existe verificação automática que roda depois da execução e devolve o que está errado, sem um humano abrir o resultado primeiro?</strong> Se não, você tem guia mas não tem verificador, o que ainda é N1. Comece por Inspecionar.</li>
 <li><strong>Existe teto de tentativas, estado que sobrevive ao reinício da sessão, e evidência que chega antes da entrega?</strong> Se sim a tudo isso, você está em N2. Comece por Reforçar, e organize a cadência antes de aumentar o volume.</li>
 <li><strong>Alguma ação deste fluxo já tem efeito fora do seu controle direto, como enviar, pagar, publicar ou decidir por alguém, sem aprovação humana no meio?</strong> Se sim, a tarefa exige N3, e este documento não cobre isso sozinho. A parte 3 da série trata de permissão fora do modelo.</li>
 </ul>
@@ -506,7 +506,7 @@ p code{
 <tr><td>Nenhum guia escrito ainda</td><td>Mapear, com a ficha da <a href="#pt-briefing">intake-briefing</a></td></tr>
 <tr><td>Guia existe, ninguém segue à risca</td><td>Equipar</td></tr>
 <tr><td>Guia seguido, sem verificação automática</td><td>Inspecionar</td></tr>
-<tr><td>Sensor existe, sem cadência nem teto</td><td>Reforçar</td></tr>
+<tr><td>Verificador existe, sem cadência nem teto</td><td>Reforçar</td></tr>
 <tr><td>Efeito externo sem aprovação registrada</td><td><a href="#pt-secure">Proteger</a>, abaixo — a parte 3 cobre os conceitos, esta seção cobre a ferramentaria</td></tr>
 </tbody>
 </table>
@@ -660,7 +660,7 @@ p code{
 
 <h2 id="pt-inspecionar">6. Inspecionar</h2>
 
-<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de sensores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As seis ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
+<p>Inspecionar é o passo que produz evidência em vez de opinião, com a matriz completa de verificadores na <a href="harness-p2.html#pt-inspecionar">parte 2</a>. As seis ferramentas abaixo foram as usadas no experimento descrito lá, e servem como referência de categoria mesmo que a sua área use tecnologia diferente.</p>
 
 <h3>dependency-cruiser</h3>
 
@@ -697,12 +697,12 @@ p code{
 
 <h3>sensors-cli</h3>
 
-<p><strong>Problema.</strong> Ter vários sensores separados não dá a ninguém, humano ou agente, uma visão de conjunto de se o sistema está melhorando ou piorando ao longo do tempo.</p>
-<p><strong>Na prática.</strong> Painel que roda vários sensores em intervalo, guarda histórico e devolve ao agente um resumo enxuto: piorou ou melhorou em relação ao último ponto de referência. É o mais transferível conceitualmente dos quatro desta seção, o embrião de um painel de saúde de harness.</p>
-<p><strong>Para quem.</strong> N2 a N3, quando já existe mais de um sensor rodando e falta consolidação.</p>
+<p><strong>Problema.</strong> Ter vários verificadores separados não dá a ninguém, humano ou agente, uma visão de conjunto de se o sistema está melhorando ou piorando ao longo do tempo.</p>
+<p><strong>Na prática.</strong> Painel que roda vários verificadores em intervalo, guarda histórico e devolve ao agente um resumo enxuto: piorou ou melhorou em relação ao último ponto de referência. É o mais transferível conceitualmente dos quatro desta seção, o embrião de um painel de saúde de harness.</p>
+<p><strong>Para quem.</strong> N2 a N3, quando já existe mais de um verificador rodando e falta consolidação.</p>
 <p><strong>Faixa mínima.</strong> N2.</p>
-<p><strong>Quando não usar.</strong> Um único sensor isolado ainda não justifica um painel. Consolide quando o segundo sensor entrar em produção.</p>
-<p><strong>Como começar em 15 minutos.</strong> Aponte para os sensores que você já tem rodando e leia o resumo de tendência da primeira semana antes de adicionar qualquer sensor novo.</p>
+<p><strong>Quando não usar.</strong> Um único verificador isolado ainda não justifica um painel. Consolide quando o segundo verificador entrar em produção.</p>
+<p><strong>Como começar em 15 minutos.</strong> Aponte para os verificadores que você já tem rodando e leia o resumo de tendência da primeira semana antes de adicionar qualquer verificador novo.</p>
 
 <p>Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
 
@@ -721,8 +721,8 @@ p code{
 
 <p><strong>Problema.</strong> Uma afirmação escrita num guia ou num artigo só vale o que a fonte por trás dela vale, e achar, abrir e ler essa fonte à mão é o passo mais fácil de pular sob prazo apertado.</p>
 <p><strong>Na prática.</strong> Uma skill que pesquisa uma pergunta contra fontes primárias reais e salva os achados como um arquivo markdown no repositório, não um resumo na janela de chat que desaparece quando a sessão termina. Este projeto a usou diretamente, repetidamente, em escala real, para pesquisar e verificar as lacunas de fonte primária fechadas em duas rodadas de correção de citação, e ela se saiu bem: saída consistentemente bem fundamentada, salva num local sensato toda vez.</p>
-<p><strong>Para quem é.</strong> N1 pra cima, qualquer harness onde uma afirmação precisa de uma fonte checável antes de entrar em qualquer coisa publicada.</p>
-<p><strong>Tier mínimo.</strong> N1.</p>
+<p><strong>Para quem.</strong> N1 em diante, qualquer harness onde uma afirmação precisa de uma fonte checável antes de entrar em qualquer coisa publicada.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
 <p><strong>Quando não usar.</strong> Uma pergunta sem ângulo de pesquisa nenhum, onde a resposta já é conhecida ou trivialmente verificável. O próprio custo da skill, uma rodada de pesquisa dedicada, é desperdiçado nisso.</p>
 <p><strong>Como começar em 15 minutos.</strong> Aponte-a para uma afirmação do próprio texto do seu projeto que nunca teve uma citação real, e leia onde ela salva o resultado antes de confiar na resposta.</p>
 
@@ -730,7 +730,7 @@ p code{
 
 <div class="rule-box"><span class="lbl">Limites honestos</span><p>A própria instrução de "suba um agente de fundo" causa uma camada redundante de delegação quando invocada de dentro de uma chamada que já é um agente de fundo, uma ineficiência pequena que vale saber, não um motivo para não usar.</p></div>
 
-<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de sensores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que ficou vermelho, e por quê. Nenhuma das cinco ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
+<div class="rule-box"><span class="lbl">Crítica desta seção</span><p>Um painel cheio de verificadores fracos produz exatamente a mesma tela verde e tranquilizadora que um conjunto de verificadores bons. O que separa os dois não é a tela verde, é saber quando foi a última vez que ficou vermelha, e por quê. Nenhuma das cinco ferramentas acima resolve isso sozinha, é disciplina de quem opera o painel, tratada nos riscos da <a href="harness-p2.html#pt-riscos-2">parte 2</a>.</p></div>
 
 <h2 id="pt-reforcar">7. Reforçar</h2>
 
@@ -738,7 +738,7 @@ p code{
 
 <h3>ai-slop-cleaner</h3>
 
-<p><strong>Problema.</strong> Guias, sensores e o próprio trabalho produzido acumulam entulho: regra que não se aplica mais, verificação que ninguém lê, repetição desnecessária, restos de tentativa abandonada.</p>
+<p><strong>Problema.</strong> Guias, verificadores e o próprio trabalho produzido acumulam entulho: regra que não se aplica mais, verificação que ninguém lê, repetição desnecessária, restos de tentativa abandonada.</p>
 <p><strong>Na prática.</strong> Fonte real da matriz de cinco regras de limpeza descrita na parte 2: travar o comportamento antes de mexer, preferir remoção a acréscimo, escrever o plano antes de editar, reverter sozinho o que quebrar, separar quem limpa de quem revisa. Fluxo à prova de regressão, com separação entre escritor e revisor.</p>
 <p><strong>Para quem.</strong> N1 em diante, qualquer harness que já produziu conteúdo suficiente para acumular entulho.</p>
 <p><strong>Faixa mínima.</strong> N1.</p>
@@ -751,9 +751,9 @@ p code{
 
 <p><strong>Problema.</strong> Dívida de guia e de código acumulada é empréstimo de juros altos. Deixada compor, vira uma semana perdida em vez de minutos distribuídos.</p>
 <p><strong>Na prática.</strong> Rodar a limpeza em intervalo fixo, independente de haver tarefa em andamento, em vez de esperar um mutirão anual. Um mutirão de limpeza é o sintoma de que a cadência não existe.</p>
-<p><strong>Para quem.</strong> N2 em diante, qualquer harness com sensores já instalados, porque a cadência é o que detecta deriva que nenhuma execução isolada revela.</p>
+<p><strong>Para quem.</strong> N2 em diante, qualquer harness com verificadores já instalados, porque a cadência é o que detecta deriva que nenhuma execução isolada revela.</p>
 <p><strong>Faixa mínima.</strong> N2.</p>
-<p><strong>Quando não usar.</strong> Nunca é cedo demais para começar pequeno, mas não force cadência antes de ter pelo menos um sensor de verificação dura rodando: sem verificação, limpeza vira mudança silenciosa.</p>
+<p><strong>Quando não usar.</strong> Nunca é cedo demais para começar pequeno, mas não force cadência antes de ter pelo menos um verificador de verificação dura rodando: sem verificação, limpeza vira mudança silenciosa.</p>
 <p><strong>Como começar em 15 minutos.</strong> Escolha um intervalo (semanal é o mais comum) e agende a primeira execução da ferramenta de limpeza que você já escolheu. A disciplina importa mais que a ferramenta específica.</p>
 
 <h3>Coleta de lixo</h3>
@@ -779,7 +779,7 @@ p code{
 <table class="wrap">
 <thead><tr><th>Padrão ou produto</th><th>Postura</th></tr></thead>
 <tbody>
-<tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>O próprio padrão aberto, estável desde 2020. Não é um produto, é um protocolo que cada linha abaixo implementa à sua maneira.</td></tr>
+<tr><td>OAuth 2.0 Token Exchange (RFC 8693)</td><td>O próprio padrão aberto, estável desde 2020. É um protocolo, não um produto, que cada linha abaixo implementa à sua maneira.</td></tr>
 <tr><td>SPIFFE/SPIRE</td><td>Graduado pela CNCF, código aberto, auto-hospedado. Identidade de carga de trabalho criptograficamente verificável, rotacionada automaticamente. A linha por onde começar se a resposta precisa continuar totalmente auditável e independente de fornecedor.</td></tr>
 <tr><td>Auth0 Token Vault</td><td>Produto comercial. O agente nunca segura a chave crua, trocando-a por um token curto e com escopo em vez disso. Caminho mais rápido se a Auth0 já cuida de identidade em outro ponto da pilha.</td></tr>
 <tr><td>Microsoft Entra Agent ID</td><td>Comercial, GA em 2026. Construção de identidade feita sob medida para agentes, dentro de uma pilha centrada em Microsoft.</td></tr>
@@ -877,7 +877,7 @@ p code{
 
 <p>Mesmo repositório da ficha em Proteger acima: <a href="https://github.com/microsoft/agent-governance-toolkit">github.com/microsoft/agent-governance-toolkit</a>. Esta é uma segunda leitura da mesma ferramenta, focada no ciclo de vida, não uma ficha duplicada.</p>
 
-<p><strong>Problema.</strong> A parte 4 §3 é explícita que a transição para descomissionado exige uma decisão do dono do agente e do homologador juntos, nunca uma automação rodando numa agenda. A maioria das ferramentas nesse espaço ou não tem procedimento de descomissionamento nenhum, ou deixa a trava inteiramente por conta de quem monta a automação.</p>
+<p><strong>Problema.</strong> A parte 4 §3 é explícita que a transição para descomissionado exige uma decisão do proprietário do agente e do homologador juntos, nunca uma automação rodando numa agenda. A maioria das ferramentas nesse espaço ou não tem procedimento de descomissionamento nenhum, ou deixa a trava inteiramente por conta de quem monta a automação.</p>
 <p><strong>Na prática.</strong> Este toolkit é um exemplo concreto e atual desse segundo risco, não da falha em si: detecta automaticamente agentes além de um limiar configurável de inatividade ou de um timeout de heartbeat, mas a chamada que de fato descomissiona ou marca como órfão é separada, explícita, e também não checa registro de aprovação nenhum. Nada vem de fábrica com a falha sem trava. Nada vem de fábrica com a trava tampouco. Vale a pena estudar pelos próprios estados de ciclo de vida, e vale a pena ligar o passo de aprovação deliberadamente antes de conectar a detecção à chamada de descomissionamento.</p>
 <p><strong>Para quem.</strong> Times N2 a N3 avaliando ferramentas de ciclo de vida, especificamente para ver como é fácil ligar detecção automática e uma ação sem trava num projeto real, popular e atual.</p>
 <p><strong>Faixa mínima.</strong> N2.</p>
@@ -904,11 +904,11 @@ p code{
 
 <h3>Reaproveitando o sensors-cli para os oito indicadores</h3>
 
-<p>Nenhuma ferramenta nova proposta aqui de propósito. O <a href="#pt-inspecionar">sensors-cli</a>, já coberto em Inspecionar, é um painel que roda vários sensores em intervalo e guarda histórico. O mesmo padrão se estende aos oito indicadores da parte 4 quando mais de dois ou três já estão sendo acompanhados: aponte para cobertura de registro, taxa de exceção e taxa de recusa no portão do mesmo jeito que ele já aponta para sensores de verificação dura, em vez de erguer um segundo painel separado.</p>
+<p>Nenhuma ferramenta nova proposta aqui de propósito. O <a href="#pt-inspecionar">sensors-cli</a>, já coberto em Inspecionar, é um painel que roda vários verificadores em intervalo e guarda histórico. O mesmo padrão se estende aos oito indicadores da parte 4 quando mais de dois ou três já estão sendo acompanhados: aponte para cobertura de registro, taxa de exceção e taxa de recusa no portão do mesmo jeito que ele já aponta para verificadores de verificação dura, em vez de erguer um segundo painel separado.</p>
 
 <h2 id="pt-howto-1">10. Roteiro 1: ler o superpowers em uma hora</h2>
 
-<p>Este roteiro serve para quem não programa. O objetivo não é usar a ferramenta, é aprender a escrever procedimento para máquina lendo quem já fez bem.</p>
+<p>Este roteiro serve para quem não programa. O objetivo é aprender a escrever procedimento para máquina lendo quem já fez bem, não usar a ferramenta em si.</p>
 
 <table class="wrap">
 <thead><tr><th>Passo</th><th>O que fazer</th></tr></thead>
@@ -952,21 +952,21 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <div class="rule-box"><span class="lbl">Erro mais comum</span><p>Escrever um SKILL.md gigante na primeira tentativa. Comece pequeno e deixe a falha dizer o que acrescentar. Guia é índice, não enciclopédia.</p></div>
 
-<h2 id="pt-howto-3">12. Roteiro 3: montar seu primeiro sensor</h2>
+<h2 id="pt-howto-3">12. Roteiro 3: montar seu primeiro verificador</h2>
 
 <p>Este roteiro exige alguém capaz de escrever vinte linhas de script, mas não exige programador. Vale para qualquer tarefa que produza números.</p>
 
 <p><strong>Passo 1.</strong> Identifique o que pode ser verificado sem julgamento. Total que deve bater, campo que não pode estar vazio, data dentro de um intervalo, item que não pode aparecer duas vezes. Isso é verificação dura, e é onde começar.</p>
 
-<p><strong>Passo 2.</strong> Escreva o script que recalcula a partir da fonte e compara com o resultado entregue. Peça ao próprio agente que escreva esse script. Essa é justamente a mudança de custo que tornou sensores viáveis: fazer a ferramenta ficou barato.</p>
+<p><strong>Passo 2.</strong> Escreva o script que recalcula a partir da fonte e compara com o resultado entregue. Peça ao próprio agente que escreva esse script. Essa é justamente a mudança de custo que tornou verificadores viáveis: fazer a ferramenta ficou barato.</p>
 
-<p><strong>Passo 3.</strong> Escreva a mensagem de erro como instrução de correção. Esta é a parte que decide se o sensor funciona. Ela precisa conter o que está errado, qual é o valor certo, onde fica a fonte, a provável causa e o que fazer em seguida. Uma mensagem que só diz falhou não é um sensor, é um alarme.</p>
+<p><strong>Passo 3.</strong> Escreva a mensagem de erro como instrução de correção. Esta é a parte que decide se o verificador funciona. Ela precisa conter o que está errado, qual é o valor certo, onde fica a fonte, a provável causa e o que fazer em seguida. Uma mensagem que só diz falhou é um alarme, não um verificador.</p>
 
-<p><strong>Passo 4.</strong> Amarre o sensor ao critério de pronto do skill. Em vez de escrever pronto quando os números estiverem certos, escreva pronto quando o comando de conferência não retornar divergências. O critério deixa de ser opinião e passa a ser verificável.</p>
+<p><strong>Passo 4.</strong> Amarre o verificador ao critério de pronto do skill. Em vez de escrever pronto quando os números estiverem certos, escreva pronto quando o comando de conferência não retornar divergências. O critério deixa de ser opinião e passa a ser verificável.</p>
 
 <p><strong>Passo 5.</strong> Defina o teto. Três tentativas, e na terceira o sistema para, entrega marcado como não conferido e explica o que não fechou.</p>
 
-<p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o sensor nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um sensor cego é pior que nenhum: ele produz confiança sem base.</p>
+<p><strong>Passo 6.</strong> Depois de algumas semanas, olhe o histórico. Se o verificador nunca disparou, provoque um erro de propósito para confirmar que ele funciona. Se ele nunca acusa nem quando deveria, remova, porque um verificador cego é pior que nenhum: ele produz confiança sem base.</p>
 
 <h2 id="pt-seguranca">13. Antes de instalar qualquer coisa</h2>
 
@@ -1009,7 +1009,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <li>Teste de mutação. <a href="https://stryker-mutator.io/">stryker-mutator.io</a></li>
 <li>Semgrep, Inc. <em>Semgrep</em>. <a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></li>
 <li>Birgitta Böckeler. <em>Maintainability sensors for coding agents</em>. <a href="https://martinfowler.com/articles/sensors-for-coding-agents.html">martinfowler.com</a></li>
-<li>Código do painel de sensores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
+<li>Código do painel de verificadores. <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></li>
 <li>Paul Bakaus. <em>impeccable</em>, regras de detector de design de frontend. <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></li>
 <li><em>ai-slop-cleaner</em>, fonte da matriz de limpeza. <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></li>
 <li>Curadoria da comunidade. <a href="https://github.com/ai-boost/awesome-harness-engineering">github.com/ai-boost/awesome-harness-engineering</a></li>
