@@ -87,7 +87,7 @@ Método próprio deste projeto, na família do PDCA e do DMAIC. Funciona sem ada
 | M | Mapear | Map | Mapear | O contrato da tarefa, os limites e o mapa do conhecimento |
 | E | Equipar | Equip | Equipar | Ferramentas, acessos e memória durável |
 | D | Delegar | Delegate | Delegar | Execução isolada, autonomia calibrada ao risco |
-| I | Inspecionar | Inspect | Inspeccionar | Sensores que produzem evidência, não opinião |
+| I | Inspecionar | Inspect | Inspeccionar | Verificadores que produzem evidência, não opinião |
 | R | Reforçar | Reinforce | Reforzar | A falha vira mudança permanente no ambiente |
 
 O que separa MEDIR de um PDCA genérico é o passo R: você age sobre o ambiente, não sobre a resposta. Um remendo conserta uma execução, uma mudança no harness melhora todas as próximas.
@@ -98,7 +98,7 @@ O que separa MEDIR de um PDCA genérico é o passo R: você age sobre o ambiente
 |---|---|---|
 | N0 · Assistido | Instrução e modelo | Nenhuma, humano revisa cada saída |
 | N1 · Guiado | Guia escrito, ferramentas, contrato de tarefa | Tarefas reversíveis e de baixo custo |
-| N2 · Medido | Estado durável, sensores, teto de tentativas | Tarefas longas, com evidência antes da entrega |
+| N2 · Medido | Estado durável, verificadores, teto de tentativas | Tarefas longas, com evidência antes da entrega |
 | N3 · Governado | Permissão fora do modelo, rastro, reversão | Ação com efeito externo, sob aprovação humana |
 
 Regra de dimensionamento: o harness deve ser menor que a superfície de falha que ele controla.
@@ -107,9 +107,9 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 
 ## Este projeto também se inspeciona
 
-Inspecionar, na tabela acima, significa sensores que produzem evidência, não opinião. Este projeto aplica esse passo à própria escrita, não só aos agentes que descreve.
+Inspecionar, na tabela acima, significa verificadores que produzem evidência, não opinião. Este projeto aplica esse passo à própria escrita, não só aos agentes que descreve.
 
-Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Dois gráficos, não um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios sensores de um agente. Os dois compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou o contrário.
+Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Dois gráficos, não um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios verificadores de um agente. Os dois compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou o contrário.
 
 <p align="center">
   <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 114.396 palavras ao longo de cinquenta marcos" width="680">
@@ -171,14 +171,14 @@ Seis peças, com ritmos de revisão diferentes, organizadas em torno de um frame
 |---|---|---|
 | Construção | Como se constrói um agente confiável | Parte 2, MEDIR |
 | Operação | O que ele pode fazer, e quem responde | Parte 3, a separação de poderes |
-| Governança | Quantos agentes existem, quem é dono de cada um, quais ainda se pagam | Parte 4, o escritório de agentes |
+| Governança | Quantos agentes existem, quem é proprietário de cada um, quais ainda se pagam | Parte 4, o escritório de agentes |
 
 As faixas de autonomia N0 a N3 atravessam as três camadas como régua comum, o único vocabulário compartilhado entre elas, e é isso que impede o framework de virar três peças soltas. Uma quarta camada foi deliberadamente deixada de fora: todo framework que morreu, morreu por excesso de vocabulário.
 
 | Peça | Natureza | Revisão |
 |---|---|---|
 | Parte 1, por quê | Argumento. Por que o ambiente vale mais que o modelo | Rara |
-| Parte 2, como | Método. Guias, sensores, formato de skill, exemplos | Rara |
+| Parte 2, como | Método. Guias, verificadores, formato de skill, exemplos | Rara |
 | Parte 3, operação | Permissão fora do modelo, rastro, responsabilidade | Rara |
 | Parte 4, governança | Ciclo de vida, papéis, indicadores, onde o escritório senta | Rara |
 | Guia compacto | Inventário de mercado, com nomes e repositórios | Trimestral |
@@ -204,7 +204,7 @@ Um executivo, conselheiro, diretor de área, sucessor à frente de uma empresa f
 
 A série existe para que essa pessoa consiga diagnosticar em que estágio está, entender o que precisa construir, e conversar de igual para igual com quem constrói.
 
-Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem sensor é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. A parte 4 fecha o arco dela: ela deixa de ser a construtora solitária do agente e se torna a pessoa capaz de dizer a um conselho quantos agentes a empresa opera, quem é dono de cada um, e quais ainda se pagam.
+Uma personagem atravessa a série: uma diretora de operações de uma indústria de médio porte que monta sozinha uma automação para conferir notas fiscais de frete. Ela é composta a partir de padrões recorrentes e não descreve uma empresa específica. Na parte 1 ela está em N0 e sofre um acidente estrutural. Na parte 2 ela chega a N1 e descobre que um guia sem verificador é só uma recomendação bem escrita, terminando em N2. Na parte 3 ela enfrenta a primeira ação irreversível. A parte 4 fecha o arco dela: ela deixa de ser a construtora solitária do agente e se torna a pessoa capaz de dizer a um conselho quantos agentes a empresa opera, quem é proprietário de cada um, e quais ainda se pagam.
 
 ---
 

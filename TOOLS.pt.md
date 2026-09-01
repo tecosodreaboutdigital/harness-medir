@@ -41,7 +41,7 @@ Seis coleções, trinta e uma skills, todas com licença MIT ou Apache 2.0. Inst
 
 ## A skill própria do projeto
 
-`intake-briefing` não é instalada de terceiro, é criada por este projeto. Vivia como subpasta aqui dentro até 30 de agosto de 2026, quando ganhou repositório próprio, público, MIT, no mesmo dia: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing) (renomeada de `levantando-briefing` mais tarde nesse mesmo dia, como parte da reestruturação para inglês primário). O harness-medir não guarda mais o conteúdo dela, só aponta para lá, no mesmo padrão que usa para apontar para as outras cinco coleções desta página.
+`intake-briefing` é criada por este projeto, não instalada de terceiro. Vivia como subpasta aqui dentro até 30 de agosto de 2026, quando ganhou repositório próprio, público, MIT, no mesmo dia: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing) (renomeada de `levantando-briefing` mais tarde nesse mesmo dia, como parte da reestruturação para inglês primário). O harness-medir não guarda mais o conteúdo dela, só aponta para lá, no mesmo padrão que usa para apontar para as outras cinco coleções desta página.
 
 Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skills de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/intake-briefing/`, fora do controle de versão, trazida do repositório próprio.
 

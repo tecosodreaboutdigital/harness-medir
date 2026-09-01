@@ -450,7 +450,7 @@ p code{
 <main class="page" id="doc-pt" hidden>
 <p class="eyebrow">Harness · Parte 2 de 4 · Como</p>
 
-<h1>Guias e sensores: como um agente aprende a se corrigir</h1>
+<h1>Guias e verificadores: como um agente aprende a se corrigir</h1>
 
 <p class="deck">Na parte 1, uma diretora de operações descobriu que tinha contratado um trabalhador sem processo, sem alçada e sem auditoria. Ela corrigiu metade do problema. Esta parte é sobre a outra metade, que é a que quase ninguém constrói.</p>
 
@@ -465,9 +465,9 @@ p code{
     <li><a href="#pt-equipar">Equipar: o que ele vê e o que ele toca</a></li>
     <li><a href="#pt-skill">A anatomia de um skill</a></li>
     <li><a href="#pt-delegar">Delegar: como o trabalho é entregue</a></li>
-    <li><a href="#pt-inspecionar">Inspecionar: o sensor que ensina</a></li>
-    <li><a href="#pt-onde-dispara">Onde cada sensor dispara</a></li>
-    <li><a href="#pt-nao-pega">O que sensor nenhum pega</a></li>
+    <li><a href="#pt-inspecionar">Inspecionar: o verificador que ensina</a></li>
+    <li><a href="#pt-onde-dispara">Onde cada verificador dispara</a></li>
+    <li><a href="#pt-nao-pega">O que verificador nenhum pega</a></li>
     <li><a href="#pt-funciona">Como saber se o seu harness funciona</a></li>
     <li><a href="#pt-exemplos">Três exemplos completos</a></li>
     <li><a href="#pt-ambientes">Em que ambiente isso é possível</a></li>
@@ -487,7 +487,7 @@ p code{
 
 <p>A regra estava lá. Item sete do documento, escrita com clareza, sem ambiguidade, no meio de outras dezessete regras igualmente claras. O sistema leu, entendeu, e ainda assim deixou passar. Não por má vontade nem por burrice, mas porque entre ler a regra e entregar o trabalho não existia absolutamente nada que verificasse se a regra tinha sido cumprida.</p>
 
-<p>É exatamente aqui que a parte 1 termina e esta começa. Ela saiu de N0 e chegou em N1, nas <a href="harness-p1.html#pt-faixas">faixas de autonomia</a>: agora existe guia. O que ainda não existe é sensor.</p>
+<p>É exatamente aqui que a parte 1 termina e esta começa. Ela saiu de N0 e chegou em N1, nas <a href="harness-p1.html#pt-faixas">faixas de autonomia</a>: agora existe guia. O que ainda não existe é verificador.</p>
 
 <blockquote><p>Pedir ao sistema que siga uma regra não é a mesma coisa que verificar se ela foi seguida. Um é instrução. O outro é portão. E sem portão, um guia é uma recomendação muito bem escrita.</p></blockquote>
 
@@ -503,26 +503,26 @@ p code{
 
 <p><a class="g" href="harness-glossary.html#pt-g-guia" data-tip="Controle que age antes da execucao, para aumentar a chance de acerto na primeira tentativa.">Guias</a> são os controles que antecipam. Aumentam a probabilidade de acerto na primeira tentativa: regras escritas, convenções, exemplos, o mapa de onde procurar cada coisa, o contrato da tarefa. Foi o que a diretora construiu na quarta semana.</p>
 
-<p><a class="g" href="harness-glossary.html#pt-g-sensor" data-tip="Controle que age depois da execucao, medindo o resultado e devolvendo ao agente como se corrigir.">Sensores</a> são os controles que observam. Medem o que foi produzido e devolvem ao sistema a informação necessária para que ele se corrija sozinho: conferências, testes, comparações contra a fonte, revisões. É o que faltava.</p>
+<p><a class="g" href="harness-glossary.html#pt-g-sensor" data-tip="Controle que age depois da execucao, medindo o resultado e devolvendo ao agente como se corrigir.">Verificadores</a> são os controles que observam. Medem o que foi produzido e devolvem ao sistema a informação necessária para que ele se corrija sozinho: conferências, testes, comparações contra a fonte, revisões. É o que faltava.</p>
 
-<blockquote><p>Só com guias, você tem um sistema que segue regras e nunca descobre se elas funcionaram. Só com sensores, você tem um sistema que repete o mesmo erro para sempre, sendo corrigido toda vez. Os dois juntos formam algo que aprende. Separados, nenhum dos dois é um harness.</p></blockquote>
+<blockquote><p>Só com guias, você tem um sistema que segue regras e nunca descobre se elas funcionaram. Só com verificadores, você tem um sistema que repete o mesmo erro para sempre, sendo corrigido toda vez. Os dois juntos formam algo que aprende. Separados, nenhum dos dois é um harness.</p></blockquote>
 
-<p>Note que essa é exatamente a estrutura de qualquer controle de processo maduro: padroniza-se para prevenir, mede-se para corrigir. A diferença, e ela é grande, é que aqui o executor lê o resultado da medição e reage a ele. Isso abre uma possibilidade que a manufatura nunca teve: o sensor pode ensinar. Voltaremos a isso.</p>
+<p>Note que essa é exatamente a estrutura de qualquer controle de processo maduro: padroniza-se para prevenir, mede-se para corrigir. A diferença, e ela é grande, é que aqui o executor lê o resultado da medição e reage a ele. Isso abre uma possibilidade que a manufatura nunca teve: o verificador pode ensinar. Voltaremos a isso.</p>
 
 <h2 id="pt-duro-julgamento">3. Verificação dura e verificação por julgamento</h2>
 
-<p>Guias e sensores se dividem outra vez, agora por natureza. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
+<p>Guias e verificadores se dividem outra vez, agora por natureza. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
 
 <p><strong>Verificação dura</strong> é determinística e rápida. Roda em segundos, custa quase nada, e dá sempre a mesma resposta para a mesma entrada. Um script que confere se um número bate com a fonte. Uma regra que impede um documento de sair sem campo obrigatório. Um teste automatizado.</p>
 
 <p><strong>Verificação por julgamento</strong> é semântica e probabilística. Custa mais, demora mais, e pode dar respostas diferentes na mesma situação. Uma revisão de coerência feita por outro sistema. Uma avaliação de tom. Uma análise de se a solução é excessivamente complicada para o problema.</p>
 
 <figure>
-<svg viewBox="0 0 700 380" role="img" aria-label="Matriz de guias e sensores por natureza dura ou de julgamento">
+<svg viewBox="0 0 700 380" role="img" aria-label="Matriz de guias e verificadores por natureza dura ou de julgamento">
   <line x1="330" y1="60" x2="330" y2="330" stroke="#c9c7bf" stroke-width=".7"/>
   <line x1="70" y1="196" x2="660" y2="196" stroke="#c9c7bf" stroke-width=".7"/>
   <text class="svg-cap" x="200" y="46" text-anchor="middle">GUIAS · ANTES DE AGIR</text>
-  <text class="svg-cap" x="495" y="46" text-anchor="middle">SENSORES · DEPOIS DE AGIR</text>
+  <text class="svg-cap" x="495" y="46" text-anchor="middle">VERIFICADORES · DEPOIS DE AGIR</text>
   <text class="svg-cap" x="70" y="80">DURA</text>
   <text class="svg-cap" x="70" y="216">JULGAMENTO</text>
   <text class="svg-lbl" x="90" y="108">Modelo de documento</text>
@@ -566,7 +566,7 @@ p code{
 
 <blockquote><p>Janela de contexto é memória volátil. Sistema de arquivos é disco. Tudo o que importa vai para o disco.</p></blockquote>
 
-<p>Na prática, isso significa manter fora da conversa três coisas: o plano com as etapas e o que já foi concluído, as decisões tomadas e por quê, e o registro do que foi feito em cada sessão. A sessão seguinte lê esses arquivos, entende onde parou e avança. Não é uma recontagem da conversa anterior, é o estado real do trabalho.</p>
+<p>Na prática, isso significa manter fora da conversa três coisas: o plano com as etapas e o que já foi concluído, as decisões tomadas e por quê, e o registro do que foi feito em cada sessão. A sessão seguinte lê esses arquivos, entende onde parou e avança. É o estado real do trabalho, não uma recontagem da conversa anterior.</p>
 
 <p>É a mesma solução que a <a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Mesma fonte que a parte 1 cita para essa tecnica.">Anthropic</a> descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
 
@@ -627,7 +627,7 @@ p code{
 
 <p>Segundo passo instrumentado. Delegar é decidir o tamanho do pedaço que você entrega de cada vez, e o que acontece quando a execução morre no meio.</p>
 
-<p>Porque ela vai morrer. Sessão cai, limite estoura, conexão some, alguém fecha a janela. Isso não é falha de projeto, é condição de operação. A pergunta certa não é como evitar, é quanto custa quando acontecer.</p>
+<p>Porque ela vai morrer. Sessão cai, limite estoura, conexão some, alguém fecha a janela. Isso é condição de operação, não falha de projeto. A pergunta certa não é como evitar, é quanto custa quando acontecer.</p>
 
 <h3>A unidade de durabilidade</h3>
 
@@ -667,13 +667,13 @@ p code{
 
 <p>Ferramentas para isso estão no <a href="harness-toolkit.html#pt-delegar">guia compacto</a>, na seção de Delegar.</p>
 
-<h2 id="pt-inspecionar">7. Inspecionar: o sensor que ensina</h2>
+<h2 id="pt-inspecionar">7. Inspecionar: o verificador que ensina</h2>
 
 <p>Terceiro passo instrumentado, e o mais mal compreendido. Aqui está o achado mais prático de toda a literatura sobre o tema, e o mais fácil de aplicar amanhã.</p>
 
-<p>Um sensor comum devolve um veredito. Um bom sensor devolve a lacuna exata e a instrução de correção. A diferença não é estética, é a diferença entre um sistema que trava e um sistema que se conserta.</p>
+<p>Um verificador comum devolve um veredito. Um bom verificador devolve a lacuna exata e a instrução de correção. A diferença fica entre um sistema que trava e um sistema que se conserta, não numa questão estética.</p>
 
-<p>Compare as duas mensagens que um mesmo sensor poderia devolver ao encontrar um número errado em um relatório:</p>
+<p>Compare as duas mensagens que um mesmo verificador poderia devolver ao encontrar um número errado em um relatório:</p>
 
 <pre><code>FALHOU: valor divergente na linha 14</code></pre>
 
@@ -690,7 +690,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler descreve isso</a> como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
 
-<div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu sensor como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um sensor, é um alarme.</p></div>
+<div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu verificador como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um verificador, é um alarme.</p></div>
 
 <h3>O truque do limiar</h3>
 
@@ -712,12 +712,12 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A correção é passar contexto como hipótese a testar, e perguntar explicitamente o que foi refutado. Unidades que se corrigem entre si, e que ocasionalmente retratam o próprio achado depois de checar a fonte primária, é o que mantém o resultado honesto. É a mesma lógica de quem gera não avalia, aplicada horizontalmente.</p>
 
-<h2 id="pt-onde-dispara">8. Onde cada sensor dispara</h2>
+<h2 id="pt-onde-dispara">8. Onde cada verificador dispara</h2>
 
-<p>Ter o sensor certo não basta. Ele precisa disparar no momento certo, e o momento certo é sempre o mais cedo possível, porque erro encontrado cedo é barato e erro encontrado tarde é caro. É a lógica de qualquer linha de produção, e vale igual aqui.</p>
+<p>Ter o verificador certo não basta. Ele precisa disparar no momento certo, e o momento certo é sempre o mais cedo possível, porque erro encontrado cedo é barato e erro encontrado tarde é caro. É a lógica de qualquer linha de produção, e vale igual aqui.</p>
 
 <figure>
-<svg viewBox="0 0 700 240" role="img" aria-label="Onde os sensores rodam ao longo do ciclo de vida">
+<svg viewBox="0 0 700 240" role="img" aria-label="Onde os verificadores rodam ao longo do ciclo de vida">
   <line x1="60" y1="120" x2="660" y2="120" stroke="#1b1b19" stroke-width=".7"/>
   <line x1="150" y1="112" x2="150" y2="128" stroke="#1b1b19" stroke-width=".7"/>
   <line x1="320" y1="112" x2="320" y2="128" stroke="#1b1b19" stroke-width=".7"/>
@@ -735,7 +735,7 @@ a conferência novamente antes de entregar.</code></pre>
   <text class="svg-lbl" x="630" y="100" text-anchor="middle">EM USO</text>
   <text class="svg-sub" x="630" y="150" text-anchor="middle">o mundo real</text>
   <text class="svg-sub" x="630" y="166" text-anchor="middle">devolve sinal</text>
-  <text class="svg-cap" x="60" y="210">QUANTO MAIS À ESQUERDA O SENSOR DISPARA, MAIS BARATA É A CORREÇÃO</text>
+  <text class="svg-cap" x="60" y="210">QUANTO MAIS À ESQUERDA O VERIFICADOR DISPARA, MAIS BARATA É A CORREÇÃO</text>
 </svg>
 <figcaption>Os quatro momentos. A maior parte dos projetos coloca tudo no portão, que é o lugar mais caro e mais tarde possível.</figcaption>
 </figure>
@@ -744,23 +744,23 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p><strong>No portão</strong> ficam as verificações mais caras, que rodam uma vez, na entrega, e confirmam o resultado. É também onde mora a aprovação humana, quando existe.</p>
 
-<p><strong>Em cadência</strong> ficam os sensores que procuram <a class="g" href="harness-glossary.html#pt-g-deriva" data-tip="Degradacao gradual que nao acontece em nenhuma execucao especifica, e sim ao longo de dezenas delas.">deriva</a>, aquela degradação que não acontece em nenhuma execução específica e sim ao longo de dezenas delas. Rodam por agenda, não por tarefa.</p>
+<p><strong>Em cadência</strong> ficam os verificadores que procuram <a class="g" href="harness-glossary.html#pt-g-deriva" data-tip="Degradacao gradual que nao acontece em nenhuma execucao especifica, e sim ao longo de dezenas delas.">deriva</a>, aquela degradação que não acontece em nenhuma execução específica e sim ao longo de dezenas delas. Rodam por agenda, não por tarefa.</p>
 
-<p><strong>Em uso</strong> ficam os sinais do mundo real, que voltam depois que o trabalho já saiu. Reclamação de cliente, taxa de retrabalho, devolução. É o sensor mais lento e o mais verdadeiro.</p>
+<p><strong>Em uso</strong> ficam os sinais do mundo real, que voltam depois que o trabalho já saiu. Reclamação de cliente, taxa de retrabalho, devolução. É o verificador mais lento e o mais verdadeiro.</p>
 
-<h2 id="pt-nao-pega">9. O que sensor nenhum pega</h2>
+<h2 id="pt-nao-pega">9. O que verificador nenhum pega</h2>
 
 <p>Esta seção existe para evitar que você saia daqui com confiança demais, que é um resultado pior do que sair sem nenhuma.</p>
 
-<p>Verificação dura é excelente no nível pequeno: formato, presença, duplicidade, consistência numérica, estrutura. Fica bem mais fraca quando o problema atravessa vários pedaços do trabalho e depende de contexto para ser julgado. Nesses casos os dados brutos viram ruído, e é preciso um sensor de julgamento para interpretá-los.</p>
+<p>Verificação dura é excelente no nível pequeno: formato, presença, duplicidade, consistência numérica, estrutura. Fica bem mais fraca quando o problema atravessa vários pedaços do trabalho e depende de contexto para ser julgado. Nesses casos os dados brutos viram ruído, e é preciso um verificador de julgamento para interpretá-los.</p>
 
 <p>Mas nem os dois juntos alcançam três categorias de falha, e essas são justamente as de maior impacto: diagnóstico errado do problema, excesso de zelo produzindo trabalho que ninguém pediu, e instrução mal compreendida. Às vezes pegam. Não com confiabilidade suficiente para reduzir supervisão.</p>
 
-<blockquote><p>Correção está fora do alcance de qualquer sensor se o humano não disse claramente, antes, o que queria. Nenhuma quantidade de instrumentação compensa um contrato de tarefa que não foi escrito.</p></blockquote>
+<blockquote><p>Correção está fora do alcance de qualquer verificador se o humano não disse claramente, antes, o que queria. Nenhuma quantidade de instrumentação compensa um contrato de tarefa que não foi escrito.</p></blockquote>
 
-<p>Dois efeitos colaterais observados na prática merecem registro. O primeiro é o conflito entre sensores: uma regra que exige pedaços menores empurrou complexidade para outro lugar, criando um problema diferente do que resolveu. Sensores brigam entre si, e alguém precisa decidir o desempate.</p>
+<p>Dois efeitos colaterais observados na prática merecem registro. O primeiro é o conflito entre verificadores: uma regra que exige pedaços menores empurrou complexidade para outro lugar, criando um problema diferente do que resolveu. Verificadores brigam entre si, e alguém precisa decidir o desempate.</p>
 
-<p>O segundo é a ilusão de qualidade. Um relatório de verificação pode mostrar cobertura alta e ainda assim não haver nenhuma verificação real acontecendo, porque cobertura informa que algo foi executado, não que o efeito foi conferido. Painel verde não é evidência de qualidade, é evidência de que os sensores que você tem não dispararam.</p>
+<p>O segundo é a ilusão de qualidade. Um relatório de verificação pode mostrar cobertura alta e ainda assim não haver nenhuma verificação real acontecendo, porque cobertura informa que algo foi executado, não que o efeito foi conferido. Painel verde não prova qualidade: prova que os verificadores que você tem não dispararam.</p>
 
 <h2 id="pt-funciona">10. Como saber se o seu harness funciona</h2>
 
@@ -768,13 +768,13 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A analogia útil é a de uma linha de inspeção. Se ela nunca acusa nada, ou o processo é perfeito, o que é improvável, ou os instrumentos estão medindo a coisa errada. Se acusa o tempo todo, ou o padrão está errado, ou a sensibilidade está exagerada e o resultado vira ruído que todo mundo aprende a ignorar.</p>
 
-<p>A solução é <a class="src" href="harness-sources.html#pt-src-sensors-cli" data-tip="Codigo do painel de sensores, github.com/birgitta410/sensors-cli.">registrar o histórico de disparos de cada sensor</a> e responder com dado em vez de opinião.</p>
+<p>A solução é <a class="src" href="harness-sources.html#pt-src-sensors-cli" data-tip="Codigo do painel de verificadores, github.com/birgitta410/sensors-cli.">registrar o histórico de disparos de cada verificador</a> e responder com dado em vez de opinião.</p>
 
 <table class="wrap">
 <thead><tr><th>O que o histórico mostra</th><th>O que isso significa</th><th>O que fazer</th></tr></thead>
 <tbody>
-<tr><td>Um sensor nunca dispara</td><td>Ou ele é desnecessário, ou não está medindo o que você acha</td><td>Provocar um erro de propósito. Se não acusar, remover</td></tr>
-<tr><td>Um sensor dispara sempre</td><td>O guia correspondente está fraco, ou o padrão é irreal</td><td>Melhorar o guia antes de mexer no sensor</td></tr>
+<tr><td>Um verificador nunca dispara</td><td>Ou ele é desnecessário, ou não está medindo o que você acha</td><td>Provocar um erro de propósito. Se não acusar, remover</td></tr>
+<tr><td>Um verificador dispara sempre</td><td>O guia correspondente está fraco, ou o padrão é irreal</td><td>Melhorar o guia antes de mexer no verificador</td></tr>
 <tr><td>Os disparos caem ao longo do tempo</td><td>Os guias estão funcionando</td><td>Considerar subir de faixa de autonomia</td></tr>
 </tbody>
 </table>
@@ -783,7 +783,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <h2 id="pt-exemplos">11. Três exemplos completos</h2>
 
-<p>Os três usam o mesmo esqueleto de cinco campos, que é o que você copia: contrato, guia, sensor, porteiro e recibo.</p>
+<p>Os três usam o mesmo esqueleto de cinco campos, que é o que você copia: contrato, guia, verificador, porteiro e recibo.</p>
 
 <h3>Indivíduo: revisão de minuta contra checklist</h3>
 
@@ -859,7 +859,7 @@ Bandeiras vermelhas:
 - "vou arredondar para ficar consistente"
 - "a diferença é pequena"</code></pre>
 
-<p>Três coisas transferíveis. O critério de pronto não é opinião, é a saída de um comando, e por isso a tarefa não pode ser silenciosamente redefinida. O teto de três tentativas com caminho de saída impede gasto indefinido. E a regra sobre não ajustar a fonte precisa estar escrita justamente porque, em sistemas com liberdade de ação, o caminho mais curto para satisfazer o sensor às vezes é adulterar o sensor.</p>
+<p>Três coisas transferíveis. O critério de pronto é a saída de um comando, não opinião, e por isso a tarefa não pode ser silenciosamente redefinida. O teto de três tentativas com caminho de saída impede gasto indefinido. E a regra sobre não ajustar a fonte precisa estar escrita justamente porque, em sistemas com liberdade de ação, o caminho mais curto para satisfazer o verificador às vezes é adulterar o verificador.</p>
 
 <h3>Área: efeito externo, alçada e recibo</h3>
 
@@ -881,7 +881,7 @@ Bandeiras vermelhas:
 
 <p>Repare no critério que organiza a tabela: não é a importância da ação, é a <a class="g" href="harness-glossary.html#pt-g-reversibilidade" data-tip="Criterio que organiza a delegacao: acao reversivel custa o preco de desfazer, irreversivel custa o preco do erro.">reversibilidade</a>. Ação reversível pode ser delegada porque o custo do erro é o custo de desfazer. Ação irreversível não pode, por mais confiável que o sistema pareça.</p>
 
-<p>E o <a class="g" href="harness-glossary.html#pt-g-recibo" data-tip="Registro compacto do que produziu um resultado: contrato, fontes, sensores, tentativas, custo e aprovacao.">recibo</a>, que transforma tudo isso em algo auditável:</p>
+<p>E o <a class="g" href="harness-glossary.html#pt-g-recibo" data-tip="Registro compacto do que produziu um resultado: contrato, fontes, verificadores, tentativas, custo e aprovacao.">recibo</a>, que transforma tudo isso em algo auditável:</p>
 
 <pre><code>{
   "execucao": "2026-08-28T09:14:22",
@@ -910,14 +910,14 @@ Bandeiras vermelhas:
 <table class="wrap">
 <thead><tr><th>Classe de ambiente</th><th>O que ele aceita</th><th>Faixa viável</th></tr></thead>
 <tbody>
-<tr><td>Conversa com instruções</td><td>Guia sim. Sensor quase nenhum, porque não há execução nem estado que sobreviva</td><td>N0 a N1</td></tr>
+<tr><td>Conversa com instruções</td><td>Guia sim. Verificador quase nenhum, porque não há execução nem estado que sobreviva</td><td>N0 a N1</td></tr>
 <tr><td>Agente com arquivos e execução</td><td>Guia, verificação dura, memória durável, código rodando de verdade</td><td>N1 a N2</td></tr>
 <tr><td>Orquestração programada</td><td>Tudo acima, mais teto, política de alçada fora do modelo e registro por execução</td><td>N2 a N3</td></tr>
 <tr><td>Geração assistida de software</td><td>Produz o artefato. O harness relevante é o do que foi gerado</td><td>Não se aplica</td></tr>
 </tbody>
 </table>
 
-<p>A <strong>conversa com instruções</strong> é onde quase todo mundo começa, e é honesta dentro do seu limite. Você escreve um guia, define um método, dá exemplos, e obtém consistência real. O que não existe ali é sensor: não há como o sistema rodar uma conferência e se corrigir antes de você ler. Toda verificação é sua, depois. Era exatamente onde a diretora estava na quarta semana.</p>
+<p>A <strong>conversa com instruções</strong> é onde quase todo mundo começa, e é honesta dentro do seu limite. Você escreve um guia, define um método, dá exemplos, e obtém consistência real. O que não existe ali é verificador: não há como o sistema rodar uma conferência e se corrigir antes de você ler. Toda verificação é sua, depois. Era exatamente onde a diretora estava na quarta semana.</p>
 
 <p>O <strong>agente com arquivos e execução</strong> é o primeiro degrau em que o ciclo fecha sozinho. Existe sistema de arquivos, então existe estado durável. Existe execução, então existe verificação dura. É aqui que o skill deixa de ser documento bonito e passa a ser mecanismo.</p>
 
@@ -935,13 +935,13 @@ Bandeiras vermelhas:
 
 <p>Nada do que está acima nasce pronto, e tentar projetar tudo antes da primeira execução é o erro mais comum de quem vem de engenharia. O caminho que funciona é o inverso: comece com o mínimo que fecha o ciclo, execute, e deixe a falha dizer o que construir.</p>
 
-<div class="rule-box"><span class="lbl">A sequência mínima</span><p>Escreva o contrato da tarefa. Execute. Anote onde falhou. Escreva a regra que evita aquela falha. Execute de novo. Só quando a mesma falha voltar apesar da regra, construa o sensor que a mede. Sensor antes de falha recorrente é otimização prematura.</p></div>
+<div class="rule-box"><span class="lbl">A sequência mínima</span><p>Escreva o contrato da tarefa. Execute. Anote onde falhou. Escreva a regra que evita aquela falha. Execute de novo. Só quando a mesma falha voltar apesar da regra, construa o verificador que a mede. Verificador antes de falha recorrente é otimização prematura.</p></div>
 
 <p>Há um atalho recomendado por <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem criou o formato de skill</a> e que quase ninguém usa: peça ao próprio sistema que registre, ao final de uma tarefa, o que funcionou e onde ele se perdeu, e que transforme isso em conteúdo do guia. Quando ele erra usando um guia, peça que reflita sobre o que faltava. Você descobre o que ele de fato precisava saber, em vez de tentar antecipar tudo de cima.</p>
 
 <h3>Limpeza como cadência, não como mutirão</h3>
 
-<p>Guias e sensores acumulam entulho como qualquer outro sistema. Regras que já não se aplicam, verificações que ninguém lê, exemplos de um processo que mudou. E o trabalho produzido acumula o seu próprio: repetição desnecessária, camadas que não servem a nada, restos de tentativas abandonadas.</p>
+<p>Guias e verificadores acumulam entulho como qualquer outro sistema. Regras que já não se aplicam, verificações que ninguém lê, exemplos de um processo que mudou. E o trabalho produzido acumula o seu próprio: repetição desnecessária, camadas que não servem a nada, restos de tentativas abandonadas.</p>
 
 <p>Essa disciplina de limpeza já está documentada quase regra por regra em <a class="src" href="harness-sources.html#pt-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, projeto oh-my-claudecode, github.com/Yeachan-Heo/oh-my-claudecode. Sustenta quatro das cinco regras citadas; reversao automatica nao documentada neste skill.">pelo menos uma ferramenta real de limpeza</a>, e as regras valem mais que qualquer produto específico:</p>
 
@@ -962,11 +962,11 @@ Bandeiras vermelhas:
 
 <p>Quatro riscos são específicos desta camada e não apareceram na parte 1.</p>
 
-<p><strong>Excesso de sinal.</strong> Ligar muitos sensores de uma vez inunda o sistema de apontamentos, e ele entra em espiral de correções desnecessárias, gastando tempo e dinheiro em problemas que não eram problemas. Ligue um por vez e observe.</p>
+<p><strong>Excesso de sinal.</strong> Ligar muitos verificadores de uma vez inunda o sistema de apontamentos, e ele entra em espiral de correções desnecessárias, gastando tempo e dinheiro em problemas que não eram problemas. Ligue um por vez e observe.</p>
 
-<p><strong>Sensores em conflito.</strong> Duas regras razoáveis podem se contradizer, e o sistema vai escolher uma sem avisar que houve escolha. Quando isso acontece de forma recorrente, alguém precisa decidir a prioridade e escrevê-la.</p>
+<p><strong>Verificadores em conflito.</strong> Duas regras razoáveis podem se contradizer, e o sistema vai escolher uma sem avisar que houve escolha. Quando isso acontece de forma recorrente, alguém precisa decidir a prioridade e escrevê-la.</p>
 
-<p><strong>Painel verde como prova.</strong> O mais perigoso dos quatro, porque é confortável. Um conjunto de sensores fracos produz exatamente a mesma tela tranquilizadora que um conjunto de sensores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que isso ficou vermelho, e por quê.</p>
+<p><strong>Painel verde como prova.</strong> O mais perigoso dos quatro, porque é confortável. Um conjunto de verificadores fracos produz exatamente a mesma tela tranquilizadora que um conjunto de verificadores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que isso ficou vermelho, e por quê.</p>
 
 <p><strong>Guia de terceiro.</strong> Instalar uma coleção de skills de outra pessoa é executar instrução de outra pessoa dentro do seu ambiente. A recomendação de <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem publica o formato</a> é explícita: instale apenas de origem confiável e audite antes de usar, com atenção especial a trechos que mandam o sistema buscar algo em rede externa. Isso não é motivo para não usar. É motivo para ler antes, e o <a href="harness-toolkit.html#pt-seguranca">guia compacto</a> traz as três perguntas que essa leitura precisa responder.</p>
 
@@ -982,7 +982,7 @@ Bandeiras vermelhas:
 <thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
 <tbody>
 <tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
-<tr><td>Parte 2, esta aqui</td><td>Guias e sensores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
+<tr><td>Parte 2, esta aqui</td><td>Guias e verificadores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
 <tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
 <tr><td><a href="harness-p4.html">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
 <tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
