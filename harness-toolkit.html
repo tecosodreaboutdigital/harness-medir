@@ -507,7 +507,7 @@ p code{
 <tr><td>Guia existe, ninguém segue à risca</td><td>Equipar</td></tr>
 <tr><td>Guia seguido, sem verificação automática</td><td>Inspecionar</td></tr>
 <tr><td>Verificador existe, sem cadência nem teto</td><td>Reforçar</td></tr>
-<tr><td>Efeito externo sem aprovação registrada</td><td><a href="#pt-secure">Proteger</a>, abaixo — a parte 3 cobre os conceitos, esta seção cobre a ferramentaria</td></tr>
+<tr><td>Efeito externo sem aprovação registrada</td><td><a href="#pt-secure">Proteger</a>, abaixo: a parte 3 cobre os conceitos, esta seção cobre a ferramentaria</td></tr>
 </tbody>
 </table>
 
@@ -580,7 +580,7 @@ p code{
 
 <h2 id="pt-equipar">4. Equipar</h2>
 
-<p>Equipar decide o que o agente vê, o que pode tocar e o que sobrevive entre sessões, discutido em profundidade na <a href="harness-p2.html#pt-equipar">parte 2</a>. As três fichas abaixo são as coleções mais estudadas hoje para escrever guia e organizar memória durável.</p>
+<p>Equipar decide o que o agente vê, o que pode tocar e o que sobrevive entre sessões, discutido em profundidade na <a href="harness-p2.html#pt-equipar">parte 2</a>. As quatro fichas abaixo são as coleções mais estudadas hoje para escrever guia, organizar memória durável e, na ficha mais nova, desenhar as fronteiras do próprio harness e a interface de ferramenta.</p>
 
 <h3>superpowers</h3>
 
@@ -620,6 +620,17 @@ p code{
 <div class="rule-box"><span class="lbl">Ressalva</span><p>Cerca de 26 mil estrelas, mas o número de eficácia divulgado pelo próprio projeto mede fidelidade ao padrão (quantas sessões seguiram o formato), não deriva de um objetivo de negócio. Trate como evidência de adoção, não como prova de resultado.</p></div>
 
 <p>Repositório: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
+
+<h3>Agent Skills for Context Engineering</h3>
+
+<p><strong>Problema.</strong> Um leitor apontou uma lacuna real nesta página: tudo acima equipa o agente com disciplina de processo (superpowers), peças editáveis (mattpocock/skills) ou estado durável (planning-with-files), mas nada aqui trata da própria arquitetura do harness, da fronteira entre o que um agente pode tocar, quantos agentes deveriam estar tocando nele, e o que a interface de uma ferramenta pede do modelo que a chama.</p>
+<p><strong>Na prática.</strong> Três skills de uma coleção de dezessete, lidas separadamente e mantidas como três porque cada uma responde uma pergunta diferente. <code>harness-engineering</code> nomeia quatro classes de superfície (travada, editável, apenas-anexação, controlada por humano) e trata um pull request que o agente prepara e um deploy que uma pessoa aprova como dois tipos diferentes de autoridade, não um só. <code>multi-agent-patterns</code> documenta as três formas dominantes de coordenação (supervisor, ponto a ponto, hierárquica) contra oito modos de falha nomeados, incluindo um custo de símbolo cerca de quinze vezes a referência de um único agente que é rotineiramente subestimado. <code>tool-design</code> trata a descrição de uma ferramenta como o prompt que ela de fato é, e dá uma auditoria de oito pontos para reduzir um conjunto de ferramentas sobrepostas a um propósito inequívoco por ferramenta.</p>
+<p><strong>Para quem.</strong> N1 em diante para a metade de desenho de harness e interface de ferramenta, <code>harness-engineering</code> e <code>tool-design</code>, qualquer agente único que já vale a pena desenhar com cuidado. N2 em diante para <code>multi-agent-patterns</code>, que pressupõe que mais de um agente já existe.</p>
+<p><strong>Faixa mínima.</strong> Uma questão de julgamento: N1 para duas das três skills, N2 quando vários agentes já estão de fato coordenando.</p>
+<p><strong>Quando não usar.</strong> Uma conversa única e curta, sem estado durável e sem ferramenta além dos padrões do próprio modelo. As três skills pressupõem que já existe algo que vale a pena estruturar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a auditoria de oito pontos do <code>tool-design</code> contra o catálogo de ferramentas que o seu próprio agente já tem, antes de ler as outras duas.</p>
+
+<p>Licença MIT. Repositório: <a href="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering">github.com/muratcankoylan/Agent-Skills-for-Context-Engineering</a></p>
 
 <h2 id="pt-delegar">5. Delegar</h2>
 
@@ -734,7 +745,7 @@ p code{
 
 <h2 id="pt-reforcar">7. Reforçar</h2>
 
-<p>Reforçar é o passo que separa quem tem um sistema de quem tem uma configuração, tratado na <a href="harness-p2.html#pt-reforcar">parte 2</a>. As três fichas abaixo tratam da limpeza como disciplina, não como evento.</p>
+<p>Reforçar é o passo que separa quem tem um sistema de quem tem uma configuração, tratado na <a href="harness-p2.html#pt-reforcar">parte 2</a>. As quatro fichas abaixo tratam da limpeza como disciplina, não como evento.</p>
 
 <h3>ai-slop-cleaner</h3>
 
@@ -746,6 +757,17 @@ p code{
 <p><strong>Como começar em 15 minutos.</strong> Rode uma vez contra a pasta de guias mais antiga do seu projeto e compare o que ele sinaliza com o que você já suspeitava estar obsoleto.</p>
 
 <p>Repositório: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>humanizer</h3>
+
+<p><strong>Problema.</strong> O ai-slop-cleaner, logo acima, mira código. Prosa acumula os próprios tiques: um contraste que só acrescenta peso, uma trinca que aparece independente de o sentido pedir três partes, um travessão no lugar de uma decisão sobre como duas orações se relacionam. Nada mais nesta página lê no nível da frase.</p>
+<p><strong>Na prática.</strong> Vinte e cinco padrões agrupados por causa (encenar em vez de afirmar, ritmo aplicado por regra, autoridade emprestada, formatação decorativa, resíduo de chatbot), cada um com exemplo de antes e depois e uma nota explícita sobre quando uma pessoa poderia fazer a mesma escolha de propósito. Edita um rascunho em inglês no lugar, mantendo todo fato, nome, número e citação sem alteração.</p>
+<p><strong>Para quem.</strong> N1 em diante, qualquer harness que produz prosa que um leitor julga pelo tom, não só pela correção.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Texto de referência, jurídico ou técnico que deve ficar neutro e simples, ou uma passagem escrita antes de os modelos de linguagem existirem. A própria regra da skill contra agir sobre um único tique fraco importa aqui: vários tiques juntos são o sinal, não um só.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode contra o parágrafo mais antigo do seu próprio projeto que ninguém revisou desde que um modelo o redigiu pela primeira vez, e conte quantos dos vinte e cinco padrões ela sinaliza.</p>
+
+<p>Licença MIT. Repositório: <a href="https://github.com/blader/humanizer">github.com/blader/humanizer</a></p>
 
 <h3>Limpeza como cadência</h3>
 
@@ -769,7 +791,7 @@ p code{
 
 <h2 id="pt-secure">8. Proteger</h2>
 
-<p>Proteger não é um sexto passo do MEDIR. Ele fica ao lado do ciclo, do mesmo jeito que a <a href="harness-p3.html">parte 3</a> fica ao lado da parte 2: o MEDIR constrói um agente confiável, Proteger o impede de agir fora de um mandato que ninguém aprovou. As quatro fichas abaixo dão à separação de poderes, à camada de identidade e à trilha de auditoria da parte 3 um nome, um repositório e um comando, em vez de deixar a arquitetura só no diagrama.</p>
+<p>Proteger não é um sexto passo do MEDIR. Ele fica ao lado do ciclo, do mesmo jeito que a <a href="harness-p3.html">parte 3</a> fica ao lado da parte 2: o MEDIR constrói um agente confiável, Proteger o impede de agir fora de um mandato que ninguém aprovou. As cinco fichas abaixo dão à separação de poderes, à camada de identidade e à trilha de auditoria da parte 3 um nome, um repositório e um comando, em vez de deixar a arquitetura só no diagrama.</p>
 
 <h3>Credenciais de escopo estreito e vida curta</h3>
 
@@ -830,6 +852,17 @@ p code{
 
 <p>Referência: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
 
+<h3>Modelagem de ameaça para arquitetura de agente</h3>
+
+<p><strong>Problema.</strong> O OWASP Agentic Skills Top 10, logo acima, nomeia as categorias de mau comportamento. Ele não percorre uma arquitetura específica por elas antes de essa arquitetura entrar em produção.</p>
+<p><strong>Na prática.</strong> O OWASP Four-Question Framework mais o STRIDE, aplicados em quatro fases: definir o escopo e decompor o sistema, aplicar as seis categorias do STRIDE a cada componente, classificar e priorizar os riscos resultantes, depois validar a cobertura antes de considerar o modelo completo. Produz uma matriz de ameaça estruturada com probabilidade, impacto e uma mitigação nomeada para cada entrada, não um parágrafo de prosa. Construída para revisão de arquitetura, explicitamente não para revisão pontual de diff, um trabalho mais estreito que os próprios verificadores deste documento já cobrem.</p>
+<p><strong>Para quem.</strong> N2 em diante, qualquer harness cuja arquitetura está sendo desenhada ou mudando de forma material, antes de o desenho ficar fixo.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Uma mudança pequena e isolada num sistema já existente e já modelado. Encaminhe isso para uma revisão de código normal, e guarde esta ficha para a próxima decisão real de arquitetura.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode só a fase de definir escopo e decompor contra a arquitetura atual do seu próprio harness, antes de tentar as quatro fases inteiras de uma vez.</p>
+
+<p>Licença MIT. Repositório: <a href="https://github.com/rjmurillo/ai-agents">github.com/rjmurillo/ai-agents</a></p>
+
 <h3>Detecção e ofuscação de PII antes do armazenamento ou envio</h3>
 
 <p><strong>Problema.</strong> Tudo acima presume que o dado que um agente lê, armazena ou repassa já é o dado que ele deveria estar manuseando. Nada até aqui confere o próprio dado: se informação pessoal identificável ou sensível é registrada, armazenada ou enviada a um sistema ou modelo externo antes de alguém decidir que deveria ser.</p>
@@ -872,6 +905,19 @@ p code{
 <p><strong>Como começar em 15 minutos.</strong> Aponte a versão auto-hospedada ou o nível gratuito para o agente de maior volume por uma semana e leia o relatório de custo por trace antes de instrumentar qualquer outra coisa.</p>
 
 <p>Licença MIT (núcleo), auto-hospedável, também existem níveis pagos hospedados. Repositório: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>ai-act-skill</h3>
+
+<p><strong>Problema.</strong> A parte 3 e a parte 4 citam artigos específicos do AI Act europeu, prática proibida, as obrigações do implantador do artigo 26, o dever de transparência do artigo 50, sem um jeito de checar, para um agente específico sentado no registro, qual dessas obrigações de fato se aplica a ele.</p>
+<p><strong>Na prática.</strong> Um checklist roteado por tarefa: classificar um sistema nas categorias de risco do AI Act, checar deveres de fornecedor ou implantador de alto risco, avaliar obrigações de modelo de propósito geral incluindo o limiar de risco sistêmico, verificar o dever de transparência do artigo 50, e rodar a avaliação de impacto sobre direitos fundamentais do artigo 27. Mantida atualizada com o Digital Omnibus, o Regulamento (UE) 2026/1744, que moveu vários dos prazos que a própria parte 3 deste projeto já cita.</p>
+<p><strong>Para quem.</strong> N2 em diante, quem já mantém o registro que a parte 4 §7 descreve e precisa de uma resposta por agente, não uma leitura única do regulamento.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Como substituto de aconselhamento jurídico ou da avaliação de conformidade de um organismo notificado. Os próprios limites declarados da skill dizem isso diretamente: ela apoia a classificação, não a assina.</p>
+<p><strong>Como começar em 15 minutos.</strong> Rode a tarefa de classificação contra o único agente do seu registro com mais chance de tocar direito ou segurança de uma pessoa, o mesmo teste que o próprio artigo 6 usa para a categoria de alto risco.</p>
+
+<p>Licença MIT. Repositório: <a href="https://github.com/morellid/ai-act-skill">github.com/morellid/ai-act-skill</a></p>
+
+<div class="rule-box"><span class="lbl">Limites honestos</span><p>Isto é uma ferramenta de apoio, não um departamento de conformidade. Não produz uma declaração de conformidade assinada, não cobre variação de implementação nacional, e não trata de regimes específicos de setor como dispositivo médico ou automotivo. Toda saída que produz deve ser checada por assessoria jurídica competente antes de ser usada de fato.</p></div>
 
 <h3>Microsoft Agent Governance Toolkit — a metade do ciclo de vida</h3>
 
@@ -1095,7 +1141,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <tr><td>Guide exists, nobody follows it to the letter</td><td>Equip</td></tr>
 <tr><td>Guide followed, no automatic verification</td><td>Inspect</td></tr>
 <tr><td>Sensor exists, no cadence or ceiling</td><td>Reinforce</td></tr>
-<tr><td>External effect with no recorded approval</td><td><a href="#en-secure">Secure</a>, below — part 3 covers the concepts, this section covers the tooling</td></tr>
+<tr><td>External effect with no recorded approval</td><td><a href="#en-secure">Secure</a>, below: part 3 covers the concepts, this section covers the tooling</td></tr>
 </tbody>
 </table>
 
@@ -1168,7 +1214,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-equipar">4. Equip</h2>
 
-<p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The three entries below are the most studied collections today for writing guides and organising durable memory.</p>
+<p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The four entries below are the most studied collections today for writing guides, organising durable memory and, in the newest entry, designing the harness's own boundaries and tool interface.</p>
 
 <h3>superpowers</h3>
 
@@ -1208,6 +1254,17 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <div class="rule-box"><span class="lbl">Caveat</span><p>Around 26 thousand stars, but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
 
 <p>Repository: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
+
+<h3>Agent Skills for Context Engineering</h3>
+
+<p><strong>Problem.</strong> A reader flagged a real gap in this page: everything above equips the agent with process discipline (superpowers), editable pieces (mattpocock/skills) or durable state (planning-with-files), but nothing here addresses the harness's own architecture, the boundary between what an agent may touch, how many agents should be touching it, and what a tool's own interface asks of the model calling it.</p>
+<p><strong>In practice.</strong> Three skills out of a seventeen-skill collection, read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes, including a token cost around fifteen times a single-agent baseline that is routinely underestimated. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
+<p><strong>Who it is for.</strong> N1 upward for the harness-design and tool-interface half, <code>harness-engineering</code> and <code>tool-design</code>, any single agent already worth designing carefully. N2 upward for <code>multi-agent-patterns</code>, which presupposes more than one agent already exists.</p>
+<p><strong>Minimum tier.</strong> A matter of judgement: N1 for two of the three skills, N2 once multiple agents are actually coordinating.</p>
+<p><strong>When not to use it.</strong> A single, short-lived conversation with no durable state and no tool beyond the model's own defaults. All three skills assume something worth structuring already exists.</p>
+<p><strong>How to start in 15 minutes.</strong> Read <code>tool-design</code>'s eight-point audit checklist against the tool catalogue your own agent already has, before reading the other two.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering">github.com/muratcankoylan/Agent-Skills-for-Context-Engineering</a></p>
 
 <h2 id="en-delegar">5. Delegate</h2>
 
@@ -1322,7 +1379,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-reforcar">7. Reinforce</h2>
 
-<p>Reinforce is the step that separates whoever has a system from whoever has a configuration, covered in <a href="harness-p2.html#en-reforcar">part 2</a>. The three entries below treat cleanup as a discipline, not an event.</p>
+<p>Reinforce is the step that separates whoever has a system from whoever has a configuration, covered in <a href="harness-p2.html#en-reforcar">part 2</a>. The four entries below treat cleanup as a discipline, not an event.</p>
 
 <h3>ai-slop-cleaner</h3>
 
@@ -1334,6 +1391,17 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>How to start in 15 minutes.</strong> Run it once against your project's oldest guide folder and compare what it flags with what you already suspected was obsolete.</p>
 
 <p>Repository: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>humanizer</h3>
+
+<p><strong>Problem.</strong> ai-slop-cleaner, just above, targets code. Prose accumulates its own tells: a contrast that only adds weight, a triad that arrives whether or not the meaning needs three parts, a dash standing in for a decision about how two clauses relate. Nothing else on this page reads at the level of a sentence.</p>
+<p><strong>In practice.</strong> Twenty-five patterns grouped by cause (staging instead of stating, rhythm applied by rule, borrowed authority, decorative formatting, chatbot leftovers), each with a before-and-after example and an explicit note on when a person could make the same choice on purpose. It edits an English draft in place, keeping every fact, name, number and citation unchanged.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness that produces prose a reader judges on tone, not only on correctness.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> Reference, legal or technical text meant to stay neutral and plain, or a passage written before language models existed. The skill's own rule against acting on one weak tell alone matters here: several tells together are the signal, not one.</p>
+<p><strong>How to start in 15 minutes.</strong> Run it against the oldest paragraph in your own project that nobody has revised since a model first drafted it, and count how many of the twenty-five patterns it flags.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/blader/humanizer">github.com/blader/humanizer</a></p>
 
 <h3>Cleanup as a cadence</h3>
 
@@ -1357,7 +1425,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-secure">8. Secure</h2>
 
-<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The four entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
+<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The five entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
 
 <h3>Short-lived, scoped credentials</h3>
 
@@ -1418,6 +1486,17 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Reference: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
 
+<h3>Threat modelling for agent architecture</h3>
+
+<p><strong>Problem.</strong> OWASP Agentic Skills Top 10, just above, names the categories of misbehaviour. It does not walk a specific architecture through them before that architecture ships.</p>
+<p><strong>In practice.</strong> The OWASP Four-Question Framework plus STRIDE, applied in four phases: scope and decompose the system, apply STRIDE's six categories to each component, rate and prioritise the resulting risks, then validate coverage before calling the model complete. Produces a structured threat matrix with likelihood, impact and a named mitigation for each entry, not a paragraph of prose. Built for architecture review, explicitly not for per-change diff review, a narrower job this document's own sensors already cover.</p>
+<p><strong>Who it is for.</strong> N2 upward, any harness whose architecture is being designed or materially changed, before the design is fixed.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single small change to an existing, already-modelled system. Route that to a normal code review instead, and save this for the next real architecture decision.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the scope-and-decompose phase alone against your own harness's current architecture, before attempting all four phases in one sitting.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/rjmurillo/ai-agents">github.com/rjmurillo/ai-agents</a></p>
+
 <h3>PII detection and redaction before storage or transmission</h3>
 
 <p><strong>Problem.</strong> Everything above assumes the data an agent reads, stores or forwards is already the data it should be handling. Nothing so far checks the data itself: whether personally identifiable or sensitive information gets logged, stored or sent to an external system or model before anyone decides it should be.</p>
@@ -1460,6 +1539,19 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>How to start in 15 minutes.</strong> Point the self-hosted or free-tier version at your highest-volume agent for one week and read the cost-per-trace report before instrumenting anything else.</p>
 
 <p>Licence MIT (core), self-hostable, hosted paid tiers also exist. Repository: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>ai-act-skill</h3>
+
+<p><strong>Problem.</strong> Part 3 and part 4 both cite specific articles of the EU AI Act, prohibited practice, the Article 26 deployer obligations, the Article 50 transparency duty, without a way to check, for one specific agent sitting in the registry, which of those obligations actually applies to it.</p>
+<p><strong>In practice.</strong> A task-routed checklist: classify a system into the Act's risk categories, check high-risk provider or deployer duties, evaluate general-purpose-model obligations including the systemic-risk threshold, verify the Article 50 transparency duty, and run the Article 27 fundamental-rights impact assessment. Kept current with the Digital Omnibus, Regulation (EU) 2026/1744, which moved several of the deadlines this project's own part 3 already cites.</p>
+<p><strong>Who it is for.</strong> N2 upward, whoever already keeps the registry part 4 §7 describes and needs a per-agent answer, not a one-time reading of the regulation.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> As a substitute for legal counsel or a notified body's conformity assessment. The skill's own stated limits say so directly: it supports the classification, it does not sign it.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the classification task against the single agent in your registry most likely to touch a person's rights or safety, the same test Article 6 itself uses for the high-risk category.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/morellid/ai-act-skill">github.com/morellid/ai-act-skill</a></p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>This is a support tool, not a compliance department. It does not produce a signed conformity declaration, does not cover national implementation variation, and does not address sector-specific regimes such as medical devices or automotive. Every output it produces is meant to be checked by competent counsel before it is relied on.</p></div>
 
 <h3>Microsoft Agent Governance Toolkit — the life-cycle half</h3>
 
@@ -1683,7 +1775,7 @@ description: Reviews contract drafts against the house checklist of
 <tr><td>La guía existe, nadie la sigue al pie de la letra</td><td>Equipar</td></tr>
 <tr><td>Guía seguida, sin verificación automática</td><td>Inspeccionar</td></tr>
 <tr><td>El sensor existe, sin cadencia ni tope</td><td>Reforzar</td></tr>
-<tr><td>Efecto externo sin aprobación registrada</td><td><a href="#es-secure">Proteger</a>, más abajo — la parte 3 cubre los conceptos, esta sección cubre las herramientas</td></tr>
+<tr><td>Efecto externo sin aprobación registrada</td><td><a href="#es-secure">Proteger</a>, más abajo: la parte 3 cubre los conceptos, esta sección cubre las herramientas</td></tr>
 </tbody>
 </table>
 
@@ -1756,7 +1848,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-equipar">4. Equipar</h2>
 
-<p>Equipar decide qué ve el agente, qué puede tocar y qué sobrevive entre sesiones, tratado en profundidad en la <a href="harness-p2.html#es-equipar">parte 2</a>. Las tres fichas siguientes son las colecciones más estudiadas hoy para escribir guías y organizar memoria duradera.</p>
+<p>Equipar decide qué ve el agente, qué puede tocar y qué sobrevive entre sesiones, tratado en profundidad en la <a href="harness-p2.html#es-equipar">parte 2</a>. Las cuatro fichas siguientes son las colecciones más estudiadas hoy para escribir guías, organizar memoria duradera y, en la ficha más nueva, diseñar las fronteras del propio harness y la interfaz de herramienta.</p>
 
 <h3>superpowers</h3>
 
@@ -1796,6 +1888,17 @@ description: Reviews contract drafts against the house checklist of
 <div class="rule-box"><span class="lbl">Salvedad</span><p>Cerca de 26 mil estrellas, pero el número de eficacia que divulga el propio proyecto mide fidelidad al patrón (cuántas sesiones siguieron el formato), no se deriva de un objetivo de negocio. Trátalo como evidencia de adopción, no como prueba de resultado.</p></div>
 
 <p>Repositorio: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
+
+<h3>Agent Skills for Context Engineering</h3>
+
+<p><strong>Problema.</strong> Un lector señaló una brecha real en esta página: todo lo anterior equipa al agente con disciplina de proceso (superpowers), piezas editables (mattpocock/skills) o estado duradero (planning-with-files), pero nada aquí trata la propia arquitectura del harness, la frontera entre lo que un agente puede tocar, cuántos agentes deberían estar tocándolo, y lo que la interfaz de una herramienta le pide al modelo que la llama.</p>
+<p><strong>En la práctica.</strong> Tres skills de una colección de diecisiete, leídas por separado y mantenidas como tres porque cada una responde una pregunta distinta. <code>harness-engineering</code> nombra cuatro clases de superficie (bloqueada, editable, de solo anexado, controlada por humano) y trata un pull request que el agente prepara y un despliegue que una persona aprueba como dos tipos distintos de autoridad, no uno solo. <code>multi-agent-patterns</code> documenta las tres formas dominantes de coordinación (supervisor, punto a punto, jerárquica) frente a ocho modos de falla nombrados, incluyendo un costo de tokens de alrededor de quince veces la línea base de un solo agente que rutinariamente se subestima. <code>tool-design</code> trata la descripción de una herramienta como el prompt que en realidad es, y da una auditoría de ocho puntos para reducir un conjunto de herramientas superpuestas a un propósito inequívoco por herramienta.</p>
+<p><strong>Para quién.</strong> De N1 en adelante para la mitad de diseño de harness e interfaz de herramienta, <code>harness-engineering</code> y <code>tool-design</code>, cualquier agente único que ya valga la pena diseñar con cuidado. De N2 en adelante para <code>multi-agent-patterns</code>, que presupone que ya existe más de un agente.</p>
+<p><strong>Banda mínima.</strong> Cuestión de juicio: N1 para dos de las tres skills, N2 una vez que varios agentes están de verdad coordinando.</p>
+<p><strong>Cuándo no usarlo.</strong> Una conversación única y corta, sin estado duradero y sin ninguna herramienta más allá de las que trae el propio modelo. Las tres skills presuponen que ya existe algo que vale la pena estructurar.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Lee la auditoría de ocho puntos de <code>tool-design</code> contra el catálogo de herramientas que ya tiene tu propio agente, antes de leer las otras dos.</p>
+
+<p>Licencia MIT. Repositorio: <a href="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering">github.com/muratcankoylan/Agent-Skills-for-Context-Engineering</a></p>
 
 <h2 id="es-delegar">5. Delegar</h2>
 
@@ -1910,7 +2013,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-reforcar">7. Reforzar</h2>
 
-<p>Reforzar es el paso que separa a quien tiene un sistema de quien tiene una configuración, tratado en la <a href="harness-p2.html#es-reforcar">parte 2</a>. Las tres fichas siguientes tratan la limpieza como disciplina, no como evento.</p>
+<p>Reforzar es el paso que separa a quien tiene un sistema de quien tiene una configuración, tratado en la <a href="harness-p2.html#es-reforcar">parte 2</a>. Las cuatro fichas siguientes tratan la limpieza como disciplina, no como evento.</p>
 
 <h3>ai-slop-cleaner</h3>
 
@@ -1922,6 +2025,17 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cómo empezar en 15 minutos.</strong> Córrelo una vez contra la carpeta de guías más antigua de tu proyecto y compara lo que señala con lo que ya sospechabas que estaba obsoleto.</p>
 
 <p>Repositorio: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>humanizer</h3>
+
+<p><strong>Problema.</strong> ai-slop-cleaner, justo arriba, apunta al código. La prosa acumula sus propios tics: un contraste que solo agrega peso, una tríada que aparece sin importar si el sentido pide tres partes, un guion largo en lugar de una decisión sobre cómo se relacionan dos cláusulas. Nada más en esta página lee al nivel de la frase.</p>
+<p><strong>En la práctica.</strong> Veinticinco patrones agrupados por causa (escenificar en vez de afirmar, ritmo aplicado por regla, autoridad prestada, formato decorativo, restos de chatbot), cada uno con un ejemplo de antes y después y una nota explícita sobre cuándo una persona podría hacer la misma elección a propósito. Edita un borrador en inglés en el mismo lugar, manteniendo intactos todo hecho, nombre, número y cita.</p>
+<p><strong>Para quién.</strong> De N1 en adelante, cualquier harness que produzca prosa que un lector juzgue por el tono, no solo por la corrección.</p>
+<p><strong>Banda mínima.</strong> N1.</p>
+<p><strong>Cuándo no usarlo.</strong> Texto de referencia, jurídico o técnico que deba mantenerse neutral y llano, o un pasaje escrito antes de que existieran los modelos de lenguaje. La propia regla de la skill contra actuar sobre un solo tic débil importa aquí: varios tics juntos son la señal, no uno solo.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Córrela contra el párrafo más antiguo de tu propio proyecto que nadie haya revisado desde que un modelo lo redactó por primera vez, y cuenta cuántos de los veinticinco patrones señala.</p>
+
+<p>Licencia MIT. Repositorio: <a href="https://github.com/blader/humanizer">github.com/blader/humanizer</a></p>
 
 <h3>Limpieza como cadencia</h3>
 
@@ -1945,7 +2059,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-secure">8. Proteger</h2>
 
-<p>Proteger no es un sexto paso de MEDIR. Está al lado del ciclo, de la misma forma en que <a href="harness-p3.html">la parte 3</a> está al lado de la parte 2: MEDIR construye un agente confiable, Proteger le impide actuar fuera de un mandato que nadie aprobó. Las cuatro fichas siguientes le dan a la separación de poderes, la capa de identidad y el rastro de auditoría de la parte 3 un nombre, un repositorio y un comando, en vez de dejar la arquitectura como un diagrama.</p>
+<p>Proteger no es un sexto paso de MEDIR. Está al lado del ciclo, de la misma forma en que <a href="harness-p3.html">la parte 3</a> está al lado de la parte 2: MEDIR construye un agente confiable, Proteger le impide actuar fuera de un mandato que nadie aprobó. Las cinco fichas siguientes le dan a la separación de poderes, la capa de identidad y el rastro de auditoría de la parte 3 un nombre, un repositorio y un comando, en vez de dejar la arquitectura como un diagrama.</p>
 
 <h3>Credenciales de alcance acotado y vida corta</h3>
 
@@ -2006,6 +2120,17 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Referencia: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
 
+<h3>Modelado de amenazas para arquitectura de agente</h3>
+
+<p><strong>Problema.</strong> OWASP Agentic Skills Top 10, justo arriba, nombra las categorías de mal comportamiento. No recorre una arquitectura específica contra ellas antes de que esa arquitectura salga a producción.</p>
+<p><strong>En la práctica.</strong> El OWASP Four-Question Framework más STRIDE, aplicados en cuatro fases: delimitar el alcance y descomponer el sistema, aplicar las seis categorías de STRIDE a cada componente, calificar y priorizar los riesgos resultantes, y luego validar la cobertura antes de dar el modelo por completo. Produce una matriz de amenazas estructurada con probabilidad, impacto y una mitigación nombrada para cada entrada, no un párrafo de prosa. Construida para revisión de arquitectura, explícitamente no para revisión puntual de diff, un trabajo más acotado que los propios sensores de este documento ya cubren.</p>
+<p><strong>Para quién.</strong> De N2 en adelante, cualquier harness cuya arquitectura se esté diseñando o cambiando de forma material, antes de que el diseño quede fijo.</p>
+<p><strong>Banda mínima.</strong> N2.</p>
+<p><strong>Cuándo no usarlo.</strong> Un cambio pequeño y aislado en un sistema ya existente y ya modelado. Deriva eso a una revisión de código normal, y guarda esta ficha para la próxima decisión real de arquitectura.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Corre solo la fase de delimitar alcance y descomponer contra la arquitectura actual de tu propio harness, antes de intentar las cuatro fases completas de una sola vez.</p>
+
+<p>Licencia MIT. Repositorio: <a href="https://github.com/rjmurillo/ai-agents">github.com/rjmurillo/ai-agents</a></p>
+
 <h3>Detección y redacción de PII antes de almacenar o transmitir</h3>
 
 <p><strong>Problema.</strong> Todo lo anterior asume que el dato que un agente lee, almacena o reenvía ya es el dato que debería estar manejando. Nada hasta ahora verifica el dato en sí: si información personalmente identificable o sensible se registra, se almacena o se envía a un sistema o modelo externo antes de que alguien decida que debería.</p>
@@ -2048,6 +2173,19 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cómo empezar en 15 minutos.</strong> Apunta la versión autoalojada o del nivel gratuito a tu agente de mayor volumen durante una semana y lee el reporte de costo por rastro antes de instrumentar cualquier otra cosa.</p>
 
 <p>Licencia MIT (núcleo), autoalojable, también existen niveles pagos alojados. Repositorio: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>ai-act-skill</h3>
+
+<p><strong>Problema.</strong> La parte 3 y la parte 4 citan artículos específicos de la Ley de IA de la UE, práctica prohibida, las obligaciones del implementador del artículo 26, el deber de transparencia del artículo 50, sin una forma de verificar, para un agente específico que está en el registro, cuál de esas obligaciones en realidad le aplica.</p>
+<p><strong>En la práctica.</strong> Un checklist enrutado por tarea: clasificar un sistema en las categorías de riesgo de la Ley, verificar los deberes de proveedor o implementador de alto riesgo, evaluar las obligaciones de modelo de propósito general incluyendo el umbral de riesgo sistémico, verificar el deber de transparencia del artículo 50, y correr la evaluación de impacto en derechos fundamentales del artículo 27. Se mantiene actualizado con el Digital Omnibus, el Reglamento (UE) 2026/1744, que movió varios de los plazos que la propia parte 3 de este proyecto ya cita.</p>
+<p><strong>Para quién.</strong> De N2 en adelante, quien ya mantiene el registro que describe la parte 4 §7 y necesita una respuesta por agente, no una lectura única del reglamento.</p>
+<p><strong>Banda mínima.</strong> N2.</p>
+<p><strong>Cuándo no usarlo.</strong> Como sustituto de asesoría legal o de la evaluación de conformidad de un organismo notificado. Los propios límites declarados de la skill lo dicen directamente: apoya la clasificación, no la firma.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Corre la tarea de clasificación contra el único agente de tu registro con más probabilidad de tocar los derechos o la seguridad de una persona, la misma prueba que usa el propio artículo 6 para la categoría de alto riesgo.</p>
+
+<p>Licencia MIT. Repositorio: <a href="https://github.com/morellid/ai-act-skill">github.com/morellid/ai-act-skill</a></p>
+
+<div class="rule-box"><span class="lbl">Límites honestos</span><p>Esto es una herramienta de apoyo, no un departamento de cumplimiento. No produce una declaración de conformidad firmada, no cubre la variación de implementación nacional, y no aborda regímenes específicos de sector como dispositivos médicos o automotriz. Toda salida que produce está pensada para que la revise asesoría legal competente antes de confiar en ella.</p></div>
 
 <h3>Microsoft Agent Governance Toolkit — la mitad del ciclo de vida</h3>
 

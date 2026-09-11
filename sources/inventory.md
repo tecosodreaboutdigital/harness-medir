@@ -44,6 +44,7 @@ This ledger stays in English only: it is an internal verification tool for whoev
 | V | Equip | superpowers | https://github.com/obra/superpowers | MIT. Non-negotiable-rule-plus-red-flags pattern |
 | V | Equip | mattpocock/skills | https://github.com/mattpocock/skills | Philosophy opposite to superpowers: small, editable skills |
 | V | Equip | planning-with-files | https://github.com/OthmanAdi/planning-with-files | Durable state on disk. About 26,000 stars. **Caveat:** the published effectiveness figure measures fidelity to the pattern, it is not derived from an objective |
+| V | Equip | Agent Skills for Context Engineering | https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering | MIT. 17-skill collection; only `harness-engineering`, `multi-agent-patterns` and `tool-design` installed here, added 10 September 2026 from a reader-submitted candidate list, see TOOLS.md |
 | V | Delegate | holdfast | https://github.com/AndreAlmeidaDC/holdfast | MIT. Durable, partitioned execution. **New:** three commits. States honest limits, exercised in only one environment. No network dependency, quick to audit |
 | V | Delegate | DeepSeek Harness | https://github.com/deepseek-ai/deepseek-harness | Open runtime, append-only log |
 | V | Delegate | LangGraph | https://github.com/langchain-ai/langgraph | LangChain Inc. Low-level orchestration for stateful agents. Where a loop with a ceiling and an authority policy become code |
@@ -53,9 +54,14 @@ This ledger stays in English only: it is an internal verification tool for whoev
 | V | Inspect | Semgrep | https://github.com/semgrep/semgrep | Semgrep, Inc. LGPL 2.1. Static analysis for security patterns, runs locally, code is not uploaded by default |
 | V | Inspect | impeccable | https://github.com/pbakaus/impeccable | Apache 2.0. Derives from Anthropic's own frontend-design skill. 30 contributors, versioned (v4.1.2), 61 deterministic detector rules plus LLM-only critique. **Scoped install:** this project only copied `SKILL.md` and `reference/`, not the `scripts/` tree the detector rules need to run without an LLM, see `TOOLS.md` |
 | V | Reinforce | ai-slop-cleaner | https://github.com/yeachan-heo/oh-my-claudecode | The real source of the cleanup skill cited in Part 2. Regression-safe flow, with a separate writer and reviewer |
+| V | Reinforce | humanizer | https://github.com/blader/humanizer | MIT. 25 AI-writing tells for English prose, grounded in Wikipedia's "Signs of AI writing" (WikiProject AI Cleanup). Added 10 September 2026, see TOOLS.md |
+| V | Secure | threat-modeling (rjmurillo/ai-agents) | https://github.com/rjmurillo/ai-agents | MIT. OWASP Four-Question Framework plus STRIDE, scoped install of one skill folder out of a larger personal collection. Added 10 September 2026, see TOOLS.md |
+| V | Govern | ai-act-skill | https://github.com/morellid/ai-act-skill | MIT. Task-routed EU AI Act checklist, already current with the Digital Omnibus (Regulation (EU) 2026/1744). Added 10 September 2026, see TOOLS.md |
 | V | Map | GitHub Spec Kit | https://github.com/github/spec-kit | MIT. Named the spec-before-code category. Kiro, Tessl and OpenSpec cited via Böckeler's comparative review, with no directly verified link |
 | V | Reference | autoresearch | https://github.com/karpathy/autoresearch | Reference agentic flow, this one actually by Karpathy |
 | V | Curation | awesome-harness-engineering | https://github.com/ai-boost/awesome-harness-engineering | |
+
+**Gap noted, not backfilled today:** the Secure and Govern tools cited in `harness-toolkit.html` before this round (short-lived credentials, Sigstore/Rekor, the Microsoft Agent Governance Toolkit, OWASP Agentic Skills Top 10, PII detection, data classification, Langfuse, the kill-switch landscape) were never added to this table when those sections were written. Only the two rows this round actually installed (threat-modeling, ai-act-skill) are added above; the pre-existing gap is flagged here rather than silently left unexplained.
 
 ---
 
@@ -255,3 +261,29 @@ All verified. When citing, keep the caveat where one exists.
 | Improvement in 14 of 15 configurations, +14.5% average absolute gain (up to +44.0%) | arXiv 2606.14249, HarnessX/AEGIS (Darwin Agent Team), 12 Jun 2026: https://arxiv.org/abs/2606.14249. Found 31 Aug 2026, replacing the earlier unlinked "academic work" note |
 | Five months, a team of 3 to 7, zero hand-written lines, about one million lines, about 1,500 pull requests | OpenAI |
 | Thirty-three thousand stars in a few hours | DeepSeek Harness |
+
+---
+
+## Reader feedback round, 10 September 2026: skill curation review
+
+A reader sent a list of eight candidate skill repositories and asked for a comparison against the existing toolkit, plus a search for anything missing on software architecture, data privacy and information security. Five background agents verified each candidate by reading raw file content directly, not marketing README, and cross-checked against what was already installed. Full reasoning and the audit (network/exec scan) for each lives in `TOOLS.md`'s "Audit before installing" section; this table is the citation record.
+
+**Installed** (see the new rows in the Tools and skills table above): humanizer, three skills out of Agent Skills for Context Engineering, ai-act-skill, threat-modeling.
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | taste-skill | https://github.com/leonxlnx/taste-skill | MIT. 13 sub-skills for generating UI with deliberate visual "taste." Clean audit, no hidden network. Cite-only: solves a redesign problem this project does not have today |
+| V | frontend-slides | https://github.com/zarazhangrui/frontend-slides | MIT. Zero-dependency HTML slide generator with PPTX conversion. Popular but single-maintainer, no push in almost three months as of this writing. Cite-only: the already-active "slides" skill covers the more likely use case (data-driven decks) better |
+| V | diagram-design | https://github.com/cathrynlavery/diagram-design | MIT. 40 diagram types, geometry-verified with adversarial tests (ADR 0005). Would have caught the D1 to D10 overlap bugs found in earlier rounds. Cite-only, not installed: it redraws a diagram from scratch in its own visual system, which conflicts with this project's own `STANDARDS.md` (Mermaid as source of truth, hand-drawn SVG, no fill or colour) |
+| N | Understand-Anything | https://github.com/Egonex-AI/Understand-Anything | MIT, 82,000 stars, actively maintained. Discarded, not for a security reason alone: solves a codebase-mapping problem this text-and-diagram project does not have. **Red flag found and worth naming:** installs via a `curl` piped into `bash`, and its own hook instructs the agent not to ask the user for confirmation before acting |
+| N | stop-slop | https://github.com/hardikpandya/stop-slop | MIT. Eight rules for English prose "AI tells." Not a competitor to ai-slop-cleaner (code vs. prose, different domains). Discarded: two maintainers, no push in about six months, and what it covers is already superseded by this project's own stricter, trilingual `STANDARDS.md` dash ban |
+
+**Architecture gap research**, not adopted this round: `levnikolaevich/claude-code-skills` (its `architecture-auditor` sub-skill does real coupling and dependency analysis inside a skill, 559 stars, single active maintainer, worth a second look); `wondelai/skills` and `davila7/claude-code-templates` cover the same clean-architecture and DDD ground already mapped via `enterprise-architecture-skill`, no new angle; `keez97/claude-architecture-skills` has an interesting self-evaluation methodology but too little adoption (7 stars) to recommend yet.
+
+**Privacy and security gap research**, not adopted this round: `gregmos/PII-Shield` (real on-device PII redaction architecture, but ships as an MCP server plus skill, not a standalone `SKILL.md`); `Sushegaad/Claude-Skills-Governance-Risk-and-Compliance` (strong GDPR content, cites the Uber 2026 EUR 824.99M fine as an automated-decision precedent parallel to the SCHUFA case already in Part 4, but packaged as opaque `.skill` zip files and a star-to-contributor ratio, 890 to 1, that warrants caution); `mukul975/Privacy-Data-Protection-Skills` (282+ folders generated in a 48-hour commit burst in March 2026, dormant since, treat as a template bank to validate individually, not a maintained product); `davila7/claude-code-templates`'s `data-privacy-compliance` skill (shallow, introductory, no 2026 case law); `ivan-sincek/threat-modeling-agent-skills` (clean STRIDE/PASTA/DREAD skills, narrower than the adopted rjmurillo one, very recent); `Masriyan/Claude-Code-CyberSecurity-Skill` (409 stars, mostly offensive/pentest and out of scope, but its `ai-llm-security` and `supply-chain-security` sub-skills are relevant); `fr33d3m0n/threat-modeling` (broad claimed scope, single maintainer, stale about four months, secondary candidate only).
+
+**`aisa-group/promptinject-agent-skills`** (https://github.com/aisa-group/promptinject-agent-skills, MIT): not a defensive skill, a demonstrated attack. `url_injected_pptx_skill/SKILL.md` line 408 embeds a real password-capture payload disguised as PPTX-processing instructions, verified by direct reading. Do not install any skill from this repository; cite only as a concrete case study for why third-party skills need review before installing, alongside postmark-mcp and ClawHavoc in Part 3 §7.
+
+**Collateral finding, not a repository:** no existing skill was found that automates review of a third-party skill or MCP server beyond this project's own three-question checklist. Searched specifically; came up empty. Read as a real gap in the ecosystem, not only in this project.
+
+**DeepSeek Harness re-verified, no change needed.** The reader also asked about `deepseek-ai/deepseek-harness`, already cited above. First-pass reading of the top-level README suggested the "append-only log" description might be stale (the README foregrounds an "everything is a plugin" architecture instead). Deeper reading of the repository's own `docs/architecture.md` confirmed the existing citation is accurate: it documents `core/session` as owning "the append-only `SessionEvent` log and in-memory store," with session fork, replay and durable state all built on it. The existing table row and Part 1's claim both stand as written.

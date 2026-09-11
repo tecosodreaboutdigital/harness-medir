@@ -57,7 +57,7 @@
 <tr><td>Guide exists, nobody follows it to the letter</td><td>Equip</td></tr>
 <tr><td>Guide followed, no automatic verification</td><td>Inspect</td></tr>
 <tr><td>Sensor exists, no cadence or ceiling</td><td>Reinforce</td></tr>
-<tr><td>External effect with no recorded approval</td><td><a href="#secure">Secure</a>, below — part 3 covers the concepts, this section covers the tooling</td></tr>
+<tr><td>External effect with no recorded approval</td><td><a href="#secure">Secure</a>, below: part 3 covers the concepts, this section covers the tooling</td></tr>
 </tbody>
 </table>
 
@@ -130,7 +130,7 @@
 
 <h2 id="equipar">4. Equip</h2>
 
-<p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The three entries below are the most studied collections today for writing guides and organising durable memory.</p>
+<p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The four entries below are the most studied collections today for writing guides, organising durable memory and, in the newest entry, designing the harness's own boundaries and tool interface.</p>
 
 <h3>superpowers</h3>
 
@@ -170,6 +170,17 @@
 <div class="rule-box"><span class="lbl">Caveat</span><p>Around 26 thousand stars, but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
 
 <p>Repository: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
+
+<h3>Agent Skills for Context Engineering</h3>
+
+<p><strong>Problem.</strong> A reader flagged a real gap in this page: everything above equips the agent with process discipline (superpowers), editable pieces (mattpocock/skills) or durable state (planning-with-files), but nothing here addresses the harness's own architecture, the boundary between what an agent may touch, how many agents should be touching it, and what a tool's own interface asks of the model calling it.</p>
+<p><strong>In practice.</strong> Three skills out of a seventeen-skill collection, read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes, including a token cost around fifteen times a single-agent baseline that is routinely underestimated. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
+<p><strong>Who it is for.</strong> N1 upward for the harness-design and tool-interface half, <code>harness-engineering</code> and <code>tool-design</code>, any single agent already worth designing carefully. N2 upward for <code>multi-agent-patterns</code>, which presupposes more than one agent already exists.</p>
+<p><strong>Minimum tier.</strong> A matter of judgement: N1 for two of the three skills, N2 once multiple agents are actually coordinating.</p>
+<p><strong>When not to use it.</strong> A single, short-lived conversation with no durable state and no tool beyond the model's own defaults. All three skills assume something worth structuring already exists.</p>
+<p><strong>How to start in 15 minutes.</strong> Read <code>tool-design</code>'s eight-point audit checklist against the tool catalogue your own agent already has, before reading the other two.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering">github.com/muratcankoylan/Agent-Skills-for-Context-Engineering</a></p>
 
 <h2 id="delegar">5. Delegate</h2>
 
@@ -284,7 +295,7 @@
 
 <h2 id="reforcar">7. Reinforce</h2>
 
-<p>Reinforce is the step that separates whoever has a system from whoever has a configuration, covered in <a href="harness-p2.html#en-reforcar">part 2</a>. The three entries below treat cleanup as a discipline, not an event.</p>
+<p>Reinforce is the step that separates whoever has a system from whoever has a configuration, covered in <a href="harness-p2.html#en-reforcar">part 2</a>. The four entries below treat cleanup as a discipline, not an event.</p>
 
 <h3>ai-slop-cleaner</h3>
 
@@ -296,6 +307,17 @@
 <p><strong>How to start in 15 minutes.</strong> Run it once against your project's oldest guide folder and compare what it flags with what you already suspected was obsolete.</p>
 
 <p>Repository: <a href="https://github.com/yeachan-heo/oh-my-claudecode">github.com/yeachan-heo/oh-my-claudecode</a></p>
+
+<h3>humanizer</h3>
+
+<p><strong>Problem.</strong> ai-slop-cleaner, just above, targets code. Prose accumulates its own tells: a contrast that only adds weight, a triad that arrives whether or not the meaning needs three parts, a dash standing in for a decision about how two clauses relate. Nothing else on this page reads at the level of a sentence.</p>
+<p><strong>In practice.</strong> Twenty-five patterns grouped by cause (staging instead of stating, rhythm applied by rule, borrowed authority, decorative formatting, chatbot leftovers), each with a before-and-after example and an explicit note on when a person could make the same choice on purpose. It edits an English draft in place, keeping every fact, name, number and citation unchanged.</p>
+<p><strong>Who it is for.</strong> N1 upward, any harness that produces prose a reader judges on tone, not only on correctness.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> Reference, legal or technical text meant to stay neutral and plain, or a passage written before language models existed. The skill's own rule against acting on one weak tell alone matters here: several tells together are the signal, not one.</p>
+<p><strong>How to start in 15 minutes.</strong> Run it against the oldest paragraph in your own project that nobody has revised since a model first drafted it, and count how many of the twenty-five patterns it flags.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/blader/humanizer">github.com/blader/humanizer</a></p>
 
 <h3>Cleanup as a cadence</h3>
 
@@ -319,7 +341,7 @@
 
 <h2 id="secure">8. Secure</h2>
 
-<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The four entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
+<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The five entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
 
 <h3>Short-lived, scoped credentials</h3>
 
@@ -380,6 +402,17 @@
 
 <p>Reference: <a href="https://owasp.org/www-project-agentic-skills-top-10/">owasp.org/www-project-agentic-skills-top-10</a></p>
 
+<h3>Threat modelling for agent architecture</h3>
+
+<p><strong>Problem.</strong> OWASP Agentic Skills Top 10, just above, names the categories of misbehaviour. It does not walk a specific architecture through them before that architecture ships.</p>
+<p><strong>In practice.</strong> The OWASP Four-Question Framework plus STRIDE, applied in four phases: scope and decompose the system, apply STRIDE's six categories to each component, rate and prioritise the resulting risks, then validate coverage before calling the model complete. Produces a structured threat matrix with likelihood, impact and a named mitigation for each entry, not a paragraph of prose. Built for architecture review, explicitly not for per-change diff review, a narrower job this document's own sensors already cover.</p>
+<p><strong>Who it is for.</strong> N2 upward, any harness whose architecture is being designed or materially changed, before the design is fixed.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> A single small change to an existing, already-modelled system. Route that to a normal code review instead, and save this for the next real architecture decision.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the scope-and-decompose phase alone against your own harness's current architecture, before attempting all four phases in one sitting.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/rjmurillo/ai-agents">github.com/rjmurillo/ai-agents</a></p>
+
 <h3>PII detection and redaction before storage or transmission</h3>
 
 <p><strong>Problem.</strong> Everything above assumes the data an agent reads, stores or forwards is already the data it should be handling. Nothing so far checks the data itself: whether personally identifiable or sensitive information gets logged, stored or sent to an external system or model before anyone decides it should be.</p>
@@ -422,6 +455,19 @@
 <p><strong>How to start in 15 minutes.</strong> Point the self-hosted or free-tier version at your highest-volume agent for one week and read the cost-per-trace report before instrumenting anything else.</p>
 
 <p>Licence MIT (core), self-hostable, hosted paid tiers also exist. Repository: <a href="https://github.com/langfuse/langfuse">github.com/langfuse/langfuse</a></p>
+
+<h3>ai-act-skill</h3>
+
+<p><strong>Problem.</strong> Part 3 and part 4 both cite specific articles of the EU AI Act, prohibited practice, the Article 26 deployer obligations, the Article 50 transparency duty, without a way to check, for one specific agent sitting in the registry, which of those obligations actually applies to it.</p>
+<p><strong>In practice.</strong> A task-routed checklist: classify a system into the Act's risk categories, check high-risk provider or deployer duties, evaluate general-purpose-model obligations including the systemic-risk threshold, verify the Article 50 transparency duty, and run the Article 27 fundamental-rights impact assessment. Kept current with the Digital Omnibus, Regulation (EU) 2026/1744, which moved several of the deadlines this project's own part 3 already cites.</p>
+<p><strong>Who it is for.</strong> N2 upward, whoever already keeps the registry part 4 §7 describes and needs a per-agent answer, not a one-time reading of the regulation.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> As a substitute for legal counsel or a notified body's conformity assessment. The skill's own stated limits say so directly: it supports the classification, it does not sign it.</p>
+<p><strong>How to start in 15 minutes.</strong> Run the classification task against the single agent in your registry most likely to touch a person's rights or safety, the same test Article 6 itself uses for the high-risk category.</p>
+
+<p>MIT licence. Repository: <a href="https://github.com/morellid/ai-act-skill">github.com/morellid/ai-act-skill</a></p>
+
+<div class="rule-box"><span class="lbl">Honest limits</span><p>This is a support tool, not a compliance department. It does not produce a signed conformity declaration, does not cover national implementation variation, and does not address sector-specific regimes such as medical devices or automotive. Every output it produces is meant to be checked by competent counsel before it is relied on.</p></div>
 
 <h3>Microsoft Agent Governance Toolkit — the life-cycle half</h3>
 
