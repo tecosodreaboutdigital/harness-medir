@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T15:10:15.982562+00:00",
+  "generated_at": "2026-09-12T00:52:06.207344+00:00",
   "session_files": [
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "46908256-4997-4659-b184-4a6d48768252.jsonl",
@@ -14,6 +14,7 @@
     "c37b3f32-e79a-4dbb-bed8-b26ffe157825.jsonl",
     "d6866966-e558-4b5e-b4a9-b907f0feeb66.jsonl",
     "dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
+    "e5f70a13-d5e8-42e9-b7e6-012cf295bbfe.jsonl",
     "ee67d6e0-ff77-4fe6-96c3-67ea21b93690.jsonl",
     "eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
   ],
@@ -26,16 +27,16 @@
       "code_lines": 1670,
       "governance_lines": 115,
       "tokens_bucket": {
-        "input": 62,
-        "output": 37706,
-        "cache_read": 1758354,
-        "cache_creation": 125303
+        "input": 24,
+        "output": 13752,
+        "cache_read": 718510,
+        "cache_creation": 51454
       },
       "tokens_cumulative": {
-        "input": 62,
-        "output": 37706,
-        "cache_read": 1758354,
-        "cache_creation": 125303
+        "input": 24,
+        "output": 13752,
+        "cache_read": 718510,
+        "cache_creation": 51454
       }
     },
     {
@@ -46,16 +47,16 @@
       "code_lines": 1868,
       "governance_lines": 115,
       "tokens_bucket": {
-        "input": 148,
-        "output": 102005,
-        "cache_read": 10061732,
-        "cache_creation": 179192
+        "input": 80,
+        "output": 50205,
+        "cache_read": 5527279,
+        "cache_creation": 94313
       },
       "tokens_cumulative": {
-        "input": 210,
-        "output": 139711,
-        "cache_read": 11820086,
-        "cache_creation": 304495
+        "input": 104,
+        "output": 63957,
+        "cache_read": 6245789,
+        "cache_creation": 145767
       }
     },
     {
@@ -66,16 +67,16 @@
       "code_lines": 3009,
       "governance_lines": 115,
       "tokens_bucket": {
-        "input": 212,
-        "output": 167713,
-        "cache_read": 27787981,
-        "cache_creation": 282466
+        "input": 112,
+        "output": 84648,
+        "cache_read": 14785480,
+        "cache_creation": 141217
       },
       "tokens_cumulative": {
-        "input": 422,
-        "output": 307424,
-        "cache_read": 39608067,
-        "cache_creation": 586961
+        "input": 216,
+        "output": 148605,
+        "cache_read": 21031269,
+        "cache_creation": 286984
       }
     },
     {
@@ -86,16 +87,16 @@
       "code_lines": 3013,
       "governance_lines": 117,
       "tokens_bucket": {
-        "input": 240,
-        "output": 115235,
-        "cache_read": 44179294,
-        "cache_creation": 172980
+        "input": 134,
+        "output": 57031,
+        "cache_read": 24750253,
+        "cache_creation": 90094
       },
       "tokens_cumulative": {
-        "input": 662,
-        "output": 422659,
-        "cache_read": 83787361,
-        "cache_creation": 759941
+        "input": 350,
+        "output": 205636,
+        "cache_read": 45781522,
+        "cache_creation": 377078
       }
     },
     {
@@ -106,16 +107,16 @@
       "code_lines": 3013,
       "governance_lines": 117,
       "tokens_bucket": {
-        "input": 36,
-        "output": 22010,
-        "cache_read": 7431342,
-        "cache_creation": 32886
+        "input": 18,
+        "output": 11005,
+        "cache_read": 3715671,
+        "cache_creation": 16443
       },
       "tokens_cumulative": {
-        "input": 698,
-        "output": 444669,
-        "cache_read": 91218703,
-        "cache_creation": 792827
+        "input": 368,
+        "output": 216641,
+        "cache_read": 49497193,
+        "cache_creation": 393521
       }
     },
     {
@@ -126,16 +127,16 @@
       "code_lines": 3013,
       "governance_lines": 116,
       "tokens_bucket": {
-        "input": 110,
-        "output": 31645,
-        "cache_read": 23933610,
-        "cache_creation": 48820
+        "input": 62,
+        "output": 15837,
+        "cache_read": 13495118,
+        "cache_creation": 27384
       },
       "tokens_cumulative": {
-        "input": 808,
-        "output": 476314,
-        "cache_read": 115152313,
-        "cache_creation": 841647
+        "input": 430,
+        "output": 232478,
+        "cache_read": 62992311,
+        "cache_creation": 420905
       }
     },
     {
@@ -146,16 +147,16 @@
       "code_lines": 3770,
       "governance_lines": 119,
       "tokens_bucket": {
-        "input": 174,
-        "output": 98582,
-        "cache_read": 42548492,
-        "cache_creation": 142323
+        "input": 98,
+        "output": 50262,
+        "cache_read": 24030596,
+        "cache_creation": 67494
       },
       "tokens_cumulative": {
-        "input": 982,
-        "output": 574896,
-        "cache_read": 157700805,
-        "cache_creation": 983970
+        "input": 528,
+        "output": 282740,
+        "cache_read": 87022907,
+        "cache_creation": 488399
       }
     },
     {
@@ -166,16 +167,16 @@
       "code_lines": 4001,
       "governance_lines": 446,
       "tokens_bucket": {
-        "input": 334,
-        "output": 240091,
-        "cache_read": 32675262,
-        "cache_creation": 531570
+        "input": 158,
+        "output": 108639,
+        "cache_read": 16602780,
+        "cache_creation": 215212
       },
       "tokens_cumulative": {
-        "input": 1316,
-        "output": 814987,
-        "cache_read": 190376067,
-        "cache_creation": 1515540
+        "input": 686,
+        "output": 391379,
+        "cache_read": 103625687,
+        "cache_creation": 703611
       }
     },
     {
@@ -186,16 +187,16 @@
       "code_lines": 4885,
       "governance_lines": 446,
       "tokens_bucket": {
-        "input": 168,
-        "output": 60088,
-        "cache_read": 22600992,
-        "cache_creation": 160266
+        "input": 78,
+        "output": 28882,
+        "cache_read": 10492950,
+        "cache_creation": 69500
       },
       "tokens_cumulative": {
-        "input": 1484,
-        "output": 875075,
-        "cache_read": 212977059,
-        "cache_creation": 1675806
+        "input": 764,
+        "output": 420261,
+        "cache_read": 114118637,
+        "cache_creation": 773111
       }
     },
     {
@@ -206,16 +207,16 @@
       "code_lines": 4889,
       "governance_lines": 459,
       "tokens_bucket": {
-        "input": 78,
-        "output": 57762,
-        "cache_read": 12859669,
-        "cache_creation": 120542
+        "input": 32,
+        "output": 24940,
+        "cache_read": 5333469,
+        "cache_creation": 52208
       },
       "tokens_cumulative": {
-        "input": 1562,
-        "output": 932837,
-        "cache_read": 225836728,
-        "cache_creation": 1796348
+        "input": 796,
+        "output": 445201,
+        "cache_read": 119452106,
+        "cache_creation": 825319
       }
     },
     {
@@ -226,16 +227,16 @@
       "code_lines": 4909,
       "governance_lines": 459,
       "tokens_bucket": {
-        "input": 40,
-        "output": 9865,
-        "cache_read": 7189601,
-        "cache_creation": 25544
+        "input": 20,
+        "output": 4814,
+        "cache_read": 3597612,
+        "cache_creation": 13163
       },
       "tokens_cumulative": {
-        "input": 1602,
-        "output": 942702,
-        "cache_read": 233026329,
-        "cache_creation": 1821892
+        "input": 816,
+        "output": 450015,
+        "cache_read": 123049718,
+        "cache_creation": 838482
       }
     },
     {
@@ -246,16 +247,16 @@
       "code_lines": 4951,
       "governance_lines": 461,
       "tokens_bucket": {
-        "input": 340,
-        "output": 247625,
-        "cache_read": 30527109,
-        "cache_creation": 555600
+        "input": 138,
+        "output": 87257,
+        "cache_read": 13714909,
+        "cache_creation": 204387
       },
       "tokens_cumulative": {
-        "input": 1942,
-        "output": 1190327,
-        "cache_read": 263553438,
-        "cache_creation": 2377492
+        "input": 954,
+        "output": 537272,
+        "cache_read": 136764627,
+        "cache_creation": 1042869
       }
     },
     {
@@ -266,16 +267,16 @@
       "code_lines": 4961,
       "governance_lines": 461,
       "tokens_bucket": {
-        "input": 40,
-        "output": 13416,
-        "cache_read": 4387010,
-        "cache_creation": 38859
+        "input": 22,
+        "output": 6959,
+        "cache_read": 2422105,
+        "cache_creation": 20814
       },
       "tokens_cumulative": {
-        "input": 1982,
-        "output": 1203743,
-        "cache_read": 267940448,
-        "cache_creation": 2416351
+        "input": 976,
+        "output": 544231,
+        "cache_read": 139186732,
+        "cache_creation": 1063683
       }
     },
     {
@@ -286,16 +287,16 @@
       "code_lines": 4961,
       "governance_lines": 463,
       "tokens_bucket": {
-        "input": 50,
-        "output": 28417,
-        "cache_read": 5902143,
-        "cache_creation": 497724
+        "input": 22,
+        "output": 10200,
+        "cache_read": 2544183,
+        "cache_creation": 244438
       },
       "tokens_cumulative": {
-        "input": 2032,
-        "output": 1232160,
-        "cache_read": 273842591,
-        "cache_creation": 2914075
+        "input": 998,
+        "output": 554431,
+        "cache_read": 141730915,
+        "cache_creation": 1308121
       }
     },
     {
@@ -306,16 +307,16 @@
       "code_lines": 4971,
       "governance_lines": 463,
       "tokens_bucket": {
-        "input": 40,
-        "output": 16621,
-        "cache_read": 5515939,
-        "cache_creation": 19381
+        "input": 24,
+        "output": 8911,
+        "cache_read": 3313897,
+        "cache_creation": 12203
       },
       "tokens_cumulative": {
-        "input": 2072,
-        "output": 1248781,
-        "cache_read": 279358530,
-        "cache_creation": 2933456
+        "input": 1022,
+        "output": 563342,
+        "cache_read": 145044812,
+        "cache_creation": 1320324
       }
     },
     {
@@ -326,16 +327,16 @@
       "code_lines": 5058,
       "governance_lines": 515,
       "tokens_bucket": {
-        "input": 252,
-        "output": 368448,
-        "cache_read": 22630951,
-        "cache_creation": 704745
+        "input": 94,
+        "output": 125206,
+        "cache_read": 8905064,
+        "cache_creation": 246348
       },
       "tokens_cumulative": {
-        "input": 2324,
-        "output": 1617229,
-        "cache_read": 301989481,
-        "cache_creation": 3638201
+        "input": 1116,
+        "output": 688548,
+        "cache_read": 153949876,
+        "cache_creation": 1566672
       }
     },
     {
@@ -346,16 +347,16 @@
       "code_lines": 5058,
       "governance_lines": 519,
       "tokens_bucket": {
-        "input": 106,
-        "output": 68617,
-        "cache_read": 15425909,
-        "cache_creation": 91494
+        "input": 54,
+        "output": 32935,
+        "cache_read": 7866584,
+        "cache_creation": 43506
       },
       "tokens_cumulative": {
-        "input": 2430,
-        "output": 1685846,
-        "cache_read": 317415390,
-        "cache_creation": 3729695
+        "input": 1170,
+        "output": 721483,
+        "cache_read": 161816460,
+        "cache_creation": 1610178
       }
     },
     {
@@ -366,16 +367,16 @@
       "code_lines": 5073,
       "governance_lines": 519,
       "tokens_bucket": {
-        "input": 36,
-        "output": 16182,
-        "cache_read": 5804101,
-        "cache_creation": 34013
+        "input": 20,
+        "output": 8327,
+        "cache_read": 3232463,
+        "cache_creation": 19570
       },
       "tokens_cumulative": {
-        "input": 2466,
-        "output": 1702028,
-        "cache_read": 323219491,
-        "cache_creation": 3763708
+        "input": 1190,
+        "output": 729810,
+        "cache_read": 165048923,
+        "cache_creation": 1629748
       }
     },
     {
@@ -386,16 +387,16 @@
       "code_lines": 5073,
       "governance_lines": 519,
       "tokens_bucket": {
-        "input": 178,
-        "output": 192430,
-        "cache_read": 10631151,
-        "cache_creation": 504325
+        "input": 66,
+        "output": 67359,
+        "cache_read": 4571975,
+        "cache_creation": 155316
       },
       "tokens_cumulative": {
-        "input": 2644,
-        "output": 1894458,
-        "cache_read": 333850642,
-        "cache_creation": 4268033
+        "input": 1256,
+        "output": 797169,
+        "cache_read": 169620898,
+        "cache_creation": 1785064
       }
     },
     {
@@ -406,16 +407,16 @@
       "code_lines": 5073,
       "governance_lines": 519,
       "tokens_bucket": {
-        "input": 8,
-        "output": 4353,
-        "cache_read": 720972,
-        "cache_creation": 5334
+        "input": 4,
+        "output": 1595,
+        "cache_read": 361128,
+        "cache_creation": 2766
       },
       "tokens_cumulative": {
-        "input": 2652,
-        "output": 1898811,
-        "cache_read": 334571614,
-        "cache_creation": 4273367
+        "input": 1260,
+        "output": 798764,
+        "cache_read": 169982026,
+        "cache_creation": 1787830
       }
     },
     {
@@ -426,16 +427,16 @@
       "code_lines": 7319,
       "governance_lines": 537,
       "tokens_bucket": {
-        "input": 774,
-        "output": 761624,
-        "cache_read": 209297723,
-        "cache_creation": 1317753
+        "input": 398,
+        "output": 336416,
+        "cache_read": 110870898,
+        "cache_creation": 579298
       },
       "tokens_cumulative": {
-        "input": 3426,
-        "output": 2660435,
-        "cache_read": 543869337,
-        "cache_creation": 5591120
+        "input": 1658,
+        "output": 1135180,
+        "cache_read": 280852924,
+        "cache_creation": 2367128
       }
     },
     {
@@ -446,16 +447,16 @@
       "code_lines": 7319,
       "governance_lines": 537,
       "tokens_bucket": {
-        "input": 4,
-        "output": 540,
-        "cache_read": 1523972,
-        "cache_creation": 2930
+        "input": 2,
+        "output": 270,
+        "cache_read": 761986,
+        "cache_creation": 1465
       },
       "tokens_cumulative": {
-        "input": 3430,
-        "output": 2660975,
-        "cache_read": 545393309,
-        "cache_creation": 5594050
+        "input": 1660,
+        "output": 1135450,
+        "cache_read": 281614910,
+        "cache_creation": 2368593
       }
     },
     {
@@ -466,16 +467,16 @@
       "code_lines": 7368,
       "governance_lines": 537,
       "tokens_bucket": {
-        "input": 170,
-        "output": 57517,
-        "cache_read": 67224969,
-        "cache_creation": 105487
+        "input": 98,
+        "output": 29585,
+        "cache_read": 38833161,
+        "cache_creation": 56715
       },
       "tokens_cumulative": {
-        "input": 3600,
-        "output": 2718492,
-        "cache_read": 612618278,
-        "cache_creation": 5699537
+        "input": 1758,
+        "output": 1165035,
+        "cache_read": 320448071,
+        "cache_creation": 2425308
       }
     },
     {
@@ -486,16 +487,16 @@
       "code_lines": 7368,
       "governance_lines": 559,
       "tokens_bucket": {
-        "input": 174,
-        "output": 118200,
-        "cache_read": 12056027,
-        "cache_creation": 338496
+        "input": 68,
+        "output": 40853,
+        "cache_read": 5575044,
+        "cache_creation": 117763
       },
       "tokens_cumulative": {
-        "input": 3774,
-        "output": 2836692,
-        "cache_read": 624674305,
-        "cache_creation": 6038033
+        "input": 1826,
+        "output": 1205888,
+        "cache_read": 326023115,
+        "cache_creation": 2543071
       }
     },
     {
@@ -506,16 +507,16 @@
       "code_lines": 7441,
       "governance_lines": 559,
       "tokens_bucket": {
-        "input": 104,
-        "output": 146155,
-        "cache_read": 9203214,
-        "cache_creation": 252100
+        "input": 38,
+        "output": 47640,
+        "cache_read": 3416923,
+        "cache_creation": 94030
       },
       "tokens_cumulative": {
-        "input": 3878,
-        "output": 2982847,
-        "cache_read": 633877519,
-        "cache_creation": 6290133
+        "input": 1864,
+        "output": 1253528,
+        "cache_read": 329440038,
+        "cache_creation": 2637101
       }
     },
     {
@@ -526,16 +527,16 @@
       "code_lines": 7441,
       "governance_lines": 559,
       "tokens_bucket": {
-        "input": 26,
-        "output": 37320,
-        "cache_read": 3180400,
-        "cache_creation": 62000
+        "input": 10,
+        "output": 14161,
+        "cache_read": 1226419,
+        "cache_creation": 18807
       },
       "tokens_cumulative": {
-        "input": 3904,
-        "output": 3020167,
-        "cache_read": 637057919,
-        "cache_creation": 6352133
+        "input": 1874,
+        "output": 1267689,
+        "cache_read": 330666457,
+        "cache_creation": 2655908
       }
     },
     {
@@ -546,16 +547,16 @@
       "code_lines": 7461,
       "governance_lines": 559,
       "tokens_bucket": {
-        "input": 74,
-        "output": 33719,
-        "cache_read": 10459158,
-        "cache_creation": 106468
+        "input": 36,
+        "output": 16733,
+        "cache_read": 5099546,
+        "cache_creation": 53239
       },
       "tokens_cumulative": {
-        "input": 3978,
-        "output": 3053886,
-        "cache_read": 647517077,
-        "cache_creation": 6458601
+        "input": 1910,
+        "output": 1284422,
+        "cache_read": 335766003,
+        "cache_creation": 2709147
       }
     },
     {
@@ -566,16 +567,16 @@
       "code_lines": 8244,
       "governance_lines": 569,
       "tokens_bucket": {
-        "input": 574,
-        "output": 490187,
-        "cache_read": 78059033,
-        "cache_creation": 904635
+        "input": 262,
+        "output": 176504,
+        "cache_read": 36626829,
+        "cache_creation": 360689
       },
       "tokens_cumulative": {
-        "input": 4552,
-        "output": 3544073,
-        "cache_read": 725576110,
-        "cache_creation": 7363236
+        "input": 2172,
+        "output": 1460926,
+        "cache_read": 372392832,
+        "cache_creation": 3069836
       }
     },
     {
@@ -586,16 +587,16 @@
       "code_lines": 9280,
       "governance_lines": 573,
       "tokens_bucket": {
-        "input": 416,
-        "output": 201119,
-        "cache_read": 98596359,
-        "cache_creation": 1022672
+        "input": 216,
+        "output": 98441,
+        "cache_read": 51159883,
+        "cache_creation": 517055
       },
       "tokens_cumulative": {
-        "input": 4968,
-        "output": 3745192,
-        "cache_read": 824172469,
-        "cache_creation": 8385908
+        "input": 2388,
+        "output": 1559367,
+        "cache_read": 423552715,
+        "cache_creation": 3586891
       }
     },
     {
@@ -606,16 +607,16 @@
       "code_lines": 9280,
       "governance_lines": 577,
       "tokens_bucket": {
-        "input": 270,
-        "output": 143024,
-        "cache_read": 78675202,
-        "cache_creation": 176572
+        "input": 128,
+        "output": 55558,
+        "cache_read": 37178596,
+        "cache_creation": 81020
       },
       "tokens_cumulative": {
-        "input": 5238,
-        "output": 3888216,
-        "cache_read": 902847671,
-        "cache_creation": 8562480
+        "input": 2516,
+        "output": 1614925,
+        "cache_read": 460731311,
+        "cache_creation": 3667911
       }
     },
     {
@@ -626,16 +627,16 @@
       "code_lines": 9300,
       "governance_lines": 577,
       "tokens_bucket": {
-        "input": 112,
-        "output": 30333,
-        "cache_read": 35624424,
-        "cache_creation": 77230
+        "input": 58,
+        "output": 14894,
+        "cache_read": 18451837,
+        "cache_creation": 38029
       },
       "tokens_cumulative": {
-        "input": 5350,
-        "output": 3918549,
-        "cache_read": 938472095,
-        "cache_creation": 8639710
+        "input": 2574,
+        "output": 1629819,
+        "cache_read": 479183148,
+        "cache_creation": 3705940
       }
     },
     {
@@ -646,16 +647,16 @@
       "code_lines": 9302,
       "governance_lines": 622,
       "tokens_bucket": {
-        "input": 300,
-        "output": 392344,
-        "cache_read": 29925637,
-        "cache_creation": 705964
+        "input": 112,
+        "output": 126243,
+        "cache_read": 12232532,
+        "cache_creation": 237547
       },
       "tokens_cumulative": {
-        "input": 5650,
-        "output": 4310893,
-        "cache_read": 968397732,
-        "cache_creation": 9345674
+        "input": 2686,
+        "output": 1756062,
+        "cache_read": 491415680,
+        "cache_creation": 3943487
       }
     },
     {
@@ -666,16 +667,16 @@
       "code_lines": 9312,
       "governance_lines": 622,
       "tokens_bucket": {
-        "input": 56,
-        "output": 36103,
-        "cache_read": 7685174,
-        "cache_creation": 64366
+        "input": 30,
+        "output": 15481,
+        "cache_read": 4126582,
+        "cache_creation": 33144
       },
       "tokens_cumulative": {
-        "input": 5706,
-        "output": 4346996,
-        "cache_read": 976082906,
-        "cache_creation": 9410040
+        "input": 2716,
+        "output": 1771543,
+        "cache_read": 495542262,
+        "cache_creation": 3976631
       }
     },
     {
@@ -686,16 +687,16 @@
       "code_lines": 9312,
       "governance_lines": 659,
       "tokens_bucket": {
-        "input": 438,
-        "output": 247948,
-        "cache_read": 34767993,
-        "cache_creation": 599532
+        "input": 224,
+        "output": 105883,
+        "cache_read": 18100412,
+        "cache_creation": 255321
       },
       "tokens_cumulative": {
-        "input": 6144,
-        "output": 4594944,
-        "cache_read": 1010850899,
-        "cache_creation": 10009572
+        "input": 2940,
+        "output": 1877426,
+        "cache_read": 513642674,
+        "cache_creation": 4231952
       }
     },
     {
@@ -706,16 +707,16 @@
       "code_lines": 9322,
       "governance_lines": 659,
       "tokens_bucket": {
-        "input": 96,
-        "output": 44425,
-        "cache_read": 13332921,
-        "cache_creation": 58067
+        "input": 52,
+        "output": 23028,
+        "cache_read": 7238933,
+        "cache_creation": 32768
       },
       "tokens_cumulative": {
-        "input": 6240,
-        "output": 4639369,
-        "cache_read": 1024183820,
-        "cache_creation": 10067639
+        "input": 2992,
+        "output": 1900454,
+        "cache_read": 520881607,
+        "cache_creation": 4264720
       }
     },
     {
@@ -726,16 +727,16 @@
       "code_lines": 9405,
       "governance_lines": 661,
       "tokens_bucket": {
-        "input": 400,
-        "output": 227002,
-        "cache_read": 74870226,
-        "cache_creation": 285757
+        "input": 206,
+        "output": 105715,
+        "cache_read": 38711134,
+        "cache_creation": 147027
       },
       "tokens_cumulative": {
-        "input": 6640,
-        "output": 4866371,
-        "cache_read": 1099054046,
-        "cache_creation": 10353396
+        "input": 3198,
+        "output": 2006169,
+        "cache_read": 559592741,
+        "cache_creation": 4411747
       }
     },
     {
@@ -746,16 +747,16 @@
       "code_lines": 9415,
       "governance_lines": 661,
       "tokens_bucket": {
-        "input": 72,
-        "output": 22504,
-        "cache_read": 15390282,
-        "cache_creation": 866983
+        "input": 42,
+        "output": 10694,
+        "cache_read": 9062811,
+        "cache_creation": 436343
       },
       "tokens_cumulative": {
-        "input": 6712,
-        "output": 4888875,
-        "cache_read": 1114444328,
-        "cache_creation": 11220379
+        "input": 3240,
+        "output": 2016863,
+        "cache_read": 568655552,
+        "cache_creation": 4848090
       }
     },
     {
@@ -766,16 +767,16 @@
       "code_lines": 9451,
       "governance_lines": 661,
       "tokens_bucket": {
-        "input": 274,
-        "output": 158259,
-        "cache_read": 19383381,
-        "cache_creation": 360693
+        "input": 120,
+        "output": 62226,
+        "cache_read": 9094467,
+        "cache_creation": 149534
       },
       "tokens_cumulative": {
-        "input": 6986,
-        "output": 5047134,
-        "cache_read": 1133827709,
-        "cache_creation": 11581072
+        "input": 3360,
+        "output": 2079089,
+        "cache_read": 577750019,
+        "cache_creation": 4997624
       }
     },
     {
@@ -786,16 +787,16 @@
       "code_lines": 9454,
       "governance_lines": 661,
       "tokens_bucket": {
-        "input": 456,
-        "output": 292396,
-        "cache_read": 43344200,
-        "cache_creation": 644051
+        "input": 236,
+        "output": 138726,
+        "cache_read": 22192907,
+        "cache_creation": 316071
       },
       "tokens_cumulative": {
-        "input": 7442,
-        "output": 5339530,
-        "cache_read": 1177171909,
-        "cache_creation": 12225123
+        "input": 3596,
+        "output": 2217815,
+        "cache_read": 599942926,
+        "cache_creation": 5313695
       }
     },
     {
@@ -806,16 +807,16 @@
       "code_lines": 9471,
       "governance_lines": 661,
       "tokens_bucket": {
-        "input": 334,
-        "output": 172372,
-        "cache_read": 72752065,
-        "cache_creation": 390242
+        "input": 174,
+        "output": 80397,
+        "cache_read": 38208911,
+        "cache_creation": 185485
       },
       "tokens_cumulative": {
-        "input": 7776,
-        "output": 5511902,
-        "cache_read": 1249923974,
-        "cache_creation": 12615365
+        "input": 3770,
+        "output": 2298212,
+        "cache_read": 638151837,
+        "cache_creation": 5499180
       }
     },
     {
@@ -826,16 +827,16 @@
       "code_lines": 9491,
       "governance_lines": 663,
       "tokens_bucket": {
-        "input": 242,
-        "output": 107411,
-        "cache_read": 69755838,
-        "cache_creation": 199751
+        "input": 122,
+        "output": 48832,
+        "cache_read": 35181474,
+        "cache_creation": 98536
       },
       "tokens_cumulative": {
-        "input": 8018,
-        "output": 5619313,
-        "cache_read": 1319679812,
-        "cache_creation": 12815116
+        "input": 3892,
+        "output": 2347044,
+        "cache_read": 673333311,
+        "cache_creation": 5597716
       }
     },
     {
@@ -846,16 +847,16 @@
       "code_lines": 9491,
       "governance_lines": 681,
       "tokens_bucket": {
-        "input": 144,
-        "output": 61035,
-        "cache_read": 47004367,
-        "cache_creation": 111776
+        "input": 78,
+        "output": 30452,
+        "cache_read": 25492892,
+        "cache_creation": 54392
       },
       "tokens_cumulative": {
-        "input": 8162,
-        "output": 5680348,
-        "cache_read": 1366684179,
-        "cache_creation": 12926892
+        "input": 3970,
+        "output": 2377496,
+        "cache_read": 698826203,
+        "cache_creation": 5652108
       }
     },
     {
@@ -866,16 +867,16 @@
       "code_lines": 9544,
       "governance_lines": 683,
       "tokens_bucket": {
-        "input": 140,
-        "output": 61655,
-        "cache_read": 8432724,
-        "cache_creation": 279843
+        "input": 62,
+        "output": 27039,
+        "cache_read": 4201713,
+        "cache_creation": 109269
       },
       "tokens_cumulative": {
-        "input": 8302,
-        "output": 5742003,
-        "cache_read": 1375116903,
-        "cache_creation": 13206735
+        "input": 4032,
+        "output": 2404535,
+        "cache_read": 703027916,
+        "cache_creation": 5761377
       }
     },
     {
@@ -886,16 +887,16 @@
       "code_lines": 9680,
       "governance_lines": 685,
       "tokens_bucket": {
-        "input": 417,
-        "output": 518881,
-        "cache_read": 63621638,
-        "cache_creation": 1312171
+        "input": 157,
+        "output": 151920,
+        "cache_read": 23496646,
+        "cache_creation": 420987
       },
       "tokens_cumulative": {
-        "input": 8719,
-        "output": 6260884,
-        "cache_read": 1438738541,
-        "cache_creation": 14518906
+        "input": 4189,
+        "output": 2556455,
+        "cache_read": 726524562,
+        "cache_creation": 6182364
       }
     },
     {
@@ -906,16 +907,16 @@
       "code_lines": 9713,
       "governance_lines": 687,
       "tokens_bucket": {
-        "input": 140,
-        "output": 86139,
-        "cache_read": 30987549,
-        "cache_creation": 145417
+        "input": 68,
+        "output": 38340,
+        "cache_read": 14930476,
+        "cache_creation": 70258
       },
       "tokens_cumulative": {
-        "input": 8859,
-        "output": 6347023,
-        "cache_read": 1469726090,
-        "cache_creation": 14664323
+        "input": 4257,
+        "output": 2594795,
+        "cache_read": 741455038,
+        "cache_creation": 6252622
       }
     },
     {
@@ -926,16 +927,16 @@
       "code_lines": 10051,
       "governance_lines": 687,
       "tokens_bucket": {
-        "input": 103,
-        "output": 104060,
-        "cache_read": 23812134,
-        "cache_creation": 84456
+        "input": 42,
+        "output": 30809,
+        "cache_read": 9650619,
+        "cache_creation": 40595
       },
       "tokens_cumulative": {
-        "input": 8962,
-        "output": 6451083,
-        "cache_read": 1493538224,
-        "cache_creation": 14748779
+        "input": 4299,
+        "output": 2625604,
+        "cache_read": 751105657,
+        "cache_creation": 6293217
       }
     },
     {
@@ -946,16 +947,16 @@
       "code_lines": 10104,
       "governance_lines": 687,
       "tokens_bucket": {
-        "input": 216,
-        "output": 88850,
-        "cache_read": 50718617,
-        "cache_creation": 132040
+        "input": 83,
+        "output": 29573,
+        "cache_read": 19447638,
+        "cache_creation": 52143
       },
       "tokens_cumulative": {
-        "input": 9178,
-        "output": 6539933,
-        "cache_read": 1544256841,
-        "cache_creation": 14880819
+        "input": 4382,
+        "output": 2655177,
+        "cache_read": 770553295,
+        "cache_creation": 6345360
       }
     },
     {
@@ -966,16 +967,16 @@
       "code_lines": 10104,
       "governance_lines": 689,
       "tokens_bucket": {
-        "input": 30,
-        "output": 4436,
-        "cache_read": 7212060,
-        "cache_creation": 11954
+        "input": 15,
+        "output": 2218,
+        "cache_read": 3606030,
+        "cache_creation": 5977
       },
       "tokens_cumulative": {
-        "input": 9208,
-        "output": 6544369,
-        "cache_read": 1551468901,
-        "cache_creation": 14892773
+        "input": 4397,
+        "output": 2657395,
+        "cache_read": 774159325,
+        "cache_creation": 6351337
       }
     },
     {
@@ -986,16 +987,16 @@
       "code_lines": 10104,
       "governance_lines": 691,
       "tokens_bucket": {
-        "input": 133,
-        "output": 41745,
-        "cache_read": 33261838,
-        "cache_creation": 75567
+        "input": 56,
+        "output": 15746,
+        "cache_read": 14053881,
+        "cache_creation": 28859
       },
       "tokens_cumulative": {
-        "input": 9341,
-        "output": 6586114,
-        "cache_read": 1584730739,
-        "cache_creation": 14968340
+        "input": 4453,
+        "output": 2673141,
+        "cache_read": 788213206,
+        "cache_creation": 6380196
       }
     },
     {
@@ -1006,16 +1007,16 @@
       "code_lines": 10104,
       "governance_lines": 693,
       "tokens_bucket": {
-        "input": 233,
-        "output": 183760,
-        "cache_read": 64314789,
-        "cache_creation": 191579
+        "input": 86,
+        "output": 51461,
+        "cache_read": 23787670,
+        "cache_creation": 75471
       },
       "tokens_cumulative": {
-        "input": 9574,
-        "output": 6769874,
-        "cache_read": 1649045528,
-        "cache_creation": 15159919
+        "input": 4539,
+        "output": 2724602,
+        "cache_read": 812000876,
+        "cache_creation": 6455667
       }
     },
     {
@@ -1026,16 +1027,16 @@
       "code_lines": 10154,
       "governance_lines": 693,
       "tokens_bucket": {
-        "input": 276,
-        "output": 120336,
-        "cache_read": 82986500,
-        "cache_creation": 235515
+        "input": 119,
+        "output": 47948,
+        "cache_read": 35650652,
+        "cache_creation": 95648
       },
       "tokens_cumulative": {
-        "input": 9850,
-        "output": 6890210,
-        "cache_read": 1732032028,
-        "cache_creation": 15395434
+        "input": 4658,
+        "output": 2772550,
+        "cache_read": 847651528,
+        "cache_creation": 6551315
       }
     },
     {
@@ -1046,16 +1047,16 @@
       "code_lines": 10155,
       "governance_lines": 693,
       "tokens_bucket": {
-        "input": 583,
-        "output": 675842,
-        "cache_read": 67837733,
-        "cache_creation": 852461
+        "input": 184,
+        "output": 136280,
+        "cache_read": 22465378,
+        "cache_creation": 282254
       },
       "tokens_cumulative": {
-        "input": 10433,
-        "output": 7566052,
-        "cache_read": 1799869761,
-        "cache_creation": 16247895
+        "input": 4842,
+        "output": 2908830,
+        "cache_read": 870116906,
+        "cache_creation": 6833569
       }
     },
     {
@@ -1066,16 +1067,16 @@
       "code_lines": 10155,
       "governance_lines": 693,
       "tokens_bucket": {
-        "input": 74,
-        "output": 65951,
-        "cache_read": 11236754,
-        "cache_creation": 65636
+        "input": 28,
+        "output": 16090,
+        "cache_read": 4226054,
+        "cache_creation": 25123
       },
       "tokens_cumulative": {
-        "input": 10507,
-        "output": 7632003,
-        "cache_read": 1811106515,
-        "cache_creation": 16313531
+        "input": 4870,
+        "output": 2924920,
+        "cache_read": 874342960,
+        "cache_creation": 6858692
       }
     },
     {
@@ -1086,16 +1087,16 @@
       "code_lines": 10170,
       "governance_lines": 693,
       "tokens_bucket": {
-        "input": 156,
-        "output": 56727,
-        "cache_read": 28069163,
-        "cache_creation": 162443
+        "input": 74,
+        "output": 25834,
+        "cache_read": 13299293,
+        "cache_creation": 69074
       },
       "tokens_cumulative": {
-        "input": 10663,
-        "output": 7688730,
-        "cache_read": 1839175678,
-        "cache_creation": 16475974
+        "input": 4944,
+        "output": 2950754,
+        "cache_read": 887642253,
+        "cache_creation": 6927766
       }
     },
     {
@@ -1106,16 +1107,16 @@
       "code_lines": 10356,
       "governance_lines": 703,
       "tokens_bucket": {
-        "input": 556,
-        "output": 872959,
-        "cache_read": 83442752,
-        "cache_creation": 2595777
+        "input": 206,
+        "output": 205161,
+        "cache_read": 32131984,
+        "cache_creation": 965336
       },
       "tokens_cumulative": {
-        "input": 11219,
-        "output": 8561689,
-        "cache_read": 1922618430,
-        "cache_creation": 19071751
+        "input": 5150,
+        "output": 3155915,
+        "cache_read": 919774237,
+        "cache_creation": 7893102
       }
     },
     {
@@ -1126,16 +1127,16 @@
       "code_lines": 10366,
       "governance_lines": 703,
       "tokens_bucket": {
-        "input": 134,
-        "output": 69931,
-        "cache_read": 36059536,
-        "cache_creation": 145616
+        "input": 66,
+        "output": 29766,
+        "cache_read": 17691817,
+        "cache_creation": 65781
       },
       "tokens_cumulative": {
-        "input": 11353,
-        "output": 8631620,
-        "cache_read": 1958677966,
-        "cache_creation": 19217367
+        "input": 5216,
+        "output": 3185681,
+        "cache_read": 937466054,
+        "cache_creation": 7958883
       }
     },
     {
@@ -1146,16 +1147,16 @@
       "code_lines": 10366,
       "governance_lines": 703,
       "tokens_bucket": {
-        "input": 188,
-        "output": 325378,
-        "cache_read": 17174782,
-        "cache_creation": 598197
+        "input": 72,
+        "output": 90683,
+        "cache_read": 7430210,
+        "cache_creation": 208477
       },
       "tokens_cumulative": {
-        "input": 11541,
-        "output": 8956998,
-        "cache_read": 1975852748,
-        "cache_creation": 19815564
+        "input": 5288,
+        "output": 3276364,
+        "cache_read": 944896264,
+        "cache_creation": 8167360
       }
     },
     {
@@ -1166,23 +1167,103 @@
       "code_lines": 10366,
       "governance_lines": 703,
       "tokens_bucket": {
-        "input": 6,
-        "output": 888,
-        "cache_read": 708604,
-        "cache_creation": 1817
+        "input": 4,
+        "output": 697,
+        "cache_read": 472655,
+        "cache_creation": 1060
       },
       "tokens_cumulative": {
-        "input": 11547,
-        "output": 8957886,
-        "cache_read": 1976561352,
-        "cache_creation": 19817381
+        "input": 5292,
+        "output": 3277061,
+        "cache_read": 945368919,
+        "cache_creation": 8168420
+      }
+    },
+    {
+      "hash": "beca061",
+      "timestamp": "2026-09-11T12:20:48-03:00",
+      "subject": "Regenerate the project log, milestones M56 to M58",
+      "words_published": 117677,
+      "code_lines": 10381,
+      "governance_lines": 703,
+      "tokens_bucket": {
+        "input": 98,
+        "output": 49003,
+        "cache_read": 13335724,
+        "cache_creation": 288020
+      },
+      "tokens_cumulative": {
+        "input": 5390,
+        "output": 3326064,
+        "cache_read": 958704643,
+        "cache_creation": 8456440
+      }
+    },
+    {
+      "hash": "e6db873",
+      "timestamp": "2026-09-11T21:35:49-03:00",
+      "subject": "Fix token double-counting and the local-path leak in the logbook metrics generator",
+      "words_published": 117677,
+      "code_lines": 10403,
+      "governance_lines": 703,
+      "tokens_bucket": {
+        "input": 90,
+        "output": 55255,
+        "cache_read": 6876298,
+        "cache_creation": 158997
+      },
+      "tokens_cumulative": {
+        "input": 5480,
+        "output": 3381319,
+        "cache_read": 965580941,
+        "cache_creation": 8615437
+      }
+    },
+    {
+      "hash": "c2a93c4",
+      "timestamp": "2026-09-11T21:36:00-03:00",
+      "subject": "Fix two Portuguese glossary entries left out of order, add an order checker",
+      "words_published": 117677,
+      "code_lines": 10477,
+      "governance_lines": 703,
+      "tokens_bucket": {
+        "input": 2,
+        "output": 700,
+        "cache_read": 189959,
+        "cache_creation": 951
+      },
+      "tokens_cumulative": {
+        "input": 5482,
+        "output": 3382019,
+        "cache_read": 965770900,
+        "cache_creation": 8616388
+      }
+    },
+    {
+      "hash": "07bfaad",
+      "timestamp": "2026-09-11T21:46:08-03:00",
+      "subject": "Record the harness reuse findings in NEXT-STEPS, document generator portability",
+      "words_published": 117677,
+      "code_lines": 10488,
+      "governance_lines": 717,
+      "tokens_bucket": {
+        "input": 62,
+        "output": 34124,
+        "cache_read": 6867539,
+        "cache_creation": 58295
+      },
+      "tokens_cumulative": {
+        "input": 5544,
+        "output": 3416143,
+        "cache_read": 972638439,
+        "cache_creation": 8674683
       }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 32,
-    "output": 16390,
-    "cache_read": 3217078,
-    "cache_creation": 652805
+    "input": 4,
+    "output": 3100,
+    "cache_read": 499057,
+    "cache_creation": 3681
   }
 }
