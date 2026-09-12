@@ -86,7 +86,16 @@ def find_session_jsonl():
 
 
 def load_usage_events(paths):
-    events = []
+    # Uma mesma mensagem do assistente gera mais de uma linha no transcript
+    # (um bloco de thinking, outro de texto ou uso de ferramenta), e cada
+    # linha carrega o uso acumulado da mensagem inteira, repetido. Sem
+    # deduplicar por message.id, o mesmo token e contado varias vezes: bug
+    # real, achado e verificado por reuso direto deste script num projeto
+    # externo (~2,17x de inflacao agregada nas 15 transcricoes desta
+    # maquina), registrado em NEXT-STEPS.md. Mantem so a ultima ocorrencia
+    # de cada id, que carrega o total final e mais completo da mensagem.
+    by_id = {}
+    unkeyed = []
     for p in paths:
         with open(p, encoding='utf-8') as fh:
             for line in fh:
@@ -102,13 +111,19 @@ def load_usage_events(paths):
                 if not (isinstance(msg, dict) and 'usage' in msg and ts):
                     continue
                 u = msg['usage']
-                events.append({
+                event = {
                     'ts': ts,
                     'input': u.get('input_tokens', 0) or 0,
                     'output': u.get('output_tokens', 0) or 0,
                     'cache_read': u.get('cache_read_input_tokens', 0) or 0,
                     'cache_creation': u.get('cache_creation_input_tokens', 0) or 0,
-                })
+                }
+                mid = msg.get('id')
+                if mid:
+                    by_id[mid] = event
+                else:
+                    unkeyed.append(event)
+    events = list(by_id.values()) + unkeyed
     events.sort(key=lambda e: e['ts'])
     return events
 
@@ -190,9 +205,16 @@ def main():
         remaining['cache_creation'] += events[ev_idx]['cache_creation']
         ev_idx += 1
 
+    # So o nome do arquivo, nunca o caminho completo: o caminho absoluto
+    # carrega o nome de usuario do sistema operacional, informacao pessoal
+    # sem necessidade num artefato versionado e publico. Achado e corrigido
+    # por reuso direto deste script num projeto externo, registrado em
+    # NEXT-STEPS.md; o historico do git anterior a esta correcao foi
+    # reescrito para remover as ocorrencias ja commitadas do caminho
+    # completo.
     out = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
-        'session_files': session_files,
+        'session_files': [os.path.basename(p) for p in session_files],
         'milestones': milestones,
         'tokens_since_last_commit': remaining,
     }
