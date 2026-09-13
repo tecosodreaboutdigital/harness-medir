@@ -22,6 +22,7 @@ O envoltório de CSS é extraído do arquivo já pronto anterior, para que os qu
 | `build_logbook.py` | monta `docs/logbook.html` trilíngue a partir de `docs/assets/logbook-metrics.json` |
 | `generate_logbook_metrics.py` | reconstrói `docs/assets/logbook-metrics.json` a partir do git e do transcript real da sessão, nunca editado à mão |
 | `check_glossary_order.py` | verifica ordem alfabética das entradas de `body_glossary_*.html` nas três línguas, roda antes de qualquer build depois de renomear um termo |
+| `generate_toolkit_manifest.py` | reconstrói `toolkit.json` a partir de `TOOLS.md` e `sources/inventory.md`, nunca editado à mão; `--check` só verifica se está desatualizado |
 | `build_all.py` | histórico, montou a versão trilíngue da parte 1; usa caminhos fixos de sandbox, não roda neste repositório como está |
 | `build_en.py` | histórico, gerou a versão em inglês da parte 1; mesma limitação de `build_all.py` |
 | `patch_p2.py` | histórico, aplicou seções novas na parte 2 antes de `build_p2.py` virar trilíngue |
@@ -37,6 +38,8 @@ Links cruzados para `harness-p1.html` com âncora precisam do prefixo do idioma 
 `build_sources.py`, `build_glossary.py` e `build_toolkit.py` **não** são autorreferentes como `build_p2.py`: os três leem o corpo das três línguas direto de `build/body_sources_*.html`, `body_glossary_*.html` e `body_toolkit_*.html`, sem nunca extrair de volta do HTML publicado. Editar `harness-sources.html`, `harness-glossary.html` ou `harness-toolkit.html` à mão, sem espelhar a mesma mudança no corpo correspondente em `build/`, é invisível até a próxima regeneração, que reverte a edição sem aviso, achado em 31 de agosto de 2026 quando `build/body_sources_*.html` ficou duas rodadas de correção de citação desatualizado em relação ao `harness-sources.html` vigente. Rode o script depois de qualquer edição direta em uma dessas três páginas, ou edite só o corpo em `build/` e deixe o script montar o arquivo final.
 
 Renomear um termo do glossário muda a letra que decide sua posição, mas não move a linha sozinho: rode `python build/check_glossary_order.py` depois de qualquer mudança de terminologia, antes de reconstruir. Achado em 11 de setembro de 2026 (duas entradas em português fora de ordem por onze dias, sem ninguém notar, ver `NEXT-STEPS.md`).
+
+Editar `TOOLS.md` (a tabela de coleções instaladas, ou a lista de skills por coleção) ou a tabela "Tools and skills" de `sources/inventory.md` sem rodar `python build/generate_toolkit_manifest.py` na sequência deixa `toolkit.json` desatualizado, do mesmo jeito que editar `harness-sources.html` sem espelhar em `build/` deixa o build seguinte reverter a edição. `--check` acusa a divergência (hash das duas seções-fonte) sem escrever nada; rode antes de commitar qualquer mudança num dos dois arquivos-fonte.
 
 ## Se `generate_logbook_metrics.py` for reutilizado em outro repositório
 

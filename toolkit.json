@@ -1,0 +1,279 @@
+{
+  "generated_by": "build/generate_toolkit_manifest.py",
+  "generated_at": "2026-09-13",
+  "derived_from": [
+    "TOOLS.md",
+    "sources/inventory.md",
+    "README.md"
+  ],
+  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\", and \"template\" once NEXT-STEPS.md item 3, the playbook, is consolidated). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
+  "verification_note": "This file is a snapshot, generated on the date above. Before installing anything listed here, follow AGENTS.md's protocol: fetch the origin URL and check whether it is still current. Do not present this file as live state.",
+  "medir_steps": [
+    "map",
+    "equip",
+    "delegate",
+    "inspect",
+    "reinforce",
+    "secure",
+    "govern"
+  ],
+  "source_hash": "0400f6befd2ec994b3765db91a3d5c3cc778722fc0ce10da17ae690b3a85ea23",
+  "entries": [
+    {
+      "id": "superpowers",
+      "kind": "collection",
+      "name": "superpowers",
+      "role": "It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard",
+      "medir_step": "equip",
+      "origin": "https://github.com/obra/superpowers",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "14, the whole collection",
+      "skills": [
+        "brainstorming",
+        "dispatching-parallel-agents",
+        "executing-plans",
+        "finishing-a-development-branch",
+        "receiving-code-review",
+        "requesting-code-review",
+        "subagent-driven-development",
+        "systematic-debugging",
+        "test-driven-development",
+        "using-git-worktrees",
+        "using-superpowers",
+        "verification-before-completion",
+        "writing-plans",
+        "writing-skills"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/obra/superpowers",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "mattpocock-skills",
+      "kind": "collection",
+      "name": "mattpocock/skills",
+      "role": "Writing, clarification and session-handoff skills. The collection's software-engineering set (TDD, code architecture, merge conflicts, TypeScript) was left out as not applicable to a content project, see the full list below",
+      "medir_step": "equip",
+      "origin": "https://github.com/mattpocock/skills",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "12, curated selection",
+      "skills": [
+        "claude-handoff",
+        "grill-me",
+        "handoff",
+        "research",
+        "retro",
+        "teach",
+        "to-questionnaire",
+        "wait-what",
+        "writing-beats",
+        "writing-for-agents",
+        "writing-fragments",
+        "writing-shape"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/mattpocock/skills",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "c4-skills",
+      "kind": "collection",
+      "name": "c4-skills",
+      "role": "The C4 model and architecture decision records, relevant to the Part 3 research round",
+      "medir_step": "map",
+      "origin": "https://github.com/muthub-ai/c4-skills",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "2, the whole collection",
+      "skills": [
+        "adr-scribe",
+        "c4-model"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/muthub-ai/c4-skills",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "karpathy-inspired-guide",
+      "kind": "collection",
+      "name": "Karpathy-inspired guide",
+      "role": "A behavioural guide against common LLM mistakes. Not actually by Karpathy, see the full caveat in `sources/inventory.md`",
+      "medir_step": "map",
+      "origin": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "1",
+      "skills": [
+        "karpathy-guidelines"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/multica-ai/andrej-karpathy-skills",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "ai-slop-cleaner",
+      "kind": "collection",
+      "name": "ai-slop-cleaner",
+      "role": "The real source of the five-rule cleanup matrix cited in Part 2's Reinforce section",
+      "medir_step": "reinforce",
+      "origin": "https://github.com/yeachan-heo/oh-my-claudecode",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "1",
+      "skills": [
+        "ai-slop-cleaner"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/yeachan-heo/oh-my-claudecode",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "impeccable",
+      "kind": "collection",
+      "name": "impeccable",
+      "role": "Design-QA reference for the project's own HTML pages: 61 deterministic detector rules for common AI-generated frontend tells, Apache-2.0, 30 contributors. Installed as documentation only, see the caveat below",
+      "medir_step": "inspect",
+      "origin": "https://github.com/pbakaus/impeccable",
+      "licence": "Apache-2.0",
+      "status": "installed",
+      "skills_installed_text": "1",
+      "skills": [
+        "impeccable"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/pbakaus/impeccable",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "humanizer",
+      "kind": "collection",
+      "name": "humanizer",
+      "role": "Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other nine collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills",
+      "medir_step": "reinforce",
+      "origin": "https://github.com/blader/humanizer",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "1, the whole collection",
+      "skills": [
+        "humanizer"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/blader/humanizer",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "agent-skills-for-context-engineering",
+      "kind": "collection",
+      "name": "Agent Skills for Context Engineering",
+      "role": "A reader flagged agent-harness architecture as a real gap in this page. `harness-engineering`, `multi-agent-patterns` and `tool-design` close it directly; the other 14 skills (context optimisation, memory systems, evaluation and more) address adjacent problems this project does not have, see the full list below",
+      "medir_step": "equip",
+      "origin": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "3, out of 17",
+      "skills": [
+        "harness-engineering",
+        "multi-agent-patterns",
+        "tool-design"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "ai-act-skill",
+      "kind": "collection",
+      "name": "ai-act-skill",
+      "role": "A versioned, task-by-task checklist for EU AI Act obligations, already current with the Digital Omnibus (Regulation (EU) 2026/1744). Part 3 and 4 already cite Articles 12, 14 and 26 in prose; this is the first tool in this project's own toolkit that turns that citation into a runnable check",
+      "medir_step": "govern",
+      "origin": "https://github.com/morellid/ai-act-skill",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "1, the whole collection",
+      "skills": [
+        "ai-act-skill"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/morellid/ai-act-skill",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "threat-modeling",
+      "kind": "collection",
+      "name": "threat-modeling",
+      "role": "STRIDE-based threat modelling scoped to agent architecture and security review, not per-change diff review. Scoped install: only the one skill folder came in, not the rest of the repository",
+      "medir_step": "secure",
+      "origin": "https://github.com/rjmurillo/ai-agents",
+      "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
+      "status": "installed",
+      "skills_installed_text": "1, out of a larger personal collection",
+      "skills": [
+        "threat-modeling"
+      ],
+      "install": {
+        "origin_clone": "git clone https://github.com/rjmurillo/ai-agents",
+        "claude_code_personal": "~/.claude/skills/<skill-id>/",
+        "claude_code_project": ".claude/skills/<skill-id>/",
+        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
+        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
+      }
+    },
+    {
+      "id": "intake-briefing",
+      "kind": "own_skill",
+      "name": "intake-briefing",
+      "role": "Runs a structured interview before any AI build, to decide whether the task should be automated, what autonomy tier it should operate in, and what the resulting task contract is.",
+      "medir_step": "map",
+      "origin": "https://github.com/tecosodreaboutdigital/intake-briefing",
+      "licence": "MIT",
+      "status": "installed",
+      "skills": [
+        "intake-briefing"
+      ],
+      "install": {
+        "personal": "git clone https://github.com/tecosodreaboutdigital/intake-briefing.git ~/.claude/skills/intake-briefing",
+        "cursor_codex_antigravity": "git clone https://github.com/tecosodreaboutdigital/intake-briefing.git .agents/skills/intake-briefing",
+        "claude_code_plugin": "/plugin marketplace add tecosodreaboutdigital/intake-briefing\n/plugin install intake-briefing@intake-briefing",
+        "verified": "31 August 2026, against each vendor's own documentation. Snapshot, not live status."
+      }
+    }
+  ]
+}

@@ -134,6 +134,7 @@ El diario completo, con la tabla por hito y la metodología detrás de estos nú
 ├── README.md                          este archivo
 ├── AGENTS.md                          protocolo de operación para agentes y asistentes de IA, lee antes de instalar cualquier cosa que este proyecto cure
 ├── llms.txt                           índice de descubrimiento para un agente de IA que busca el sitio publicado directamente
+├── toolkit.json                       la misma curaduría que harness-toolkit.html, legible por máquina, generado
 ├── STANDARDS.md                       reglas de escritura y formato, LEE ANTES DE EDITAR
 ├── STATUS.md                          qué está listo y qué falta, en detalle
 ├── NEXT-STEPS.md                      la cola de trabajo, en orden

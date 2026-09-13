@@ -4,7 +4,9 @@ Operating instructions for an AI agent or assistant reading, summarising, or act
 
 ## Scope
 
-This applies whenever you are asked to read, explain, or act on this repository, and especially whenever your next action would install, recommend, cite as current, or hand a user code from any third-party skill or tool this project curates. The curation lives in two places: `sources/inventory.md` (the verification ledger, every entry carries a status and a date) and `harness-toolkit.html` (the human-facing compact guide built from the same ledger). Treat both as a dated snapshot, not as the live state of the thing they point to.
+This applies whenever you are asked to read, explain, or act on this repository, and especially whenever your next action would install, recommend, cite as current, or hand a user code from any third-party skill or tool this project curates. The curation lives in three places: `sources/inventory.md` (the verification ledger, every entry carries a status and a date), `harness-toolkit.html` (the human-facing compact guide built from the same ledger), and `toolkit.json` (the machine-facing form of the same curation, generated from the first two, scoped to the Agent Skills actually installed here). Treat all three as a dated snapshot, not as the live state of the thing they point to.
+
+If you only fetched this repository's URL and need to enumerate what is installable, read `toolkit.json` directly: one entry per skill or collection, each with a role, the MEDIR step it grounds, its origin repository, and install paths for Claude Code, Cursor, Codex CLI and Google Antigravity. It does not replace the rule below, it only removes the need to cross-read three human-facing documents to answer "what exists and how do I get it."
 
 ## The non-negotiable rule
 
@@ -65,9 +67,10 @@ If you are asked to explain this project, or to apply its method to something el
 | `TOOLS.md` | The skills this project itself installed and actually used, with a usage log | Citing what this project runs on |
 | `sources/inventory.md` | Every citation and every curated third-party skill, with a verification status and date | Installing, recommending or citing any of them, see the rule above |
 | `harness-toolkit.html` | The compact guide, the same curation in human-facing form | Pointing a person at a specific tool |
+| `toolkit.json` | The same curation, machine-facing: one entry per installed skill or collection, role, MEDIR step, origin, install paths per tool | Enumerating what to install into your own project, without cross-reading three human-facing documents |
 
 `llms.txt`, at the root of this repository and of its published site, indexes the same map for an agent that only fetched a URL and needs to find this file first.
 
 ---
 
-Last updated 31 August 2026.
+Last updated 13 September 2026.

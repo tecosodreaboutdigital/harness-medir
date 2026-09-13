@@ -7,6 +7,7 @@ Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this p
 ## Start here
 
 - [AGENTS.md](AGENTS.md): operating protocol for an AI agent or assistant acting on this repository. Read this before installing, recommending or fetching any third-party skill this project curates.
+- [toolkit.json](toolkit.json): the same curation, machine-readable. One entry per installed skill or collection, with a role, the MEDIR step it grounds, and install paths for Claude Code, Cursor, Codex CLI and Google Antigravity. Read this to enumerate what exists without fetching every human-facing page.
 - [README.md](README.md): the thesis, the MEDIR cycle, the autonomy tiers N0 to N3, and the full map of this repository.
 
 ## The series
@@ -22,6 +23,7 @@ Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this p
 - [Glossary](harness-glossary.html): every term the series uses, one definition each.
 - [Sources](harness-sources.html): every citation the series uses, human-facing.
 - [sources/inventory.md](sources/inventory.md): the same citations plus every curated third-party skill, with a verification status and date.
+- [toolkit.json](toolkit.json): the machine-readable manifest, see Start here above.
 - [TOOLS.md](TOOLS.md): the skills this project itself installed and actually used, with a real-usage log.
 - [STANDARDS.md](STANDARDS.md): writing and formatting rules, non-negotiable.
 - [Project log](docs/logbook.html): words published and tokens consumed, per milestone, generated from git and real session usage.

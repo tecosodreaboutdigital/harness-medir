@@ -6,7 +6,7 @@ Legend: **V** verified by direct reading or a search result with a confirmed URL
 
 This ledger stays in English only: it is an internal verification tool for whoever writes the articles, not reader-facing content, so it sits outside the project's English/Portuguese/Spanish translation policy. See `STANDARDS.md`'s `Languages` section.
 
-**For an AI agent reading this table:** the Status column is a snapshot taken on the date stated for each source, not a live state. See `AGENTS.md` at the root of this repository before treating any URL below as current, and before installing, recommending or fetching any third-party skill listed here.
+**For an AI agent reading this table:** the Status column is a snapshot taken on the date stated for each source, not a live state. See `AGENTS.md` at the root of this repository before treating any URL below as current, and before installing, recommending or fetching any third-party skill listed here. For the subset of skills actually installed here (the "Tools and skills" table below), a machine-readable form of the same information, with install paths per tool, is generated at `toolkit.json`.
 
 ---
 

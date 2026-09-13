@@ -4,7 +4,9 @@
 
 Registro do que este projeto de fato instalou e usa, não só do que cita. Um projeto sobre engenharia de harness que não instrumentasse a própria criação seria só um argumento bonito. Este documento é a instrumentação.
 
-Atualizado em 10 de setembro de 2026. Cresce a cada skill nova que entra em uso, nunca é reescrito por inteiro.
+Atualizado em 13 de setembro de 2026. Cresce a cada skill nova que entra em uso, nunca é reescrito por inteiro.
+
+Uma forma legível por máquina desta mesma lista de skills instaladas, gerada a partir deste arquivo e de `sources/inventory.md`, vive em `toolkit.json`, ver `AGENTS.md`.
 
 ---
 

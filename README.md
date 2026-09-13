@@ -134,6 +134,7 @@ The full log, with the per-milestone table and the methodology behind these numb
 ├── README.md                          this file
 ├── AGENTS.md                          operating protocol for AI agents and assistants, read before installing anything this project curates
 ├── llms.txt                           discovery index for an AI agent fetching the published site directly
+├── toolkit.json                       the same curation as harness-toolkit.html, machine-readable, generated
 ├── STANDARDS.md                       writing and formatting rules, READ BEFORE EDITING
 ├── STATUS.md                          what is ready and what is missing, in detail
 ├── NEXT-STEPS.md                      the work queue, in order

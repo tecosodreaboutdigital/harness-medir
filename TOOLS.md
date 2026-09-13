@@ -4,7 +4,9 @@
 
 A record of what this project has actually installed and uses, not just what it cites. A project about harness engineering that did not instrument its own creation would just be a nice-sounding argument. This document is the instrumentation.
 
-Updated 10 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
+Updated 13 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
+
+A machine-readable form of this same installed-skill list, generated from this file and `sources/inventory.md`, lives at `toolkit.json`, see `AGENTS.md`.
 
 ---
 
