@@ -13,7 +13,7 @@ Status: in progress, August 2026
 
 Published at [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repository) and [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, the HTML files render as pages, not just as source code).
 
-**Start reading:** [Part 1, why](harness-p1.html) · [Part 2, how](harness-p2.html) · [Part 3, operation](harness-p3.html) · [Part 4, governance](harness-p4.html) · [Compact guide](harness-toolkit.html) · [Glossary](harness-glossary.html) · [Sources](harness-sources.html) · [Project log](docs/logbook.html)
+**Start reading:** [Part 1, why](harness-p1.html) · [Part 2, how](harness-p2.html) · [Part 3, operation](harness-p3.html) · [Part 4, governance](harness-p4.html) · [Compact guide](harness-toolkit.html) · [Glossary](harness-glossary.html) · [Sources](harness-sources.html) · [Playbook](harness-playbook.html) · [Project log](docs/logbook.html)
 
 ---
 
@@ -146,6 +146,10 @@ The full log, with the per-milestone table and the methodology behind these numb
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
 ├── harness-glossary.html              shared glossary, trilingual, every part links here
 ├── harness-sources.html               shared sources, trilingual, every part links here
+├── harness-playbook.html              seven operational templates, opens with D10, EN complete
+├── playbook/
+│   ├── README.md                      index, seven templates as eight files, each traced to its part
+│   └── ...                            task-contract.md, skill-template.md, and six more
 ├── sources/
 │   └── inventory.md                   every source verified, with status
 ├── diagrams/

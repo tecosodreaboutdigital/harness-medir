@@ -35,6 +35,8 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS_MD = os.path.join(ROOT, 'TOOLS.md')
 INVENTORY_MD = os.path.join(ROOT, 'sources', 'inventory.md')
+PLAYBOOK_README = os.path.join(ROOT, 'playbook', 'README.md')
+PLAYBOOK_BODY_EN = os.path.join(ROOT, 'build', 'body_playbook_en.html')
 OUT_PATH = os.path.join(ROOT, 'toolkit.json')
 
 MEDIR_STEPS = ['map', 'equip', 'delegate', 'inspect', 'reinforce', 'secure', 'govern']
@@ -172,7 +174,52 @@ def parse_own_skill(tools_text):
     }
 
 
-def build_entries(tools_text, inventory_text):
+def parse_playbook_templates(readme_text, body_en_text):
+    """Le a tabela de playbook/README.md (Template | File | Grounded in) e
+    a tabela equivalente de build/body_playbook_en.html (Template | Grounded
+    in | What it answers), na mesma ordem de linha, e casa as duas por
+    indice, nao por nome, ja que os dois arquivos sao mantidos juntos por
+    este projeto e a ordem e garantida."""
+    readme_rows = []
+    for line in readme_text.splitlines():
+        line = line.strip()
+        if not line.startswith('|') or line.startswith('|---'):
+            continue
+        cells = [c.strip() for c in line.strip('|').split('|')]
+        if len(cells) != 3 or cells[0] == 'Template':
+            continue
+        name, file_cell, grounded_in = cells
+        file_name = file_cell.strip('`')
+        readme_rows.append((name, file_name, grounded_in))
+
+    body_rows = []
+    for line in body_en_text.splitlines():
+        line = line.strip()
+        if not line.startswith('<tr><td>') or 'playbook/' not in line:
+            continue
+        cells = re.findall(r'<td>(.*?)</td>', line)
+        if len(cells) != 3:
+            continue
+        name = re.sub(r'<[^>]+>', '', cells[0])
+        role = re.sub(r'<[^>]+>', '', cells[2])
+        body_rows.append((name, role))
+
+    entries = []
+    for i, (name, file_name, grounded_in) in enumerate(readme_rows):
+        role = body_rows[i][1] if i < len(body_rows) else None
+        entries.append({
+            'id': slugify(file_name.rsplit('.', 1)[0]),
+            'kind': 'template',
+            'name': name,
+            'role': role,
+            'grounded_in': grounded_in,
+            'path': 'playbook/%s' % file_name,
+            'status': 'available',
+        })
+    return entries
+
+
+def build_entries(tools_text, inventory_text, playbook_readme_text=None, playbook_body_text=None):
     collections = parse_collections_table(tools_text)
     names = [c['name'] for c in collections]
     skills_by_name = parse_skill_names_by_collection(tools_text, names)
@@ -202,6 +249,8 @@ def build_entries(tools_text, inventory_text):
             },
         })
     entries.append(parse_own_skill(tools_text))
+    if playbook_readme_text is not None and playbook_body_text is not None:
+        entries.extend(parse_playbook_templates(playbook_readme_text, playbook_body_text))
     return entries
 
 
@@ -209,29 +258,34 @@ def slugify(name):
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
 
-def source_hash(tools_text, inventory_text):
+def source_hash(tools_text, inventory_text, playbook_readme_text=None):
     collections_block = extract_section(tools_text, '## Third-party collections installed', '## Audit before installing')
     tools_table_block = extract_section(inventory_text, '## Tools and skills', '## Part 3 and 4 research')
     digest = hashlib.sha256()
     digest.update(collections_block.encode('utf-8'))
     digest.update(tools_table_block.encode('utf-8'))
+    if playbook_readme_text is not None:
+        digest.update(playbook_readme_text.encode('utf-8'))
     return digest.hexdigest()
 
 
 def build_manifest():
     tools_text = read(TOOLS_MD)
     inventory_text = read(INVENTORY_MD)
+    playbook_readme_text = read(PLAYBOOK_README) if os.path.exists(PLAYBOOK_README) else None
+    playbook_body_text = read(PLAYBOOK_BODY_EN) if os.path.exists(PLAYBOOK_BODY_EN) else None
     return {
         'generated_by': 'build/generate_toolkit_manifest.py',
         'generated_at': date.today().isoformat(),
-        'derived_from': ['TOOLS.md', 'sources/inventory.md', 'README.md'],
+        'derived_from': ['TOOLS.md', 'sources/inventory.md', 'playbook/README.md', 'README.md'],
         'scope_note': (
             "Agent Skills actually installed in this project's .claude/skills/, plus this "
-            'project\'s own operational artefacts (kind: "own_skill", and "template" once '
-            'NEXT-STEPS.md item 3, the playbook, is consolidated). Does not cover every tool '
-            'cited in sources/inventory.md: some of those are conventional software (a static '
-            'analyser, an orchestration library), not an installable Agent Skill, and forcing '
-            'them into this schema would assert an install path this project never verified.'
+            "project's own operational artefacts (kind: \"own_skill\" for intake-briefing, "
+            '"template" for the seven playbook artefacts, see playbook/README.md). Does not '
+            'cover every tool cited in sources/inventory.md: some of those are conventional '
+            'software (a static analyser, an orchestration library), not an installable Agent '
+            'Skill, and forcing them into this schema would assert an install path this '
+            'project never verified.'
         ),
         'verification_note': (
             'This file is a snapshot, generated on the date above. Before installing anything '
@@ -239,8 +293,8 @@ def build_manifest():
             'whether it is still current. Do not present this file as live state.'
         ),
         'medir_steps': MEDIR_STEPS,
-        'source_hash': source_hash(tools_text, inventory_text),
-        'entries': build_entries(tools_text, inventory_text),
+        'source_hash': source_hash(tools_text, inventory_text, playbook_readme_text),
+        'entries': build_entries(tools_text, inventory_text, playbook_readme_text, playbook_body_text),
     }
 
 

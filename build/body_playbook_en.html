@@ -1,0 +1,67 @@
+<p class="eyebrow">Harness · Companion document</p>
+
+<h1>The playbook: seven templates, derived, not invented</h1>
+
+<p class="deck">The four parts are the argument. This is the toolkit derived from it: seven operational templates, each one traceable back to the part and section that already introduced its underlying concept.</p>
+
+<p class="byline">Fernando Teco Sodré · September 2026</p>
+
+<h2 id="why">Why this exists, and why it waited</h2>
+
+<p>Every template below reuses something the series already argued for. None of it is a new idea competing with the four parts, and that boundary was deliberate: consolidating this playbook right after finishing the article series, on 31 August 2026, would have blurred the line between the argument and the toolkit derived from it. It stayed a named, tracked, deliberately parked item in <code>NEXT-STEPS.md</code> until 13 September 2026, when it was finally picked up.</p>
+
+<p>Each template names, in its own file, exactly which part and section grounds it. Copy any one of them into your own project and adapt every field: these are working templates, not software, and a template filled in without judgement recreates the exact failure this whole project argues against, an artefact mistaken for the reasoning it is supposed to support.</p>
+
+<figure>
+<img src="diagrams/part4/d10-quarterly-loop.png" alt="The office's quarterly loop: briefing, certification, operation, receipts, indicators, revalidation, and back to briefing" style="width:100%;height:auto;display:block">
+<figcaption>D10 · The office's own quarterly loop, from Part 4's eight-indicators section. It organises this playbook the same way it closes that section, a second, legitimate appearance rather than a competing one.</figcaption>
+</figure>
+
+<h2 id="templates">The seven templates</h2>
+
+<table class="wrap">
+<thead><tr><th>Template</th><th>Grounded in</th><th>What it answers</th></tr></thead>
+<tbody>
+<tr><td><a href="playbook/task-contract.md">Task contract</a></td><td>Part 1, the Map step</td><td>What does done actually mean, and what must this never do</td></tr>
+<tr><td><a href="playbook/skill-template.md">Skill</a></td><td>Part 2's five-field skeleton and two worked examples</td><td>The scaffold behind every skill this project has published</td></tr>
+<tr><td><a href="playbook/execution-receipt.md">Execution receipt</a></td><td>Part 2's base receipt, extended in Part 3</td><td>What an incident review needs, before the incident happens</td></tr>
+<tr><td><a href="playbook/risk-matrix-by-tier.md">Risk matrix by tier</a></td><td>Part 3's matrix of authority, crossed with Part 1's tiers</td><td>Which tier may attempt which class of action, and under what approval</td></tr>
+<tr><td><a href="playbook/tier-diagnostic.md">Tier diagnostic</a></td><td>Part 1's twelve-question checklist</td><td>Where the harness's real gap sits, by MEDIR step</td></tr>
+<tr><td><a href="playbook/rollout-path.md">Rollout path, N0 to N3</a></td><td>Part 1's gating rule and Part 2's firing-history signal</td><td>What must exist, with evidence, before promoting a tier</td></tr>
+<tr><td><a href="playbook/agent-registry.md">Agent registry</a></td><td>Part 4's life cycle and four roles</td><td>How many agents actually exist, and who answers for each one</td></tr>
+<tr><td><a href="playbook/certification-minutes.md">Certification meeting minutes</a></td><td>Part 4's certified state</td><td>The record that makes a certification decision reconstructible later</td></tr>
+</tbody>
+</table>
+
+<p>The last two rows are one item in this project's own tracking (<code>NEXT-STEPS.md</code> item 3 lists "agent-registry template and certification-meeting-minutes template" as a single bullet) but two separate files here, since a registry and a set of meeting minutes are filled in by different people, at different moments.</p>
+
+<h2 id="how-they-connect">How these connect to each other</h2>
+
+<p><code>task-contract.md</code> feeds <code>skill-template.md</code>: a skill's own task-contract section is the same fields, copied in. <code>risk-matrix-by-tier.md</code> and <code>execution-receipt.md</code>'s rule-of-two block are the two independent nets Part 3 insists both run together, neither one alone. <code>tier-diagnostic.md</code> feeds the tier decision in <code>rollout-path.md</code>, which in turn feeds the tier column in <code>agent-registry.md</code>. <code>certification-minutes.md</code> is the record that sets an agent-registry row's certified date and revalidation date, and it gets run again, not a lighter version of it, at every revalidation.</p>
+
+<h2 id="machine-readable">Machine-readable form</h2>
+
+<p>Each template is registered in <a href="toolkit.json">toolkit.json</a> as <code>"kind": "template"</code>, carrying the same fields the 38 installed skills already carry there: a role, the part it grounds, and its path in this repository. An agent enumerating what this project offers sees these seven artefacts alongside the installed skills, not as a separate, undiscoverable category. See <a href="AGENTS.md">AGENTS.md</a> for the full protocol.</p>
+
+<h2 id="limits">Honest limits</h2>
+
+<p>Nothing here validates that a field was filled in correctly. <code>execution-receipt.md</code>'s JSON shape does not enforce that a <code>cost</code> field holds a real number rather than a guess, the same way a task contract's "done when" field is only as good as the judgement that wrote it. These templates make the right question harder to skip. They do not answer it for you.</p>
+
+<p>Translation into Portuguese and Spanish for this page is in progress. The template files themselves are usable in any language today: most of their fields are structural (a class of action, a date, a named role), not prose that needs translating to be filled in correctly.</p>
+
+<table class="wrap">
+<thead><tr><th>Piece</th><th>What it delivers</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
+<tr><td><a href="harness-p2.html">Part 2</a></td><td>Guides and sensors, the skill format, three complete examples and the environment classes</td></tr>
+<tr><td><a href="harness-p3.html">Part 3</a></td><td>The separation of powers, the rule of two, identity, injection, the record, and the legal ground in Brazil and Europe</td></tr>
+<tr><td><a href="harness-p4.html">Part 4</a></td><td>The agent as a managed object: a life cycle, four roles, eight indicators and where the office that runs all of it should sit</td></tr>
+<tr><td><a href="harness-toolkit.html">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
+<tr><td>Playbook, this one</td><td>Seven operational templates derived from the four parts, opening with D10</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Companion document · Harness series · Every template traces back to the part and section that grounds it, see <code>playbook/README.md</code> for the full index.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
+</div>

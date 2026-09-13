@@ -140,9 +140,9 @@ Estructura cubierta, en el orden en que realmente se redactó:
 
 ---
 
-## 3. Consolidar el playbook
+## 3. Consolidar el playbook, hecho
 
-No iniciado, y deliberadamente fuera del alcance de la próxima sesión de contenido, decidido el 31 de agosto de 2026: las cuatro partes son el argumento, el playbook es el conjunto de herramientas derivado de ellas, y construirlo ahora, justo al cerrar la serie de artículos, difuminaría esa frontera. Este elemento queda como el registro explícito y deliberadamente aparcado de lo que el playbook va a contener, para que la próxima sesión que retome esta tarea no tenga que reconstruir el plan desde cero.
+Aparcado el 31 de agosto de 2026, retomado y cerrado el 13 de septiembre de 2026, en la misma sesión que construyó `toolkit.json`. Deliberadamente fuera del alcance de la sesión de contenido que cerró la serie de artículos justo después, decidido a propósito: las cuatro partes son el argumento, el playbook es el conjunto de herramientas derivado de ellas, y construirlo en ese momento habría difuminado esa frontera. Este elemento quedó como el registro explícito y deliberadamente aparcado de lo que el playbook contendría hasta que de hecho se retomara.
 
 Reutiliza las cuatro partes y la guía, y agrega siete plantillas operativas que todavía no existen, cada una rastreable hasta la pieza que ya introdujo el concepto detrás de ella, no inventada desde cero:
 
@@ -157,6 +157,10 @@ Reutiliza las cuatro partes y la guía, y agrega siete plantillas operativas que
 El D10, el bucle propio de la oficina por trimestre, dejó de ser candidato del playbook: ya se publicó dentro de la propia parte 4, cerrando la sección de los ocho indicadores. Todavía puede abrir el playbook como una segunda aparición, legítima, ya que ahí organiza el documento entero en vez de competir consigo mismo.
 
 **Listo cuando, de hecho, se retome:** las siete plantillas existen, cada una referenciada de vuelta a la parte y la sección que la fundamenta, y el playbook abre con el D10 como su propio diagrama organizador.
+
+**Cerrado el 13 de septiembre de 2026.** Las siete plantillas existen como ocho archivos reales en `playbook/` (el registro y el acta de homologación salen por separado, como se planeó arriba), cada una nombrando, en su propio texto, la parte y la sección exacta de la que deriva, ninguno un concepto inventado: `task-contract.md` (el paso Mapear de la parte 1), `skill-template.md` (el esqueleto de cinco campos y los dos ejemplos completos de la parte 2), `execution-receipt.md` (el recibo base de la parte 2, extendido con las respuestas de la regla de dos y el punto de reversión de la parte 3), `risk-matrix-by-tier.md` (la matriz de autoridad de la parte 3 cruzada con las bandas de la parte 1), `tier-diagnostic.md` (la lista de doce preguntas de la parte 1, convertida en instrumento permanente), `rollout-path.md` (armado a partir de la regla de puerta de la parte 1 y la señal del historial de disparo de la parte 2, el único artefacto que no existía como una sola cita en ninguna de las dos partes), y `agent-registry.md` más `certification-minutes.md` (el ciclo de vida, los cuatro roles y "un registro es una tabla, la certificación es una reunión con acta" de la parte 4). `harness-playbook.html` explica y enlaza cada uno, abriendo con el D10, inglés completo, portugués y español un boceto honesto de traducción en curso, el mismo patrón que la parte 3 y la parte 4 usaron antes de ganar traducción completa. `playbook/README.md` es el índice legible por máquina y por humano; cada plantilla también está registrada en `toolkit.json` como `kind: "template"`.
+
+**Retomar esto exigió extender la `.topbar` compartida a un octavo elemento de serie, en cada página ya existente.** Que `harness-playbook.html` se sumara a la serie significó que `SERIES_ORDER`, `FILES`, `LABELS_EN` y `EXISTS` necesitaron una entrada `'playbook'` en los siete scripts de build que los llevan (`build_p2.py`, `build_p3.py`, `build_p4.py`, `build_glossary.py`, `build_sources.py`, `build_toolkit.py`, `build_logbook.py`), más una edición directa en `harness-p1.html`, la única página sin script de build funcional. La propia regla de navegación cruzada de `STANDARDS.md` declara esa cobertura completa en cada página HTML, sin excepción, así que esto no fue pulido opcional. Las ocho páginas se regeneraron después, sin ningún enlace roto.
 
 ---
 

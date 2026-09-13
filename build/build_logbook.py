@@ -799,12 +799,14 @@ def main():
     # para as outras seis pecas levam o prefixo ../. O icone do proprio
     # diario aparece como item corrente (cur), sem link, como nas
     # outras paginas quando o item e a propria pagina.
-    SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources']
+    SERIES_ORDER = ['p1', 'p2', 'p3', 'p4', 'guide', 'glossary', 'sources', 'playbook']
     FILES = {'p1': '../harness-p1.html', 'p2': '../harness-p2.html', 'p3': '../harness-p3.html',
              'p4': '../harness-p4.html', 'guide': '../harness-toolkit.html',
-             'glossary': '../harness-glossary.html', 'sources': '../harness-sources.html'}
+             'glossary': '../harness-glossary.html', 'sources': '../harness-sources.html',
+             'playbook': '../harness-playbook.html'}
     LABELS_EN = {'p1': 'Part 1', 'p2': 'Part 2', 'p3': 'Part 3', 'p4': 'Part 4',
-                 'guide': 'Compact guide', 'glossary': 'Glossary', 'sources': 'Sources'}
+                 'guide': 'Compact guide', 'glossary': 'Glossary', 'sources': 'Sources',
+                 'playbook': 'Playbook'}
     topbar_pieces = []
     for i, key in enumerate(SERIES_ORDER):
         if i > 0:
@@ -830,7 +832,7 @@ def main():
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
-  var SERIES={p1:{file:'../harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'../harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'../harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'../harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'../harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'../harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'../harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},logbook:{file:'',label:{en:'Project log',pt:'Di\\u00e1rio de bordo',es:'Diario de bordo'}}};
+  var SERIES={p1:{file:'../harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'../harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'../harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'../harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'../harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\\u00eda compacta'}},glossary:{file:'../harness-glossary.html',label:{en:'Glossary',pt:'Gloss\\u00e1rio',es:'Glosario'}},sources:{file:'../harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},playbook:{file:'../harness-playbook.html',label:{en:'Playbook',pt:'Playbook',es:'Playbook'}},logbook:{file:'',label:{en:'Project log',pt:'Di\\u00e1rio de bordo',es:'Diario de bordo'}}};
   function setSeries(l){
     document.querySelectorAll('.serie [data-key]').forEach(function(el){
       var info=SERIES[el.dataset.key];

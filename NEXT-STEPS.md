@@ -126,9 +126,9 @@ Structure covered, in the order actually drafted:
 
 ---
 
-## 3. Consolidate the playbook
+## 3. Consolidate the playbook, done
 
-Not started, and not scoped for the next content session either, decided 31 August 2026: the four parts are the argument, the playbook is the toolkit derived from them, and building it now, right after finishing the article series, would blur that boundary. This entry stays as the explicit, deliberately parked record of what the playbook will contain, so the next session that does pick it up does not have to re-derive the plan from scratch.
+Parked 31 August 2026, picked up and closed 13 September 2026, the same session that built `toolkit.json`. Not scoped for the content-writing session that immediately followed finishing the article series, decided deliberately: the four parts are the argument, the playbook is the toolkit derived from them, and building it right then would have blurred that boundary. This entry stayed as the explicit, deliberately parked record of what the playbook would contain until it was actually picked up.
 
 Reuses the four parts and the guide, and adds seven operational templates that do not exist yet, each one traceable to the piece that already introduced its underlying concept, not invented fresh:
 
@@ -143,6 +143,10 @@ Reuses the four parts and the guide, and adds seven operational templates that d
 D10, the office's own quarterly loop, is no longer a playbook candidate: it shipped inside Part 4 itself, closing the eight-indicators section. It can still open the playbook as a second appearance, legitimately, since it organises the whole document there rather than competing with itself.
 
 **Done when it is actually picked up:** all seven templates exist, each cross-referenced back to the part and section that grounds it, and the playbook opens with D10 as its own organising diagram.
+
+**Closed 13 September 2026.** All seven templates exist as eight real files in `playbook/` (the registry and the certification minutes ship separately, as planned above), each one naming, in its own text, the exact part and section it derives from, no invented concept among them: `task-contract.md` (Part 1's Map step), `skill-template.md` (Part 2's five-field skeleton and two worked examples), `execution-receipt.md` (Part 2's base receipt, extended with Part 3's rule-of-two answers and reversal point), `risk-matrix-by-tier.md` (Part 3's matrix of authority crossed with Part 1's tiers), `tier-diagnostic.md` (Part 1's twelve-question checklist, turned into a standing instrument), `rollout-path.md` (assembled from Part 1's gating rule and Part 2's firing-history signal, the one artefact that did not exist as a single quote in either part), `agent-registry.md` and `certification-minutes.md` (Part 4's life cycle, four roles and "a registry is a table, certification is a meeting with minutes"). `harness-playbook.html` explains and links each one, opening with D10, English complete, Portuguese and Spanish an honest translation-in-progress stub, the same pattern Part 3 and Part 4 used before they gained full translation. `playbook/README.md` is the machine- and human-readable index; each template is also registered in `toolkit.json` as `kind: "template"`.
+
+**Picking this up required extending the shared `.topbar` to an eighth series item, across every existing page.** `harness-playbook.html` joining the series meant `SERIES_ORDER`, `FILES`, `LABELS_EN` and `EXISTS` needed a `'playbook'` entry in all seven build scripts that carry them (`build_p2.py`, `build_p3.py`, `build_p4.py`, `build_glossary.py`, `build_sources.py`, `build_toolkit.py`, `build_logbook.py`), plus a direct hand-edit to `harness-p1.html`, the one page with no working build script. `STANDARDS.md`'s own Cross-navigation rule states this coverage has to be complete across every HTML page, no exception, so this was not optional polish. All eight pages regenerated afterward with zero broken links.
 
 ---
 

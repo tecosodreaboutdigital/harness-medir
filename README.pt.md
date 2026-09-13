@@ -13,7 +13,7 @@ Estado: em andamento, agosto de 2026
 
 Publicado em [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositório) e [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, os arquivos HTML renderizam como páginas, não só como código-fonte).
 
-**Comece a ler:** [Parte 1, por quê](harness-p1.html) · [Parte 2, como](harness-p2.html) · [Parte 3, operação](harness-p3.html) · [Parte 4, governança](harness-p4.html) · [Guia compacto](harness-toolkit.html) · [Glossário](harness-glossary.html) · [Fontes](harness-sources.html) · [Diário de bordo](docs/logbook.html)
+**Comece a ler:** [Parte 1, por quê](harness-p1.html) · [Parte 2, como](harness-p2.html) · [Parte 3, operação](harness-p3.html) · [Parte 4, governança](harness-p4.html) · [Guia compacto](harness-toolkit.html) · [Glossário](harness-glossary.html) · [Fontes](harness-sources.html) · [Playbook](harness-playbook.html) · [Diário de bordo](docs/logbook.html)
 
 ---
 
@@ -146,6 +146,10 @@ O diário completo, com a tabela por marco e a metodologia por trás desses núm
 ├── harness-toolkit.html               guia compacto, organizado pelo MEDIR, pronto
 ├── harness-glossary.html              glossário compartilhado, trilíngue, toda parte aponta pra lá
 ├── harness-sources.html               fontes compartilhadas, trilíngue, toda parte aponta pra lá
+├── harness-playbook.html              sete templates operacionais, abre com o D10, inglês completo
+├── playbook/
+│   ├── README.md                      índice, sete templates em oito arquivos, cada um preso à sua parte
+│   └── ...                            task-contract.md, skill-template.md, e mais seis
 ├── sources/
 │   └── inventory.md                   todas as fontes verificadas, com status
 ├── diagrams/

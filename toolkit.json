@@ -4,9 +4,10 @@
   "derived_from": [
     "TOOLS.md",
     "sources/inventory.md",
+    "playbook/README.md",
     "README.md"
   ],
-  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\", and \"template\" once NEXT-STEPS.md item 3, the playbook, is consolidated). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
+  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\" for intake-briefing, \"template\" for the seven playbook artefacts, see playbook/README.md). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
   "verification_note": "This file is a snapshot, generated on the date above. Before installing anything listed here, follow AGENTS.md's protocol: fetch the origin URL and check whether it is still current. Do not present this file as live state.",
   "medir_steps": [
     "map",
@@ -17,7 +18,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "0400f6befd2ec994b3765db91a3d5c3cc778722fc0ce10da17ae690b3a85ea23",
+  "source_hash": "c82b8f4f7602a7f3cc8dc1fdd8cd96c29b5a01770d458cd0ecc4767b021a491d",
   "entries": [
     {
       "id": "superpowers",
@@ -274,6 +275,78 @@
         "claude_code_plugin": "/plugin marketplace add tecosodreaboutdigital/intake-briefing\n/plugin install intake-briefing@intake-briefing",
         "verified": "31 August 2026, against each vendor's own documentation. Snapshot, not live status."
       }
+    },
+    {
+      "id": "task-contract",
+      "kind": "template",
+      "name": "Task contract",
+      "role": "What does done actually mean, and what must this never do",
+      "grounded_in": "Part 1, the Map step",
+      "path": "playbook/task-contract.md",
+      "status": "available"
+    },
+    {
+      "id": "skill-template",
+      "kind": "template",
+      "name": "Skill",
+      "role": "The scaffold behind every skill this project has published",
+      "grounded_in": "Part 2, the five-field skeleton and the two worked examples",
+      "path": "playbook/skill-template.md",
+      "status": "available"
+    },
+    {
+      "id": "execution-receipt",
+      "kind": "template",
+      "name": "Execution receipt",
+      "role": "What an incident review needs, before the incident happens",
+      "grounded_in": "Part 2's base receipt, extended in Part 3 with the rule-of-two answers and the reversal point",
+      "path": "playbook/execution-receipt.md",
+      "status": "available"
+    },
+    {
+      "id": "risk-matrix-by-tier",
+      "kind": "template",
+      "name": "Risk matrix by tier",
+      "role": "Which tier may attempt which class of action, and under what approval",
+      "grounded_in": "Part 3's matrix of authority, crossed with Part 1's N0 to N3 tiers",
+      "path": "playbook/risk-matrix-by-tier.md",
+      "status": "available"
+    },
+    {
+      "id": "tier-diagnostic",
+      "kind": "template",
+      "name": "Tier diagnostic",
+      "role": "Where the harness's real gap sits, by MEDIR step",
+      "grounded_in": "Part 1's twelve-question checklist, expanded into a standing instrument",
+      "path": "playbook/tier-diagnostic.md",
+      "status": "available"
+    },
+    {
+      "id": "rollout-path",
+      "kind": "template",
+      "name": "Rollout path, N0 to N3",
+      "role": "What must exist, with evidence, before promoting a tier",
+      "grounded_in": "The progression Part 1 states as a rule and Part 2 states as a signal, assembled here for the first time as a path",
+      "path": "playbook/rollout-path.md",
+      "status": "available"
+    },
+    {
+      "id": "agent-registry",
+      "kind": "template",
+      "name": "Agent registry",
+      "role": "How many agents actually exist, and who answers for each one",
+      "grounded_in": "Part 4's life cycle (six states) and four roles",
+      "path": "playbook/agent-registry.md",
+      "status": "available"
+    },
+    {
+      "id": "certification-minutes",
+      "kind": "template",
+      "name": "Certification meeting minutes",
+      "role": "The record that makes a certification decision reconstructible later",
+      "grounded_in": "Part 4's certified state, formalising the certifier's act",
+      "path": "playbook/certification-minutes.md",
+      "status": "available"
     }
   ]
 }

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The playbook: seven templates | Companion document</title>
+<style>
+:root{
+  --ink:#1b1b19;
+  --ink-soft:#4a4a45;
+  --ink-faint:#8a887f;
+  --rule:#c9c7bf;
+  --accent:#5c6b52;
+  --paper:#ffffff;
+  --fill:#eef1f4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:#f2f1ed;
+  color:var(--ink);
+  font-family:"Aptos","Aptos Light","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.62;
+  font-weight:400;
+}
+.page{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  padding:64px 72px 80px;
+}
+
+.langbar{
+  display:flex;
+  justify-content:flex-end;
+  gap:2px;
+  margin:0 0 22px;
+}
+.langbar button{
+  font-size:10px;
+  letter-spacing:.18em;
+  padding:5px 10px;
+  border:.5pt solid var(--rule);
+  color:var(--ink-faint);
+  background:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.langbar button.on{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+}
+.langbar button:hover{border-color:var(--accent);color:var(--ink)}
+
+.langbar{position:sticky;top:0;z-index:40;background:var(--paper);padding-top:10px}
+.topbar{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 0 12px;margin:0 0 22px;border-bottom:.5pt solid var(--rule);position:sticky;top:0;z-index:40;background:var(--paper)}
+.topbar .serie{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px}
+.topbar a{color:var(--ink-faint);border:0;text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.topbar .cur{color:var(--ink)}
+.topbar .pending{color:var(--rule)}
+.topbar .sep{color:var(--rule)}
+.topbar .brace{color:var(--ink-faint);font-weight:300;margin:0 1px}
+.topbar .icon-link{align-self:center;display:inline-flex}
+.orig-plain{color:var(--ink-faint);font-style:italic}
+@media print{.topbar{display:none}}
+.lang-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--fill);padding:10px 16px;margin:0 0 18px;font-size:12px}
+.lang-hint button{font-size:11px;padding:5px 12px;border:.5pt solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
+.lang-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.lang-hint button.x{border:0;padding:0 4px;font-size:15px;line-height:1;color:var(--ink-faint)}
+@media print{.lang-hint{display:none}}
+main[hidden]{display:none}
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 18px;
+}
+h1{
+  font-size:30px;
+  line-height:1.18;
+  font-weight:600;
+  margin:0 0 14px;
+  letter-spacing:-.01em;
+}
+.deck{
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin:0 0 26px;
+  max-width:58ch;
+}
+.byline{
+  font-size:11.5px;
+  color:var(--ink-faint);
+  border-top:.5pt solid var(--rule);
+  border-bottom:.5pt solid var(--rule);
+  padding:9px 0;
+  margin:0 0 34px;
+  letter-spacing:.02em;
+}
+h2{
+  font-size:19px;
+  font-weight:600;
+  line-height:1.3;
+  margin:44px 0 8px;
+  letter-spacing:-.005em;
+}
+h3{font-size:15px;font-weight:600;margin:26px 0 6px}
+p{margin:0 0 14px;text-align:justify;hyphens:auto}
+a{color:var(--ink);text-decoration:none;border-bottom:.5pt solid var(--rule)}
+a:hover{border-bottom-color:var(--accent)}
+.toc{
+  border:.5pt solid var(--rule);
+  padding:20px 24px;
+  margin:0 0 40px;
+}
+.toc p{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin:0 0 12px;
+  text-align:left;
+}
+.toc ol{margin:0;padding-left:18px;font-size:13.5px;line-height:1.9}
+.toc a{border:0}
+.toc a:hover{border-bottom:.5pt solid var(--accent)}
+blockquote{
+  margin:24px 0;
+  padding:14px 18px;
+  border:0;
+  background:var(--fill);
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--ink);
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+blockquote p{text-align:left;margin:0;font-size:12.5px}
+.rule-box{
+  border:0;
+  background:var(--fill);
+  padding:14px 18px;
+  margin:24px 0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+}
+.rule-box p{margin:0;text-align:left;font-size:12.5px;line-height:1.55}
+.rule-box .lbl{
+  display:block;
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+figure{margin:30px 0;page-break-inside:avoid}
+figure svg{width:100%;height:auto;display:block}
+figcaption{
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+  margin-top:10px;
+  line-height:1.5;
+  text-align:left;
+  border:0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  font-size:12.5px;
+}
+th{
+  text-align:center;
+  font-weight:600;
+  font-size:11.5px;
+  padding:7px 9px;
+  border-top:.5pt solid var(--ink);
+  border-bottom:.5pt solid var(--ink);
+}
+td{
+  padding:7px 9px;
+  border-bottom:.5pt solid var(--rule);
+  vertical-align:top;
+  line-height:1.45;
+}
+td:first-child{white-space:nowrap}
+table.wrap td:first-child{white-space:normal}
+ul,ol.body{margin:0 0 16px;padding-left:20px}
+li{margin-bottom:6px}
+.checklist{list-style:none;padding-left:0}
+.checklist li{
+  padding-left:26px;
+  position:relative;
+  margin-bottom:9px;
+  font-size:13.5px;
+}
+.checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;top:4px;
+  width:11px;height:11px;
+  border:.5pt solid var(--ink);
+}
+.checklist strong{font-weight:600}
+
+.g{
+  border-bottom:.5pt dotted var(--accent);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.g::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.g:hover::after,.g:focus::after{opacity:1;visibility:visible}
+
+.src{
+  border-bottom:.5pt solid var(--ink-faint);
+  cursor:help;
+  position:relative;
+  color:inherit;
+}
+.src::after{
+  content:attr(data-tip);
+  position:absolute;
+  left:50%;
+  bottom:150%;
+  transform:translateX(-50%);
+  width:250px;
+  background:#1b1b19;
+  color:#fff;
+  font-size:11.5px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  text-align:left;
+  padding:9px 11px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s ease;
+  z-index:30;
+  pointer-events:none;
+}
+.src:hover::after,.src:focus::after{opacity:1;visibility:visible}
+
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{
+  border:0;
+  margin:0 0 9px;
+  padding-left:1.4em;
+  text-indent:-1.4em;
+  font-size:12.5px;
+  line-height:1.55;
+  text-align:justify;
+}
+.gitem strong{font-weight:600}
+.gitem .orig{color:var(--ink-faint);font-size:11.5px}
+.sources{font-size:11.5px;line-height:1.6;color:var(--ink-soft)}
+.sources li{margin-bottom:8px}
+.next{
+  border-top:.5pt solid var(--ink);
+  margin-top:44px;
+  padding-top:22px;
+}
+.foot{
+  margin-top:44px;
+  padding-top:14px;
+  border-top:.5pt solid var(--rule);
+  font-size:11.5px;
+  font-style:italic;
+  color:var(--ink-faint);
+}
+svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
+.svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
+.svg-lbl{font-size:10px;letter-spacing:.14em;fill:#1b1b19}
+.svg-sub{font-size:8.5px;fill:#8a887f}
+.svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
+
+@media print{
+  @page{size:A4;margin:2cm 1.5cm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .page{max-width:none;padding:0;margin:0}
+  h1{font-size:20pt}
+  .deck{font-size:11.5pt}
+  h2{font-size:14pt;margin:16pt 0 6pt;page-break-after:avoid}
+  h3{font-size:12pt;margin:10pt 0 3pt;page-break-after:avoid}
+  p{orphans:3;widows:3}
+  th{font-size:8pt}
+  td{font-size:9pt}
+  blockquote{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  blockquote p{font-size:9pt}
+  .rule-box{font-size:9pt;padding:8pt 10pt;border:0;background:#eef1f4;page-break-inside:avoid}
+  .rule-box p{font-size:9pt}
+  figure{margin:14pt 0}
+  figcaption{font-size:9pt;font-style:italic;border:0}
+  .foot{font-size:9pt;font-style:italic}
+  .foot p{font-size:9pt}
+  .g{border-bottom:.5pt dotted #999}
+  .g::after{display:none}
+  .src{border-bottom:.5pt solid #999}
+  .src::after{display:none}
+
+pre{
+  background:var(--fill);
+  padding:14px 16px;
+  margin:20px 0;
+  overflow-x:auto;
+  border:0;
+  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact;
+  page-break-inside:avoid;
+}
+pre code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:11.5px;
+  line-height:1.5;
+  white-space:pre;
+  color:var(--ink);
+}
+p code{
+  font-family:var(--font-mono,"Consolas","Menlo",monospace);
+  font-size:12.5px;
+  background:var(--fill);
+  padding:1px 4px;
+}
+
+.serie{
+  display:flex;
+  gap:18px;
+  align-items:baseline;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:0 0 16px;
+  margin:0 0 26px;
+  border-bottom:.5pt solid var(--rule);
+}
+.serie a{color:var(--ink-faint);border:0;text-decoration:none}
+.serie a:hover{color:var(--ink)}
+.serie a.cur{color:var(--ink)}
+.serie span{color:var(--rule)}
+.gitem{font-size:9.5pt;margin:0 0 5pt;border:0;page-break-inside:avoid}
+  .gitem .orig{font-size:9pt;font-style:italic}
+  pre{font-size:8.5pt;padding:6pt 8pt;background:#eef1f4;border:0;page-break-inside:avoid}
+  pre code{font-size:8.5pt}
+  p code{font-size:9pt}
+  a{border:0}
+  .langbar{display:none}
+  .toc{page-break-after:always}
+}
+@media (max-width:640px){
+  .page{padding:32px 22px 48px}
+  h1{font-size:24px}
+  p{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<nav class="serie">
+<a href="harness-p1.html#en-" data-key="p1">Part 1</a>
+<span class="sep">·</span>
+<a href="harness-p2.html#en-" data-key="p2">Part 2</a>
+<span class="sep">·</span>
+<a href="harness-p3.html#en-" data-key="p3">Part 3</a>
+<span class="sep">·</span>
+<a href="harness-p4.html#en-" data-key="p4">Part 4</a>
+<span class="sep pipe">|</span>
+<a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a>
+<span class="sep">·</span>
+<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a>
+<span class="sep">·</span>
+<a href="harness-sources.html#en-" data-key="sources">Sources</a>
+<span class="sep">·</span>
+<span class="cur" data-key="playbook">Playbook</span>
+<span class="sep pipe">|</span>
+<a class="icon-link" href="docs/logbook.html#en-" data-key="logbook" data-icon="1" title="Project log" aria-label="Project log"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="1,13 5,13 5,9 9,9 9,4 15,4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+</nav>
+<span class="brace">{</span>
+<div class="langbar">
+<button type="button" data-lang="pt">PT</button>
+<button type="button" class="on" data-lang="en">EN</button>
+<button type="button" data-lang="es">ES</button>
+</div>
+<span class="brace">}</span>
+</div>
+<main class="page" id="doc-pt" hidden>
+<p class="eyebrow">Harness · Documento complementar</p>
+
+<h1>O playbook: sete templates, derivados, não inventados</h1>
+
+<p class="deck">As quatro partes são o argumento. Este é o kit derivado delas: sete templates operacionais, cada um rastreável até a parte e a seção que já introduziu o conceito por trás dele.</p>
+
+<p class="byline">Fernando Teco Sodré · Setembro de 2026</p>
+
+<p><strong>Tradução em andamento.</strong> O conteúdo completo, em inglês, está na aba EN acima. Os sete arquivos de template abaixo já são utilizáveis em qualquer língua hoje: a maior parte dos campos é estrutural (uma classe de ação, uma data, um papel nomeado), não prosa que precise de tradução para ser preenchida corretamente.</p>
+
+<figure>
+<img src="diagrams/part4/d10-quarterly-loop.png" alt="O laço trimestral do escritório: briefing, certificação, operação, recibos, indicadores, revalidação, e de volta ao briefing" style="width:100%;height:auto;display:block">
+<figcaption>D10 · O laço trimestral do próprio escritório, da seção de oito indicadores da Parte 4. Organiza este playbook do mesmo jeito que fecha aquela seção, uma segunda aparição legítima, não uma competindo com a outra.</figcaption>
+</figure>
+
+<table class="wrap">
+<thead><tr><th>Template</th><th>Fundamentado em</th><th>O que responde</th></tr></thead>
+<tbody>
+<tr><td><a href="playbook/task-contract.md">Contrato de tarefa</a></td><td>Parte 1, o passo Mapear</td><td>O que "concluído" realmente significa, e o que isso nunca deve fazer</td></tr>
+<tr><td><a href="playbook/skill-template.md">Skill</a></td><td>O esqueleto de cinco campos da Parte 2 e os dois exemplos trabalhados</td><td>O molde por trás de toda skill que este projeto já publicou</td></tr>
+<tr><td><a href="playbook/execution-receipt.md">Recibo de execução</a></td><td>O recibo base da Parte 2, estendido na Parte 3</td><td>O que uma revisão de incidente precisa, antes do incidente acontecer</td></tr>
+<tr><td><a href="playbook/risk-matrix-by-tier.md">Matriz de risco por faixa</a></td><td>A matriz de alçada da Parte 3, cruzada com as faixas da Parte 1</td><td>Qual faixa pode tentar qual classe de ação, e sob qual aprovação</td></tr>
+<tr><td><a href="playbook/tier-diagnostic.md">Diagnóstico de faixa</a></td><td>O checklist de doze perguntas da Parte 1</td><td>Onde está a lacuna real do harness, por passo do MEDIR</td></tr>
+<tr><td><a href="playbook/rollout-path.md">Trilha de rollout, N0 a N3</a></td><td>A regra de portão da Parte 1 e o sinal de histórico de disparo da Parte 2</td><td>O que precisa existir, com evidência, antes de promover uma faixa</td></tr>
+<tr><td><a href="playbook/agent-registry.md">Registro de agentes</a></td><td>O ciclo de vida e os quatro papéis da Parte 4</td><td>Quantos agentes de fato existem, e quem responde por cada um</td></tr>
+<tr><td><a href="playbook/certification-minutes.md">Ata de homologação</a></td><td>O estado certificado da Parte 4</td><td>O registro que torna uma decisão de homologação reconstruível depois</td></tr>
+</tbody>
+</table>
+
+<table class="wrap">
+<thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de conselho</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guias e verificadores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
+<tr><td><a href="harness-p4.html">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que roda tudo isso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
+<tr><td>Playbook, este</td><td>Sete templates operacionais derivados das quatro partes, abrindo com o D10</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Documento complementar · Série Harness · Cada template remonta até a parte e a seção que o fundamenta, ver <code>playbook/README.md</code> para o índice completo.</p>
+<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, crescimento de palavra e token no <a href="docs/logbook.html">diário de bordo</a>.</p>
+</div>
+</main>
+<main class="page" id="doc-en">
+<p class="eyebrow">Harness · Companion document</p>
+
+<h1>The playbook: seven templates, derived, not invented</h1>
+
+<p class="deck">The four parts are the argument. This is the toolkit derived from it: seven operational templates, each one traceable back to the part and section that already introduced its underlying concept.</p>
+
+<p class="byline">Fernando Teco Sodré · September 2026</p>
+
+<h2 id="en-why">Why this exists, and why it waited</h2>
+
+<p>Every template below reuses something the series already argued for. None of it is a new idea competing with the four parts, and that boundary was deliberate: consolidating this playbook right after finishing the article series, on 31 August 2026, would have blurred the line between the argument and the toolkit derived from it. It stayed a named, tracked, deliberately parked item in <code>NEXT-STEPS.md</code> until 13 September 2026, when it was finally picked up.</p>
+
+<p>Each template names, in its own file, exactly which part and section grounds it. Copy any one of them into your own project and adapt every field: these are working templates, not software, and a template filled in without judgement recreates the exact failure this whole project argues against, an artefact mistaken for the reasoning it is supposed to support.</p>
+
+<figure>
+<img src="diagrams/part4/d10-quarterly-loop.png" alt="The office's quarterly loop: briefing, certification, operation, receipts, indicators, revalidation, and back to briefing" style="width:100%;height:auto;display:block">
+<figcaption>D10 · The office's own quarterly loop, from Part 4's eight-indicators section. It organises this playbook the same way it closes that section, a second, legitimate appearance rather than a competing one.</figcaption>
+</figure>
+
+<h2 id="en-templates">The seven templates</h2>
+
+<table class="wrap">
+<thead><tr><th>Template</th><th>Grounded in</th><th>What it answers</th></tr></thead>
+<tbody>
+<tr><td><a href="playbook/task-contract.md">Task contract</a></td><td>Part 1, the Map step</td><td>What does done actually mean, and what must this never do</td></tr>
+<tr><td><a href="playbook/skill-template.md">Skill</a></td><td>Part 2's five-field skeleton and two worked examples</td><td>The scaffold behind every skill this project has published</td></tr>
+<tr><td><a href="playbook/execution-receipt.md">Execution receipt</a></td><td>Part 2's base receipt, extended in Part 3</td><td>What an incident review needs, before the incident happens</td></tr>
+<tr><td><a href="playbook/risk-matrix-by-tier.md">Risk matrix by tier</a></td><td>Part 3's matrix of authority, crossed with Part 1's tiers</td><td>Which tier may attempt which class of action, and under what approval</td></tr>
+<tr><td><a href="playbook/tier-diagnostic.md">Tier diagnostic</a></td><td>Part 1's twelve-question checklist</td><td>Where the harness's real gap sits, by MEDIR step</td></tr>
+<tr><td><a href="playbook/rollout-path.md">Rollout path, N0 to N3</a></td><td>Part 1's gating rule and Part 2's firing-history signal</td><td>What must exist, with evidence, before promoting a tier</td></tr>
+<tr><td><a href="playbook/agent-registry.md">Agent registry</a></td><td>Part 4's life cycle and four roles</td><td>How many agents actually exist, and who answers for each one</td></tr>
+<tr><td><a href="playbook/certification-minutes.md">Certification meeting minutes</a></td><td>Part 4's certified state</td><td>The record that makes a certification decision reconstructible later</td></tr>
+</tbody>
+</table>
+
+<p>The last two rows are one item in this project's own tracking (<code>NEXT-STEPS.md</code> item 3 lists "agent-registry template and certification-meeting-minutes template" as a single bullet) but two separate files here, since a registry and a set of meeting minutes are filled in by different people, at different moments.</p>
+
+<h2 id="en-how-they-connect">How these connect to each other</h2>
+
+<p><code>task-contract.md</code> feeds <code>skill-template.md</code>: a skill's own task-contract section is the same fields, copied in. <code>risk-matrix-by-tier.md</code> and <code>execution-receipt.md</code>'s rule-of-two block are the two independent nets Part 3 insists both run together, neither one alone. <code>tier-diagnostic.md</code> feeds the tier decision in <code>rollout-path.md</code>, which in turn feeds the tier column in <code>agent-registry.md</code>. <code>certification-minutes.md</code> is the record that sets an agent-registry row's certified date and revalidation date, and it gets run again, not a lighter version of it, at every revalidation.</p>
+
+<h2 id="en-machine-readable">Machine-readable form</h2>
+
+<p>Each template is registered in <a href="toolkit.json">toolkit.json</a> as <code>"kind": "template"</code>, carrying the same fields the 38 installed skills already carry there: a role, the part it grounds, and its path in this repository. An agent enumerating what this project offers sees these seven artefacts alongside the installed skills, not as a separate, undiscoverable category. See <a href="AGENTS.md">AGENTS.md</a> for the full protocol.</p>
+
+<h2 id="en-limits">Honest limits</h2>
+
+<p>Nothing here validates that a field was filled in correctly. <code>execution-receipt.md</code>'s JSON shape does not enforce that a <code>cost</code> field holds a real number rather than a guess, the same way a task contract's "done when" field is only as good as the judgement that wrote it. These templates make the right question harder to skip. They do not answer it for you.</p>
+
+<p>Translation into Portuguese and Spanish for this page is in progress. The template files themselves are usable in any language today: most of their fields are structural (a class of action, a date, a named role), not prose that needs translating to be filled in correctly.</p>
+
+<table class="wrap">
+<thead><tr><th>Piece</th><th>What it delivers</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
+<tr><td><a href="harness-p2.html">Part 2</a></td><td>Guides and sensors, the skill format, three complete examples and the environment classes</td></tr>
+<tr><td><a href="harness-p3.html">Part 3</a></td><td>The separation of powers, the rule of two, identity, injection, the record, and the legal ground in Brazil and Europe</td></tr>
+<tr><td><a href="harness-p4.html">Part 4</a></td><td>The agent as a managed object: a life cycle, four roles, eight indicators and where the office that runs all of it should sit</td></tr>
+<tr><td><a href="harness-toolkit.html">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
+<tr><td>Playbook, this one</td><td>Seven operational templates derived from the four parts, opening with D10</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Companion document · Harness series · Every template traces back to the part and section that grounds it, see <code>playbook/README.md</code> for the full index.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
+</div>
+</main>
+<main class="page" id="doc-es" hidden>
+<p class="eyebrow">Harness · Documento complementario</p>
+
+<h1>El playbook: siete templates, derivados, no inventados</h1>
+
+<p class="deck">Las cuatro partes son el argumento. Este es el kit derivado de ellas: siete templates operativos, cada uno rastreable hasta la parte y la sección que ya introdujo el concepto detrás de él.</p>
+
+<p class="byline">Fernando Teco Sodré · Septiembre de 2026</p>
+
+<p><strong>Traducción en curso.</strong> El contenido completo, en inglés, está en la pestaña EN de arriba. Los siete archivos de template de abajo ya son utilizables en cualquier idioma hoy: la mayoría de sus campos son estructurales (una clase de acción, una fecha, un rol nombrado), no prosa que necesite traducción para llenarse correctamente.</p>
+
+<figure>
+<img src="diagrams/part4/d10-quarterly-loop.png" alt="El bucle trimestral de la oficina: briefing, certificación, operación, recibos, indicadores, revalidación, y de vuelta al briefing" style="width:100%;height:auto;display:block">
+<figcaption>D10 · El bucle trimestral de la propia oficina, de la sección de ocho indicadores de la Parte 4. Organiza este playbook del mismo modo que cierra esa sección, una segunda aparición legítima, no una que compite con la otra.</figcaption>
+</figure>
+
+<table class="wrap">
+<thead><tr><th>Template</th><th>Fundamentado en</th><th>Qué responde</th></tr></thead>
+<tbody>
+<tr><td><a href="playbook/task-contract.md">Contrato de tarea</a></td><td>Parte 1, el paso Mapear</td><td>Qué significa realmente "hecho", y qué no debe hacer nunca</td></tr>
+<tr><td><a href="playbook/skill-template.md">Skill</a></td><td>El esqueleto de cinco campos de la Parte 2 y los dos ejemplos trabajados</td><td>El molde detrás de toda skill que este proyecto ya publicó</td></tr>
+<tr><td><a href="playbook/execution-receipt.md">Recibo de ejecución</a></td><td>El recibo base de la Parte 2, extendido en la Parte 3</td><td>Lo que una revisión de incidente necesita, antes de que el incidente ocurra</td></tr>
+<tr><td><a href="playbook/risk-matrix-by-tier.md">Matriz de riesgo por nivel</a></td><td>La matriz de autoridad de la Parte 3, cruzada con los niveles de la Parte 1</td><td>Qué nivel puede intentar qué clase de acción, y bajo qué aprobación</td></tr>
+<tr><td><a href="playbook/tier-diagnostic.md">Diagnóstico de nivel</a></td><td>El checklist de doce preguntas de la Parte 1</td><td>Dónde está la brecha real del harness, por paso del MEDIR</td></tr>
+<tr><td><a href="playbook/rollout-path.md">Ruta de despliegue, N0 a N3</a></td><td>La regla de puerta de la Parte 1 y la señal del historial de disparo de la Parte 2</td><td>Qué debe existir, con evidencia, antes de promover un nivel</td></tr>
+<tr><td><a href="playbook/agent-registry.md">Registro de agentes</a></td><td>El ciclo de vida y los cuatro roles de la Parte 4</td><td>Cuántos agentes realmente existen, y quién responde por cada uno</td></tr>
+<tr><td><a href="playbook/certification-minutes.md">Acta de certificación</a></td><td>El estado certificado de la Parte 4</td><td>El registro que hace reconstruible después una decisión de certificación</td></tr>
+</tbody>
+</table>
+
+<table class="wrap">
+<thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
+<tbody>
+<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, los niveles de autonomía y los riesgos a nivel directorio</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td><a href="harness-p4.html">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que dirige todo esto</td></tr>
+<tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
+<tr><td>Playbook, este</td><td>Siete templates operativos derivados de las cuatro partes, abriendo con el D10</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Documento complementario · Serie Harness · Cada template remonta hasta la parte y la sección que lo fundamenta, ver <code>playbook/README.md</code> para el índice completo.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, crecimiento de palabras y tokens en el <a href="docs/logbook.html">diario de bitácora</a>.</p>
+</div>
+</main>
+<script>
+(function(){
+  var bar=document.querySelector('.langbar');
+  var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},playbook:{file:'harness-playbook.html',label:{en:'Playbook',pt:'Playbook',es:'Playbook'}},logbook:{file:'docs/logbook.html',label:{en:'Project log',pt:'Di\u00e1rio de bordo',es:'Diario de bordo'}}};
+  function setSeries(l){
+    document.querySelectorAll('.serie [data-key]').forEach(function(el){
+      var info=SERIES[el.dataset.key];
+      if(!info)return;
+      if(el.dataset.icon){el.title=info.label[l];}else{el.textContent=info.label[l];}
+      if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
+    });
+  }
+  function set(l){
+    for(var k in mains){mains[k].hidden=(k!==l);}
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
+    document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    setSeries(l);
+  }
+  var h=location.hash.slice(1);
+  var m=h.match(/^(en|es|pt)-/);
+  var active='en';
+  if(m){
+    active=m[1];
+    set(active);
+    var target=document.getElementById(h);
+    if(target){setTimeout(function(){target.scrollIntoView();},0);}
+  }
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-lang]');
+    if(b){set(b.dataset.lang);try{location.hash='';}catch(e){}window.scrollTo(0,0);}
+  });
+  function dismissHint(){
+    var d=document.querySelector('.lang-hint');
+    if(d){d.remove();}
+    try{localStorage.setItem('langHintDismissed','1');}catch(e){}
+  }
+  try{
+    if(!m&&!localStorage.getItem('langHintDismissed')){
+      var bl=(navigator.language||'').slice(0,2).toLowerCase();
+      var msgs={pt:{text:'Esta p\u00e1gina tamb\u00e9m est\u00e1 dispon\u00edvel em portugu\u00eas.',btn:'Ver em portugu\u00eas'},es:{text:'Esta p\u00e1gina tambi\u00e9n est\u00e1 disponible en espa\u00f1ol.',btn:'Ver en espa\u00f1ol'}};
+      if(msgs[bl]&&bl!==active){
+        var d=document.createElement('div');
+        d.className='lang-hint';
+        var span=document.createElement('span');
+        span.textContent=msgs[bl].text;
+        var right=document.createElement('span');
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.textContent=msgs[bl].btn;
+        btn.addEventListener('click',function(){dismissHint();set(bl);try{location.hash='';}catch(e){}window.scrollTo(0,0);});
+        var x=document.createElement('button');
+        x.type='button';
+        x.className='x';
+        x.setAttribute('aria-label','Close');
+        x.textContent='\u00d7';
+        x.addEventListener('click',dismissHint);
+        right.appendChild(btn);
+        right.appendChild(x);
+        d.appendChild(span);
+        d.appendChild(right);
+        bar.parentNode.insertBefore(d,bar.nextSibling);
+      }
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

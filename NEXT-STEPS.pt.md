@@ -140,9 +140,9 @@ Estrutura coberta, na ordem em que foi de fato redigida:
 
 ---
 
-## 3. Consolidar o playbook
+## 3. Consolidar o playbook, concluído
 
-Não iniciado, e de propósito fora do escopo da próxima sessão de conteúdo, decidido em 31 de agosto de 2026: as quatro partes são o argumento, o playbook é o ferramental derivado delas, e construí-lo agora, logo depois de fechar a série de artigos, embaçaria essa fronteira. Este item fica como o registro explícito e deliberadamente estacionado do que o playbook vai conter, para que a próxima sessão que pegar essa tarefa não precise reconstruir o plano do zero.
+Estacionado em 31 de agosto de 2026, retomado e fechado em 13 de setembro de 2026, na mesma sessão que construiu o `toolkit.json`. De propósito fora do escopo da sessão de conteúdo que fechou a série de artigos logo em seguida, decidido deliberadamente: as quatro partes são o argumento, o playbook é o ferramental derivado delas, e construí-lo naquele momento embaçaria essa fronteira. Este item ficou como o registro explícito e deliberadamente estacionado do que o playbook conteria até de fato ser retomado.
 
 Reaproveita as quatro partes e o guia, e acrescenta sete modelos operacionais que ainda não existem, cada um rastreável até a peça que já introduziu o conceito por trás dele, não inventado do zero:
 
@@ -157,6 +157,10 @@ Reaproveita as quatro partes e o guia, e acrescenta sete modelos operacionais qu
 O D10, o laço próprio do escritório por trimestre, deixou de ser candidato do playbook: ele já foi publicado dentro da própria parte 4, fechando a seção dos oito indicadores. Ele ainda pode abrir o playbook como uma segunda aparição, legítima, já que ali organiza o documento inteiro em vez de competir consigo mesmo.
 
 **Pronto quando, de fato, for retomado:** os sete modelos existem, cada um referenciado de volta à parte e à seção que o fundamenta, e o playbook abre com o D10 como seu próprio diagrama organizador.
+
+**Fechado em 13 de setembro de 2026.** Os sete modelos existem como oito arquivos reais em `playbook/` (o registro e a ata de homologação saem em separado, como planejado acima), cada um nomeando, no próprio texto, a parte e a seção exata de onde deriva, nenhum conceito inventado entre eles: `task-contract.md` (o passo Mapear da parte 1), `skill-template.md` (o esqueleto de cinco campos e os dois exemplos completos da parte 2), `execution-receipt.md` (o recibo base da parte 2, estendido com as respostas da regra de dois e o ponto de reversão da parte 3), `risk-matrix-by-tier.md` (a matriz de alçada da parte 3 cruzada com as faixas da parte 1), `tier-diagnostic.md` (o checklist de doze perguntas da parte 1, virado instrumento permanente), `rollout-path.md` (montado a partir da regra de portão da parte 1 e do sinal de histórico de disparo da parte 2, o único artefato que não existia como uma única citação em nenhuma das duas partes), e `agent-registry.md` mais `certification-minutes.md` (o ciclo de vida, os quatro papéis e "um registro é uma tabela, homologação é uma reunião com ata" da parte 4). `harness-playbook.html` explica e linka cada um, abrindo com o D10, inglês completo, português e espanhol um esboço honesto de tradução em andamento, o mesmo padrão que a parte 3 e a parte 4 usaram antes de ganhar tradução completa. `playbook/README.md` é o índice legível por máquina e por humano; cada modelo também está registrado no `toolkit.json` como `kind: "template"`.
+
+**Retomar isso exigiu estender a `.topbar` compartilhada para um oitavo item de série, em toda página já existente.** `harness-playbook.html` entrar na série significou que `SERIES_ORDER`, `FILES`, `LABELS_EN` e `EXISTS` precisaram de uma entrada `'playbook'` nos sete scripts de build que os carregam (`build_p2.py`, `build_p3.py`, `build_p4.py`, `build_glossary.py`, `build_sources.py`, `build_toolkit.py`, `build_logbook.py`), mais uma edição direta em `harness-p1.html`, a única página sem script de build funcional. A própria regra de navegação cruzada do `STANDARDS.md` declara essa cobertura completa em toda página HTML, sem exceção, então isso não foi polimento opcional. As oito páginas foram regeradas na sequência, sem nenhum link quebrado.
 
 ---
 
