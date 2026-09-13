@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T01:49:08.510934+00:00",
+  "generated_at": "2026-09-13T16:38:55.123738+00:00",
   "session_files": [
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "46908256-4997-4659-b184-4a6d48768252.jsonl",
@@ -10,6 +10,7 @@
     "9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "aac61ff0-ff50-42f9-8b0b-de3773bd541f.jsonl",
     "b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
+    "b4a46e8e-3bf4-4950-8ca7-8e72c302b597.jsonl",
     "b8483cb7-107f-4e13-a062-36f399ca1ce7.jsonl",
     "c37b3f32-e79a-4dbb-bed8-b26ffe157825.jsonl",
     "d6866966-e558-4b5e-b4a9-b907f0feeb66.jsonl",
@@ -1278,12 +1279,92 @@
         "cache_read": 977549275,
         "cache_creation": 8690986
       }
+    },
+    {
+      "hash": "740c676",
+      "timestamp": "2026-09-11T22:51:09-03:00",
+      "subject": "Regenerate the project log, milestones M59 to M63, after the history rewrite",
+      "words_published": 117677,
+      "code_lines": 10513,
+      "governance_lines": 717,
+      "tokens_bucket": {
+        "input": 80,
+        "output": 30947,
+        "cache_read": 11538232,
+        "cache_creation": 42308
+      },
+      "tokens_cumulative": {
+        "input": 5662,
+        "output": 3458469,
+        "cache_read": 989087507,
+        "cache_creation": 8733294
+      }
+    },
+    {
+      "hash": "a06c6ac",
+      "timestamp": "2026-09-11T23:00:07-03:00",
+      "subject": "Re-export the two README logbook charts, closing the one deferred item",
+      "words_published": 117677,
+      "code_lines": 10513,
+      "governance_lines": 717,
+      "tokens_bucket": {
+        "input": 74,
+        "output": 24848,
+        "cache_read": 12278983,
+        "cache_creation": 46774
+      },
+      "tokens_cumulative": {
+        "input": 5736,
+        "output": 3483317,
+        "cache_read": 1001366490,
+        "cache_creation": 8780068
+      }
+    },
+    {
+      "hash": "2f4fd46",
+      "timestamp": "2026-09-13T13:03:16-03:00",
+      "subject": "Add toolkit.json, a generated machine-readable skill manifest",
+      "words_published": 117677,
+      "code_lines": 10787,
+      "governance_lines": 744,
+      "tokens_bucket": {
+        "input": 148,
+        "output": 81021,
+        "cache_read": 13535784,
+        "cache_creation": 189446
+      },
+      "tokens_cumulative": {
+        "input": 5884,
+        "output": 3564338,
+        "cache_read": 1014902274,
+        "cache_creation": 8969514
+      }
+    },
+    {
+      "hash": "322cf12",
+      "timestamp": "2026-09-13T13:26:34-03:00",
+      "subject": "Consolidate the playbook: seven templates, and an eighth series page",
+      "words_published": 119654,
+      "code_lines": 11170,
+      "governance_lines": 752,
+      "tokens_bucket": {
+        "input": 248,
+        "output": 95569,
+        "cache_read": 40640833,
+        "cache_creation": 174476
+      },
+      "tokens_cumulative": {
+        "input": 6132,
+        "output": 3659907,
+        "cache_read": 1055543107,
+        "cache_creation": 9143990
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 48,
-    "output": 24321,
-    "cache_read": 6714427,
-    "cache_creation": 29661
+    "input": 54,
+    "output": 17437,
+    "cache_read": 11228556,
+    "cache_creation": 37019
   }
 }

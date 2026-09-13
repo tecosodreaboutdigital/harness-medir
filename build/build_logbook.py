@@ -334,6 +334,26 @@ COMMIT_TXT = {
         'en': 'Project log regenerated with four new milestones: the previous regeneration itself (M59, 2d0ad3b), the token double-counting and path-leak fix (M60, 39bbe7f), the glossary-order fix with its new checker (M61, 8317af3), and the NEXT-STEPS record of the findings (M62, 18f673f). Sixty-two milestones complete, 117,677 words published, about 984.7 million tokens transacted by the already-corrected count.',
         'es': 'Diario de bordo regenerado con cuatro hitos nuevos: la regeneración anterior propiamente dicha (M59, 2d0ad3b), la corrección del conteo duplicado de tokens y de la fuga de ruta (M60, 39bbe7f), la corrección de orden del glosario con su nuevo verificador (M61, 8317af3), y el registro de los hallazgos en NEXT-STEPS (M62, 18f673f). Sesenta y dos hitos completos, 117.677 palabras publicadas, cerca de 984,7 millones de tokens transaccionados por el conteo ya corregido.',
     },
+    '740c676': {
+        'pt': 'O force-push que removeu do histórico os caminhos locais vazados (git-filter-repo) mudou o hash curto de 57 dos 63 commits, já que uma reescrita propaga um novo hash de árvore a partir do primeiro commit que toca. Isso quebrou em silêncio toda chave do dicionário COMMIT_TXT deste mesmo script, e todo hash citado inline na prosa de um marco descrevendo outro, 71 ocorrências em 56 hashes, mais os hashes já gravados no logbook-metrics.json anterior. Corrigido lendo .git/filter-repo/commit-map (hash antigo e novo, completo, escrito pelo próprio filter-repo) e trocando cada ocorrência do hash curto antigo pelo novo, com fronteira de palavra, antes de regerar.',
+        'en': 'The force-push that scrubbed the leaked local paths from history (git-filter-repo) changed the short hash of 57 of the 63 commits, since a rewrite propagates a new tree hash forward from the first commit it touches. That silently broke every key in this same script\'s COMMIT_TXT dictionary, and every hash cited inline in one milestone\'s prose describing another, 71 occurrences across 56 hashes, plus the hashes already baked into the previous logbook-metrics.json. Fixed by reading .git/filter-repo/commit-map (old and new hash, in full, written by filter-repo itself) and swapping every occurrence of the old short hash for the new one, with a word boundary, before regenerating.',
+        'es': 'El force-push que eliminó del historial las rutas locales filtradas (git-filter-repo) cambió el hash corto de 57 de los 63 commits, ya que una reescritura propaga un nuevo hash de árbol desde el primer commit que toca. Eso rompió en silencio cada clave del diccionario COMMIT_TXT de este mismo script, y cada hash citado en línea en la prosa de un hito describiendo otro, 71 ocurrencias en 56 hashes, más los hashes ya grabados en el logbook-metrics.json anterior. Corregido leyendo .git/filter-repo/commit-map (hash viejo y nuevo, completo, escrito por el propio filter-repo) y reemplazando cada ocurrencia del hash corto viejo por el nuevo, con límite de palabra, antes de regenerar.',
+    },
+    'a06c6ac': {
+        'pt': 'O único item deixado em aberto na regeneração anterior, fechado no mesmo dia: os dois gráficos do diário embutidos no README precisavam de Chrome headless, indisponível no momento. Playwright (Python) instalado e apontado para o Chrome já existente nesta máquina (channel="chrome", sem baixar um Chromium separado), extraindo os dois SVGs de gráfico direto do docs/logbook.html montado e reexportando os dois numa escala nativa de dispositivo 2x, 1400×520 pixels cada, batendo exatamente com a dimensão das exportações anteriores. Os dois agora mostram o estado corrigido de sessenta e três marcos.',
+        'en': 'The one item left open in the previous regeneration, closed the same day: the README\'s two embedded logbook charts needed headless Chrome, unavailable at the time. Playwright (Python) installed and pointed at the Chrome already on this machine (channel="chrome", no separate Chromium download), extracting the two chart SVGs directly out of the built docs/logbook.html and re-exporting both at a native 2x device scale, 1400x520 pixels each, matching the previous exports\' dimensions exactly. Both now show the corrected, sixty-three-milestone state.',
+        'es': 'El único ítem dejado abierto en la regeneración anterior, cerrado el mismo día: los dos gráficos del diario incrustados en el README necesitaban Chrome headless, no disponible en ese momento. Se instaló Playwright (Python) y se apuntó al Chrome ya existente en esta máquina (channel="chrome", sin descargar un Chromium aparte), extrayendo los dos SVG de gráfico directo del docs/logbook.html montado y reexportando ambos a una escala nativa de dispositivo 2x, 1400x520 píxeles cada uno, coincidiendo exactamente con la dimensión de las exportaciones anteriores. Los dos ahora muestran el estado corregido de sesenta y tres hitos.',
+    },
+    '2f4fd46': {
+        'pt': 'Feedback de dois desenvolvedores apontou uma lacuna real: um agente solto direto num projeto de terceiro, apontado só para a URL deste repositório, não conseguia responder de forma limpa "quais skills existem, qual o papel de cada uma, como eu pego uma pro meu projeto", a resposta espalhada em quatro documentos, em três formatos diferentes. toolkit.json criado, gerado a partir de TOOLS.md e sources/inventory.md, nunca editado à mão: onze entradas, as dez coleções de terceiro instaladas mais o intake-briefing como kind:"own_skill", cada uma com papel, passo do MEDIR, origem, licença, ids de skill individuais e caminhos de instalação por ferramenta. Um modo --check calcula o hash das duas tabelas-fonte pra pegar desvio antes que ele vá ao ar. Um segundo ponto de feedback, o próprio motor de métrica do diário virar uma skill separada, foi analisado e estacionado como item 5 do NEXT-STEPS, mantido separado do playbook.',
+        'en': 'Feedback from two developers named a real gap: an agent dropped straight into a third-party project, pointed only at this repository\'s URL, could not cleanly answer "what skills exist, what is each one for, how do I get one into my project," the answer split across four documents in three different formats. toolkit.json created, generated from TOOLS.md and sources/inventory.md, never hand-edited: eleven entries, the ten installed third-party collections plus intake-briefing as kind:"own_skill", each with a role, the MEDIR step it grounds, its origin, licence, individual skill ids, and install paths per tool. A --check mode hashes the two source tables to catch drift before it ships. A second feedback point, the project log\'s own metrics engine becoming a standalone skill, was analysed and parked as NEXT-STEPS item 5, kept separate from the playbook.',
+        'es': 'La retroalimentación de dos desarrolladores señaló una brecha real: un agente soltado directo en un proyecto de terceros, apuntado solo a la URL de este repositorio, no podía responder de forma limpia "qué skills existen, para qué sirve cada una, cómo consigo una para mi proyecto", la respuesta repartida en cuatro documentos, en tres formatos distintos. Se creó toolkit.json, generado a partir de TOOLS.md y sources/inventory.md, nunca editado a mano: once entradas, las diez colecciones de terceros instaladas más intake-briefing como kind:"own_skill", cada una con rol, paso del MEDIR, origen, licencia, ids de skill individuales y rutas de instalación por herramienta. Un modo --check calcula el hash de las dos tablas fuente para detectar desvío antes de que se publique. Un segundo punto de retroalimentación, que el propio motor de métricas del diario se convirtiera en una skill independiente, se analizó y se aparcó como el ítem 5 de NEXT-STEPS, mantenido separado del playbook.',
+    },
+    '322cf12': {
+        'pt': 'O playbook (item 3 do NEXT-STEPS, estacionado desde 31 de agosto) consolidado: sete templates como oito arquivos em playbook/, cada um nomeando a parte e a seção exata de onde deriva, nenhum conceito inventado. harness-playbook.html explica e linka cada um, abrindo com o D10, inglês completo, português e espanhol um esboço honesto de tradução em andamento. toolkit.json estendido para registrar cada template como kind:"template". Retomar isso exigiu estender a topbar compartilhada para um oitavo item de série em toda página já existente, sete scripts de build mais uma edição direta em harness-p1.html, a única página sem build funcional, por exigência da própria regra de navegação cruzada do STANDARDS.md. Oito páginas regeradas, zero link quebrado.',
+        'en': 'The playbook (NEXT-STEPS item 3, parked since 31 August) consolidated: seven templates as eight files in playbook/, each naming the exact part and section it derives from, none of them an invented concept. harness-playbook.html explains and links each one, opening with D10, English complete, Portuguese and Spanish an honest translation-in-progress stub. toolkit.json extended to register each template as kind:"template". Picking this up required extending the shared topbar to an eighth series item across every existing page, seven build scripts plus a direct hand-edit to harness-p1.html, the one page with no working build script, per STANDARDS.md\'s own Cross-navigation rule. Eight pages regenerated, zero broken links.',
+        'es': 'El playbook (ítem 3 de NEXT-STEPS, aparcado desde el 31 de agosto) consolidado: siete plantillas como ocho archivos en playbook/, cada una nombrando la parte y la sección exacta de la que deriva, ninguna un concepto inventado. harness-playbook.html explica y enlaza cada una, abriendo con el D10, inglés completo, portugués y español un boceto honesto de traducción en curso. toolkit.json extendido para registrar cada plantilla como kind:"template". Retomar esto exigió extender la topbar compartida a un octavo elemento de serie en cada página ya existente, siete scripts de build más una edición directa en harness-p1.html, la única página sin build funcional, por exigencia de la propia regla de navegación cruzada de STANDARDS.md. Ocho páginas regeneradas, cero enlaces rotos.',
+    },
 }
 
 MONTHS = {
@@ -558,7 +578,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <figure>
 {words_chart}
-<figcaption>Palavras publicadas nas sete peças da série (partes 1 a 4, guia compacto, glossário e fontes, somados). Cresce em degrau porque a maior parte do texto nasce dentro de um marco só, não gradualmente entre marcos.</figcaption>
+<figcaption>Palavras publicadas nas oito peças da série (partes 1 a 4, guia compacto, glossário, fontes e playbook, somados; o playbook entra a partir do marco em que foi publicado, 13 de setembro de 2026). Cresce em degrau porque a maior parte do texto nasce dentro de um marco só, não gradualmente entre marcos.</figcaption>
 </figure>
 
 <figure>
@@ -581,7 +601,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <p>Fixa, documentada aqui, para repetir igual em toda atualização futura. Ver <code>build/generate_logbook_metrics.py</code> e <code>build/build_logbook.py</code> no repositório.</p>
 
-<p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1 a 4, o guia compacto, o glossário e as fontes, nos idiomas que existiam naquele commit.</p>
+<p><strong>Palavras.</strong> Contadas a partir do HTML publicado de cada commit (<code>git show &lt;hash&gt;:arquivo</code>), removendo marcação, bloco de código e SVG. Soma as partes 1 a 4, o guia compacto, o glossário, as fontes e o playbook, nos idiomas que existiam naquele commit.</p>
 
 <p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventário de fontes), por commit.</p>
 
@@ -640,7 +660,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <figure>
 {words_chart}
-<figcaption>Words published across the series' seven pieces (parts 1 to 4, the compact guide, the glossary and the sources, summed). It grows in steps because most of the text is born within a single milestone, not gradually between milestones.</figcaption>
+<figcaption>Words published across the series' eight pieces (parts 1 to 4, the compact guide, the glossary, the sources and the playbook, summed; the playbook enters from the milestone that published it, 13 September 2026). It grows in steps because most of the text is born within a single milestone, not gradually between milestones.</figcaption>
 </figure>
 
 <figure>
@@ -663,7 +683,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p>Fixed, documented here, to repeat identically on every future update. See <code>build/generate_logbook_metrics.py</code> and <code>build/build_logbook.py</code> in the repository.</p>
 
-<p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1 to 4, the compact guide, the glossary and the sources, in whichever languages existed at that commit.</p>
+<p><strong>Words.</strong> Counted from the published HTML of each commit (<code>git show &lt;hash&gt;:file</code>), stripping markup, code blocks and SVG. Sums parts 1 to 4, the compact guide, the glossary, the sources and the playbook, in whichever languages existed at that commit.</p>
 
 <p><strong>Lines.</strong> Line count of the build scripts under <code>build/</code> and the governance documents (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, source inventory), per commit.</p>
 
@@ -722,7 +742,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <figure>
 {words_chart}
-<figcaption>Palabras publicadas en las siete piezas de la serie (partes 1 a 4, guía compacta, glosario y fuentes, sumadas). Crece en escalón porque la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos.</figcaption>
+<figcaption>Palabras publicadas en las ocho piezas de la serie (partes 1 a 4, guía compacta, glosario, fuentes y playbook, sumadas; el playbook entra desde el hito que lo publicó, 13 de septiembre de 2026). Crece en escalón porque la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos.</figcaption>
 </figure>
 
 <figure>
@@ -745,7 +765,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <p>Fija, documentada aquí, para repetir igual en cada actualización futura. Ver <code>build/generate_logbook_metrics.py</code> y <code>build/build_logbook.py</code> en el repositorio.</p>
 
-<p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1 a 4, la guía compacta, el glosario y las fuentes, en los idiomas que existían en ese commit.</p>
+<p><strong>Palabras.</strong> Contadas a partir del HTML publicado de cada commit (<code>git show &lt;hash&gt;:archivo</code>), quitando marcado, bloque de código y SVG. Suma las partes 1 a 4, la guía compacta, el glosario, las fuentes y el playbook, en los idiomas que existían en ese commit.</p>
 
 <p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventario de fuentes), por commit.</p>
 
