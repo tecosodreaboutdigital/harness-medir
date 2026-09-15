@@ -109,10 +109,10 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 
 Inspect, in the table above, means sensors that produce evidence, not opinion. This project applies that step to its own writing, not only to the agents it describes.
 
-Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Two charts, not one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. Both share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or the other way round.
+Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Three charts, never one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. All three share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or to money spent, or the other way round.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 119,654 words across sixty-nine milestones" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 120,538 words across seventy-one milestones" width="680">
 </p>
 
 <p align="center"><em>Words published across the series, summed. It grows in steps, most text is born within a single milestone, not gradually between milestones. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
@@ -122,6 +122,12 @@ Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), tril
 </p>
 
 <p align="center"><em>Tokens consumed per milestone. Cache reads grow with the session's accumulated size, not with a milestone's real effort, so the log also isolates pure output, the cleaner signal for comparing sessions. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
+
+<p align="center">
+  <img src="docs/assets/logbook-cost-recorded.png" alt="Cost recorded, cumulative by milestone, same X axis as the two charts above" width="680">
+</p>
+
+<p align="center"><em>Cost recorded per milestone, ported from this project's own <code>milestone-loc-tokens-ai-ledger</code> skill (see <code>NEXT-STEPS.md</code> item 5): tokens priced at whatever the ledger's price entry says was true on that milestone's date, never recalculated afterwards. The ledger has only one verified price entry so far, dated 13 September 2026, so most of the line sits flat by design, not because nothing cost anything: a milestone earlier than the ledger's first entry shows as unpriced, never a guessed cost. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
 
 The full log, with the per-milestone table and the methodology behind these numbers, lives at `docs/logbook.html`. Read it before assuming a session was cheap or expensive from its word count alone.
 
@@ -160,7 +166,8 @@ The full log, with the per-milestone table and the methodology behind these numb
 │   ├── harness-p3-p4-briefing.pt.md   working dossier for Parts 3 and 4, internal, Portuguese only
 │   ├── logbook.html                   trilingual, generated from git and the session's real usage
 │   ├── assets/logbook-metrics.json    the log's raw data, never edited by hand
-│   └── assets/logbook-*.png           the two charts embedded above, exported from the current logbook
+│   ├── assets/prices.json             dated, append-only price ledger, ported from milestone-loc-tokens-ai-ledger
+│   └── assets/logbook-*.png           the three charts embedded above, exported from the current logbook
 └── build/                             text bodies and assembly scripts
 ```
 

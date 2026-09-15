@@ -16,6 +16,8 @@ with open(os.path.join(ROOT, 'docs', 'assets', 'logbook-metrics.json'), encoding
 
 MS = DATA['milestones']
 REMAINING = DATA['tokens_since_last_commit']
+REMAINING_COST = DATA.get('cost_since_last_commit')
+UNPRICED = DATA.get('unpriced_milestones', sum(1 for m in MS if m.get('cost_recorded') is None))
 
 # ---------- traducao das mensagens de commit, uma vez, por hash ----------
 COMMIT_TXT = {
@@ -364,6 +366,16 @@ COMMIT_TXT = {
         'en': 'A new public project is born, milestone-loc-tokens-ai-ledger: it generalises this repository\'s own diary-of-record engine into an installable skill, with a token-cost panel that stays editable even after the page is published. Two rounds of real research came before any code: why build from scratch instead of forking (none of the repositories verified combine a project milestone, LOC/word counting, and configurable LLM token cost on a public static HTML page), and how each of six AI environments (Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, VS Code) loads a skill, checked against each vendor\'s own documentation, a critical finding along the way: the standalone Gemini CLI stopped serving individual accounts on 18 June 2026. A full brainstorming session and a fourteen-section specification led to a fourteen-task plan, executed with subagent-driven development: each task with its own implementer and reviewer, with an extra fix round whenever a real finding appeared. Two real bugs, outside any single task, only surfaced during actual execution: the documented command to run the engine actually broke on a real import error, and the project\'s own folder exclusion was never wired up, which would have made the dashboard count its own published HTML in a self-inflating spiral. The repository ran its own engine against its own history as a self-test, with a security scrub check against real, uncontrolled data, not a controlled fixture, coming back clean. A final whole-branch review, on the most capable model available, found two critical problems that no single-task review could have seen: the price selector was never populated, the product\'s central feature was dead, and the words KPI summed a running total as if it were a per-milestone change, inflating the published number by more than double. Eight further, lesser findings followed. Everything was fixed in one round, including a history rewrite of two malformed commit messages, safe, since nothing had been published yet. Published at github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger, GitHub Pages enabled and verified with real content, not just an HTTP status code.',
         'es': 'Nace un proyecto público nuevo, milestone-loc-tokens-ai-ledger: generaliza el motor de métrica del propio diario de bordo de este repositorio en una skill instalable, con un panel de costo de token editable incluso después de publicada la página. Dos rondas de investigación real precedieron cualquier código: por qué construir desde cero en vez de hacer un fork (ninguno de los repositorios verificados combina marco de proyecto, conteo de LOC/palabras y costo de token de LLM configurable en una página HTML estática pública), y cómo cada uno de seis entornos de IA (Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, VS Code) carga una skill, verificado contra la documentación oficial de cada proveedor, hallazgo crítico en el proceso: el Gemini CLI independiente dejó de atender cuentas individuales el 18/06/2026. Una sesión de brainstorming completa y una especificación de catorce secciones llevaron a un plan de catorce tareas, ejecutado con desarrollo dirigido por subagentes: cada tarea con su propio implementador y revisor, con una ronda extra de corrección cada vez que aparecía un hallazgo real. Dos errores reales, fuera de cualquier tarea aislada, solo aparecieron en la ejecución real: el comando documentado para correr el motor en realidad se rompía por un error de importación, y la exclusión de la carpeta propia nunca quedó conectada, lo que haría que el panel contara su propio HTML publicado en una espiral de inflación. El repositorio corrió su propio motor contra su propia historia como autoprueba, con una verificación de seguridad contra datos reales, no un fixture controlado, saliendo limpia. Una revisión final de la rama completa, en el modelo más capaz disponible, encontró dos problemas críticos que ninguna revisión de tarea aislada habría visto: el selector de precio nunca se poblaba, la funcionalidad central del producto estaba muerta, y el KPI de palabras sumaba el total acumulado como si fuera la variación por marco, inflando el número publicado en más del doble. Ocho hallazgos adicionales, de menor importancia. Todo corregido en una sola ronda, incluida una reescritura de historial de dos mensajes de commit malformados, segura, porque nada se había publicado todavía. Publicado en github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger, GitHub Pages activado y verificado con contenido real, no solo un código de estado HTTP.',
     },
+    '4358527': {
+        'pt': 'Diário de bordo regerado, marcos M68 e M69: a regeneração anterior propriamente dita (M68, 106fb43, nunca descrita até agora), e o arco completo do milestone-loc-tokens-ai-ledger (M69, 24f8844), das duas rodadas de pesquisa até a construção de catorze tarefas, a revisão final de branch inteira que achou dois bugs críticos de composição, a correção consolidada, e a publicação. Sessenta e nove marcos completos, 119.654 palavras publicadas. Os dois gráficos do README reexportados a partir do diário atual via Playwright, escala 2x.',
+        'en': 'Project log regenerated, milestones M68 and M69: the previous regeneration itself (M68, 106fb43, never described until now), and the milestone-loc-tokens-ai-ledger arc in full (M69, 24f8844), from the two research rounds through the fourteen-task build, the final whole-branch review that found two critical composition bugs, the consolidated fix, and publication. Sixty-nine milestones complete, 119,654 words published. The two README charts re-exported from the current logbook via Playwright at 2x scale.',
+        'es': 'Diario de bordo regenerado, hitos M68 y M69: la regeneración anterior propiamente dicha (M68, 106fb43, nunca descrita hasta ahora), y el arco completo de milestone-loc-tokens-ai-ledger (M69, 24f8844), desde las dos rondas de investigación hasta la construcción de catorce tareas, la revisión final de la rama completa que encontró dos bugs críticos de composición, la corrección consolidada, y la publicación. Sesenta y nueve hitos completos, 119.654 palabras publicadas. Los dos gráficos del README reexportados desde el diario actual vía Playwright, escala 2x.',
+    },
+    '2d1cc42': {
+        'pt': 'O item 5 do NEXT-STEPS.md, fechado do lado de milestone-loc-tokens-ai-ledger no marco anterior, ainda não tinha sido citado de volta aqui, a própria integração que a especificação de design do repositório novo pedia na sua seção 12. Fechado: TOOLS.md (três línguas) ganhou a segunda skill própria do projeto, contagem de skills ativas atualizada para 39, cópia local instalada em .claude/skills/. A função parse_own_skill de build/generate_toolkit_manifest.py, hardcoded pra exatamente uma skill, generalizada pra parse_own_skills antes de toolkit.json poder ganhar a segunda entrada. harness-toolkit.html ganhou uma sexta ficha em Inspecionar, três línguas, cruzada com a do intake-briefing. Um achado no processo: a própria seção 12 citava uma entrada em sources/inventory.md como parte do fechamento, mas o precedente real que ela cita, intake-briefing, nunca teve uma lá, aquela tabela é só de terceiro; nenhuma entrada adicionada, corrigindo a suposição do plano em vez de segui-la sem checar.',
+        'en': 'NEXT-STEPS.md item 5, closed on milestone-loc-tokens-ai-ledger\'s own side in the previous milestone, had not yet been cited back here, the actual integration the new repository\'s own design specification asked for in its section 12. Closed: TOOLS.md (three languages) gained the project\'s second own skill, the active-skill count updated to 39, a local copy installed at .claude/skills/. build/generate_toolkit_manifest.py\'s parse_own_skill function, hardcoded for exactly one skill, generalised into parse_own_skills before toolkit.json could gain the second entry. harness-toolkit.html gained a sixth Inspect-section entry, three languages, cross-linked to intake-briefing\'s own card. One finding along the way: section 12 itself named a sources/inventory.md entry as part of closing the loop, but the real precedent it cites, intake-briefing, has never had one there, that table is third-party only; no entry added, correcting the plan\'s assumption rather than following it unchecked.',
+        'es': 'El ítem 5 de NEXT-STEPS.md, cerrado del lado de milestone-loc-tokens-ai-ledger en el hito anterior, todavía no se había citado de vuelta aquí, la propia integración que la especificación de diseño del repositorio nuevo pedía en su sección 12. Cerrado: TOOLS.md (tres idiomas) ganó la segunda skill propia del proyecto, el conteo de skills activas actualizado a 39, una copia local instalada en .claude/skills/. La función parse_own_skill de build/generate_toolkit_manifest.py, hardcodeada para exactamente una skill, se generalizó a parse_own_skills antes de que toolkit.json pudiera ganar la segunda entrada. harness-toolkit.html ganó una sexta ficha en Inspeccionar, tres idiomas, cruzada con la del intake-briefing. Un hallazgo en el camino: la propia sección 12 nombraba una entrada en sources/inventory.md como parte del cierre, pero el precedente real que cita, intake-briefing, nunca tuvo una ahí, esa tabla es solo de terceros; no se agregó ninguna entrada, corrigiendo la suposición del plan en vez de seguirla sin verificar.',
+    },
 }
 
 MONTHS = {
@@ -448,6 +460,18 @@ def svg_growth_chart(marker_prefix, values, x_labels, y_fmt, caption, subcaption
     return '\n'.join(parts)
 
 
+def fmt_cost(amount, lang):
+    # $1,234.56 in en; $1.234,56 in pt/es, same thousands/decimal swap as
+    # fmt_int and fmt_millions already apply.
+    s = '%.2f' % amount
+    whole, cents = s.split('.')
+    whole = '{:,}'.format(int(whole))
+    if lang in ('pt', 'es'):
+        whole = whole.replace(',', '.')
+        return '$%s,%s' % (whole, cents)
+    return '$%s.%s' % (whole, cents)
+
+
 def build_body(lang):
     T = TXT[lang]
     n = len(MS)
@@ -455,6 +479,18 @@ def build_body(lang):
     words_series = [m['words_published'] for m in MS] + [MS[-1]['words_published']]
     tok_series = [sum(m['tokens_cumulative'].values()) for m in MS]
     tok_series = tok_series + [tok_series[-1] + sum(REMAINING.values())]
+
+    # Um marco sem preco vigente na sua data contribui 0 ao total
+    # corrente do grafico, nunca um custo inventado; o KPI "sem preco"
+    # abaixo e o que declara honestamente quantos marcos isso cobre.
+    cost_cumulative = []
+    running = 0.0
+    for m in MS:
+        if m['cost_recorded'] is not None:
+            running += m['cost_recorded']['amount']
+        cost_cumulative.append(running)
+    remaining_amount = REMAINING_COST['amount'] if REMAINING_COST is not None else 0.0
+    cost_series = cost_cumulative + [cost_cumulative[-1] + remaining_amount]
 
     words_chart = svg_growth_chart(
         'w', words_series, x_labels,
@@ -464,17 +500,24 @@ def build_body(lang):
         't', tok_series, x_labels,
         lambda v: fmt_millions(v, lang) + T['million_suffix'],
         T['chart_tokens_alt'], T['chart_tokens_cap'])
+    cost_chart = svg_growth_chart(
+        'c', cost_series, x_labels,
+        lambda v: fmt_cost(v, lang),
+        T['chart_cost_alt'], T['chart_cost_cap'])
 
     total_tokens_now = sum(MS[-1]['tokens_cumulative'].values()) + sum(REMAINING.values())
     total_words_now = MS[-1]['words_published']
     total_code_now = MS[-1]['code_lines']
     total_gov_now = MS[-1]['governance_lings'] if False else MS[-1]['governance_lines']
+    total_cost_now = cost_series[-1]
 
     kpi_rows = [
         (fmt_millions(total_tokens_now, lang) + T['million_suffix'], T['kpi_tokens']),
         (fmt_int(total_words_now, lang), T['kpi_words']),
         (fmt_int(total_code_now + total_gov_now, lang), T['kpi_lines']),
         (str(n), T['kpi_commits']),
+        (fmt_cost(total_cost_now, lang), T['kpi_cost']),
+        (str(UNPRICED), T['kpi_unpriced']),
     ]
     kpi_html = '\n'.join(
         '<div class="kpi"><span class="kpi-n">%s</span><span class="kpi-l">%s</span></div>' % (v, l)
@@ -485,15 +528,18 @@ def build_body(lang):
         desc = COMMIT_TXT[m['hash']][lang]
         bt = sum(m['tokens_bucket'].values())
         out_t = m['tokens_bucket']['output']
+        cost_cell = fmt_cost(m['cost_recorded']['amount'], lang) if m['cost_recorded'] else T['unpriced_cell']
         timeline_rows.append(
             '<tr><td>M%d<br><span class="mono">%s</span></td>'
             '<td>%s<br><span class="mono">%s</span></td>'
+            '<td>%s</td>'
             '<td>%s</td>'
             '<td>%s</td></tr>' % (
                 i + 1, m['hash'],
                 desc, fmt_time(m['timestamp'], lang),
                 fmt_int(m['words_published'], lang),
-                T['tokens_bucket_cell'] % (fmt_millions(bt, lang), fmt_int(out_t, lang))
+                T['tokens_bucket_cell'] % (fmt_millions(bt, lang), fmt_int(out_t, lang)),
+                cost_cell
             ))
     timeline_html = '\n'.join(timeline_rows)
 
@@ -501,6 +547,7 @@ def build_body(lang):
         kpi_html=kpi_html,
         words_chart=words_chart,
         tok_chart=tok_chart,
+        cost_chart=cost_chart,
         timeline_html=timeline_html,
         remaining_millions=fmt_millions(sum(REMAINING.values()), lang),
     )
@@ -515,11 +562,16 @@ TXT = {
         'chart_words_cap': 'PALAVRAS PUBLICADAS, ACUMULADO POR MARCO',
         'chart_tokens_alt': 'Tokens consumidos por marco',
         'chart_tokens_cap': 'TOKENS CONSUMIDOS, ACUMULADO POR MARCO, MESMO EIXO X ACIMA',
+        'chart_cost_alt': 'Custo registrado por marco',
+        'chart_cost_cap': 'CUSTO REGISTRADO, ACUMULADO POR MARCO, MESMO EIXO X ACIMA',
         'kpi_tokens': 'tokens transacionados até agora',
         'kpi_words': 'palavras publicadas (PT+EN+ES)',
         'kpi_lines': 'linhas de script e documento de governança',
         'kpi_commits': 'marcos (commits) registrados',
+        'kpi_cost': 'custo registrado até agora',
+        'kpi_unpriced': 'marcos sem preço vigente na data',
         'tokens_bucket_cell': '%s mi<br><span class="mono">saída: %s</span>',
+        'unpriced_cell': '<span class="mono">sem preço</span>',
     },
     'en': {
         'now_short': 'now',
@@ -528,11 +580,16 @@ TXT = {
         'chart_words_cap': 'WORDS PUBLISHED, CUMULATIVE BY MILESTONE',
         'chart_tokens_alt': 'Tokens consumed per milestone',
         'chart_tokens_cap': 'TOKENS CONSUMED, CUMULATIVE BY MILESTONE, SAME X AXIS AS ABOVE',
+        'chart_cost_alt': 'Cost recorded per milestone',
+        'chart_cost_cap': 'COST RECORDED, CUMULATIVE BY MILESTONE, SAME X AXIS AS ABOVE',
         'kpi_tokens': 'tokens transacted so far',
         'kpi_words': 'words published (PT+EN+ES)',
         'kpi_lines': 'lines of script and governance document',
         'kpi_commits': 'milestones (commits) recorded',
+        'kpi_cost': 'cost recorded so far',
+        'kpi_unpriced': 'milestones with no price in effect on their date',
         'tokens_bucket_cell': '%sm<br><span class="mono">output: %s</span>',
+        'unpriced_cell': '<span class="mono">unpriced</span>',
     },
     'es': {
         'now_short': 'ahora',
@@ -541,11 +598,16 @@ TXT = {
         'chart_words_cap': 'PALABRAS PUBLICADAS, ACUMULADO POR HITO',
         'chart_tokens_alt': 'Tokens consumidos por hito',
         'chart_tokens_cap': 'TOKENS CONSUMIDOS, ACUMULADO POR HITO, MISMO EJE X DE ARRIBA',
+        'chart_cost_alt': 'Costo registrado por hito',
+        'chart_cost_cap': 'COSTO REGISTRADO, ACUMULADO POR HITO, MISMO EJE X DE ARRIBA',
         'kpi_tokens': 'tokens transaccionados hasta ahora',
         'kpi_words': 'palabras publicadas (PT+EN+ES)',
         'kpi_lines': 'líneas de script y documento de gobernanza',
         'kpi_commits': 'hitos (commits) registrados',
+        'kpi_cost': 'costo registrado hasta ahora',
+        'kpi_unpriced': 'hitos sin precio vigente en su fecha',
         'tokens_bucket_cell': '%s mi<br><span class="mono">salida: %s</span>',
+        'unpriced_cell': '<span class="mono">sin precio</span>',
     },
 }
 
@@ -574,7 +636,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <h2 id="numeros">1. Números até agora</h2>
 
-<p>Quatro números resumem o projeto neste instante. Todos recalculados a cada execução do gerador, nenhum digitado à mão.</p>
+<p>Seis números resumem o projeto neste instante. Todos recalculados a cada execução do gerador, nenhum digitado à mão.</p>
 
 <div class="kpi-grid">
 {kpi_html}
@@ -584,7 +646,7 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <h2 id="evolucao">2. Evolução</h2>
 
-<p>Dois gráficos, não um só com dois eixos. É a mesma regra que a parte 2 deste projeto aplica a qualquer harness: não misture duas escalas arbitrárias na mesma régua. Os dois compartilham o eixo X, a ordem dos marcos, para que dê para comparar quando um acelerou em relação ao outro.</p>
+<p>Três gráficos, nunca um só com dois eixos. É a mesma regra que a parte 2 deste projeto aplica a qualquer harness: não misture duas escalas arbitrárias na mesma régua. Os três compartilham o eixo X, a ordem dos marcos, para que dê para comparar quando um acelerou em relação aos outros.</p>
 
 <figure>
 {words_chart}
@@ -596,12 +658,17 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 <figcaption>Tokens transacionados, acumulado. Inclui leitura de cache, que cresce com o tamanho da sessão por natureza, não só com o trabalho novo. Ver a ressalva na metodologia.</figcaption>
 </figure>
 
+<figure>
+{cost_chart}
+<figcaption>Custo registrado, acumulado, na moeda e no preço vigentes na data de cada marco. Um marco anterior à primeira entrada do livro-razão de preço conta como zero aqui, não porque não custou nada, mas porque este projeto não tem uma entrada de preço verificada pra essa data. Ver a ressalva na metodologia.</figcaption>
+</figure>
+
 <h2 id="linha-do-tempo">3. Linha do tempo</h2>
 
-<p>Um marco por commit. A coluna de tokens traz dois números: o total do intervalo, incluindo cache, e a saída pura, que é o sinal mais limpo para comparar esforço real entre marcos.</p>
+<p>Um marco por commit. A coluna de tokens traz dois números: o total do intervalo, incluindo cache, e a saída pura, que é o sinal mais limpo para comparar esforço real entre marcos. A coluna de custo mostra "sem preço" em vez de um valor, para todo marco anterior à entrada mais antiga do livro-razão.</p>
 
 <table class="wrap">
-<thead><tr><th>Marco</th><th>O que aconteceu</th><th>Palavras publicadas</th><th>Tokens do intervalo</th></tr></thead>
+<thead><tr><th>Marco</th><th>O que aconteceu</th><th>Palavras publicadas</th><th>Tokens do intervalo</th><th>Custo registrado</th></tr></thead>
 <tbody>
 {timeline_html}
 </tbody>
@@ -617,6 +684,10 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 
 <p><strong>Tokens.</strong> Soma real do campo <code>usage</code> de cada mensagem do assistente no transcript <code>.jsonl</code> desta sessão, em <code>~/.claude/projects/&lt;projeto&gt;/</code>. Cada evento é atribuído ao commit imediatamente seguinte, por ordem cronológica, mesma técnica usada em outro projeto do autor para o mesmo fim.</p>
 
+<p><strong>Custo.</strong> Portado de <code>milestone-loc-tokens-ai-ledger</code>, a skill própria deste projeto (ver <code>NEXT-STEPS.md</code> item 5): os tokens de cada marco multiplicados pelo preço vigente na data desse marco, lido de <code>docs/assets/prices.json</code>, um livro-razão datado, apensado, nunca sobrescrito. Uma vez calculado, o custo de um marco nunca é recalculado depois, mesmo que o livro-razão ganhe uma entrada nova, para que o passado fique registrado no preço que era verdadeiro quando aconteceu.</p>
+
+<div class="rule-box"><span class="lbl">Limite honesto do custo</span><p>O livro-razão só tem uma entrada verificada até agora, datada de 13 de setembro de 2026. Todo marco anterior a essa data aparece como "sem preço", não como custo zero: este projeto não afirma um preço que não verificou. À medida que o livro-razão ganhar entradas mais antigas, com fonte, esses marcos passam a ter custo real.</p></div>
+
 <div class="rule-box"><span class="lbl">Viés conhecido</span><p>Leitura de cache cresce com o tamanho acumulado da sessão, não com o esforço do marco específico. Para comparar esforço real entre marcos, use a saída (output), não o total bruto. O total bruto aparece porque é o que a fatura cobra, a saída aparece porque é o que ensina.</p></div>
 
 <p>Uma sessão contínua cobre o projeto inteiro até aqui, então não há reconstrução retroativa a fazer, ao contrário de projetos mais antigos com dezenas de sessões. Cada marco futuro soma a esta mesma série.</p>
@@ -627,6 +698,9 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 <li>Histórico completo de commits deste repositório. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
 <li>Registro de skills instaladas e usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
 <li>Script gerador dos números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
+<li>Livro-razão de preço. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/docs/assets/prices.json">docs/assets/prices.json</a></li>
+<li>Anthropic. Página de preço. <a href="https://www.anthropic.com/pricing">anthropic.com/pricing</a></li>
+<li>litellm, tabela de preço por modelo. <a href="https://github.com/BerriAI/litellm">github.com/BerriAI/litellm</a></li>
 </ol>
 
 <div class="foot">
@@ -656,7 +730,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <h2 id="numeros">1. Numbers so far</h2>
 
-<p>Four numbers summarise the project at this instant. All recalculated on every run of the generator, none typed by hand.</p>
+<p>Six numbers summarise the project at this instant. All recalculated on every run of the generator, none typed by hand.</p>
 
 <div class="kpi-grid">
 {kpi_html}
@@ -666,7 +740,7 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <h2 id="evolucao">2. Growth</h2>
 
-<p>Two charts, not one with two axes. It is the same rule this project's part 2 applies to any harness: do not mix two arbitrary scales on the same ruler. Both share the X axis, the order of milestones, so you can compare when one sped up relative to the other.</p>
+<p>Three charts, never one with two axes. It is the same rule this project's part 2 applies to any harness: do not mix two arbitrary scales on the same ruler. All three share the X axis, the order of milestones, so you can compare when one sped up relative to the others.</p>
 
 <figure>
 {words_chart}
@@ -678,12 +752,17 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 <figcaption>Tokens transacted, cumulative. Includes cache reads, which grow with session size by nature, not only with new work. See the caveat in the methodology.</figcaption>
 </figure>
 
+<figure>
+{cost_chart}
+<figcaption>Cost recorded, cumulative, in the currency and at the price in effect on each milestone's date. A milestone earlier than the price ledger's first entry counts as zero here, not because it cost nothing, but because this project has no verified price entry for that date. See the caveat in the methodology.</figcaption>
+</figure>
+
 <h2 id="linha-do-tempo">3. Timeline</h2>
 
-<p>One milestone per commit. The tokens column carries two numbers: the interval's total, including cache, and pure output, the cleanest signal for comparing real effort between milestones.</p>
+<p>One milestone per commit. The tokens column carries two numbers: the interval's total, including cache, and pure output, the cleanest signal for comparing real effort between milestones. The cost column shows "unpriced" instead of a value for every milestone earlier than the ledger's oldest entry.</p>
 
 <table class="wrap">
-<thead><tr><th>Milestone</th><th>What happened</th><th>Words published</th><th>Interval tokens</th></tr></thead>
+<thead><tr><th>Milestone</th><th>What happened</th><th>Words published</th><th>Interval tokens</th><th>Cost recorded</th></tr></thead>
 <tbody>
 {timeline_html}
 </tbody>
@@ -699,6 +778,10 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p><strong>Tokens.</strong> Real sum of the <code>usage</code> field on every assistant message in this session's <code>.jsonl</code> transcript, under <code>~/.claude/projects/&lt;project&gt;/</code>. Each event is assigned to the immediately following commit, in chronological order, the same technique used on another of the author's projects for the same purpose.</p>
 
+<p><strong>Cost.</strong> Ported from <code>milestone-loc-tokens-ai-ledger</code>, this project's own skill (see <code>NEXT-STEPS.md</code> item 5): each milestone's tokens multiplied by the price in effect on that milestone's date, read from <code>docs/assets/prices.json</code>, a dated, append-only ledger, never overwritten. Once computed, a milestone's cost is never recalculated afterwards, even if the ledger gains a newer entry, so the past stays recorded at the price that was true when it happened.</p>
+
+<div class="rule-box"><span class="lbl">Cost's honest limit</span><p>The ledger has only one verified entry so far, dated 13 September 2026. Every milestone earlier than that date shows as "unpriced," not as zero cost: this project does not claim a price it has not verified. As the ledger gains older, sourced entries, those milestones gain a real cost too.</p></div>
+
 <div class="rule-box"><span class="lbl">Known bias</span><p>Cache reads grow with the session's accumulated size, not with the specific milestone's effort. To compare real effort between milestones, use output, not the raw total. The raw total shows up because it is what the invoice charges, output shows up because it is what teaches.</p></div>
 
 <p>One continuous session covers the entire project so far, so there is no retroactive reconstruction to do, unlike older projects with dozens of sessions. Every future milestone adds to this same series.</p>
@@ -709,6 +792,9 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 <li>Full commit history of this repository. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
 <li>Record of installed and used skills. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
 <li>Script that generates the numbers. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
+<li>Price ledger. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/docs/assets/prices.json">docs/assets/prices.json</a></li>
+<li>Anthropic. Pricing page. <a href="https://www.anthropic.com/pricing">anthropic.com/pricing</a></li>
+<li>litellm, per-model price table. <a href="https://github.com/BerriAI/litellm">github.com/BerriAI/litellm</a></li>
 </ol>
 
 <div class="foot">
@@ -738,7 +824,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <h2 id="numeros">1. Números hasta ahora</h2>
 
-<p>Cuatro números resumen el proyecto en este instante. Todos recalculados en cada ejecución del generador, ninguno escrito a mano.</p>
+<p>Seis números resumen el proyecto en este instante. Todos recalculados en cada ejecución del generador, ninguno escrito a mano.</p>
 
 <div class="kpi-grid">
 {kpi_html}
@@ -748,7 +834,7 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <h2 id="evolucao">2. Evolución</h2>
 
-<p>Dos gráficos, no uno solo con dos ejes. Es la misma regla que la parte 2 de este proyecto aplica a cualquier harness: no mezcles dos escalas arbitrarias en la misma regla. Los dos comparten el eje X, el orden de los hitos, para poder comparar cuándo uno aceleró respecto al otro.</p>
+<p>Tres gráficos, nunca uno solo con dos ejes. Es la misma regla que la parte 2 de este proyecto aplica a cualquier harness: no mezcles dos escalas arbitrarias en la misma regla. Los tres comparten el eje X, el orden de los hitos, para poder comparar cuándo uno aceleró respecto a los otros.</p>
 
 <figure>
 {words_chart}
@@ -760,12 +846,17 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 <figcaption>Tokens transaccionados, acumulado. Incluye lectura de caché, que crece con el tamaño de la sesión por naturaleza, no solo con el trabajo nuevo. Ver la salvedad en la metodología.</figcaption>
 </figure>
 
+<figure>
+{cost_chart}
+<figcaption>Costo registrado, acumulado, en la moneda y al precio vigentes en la fecha de cada hito. Un hito anterior a la primera entrada del libro mayor de precio cuenta como cero aquí, no porque no costó nada, sino porque este proyecto no tiene una entrada de precio verificada para esa fecha. Ver la salvedad en la metodología.</figcaption>
+</figure>
+
 <h2 id="linha-do-tempo">3. Línea de tiempo</h2>
 
-<p>Un hito por commit. La columna de tokens trae dos números: el total del intervalo, incluyendo caché, y la salida pura, la señal más limpia para comparar el esfuerzo real entre hitos.</p>
+<p>Un hito por commit. La columna de tokens trae dos números: el total del intervalo, incluyendo caché, y la salida pura, la señal más limpia para comparar el esfuerzo real entre hitos. La columna de costo muestra "sin precio" en vez de un valor, para todo hito anterior a la entrada más antigua del libro mayor.</p>
 
 <table class="wrap">
-<thead><tr><th>Hito</th><th>Qué pasó</th><th>Palabras publicadas</th><th>Tokens del intervalo</th></tr></thead>
+<thead><tr><th>Hito</th><th>Qué pasó</th><th>Palabras publicadas</th><th>Tokens del intervalo</th><th>Costo registrado</th></tr></thead>
 <tbody>
 {timeline_html}
 </tbody>
@@ -781,6 +872,10 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 
 <p><strong>Tokens.</strong> Suma real del campo <code>usage</code> de cada mensaje del asistente en el transcript <code>.jsonl</code> de esta sesión, en <code>~/.claude/projects/&lt;proyecto&gt;/</code>. Cada evento se asigna al commit inmediatamente siguiente, en orden cronológico, la misma técnica usada en otro proyecto del autor con el mismo fin.</p>
 
+<p><strong>Costo.</strong> Portado de <code>milestone-loc-tokens-ai-ledger</code>, la skill propia de este proyecto (ver el ítem 5 de <code>NEXT-STEPS.md</code>): los tokens de cada hito multiplicados por el precio vigente en la fecha de ese hito, leído de <code>docs/assets/prices.json</code>, un libro mayor fechado y de solo apéndice, nunca sobrescrito. Una vez calculado, el costo de un hito nunca se recalcula después, aunque el libro mayor gane una entrada nueva, para que el pasado quede registrado al precio que era verdadero cuando ocurrió.</p>
+
+<div class="rule-box"><span class="lbl">Límite honesto del costo</span><p>El libro mayor solo tiene una entrada verificada hasta ahora, fechada el 13 de septiembre de 2026. Todo hito anterior a esa fecha aparece como "sin precio", no como costo cero: este proyecto no afirma un precio que no verificó. A medida que el libro mayor gane entradas más antiguas, con fuente, esos hitos ganan un costo real.</p></div>
+
 <div class="rule-box"><span class="lbl">Sesgo conocido</span><p>La lectura de caché crece con el tamaño acumulado de la sesión, no con el esfuerzo del hito específico. Para comparar el esfuerzo real entre hitos, usa la salida (output), no el total bruto. El total bruto aparece porque es lo que cobra la factura, la salida aparece porque es lo que enseña.</p></div>
 
 <p>Una sesión continua cubre el proyecto entero hasta aquí, así que no hay reconstrucción retroactiva que hacer, a diferencia de proyectos más antiguos con decenas de sesiones. Cada hito futuro se suma a esta misma serie.</p>
@@ -791,6 +886,9 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 <li>Historial completo de commits de este repositorio. <a href="https://github.com/tecosodreaboutdigital/harness-medir/commits/main">github.com/tecosodreaboutdigital/harness-medir</a></li>
 <li>Registro de skills instaladas y usadas. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a></li>
 <li>Script que genera los números. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/build/generate_logbook_metrics.py">build/generate_logbook_metrics.py</a></li>
+<li>Libro mayor de precio. <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/docs/assets/prices.json">docs/assets/prices.json</a></li>
+<li>Anthropic. Página de precio. <a href="https://www.anthropic.com/pricing">anthropic.com/pricing</a></li>
+<li>litellm, tabla de precio por modelo. <a href="https://github.com/BerriAI/litellm">github.com/BerriAI/litellm</a></li>
 </ol>
 
 <div class="foot">
@@ -813,8 +911,9 @@ def main():
 
     extra_css = """
 .kpi-grid{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 30px;border-top:.5pt solid var(--ink);border-bottom:.5pt solid var(--ink)}
-.kpi{flex:1 1 22%;padding:16px 14px;border-right:.5pt solid var(--rule);display:flex;flex-direction:column;gap:4px}
-.kpi:last-child{border-right:0}
+.kpi{flex:1 1 31%;padding:16px 14px;border-right:.5pt solid var(--rule);border-bottom:.5pt solid var(--rule);display:flex;flex-direction:column;gap:4px}
+.kpi:nth-child(3n){border-right:0}
+.kpi:nth-last-child(-n+3){border-bottom:0}
 .kpi-n{font-size:22px;font-weight:600;letter-spacing:-.01em}
 .kpi-l{font-size:10.5px;color:var(--ink-faint);line-height:1.3}
 .mono{font-family:"Consolas","Menlo",monospace;font-size:10.5px;color:var(--ink-faint)}

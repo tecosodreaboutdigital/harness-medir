@@ -24,7 +24,7 @@ Se añadió una pista de idioma del navegador a las cuatro páginas HTML triling
 
 ### Diario de bordo
 
-`docs/logbook.html`, trilingüe. Documenta la evolución del propio proyecto: palabras publicadas y tokens consumidos por hito, generado a partir de git y de la transcripción real de la sesión, nunca escrito a mano. Ver `build/generate_logbook_metrics.py` y `build/build_logbook.py`. Seis hitos registrados hasta ahora a partir del historial completo del repositorio, más lo que todavía está en la sesión abierta.
+`docs/logbook.html`, trilingüe. Documenta la evolución del propio proyecto: palabras publicadas, tokens consumidos y costo registrado por hito, generado a partir de git, de la transcripción real de la sesión y de un libro mayor de precio fechado, nunca escrito a mano. Ver `build/generate_logbook_metrics.py` y `build/build_logbook.py`. Hitos registrados a partir del historial completo del repositorio, más lo que todavía está en la sesión abierta; ver el propio `docs/logbook.html` para el conteo actual, este archivo es una fotografía, no queda sincronizado con cada regeneración. El rastreo de costo (`docs/assets/prices.json`) se portó el 14 de septiembre de 2026 desde `milestone-loc-tokens-ai-ledger`, la skill autónoma a la que este mismo motor se generalizó, ver el ítem 5 de `NEXT-STEPS.md`.
 
 ### Parte 1 · El mejor modelo del mundo dentro de una empresa sin proceso
 

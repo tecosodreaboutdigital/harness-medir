@@ -19,8 +19,9 @@ O envoltório de CSS é extraído do arquivo já pronto anterior, para que os qu
 | `body_en.html` | corpo da parte 1 em inglês |
 | `build_p2.py` | monta `harness-p2.html` trilíngue |
 | `build_toolkit.py` | monta `harness-toolkit.html`, hoje só PT |
-| `build_logbook.py` | monta `docs/logbook.html` trilíngue a partir de `docs/assets/logbook-metrics.json` |
-| `generate_logbook_metrics.py` | reconstrói `docs/assets/logbook-metrics.json` a partir do git e do transcript real da sessão, nunca editado à mão |
+| `build_logbook.py` | monta `docs/logbook.html` trilíngue a partir de `docs/assets/logbook-metrics.json`, incluindo o terceiro gráfico de custo |
+| `generate_logbook_metrics.py` | reconstrói `docs/assets/logbook-metrics.json` a partir do git, do transcript real da sessão e de `docs/assets/prices.json`, nunca editado à mão |
+| `docs/assets/prices.json` | livro-razão de preço datado e apensado (não é script, é dado-fonte), nunca sobrescrito, um marco lê a entrada vigente na própria data e o valor calculado fica congelado depois disso |
 | `check_glossary_order.py` | verifica ordem alfabética das entradas de `body_glossary_*.html` nas três línguas, roda antes de qualquer build depois de renomear um termo |
 | `generate_toolkit_manifest.py` | reconstrói `toolkit.json` a partir de `TOOLS.md` e `sources/inventory.md`, nunca editado à mão; `--check` só verifica se está desatualizado |
 | `build_all.py` | histórico, montou a versão trilíngue da parte 1; usa caminhos fixos de sandbox, não roda neste repositório como está |
@@ -40,6 +41,12 @@ Links cruzados para `harness-p1.html` com âncora precisam do prefixo do idioma 
 Renomear um termo do glossário muda a letra que decide sua posição, mas não move a linha sozinho: rode `python build/check_glossary_order.py` depois de qualquer mudança de terminologia, antes de reconstruir. Achado em 11 de setembro de 2026 (duas entradas em português fora de ordem por onze dias, sem ninguém notar, ver `NEXT-STEPS.md`).
 
 Editar `TOOLS.md` (a tabela de coleções instaladas, ou a lista de skills por coleção) ou a tabela "Tools and skills" de `sources/inventory.md` sem rodar `python build/generate_toolkit_manifest.py` na sequência deixa `toolkit.json` desatualizado, do mesmo jeito que editar `harness-sources.html` sem espelhar em `build/` deixa o build seguinte reverter a edição. `--check` acusa a divergência (hash das duas seções-fonte) sem escrever nada; rode antes de commitar qualquer mudança num dos dois arquivos-fonte.
+
+## Custo em dinheiro, portado de volta de `milestone-loc-tokens-ai-ledger`
+
+`generate_logbook_metrics.py` ganhou, em 14 de setembro de 2026, a mesma lógica de preço datado e apensado que a própria skill que este projeto gerou (`milestone-loc-tokens-ai-ledger`, ver `NEXT-STEPS.md` item 5) já tinha construído: `load_price_ledger`, `find_price_series`, `price_at` e `compute_cost`, lendo `docs/assets/prices.json`. O custo de um marco é calculado uma vez, no preço vigente na data desse marco, e nunca recalculado depois, mesmo que o livro-razão ganhe uma entrada nova; `load_previous_costs` garante isso lendo o `logbook-metrics.json` da execução anterior antes de sobrescrever.
+
+**Limite honesto, não escondido:** `docs/assets/prices.json` só tem uma entrada verificada até agora, datada de 13 de setembro de 2026. Todo marco anterior a essa data mostra `cost_recorded: null` na saída e "sem preço" no diário publicado, nunca um custo inventado. Isso é esperado, não um bug: este script não afirma um preço que não verificou. Ao contrário do próprio motor de tokens (uma sessão contínua cobrindo o projeto inteiro), o preço de LLM muda por decisão comercial do fornecedor, não por uso deste projeto, então não há como reconstruir retroativamente sem uma fonte real para cada data.
 
 ## Se `generate_logbook_metrics.py` for reutilizado em outro repositório
 

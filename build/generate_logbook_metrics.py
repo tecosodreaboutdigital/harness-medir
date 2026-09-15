@@ -4,6 +4,14 @@
 # referencia (git + transcript de sessao), adaptada: metrica de
 # conteudo (palavras, linhas de doc/script) em vez de LOC de aplicacao.
 #
+# Custo em dinheiro portado de milestone-loc-tokens-ai-ledger (o proprio
+# skill que este projeto gerou, ver NEXT-STEPS.md item 5): preco lido de
+# docs/assets/prices.json, um livro-razao datado e apensado, nunca
+# sobrescrito. Um marco sem entrada de preco vigente na sua data fica
+# cost_recorded: null, nunca $0.00 inventado. Uma vez escrito, o custo
+# de um marco nunca e recalculado retroativamente, mesmo que o livro-razao
+# ganhe uma entrada nova depois, mesma regra da skill de origem.
+#
 # Uso: python build/generate_logbook_metrics.py
 # Escreve: docs/assets/logbook-metrics.json
 
@@ -15,6 +23,10 @@ import sys
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PRICES_PATH = os.path.join(ROOT, 'docs', 'assets', 'prices.json')
+PRICE_PROVIDER = 'anthropic'
+PRICE_MODEL = 'claude-sonnet-5'
+CURRENCY = 'USD'
 
 # Arquivos que contam como "conteudo publicado" (palavras) e como
 # "codigo do harness" (linhas). Um HTML pode nao existir ainda num
@@ -134,6 +146,63 @@ def parse_iso(s):
     return datetime.fromisoformat(s.replace('Z', '+00:00'))
 
 
+def load_price_ledger(path):
+    if not os.path.isfile(path):
+        return []
+    with open(path, encoding='utf-8') as fh:
+        return json.load(fh)
+
+
+def find_price_series(ledger, provider, model):
+    for series in ledger:
+        if series['provider'] == provider and series['model'] == model:
+            return series
+    return None
+
+
+def price_at(series, target_date):
+    # A entrada com effective_date mais recente que ainda seja <= a data
+    # do marco, nunca a mais recente do livro-razao inteiro: um marco de
+    # agosto nao deve ser precificado pelo preco vigente hoje.
+    if series is None:
+        return None
+    eligible = [e for e in series['entries'] if e['effective_date'] <= target_date]
+    if not eligible:
+        return None
+    return max(eligible, key=lambda e: e['effective_date'])
+
+
+def compute_cost(tokens, price_entry):
+    if price_entry is None:
+        return None
+    amount = (
+        tokens.get('input', 0) / 1_000_000 * price_entry['input_price']
+        + tokens.get('output', 0) / 1_000_000 * price_entry['output_price']
+        + tokens.get('cache_read', 0) / 1_000_000 * price_entry['cache_read_price']
+        + tokens.get('cache_creation', 0) / 1_000_000 * price_entry['cache_creation_price']
+    )
+    return round(amount, 4)
+
+
+def load_previous_costs(path):
+    # Um marco cujo custo ja foi escrito numa execucao anterior mantem
+    # esse valor para sempre, mesmo que o livro-razao ganhe uma entrada
+    # de preco nova depois. Sem isso, uma correcao de preco futura
+    # reescreveria em silencio o custo ja publicado de um marco antigo.
+    if not os.path.isfile(path):
+        return {}
+    try:
+        with open(path, encoding='utf-8') as fh:
+            prev = json.load(fh)
+    except (OSError, ValueError):
+        return {}
+    return {
+        m['hash']: m['cost_recorded']
+        for m in prev.get('milestones', [])
+        if m.get('cost_recorded') is not None
+    }
+
+
 def main():
     rows = commits()
     if not rows:
@@ -144,6 +213,11 @@ def main():
     events = load_usage_events(session_files)
     print('transcripts encontrados:', session_files)
     print('eventos de uso carregados:', len(events))
+
+    out_path_early = os.path.join(ROOT, 'docs', 'assets', 'logbook-metrics.json')
+    previous_costs = load_previous_costs(out_path_early)
+    price_ledger = load_price_ledger(PRICES_PATH)
+    price_series = find_price_series(price_ledger, PRICE_PROVIDER, PRICE_MODEL)
 
     # bucket de tokens: tudo que aconteceu ate o timestamp do commit,
     # e ainda nao foi atribuido a um commit anterior, entra neste marco.
@@ -184,8 +258,22 @@ def main():
             if f in files_at_commit:
                 gov_lines += line_count(git_show(row['hash'], f))
 
+        short_hash = row['hash'][:7]
+        if short_hash in previous_costs:
+            cost_recorded = previous_costs[short_hash]
+        else:
+            commit_date = row['iso'][:10]
+            price_entry = price_at(price_series, commit_date)
+            has_usage = any(bucket.values())
+            cost = compute_cost(bucket, price_entry) if (price_entry and has_usage) else None
+            cost_recorded = (
+                {'amount': cost, 'currency': CURRENCY, 'priced_at': price_entry['effective_date'],
+                 'provider': PRICE_PROVIDER, 'model': PRICE_MODEL}
+                if cost is not None else None
+            )
+
         milestones.append({
-            'hash': row['hash'][:7],
+            'hash': short_hash,
             'timestamp': row['iso'],
             'subject': row['subject'],
             'words_published': words,
@@ -193,6 +281,7 @@ def main():
             'governance_lines': gov_lines,
             'tokens_bucket': bucket,
             'tokens_cumulative': dict(cum_tokens),
+            'cost_recorded': cost_recorded,
         })
 
     # sobrou uso de sessao depois do ultimo commit (esta propria
@@ -205,6 +294,19 @@ def main():
         remaining['cache_creation'] += events[ev_idx]['cache_creation']
         ev_idx += 1
 
+    # Custo projetado do uso ainda nao commitado, no preco vigente hoje.
+    # Nunca congelado como o de um marco: recalcula a cada execucao ate
+    # o proximo commit fechar o valor de verdade.
+    today = datetime.now(timezone.utc).date().isoformat()
+    remaining_price_entry = price_at(price_series, today)
+    remaining_has_usage = any(remaining.values())
+    remaining_cost = compute_cost(remaining, remaining_price_entry) if (remaining_price_entry and remaining_has_usage) else None
+    remaining_cost_recorded = (
+        {'amount': remaining_cost, 'currency': CURRENCY, 'priced_at': remaining_price_entry['effective_date'],
+         'provider': PRICE_PROVIDER, 'model': PRICE_MODEL}
+        if remaining_cost is not None else None
+    )
+
     # So o nome do arquivo, nunca o caminho completo: o caminho absoluto
     # carrega o nome de usuario do sistema operacional, informacao pessoal
     # sem necessidade num artefato versionado e publico. Achado e corrigido
@@ -212,11 +314,15 @@ def main():
     # NEXT-STEPS.md; o historico do git anterior a esta correcao foi
     # reescrito para remover as ocorrencias ja commitadas do caminho
     # completo.
+    unpriced = sum(1 for m in milestones if m['cost_recorded'] is None)
+
     out = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
         'session_files': [os.path.basename(p) for p in session_files],
         'milestones': milestones,
         'tokens_since_last_commit': remaining,
+        'cost_since_last_commit': remaining_cost_recorded,
+        'unpriced_milestones': unpriced,
     }
 
     out_dir = os.path.join(ROOT, 'docs', 'assets')
@@ -229,10 +335,12 @@ def main():
     for m in milestones:
         t = m['tokens_cumulative']
         total = t['input'] + t['output'] + t['cache_read'] + t['cache_creation']
-        print('%s  %-45s  palavras=%-6d  total_tokens_acum=%d' % (
-            m['hash'], m['subject'][:45], m['words_published'], total))
+        cost_txt = '$%.4f' % m['cost_recorded']['amount'] if m['cost_recorded'] else 'sem preco'
+        print('%s  %-45s  palavras=%-6d  total_tokens_acum=%d  custo=%s' % (
+            m['hash'], m['subject'][:45], m['words_published'], total, cost_txt))
     rtotal = remaining['input'] + remaining['output'] + remaining['cache_read'] + remaining['cache_creation']
     print('tokens desde o ultimo commit (ainda nesta sessao):', rtotal)
+    print('marcos sem preco vigente na data:', unpriced, 'de', len(milestones))
 
 
 if __name__ == '__main__':

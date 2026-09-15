@@ -1,0 +1,20 @@
+[
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-5",
+    "currency": "USD",
+    "entries": [
+      {
+        "effective_date": "2026-09-13",
+        "input_price": 3.00,
+        "output_price": 15.00,
+        "cache_read_price": 0.30,
+        "cache_creation_price": 3.75,
+        "sources": [
+          {"name": "Anthropic pricing page", "url": "https://www.anthropic.com/pricing", "checked_at": "2026-09-13"},
+          {"name": "litellm model_prices_and_context_window.json", "url": "https://github.com/BerriAI/litellm", "checked_at": "2026-09-13"}
+        ]
+      }
+    ]
+  }
+]

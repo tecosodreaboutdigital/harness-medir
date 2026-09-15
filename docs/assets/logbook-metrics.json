@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-09-14T10:34:27.229532+00:00",
+  "generated_at": "2026-09-15T02:16:16.432375+00:00",
   "session_files": [
+    "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
     "46908256-4997-4659-b184-4a6d48768252.jsonl",
     "53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
@@ -39,7 +40,8 @@
         "output": 13752,
         "cache_read": 718510,
         "cache_creation": 51454
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "1271135",
@@ -59,7 +61,8 @@
         "output": 63957,
         "cache_read": 6245789,
         "cache_creation": 145767
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "f5fbfa7",
@@ -79,7 +82,8 @@
         "output": 148605,
         "cache_read": 21031269,
         "cache_creation": 286984
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "111933a",
@@ -99,7 +103,8 @@
         "output": 205636,
         "cache_read": 45781522,
         "cache_creation": 377078
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "51af961",
@@ -119,7 +124,8 @@
         "output": 216641,
         "cache_read": 49497193,
         "cache_creation": 393521
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "38444ac",
@@ -139,7 +145,8 @@
         "output": 232478,
         "cache_read": 62992311,
         "cache_creation": 420905
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "69700ec",
@@ -159,7 +166,8 @@
         "output": 282740,
         "cache_read": 87022907,
         "cache_creation": 488399
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "9ccbc1e",
@@ -179,7 +187,8 @@
         "output": 391379,
         "cache_read": 103625687,
         "cache_creation": 703611
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "d9a3fd7",
@@ -199,7 +208,8 @@
         "output": 420261,
         "cache_read": 114118637,
         "cache_creation": 773111
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "e5af22e",
@@ -219,7 +229,8 @@
         "output": 445201,
         "cache_read": 119452106,
         "cache_creation": 825319
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "1bb678a",
@@ -239,7 +250,8 @@
         "output": 450015,
         "cache_read": 123049718,
         "cache_creation": 838482
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "2369713",
@@ -259,7 +271,8 @@
         "output": 537272,
         "cache_read": 136764627,
         "cache_creation": 1042869
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "8c2176b",
@@ -279,7 +292,8 @@
         "output": 544231,
         "cache_read": 139186732,
         "cache_creation": 1063683
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "bfdd36b",
@@ -299,7 +313,8 @@
         "output": 554431,
         "cache_read": 141730915,
         "cache_creation": 1308121
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "5ff833e",
@@ -319,7 +334,8 @@
         "output": 563342,
         "cache_read": 145044812,
         "cache_creation": 1320324
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "d8aa15a",
@@ -339,7 +355,8 @@
         "output": 688548,
         "cache_read": 153949876,
         "cache_creation": 1566672
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "c92e889",
@@ -359,7 +376,8 @@
         "output": 721483,
         "cache_read": 161816460,
         "cache_creation": 1610178
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "77ebe6e",
@@ -379,7 +397,8 @@
         "output": 729810,
         "cache_read": 165048923,
         "cache_creation": 1629748
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "e5523e6",
@@ -399,7 +418,8 @@
         "output": 797169,
         "cache_read": 169620898,
         "cache_creation": 1785064
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "07d47a1",
@@ -419,7 +439,8 @@
         "output": 798764,
         "cache_read": 169982026,
         "cache_creation": 1787830
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "4f47863",
@@ -439,7 +460,8 @@
         "output": 1135180,
         "cache_read": 280852924,
         "cache_creation": 2367128
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "cdc69a2",
@@ -459,7 +481,8 @@
         "output": 1135450,
         "cache_read": 281614910,
         "cache_creation": 2368593
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "319852d",
@@ -479,7 +502,8 @@
         "output": 1165035,
         "cache_read": 320448071,
         "cache_creation": 2425308
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "14422c1",
@@ -499,7 +523,8 @@
         "output": 1205888,
         "cache_read": 326023115,
         "cache_creation": 2543071
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "28f58c4",
@@ -519,7 +544,8 @@
         "output": 1253528,
         "cache_read": 329440038,
         "cache_creation": 2637101
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "e20661e",
@@ -539,7 +565,8 @@
         "output": 1267689,
         "cache_read": 330666457,
         "cache_creation": 2655908
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "95cef8c",
@@ -559,7 +586,8 @@
         "output": 1284422,
         "cache_read": 335766003,
         "cache_creation": 2709147
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "7db8a4b",
@@ -579,7 +607,8 @@
         "output": 1460926,
         "cache_read": 372392832,
         "cache_creation": 3069836
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "61d8dc3",
@@ -599,7 +628,8 @@
         "output": 1559367,
         "cache_read": 423552715,
         "cache_creation": 3586891
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "611f979",
@@ -619,7 +649,8 @@
         "output": 1614925,
         "cache_read": 460731311,
         "cache_creation": 3667911
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "eab8a51",
@@ -639,7 +670,8 @@
         "output": 1629819,
         "cache_read": 479183148,
         "cache_creation": 3705940
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "51ec750",
@@ -659,7 +691,8 @@
         "output": 1756062,
         "cache_read": 491415680,
         "cache_creation": 3943487
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "8408df8",
@@ -679,7 +712,8 @@
         "output": 1771543,
         "cache_read": 495542262,
         "cache_creation": 3976631
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "c060ac3",
@@ -699,7 +733,8 @@
         "output": 1877426,
         "cache_read": 513642674,
         "cache_creation": 4231952
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "8326d45",
@@ -719,7 +754,8 @@
         "output": 1900454,
         "cache_read": 520881607,
         "cache_creation": 4264720
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "fd7fff8",
@@ -739,7 +775,8 @@
         "output": 2006169,
         "cache_read": 559592741,
         "cache_creation": 4411747
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "ff5be81",
@@ -759,7 +796,8 @@
         "output": 2016863,
         "cache_read": 568655552,
         "cache_creation": 4848090
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "0dd1edb",
@@ -779,7 +817,8 @@
         "output": 2079089,
         "cache_read": 577750019,
         "cache_creation": 4997624
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "9f18082",
@@ -799,7 +838,8 @@
         "output": 2217815,
         "cache_read": 599942926,
         "cache_creation": 5313695
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "4a04ee1",
@@ -819,7 +859,8 @@
         "output": 2298212,
         "cache_read": 638151837,
         "cache_creation": 5499180
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "56819fd",
@@ -839,7 +880,8 @@
         "output": 2347044,
         "cache_read": 673333311,
         "cache_creation": 5597716
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "3266f8e",
@@ -859,7 +901,8 @@
         "output": 2377496,
         "cache_read": 698826203,
         "cache_creation": 5652108
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "ecc471e",
@@ -879,7 +922,8 @@
         "output": 2404535,
         "cache_read": 703027916,
         "cache_creation": 5761377
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "6e5e30a",
@@ -899,7 +943,8 @@
         "output": 2556455,
         "cache_read": 726524562,
         "cache_creation": 6182364
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "90b81a4",
@@ -919,7 +964,8 @@
         "output": 2594795,
         "cache_read": 741455038,
         "cache_creation": 6252622
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "ab6a0a1",
@@ -939,7 +985,8 @@
         "output": 2625604,
         "cache_read": 751105657,
         "cache_creation": 6293217
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "6684543",
@@ -959,7 +1006,8 @@
         "output": 2655177,
         "cache_read": 770553295,
         "cache_creation": 6345360
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "42df668",
@@ -979,7 +1027,8 @@
         "output": 2657395,
         "cache_read": 774159325,
         "cache_creation": 6351337
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "7bdfc13",
@@ -999,7 +1048,8 @@
         "output": 2673141,
         "cache_read": 788213206,
         "cache_creation": 6380196
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "cd0cb08",
@@ -1019,7 +1069,8 @@
         "output": 2724602,
         "cache_read": 812000876,
         "cache_creation": 6455667
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "89080f8",
@@ -1039,7 +1090,8 @@
         "output": 2772550,
         "cache_read": 847651528,
         "cache_creation": 6551315
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "1098fe2",
@@ -1059,7 +1111,8 @@
         "output": 2908830,
         "cache_read": 870116906,
         "cache_creation": 6833569
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "f1265bb",
@@ -1079,7 +1132,8 @@
         "output": 2924920,
         "cache_read": 874342960,
         "cache_creation": 6858692
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "e6bd08c",
@@ -1099,7 +1153,8 @@
         "output": 2950754,
         "cache_read": 887642253,
         "cache_creation": 6927766
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "80dd46d",
@@ -1119,7 +1174,8 @@
         "output": 3155915,
         "cache_read": 919774237,
         "cache_creation": 7893102
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "3c4832e",
@@ -1139,7 +1195,8 @@
         "output": 3185681,
         "cache_read": 937466054,
         "cache_creation": 7958883
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "2f3c7b4",
@@ -1159,7 +1216,8 @@
         "output": 3276364,
         "cache_read": 944896264,
         "cache_creation": 8167360
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "1bffee8",
@@ -1179,7 +1237,8 @@
         "output": 3277061,
         "cache_read": 945368919,
         "cache_creation": 8168420
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "2d0ad3b",
@@ -1199,7 +1258,8 @@
         "output": 3326064,
         "cache_read": 958704643,
         "cache_creation": 8456440
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "39bbe7f",
@@ -1219,7 +1279,8 @@
         "output": 3381319,
         "cache_read": 965580941,
         "cache_creation": 8615437
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "8317af3",
@@ -1239,7 +1300,8 @@
         "output": 3382019,
         "cache_read": 965770900,
         "cache_creation": 8616388
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "18f673f",
@@ -1259,7 +1321,8 @@
         "output": 3416143,
         "cache_read": 972638439,
         "cache_creation": 8674683
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "ace821b",
@@ -1279,7 +1342,8 @@
         "output": 3427522,
         "cache_read": 977549275,
         "cache_creation": 8690986
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "740c676",
@@ -1299,7 +1363,8 @@
         "output": 3458469,
         "cache_read": 989087507,
         "cache_creation": 8733294
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "a06c6ac",
@@ -1319,7 +1384,8 @@
         "output": 3483317,
         "cache_read": 1001366490,
         "cache_creation": 8780068
-      }
+      },
+      "cost_recorded": null
     },
     {
       "hash": "2f4fd46",
@@ -1339,6 +1405,13 @@
         "output": 3564338,
         "cache_read": 1014902274,
         "cache_creation": 8969514
+      },
+      "cost_recorded": {
+        "amount": 5.9869,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
       }
     },
     {
@@ -1359,6 +1432,13 @@
         "output": 3659907,
         "cache_read": 1055543107,
         "cache_creation": 9143990
+      },
+      "cost_recorded": {
+        "amount": 14.2808,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
       }
     },
     {
@@ -1379,6 +1459,13 @@
         "output": 3700268,
         "cache_read": 1089707019,
         "cache_creation": 9230097
+      },
+      "cost_recorded": {
+        "amount": 11.178,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
       }
     },
     {
@@ -1399,13 +1486,82 @@
         "output": 3985470,
         "cache_read": 1143366676,
         "cache_creation": 10818069
+      },
+      "cost_recorded": {
+        "amount": 26.3318,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "4358527",
+      "timestamp": "2026-09-14T07:40:24-03:00",
+      "subject": "Regenerate the project log, milestones M68 and M69",
+      "words_published": 119654,
+      "code_lines": 11200,
+      "governance_lines": 752,
+      "tokens_bucket": {
+        "input": 112,
+        "output": 43567,
+        "cache_read": 31352001,
+        "cache_creation": 71497
+      },
+      "tokens_cumulative": {
+        "input": 6712,
+        "output": 4029037,
+        "cache_read": 1174718677,
+        "cache_creation": 10889566
+      },
+      "cost_recorded": {
+        "amount": 10.3276,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "2d1cc42",
+      "timestamp": "2026-09-14T22:43:18-03:00",
+      "subject": "Close NEXT-STEPS item 5: cite milestone-loc-tokens-ai-ledger back here",
+      "words_published": 120538,
+      "code_lines": 11273,
+      "governance_lines": 758,
+      "tokens_bucket": {
+        "input": 124,
+        "output": 69171,
+        "cache_read": 12496167,
+        "cache_creation": 220404
+      },
+      "tokens_cumulative": {
+        "input": 6836,
+        "output": 4098208,
+        "cache_read": 1187214844,
+        "cache_creation": 11109970
+      },
+      "cost_recorded": {
+        "amount": 5.6133,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
       }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 56,
-    "output": 17993,
-    "cache_read": 15115261,
-    "cache_creation": 32021
-  }
+    "input": 166,
+    "output": 85135,
+    "cache_read": 29397027,
+    "cache_creation": 164432
+  },
+  "cost_since_last_commit": {
+    "amount": 10.7133,
+    "currency": "USD",
+    "priced_at": "2026-09-13",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5"
+  },
+  "unpriced_milestones": 65
 }

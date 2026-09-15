@@ -24,7 +24,7 @@ A browser-language hint was added to all four trilingual HTML pages: if the visi
 
 ### Project log
 
-`docs/logbook.html`, trilingual. Documents the project's own evolution: words published and tokens consumed per milestone, generated from git and the real session transcript, never written by hand. See `build/generate_logbook_metrics.py` and `build/build_logbook.py`. Six milestones recorded so far from the repository's full history, plus whatever is still in the open session.
+`docs/logbook.html`, trilingual. Documents the project's own evolution: words published, tokens consumed, and cost recorded per milestone, generated from git, the real session transcript, and a dated price ledger, never written by hand. See `build/generate_logbook_metrics.py` and `build/build_logbook.py`. Milestones recorded from the repository's full history, plus whatever is still in the open session; see `docs/logbook.html` itself for the current count, this file is a snapshot, not kept in lockstep with every regeneration. Cost tracking (`docs/assets/prices.json`) was ported on 14 September 2026 from `milestone-loc-tokens-ai-ledger`, the standalone skill this same engine generalised into, see `NEXT-STEPS.md` item 5.
 
 ### Part 1 · The best model in the world inside a company with no process
 

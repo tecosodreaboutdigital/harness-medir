@@ -24,7 +24,7 @@ Uma dica de idioma do navegador foi acrescentada às quatro páginas HTML trilí
 
 ### Diário de bordo
 
-`docs/logbook.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas e tokens consumidos por marco, gerado a partir do git e do transcript real da sessão, nunca escrito à mão. Ver `build/generate_logbook_metrics.py` e `build/build_logbook.py`. Seis marcos registrados até aqui a partir do histórico completo do repositório, mais o que ainda está em sessão aberta.
+`docs/logbook.html`, trilíngue. Documenta a evolução do próprio projeto: palavras publicadas, tokens consumidos e custo registrado por marco, gerado a partir do git, do transcript real da sessão e de um livro-razão de preço datado, nunca escrito à mão. Ver `build/generate_logbook_metrics.py` e `build/build_logbook.py`. Marcos registrados a partir do histórico completo do repositório, mais o que ainda está em sessão aberta; ver o próprio `docs/logbook.html` para a contagem atual, este arquivo é um retrato, não fica sincronizado com toda regeneração. Rastreamento de custo (`docs/assets/prices.json`) portado em 14 de setembro de 2026 de `milestone-loc-tokens-ai-ledger`, a skill autônoma pra qual este mesmo motor foi generalizado, ver o item 5 do `NEXT-STEPS.md`.
 
 ### Parte 1 · O melhor modelo do mundo dentro de uma empresa sem processo
 

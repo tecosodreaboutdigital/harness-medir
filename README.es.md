@@ -109,10 +109,10 @@ Regla de dimensionamiento: el harness debe ser menor que la superficie de fallo 
 
 Inspeccionar, en la tabla de arriba, significa sensores que producen evidencia, no opinión. Este proyecto aplica ese paso a su propia escritura, no solo a los agentes que describe.
 
-Cada commit se vuelve un hito en [docs/logbook.html](docs/logbook.html), trilingüe, generado a partir del historial de git y el uso real de tokens de esta sesión, nunca editado a mano. Dos gráficos, no uno con dos ejes, porque mezclar dos escalas arbitrarias en la misma regla es exactamente el error contra el que la parte 2 advierte a los propios sensores de un agente. Los dos comparten el mismo eje X, el orden de los hitos, así que puedes ver cuándo la escritura se aceleró respecto al costo en tokens, o al revés.
+Cada commit se vuelve un hito en [docs/logbook.html](docs/logbook.html), trilingüe, generado a partir del historial de git y el uso real de tokens de esta sesión, nunca editado a mano. Tres gráficos, nunca uno con dos ejes, porque mezclar dos escalas arbitrarias en la misma regla es exactamente el error contra el que la parte 2 advierte a los propios sensores de un agente. Los tres comparten el mismo eje X, el orden de los hitos, así que puedes ver cuándo la escritura se aceleró respecto al costo en tokens, o en dinero gastado, o al revés.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 119.654 palabras a lo largo de sesenta y nueve hitos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palabras publicadas, acumuladas por hito: una línea escalonada que crece de 20.197 a 120.538 palabras a lo largo de setenta y un hitos" width="680">
 </p>
 
 <p align="center"><em>Palabras publicadas en toda la serie, sumadas. Crece en escalones, la mayor parte del texto nace dentro de un solo hito, no gradualmente entre hitos. Retrato del momento de la última regeneración del diario, ver <a href="docs/logbook.html">docs/logbook.html</a> para la versión actual.</em></p>
@@ -122,6 +122,12 @@ Cada commit se vuelve un hito en [docs/logbook.html](docs/logbook.html), triling
 </p>
 
 <p align="center"><em>Tokens consumidos por hito. Las lecturas de caché crecen con el tamaño acumulado de la sesión, no con el esfuerzo real de un hito, así que el diario también aísla la salida pura, la señal más limpia para comparar sesiones. Retrato del momento de la última regeneración del diario, ver <a href="docs/logbook.html">docs/logbook.html</a> para la versión actual.</em></p>
+
+<p align="center">
+  <img src="docs/assets/logbook-cost-recorded.png" alt="Costo registrado, acumulado por hito, mismo eje X que los dos gráficos de arriba" width="680">
+</p>
+
+<p align="center"><em>Costo registrado por hito, portado de la propia skill de este proyecto, `milestone-loc-tokens-ai-ledger` (ver el ítem 5 de `NEXT-STEPS.md`): tokens tasados al precio que la entrada del libro mayor decía que era cierto en la fecha de ese hito, nunca recalculado después. El libro mayor solo tiene una entrada de precio verificada hasta ahora, fechada el 13 de septiembre de 2026, así que la mayor parte de la línea queda plana a propósito, no porque nada costó nada: un hito anterior a la primera entrada del libro mayor aparece como sin precio, nunca un costo inventado. Retrato del momento de la última regeneración del diario, ver <a href="docs/logbook.html">docs/logbook.html</a> para la versión actual.</em></p>
 
 El diario completo, con la tabla por hito y la metodología detrás de estos números, vive en `docs/logbook.html`. Léelo antes de asumir que una sesión fue barata o cara solo por su cantidad de palabras.
 
@@ -160,7 +166,8 @@ El diario completo, con la tabla por hito y la metodología detrás de estos nú
 │   ├── harness-p3-p4-briefing.pt.md   dosier de trabajo de las partes 3 y 4, interno, solo en portugués
 │   ├── logbook.html                   trilingüe, generado a partir de git y del uso real de la sesión
 │   ├── assets/logbook-metrics.json    el dato bruto del diario, nunca editado a mano
-│   └── assets/logbook-*.png           los dos gráficos incorporados arriba, exportados del diario actual
+│   ├── assets/prices.json             libro mayor de precio fechado y de solo apéndice, portado de milestone-loc-tokens-ai-ledger
+│   └── assets/logbook-*.png           los tres gráficos incorporados arriba, exportados del diario actual
 └── build/                             cuerpos de texto y scripts de ensamblado
 ```
 
