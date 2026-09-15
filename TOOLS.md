@@ -4,7 +4,7 @@
 
 A record of what this project has actually installed and uses, not just what it cites. A project about harness engineering that did not instrument its own creation would just be a nice-sounding argument. This document is the instrumentation.
 
-Updated 13 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
+Updated 14 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
 
 A machine-readable form of this same installed-skill list, generated from this file and `sources/inventory.md`, lives at `toolkit.json`, see `AGENTS.md`.
 
@@ -12,7 +12,7 @@ A machine-readable form of this same installed-skill list, generated from this f
 
 ## Third-party collections installed
 
-Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. The first six are cited as an entry in the [compact guide](harness-toolkit.html); the four most recent are not yet, see the note at the end of this section. Add `intake-briefing`, the project's own skill covered in the next section, and the environment has 38 active skills in total.
+Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. The first six are cited as an entry in the [compact guide](harness-toolkit.html); the four most recent are not yet, see the note at the end of this section. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 39 active skills in total.
 
 | Collection | Origin | Skills installed | Why it made the cut |
 |---|---|---|---|
@@ -53,13 +53,19 @@ Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally i
 
 ---
 
-## The project's own skill
+## The project's own skills
 
 `intake-briefing` is not installed from a third party, it is created by this project. It lived as a subfolder in here until 30 August 2026, when it gained its own public, MIT repository the same day: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing) (renamed from `levantando-briefing` later that same day, as part of the English-primary restructuring). harness-medir no longer holds its content, only points to it, the same pattern it uses to point at the other collections on this page.
 
 It also was not active in this environment until this round: `.claude/skills/`, which is where this harness discovers project skills, only had the thirty third-party ones. Fixed: a copy of it lives at `.claude/skills/intake-briefing/`, outside version control, pulled from its own repository.
 
 **Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty-seven third-party skills, now also for our own. It already happened once: the repository gained `AGENTS.md`, `llms.txt`, `.claude-plugin/` and `briefings/`, plus a rewritten multi-tool `Installation` section, on 31 August 2026, while this local copy still held the 30 August snapshot. Resynced the same day; see `README.md`'s own `Installation` section for the multi-tool detail that came out of that round.
+
+**`milestone-loc-tokens-ai-ledger`**, the second of the project's own skills, closes `NEXT-STEPS.md` item 5: generalising this repository's own diary engine (`build/generate_logbook_metrics.py`) into an installable Agent Skill, reused by any project, not only this one. Built 13 to 14 September 2026 from two research rounds and a design specification (`docs/research-logbook-skill-extraction.pt.md`, `docs/research-agent-skill-install-paths.pt.md`, `docs/design-milestone-loc-tokens-ai-ledger.pt.md`), then a fourteen-task implementation plan that grew, with real gains along the way, to 34 commits: a live, editable price panel, a dated multi-source cost ledger, a sources-consulted panel, and self-hosted thumbnails, none of it in the original plan. Public, MIT, at [github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger](https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger), same pattern as `intake-briefing`: `AGENTS.md`, `llms.txt`, `.claude-plugin/`, a multi-tool installation matrix verified against each vendor's own documentation. A copy lives at `.claude/skills/milestone-loc-tokens-ai-ledger/`, outside version control, same risk accepted as above.
+
+**The design question the original item 5 raised, closed rather than assumed:** should such a skill also draft the milestone prose, or only compute the numbers? Answered by what actually shipped, not by a separate decision memo: the engine computes one row per git commit (words, lines, tokens, cost), never a curated, multi-commit narrative milestone. A decision note is optional and one line, written by hand into `notes.json`, never auto-drafted. This keeps the no-inflation discipline this project's own diary already holds itself to, and it is also why this skill's per-commit table is a different, complementary artefact from `docs/logbook.html`'s hand-curated milestones, not a drop-in replacement for it.
+
+**A correction to the design specification's own closing checklist, found while integrating.** `docs/design-milestone-loc-tokens-ai-ledger.pt.md` section 12 named a `sources/inventory.md` entry as part of "integrating back." Checked against the actual precedent it cites, `intake-briefing`, before adding one: `intake-briefing` has never had an entry in `sources/inventory.md`, that file's "Tools and skills" table is scoped to third-party citations only, see the table's own rows. No entry added for `milestone-loc-tokens-ai-ledger` either, to stay consistent with the real pattern rather than the plan's unchecked assumption.
 
 ---
 

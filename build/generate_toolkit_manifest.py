@@ -8,8 +8,9 @@
 # sem cruzar TOOLS.md, sources/inventory.md e harness-toolkit.html a mao.
 #
 # Escopo deliberado, v1: so os Agent Skills de fato instalados em
-# .claude/skills/ (as dez colecoes de terceiro mais o skill proprio,
-# intake-briefing). NAO cobre toda ferramenta citada em
+# .claude/skills/ (as dez colecoes de terceiro mais as duas skills
+# proprias, intake-briefing e milestone-loc-tokens-ai-ledger). NAO cobre
+# toda ferramenta citada em
 # sources/inventory.md (Semgrep, Stryker, LangGraph e outras sao
 # ferramentas de software convencionais, sem um "comando de instalacao
 # de skill" uniforme, forcar isso no mesmo schema seria inventar um fato
@@ -146,32 +147,64 @@ def parse_medir_steps(inventory_text, collection_names):
     return result
 
 
-def parse_own_skill(tools_text):
-    section = extract_section(tools_text, '## The project\'s own skill', '## Audit before installing')
-    m = re.search(r'https://github\.com/\S+?/intake-briefing', section)
-    origin = m.group(0).rstrip('.,)') if m else 'https://github.com/tecosodreaboutdigital/intake-briefing'
-    return {
+# Every skill this project has produced for itself, not installed from a
+# third party. Adding a second one (13-14 September 2026) turned what was a
+# single hardcoded function into this list: each entry still gets its
+# origin URL parsed out of TOOLS.md's own prose, same discipline as before,
+# rather than trusting a URL typed twice in two different files.
+OWN_SKILLS = [
+    {
         'id': 'intake-briefing',
-        'kind': 'own_skill',
-        'name': 'intake-briefing',
         'role': ('Runs a structured interview before any AI build, to decide whether the task '
                  'should be automated, what autonomy tier it should operate in, and what the '
                  'resulting task contract is.'),
         'medir_step': 'map',
-        'origin': origin,
-        'licence': 'MIT',
-        'status': 'installed',
-        'skills': ['intake-briefing'],
-        'install': {
-            'personal': 'git clone %s.git ~/.claude/skills/intake-briefing' % origin,
-            'cursor_codex_antigravity': 'git clone %s.git .agents/skills/intake-briefing' % origin,
-            'claude_code_plugin': (
-                '/plugin marketplace add tecosodreaboutdigital/intake-briefing\n'
-                '/plugin install intake-briefing@intake-briefing'
-            ),
-            'verified': "31 August 2026, against each vendor's own documentation. Snapshot, not live status.",
-        },
-    }
+        'url_pattern': r'https://github\.com/\S+?/intake-briefing',
+        'default_origin': 'https://github.com/tecosodreaboutdigital/intake-briefing',
+        'plugin_slug': 'intake-briefing',
+        'verified': "31 August 2026, against each vendor's own documentation. Snapshot, not live status.",
+    },
+    {
+        'id': 'milestone-loc-tokens-ai-ledger',
+        'role': ("Generates a self-hosted, static HTML dashboard tracking a project's lines of "
+                 'code, words, and LLM token cost per git commit, against a dated, multi-source, '
+                 'editable price ledger. Generalises this project\'s own diary engine.'),
+        'medir_step': 'inspect',
+        'url_pattern': r'https://github\.com/\S+?/milestone-loc-tokens-ai-ledger',
+        'default_origin': 'https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger',
+        'plugin_slug': 'milestone-loc-tokens-ai-ledger',
+        'verified': "13 September 2026, against each vendor's own documentation. Snapshot, not live status.",
+    },
+]
+
+
+def parse_own_skills(tools_text):
+    section = extract_section(tools_text, "## The project's own skills", '## Audit before installing')
+    entries = []
+    for spec in OWN_SKILLS:
+        m = re.search(spec['url_pattern'], section)
+        origin = m.group(0).rstrip('.,)') if m else spec['default_origin']
+        entries.append({
+            'id': spec['id'],
+            'kind': 'own_skill',
+            'name': spec['id'],
+            'role': spec['role'],
+            'medir_step': spec['medir_step'],
+            'origin': origin,
+            'licence': 'MIT',
+            'status': 'installed',
+            'skills': [spec['id']],
+            'install': {
+                'personal': 'git clone %s.git ~/.claude/skills/%s' % (origin, spec['id']),
+                'cursor_codex_antigravity': 'git clone %s.git .agents/skills/%s' % (origin, spec['id']),
+                'claude_code_plugin': (
+                    '/plugin marketplace add tecosodreaboutdigital/%s\n'
+                    '/plugin install %s@%s' % (spec['plugin_slug'], spec['plugin_slug'], spec['plugin_slug'])
+                ),
+                'verified': spec['verified'],
+            },
+        })
+    return entries
 
 
 def parse_playbook_templates(readme_text, body_en_text):
@@ -248,7 +281,7 @@ def build_entries(tools_text, inventory_text, playbook_readme_text=None, playboo
                 'note': INSTALL_NOTE,
             },
         })
-    entries.append(parse_own_skill(tools_text))
+    entries.extend(parse_own_skills(tools_text))
     if playbook_readme_text is not None and playbook_body_text is not None:
         entries.extend(parse_playbook_templates(playbook_readme_text, playbook_body_text))
     return entries
@@ -280,8 +313,9 @@ def build_manifest():
         'derived_from': ['TOOLS.md', 'sources/inventory.md', 'playbook/README.md', 'README.md'],
         'scope_note': (
             "Agent Skills actually installed in this project's .claude/skills/, plus this "
-            "project's own operational artefacts (kind: \"own_skill\" for intake-briefing, "
-            '"template" for the seven playbook artefacts, see playbook/README.md). Does not '
+            'project\'s own operational artefacts (kind: "own_skill" for intake-briefing and '
+            'milestone-loc-tokens-ai-ledger, "template" for the seven playbook artefacts, see '
+            'playbook/README.md). Does not '
             'cover every tool cited in sources/inventory.md: some of those are conventional '
             'software (a static analyser, an orchestration library), not an installable Agent '
             'Skill, and forcing them into this schema would assert an install path this '

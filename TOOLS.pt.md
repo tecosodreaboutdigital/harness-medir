@@ -4,7 +4,7 @@
 
 Registro do que este projeto de fato instalou e usa, não só do que cita. Um projeto sobre engenharia de harness que não instrumentasse a própria criação seria só um argumento bonito. Este documento é a instrumentação.
 
-Atualizado em 13 de setembro de 2026. Cresce a cada skill nova que entra em uso, nunca é reescrito por inteiro.
+Atualizado em 14 de setembro de 2026. Cresce a cada skill nova que entra em uso, nunca é reescrito por inteiro.
 
 Uma forma legível por máquina desta mesma lista de skills instaladas, gerada a partir deste arquivo e de `sources/inventory.md`, vive em `toolkit.json`, ver `AGENTS.md`.
 
@@ -12,7 +12,7 @@ Uma forma legível por máquina desta mesma lista de skills instaladas, gerada a
 
 ## Coleções de terceiro instaladas
 
-Dez coleções, trinta e sete skills, todas com licença MIT ou Apache 2.0. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. As seis primeiras são citadas como ficha no [guia compacto](harness-toolkit.html); as quatro mais recentes ainda não, ver a nota ao final desta seção. Some `intake-briefing`, a skill própria do projeto tratada na próxima seção, e o ambiente tem 38 skills ativas ao todo.
+Dez coleções, trinta e sete skills, todas com licença MIT ou Apache 2.0. Instaladas localmente em `.claude/skills/`, fora do controle de versão (ver `.gitignore`): rodam neste ambiente, mas o código de terceiro não entra no histórico público deste repositório. As seis primeiras são citadas como ficha no [guia compacto](harness-toolkit.html); as quatro mais recentes ainda não, ver a nota ao final desta seção. Some `intake-briefing` e `milestone-loc-tokens-ai-ledger`, as skills próprias do projeto tratadas na próxima seção, e o ambiente tem 39 skills ativas ao todo.
 
 | Coleção | Origem | Skills instaladas | Por que entrou |
 |---|---|---|---|
@@ -53,13 +53,19 @@ Dez coleções, trinta e sete skills, todas com licença MIT ou Apache 2.0. Inst
 
 ---
 
-## A skill própria do projeto
+## As skills próprias do projeto
 
 `intake-briefing` é criada por este projeto, não instalada de terceiro. Vivia como subpasta aqui dentro até 30 de agosto de 2026, quando ganhou repositório próprio, público, MIT, no mesmo dia: [github.com/tecosodreaboutdigital/intake-briefing](https://github.com/tecosodreaboutdigital/intake-briefing) (renomeada de `levantando-briefing` mais tarde nesse mesmo dia, como parte da reestruturação para inglês primário). O harness-medir não guarda mais o conteúdo dela, só aponta para lá, no mesmo padrão que usa para apontar para as outras coleções desta página.
 
 Ela também não estava ativa neste ambiente até esta rodada: `.claude/skills/`, que é de onde este harness descobre skills de projeto, só tinha as trinta de terceiro. Corrigido: uma cópia dela vive em `.claude/skills/intake-briefing/`, fora do controle de versão, trazida do repositório próprio.
 
 **Risco assumido, dito com honestidade:** essa cópia local pode ficar para trás se o repositório da skill for editado sem que a cópia aqui seja atualizada. É o mesmo tipo de risco que aceitamos para as trinta e sete skills de terceiro, agora também para a nossa. Já aconteceu uma vez: o repositório ganhou `AGENTS.md`, `llms.txt`, `.claude-plugin/` e `briefings/`, mais uma seção `Installation` multiferramenta reescrita, em 31 de agosto de 2026, enquanto essa cópia local ainda carregava o retrato de 30 de agosto. Ressincronizada no mesmo dia; ver a própria seção `Instalação` do `README.md` para o detalhe multiferramenta que saiu dessa rodada.
+
+**`milestone-loc-tokens-ai-ledger`**, a segunda skill própria do projeto, fecha o item 5 do `NEXT-STEPS.md`: generaliza o próprio motor de diário deste repositório (`build/generate_logbook_metrics.py`) para uma Agent Skill instalável, reutilizável por qualquer projeto, não só este. Construída entre 13 e 14 de setembro de 2026 a partir de duas rodadas de pesquisa e uma especificação de design (`docs/research-logbook-skill-extraction.pt.md`, `docs/research-agent-skill-install-paths.pt.md`, `docs/design-milestone-loc-tokens-ai-ledger.pt.md`), depois um plano de implementação de catorze tarefas que cresceu, com ganhos reais pelo caminho, até 34 commits: painel de preço ao vivo e editável, livro-razão de custo datado e multi-fonte, painel de fontes consultadas, e thumbnails autogeradas, nada disso no plano original. Pública, MIT, em [github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger](https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger), mesmo padrão do `intake-briefing`: `AGENTS.md`, `llms.txt`, `.claude-plugin/`, matriz de instalação multiferramenta verificada contra a documentação de cada fornecedor. Uma cópia vive em `.claude/skills/milestone-loc-tokens-ai-ledger/`, fora do controle de versão, mesmo risco assumido acima.
+
+**A pergunta de design que o item 5 original levantou, fechada em vez de presumida:** essa skill deveria também redigir a prosa do marco, ou só calcular os números? Respondida pelo que de fato foi entregue, não por um memorando de decisão à parte: o motor computa uma linha por commit do git (palavras, linhas, tokens, custo), nunca uma narrativa curada de vários commits. Uma nota de decisão é opcional e de uma linha, escrita à mão em `notes.json`, nunca redigida automaticamente. Isso preserva a disciplina de não inflar que o próprio diário deste projeto já se impõe, e é também por isso que a tabela por commit desta skill é um artefato diferente e complementar ao `docs/logbook.html` de marcos curados à mão, não uma substituição direta dele.
+
+**Uma correção ao próprio checklist de fechamento da especificação de design, achada ao integrar.** A seção 12 de `docs/design-milestone-loc-tokens-ai-ledger.pt.md` citava uma entrada em `sources/inventory.md` como parte de "integrar de volta." Conferido contra o precedente real que ela cita, o `intake-briefing`, antes de adicionar uma: `intake-briefing` nunca teve entrada em `sources/inventory.md`, a tabela "Tools and skills" daquele arquivo tem escopo só para citação de terceiro, ver as próprias linhas da tabela. Nenhuma entrada adicionada para `milestone-loc-tokens-ai-ledger` também, para ficar consistente com o padrão real, não com a suposição não conferida do plano.
 
 ---
 

@@ -1,13 +1,13 @@
 {
   "generated_by": "build/generate_toolkit_manifest.py",
-  "generated_at": "2026-09-13",
+  "generated_at": "2026-09-14",
   "derived_from": [
     "TOOLS.md",
     "sources/inventory.md",
     "playbook/README.md",
     "README.md"
   ],
-  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\" for intake-briefing, \"template\" for the seven playbook artefacts, see playbook/README.md). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
+  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\" for intake-briefing and milestone-loc-tokens-ai-ledger, \"template\" for the seven playbook artefacts, see playbook/README.md). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
   "verification_note": "This file is a snapshot, generated on the date above. Before installing anything listed here, follow AGENTS.md's protocol: fetch the origin URL and check whether it is still current. Do not present this file as live state.",
   "medir_steps": [
     "map",
@@ -18,7 +18,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "c82b8f4f7602a7f3cc8dc1fdd8cd96c29b5a01770d458cd0ecc4767b021a491d",
+  "source_hash": "9d7953c6b0b3db0282887fcaecb03bfbf2fcea3bdd3c73a4ad7232fe23660f8a",
   "entries": [
     {
       "id": "superpowers",
@@ -274,6 +274,25 @@
         "cursor_codex_antigravity": "git clone https://github.com/tecosodreaboutdigital/intake-briefing.git .agents/skills/intake-briefing",
         "claude_code_plugin": "/plugin marketplace add tecosodreaboutdigital/intake-briefing\n/plugin install intake-briefing@intake-briefing",
         "verified": "31 August 2026, against each vendor's own documentation. Snapshot, not live status."
+      }
+    },
+    {
+      "id": "milestone-loc-tokens-ai-ledger",
+      "kind": "own_skill",
+      "name": "milestone-loc-tokens-ai-ledger",
+      "role": "Generates a self-hosted, static HTML dashboard tracking a project's lines of code, words, and LLM token cost per git commit, against a dated, multi-source, editable price ledger. Generalises this project's own diary engine.",
+      "medir_step": "inspect",
+      "origin": "https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger",
+      "licence": "MIT",
+      "status": "installed",
+      "skills": [
+        "milestone-loc-tokens-ai-ledger"
+      ],
+      "install": {
+        "personal": "git clone https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger.git ~/.claude/skills/milestone-loc-tokens-ai-ledger",
+        "cursor_codex_antigravity": "git clone https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger.git .agents/skills/milestone-loc-tokens-ai-ledger",
+        "claude_code_plugin": "/plugin marketplace add tecosodreaboutdigital/milestone-loc-tokens-ai-ledger\n/plugin install milestone-loc-tokens-ai-ledger@milestone-loc-tokens-ai-ledger",
+        "verified": "13 September 2026, against each vendor's own documentation. Snapshot, not live status."
       }
     },
     {

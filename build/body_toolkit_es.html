@@ -291,6 +291,17 @@
 
 <div class="rule-box"><span class="lbl">Límites honestos</span><p>Su propia instrucción de "levanta un agente en segundo plano" causa una capa redundante de delegación cuando se invoca desde dentro de una llamada que ya es un agente en segundo plano, una ineficiencia pequeña que vale la pena conocer, no un motivo para no usarla.</p></div>
 
+<h3 id="ledger">milestone-loc-tokens-ai-ledger</h3>
+
+<p><strong>Problema.</strong> El propio diario de bitácora de un proyecto necesita evidencia real detrás de cada número, palabras, líneas, tokens, y cada vez más, cuánto costaron esos tokens realmente, al precio que era cierto ese día, no una estimación reconstruida después.</p>
+<p><strong>En la práctica.</strong> Skill propia de este proyecto, que generaliza el motor de diario que ya produce el <a href="docs/logbook.html">propio diario de bitácora de este repositorio</a> hacia una Agent Skill instalable: lee el historial de git y un transcript de sesión real, tasa el uso de tokens contra un libro mayor fechado, multi-fuente y de solo apéndice, y publica un panel autohospedado con un panel de precio en vivo y editable, sin llamada de red desde la página publicada. Una decisión de alcance deliberada, dicha con honestidad en vez de asumida: calcula una fila por commit, nunca redacta la prosa del hito por sí misma, una nota de decisión opcional de una línea se escribe a mano, la misma disciplina de no inflar que el propio diario de este proyecto ya se exige.</p>
+<p><strong>Para quién es.</strong> N1 hacia arriba, cualquier harness que quiera un registro público y autoactualizable de lo que costó construir un proyecto, en tokens y en dinero, por commit, sin backend.</p>
+<p><strong>Nivel mínimo.</strong> N1.</p>
+<p><strong>Cuándo no usarla.</strong> Un proyecto sin historial de git o sin transcript de sesión real de dónde leer, el motor se niega a estimar cualquiera de los dos.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Ejecútala una vez contra tu propio repositorio sin ningún archivo de configuración todavía. Arma uno inicial y muestra el primer panel solo a partir del historial real de git de tu proyecto, antes de agregar cualquier transcript o entrada de precio.</p>
+
+<p>Skill propia del proyecto, creada aquí entre el 13 y el 14 de septiembre de 2026 (ver el ítem 5 de <code>NEXT-STEPS.md</code>). Repositorio: <a href="https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger">github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger</a>. MIT, mismo patrón que <a href="#briefing">intake-briefing</a> arriba.</p>
+
 <div class="rule-box"><span class="lbl">Crítica de esta sección</span><p>Un panel lleno de sensores débiles produce exactamente la misma pantalla verde y tranquilizadora que un conjunto de sensores buenos. La pregunta que separa a los dos no es está todo verde, es cuándo fue la última vez que se puso rojo, y por qué. Ninguna de las cinco herramientas anteriores resuelve esto sola, es disciplina de quien opera el panel, tratada en los riesgos de la <a href="harness-p2.html#es-riscos-2">parte 2</a>.</p></div>
 
 <h2 id="reforcar">7. Reforzar</h2>
