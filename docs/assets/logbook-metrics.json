@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T02:16:16.432375+00:00",
+  "generated_at": "2026-09-15T02:25:19.355217+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -1548,16 +1548,43 @@
         "provider": "anthropic",
         "model": "claude-sonnet-5"
       }
+    },
+    {
+      "hash": "03f263d",
+      "timestamp": "2026-09-14T23:20:16-03:00",
+      "subject": "Port cost-in-money tracking from milestone-loc-tokens-ai-ledger",
+      "words_published": 120538,
+      "code_lines": 11487,
+      "governance_lines": 765,
+      "tokens_bucket": {
+        "input": 246,
+        "output": 107458,
+        "cache_read": 46792511,
+        "cache_creation": 198487
+      },
+      "tokens_cumulative": {
+        "input": 7082,
+        "output": 4205666,
+        "cache_read": 1234007355,
+        "cache_creation": 11308457
+      },
+      "cost_recorded": {
+        "amount": 16.3947,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 166,
-    "output": 85135,
-    "cache_read": 29397027,
-    "cache_creation": 164432
+    "input": 6,
+    "output": 7683,
+    "cache_read": 1356628,
+    "cache_creation": 8786
   },
   "cost_since_last_commit": {
-    "amount": 10.7133,
+    "amount": 0.5552,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",

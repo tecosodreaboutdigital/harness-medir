@@ -112,7 +112,7 @@ Inspecionar, na tabela acima, significa verificadores que produzem evidência, n
 Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Três gráficos, nunca um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios verificadores de um agente. Os três compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou em dinheiro gasto, ou o contrário.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 120.538 palavras ao longo de setenta e um marcos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 120.538 palavras ao longo de setenta e dois marcos" width="680">
 </p>
 
 <p align="center"><em>Palavras publicadas em toda a série, somadas. Cresce em degraus, a maior parte do texto nasce dentro de um único marco, não gradualmente entre marcos. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
