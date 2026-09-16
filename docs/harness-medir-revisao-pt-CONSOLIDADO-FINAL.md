@@ -6,6 +6,8 @@ Este arquivo substitui todos os anteriores desta revisão (`revisao-portugues-ha
 
 **Escopo coberto:** README, STANDARDS, STATUS e TOOLS (as três versões em português enviadas), harness-glossary.html, harness-p1.html a harness-p4.html, harness-toolkit.html, harness-sources.html, docs/logbook.html. `NEXT-STEPS.pt.md` ficou de fora por decisão sua, documento interno de baixa relevância pro repositório público.
 
+**Correção, 16 de setembro de 2026.** Este arquivo foi encontrado sem versionamento (untracked) numa sessão posterior e commitado como se fosse trabalho ainda pendente. Não era: uma auditoria contra os arquivos reais mostrou que praticamente todas as trocas descritas abaixo (sensor → verificador, dono → proprietário, trifeta → trinca, human in the loop, submissão → alegação, declaração falsa por negligência, "você responde pelo que foi dito", Tier mínimo → Faixa mínima, "ninguém contabilizou", e a reescrita de TOOLS.pt.md linha 44) já estavam aplicadas nos arquivos publicados antes desta sessão começar, de uma rodada anterior não documentada por commit correspondente neste histórico de git (provavelmente anterior à reescrita de histórico deste repositório). A única lacuna real encontrada foi o verbete `pt-g-agent-office` do glossário (seção 2.8), que ainda tinha a frase antiga; foi corrigido na mesma sessão que achou esta inconsistência. Este documento fica a partir de agora como registro histórico da decisão de vocabulário, não como checklist de ação.
+
 ---
 
 # PARTE 1 — Ontologia de português (referência permanente)
