@@ -1,13 +1,13 @@
 {
   "generated_by": "build/generate_toolkit_manifest.py",
-  "generated_at": "2026-09-14",
+  "generated_at": "2026-09-16",
   "derived_from": [
     "TOOLS.md",
     "sources/inventory.md",
     "playbook/README.md",
     "README.md"
   ],
-  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\" for intake-briefing and milestone-loc-tokens-ai-ledger, \"template\" for the seven playbook artefacts, see playbook/README.md). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
+  "scope_note": "Agent Skills actually installed in this project's .claude/skills/, plus this project's own operational artefacts (kind: \"own_skill\" for intake-briefing and milestone-loc-tokens-ai-ledger, \"template\" for the eight playbook artefacts, see playbook/README.md). Does not cover every tool cited in sources/inventory.md: some of those are conventional software (a static analyser, an orchestration library), not an installable Agent Skill, and forcing them into this schema would assert an install path this project never verified.",
   "verification_note": "This file is a snapshot, generated on the date above. Before installing anything listed here, follow AGENTS.md's protocol: fetch the origin URL and check whether it is still current. Do not present this file as live state.",
   "medir_steps": [
     "map",
@@ -18,7 +18,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "9d7953c6b0b3db0282887fcaecb03bfbf2fcea3bdd3c73a4ad7232fe23660f8a",
+  "source_hash": "cd8866488ed88f7d8a64d6b135ae56faaa0f3ca3eddcdfcac2186e7f0acc3c5f",
   "entries": [
     {
       "id": "superpowers",
@@ -311,6 +311,15 @@
       "role": "The scaffold behind every skill this project has published",
       "grounded_in": "Part 2, the five-field skeleton and the two worked examples",
       "path": "playbook/skill-template.md",
+      "status": "available"
+    },
+    {
+      "id": "starter-guides",
+      "kind": "template",
+      "name": "Starter guides",
+      "role": "The four defaults worth carrying into any new project, before a single task-specific guide exists",
+      "grounded_in": "Part 2, section 2, the guides side of the guides-and-sensors split",
+      "path": "playbook/starter-guides.md",
       "status": "available"
     },
     {

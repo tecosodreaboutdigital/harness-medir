@@ -152,10 +152,10 @@ The full log, with the per-milestone table and the methodology behind these numb
 ├── harness-toolkit.html               compact guide, organised by MEDIR, ready
 ├── harness-glossary.html              shared glossary, trilingual, every part links here
 ├── harness-sources.html               shared sources, trilingual, every part links here
-├── harness-playbook.html              seven operational templates, opens with D10, EN complete
+├── harness-playbook.html              eight operational templates, opens with D10, EN complete
 ├── playbook/
-│   ├── README.md                      index, seven templates as eight files, each traced to its part
-│   └── ...                            task-contract.md, skill-template.md, and six more
+│   ├── README.md                      index, eight templates as nine files, each traced to its part
+│   └── ...                            task-contract.md, skill-template.md, starter-guides.md, and six more
 ├── sources/
 │   └── inventory.md                   every source verified, with status
 ├── diagrams/

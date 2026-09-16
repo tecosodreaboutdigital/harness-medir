@@ -52,6 +52,8 @@ This file cannot make a tool without network access fetch a URL. What it can do 
 
 It governs this project's own curated list. It does not extend to skills found elsewhere. For the general practice of auditing a skill before installing it, see `harness-toolkit.html` section 11 and Part 3 of the series, `harness-p3.html`.
 
+The rule above is this repository's own worked example of a wider practice: verify a dependency against its current source before trusting it. If you are taking this harness into a project of your own, the portable form of that practice, and three other defaults this project runs with, lives in `playbook/starter-guides.md`. Copy that file's block into the new project's own `AGENTS.md` or `CLAUDE.md`, never this file itself: everything above this section is written for `harness-medir`'s own curated list and will not transfer as-is.
+
 It has no schedule of its own. Every check happens live, in the session where it is needed, against whatever the source looks like at that moment.
 
 ## Orienting yourself in this repository
@@ -68,10 +70,10 @@ If you are asked to explain this project, or to apply its method to something el
 | `sources/inventory.md` | Every citation and every curated third-party skill, with a verification status and date | Installing, recommending or citing any of them, see the rule above |
 | `harness-toolkit.html` | The compact guide, the same curation in human-facing form | Pointing a person at a specific tool |
 | `toolkit.json` | The same curation, machine-facing: one entry per installed skill or collection (role, MEDIR step, origin, install paths per tool) plus one per playbook template (part grounded in, path) | Enumerating what to install or reuse into your own project, without cross-reading three human-facing documents |
-| `playbook/README.md` | Index to the seven operational templates (eight files), each naming the part and section it derives from | Reusing a template in your own project, rather than only reading about the argument behind it |
+| `playbook/README.md` | Index to the eight operational templates (nine files), each naming the part and section it derives from | Reusing a template in your own project, rather than only reading about the argument behind it |
 
 `llms.txt`, at the root of this repository and of its published site, indexes the same map for an agent that only fetched a URL and needs to find this file first.
 
 ---
 
-Last updated 13 September 2026.
+Last updated 16 September 2026.

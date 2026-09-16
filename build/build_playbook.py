@@ -17,7 +17,7 @@ toolkit = open(os.path.join(ROOT, 'harness-toolkit.html'), encoding='utf-8').rea
 shell = toolkit[:toolkit.index('<div class="topbar">')]
 shell = shell.replace(
     '<title>The harness toolkit | Companion document</title>',
-    '<title>The playbook: seven templates | Companion document</title>')
+    '<title>The playbook: eight templates | Companion document</title>')
 
 EN = open(os.path.join(ROOT, 'build', 'body_playbook_en.html'), encoding='utf-8').read().strip()
 PT = open(os.path.join(ROOT, 'build', 'body_playbook_pt.html'), encoding='utf-8').read().strip()

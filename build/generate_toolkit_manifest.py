@@ -314,7 +314,7 @@ def build_manifest():
         'scope_note': (
             "Agent Skills actually installed in this project's .claude/skills/, plus this "
             'project\'s own operational artefacts (kind: "own_skill" for intake-briefing and '
-            'milestone-loc-tokens-ai-ledger, "template" for the seven playbook artefacts, see '
+            'milestone-loc-tokens-ai-ledger, "template" for the eight playbook artefacts, see '
             'playbook/README.md). Does not '
             'cover every tool cited in sources/inventory.md: some of those are conventional '
             'software (a static analyser, an orchestration library), not an installable Agent '

@@ -152,10 +152,10 @@ El diario completo, con la tabla por hito y la metodología detrás de estos nú
 ├── harness-toolkit.html               guía compacta, organizada por MEDIR, lista
 ├── harness-glossary.html              glosario compartido, trilingüe, cada parte apunta ahí
 ├── harness-sources.html               fuentes compartidas, trilingüe, cada parte apunta ahí
-├── harness-playbook.html              siete plantillas operativas, abre con el D10, inglés completo
+├── harness-playbook.html              ocho plantillas operativas, abre con el D10, inglés completo
 ├── playbook/
-│   ├── README.md                      índice, siete plantillas en ocho archivos, cada una atada a su parte
-│   └── ...                            task-contract.md, skill-template.md, y seis más
+│   ├── README.md                      índice, ocho plantillas en nueve archivos, cada una atada a su parte
+│   └── ...                            task-contract.md, skill-template.md, starter-guides.md, y seis más
 ├── sources/
 │   └── inventory.md                   todas las fuentes verificadas, con estado
 ├── diagrams/

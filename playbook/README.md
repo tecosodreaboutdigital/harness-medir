@@ -1,6 +1,6 @@
 # The harness-medir playbook
 
-Seven operational templates, each one traceable to the part and section that already introduced its
+Eight operational templates, each one traceable to the part and section that already introduced its
 underlying concept. None of these is invented fresh: this directory reuses the four parts and the
 compact guide, it does not add a fifth idea to the series. See `harness-playbook.html` for the
 human-facing explanation of each one, and `NEXT-STEPS.md` item 3 for why this was deliberately
@@ -16,6 +16,7 @@ eight-indicators section, a second, legitimate appearance rather than a competin
 |---|---|---|
 | Task contract | `task-contract.md` | Part 1, the Map step |
 | Skill | `skill-template.md` | Part 2, the five-field skeleton and the two worked examples |
+| Starter guides | `starter-guides.md` | Part 2, section 2, the guides side of the guides-and-sensors split |
 | Execution receipt | `execution-receipt.md` | Part 2's base receipt, extended in Part 3 with the rule-of-two answers and the reversal point |
 | Risk matrix by tier | `risk-matrix-by-tier.md` | Part 3's matrix of authority, crossed with Part 1's N0 to N3 tiers |
 | Tier diagnostic | `tier-diagnostic.md` | Part 1's twelve-question checklist, expanded into a standing instrument |
@@ -36,11 +37,16 @@ independent nets Part 3 insists both run together. `tier-diagnostic.md` feeds th
 is the record that sets an `agent-registry.md` row's certified date and revalidation date; run it
 again, not a lighter version of it, at every revalidation.
 
+`starter-guides.md` stands apart from that chain. It is not scoped to one task or one skill, it is
+the default this project itself runs with, so it is the one template meant to leave this repository
+entirely: copy it into a different project's own `AGENTS.md` or `CLAUDE.md`, before any of the other
+seven templates are filled in for that project.
+
 ## Machine-readable form
 
 Each template is registered in `../toolkit.json` as `"kind": "template"`, with the same fields the
 installed skills carry (role, the MEDIR step or part it grounds, and its path in this repository),
-so an agent enumerating what this project offers sees these seven artefacts alongside the 38
+so an agent enumerating what this project offers sees these eight artefacts alongside the 38
 installed skills, not as a separate, undiscoverable category.
 
 ## Honest limits
