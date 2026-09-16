@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T02:25:19.355217+00:00",
+  "generated_at": "2026-09-16T12:47:41.721566+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -9,6 +9,7 @@
     "5cca66f1-772b-46bc-aa39-3590a003ce38.jsonl",
     "7f526096-6cdc-4cd0-ab18-2ff52b338719.jsonl",
     "94076374-cedf-44d4-a224-b04b4df17067.jsonl",
+    "9ceec93a-9776-453d-af08-f860720eb670.jsonl",
     "9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
     "aac61ff0-ff50-42f9-8b0b-de3773bd541f.jsonl",
     "b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
@@ -1575,16 +1576,124 @@
         "provider": "anthropic",
         "model": "claude-sonnet-5"
       }
+    },
+    {
+      "hash": "0638e29",
+      "timestamp": "2026-09-14T23:26:54-03:00",
+      "subject": "Regenerate the project log, milestone M72",
+      "words_published": 120538,
+      "code_lines": 11492,
+      "governance_lines": 765,
+      "tokens_bucket": {
+        "input": 64,
+        "output": 14650,
+        "cache_read": 14831413,
+        "cache_creation": 18813
+      },
+      "tokens_cumulative": {
+        "input": 7146,
+        "output": 4220316,
+        "cache_read": 1248838768,
+        "cache_creation": 11327270
+      },
+      "cost_recorded": {
+        "amount": 4.7399,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "f907872",
+      "timestamp": "2026-09-16T07:03:35-03:00",
+      "subject": "Add consolidated PT terminology revision, closing the ontology round",
+      "words_published": 120538,
+      "code_lines": 11492,
+      "governance_lines": 765,
+      "tokens_bucket": {
+        "input": 36,
+        "output": 13257,
+        "cache_read": 5282887,
+        "cache_creation": 495454
+      },
+      "tokens_cumulative": {
+        "input": 7182,
+        "output": 4233573,
+        "cache_read": 1254121655,
+        "cache_creation": 11822724
+      },
+      "cost_recorded": {
+        "amount": 3.6418,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "9897786",
+      "timestamp": "2026-09-16T08:35:45-03:00",
+      "subject": "Add starter-guides.md, the playbook's eighth template",
+      "words_published": 120916,
+      "code_lines": 11503,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 144,
+        "output": 69109,
+        "cache_read": 13467829,
+        "cache_creation": 146471
+      },
+      "tokens_cumulative": {
+        "input": 7326,
+        "output": 4302682,
+        "cache_read": 1267589484,
+        "cache_creation": 11969195
+      },
+      "cost_recorded": {
+        "amount": 5.6267,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "d36b004",
+      "timestamp": "2026-09-16T08:39:31-03:00",
+      "subject": "Correct a stale claim in the previous commit, close the one real gap it left",
+      "words_published": 120911,
+      "code_lines": 11503,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 32,
+        "output": 17782,
+        "cache_read": 3949057,
+        "cache_creation": 22262
+      },
+      "tokens_cumulative": {
+        "input": 7358,
+        "output": 4320464,
+        "cache_read": 1271538541,
+        "cache_creation": 11991457
+      },
+      "cost_recorded": {
+        "amount": 1.535,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 6,
-    "output": 7683,
-    "cache_read": 1356628,
-    "cache_creation": 8786
+    "input": 32,
+    "output": 9416,
+    "cache_read": 4294318,
+    "cache_creation": 24029
   },
   "cost_since_last_commit": {
-    "amount": 0.5552,
+    "amount": 1.5197,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",

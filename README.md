@@ -112,7 +112,7 @@ Inspect, in the table above, means sensors that produce evidence, not opinion. T
 Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Three charts, never one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. All three share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or to money spent, or the other way round.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 120,538 words across seventy-two milestones" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 120,911 words across seventy-six milestones" width="680">
 </p>
 
 <p align="center"><em>Words published across the series, summed. It grows in steps, most text is born within a single milestone, not gradually between milestones. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
