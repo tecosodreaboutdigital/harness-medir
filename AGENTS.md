@@ -52,7 +52,7 @@ This file cannot make a tool without network access fetch a URL. What it can do 
 
 It governs this project's own curated list. It does not extend to skills found elsewhere. For the general practice of auditing a skill before installing it, see `harness-toolkit.html` section 11 and Part 3 of the series, `harness-p3.html`.
 
-The rule above is this repository's own worked example of a wider practice: verify a dependency against its current source before trusting it. If you are taking this harness into a project of your own, the portable form of that practice, and three other defaults this project runs with, lives in `playbook/starter-guides.md`. Copy that file's block into the new project's own `AGENTS.md` or `CLAUDE.md`, never this file itself: everything above this section is written for `harness-medir`'s own curated list and will not transfer as-is.
+The rule above is this repository's own worked example of a wider practice: verify a dependency against its current source before trusting it. If you are taking this harness into a project of your own, the portable form of that practice, and three other default guides, lives in `playbook/starter-guides.md`. Copy that file's block into the new project's own `AGENTS.md` or `CLAUDE.md`, never this file itself: everything above this section is written for `harness-medir`'s own curated list and will not transfer as-is.
 
 It has no schedule of its own. Every check happens live, in the session where it is needed, against whatever the source looks like at that moment.
 

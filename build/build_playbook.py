@@ -2,9 +2,10 @@
 # Monta harness-playbook.html trilingue (EN/PT/ES) a partir dos tres
 # corpos em build/body_playbook_en.html, body_playbook_pt.html e
 # body_playbook_es.html. EN e a fonte completa (lingua primaria do
-# projeto); PT e ES sao um stub honesto ("traducao em andamento"),
-# nao texto fabricado, mesmo padrao que Parte 3/4 usaram antes de
-# ganhar traducao completa. Segue exatamente o padrao simetrico de
+# projeto); PT e ES sao traducoes completas desde 20 de setembro de
+# 2026 (antes eram um stub honesto de "traducao em andamento", o mesmo
+# padrao que Parte 3/4 usaram antes de ganhar traducao completa). Segue
+# exatamente o padrao simetrico de
 # build_toolkit.py: os tres corpos sao fonte, sem prefixo de idioma
 # nos ids, prefixados por scope() no build. O envoltorio (head, CSS,
 # a barra de topo unificada) e extraido de harness-toolkit.html

@@ -4,9 +4,9 @@ Grounded in: [Part 2](../harness-p2.html#en-dois-controles), section 2, "There a
 two controls": guides are "the controls that anticipate," acting before execution to
 raise the odds of getting it right on the first attempt. Every other template in this
 playbook is a guide too, `task-contract.md` and `skill-template.md` especially, but
-those are shaped by a specific task or skill. These four are not: they are the defaults
-this project runs with regardless of task, worth carrying into any new project before a
-single line of that project's own work exists.
+those are shaped by a specific task or skill. These four are not: they are defaults that
+hold regardless of task, worth carrying into any new project before a single line of that
+project's own work exists.
 
 Copy the block below into your own project's `AGENTS.md` or `CLAUDE.md`. Do not copy
 this repository's own `AGENTS.md` or `STANDARDS.md` wholesale: both are written for this
@@ -50,7 +50,9 @@ Rule 3 is the general form of a rule this repository already enforces narrowly, 
 own `AGENTS.md`: before recommending or installing a third-party skill from this
 project's curation, fetch the origin and check whether it is still current. That
 protocol is the worked example; this is the pattern, generalised to any dependency in
-your own project, not just a curated skill.
+your own project, not just a curated skill. It is also the only one of the four that this
+repository enforces on itself. Rules 1, 2 and 4 are not written down in any guide here, so
+read them as defaults offered for adoption, not as practice this project has already shown.
 
 ## Red flags, stop if you catch yourself thinking
 

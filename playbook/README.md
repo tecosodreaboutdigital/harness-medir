@@ -37,16 +37,19 @@ independent nets Part 3 insists both run together. `tier-diagnostic.md` feeds th
 is the record that sets an `agent-registry.md` row's certified date and revalidation date; run it
 again, not a lighter version of it, at every revalidation.
 
-`starter-guides.md` stands apart from that chain. It is not scoped to one task or one skill, it is
-the default this project itself runs with, so it is the one template meant to leave this repository
-entirely: copy it into a different project's own `AGENTS.md` or `CLAUDE.md`, before any of the other
-seven templates are filled in for that project.
+`starter-guides.md` stands apart from that chain. It is not scoped to one task or one skill, so it is
+the one template meant to leave this repository entirely: copy its block into a different project's
+own `AGENTS.md` or `CLAUDE.md`, before any of the other seven templates are filled in for that
+project. Of its four defaults, only the third is enforced inside this repository, as the
+verification rule in `../AGENTS.md` that applies to its own curated list. The other three are not
+written down in any guide here, which is why they are offered as defaults to adopt and not as rules
+this project has shown it follows.
 
 ## Machine-readable form
 
 Each template is registered in `../toolkit.json` as `"kind": "template"`, with the same fields the
 installed skills carry (role, the MEDIR step or part it grounds, and its path in this repository),
-so an agent enumerating what this project offers sees these eight artefacts alongside the 38
+so an agent enumerating what this project offers sees these nine files alongside the 38
 installed skills, not as a separate, undiscoverable category.
 
 ## Honest limits

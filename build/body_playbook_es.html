@@ -2,23 +2,29 @@
 
 <h1>El playbook: ocho templates, derivados, no inventados</h1>
 
-<p class="deck">Las cuatro partes son el argumento. Este es el kit derivado de ellas: ocho templates operativos, cada uno rastreable hasta la parte y la sección que ya introdujo el concepto detrás de él.</p>
+<p class="deck">Las cuatro partes son el argumento. Este es el kit derivado de ellas: ocho templates operativos en nueve archivos, cada uno rastreable hasta la parte y la sección que ya introdujo el concepto detrás de él.</p>
 
 <p class="byline">Fernando Teco Sodré · Septiembre de 2026</p>
 
-<p><strong>Traducción en curso.</strong> El contenido completo, en inglés, está en la pestaña EN de arriba. Los ocho archivos de template de abajo ya son utilizables en cualquier idioma hoy: la mayoría de sus campos son estructurales (una clase de acción, una fecha, un rol nombrado), no prosa que necesite traducción para llenarse correctamente.</p>
+<h2 id="why">Por qué existe esto, y por qué esperó</h2>
+
+<p>Cada template de abajo reutiliza algo que la serie ya defendía. Ninguno es una idea nueva que compita con las cuatro partes, y esa frontera fue deliberada: consolidar este playbook justo después de terminar la serie de artículos, el 31 de agosto de 2026, habría desdibujado la línea entre el argumento y el kit derivado de él. Quedó como un ítem nombrado, con seguimiento y deliberadamente aparcado en <code>NEXT-STEPS.md</code> hasta el 13 de septiembre de 2026, cuando por fin se retomó, con siete templates. Un octavo, las guías de partida, llegó el 16 de septiembre de 2026 y se distingue de los otros siete en un punto que importa: es el único pensado para salir de este repositorio.</p>
+
+<p>Cada template nombra, en su propio archivo, exactamente qué parte y qué sección lo fundamenta. Copia cualquiera en tu proyecto y adapta cada campo: son templates de trabajo, no software, y un template llenado sin criterio recrea exactamente el fallo que este proyecto entero combate, un artefacto tomado por el razonamiento que debería sostener.</p>
 
 <figure>
 <img src="diagrams/part4/d10-quarterly-loop.png" alt="El bucle trimestral de la oficina: briefing, certificación, operación, recibos, indicadores, revalidación, y de vuelta al briefing" style="width:100%;height:auto;display:block">
-<figcaption>D10 · El bucle trimestral de la propia oficina, de la sección de ocho indicadores de la Parte 4. Organiza este playbook del mismo modo que cierra esa sección, una segunda aparición legítima, no una que compite con la otra.</figcaption>
+<figcaption>D10 · El bucle trimestral de la propia oficina, de la sección de ocho indicadores de la Parte 4. Organiza este playbook del mismo modo que cierra aquella sección, una segunda aparición legítima, no una que compite con la otra.</figcaption>
 </figure>
+
+<h2 id="templates">Los ocho templates</h2>
 
 <table class="wrap">
 <thead><tr><th>Template</th><th>Fundamentado en</th><th>Qué responde</th></tr></thead>
 <tbody>
 <tr><td><a href="playbook/task-contract.md">Contrato de tarea</a></td><td>Parte 1, el paso Mapear</td><td>Qué significa realmente "hecho", y qué no debe hacer nunca</td></tr>
 <tr><td><a href="playbook/skill-template.md">Skill</a></td><td>El esqueleto de cinco campos de la Parte 2 y los dos ejemplos trabajados</td><td>El molde detrás de toda skill que este proyecto ya publicó</td></tr>
-<tr><td><a href="playbook/starter-guides.md">Guías de partida</a></td><td>Parte 2, sección 2, el lado de las guías en la división entre guías y sensores</td><td>Los cuatro estándares que vale la pena llevar a cualquier proyecto nuevo, antes de que exista ninguna guía específica de tarea</td></tr>
+<tr><td><a href="playbook/starter-guides.md">Guías de partida</a></td><td>Parte 2, sección 2, el lado de las guías en la división entre guías y sensores</td><td>Cuatro guías por defecto para cualquier proyecto nuevo: reutilizar antes de construir, ajustar la solución al requisito, verificar la documentación vigente antes de depender de ella, hacer que un test se gane su lugar</td></tr>
 <tr><td><a href="playbook/execution-receipt.md">Recibo de ejecución</a></td><td>El recibo base de la Parte 2, extendido en la Parte 3</td><td>Lo que una revisión de incidente necesita, antes de que el incidente ocurra</td></tr>
 <tr><td><a href="playbook/risk-matrix-by-tier.md">Matriz de riesgo por nivel</a></td><td>La matriz de autoridad de la Parte 3, cruzada con los niveles de la Parte 1</td><td>Qué nivel puede intentar qué clase de acción, y bajo qué aprobación</td></tr>
 <tr><td><a href="playbook/tier-diagnostic.md">Diagnóstico de nivel</a></td><td>El checklist de doce preguntas de la Parte 1</td><td>Dónde está la brecha real del harness, por paso del MEDIR</td></tr>
@@ -28,6 +34,24 @@
 </tbody>
 </table>
 
+<p>Las dos últimas filas son un solo ítem en el seguimiento de este proyecto (<code>NEXT-STEPS.md</code>, ítem 3, lista "plantilla de registro de agentes y plantilla de acta de certificación" en una sola viñeta), pero dos archivos aquí, ya que un registro y un acta los llenan personas distintas, en momentos distintos.</p>
+
+<h2 id="how-they-connect">Cómo se conectan entre sí</h2>
+
+<p><code>task-contract.md</code> alimenta a <code>skill-template.md</code>: la sección de contrato de tarea de una skill son los mismos campos, copiados. <code>risk-matrix-by-tier.md</code> y el bloque de la regla de dos de <code>execution-receipt.md</code> son las dos redes independientes que la Parte 3 insiste en mantener funcionando juntas, ninguna de las dos sola. <code>tier-diagnostic.md</code> alimenta la decisión de nivel en <code>rollout-path.md</code>, que a su vez alimenta la columna de nivel en <code>agent-registry.md</code>. <code>certification-minutes.md</code> es el registro que fija la fecha de certificación y la fecha de revalidación de una fila del registro de agentes, y se vuelve a correr, no una versión más ligera, en cada revalidación.</p>
+
+<p><code>starter-guides.md</code> queda fuera de esa cadena. No está acotado a una tarea ni a una skill, por eso es el único template pensado para salir de este repositorio por completo: copia su bloque en el <code>AGENTS.md</code> o el <code>CLAUDE.md</code> de otro proyecto, antes de llenar cualquiera de los otros siete templates en ese proyecto. De sus cuatro guías, solo la tercera se aplica dentro de este repositorio, como la regla de verificación de <a href="AGENTS.md">AGENTS.md</a> que rige para su lista curada. Las otras tres no están escritas en ninguna guía de este proyecto, y por eso se ofrecen como guías por defecto para adoptar, no como reglas que este proyecto haya demostrado seguir.</p>
+
+<h2 id="machine-readable">Forma legible por máquina</h2>
+
+<p>Cada template está registrado en <a href="toolkit.json">toolkit.json</a> como <code>"kind": "template"</code>, con los mismos campos que ya llevan allí las 38 skills instaladas: un rol, la parte que fundamenta y su ruta en este repositorio. Un agente que enumera lo que ofrece este proyecto ve estos nueve archivos junto a las skills instaladas, no como una categoría aparte e imposible de descubrir. Consulta <a href="AGENTS.md">AGENTS.md</a> para el protocolo completo.</p>
+
+<h2 id="limits">Límites honestos</h2>
+
+<p>Nada aquí valida que un campo se haya llenado correctamente. El formato JSON de <code>execution-receipt.md</code> no impide que un campo <code>cost</code> guarde una conjetura en lugar de un número real, del mismo modo que el campo "terminado cuando" de un contrato de tarea vale lo que vale el criterio de quien lo escribió. Estos templates hacen más difícil saltarse la pregunta correcta. No la responden por ti.</p>
+
+<p>Los archivos de template en sí están escritos solo en inglés. La mayoría de sus campos son estructurales (una clase de acción, una fecha, un rol nombrado), no prosa que necesite traducción para llenarse correctamente, así que ya sirven en cualquier idioma. Esta página, que los explica, está completa en los tres.</p>
+
 <table class="wrap">
 <thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
 <tbody>
@@ -36,7 +60,7 @@
 <tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
 <tr><td><a href="harness-p4.html">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que dirige todo esto</td></tr>
 <tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
-<tr><td>Playbook, este</td><td>Ocho templates operativos derivados de las cuatro partes, abriendo con el D10</td></tr>
+<tr><td>Playbook, este</td><td>Ocho templates operativos en nueve archivos, derivados de las cuatro partes, abriendo con el D10</td></tr>
 </tbody>
 </table>
 
