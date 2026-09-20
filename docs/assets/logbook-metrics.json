@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T15:09:26.304477+00:00",
+  "generated_at": "2026-09-20T15:33:29.665776+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -4548,20 +4548,81 @@
         "cache_creation_1h": 0,
         "by_model": {}
       }
+    },
+    {
+      "hash": "c6888e7",
+      "timestamp": "2026-09-20T12:12:08-03:00",
+      "subject": "Regenerate the project log, milestones M80 to M84",
+      "words_published": 121505,
+      "code_lines": 12163,
+      "governance_lines": 802,
+      "tokens_bucket": {
+        "input": 14,
+        "output": 12589,
+        "cache_read": 3301760,
+        "cache_creation": 14865
+      },
+      "tokens_total": {
+        "input": 14,
+        "output": 12589,
+        "cache_read": 3301760,
+        "cache_creation": 14865
+      },
+      "tokens_cumulative": {
+        "input": 13760,
+        "output": 6328142,
+        "cache_read": 1576591492,
+        "cache_creation": 23536882
+      },
+      "cost_recorded": {
+        "amount": 0.8457,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 14865,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 14,
+            "output": 12589,
+            "cache_read": 3301760,
+            "cache_creation": 14865,
+            "cache_creation_1h": 14865
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 0,
-    "output": 0,
-    "cache_read": 0,
-    "cache_creation": 0
+    "input": 20,
+    "output": 8941,
+    "cache_read": 3887162,
+    "cache_creation": 15787
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 0,
-    "by_model": {}
+    "cache_creation_1h": 15787,
+    "by_model": {
+      "claude-sonnet-5": {
+        "input": 20,
+        "output": 8941,
+        "cache_read": 3887162,
+        "cache_creation": 15787,
+        "cache_creation_1h": 15787
+      }
+    }
   },
   "cost_since_last_commit": {
-    "amount": 0.0,
+    "amount": 0.93,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
