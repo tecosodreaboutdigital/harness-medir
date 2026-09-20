@@ -2,7 +2,7 @@
 
 # Estado
 
-Situación al 30 de agosto de 2026.
+Situación al 20 de septiembre de 2026. Algunos párrafos de abajo llevan su propia fecha anterior porque registran la fotografía de una ronda concreta, y quedan como se escribieron.
 
 Publicado en `github.com/tecosodreaboutdigital/harness-medir` (repositorio) y `tecosodreaboutdigital.github.io/harness-medir` (GitHub Pages, los archivos HTML se renderizan como página, no solo como código fuente).
 
@@ -25,6 +25,8 @@ Se añadió una pista de idioma del navegador a las cuatro páginas HTML triling
 ### Diario de bordo
 
 `docs/logbook.html`, trilingüe. Documenta la evolución del propio proyecto: palabras publicadas, tokens consumidos y costo registrado por hito, generado a partir de git, de la transcripción real de la sesión y de un libro mayor de precio fechado, nunca escrito a mano. Ver `build/generate_logbook_metrics.py` y `build/build_logbook.py`. Hitos registrados a partir del historial completo del repositorio, más lo que todavía está en la sesión abierta; ver el propio `docs/logbook.html` para el conteo actual, este archivo es una fotografía, no queda sincronizado con cada regeneración. El rastreo de costo (`docs/assets/prices.json`) se portó el 14 de septiembre de 2026 desde `milestone-loc-tokens-ai-ledger`, la skill autónoma a la que este mismo motor se generalizó, ver el ítem 5 de `NEXT-STEPS.md`.
+
+El 20 de septiembre de 2026 el generador ganó el resto de la evolución de esa skill. Un hito congela sus tokens separados por modelo y por TTL de caché (`tokens_split`), y una ejecución normal nunca reabre los tokens de un hito registrado, porque salen de transcripciones que Claude Code borra tras `cleanupPeriodDays`, 30 días por defecto. Las palabras y líneas quedan congeladas por hash de commit bajo una huella de las reglas de conteo, así que una ejecución normal toma cerca de un segundo donde tomaba de ocho a quince minutos. `--enrich`, con vista previa en `--dry-run`, migró los 79 hitos registrados antes del corte, cada uno con el candado de igualdad exacta de sus cuatro contadores originales contra las transcripciones, y los 14 con costo registrado pasaron de US$77,79 a US$83,17, con todo valor anterior guardado. El generador nunca había leído transcripciones de subagentes (unos 257 millones de tokens el 20 de septiembre); ahora se capturan por hito, con precio por modelo, y cuentan en los totales, en los gráficos y en el costo, con el solapamiento con el diario de otro repositorio declarado en el propio diario, ver el ítem 6 de `NEXT-STEPS.md`.
 
 ### Parte 1 · El mejor modelo del mundo dentro de una empresa sin proceso
 
@@ -80,13 +82,17 @@ Llena un vacío verificado: existe abundante material sobre cómo especificar bi
 
 Separada del monorepo harness-medir para instalación independiente, en el mismo patrón que las demás skills citadas en la guía compacta. Activa en este entorno mediante una copia local en `.claude/skills/intake-briefing/`, fuera del control de versiones, ver `TOOLS.md`.
 
+### El repositorio como algo que un agente puede operar
+
+`AGENTS.md`, `llms.txt` y `toolkit.json`, en la raíz del repositorio. `AGENTS.md`, añadido el 31 de agosto de 2026 y solo en inglés, es el protocolo de operación para cualquier agente de IA que actúe sobre el repositorio: antes de instalar, recomendar o citar como vigente cualquier skill de terceros que este proyecto cura, consultar su origen, clasificarla como vigente, desactualizada, deprecated o no verificada, y decirlo en el mismo mensaje. Nunca deja que el libro mayor fechado pase por estado en vivo. `llms.txt` indexa el mismo mapa para un agente que solo consultó la URL del sitio. `toolkit.json`, añadido el 13 de septiembre de 2026 y generado por `build/generate_toolkit_manifest.py`, nunca editado a mano, es la forma legible por máquina de la curaduría: 20 entradas hoy, nueve colecciones, las dos skills propias del proyecto y los nueve archivos de template del playbook, cada una con un rol y el paso del MEDIR o la parte que fundamenta, y, para las skills, rutas de instalación para Claude Code, Cursor, Codex CLI y Google Antigravity. Su modo `--check` calcula un hash de las tablas de origen, así que una edición en `TOOLS.md`, `sources/inventory.md` o `playbook/README.md` sin regenerar se detecta.
+
 ### Guía compacta de herramientas y skills
 
 `harness-toolkit.html`
 
-Reescrita por completo el 30 de agosto de 2026, y traducida al inglés y al español ese mismo día como parte de la reestructuración de idioma, con el inglés como pestaña predeterminada. Organizada por los cinco pasos del MEDIR, no por categoría de producto. Diecisiete fichas de seis campos, más una sección de diagnóstico de banda al inicio para quienes llegan de la parte 1. Cada paso del MEDIR lleva una crítica registrada, no solo una recomendación.
+Reescrita por completo el 30 de agosto de 2026, y traducida al inglés y al español ese mismo día como parte de la reestructuración de idioma, con el inglés como pestaña predeterminada. Organizada por los cinco pasos del MEDIR, no por categoría de producto. Ha crecido de diecisiete fichas a 33 fichas de seis campos en siete secciones, más una sección de diagnóstico de banda al inicio para quienes llegan de la parte 1. Cada paso del MEDIR lleva una crítica registrada, no solo una recomendación.
 
-Distribución: Mapear con cuatro fichas (intake-briefing, una guía inspirada en Karpathy, c4-skills, especificación antes del código con la crítica de Böckeler y Pocock), Equipar con tres (superpowers, mattpocock/skills, planning-with-files), Delegar con tres (holdfast, clases de entorno, orquestación programada con LangGraph), Inspeccionar con cuatro (dependency-cruiser, Stryker, Semgrep, sensors-cli), Reforzar con tres (ai-slop-cleaner, limpieza como cadencia, recolección de basura).
+Distribución hoy: Mapear 4, Equipar 4, Delegar 3, Inspeccionar 6, Reforzar 4, y dos secciones añadidas el 31 de agosto de 2026 para lo que defienden las partes 3 y 4, Proteger con 7 y Gobernar con 5. Las diecisiete originales se repartían en Mapear 4, Equipar 3, Delegar 3, Inspeccionar 4, Reforzar 3 (intake-briefing, una guía inspirada en Karpathy, c4-skills, especificación antes del código, superpowers, mattpocock/skills, planning-with-files, holdfast, clases de entorno, orquestación programada con LangGraph, dependency-cruiser, Stryker, Semgrep, sensors-cli, ai-slop-cleaner, limpieza como cadencia, recolección de basura). Añadidas desde entonces: `research` y `milestone-loc-tokens-ai-ledger` en Inspeccionar, el paquete de ingeniería de contexto en Equipar, `humanizer` en Reforzar, y las doce fichas de Proteger y Gobernar, entre ellas `threat-modeling` y `ai-act-skill`. `impeccable`, adoptada el 30 de agosto, se retiró el 20 de septiembre de 2026 a petición del operador y ya no aparece en la guía, en `toolkit.json` ni en el libro mayor, ver `TOOLS.md`. El conteo sale de las fichas `<h3>` de `build/body_toolkit_en.html`, no de memoria.
 
 Cada herramienta citada está verificada en `sources/inventory.md`, incluidas tres fuentes añadidas en esta reescritura: Semgrep, LangGraph y GitHub Spec Kit con enlace directo.
 
@@ -104,7 +110,7 @@ Los documentos de gobernanza ahora describen cuatro partes organizadas alrededor
 
 `diagrams/` ganó nueve archivos SVG independientes, D1 a D9, renderizados a partir de las especificaciones Mermaid del dosier en el sistema visual del proyecto, en inglés porque es contenido nuevo y el inglés se escribe primero. El vocabulario de gobernanza que la parte 4 necesitó, dueño del agente, homologador, auditor, patrocinador del área, y recibo mantenido distinto de registro, se fijó en esta etapa justamente para que los diagramas y la prosa no se distanciaran entre sí. Un décimo, D10, el bucle trimestral propio de la oficina, se añadió en cuanto la redacción de la parte 4 confirmó que merecía su lugar, cerrando la sección de indicadores en lugar de abrir la pieza. Ver `diagrams/README.md` para el índice completo y qué nota de renderización cumple cada archivo.
 
-Lo que queda de la cola del dosier: la traducción de la parte 4 al portugués y al español, y consolidar el playbook. Las partes 3 y 4 ya están escritas en inglés, ver abajo.
+La cola de trabajo del dosier está cerrada: las partes 3 y 4 están escritas en los tres idiomas, y el playbook se consolidó el 13 de septiembre de 2026, ver abajo.
 
 ### Diagramas D1 a D9 validados por renderizado, y una arquitectura de serie compartida
 
@@ -114,7 +120,7 @@ En paralelo, la serie ganó la navegación superior que le faltaba desde la rees
 
 ---
 
-## Sin empezar
+## Estado de las traducciones y el playbook
 
 ### Estado de las traducciones
 
@@ -127,12 +133,17 @@ En paralelo, la serie ganó la navegación superior que le faltaba desde la rees
 | Parte 4 | lista | lista | lista |
 | Skill de briefing | lista | lista | lista |
 | Documentos de gobernanza | lista | lista | lista |
+| Página del playbook | lista | lista | lista |
+
+Los nueve archivos de template en `playbook/` están escritos solo en inglés. La mayoría de sus campos son estructurales (una clase de acción, una fecha, un rol nombrado), así que sirven en cualquier idioma, y la pieza trilingüe es la página que los explica.
 
 ### Playbook
 
-Construido el 13 de septiembre de 2026, en `playbook/` (siete plantillas, ocho archivos) más `harness-playbook.html` (la explicación orientada al lector, inglés completo, portugués y español un boceto honesto de "traducción en curso"). Deliberadamente aparcado del 31 de agosto hasta esa fecha para que la serie de artículos y el conjunto de herramientas derivado de ella no se confundieran mientras la serie todavía se estaba terminando, ver el elemento 3 de `NEXT-STEPS.md` para el detalle de cierre. Cada plantilla es rastreable hasta la parte y la sección que ya la fundamenta, ninguna de ellas una idea nueva: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo por banda, un diagnóstico de banda, una ruta de implementación de N0 a N3, y una plantilla de registro de agentes más acta de homologación, abriendo con el D10 como diagrama organizador propio, una segunda aparición legítima ya que cierra la sección de indicadores de la parte 4. Registrado en `toolkit.json` como `kind: "template"`, junto a las 38 skills instaladas, y conectado a la `.topbar` compartida en las ocho páginas ya existentes, un octavo elemento de la serie junto a las cuatro partes y los tres documentos complementarios.
+Construido el 13 de septiembre de 2026, en `playbook/` (siete plantillas, ocho archivos) más `harness-playbook.html` (la explicación orientada al lector, completa en inglés, portugués y español desde el 20 de septiembre de 2026; hasta entonces las pestañas en portugués y español eran un boceto honesto de "traducción en curso"). Deliberadamente aparcado del 31 de agosto hasta esa fecha para que la serie de artículos y el conjunto de herramientas derivado de ella no se confundieran mientras la serie todavía se estaba terminando, ver el elemento 3 de `NEXT-STEPS.md` para el detalle de cierre. Cada plantilla es rastreable hasta la parte y la sección que ya la fundamenta, ninguna de ellas una idea nueva: una plantilla de contrato de tarea, una plantilla de skill, una plantilla de recibo de ejecución, una matriz de riesgo por banda, un diagnóstico de banda, una ruta de implementación de N0 a N3, y una plantilla de registro de agentes más acta de homologación, abriendo con el D10 como diagrama organizador propio, una segunda aparición legítima ya que cierra la sección de indicadores de la parte 4. Registrado en `toolkit.json` como `kind: "template"`, junto a las 38 skills instaladas, y conectado a la `.topbar` compartida en las ocho páginas ya existentes, un octavo elemento de la serie junto a las cuatro partes y los tres documentos complementarios.
 
 **Octava plantilla, `starter-guides.md`, añadida el 16 de septiembre de 2026.** Cuatro guías por defecto (reutilizar antes de construir, ajustar la solución al requisito, verificar la documentación actual de una dependencia antes de depender de ella, dejar que una prueba se gane su lugar antes de publicarse), fundamentadas en el lado de las guías de la división guías-y-sensores de la sección 2 de la Parte 2. A diferencia de las otras siete, no está acotada a una tarea o skill: es la única plantilla pensada para salir de este repositorio, copiada al `AGENTS.md` o `CLAUDE.md` de otro proyecto antes de que exista allí ninguna guía específica de tarea. `AGENTS.md` ahora apunta a ella como la forma portátil y general de la regla de verificación que ya aplica de forma estrecha a la propia curaduría de este proyecto. `harness-toolkit.html` ganó un párrafo en su sección de apertura "Cómo usarlo" que la nombra directamente, cerrando una brecha real: el playbook antes solo era alcanzable por la topbar compartida, nunca mencionado en el cuerpo de la propia guía compacta.
+
+**Descripciones corregidas, 20 de septiembre de 2026.** Contrastadas con el repositorio en lugar de aceptadas. `harness-playbook.html` ahora dice ocho templates en nueve archivos donde decía ocho artefactos, registra la fecha del octavo template y cómo se distingue de los otros siete, y nombra las cuatro guías por defecto en la fila de las guías de partida en lugar de describirlas de forma genérica (esa fila es también lo que `toolkit.json` lleva como el `role` del template, así que se regeneró). Se retiró una afirmación porque el repositorio no la respalda: la página, `playbook/starter-guides.md` y `AGENTS.md` decían que las cuatro guías son lo que este proyecto mismo usa, pero aquí no existe un `CLAUDE.md` y solo la tercera, verificar una dependencia contra su fuente actual, está escrita y se aplica (como la regla del propio `AGENTS.md` para su lista curada). El texto ahora dice exactamente eso, y ofrece las otras tres como guías para adoptar. Si de hecho son la práctica de este proyecto por un lugar que el repositorio no muestra, restablece la afirmación con una fuente.
 
 La skill de briefing ya es su primer artefacto operativo.
 
