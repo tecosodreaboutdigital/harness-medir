@@ -14,6 +14,20 @@
           {"name": "Anthropic pricing page", "url": "https://www.anthropic.com/pricing", "checked_at": "2026-09-13"},
           {"name": "litellm model_prices_and_context_window.json", "url": "https://github.com/BerriAI/litellm", "checked_at": "2026-09-13"}
         ]
+      },
+      {
+        "effective_date": "2026-09-13",
+        "input_price": 2.00,
+        "output_price": 10.00,
+        "cache_read_price": 0.20,
+        "cache_creation_price": 2.50,
+        "cache_creation_1h_price": 4.00,
+        "corrects": "2026-09-13",
+        "note": "Corrects the earlier 2026-09-13 entry, which recorded US$3/15 input/output (cache read 0.30, cache write 3.75). Claude Sonnet 5 is charged US$2/10 (cache read 0.20, 5-minute write 2.50, 1-hour write 4.00). The pricing page states that the US$2/10 launch pricing, introductory through 2026-08-31, is now the standard price and that the increase to US$3/15 scheduled for 2026-09-01 will not occur. Probable cause of the wrong entry (an inference, not verified): it recorded that cancelled increase. cache_creation_1h_price is recorded because it is the source's price, but build/generate_logbook_metrics.py does not split 5-minute from 1-hour cache writes, so it is not used: every cache write is priced at cache_creation_price.",
+        "sources": [
+          {"name": "Anthropic pricing page, Claude API docs (input, output, cache read, 5-minute and 1-hour cache writes; note on the cancelled 2026-09-01 increase)", "url": "https://platform.claude.com/docs/en/about-claude/pricing", "checked_at": "2026-09-20"},
+          {"name": "Anthropic models overview, Claude API docs (input/output price and model ID claude-sonnet-5)", "url": "https://platform.claude.com/docs/en/about-claude/models/overview", "checked_at": "2026-09-20"}
+        ]
       }
     ]
   }
