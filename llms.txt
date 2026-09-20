@@ -2,7 +2,7 @@
 
 > A content and tooling project on harness engineering and the MEDIR cycle (Map, Equip, Delegate, Inspect, Reinforce): the discipline of building the environment around an AI model so it can operate reliably. Written for an executive or a non-technical reader, and built so an AI agent can also act on it directly.
 
-Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this project's primary language; Portuguese and Spanish translations exist for every part of the series and every governance document.
+Author: Fernando Teco Sodre. Status: in progress, September 2026. English is this project's primary language; Portuguese and Spanish translations exist for every part of the series and every governance document.
 
 ## Start here
 
@@ -17,7 +17,7 @@ Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this p
 - [Part 3](harness-p3.html): the separation of powers, the operation layer.
 - [Part 4](harness-p4.html): the agent office, the governance layer.
 - [Compact guide](harness-toolkit.html): the curated tool and skill inventory, reviewed quarterly.
-- [Playbook](harness-playbook.html): seven operational templates derived from the four parts, opening with D10. The templates themselves live in [playbook/](playbook/README.md).
+- [Playbook](harness-playbook.html): eight operational templates in nine files, derived from the four parts, opening with D10, the page complete in three languages. The templates themselves, English only, live in [playbook/](playbook/README.md).
 
 ## Reference
 
@@ -27,4 +27,4 @@ Author: Fernando Teco Sodre. Status: in progress, August 2026. English is this p
 - [toolkit.json](toolkit.json): the machine-readable manifest, see Start here above.
 - [TOOLS.md](TOOLS.md): the skills this project itself installed and actually used, with a real-usage log.
 - [STANDARDS.md](STANDARDS.md): writing and formatting rules, non-negotiable.
-- [Project log](docs/logbook.html): words published and tokens consumed, per milestone, generated from git and real session usage.
+- [Project log](docs/logbook.html): words published, tokens consumed and cost recorded, per milestone, generated from git and the real usage of the project's sessions, subagents included.

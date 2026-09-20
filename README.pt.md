@@ -109,10 +109,10 @@ Regra de dimensionamento: o harness deve ser menor que a superfície de falha qu
 
 Inspecionar, na tabela acima, significa verificadores que produzem evidência, não opinião. Este projeto aplica esse passo à própria escrita, não só aos agentes que descreve.
 
-Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens desta sessão, nunca editado à mão. Três gráficos, nunca um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios verificadores de um agente. Os três compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou em dinheiro gasto, ou o contrário.
+Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue, gerado a partir do histórico do git e do uso real de tokens das sessões do Claude Code deste projeto, subagentes incluídos, nunca editado à mão. Três gráficos, nunca um com dois eixos, porque misturar duas escalas arbitrárias na mesma régua é exatamente o erro que a parte 2 adverte contra os próprios verificadores de um agente. Os três compartilham o mesmo eixo X, a ordem dos marcos, então dá pra ver quando a escrita acelerou em relação ao custo em tokens, ou em dinheiro gasto, ou o contrário.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 121.505 palavras ao longo de setenta e seis marcos" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Palavras publicadas, acumuladas por marco: uma linha em degraus crescendo de 20.197 para 121.505 palavras ao longo de 85 marcos" width="680">
 </p>
 
 <p align="center"><em>Palavras publicadas em toda a série, somadas. Cresce em degraus, a maior parte do texto nasce dentro de um único marco, não gradualmente entre marcos. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
@@ -127,7 +127,7 @@ Todo commit vira um marco em [docs/logbook.html](docs/logbook.html), trilíngue,
   <img src="docs/assets/logbook-cost-recorded.png" alt="Custo registrado, acumulado por marco, mesmo eixo X dos dois gráficos acima" width="680">
 </p>
 
-<p align="center"><em>Custo registrado por marco, portado da própria skill deste projeto, `milestone-loc-tokens-ai-ledger` (ver o item 5 do `NEXT-STEPS.md`): tokens precificados pelo que a entrada do livro-razão dizia ser verdade na data daquele marco, nunca recalculado depois. O livro-razão só tem uma entrada de preço verificada até agora, datada de 13 de setembro de 2026, então a maior parte da linha fica plana de propósito, não porque nada custou nada: um marco anterior à primeira entrada do livro-razão aparece como sem preço, nunca um custo chutado. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
+<p align="center"><em>Custo registrado por marco, portado da própria skill deste projeto, `milestone-loc-tokens-ai-ledger` (ver o item 5 do `NEXT-STEPS.md`): tokens precificados, por modelo e por duração do cache, pelo que a entrada do livro-razão dizia ser verdade na data daquele marco, e recalculados depois só por duas correções auditadas que guardam todo valor anterior (`--reprice` e `--enrich`, ver `build/README.md`). A primeira entrada do livro-razão é de 13 de setembro de 2026, então a maior parte da linha fica plana de propósito, não porque nada custou nada: um marco anterior a essa data aparece como sem preço, nunca um custo chutado. Os tokens gastos por subagentes contam. Retrato do momento da última regeneração do diário, ver <a href="docs/logbook.html">docs/logbook.html</a> para a versão atual.</em></p>
 
 O diário completo, com a tabela por marco e a metodologia por trás desses números, vive em `docs/logbook.html`. Leia antes de supor que uma sessão foi barata ou cara só pela contagem de palavras.
 
@@ -140,6 +140,7 @@ O diário completo, com a tabela por marco e a metodologia por trás desses núm
 ├── README.md                          este arquivo
 ├── AGENTS.md                          protocolo de operação para agentes e assistentes de IA, leia antes de instalar qualquer coisa que este projeto cura
 ├── llms.txt                           índice de descoberta para um agente de IA que busca o site publicado diretamente
+├── index.html                         redirecionamento para a Parte 1, para a URL raiz do site resolver
 ├── toolkit.json                       a mesma curadoria de harness-toolkit.html, legível por máquina, gerado
 ├── STANDARDS.md                       regras de escrita e formatação, LEIA ANTES DE EDITAR
 ├── STATUS.md                          o que está pronto e o que falta, detalhado
@@ -168,6 +169,7 @@ O diário completo, com a tabela por marco e a metodologia por trás desses núm
 │   ├── assets/logbook-metrics.json    dado bruto do diário, nunca editado à mão
 │   ├── assets/prices.json             livro-razão de preço datado e apensado, portado de milestone-loc-tokens-ai-ledger
 │   └── assets/logbook-*.png           os três gráficos incorporados acima, exportados do diário atual
+├── research/                          notas de pesquisa datadas, guardadas como registro e não reescritas depois
 └── build/                             corpos de texto e scripts de montagem
 ```
 

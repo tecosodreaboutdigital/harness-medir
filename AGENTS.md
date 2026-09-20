@@ -76,4 +76,4 @@ If you are asked to explain this project, or to apply its method to something el
 
 ---
 
-Last updated 16 September 2026.
+Last updated 20 September 2026.

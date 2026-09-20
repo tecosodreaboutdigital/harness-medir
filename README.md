@@ -109,10 +109,10 @@ Sizing rule: the harness must be smaller than the failure surface it controls.
 
 Inspect, in the table above, means sensors that produce evidence, not opinion. This project applies that step to its own writing, not only to the agents it describes.
 
-Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and this session's real token usage, never edited by hand. Three charts, never one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. All three share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or to money spent, or the other way round.
+Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), trilingual, generated from git history and the real token usage of this project's Claude Code sessions, subagents included, never edited by hand. Three charts, never one with two axes, because mixing two arbitrary scales on the same ruler is exactly the mistake Part 2 warns an agent's own sensors against. All three share the same X axis, the order of milestones, so a reader can see when writing sped up relative to token cost, or to money spent, or the other way round.
 
 <p align="center">
-  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 121,505 words across seventy-six milestones" width="680">
+  <img src="docs/assets/logbook-words-published.png" alt="Words published, cumulative by milestone: a stepped line growing from 20,197 to 121,505 words across 85 milestones" width="680">
 </p>
 
 <p align="center"><em>Words published across the series, summed. It grows in steps, most text is born within a single milestone, not gradually between milestones. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
@@ -127,7 +127,7 @@ Every commit becomes a milestone in [docs/logbook.html](docs/logbook.html), tril
   <img src="docs/assets/logbook-cost-recorded.png" alt="Cost recorded, cumulative by milestone, same X axis as the two charts above" width="680">
 </p>
 
-<p align="center"><em>Cost recorded per milestone, ported from this project's own <code>milestone-loc-tokens-ai-ledger</code> skill (see <code>NEXT-STEPS.md</code> item 5): tokens priced at whatever the ledger's price entry says was true on that milestone's date, never recalculated afterwards. The ledger has only one verified price entry so far, dated 13 September 2026, so most of the line sits flat by design, not because nothing cost anything: a milestone earlier than the ledger's first entry shows as unpriced, never a guessed cost. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
+<p align="center"><em>Cost recorded per milestone, ported from this project's own <code>milestone-loc-tokens-ai-ledger</code> skill (see <code>NEXT-STEPS.md</code> item 5): tokens priced, per model and per cache lifetime, at whatever the ledger's price entry says was true on that milestone's date, and recalculated afterwards only by two audited corrections that keep every previous value (`--reprice` and `--enrich`, see `build/README.md`). The ledger's first entry is dated 13 September 2026, so most of the line sits flat by design, not because nothing cost anything: a milestone earlier than that shows as unpriced, never a guessed cost. Tokens spent by subagents count. Snapshot as of the logbook's last regeneration, see <a href="docs/logbook.html">docs/logbook.html</a> for the current version.</em></p>
 
 The full log, with the per-milestone table and the methodology behind these numbers, lives at `docs/logbook.html`. Read it before assuming a session was cheap or expensive from its word count alone.
 
@@ -140,6 +140,7 @@ The full log, with the per-milestone table and the methodology behind these numb
 ├── README.md                          this file
 ├── AGENTS.md                          operating protocol for AI agents and assistants, read before installing anything this project curates
 ├── llms.txt                           discovery index for an AI agent fetching the published site directly
+├── index.html                         redirect to Part 1, so the bare site URL resolves
 ├── toolkit.json                       the same curation as harness-toolkit.html, machine-readable, generated
 ├── STANDARDS.md                       writing and formatting rules, READ BEFORE EDITING
 ├── STATUS.md                          what is ready and what is missing, in detail
@@ -168,6 +169,7 @@ The full log, with the per-milestone table and the methodology behind these numb
 │   ├── assets/logbook-metrics.json    the log's raw data, never edited by hand
 │   ├── assets/prices.json             dated, append-only price ledger, ported from milestone-loc-tokens-ai-ledger
 │   └── assets/logbook-*.png           the three charts embedded above, exported from the current logbook
+├── research/                          dated research notes, kept as records and not rewritten afterwards
 └── build/                             text bodies and assembly scripts
 ```
 
