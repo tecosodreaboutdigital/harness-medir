@@ -4,7 +4,7 @@
 
 A record of what this project has actually installed and uses, not just what it cites. A project about harness engineering that did not instrument its own creation would just be a nice-sounding argument. This document is the instrumentation.
 
-Updated 14 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
+Updated 20 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
 
 A machine-readable form of this same installed-skill list, generated from this file and `sources/inventory.md`, lives at `toolkit.json`, see `AGENTS.md`.
 
@@ -12,7 +12,7 @@ A machine-readable form of this same installed-skill list, generated from this f
 
 ## Third-party collections installed
 
-Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. The first six are cited as an entry in the [compact guide](harness-toolkit.html); the four most recent are not yet, see the note at the end of this section. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 39 active skills in total.
+Nine collections, thirty-six skills, all MIT or Apache-2.0. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. The first five are cited as an entry in the [compact guide](harness-toolkit.html); the four most recent are not yet, see the note at the end of this section. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 38 active skills in total.
 
 | Collection | Origin | Skills installed | Why it made the cut |
 |---|---|---|---|
@@ -21,15 +21,14 @@ Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally i
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, the whole collection | The C4 model and architecture decision records, relevant to the Part 3 research round |
 | Karpathy-inspired guide | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | A behavioural guide against common LLM mistakes. Not actually by Karpathy, see the full caveat in `sources/inventory.md` |
 | ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | The real source of the five-rule cleanup matrix cited in Part 2's Reinforce section |
-| impeccable | [github.com/pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 1 | Design-QA reference for the project's own HTML pages: 61 deterministic detector rules for common AI-generated frontend tells, Apache-2.0, 30 contributors. Installed as documentation only, see the caveat below |
-| humanizer | [github.com/blader/humanizer](https://github.com/blader/humanizer) | 1, the whole collection | Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other nine collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills |
+| humanizer | [github.com/blader/humanizer](https://github.com/blader/humanizer) | 1, the whole collection | Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other eight collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills |
 | Agent Skills for Context Engineering | [github.com/muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 3, out of 17 | A reader flagged agent-harness architecture as a real gap in this page. `harness-engineering`, `multi-agent-patterns` and `tool-design` close it directly; the other 14 skills (context optimisation, memory systems, evaluation and more) address adjacent problems this project does not have, see the full list below |
 | ai-act-skill | [github.com/morellid/ai-act-skill](https://github.com/morellid/ai-act-skill) | 1, the whole collection | A versioned, task-by-task checklist for EU AI Act obligations, already current with the Digital Omnibus (Regulation (EU) 2026/1744). Part 3 and 4 already cite Articles 12, 14 and 26 in prose; this is the first tool in this project's own toolkit that turns that citation into a runnable check |
 | threat-modeling | [github.com/rjmurillo/ai-agents](https://github.com/rjmurillo/ai-agents) | 1, out of a larger personal collection | STRIDE-based threat modelling scoped to agent architecture and security review, not per-change diff review. Scoped install: only the one skill folder came in, not the rest of the repository |
 
 ---
 
-## The thirty-seven skills, by collection
+## The thirty-six skills, by collection
 
 **superpowers:** brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills.
 
@@ -40,8 +39,6 @@ Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally i
 **Karpathy-inspired guide:** karpathy-guidelines.
 
 **ai-slop-cleaner:** ai-slop-cleaner.
-
-**impeccable:** impeccable. **Scoped install, stated honestly:** we copied `SKILL.md` and every file under `reference/`, nothing under `scripts/`. The upstream skill's own frontmatter lists `Bash(npx impeccable *)` and `Bash(node .../scripts/*)` as its allowed tools, wired to 61 deterministic detector rules that need those scripts to run without an LLM. Without them, `/impeccable audit` and its siblings still work as LLM-guided critique against the same written rules, just without the no-LLM deterministic pass. Every other skill in the first six collections is markdown-only by nature; impeccable is the first one where we chose to leave code behind on purpose, precisely because the compact guide's own "before installing anything" checklist (see below) treats an unreviewed script that shells out as a real cost, not a free upgrade.
 
 **humanizer:** humanizer.
 
@@ -59,7 +56,7 @@ Ten collections, thirty-seven skills, all MIT or Apache-2.0. Installed locally i
 
 It also was not active in this environment until this round: `.claude/skills/`, which is where this harness discovers project skills, only had the thirty third-party ones. Fixed: a copy of it lives at `.claude/skills/intake-briefing/`, outside version control, pulled from its own repository.
 
-**Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty-seven third-party skills, now also for our own. It already happened once: the repository gained `AGENTS.md`, `llms.txt`, `.claude-plugin/` and `briefings/`, plus a rewritten multi-tool `Installation` section, on 31 August 2026, while this local copy still held the 30 August snapshot. Resynced the same day; see `README.md`'s own `Installation` section for the multi-tool detail that came out of that round.
+**Risk accepted, stated honestly:** this local copy can fall behind if the skill's repository is edited without updating the copy here. It is the same kind of risk we accept for the thirty-six third-party skills, now also for our own. It already happened once: the repository gained `AGENTS.md`, `llms.txt`, `.claude-plugin/` and `briefings/`, plus a rewritten multi-tool `Installation` section, on 31 August 2026, while this local copy still held the 30 August snapshot. Resynced the same day; see `README.md`'s own `Installation` section for the multi-tool detail that came out of that round.
 
 **`milestone-loc-tokens-ai-ledger`**, the second of the project's own skills, closes `NEXT-STEPS.md` item 5: generalising this repository's own diary engine (`build/generate_logbook_metrics.py`) into an installable Agent Skill, reused by any project, not only this one. Built 13 to 14 September 2026 from two research rounds and a design specification (`docs/research-logbook-skill-extraction.pt.md`, `docs/research-agent-skill-install-paths.pt.md`, `docs/design-milestone-loc-tokens-ai-ledger.pt.md`), then a fourteen-task implementation plan that grew, with real gains along the way, to 34 commits: a live, editable price panel, a dated multi-source cost ledger, a sources-consulted panel, and self-hosted thumbnails, none of it in the original plan. Public, MIT, at [github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger](https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger), same pattern as `intake-briefing`: `AGENTS.md`, `llms.txt`, `.claude-plugin/`, a multi-tool installation matrix verified against each vendor's own documentation. A copy lives at `.claude/skills/milestone-loc-tokens-ai-ledger/`, outside version control, same risk accepted as above.
 
@@ -75,11 +72,15 @@ We applied the compact guide's own checklist, the "Before installing anything" s
 
 A scan for network or execution patterns (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`) across the five sources found no automatic external-fetch instruction. The only hits were a didactic code example (a mocked `fetch` in a mattpocock/skills test skill) and legitimate local execution (superpowers' `execFileSync`, to render a Mermaid diagram to SVG, no network involved). None of the five sources required an undeclared external dependency to function as a standalone skill.
 
-impeccable was audited separately, because its full repository is a different shape: an npm CLI plus browser-injected detector scripts, not a plain markdown skill. We read the `scripts/` tree before deciding, rather than running `npx impeccable install` first and reading afterward. It shells out to Node and, for the visual detector, a headless browser, both declared openly in `SKILL.md`'s own `allowed-tools`, not hidden. We chose not to install any of it: the copy in `.claude/skills/impeccable/` is `SKILL.md` and `reference/` only, see the caveat in the collection table above.
-
 **Second audit round, 10 September 2026.** A reader sent a list of eight candidate skill repositories and asked for a comparison against this page, plus a search for anything this project was missing on software architecture, data privacy and information security. Five background agents read each candidate directly (raw file content, not marketing README) and cross-checked it against what was already installed here. Two of the eight turned out to already be covered: the karpathy-inspired guide was already this exact source, and a UI-design skill in the list matched something already active globally on the operator's machine but out of scope for this project. Four were read and set aside as citation-only or a poor fit, including one, Understand-Anything, that installs itself with a `curl | bash` one-liner and ships a hook whose own instructions tell the agent not to ask the user for confirmation before acting, exactly the pattern this checklist exists to catch. The remaining four, humanizer, three skills out of Agent Skills for Context Engineering, ai-act-skill and threat-modeling, passed the same scan run on the first round (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`, plus `requests`, `urllib`, `subprocess` and `os.system` for the three sources that ship Python). The scan found one match: `sandbox.exec()` inside a case-study code sample in `tool-design`'s `references/architectural_reduction.md`, quoting a third party's own sandboxed benchmark, not an instruction this skill executes. No source in this round required an undeclared network call to function.
 
-**Citation in the compact guide is pending for these four.** The first six collections were installed and cited in `harness-toolkit.html` in the same sitting; this round deliberately separated the two steps so the operator could decide on installation first. Writing the six-field entries, in three languages, and syncing the `build/` mirror is tracked as its own next step, not silently assumed done.
+**Citation in the compact guide is pending for these four.** The first five collections were installed and cited in `harness-toolkit.html` in the same sitting; this round deliberately separated the two steps so the operator could decide on installation first. Writing the six-field entries, in three languages, and syncing the `build/` mirror is tracked as its own next step, not silently assumed done.
+
+---
+
+## Retired
+
+**impeccable**, retired on 20 September 2026 at the operator's request. It entered on 30 August 2026 as a documentation-only install (`SKILL.md` and `reference/`, no `scripts/`) and as the compact guide's eighteenth entry, in Inspect. Its entry is now out of the compact guide, `sources/inventory.md` and `toolkit.json`, and its local copy is out of `.claude/skills/`. The adoption record in `NEXT-STEPS.md` and in the project log stays as written: those are history, not current state.
 
 ---
 

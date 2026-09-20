@@ -8,7 +8,7 @@
 # sem cruzar TOOLS.md, sources/inventory.md e harness-toolkit.html a mao.
 #
 # Escopo deliberado, v1: so os Agent Skills de fato instalados em
-# .claude/skills/ (as dez colecoes de terceiro mais as duas skills
+# .claude/skills/ (as nove colecoes de terceiro mais as duas skills
 # proprias, intake-briefing e milestone-loc-tokens-ai-ledger). NAO cobre
 # toda ferramenta citada em
 # sources/inventory.md (Semgrep, Stryker, LangGraph e outras sao
@@ -74,7 +74,7 @@ def extract_licence(*texts):
 
 def parse_collections_table(tools_text):
     """Le a tabela 'Third-party collections installed' de TOOLS.md."""
-    section = extract_section(tools_text, '## Third-party collections installed', '## The thirty-seven skills')
+    section = extract_section(tools_text, '## Third-party collections installed', '## The thirty-six skills')
     rows = []
     for line in section.splitlines():
         line = line.strip()
@@ -97,10 +97,10 @@ def parse_collections_table(tools_text):
 
 def parse_skill_names_by_collection(tools_text, collection_names):
     """Para cada nome de colecao ja conhecido (da tabela acima), acha o
-    paragrafo correspondente em 'The thirty-seven skills, by collection'
+    paragrafo correspondente em 'The thirty-six skills, by collection'
     e extrai so os identificadores de skill individuais, descartando
     prosa de ressalva que segue no mesmo paragrafo."""
-    section = extract_section(tools_text, '## The thirty-seven skills, by collection', '## The project')
+    section = extract_section(tools_text, '## The thirty-six skills, by collection', '## The project')
     result = {}
     for name in collection_names:
         label = '**%s:**' % name

@@ -1,6 +1,6 @@
 {
   "generated_by": "build/generate_toolkit_manifest.py",
-  "generated_at": "2026-09-16",
+  "generated_at": "2026-09-20",
   "derived_from": [
     "TOOLS.md",
     "sources/inventory.md",
@@ -18,7 +18,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "cd8866488ed88f7d8a64d6b135ae56faaa0f3ca3eddcdfcac2186e7f0acc3c5f",
+  "source_hash": "899f461a2105ffd5453117a2ccb843320fe574a704c0004c7c9cf778b81d599e",
   "entries": [
     {
       "id": "superpowers",
@@ -151,31 +151,10 @@
       }
     },
     {
-      "id": "impeccable",
-      "kind": "collection",
-      "name": "impeccable",
-      "role": "Design-QA reference for the project's own HTML pages: 61 deterministic detector rules for common AI-generated frontend tells, Apache-2.0, 30 contributors. Installed as documentation only, see the caveat below",
-      "medir_step": "inspect",
-      "origin": "https://github.com/pbakaus/impeccable",
-      "licence": "Apache-2.0",
-      "status": "installed",
-      "skills_installed_text": "1",
-      "skills": [
-        "impeccable"
-      ],
-      "install": {
-        "origin_clone": "git clone https://github.com/pbakaus/impeccable",
-        "claude_code_personal": "~/.claude/skills/<skill-id>/",
-        "claude_code_project": ".claude/skills/<skill-id>/",
-        "cursor_codex_antigravity": ".agents/skills/<skill-id>/",
-        "note": "Clone the origin repository, locate this skill's own folder inside it (this project has not independently verified the exact internal path for every origin repo), and copy that folder to the target path for your tool. Check AGENTS.md at this project's root before installing: confirm the origin is still current first."
-      }
-    },
-    {
       "id": "humanizer",
       "kind": "collection",
       "name": "humanizer",
-      "role": "Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other nine collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills",
+      "role": "Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other eight collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills",
       "medir_step": "reinforce",
       "origin": "https://github.com/blader/humanizer",
       "licence": "MIT or Apache-2.0 (see TOOLS.md overview)",
