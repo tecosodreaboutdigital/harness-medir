@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T15:02:15.889872+00:00",
+  "generated_at": "2026-09-20T15:09:26.304477+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -4352,28 +4352,216 @@
         "cache_creation_1h": 0,
         "by_model": {}
       }
+    },
+    {
+      "hash": "c32ef45",
+      "timestamp": "2026-09-20T12:07:52-03:00",
+      "subject": "Freeze the log's tokens per model and cache TTL, add --enrich, count subagent tokens",
+      "words_published": 120175,
+      "code_lines": 12079,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 210,
+        "output": 228722,
+        "cache_read": 27898163,
+        "cache_creation": 437836
+      },
+      "tokens_total": {
+        "input": 210,
+        "output": 228722,
+        "cache_read": 27898163,
+        "cache_creation": 437836
+      },
+      "tokens_cumulative": {
+        "input": 13740,
+        "output": 6311014,
+        "cache_read": 1571911792,
+        "cache_creation": 23515674
+      },
+      "cost_recorded": {
+        "amount": 9.6186,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 437836,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 210,
+            "output": 228722,
+            "cache_read": 27898163,
+            "cache_creation": 437836,
+            "cache_creation_1h": 437836
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
+    },
+    {
+      "hash": "f5332ad",
+      "timestamp": "2026-09-20T12:07:53-03:00",
+      "subject": "Complete the playbook page in Portuguese and Spanish, and correct its descriptions",
+      "words_published": 121505,
+      "code_lines": 12128,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0
+      },
+      "tokens_total": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0
+      },
+      "tokens_cumulative": {
+        "input": 13740,
+        "output": 6311014,
+        "cache_read": 1571911792,
+        "cache_creation": 23515674
+      },
+      "cost_recorded": {
+        "amount": 0.0,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
+    },
+    {
+      "hash": "1b644f8",
+      "timestamp": "2026-09-20T12:07:54-03:00",
+      "subject": "Bring STATUS up to date and record the 20 September round, in three languages",
+      "words_published": 121505,
+      "code_lines": 12130,
+      "governance_lines": 802,
+      "tokens_bucket": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0
+      },
+      "tokens_total": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0
+      },
+      "tokens_cumulative": {
+        "input": 13740,
+        "output": 6311014,
+        "cache_read": 1571911792,
+        "cache_creation": 23515674
+      },
+      "cost_recorded": {
+        "amount": 0.0,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
+    },
+    {
+      "hash": "32d6587",
+      "timestamp": "2026-09-20T12:09:19-03:00",
+      "subject": "Price a milestone that spent no tokens at zero when a price is in effect",
+      "words_published": 121505,
+      "code_lines": 12138,
+      "governance_lines": 802,
+      "tokens_bucket": {
+        "input": 6,
+        "output": 4539,
+        "cache_read": 1377940,
+        "cache_creation": 6343
+      },
+      "tokens_total": {
+        "input": 6,
+        "output": 4539,
+        "cache_read": 1377940,
+        "cache_creation": 6343
+      },
+      "tokens_cumulative": {
+        "input": 13746,
+        "output": 6315553,
+        "cache_read": 1573289732,
+        "cache_creation": 23522017
+      },
+      "cost_recorded": {
+        "amount": 0.3464,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 6343,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 6,
+            "output": 4539,
+            "cache_read": 1377940,
+            "cache_creation": 6343,
+            "cache_creation_1h": 6343
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 188,
-    "output": 198779,
-    "cache_read": 23093352,
-    "cache_creation": 402620
+    "input": 0,
+    "output": 0,
+    "cache_read": 0,
+    "cache_creation": 0
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 402620,
-    "by_model": {
-      "claude-sonnet-5": {
-        "input": 188,
-        "output": 198779,
-        "cache_read": 23093352,
-        "cache_creation": 402620,
-        "cache_creation_1h": 402620
-      }
-    }
+    "cache_creation_1h": 0,
+    "by_model": {}
   },
   "cost_since_last_commit": {
-    "amount": 8.2173,
+    "amount": 0.0,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
