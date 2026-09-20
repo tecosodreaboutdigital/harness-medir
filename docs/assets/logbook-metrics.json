@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-09-16T12:47:41.721566+00:00",
+  "generated_at": "2026-09-20T05:50:14.300585+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
+    "2bd825fa-a8e8-476e-bf87-4591d6537437.jsonl",
     "46908256-4997-4659-b184-4a6d48768252.jsonl",
     "53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
     "53f37137-6915-4852-bfe5-28f319ee3f49.jsonl",
@@ -16,6 +17,7 @@
     "b4a46e8e-3bf4-4950-8ca7-8e72c302b597.jsonl",
     "b8483cb7-107f-4e13-a062-36f399ca1ce7.jsonl",
     "c37b3f32-e79a-4dbb-bed8-b26ffe157825.jsonl",
+    "d4bb11b8-6bcc-462a-8982-6cde47e57a98.jsonl",
     "d6866966-e558-4b5e-b4a9-b907f0feeb66.jsonl",
     "dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
     "e5f70a13-d5e8-42e9-b7e6-012cf295bbfe.jsonl",
@@ -1816,16 +1818,97 @@
           }
         }
       ]
+    },
+    {
+      "hash": "252ee63",
+      "timestamp": "2026-09-16T09:54:50-03:00",
+      "subject": "Regenerate the project log, milestones M73 to M76",
+      "words_published": 120911,
+      "code_lines": 11523,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 102,
+        "output": 41853,
+        "cache_read": 15463959,
+        "cache_creation": 83919
+      },
+      "tokens_cumulative": {
+        "input": 7460,
+        "output": 4362317,
+        "cache_read": 1287002500,
+        "cache_creation": 12075376
+      },
+      "cost_recorded": {
+        "amount": 3.7213,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "a380b05",
+      "timestamp": "2026-09-20T02:03:31-03:00",
+      "subject": "Retire impeccable from the toolkit",
+      "words_published": 120175,
+      "code_lines": 11487,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 72,
+        "output": 35662,
+        "cache_read": 4523338,
+        "cache_creation": 130402
+      },
+      "tokens_cumulative": {
+        "input": 7532,
+        "output": 4397979,
+        "cache_read": 1291525838,
+        "cache_creation": 12205778
+      },
+      "cost_recorded": {
+        "amount": 1.5874,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
+    },
+    {
+      "hash": "a0abf21",
+      "timestamp": "2026-09-20T02:33:24-03:00",
+      "subject": "Correct the Sonnet 5 price and port --reprice into the logbook pipeline",
+      "words_published": 120175,
+      "code_lines": 11563,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 90,
+        "output": 54548,
+        "cache_read": 5559227,
+        "cache_creation": 156241
+      },
+      "tokens_cumulative": {
+        "input": 7622,
+        "output": 4452527,
+        "cache_read": 1297085065,
+        "cache_creation": 12362019
+      },
+      "cost_recorded": {
+        "amount": 2.0481,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 32,
-    "output": 9416,
-    "cache_read": 4294318,
-    "cache_creation": 24029
+    "input": 8,
+    "output": 8797,
+    "cache_read": 748941,
+    "cache_creation": 13938
   },
   "cost_since_last_commit": {
-    "amount": 1.0132,
+    "amount": 0.2726,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
