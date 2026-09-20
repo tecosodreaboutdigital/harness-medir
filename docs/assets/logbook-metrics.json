@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T15:33:29.665776+00:00",
+  "generated_at": "2026-09-20T15:46:01.863522+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -4601,28 +4601,134 @@
         "cache_creation_1h": 0,
         "by_model": {}
       }
+    },
+    {
+      "hash": "34e4aa5",
+      "timestamp": "2026-09-20T12:34:19-03:00",
+      "subject": "Regenerate the project log, milestone M85",
+      "words_published": 121505,
+      "code_lines": 12168,
+      "governance_lines": 802,
+      "tokens_bucket": {
+        "input": 26,
+        "output": 12290,
+        "cache_read": 5377054,
+        "cache_creation": 20041
+      },
+      "tokens_total": {
+        "input": 26,
+        "output": 12290,
+        "cache_read": 5377054,
+        "cache_creation": 20041
+      },
+      "tokens_cumulative": {
+        "input": 13786,
+        "output": 6340432,
+        "cache_read": 1581968546,
+        "cache_creation": 23556923
+      },
+      "cost_recorded": {
+        "amount": 1.2785,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 20041,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 26,
+            "output": 12290,
+            "cache_read": 5377054,
+            "cache_creation": 20041,
+            "cache_creation_1h": 20041
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
+    },
+    {
+      "hash": "478486d",
+      "timestamp": "2026-09-20T12:45:23-03:00",
+      "subject": "Correct thirteen stale statements found by auditing the published documents",
+      "words_published": 121724,
+      "code_lines": 12240,
+      "governance_lines": 806,
+      "tokens_bucket": {
+        "input": 46,
+        "output": 46722,
+        "cache_read": 11653196,
+        "cache_creation": 73570
+      },
+      "tokens_total": {
+        "input": 46,
+        "output": 46722,
+        "cache_read": 11653196,
+        "cache_creation": 73570
+      },
+      "tokens_cumulative": {
+        "input": 13832,
+        "output": 6387154,
+        "cache_read": 1593621742,
+        "cache_creation": 23630493
+      },
+      "cost_recorded": {
+        "amount": 3.0922,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 73570,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 46,
+            "output": 46722,
+            "cache_read": 11653196,
+            "cache_creation": 73570,
+            "cache_creation_1h": 73570
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 20,
-    "output": 8941,
-    "cache_read": 3887162,
-    "cache_creation": 15787
+    "input": 4,
+    "output": 1669,
+    "cache_read": 1147497,
+    "cache_creation": 2574
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 15787,
+    "cache_creation_1h": 2574,
     "by_model": {
       "claude-sonnet-5": {
-        "input": 20,
-        "output": 8941,
-        "cache_read": 3887162,
-        "cache_creation": 15787,
-        "cache_creation_1h": 15787
+        "input": 4,
+        "output": 1669,
+        "cache_read": 1147497,
+        "cache_creation": 2574,
+        "cache_creation_1h": 2574
       }
     }
   },
   "cost_since_last_commit": {
-    "amount": 0.93,
+    "amount": 0.2565,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
