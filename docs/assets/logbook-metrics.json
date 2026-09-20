@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T05:50:14.300585+00:00",
+  "generated_at": "2026-09-20T15:02:15.889872+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
@@ -8,6 +8,7 @@
     "53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
     "53f37137-6915-4852-bfe5-28f319ee3f49.jsonl",
     "5cca66f1-772b-46bc-aa39-3590a003ce38.jsonl",
+    "700145fd-41ab-4891-9784-7a9f145a2193.jsonl",
     "7f526096-6cdc-4cd0-ab18-2ff52b338719.jsonl",
     "94076374-cedf-44d4-a224-b04b4df17067.jsonl",
     "9ceec93a-9776-453d-af08-f860720eb670.jsonl",
@@ -24,6 +25,7 @@
     "ee67d6e0-ff77-4fe6-96c3-67ea21b93690.jsonl",
     "eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
   ],
+  "count_rules_hash": "4d561bfe450e594f",
   "milestones": [
     {
       "hash": "a732861",
@@ -38,13 +40,39 @@
         "cache_read": 718510,
         "cache_creation": 51454
       },
+      "tokens_total": {
+        "input": 24,
+        "output": 13752,
+        "cache_read": 718510,
+        "cache_creation": 51454
+      },
       "tokens_cumulative": {
         "input": 24,
         "output": 13752,
         "cache_read": 718510,
         "cache_creation": 51454
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 51454,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 24,
+            "output": 13752,
+            "cache_read": 718510,
+            "cache_creation": 51454,
+            "cache_creation_1h": 51454
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "1271135",
@@ -59,13 +87,39 @@
         "cache_read": 5527279,
         "cache_creation": 94313
       },
+      "tokens_total": {
+        "input": 80,
+        "output": 50205,
+        "cache_read": 5527279,
+        "cache_creation": 94313
+      },
       "tokens_cumulative": {
         "input": 104,
         "output": 63957,
         "cache_read": 6245789,
         "cache_creation": 145767
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 94313,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 80,
+            "output": 50205,
+            "cache_read": 5527279,
+            "cache_creation": 94313,
+            "cache_creation_1h": 94313
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "f5fbfa7",
@@ -80,13 +134,39 @@
         "cache_read": 14785480,
         "cache_creation": 141217
       },
+      "tokens_total": {
+        "input": 112,
+        "output": 84648,
+        "cache_read": 14785480,
+        "cache_creation": 141217
+      },
       "tokens_cumulative": {
         "input": 216,
         "output": 148605,
         "cache_read": 21031269,
         "cache_creation": 286984
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 141217,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 112,
+            "output": 84648,
+            "cache_read": 14785480,
+            "cache_creation": 141217,
+            "cache_creation_1h": 141217
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "111933a",
@@ -101,13 +181,39 @@
         "cache_read": 24750253,
         "cache_creation": 90094
       },
+      "tokens_total": {
+        "input": 134,
+        "output": 57031,
+        "cache_read": 24750253,
+        "cache_creation": 90094
+      },
       "tokens_cumulative": {
         "input": 350,
         "output": 205636,
         "cache_read": 45781522,
         "cache_creation": 377078
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 90094,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 134,
+            "output": 57031,
+            "cache_read": 24750253,
+            "cache_creation": 90094,
+            "cache_creation_1h": 90094
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "51af961",
@@ -122,13 +228,39 @@
         "cache_read": 3715671,
         "cache_creation": 16443
       },
+      "tokens_total": {
+        "input": 18,
+        "output": 11005,
+        "cache_read": 3715671,
+        "cache_creation": 16443
+      },
       "tokens_cumulative": {
         "input": 368,
         "output": 216641,
         "cache_read": 49497193,
         "cache_creation": 393521
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 16443,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 18,
+            "output": 11005,
+            "cache_read": 3715671,
+            "cache_creation": 16443,
+            "cache_creation_1h": 16443
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "38444ac",
@@ -143,13 +275,39 @@
         "cache_read": 13495118,
         "cache_creation": 27384
       },
+      "tokens_total": {
+        "input": 62,
+        "output": 15837,
+        "cache_read": 13495118,
+        "cache_creation": 27384
+      },
       "tokens_cumulative": {
         "input": 430,
         "output": 232478,
         "cache_read": 62992311,
         "cache_creation": 420905
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 27384,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 62,
+            "output": 15837,
+            "cache_read": 13495118,
+            "cache_creation": 27384,
+            "cache_creation_1h": 27384
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "69700ec",
@@ -164,13 +322,39 @@
         "cache_read": 24030596,
         "cache_creation": 67494
       },
+      "tokens_total": {
+        "input": 98,
+        "output": 50262,
+        "cache_read": 24030596,
+        "cache_creation": 67494
+      },
       "tokens_cumulative": {
         "input": 528,
         "output": 282740,
         "cache_read": 87022907,
         "cache_creation": 488399
       },
-      "cost_recorded": null
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 67494,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 98,
+            "output": 50262,
+            "cache_read": 24030596,
+            "cache_creation": 67494,
+            "cache_creation_1h": 67494
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "9ccbc1e",
@@ -185,13 +369,47 @@
         "cache_read": 16602780,
         "cache_creation": 215212
       },
-      "tokens_cumulative": {
-        "input": 686,
-        "output": 391379,
-        "cache_read": 103625687,
-        "cache_creation": 703611
+      "tokens_total": {
+        "input": 190,
+        "output": 117226,
+        "cache_read": 17412065,
+        "cache_creation": 347049
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 718,
+        "output": 399966,
+        "cache_read": 104434972,
+        "cache_creation": 835448
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 215212,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 158,
+            "output": 108639,
+            "cache_read": 16602780,
+            "cache_creation": 215212,
+            "cache_creation_1h": 215212
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 32,
+        "output": 8587,
+        "cache_read": 809285,
+        "cache_creation": 131837,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 32,
+            "output": 8587,
+            "cache_read": 809285,
+            "cache_creation": 131837,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "d9a3fd7",
@@ -206,13 +424,47 @@
         "cache_read": 10492950,
         "cache_creation": 69500
       },
-      "tokens_cumulative": {
-        "input": 764,
-        "output": 420261,
-        "cache_read": 114118637,
-        "cache_creation": 773111
+      "tokens_total": {
+        "input": 180,
+        "output": 65253,
+        "cache_read": 15835368,
+        "cache_creation": 464472
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 898,
+        "output": 465219,
+        "cache_read": 120270340,
+        "cache_creation": 1299920
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 69500,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 78,
+            "output": 28882,
+            "cache_read": 10492950,
+            "cache_creation": 69500,
+            "cache_creation_1h": 69500
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 102,
+        "output": 36371,
+        "cache_read": 5342418,
+        "cache_creation": 394972,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 102,
+            "output": 36371,
+            "cache_read": 5342418,
+            "cache_creation": 394972,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "e5af22e",
@@ -227,13 +479,47 @@
         "cache_read": 5333469,
         "cache_creation": 52208
       },
-      "tokens_cumulative": {
-        "input": 796,
-        "output": 445201,
-        "cache_read": 119452106,
-        "cache_creation": 825319
+      "tokens_total": {
+        "input": 70,
+        "output": 32196,
+        "cache_read": 7768436,
+        "cache_creation": 385861
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 968,
+        "output": 497415,
+        "cache_read": 128038776,
+        "cache_creation": 1685781
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 52208,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 32,
+            "output": 24940,
+            "cache_read": 5333469,
+            "cache_creation": 52208,
+            "cache_creation_1h": 52208
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 38,
+        "output": 7256,
+        "cache_read": 2434967,
+        "cache_creation": 333653,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 38,
+            "output": 7256,
+            "cache_read": 2434967,
+            "cache_creation": 333653,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "1bb678a",
@@ -248,13 +534,39 @@
         "cache_read": 3597612,
         "cache_creation": 13163
       },
-      "tokens_cumulative": {
-        "input": 816,
-        "output": 450015,
-        "cache_read": 123049718,
-        "cache_creation": 838482
+      "tokens_total": {
+        "input": 20,
+        "output": 4814,
+        "cache_read": 3597612,
+        "cache_creation": 13163
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 988,
+        "output": 502229,
+        "cache_read": 131636388,
+        "cache_creation": 1698944
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 13163,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 20,
+            "output": 4814,
+            "cache_read": 3597612,
+            "cache_creation": 13163,
+            "cache_creation_1h": 13163
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "2369713",
@@ -269,13 +581,39 @@
         "cache_read": 13714909,
         "cache_creation": 204387
       },
-      "tokens_cumulative": {
-        "input": 954,
-        "output": 537272,
-        "cache_read": 136764627,
-        "cache_creation": 1042869
+      "tokens_total": {
+        "input": 138,
+        "output": 87257,
+        "cache_read": 13714909,
+        "cache_creation": 204387
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1126,
+        "output": 589486,
+        "cache_read": 145351297,
+        "cache_creation": 1903331
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 204387,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 138,
+            "output": 87257,
+            "cache_read": 13714909,
+            "cache_creation": 204387,
+            "cache_creation_1h": 204387
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "8c2176b",
@@ -290,13 +628,39 @@
         "cache_read": 2422105,
         "cache_creation": 20814
       },
-      "tokens_cumulative": {
-        "input": 976,
-        "output": 544231,
-        "cache_read": 139186732,
-        "cache_creation": 1063683
+      "tokens_total": {
+        "input": 22,
+        "output": 6959,
+        "cache_read": 2422105,
+        "cache_creation": 20814
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1148,
+        "output": 596445,
+        "cache_read": 147773402,
+        "cache_creation": 1924145
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 20814,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 22,
+            "output": 6959,
+            "cache_read": 2422105,
+            "cache_creation": 20814,
+            "cache_creation_1h": 20814
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "bfdd36b",
@@ -311,13 +675,39 @@
         "cache_read": 2544183,
         "cache_creation": 244438
       },
-      "tokens_cumulative": {
-        "input": 998,
-        "output": 554431,
-        "cache_read": 141730915,
-        "cache_creation": 1308121
+      "tokens_total": {
+        "input": 22,
+        "output": 10200,
+        "cache_read": 2544183,
+        "cache_creation": 244438
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1170,
+        "output": 606645,
+        "cache_read": 150317585,
+        "cache_creation": 2168583
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 244438,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 22,
+            "output": 10200,
+            "cache_read": 2544183,
+            "cache_creation": 244438,
+            "cache_creation_1h": 244438
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "5ff833e",
@@ -332,13 +722,39 @@
         "cache_read": 3313897,
         "cache_creation": 12203
       },
-      "tokens_cumulative": {
-        "input": 1022,
-        "output": 563342,
-        "cache_read": 145044812,
-        "cache_creation": 1320324
+      "tokens_total": {
+        "input": 24,
+        "output": 8911,
+        "cache_read": 3313897,
+        "cache_creation": 12203
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1194,
+        "output": 615556,
+        "cache_read": 153631482,
+        "cache_creation": 2180786
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 12203,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 24,
+            "output": 8911,
+            "cache_read": 3313897,
+            "cache_creation": 12203,
+            "cache_creation_1h": 12203
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "d8aa15a",
@@ -353,13 +769,39 @@
         "cache_read": 8905064,
         "cache_creation": 246348
       },
-      "tokens_cumulative": {
-        "input": 1116,
-        "output": 688548,
-        "cache_read": 153949876,
-        "cache_creation": 1566672
+      "tokens_total": {
+        "input": 94,
+        "output": 125206,
+        "cache_read": 8905064,
+        "cache_creation": 246348
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1288,
+        "output": 740762,
+        "cache_read": 162536546,
+        "cache_creation": 2427134
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 246348,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 94,
+            "output": 125206,
+            "cache_read": 8905064,
+            "cache_creation": 246348,
+            "cache_creation_1h": 246348
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "c92e889",
@@ -374,13 +816,39 @@
         "cache_read": 7866584,
         "cache_creation": 43506
       },
-      "tokens_cumulative": {
-        "input": 1170,
-        "output": 721483,
-        "cache_read": 161816460,
-        "cache_creation": 1610178
+      "tokens_total": {
+        "input": 54,
+        "output": 32935,
+        "cache_read": 7866584,
+        "cache_creation": 43506
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1342,
+        "output": 773697,
+        "cache_read": 170403130,
+        "cache_creation": 2470640
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 43506,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 54,
+            "output": 32935,
+            "cache_read": 7866584,
+            "cache_creation": 43506,
+            "cache_creation_1h": 43506
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "77ebe6e",
@@ -395,13 +863,39 @@
         "cache_read": 3232463,
         "cache_creation": 19570
       },
-      "tokens_cumulative": {
-        "input": 1190,
-        "output": 729810,
-        "cache_read": 165048923,
-        "cache_creation": 1629748
+      "tokens_total": {
+        "input": 20,
+        "output": 8327,
+        "cache_read": 3232463,
+        "cache_creation": 19570
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1362,
+        "output": 782024,
+        "cache_read": 173635593,
+        "cache_creation": 2490210
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 19570,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 20,
+            "output": 8327,
+            "cache_read": 3232463,
+            "cache_creation": 19570,
+            "cache_creation_1h": 19570
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "e5523e6",
@@ -416,13 +910,39 @@
         "cache_read": 4571975,
         "cache_creation": 155316
       },
-      "tokens_cumulative": {
-        "input": 1256,
-        "output": 797169,
-        "cache_read": 169620898,
-        "cache_creation": 1785064
+      "tokens_total": {
+        "input": 66,
+        "output": 67359,
+        "cache_read": 4571975,
+        "cache_creation": 155316
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1428,
+        "output": 849383,
+        "cache_read": 178207568,
+        "cache_creation": 2645526
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 155316,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 66,
+            "output": 67359,
+            "cache_read": 4571975,
+            "cache_creation": 155316,
+            "cache_creation_1h": 155316
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "07d47a1",
@@ -437,13 +957,39 @@
         "cache_read": 361128,
         "cache_creation": 2766
       },
-      "tokens_cumulative": {
-        "input": 1260,
-        "output": 798764,
-        "cache_read": 169982026,
-        "cache_creation": 1787830
+      "tokens_total": {
+        "input": 4,
+        "output": 1595,
+        "cache_read": 361128,
+        "cache_creation": 2766
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1432,
+        "output": 850978,
+        "cache_read": 178568696,
+        "cache_creation": 2648292
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 2766,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 4,
+            "output": 1595,
+            "cache_read": 361128,
+            "cache_creation": 2766,
+            "cache_creation_1h": 2766
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "4f47863",
@@ -458,13 +1004,39 @@
         "cache_read": 110870898,
         "cache_creation": 579298
       },
-      "tokens_cumulative": {
-        "input": 1658,
-        "output": 1135180,
-        "cache_read": 280852924,
-        "cache_creation": 2367128
+      "tokens_total": {
+        "input": 398,
+        "output": 336416,
+        "cache_read": 110870898,
+        "cache_creation": 579298
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1830,
+        "output": 1187394,
+        "cache_read": 289439594,
+        "cache_creation": 3227590
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 579298,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 398,
+            "output": 336416,
+            "cache_read": 110870898,
+            "cache_creation": 579298,
+            "cache_creation_1h": 579298
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "cdc69a2",
@@ -479,13 +1051,39 @@
         "cache_read": 761986,
         "cache_creation": 1465
       },
-      "tokens_cumulative": {
-        "input": 1660,
-        "output": 1135450,
-        "cache_read": 281614910,
-        "cache_creation": 2368593
+      "tokens_total": {
+        "input": 2,
+        "output": 270,
+        "cache_read": 761986,
+        "cache_creation": 1465
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1832,
+        "output": 1187664,
+        "cache_read": 290201580,
+        "cache_creation": 3229055
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 1465,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 2,
+            "output": 270,
+            "cache_read": 761986,
+            "cache_creation": 1465,
+            "cache_creation_1h": 1465
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "319852d",
@@ -500,13 +1098,39 @@
         "cache_read": 38833161,
         "cache_creation": 56715
       },
-      "tokens_cumulative": {
-        "input": 1758,
-        "output": 1165035,
-        "cache_read": 320448071,
-        "cache_creation": 2425308
+      "tokens_total": {
+        "input": 98,
+        "output": 29585,
+        "cache_read": 38833161,
+        "cache_creation": 56715
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1930,
+        "output": 1217249,
+        "cache_read": 329034741,
+        "cache_creation": 3285770
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 56715,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 98,
+            "output": 29585,
+            "cache_read": 38833161,
+            "cache_creation": 56715,
+            "cache_creation_1h": 56715
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "14422c1",
@@ -521,13 +1145,39 @@
         "cache_read": 5575044,
         "cache_creation": 117763
       },
-      "tokens_cumulative": {
-        "input": 1826,
-        "output": 1205888,
-        "cache_read": 326023115,
-        "cache_creation": 2543071
+      "tokens_total": {
+        "input": 68,
+        "output": 40853,
+        "cache_read": 5575044,
+        "cache_creation": 117763
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 1998,
+        "output": 1258102,
+        "cache_read": 334609785,
+        "cache_creation": 3403533
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 117763,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 68,
+            "output": 40853,
+            "cache_read": 5575044,
+            "cache_creation": 117763,
+            "cache_creation_1h": 117763
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "28f58c4",
@@ -542,13 +1192,39 @@
         "cache_read": 3416923,
         "cache_creation": 94030
       },
-      "tokens_cumulative": {
-        "input": 1864,
-        "output": 1253528,
-        "cache_read": 329440038,
-        "cache_creation": 2637101
+      "tokens_total": {
+        "input": 38,
+        "output": 47640,
+        "cache_read": 3416923,
+        "cache_creation": 94030
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2036,
+        "output": 1305742,
+        "cache_read": 338026708,
+        "cache_creation": 3497563
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 94030,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 38,
+            "output": 47640,
+            "cache_read": 3416923,
+            "cache_creation": 94030,
+            "cache_creation_1h": 94030
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "e20661e",
@@ -563,13 +1239,39 @@
         "cache_read": 1226419,
         "cache_creation": 18807
       },
-      "tokens_cumulative": {
-        "input": 1874,
-        "output": 1267689,
-        "cache_read": 330666457,
-        "cache_creation": 2655908
+      "tokens_total": {
+        "input": 10,
+        "output": 14161,
+        "cache_read": 1226419,
+        "cache_creation": 18807
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2046,
+        "output": 1319903,
+        "cache_read": 339253127,
+        "cache_creation": 3516370
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 18807,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 10,
+            "output": 14161,
+            "cache_read": 1226419,
+            "cache_creation": 18807,
+            "cache_creation_1h": 18807
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "95cef8c",
@@ -584,13 +1286,39 @@
         "cache_read": 5099546,
         "cache_creation": 53239
       },
-      "tokens_cumulative": {
-        "input": 1910,
-        "output": 1284422,
-        "cache_read": 335766003,
-        "cache_creation": 2709147
+      "tokens_total": {
+        "input": 36,
+        "output": 16733,
+        "cache_read": 5099546,
+        "cache_creation": 53239
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2082,
+        "output": 1336636,
+        "cache_read": 344352673,
+        "cache_creation": 3569609
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 53239,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 36,
+            "output": 16733,
+            "cache_read": 5099546,
+            "cache_creation": 53239,
+            "cache_creation_1h": 53239
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "7db8a4b",
@@ -605,13 +1333,47 @@
         "cache_read": 36626829,
         "cache_creation": 360689
       },
-      "tokens_cumulative": {
-        "input": 2172,
-        "output": 1460926,
-        "cache_read": 372392832,
-        "cache_creation": 3069836
+      "tokens_total": {
+        "input": 374,
+        "output": 219520,
+        "cache_read": 42117837,
+        "cache_creation": 621875
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2456,
+        "output": 1556156,
+        "cache_read": 386470510,
+        "cache_creation": 4191484
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 360689,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 262,
+            "output": 176504,
+            "cache_read": 36626829,
+            "cache_creation": 360689,
+            "cache_creation_1h": 360689
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 112,
+        "output": 43016,
+        "cache_read": 5491008,
+        "cache_creation": 261186,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 112,
+            "output": 43016,
+            "cache_read": 5491008,
+            "cache_creation": 261186,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "61d8dc3",
@@ -626,13 +1388,47 @@
         "cache_read": 51159883,
         "cache_creation": 517055
       },
-      "tokens_cumulative": {
-        "input": 2388,
-        "output": 1559367,
-        "cache_read": 423552715,
-        "cache_creation": 3586891
+      "tokens_total": {
+        "input": 288,
+        "output": 220258,
+        "cache_read": 55841371,
+        "cache_creation": 870232
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2744,
+        "output": 1776414,
+        "cache_read": 442311881,
+        "cache_creation": 5061716
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 517055,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 216,
+            "output": 98441,
+            "cache_read": 51159883,
+            "cache_creation": 517055,
+            "cache_creation_1h": 517055
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 72,
+        "output": 121817,
+        "cache_read": 4681488,
+        "cache_creation": 353177,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 72,
+            "output": 121817,
+            "cache_read": 4681488,
+            "cache_creation": 353177,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "611f979",
@@ -647,13 +1443,39 @@
         "cache_read": 37178596,
         "cache_creation": 81020
       },
-      "tokens_cumulative": {
-        "input": 2516,
-        "output": 1614925,
-        "cache_read": 460731311,
-        "cache_creation": 3667911
+      "tokens_total": {
+        "input": 128,
+        "output": 55558,
+        "cache_read": 37178596,
+        "cache_creation": 81020
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2872,
+        "output": 1831972,
+        "cache_read": 479490477,
+        "cache_creation": 5142736
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 81020,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 128,
+            "output": 55558,
+            "cache_read": 37178596,
+            "cache_creation": 81020,
+            "cache_creation_1h": 81020
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "eab8a51",
@@ -668,13 +1490,39 @@
         "cache_read": 18451837,
         "cache_creation": 38029
       },
-      "tokens_cumulative": {
-        "input": 2574,
-        "output": 1629819,
-        "cache_read": 479183148,
-        "cache_creation": 3705940
+      "tokens_total": {
+        "input": 58,
+        "output": 14894,
+        "cache_read": 18451837,
+        "cache_creation": 38029
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 2930,
+        "output": 1846866,
+        "cache_read": 497942314,
+        "cache_creation": 5180765
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 38029,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 58,
+            "output": 14894,
+            "cache_read": 18451837,
+            "cache_creation": 38029,
+            "cache_creation_1h": 38029
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "51ec750",
@@ -689,13 +1537,39 @@
         "cache_read": 12232532,
         "cache_creation": 237547
       },
-      "tokens_cumulative": {
-        "input": 2686,
-        "output": 1756062,
-        "cache_read": 491415680,
-        "cache_creation": 3943487
+      "tokens_total": {
+        "input": 112,
+        "output": 126243,
+        "cache_read": 12232532,
+        "cache_creation": 237547
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3042,
+        "output": 1973109,
+        "cache_read": 510174846,
+        "cache_creation": 5418312
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 237547,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 112,
+            "output": 126243,
+            "cache_read": 12232532,
+            "cache_creation": 237547,
+            "cache_creation_1h": 237547
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "8408df8",
@@ -710,13 +1584,39 @@
         "cache_read": 4126582,
         "cache_creation": 33144
       },
-      "tokens_cumulative": {
-        "input": 2716,
-        "output": 1771543,
-        "cache_read": 495542262,
-        "cache_creation": 3976631
+      "tokens_total": {
+        "input": 30,
+        "output": 15481,
+        "cache_read": 4126582,
+        "cache_creation": 33144
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3072,
+        "output": 1988590,
+        "cache_read": 514301428,
+        "cache_creation": 5451456
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 33144,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 30,
+            "output": 15481,
+            "cache_read": 4126582,
+            "cache_creation": 33144,
+            "cache_creation_1h": 33144
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "c060ac3",
@@ -731,13 +1631,39 @@
         "cache_read": 18100412,
         "cache_creation": 255321
       },
-      "tokens_cumulative": {
-        "input": 2940,
-        "output": 1877426,
-        "cache_read": 513642674,
-        "cache_creation": 4231952
+      "tokens_total": {
+        "input": 224,
+        "output": 105883,
+        "cache_read": 18100412,
+        "cache_creation": 255321
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3296,
+        "output": 2094473,
+        "cache_read": 532401840,
+        "cache_creation": 5706777
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 255321,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 224,
+            "output": 105883,
+            "cache_read": 18100412,
+            "cache_creation": 255321,
+            "cache_creation_1h": 255321
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "8326d45",
@@ -752,13 +1678,39 @@
         "cache_read": 7238933,
         "cache_creation": 32768
       },
-      "tokens_cumulative": {
-        "input": 2992,
-        "output": 1900454,
-        "cache_read": 520881607,
-        "cache_creation": 4264720
+      "tokens_total": {
+        "input": 52,
+        "output": 23028,
+        "cache_read": 7238933,
+        "cache_creation": 32768
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3348,
+        "output": 2117501,
+        "cache_read": 539640773,
+        "cache_creation": 5739545
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 32768,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 52,
+            "output": 23028,
+            "cache_read": 7238933,
+            "cache_creation": 32768,
+            "cache_creation_1h": 32768
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "fd7fff8",
@@ -773,13 +1725,39 @@
         "cache_read": 38711134,
         "cache_creation": 147027
       },
-      "tokens_cumulative": {
-        "input": 3198,
-        "output": 2006169,
-        "cache_read": 559592741,
-        "cache_creation": 4411747
+      "tokens_total": {
+        "input": 206,
+        "output": 105715,
+        "cache_read": 38711134,
+        "cache_creation": 147027
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3554,
+        "output": 2223216,
+        "cache_read": 578351907,
+        "cache_creation": 5886572
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 147027,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 206,
+            "output": 105715,
+            "cache_read": 38711134,
+            "cache_creation": 147027,
+            "cache_creation_1h": 147027
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "ff5be81",
@@ -794,13 +1772,39 @@
         "cache_read": 9062811,
         "cache_creation": 436343
       },
-      "tokens_cumulative": {
-        "input": 3240,
-        "output": 2016863,
-        "cache_read": 568655552,
-        "cache_creation": 4848090
+      "tokens_total": {
+        "input": 42,
+        "output": 10694,
+        "cache_read": 9062811,
+        "cache_creation": 436343
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3596,
+        "output": 2233910,
+        "cache_read": 587414718,
+        "cache_creation": 6322915
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 436343,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 42,
+            "output": 10694,
+            "cache_read": 9062811,
+            "cache_creation": 436343,
+            "cache_creation_1h": 436343
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "0dd1edb",
@@ -815,13 +1819,39 @@
         "cache_read": 9094467,
         "cache_creation": 149534
       },
-      "tokens_cumulative": {
-        "input": 3360,
-        "output": 2079089,
-        "cache_read": 577750019,
-        "cache_creation": 4997624
+      "tokens_total": {
+        "input": 120,
+        "output": 62226,
+        "cache_read": 9094467,
+        "cache_creation": 149534
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 3716,
+        "output": 2296136,
+        "cache_read": 596509185,
+        "cache_creation": 6472449
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 149534,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 120,
+            "output": 62226,
+            "cache_read": 9094467,
+            "cache_creation": 149534,
+            "cache_creation_1h": 149534
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "9f18082",
@@ -836,13 +1866,47 @@
         "cache_read": 22192907,
         "cache_creation": 316071
       },
-      "tokens_cumulative": {
-        "input": 3596,
-        "output": 2217815,
-        "cache_read": 599942926,
-        "cache_creation": 5313695
+      "tokens_total": {
+        "input": 1590,
+        "output": 289741,
+        "cache_read": 112270901,
+        "cache_creation": 2646556
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 5306,
+        "output": 2585877,
+        "cache_read": 708780086,
+        "cache_creation": 9119005
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 316071,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 236,
+            "output": 138726,
+            "cache_read": 22192907,
+            "cache_creation": 316071,
+            "cache_creation_1h": 316071
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 1354,
+        "output": 151015,
+        "cache_read": 90077994,
+        "cache_creation": 2330485,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 1354,
+            "output": 151015,
+            "cache_read": 90077994,
+            "cache_creation": 2330485,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "4a04ee1",
@@ -857,13 +1921,47 @@
         "cache_read": 38208911,
         "cache_creation": 185485
       },
-      "tokens_cumulative": {
-        "input": 3770,
-        "output": 2298212,
-        "cache_read": 638151837,
-        "cache_creation": 5499180
+      "tokens_total": {
+        "input": 720,
+        "output": 182932,
+        "cache_read": 57642641,
+        "cache_creation": 1299488
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6026,
+        "output": 2768809,
+        "cache_read": 766422727,
+        "cache_creation": 10418493
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 185485,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 174,
+            "output": 80397,
+            "cache_read": 38208911,
+            "cache_creation": 185485,
+            "cache_creation_1h": 185485
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 546,
+        "output": 102535,
+        "cache_read": 19433730,
+        "cache_creation": 1114003,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 546,
+            "output": 102535,
+            "cache_read": 19433730,
+            "cache_creation": 1114003,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "56819fd",
@@ -878,13 +1976,39 @@
         "cache_read": 35181474,
         "cache_creation": 98536
       },
-      "tokens_cumulative": {
-        "input": 3892,
-        "output": 2347044,
-        "cache_read": 673333311,
-        "cache_creation": 5597716
+      "tokens_total": {
+        "input": 122,
+        "output": 48832,
+        "cache_read": 35181474,
+        "cache_creation": 98536
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6148,
+        "output": 2817641,
+        "cache_read": 801604201,
+        "cache_creation": 10517029
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 98536,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 122,
+            "output": 48832,
+            "cache_read": 35181474,
+            "cache_creation": 98536,
+            "cache_creation_1h": 98536
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "3266f8e",
@@ -899,13 +2023,39 @@
         "cache_read": 25492892,
         "cache_creation": 54392
       },
-      "tokens_cumulative": {
-        "input": 3970,
-        "output": 2377496,
-        "cache_read": 698826203,
-        "cache_creation": 5652108
+      "tokens_total": {
+        "input": 78,
+        "output": 30452,
+        "cache_read": 25492892,
+        "cache_creation": 54392
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6226,
+        "output": 2848093,
+        "cache_read": 827097093,
+        "cache_creation": 10571421
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 54392,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 78,
+            "output": 30452,
+            "cache_read": 25492892,
+            "cache_creation": 54392,
+            "cache_creation_1h": 54392
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "ecc471e",
@@ -920,13 +2070,39 @@
         "cache_read": 4201713,
         "cache_creation": 109269
       },
-      "tokens_cumulative": {
-        "input": 4032,
-        "output": 2404535,
-        "cache_read": 703027916,
-        "cache_creation": 5761377
+      "tokens_total": {
+        "input": 62,
+        "output": 27039,
+        "cache_read": 4201713,
+        "cache_creation": 109269
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6288,
+        "output": 2875132,
+        "cache_read": 831298806,
+        "cache_creation": 10680690
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 109269,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 62,
+            "output": 27039,
+            "cache_read": 4201713,
+            "cache_creation": 109269,
+            "cache_creation_1h": 109269
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "6e5e30a",
@@ -941,13 +2117,47 @@
         "cache_read": 23496646,
         "cache_creation": 420987
       },
-      "tokens_cumulative": {
-        "input": 4189,
-        "output": 2556455,
-        "cache_read": 726524562,
-        "cache_creation": 6182364
+      "tokens_total": {
+        "input": 385,
+        "output": 198221,
+        "cache_read": 36241318,
+        "cache_creation": 1316018
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6673,
+        "output": 3073353,
+        "cache_read": 867540124,
+        "cache_creation": 11996708
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 420987,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 157,
+            "output": 151920,
+            "cache_read": 23496646,
+            "cache_creation": 420987,
+            "cache_creation_1h": 420987
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 228,
+        "output": 46301,
+        "cache_read": 12744672,
+        "cache_creation": 895031,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 228,
+            "output": 46301,
+            "cache_read": 12744672,
+            "cache_creation": 895031,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "90b81a4",
@@ -962,13 +2172,47 @@
         "cache_read": 14930476,
         "cache_creation": 70258
       },
-      "tokens_cumulative": {
-        "input": 4257,
-        "output": 2594795,
-        "cache_read": 741455038,
-        "cache_creation": 6252622
+      "tokens_total": {
+        "input": 104,
+        "output": 44973,
+        "cache_read": 16400330,
+        "cache_creation": 210657
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6777,
+        "output": 3118326,
+        "cache_read": 883940454,
+        "cache_creation": 12207365
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 70258,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 68,
+            "output": 38340,
+            "cache_read": 14930476,
+            "cache_creation": 70258,
+            "cache_creation_1h": 70258
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 36,
+        "output": 6633,
+        "cache_read": 1469854,
+        "cache_creation": 140399,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 36,
+            "output": 6633,
+            "cache_read": 1469854,
+            "cache_creation": 140399,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "ab6a0a1",
@@ -983,13 +2227,47 @@
         "cache_read": 9650619,
         "cache_creation": 40595
       },
-      "tokens_cumulative": {
-        "input": 4299,
-        "output": 2625604,
-        "cache_read": 751105657,
-        "cache_creation": 6293217
+      "tokens_total": {
+        "input": 214,
+        "output": 50522,
+        "cache_read": 29920147,
+        "cache_creation": 638486
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 6991,
+        "output": 3168848,
+        "cache_read": 913860601,
+        "cache_creation": 12845851
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 40595,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 42,
+            "output": 30809,
+            "cache_read": 9650619,
+            "cache_creation": 40595,
+            "cache_creation_1h": 40595
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 172,
+        "output": 19713,
+        "cache_read": 20269528,
+        "cache_creation": 597891,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 172,
+            "output": 19713,
+            "cache_read": 20269528,
+            "cache_creation": 597891,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "6684543",
@@ -1004,13 +2282,47 @@
         "cache_read": 19447638,
         "cache_creation": 52143
       },
-      "tokens_cumulative": {
-        "input": 4382,
-        "output": 2655177,
-        "cache_read": 770553295,
-        "cache_creation": 6345360
+      "tokens_total": {
+        "input": 113,
+        "output": 34371,
+        "cache_read": 20179748,
+        "cache_creation": 127140
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7104,
+        "output": 3203219,
+        "cache_read": 934040349,
+        "cache_creation": 12972991
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 52143,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 83,
+            "output": 29573,
+            "cache_read": 19447638,
+            "cache_creation": 52143,
+            "cache_creation_1h": 52143
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 30,
+        "output": 4798,
+        "cache_read": 732110,
+        "cache_creation": 74997,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 30,
+            "output": 4798,
+            "cache_read": 732110,
+            "cache_creation": 74997,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "42df668",
@@ -1025,13 +2337,47 @@
         "cache_read": 3606030,
         "cache_creation": 5977
       },
-      "tokens_cumulative": {
-        "input": 4397,
-        "output": 2657395,
-        "cache_read": 774159325,
-        "cache_creation": 6351337
+      "tokens_total": {
+        "input": 19,
+        "output": 2227,
+        "cache_read": 3756840,
+        "cache_creation": 8696
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7123,
+        "output": 3205446,
+        "cache_read": 937797189,
+        "cache_creation": 12981687
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 5977,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 15,
+            "output": 2218,
+            "cache_read": 3606030,
+            "cache_creation": 5977,
+            "cache_creation_1h": 5977
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 4,
+        "output": 9,
+        "cache_read": 150810,
+        "cache_creation": 2719,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 4,
+            "output": 9,
+            "cache_read": 150810,
+            "cache_creation": 2719,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "7bdfc13",
@@ -1046,13 +2392,47 @@
         "cache_read": 14053881,
         "cache_creation": 28859
       },
-      "tokens_cumulative": {
-        "input": 4453,
-        "output": 2673141,
-        "cache_read": 788213206,
-        "cache_creation": 6380196
+      "tokens_total": {
+        "input": 68,
+        "output": 22982,
+        "cache_read": 14567239,
+        "cache_creation": 50051
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7191,
+        "output": 3228428,
+        "cache_read": 952364428,
+        "cache_creation": 13031738
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 28859,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 56,
+            "output": 15746,
+            "cache_read": 14053881,
+            "cache_creation": 28859,
+            "cache_creation_1h": 28859
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 12,
+        "output": 7236,
+        "cache_read": 513358,
+        "cache_creation": 21192,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 12,
+            "output": 7236,
+            "cache_read": 513358,
+            "cache_creation": 21192,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "cd0cb08",
@@ -1067,13 +2447,47 @@
         "cache_read": 23787670,
         "cache_creation": 75471
       },
-      "tokens_cumulative": {
-        "input": 4539,
-        "output": 2724602,
-        "cache_read": 812000876,
-        "cache_creation": 6455667
+      "tokens_total": {
+        "input": 190,
+        "output": 63143,
+        "cache_read": 26462176,
+        "cache_creation": 251492
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7381,
+        "output": 3291571,
+        "cache_read": 978826604,
+        "cache_creation": 13283230
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 75471,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 86,
+            "output": 51461,
+            "cache_read": 23787670,
+            "cache_creation": 75471,
+            "cache_creation_1h": 75471
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 104,
+        "output": 11682,
+        "cache_read": 2674506,
+        "cache_creation": 176021,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 104,
+            "output": 11682,
+            "cache_read": 2674506,
+            "cache_creation": 176021,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "89080f8",
@@ -1088,13 +2502,39 @@
         "cache_read": 35650652,
         "cache_creation": 95648
       },
-      "tokens_cumulative": {
-        "input": 4658,
-        "output": 2772550,
-        "cache_read": 847651528,
-        "cache_creation": 6551315
+      "tokens_total": {
+        "input": 119,
+        "output": 47948,
+        "cache_read": 35650652,
+        "cache_creation": 95648
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7500,
+        "output": 3339519,
+        "cache_read": 1014477256,
+        "cache_creation": 13378878
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 95648,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 119,
+            "output": 47948,
+            "cache_read": 35650652,
+            "cache_creation": 95648,
+            "cache_creation_1h": 95648
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "1098fe2",
@@ -1109,13 +2549,47 @@
         "cache_read": 22465378,
         "cache_creation": 282254
       },
-      "tokens_cumulative": {
-        "input": 4842,
-        "output": 2908830,
-        "cache_read": 870116906,
-        "cache_creation": 6833569
+      "tokens_total": {
+        "input": 390,
+        "output": 276252,
+        "cache_read": 29287796,
+        "cache_creation": 663425
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7890,
+        "output": 3615771,
+        "cache_read": 1043765052,
+        "cache_creation": 14042303
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 282254,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 184,
+            "output": 136280,
+            "cache_read": 22465378,
+            "cache_creation": 282254,
+            "cache_creation_1h": 282254
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 206,
+        "output": 139972,
+        "cache_read": 6822418,
+        "cache_creation": 381171,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 206,
+            "output": 139972,
+            "cache_read": 6822418,
+            "cache_creation": 381171,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "f1265bb",
@@ -1130,13 +2604,39 @@
         "cache_read": 4226054,
         "cache_creation": 25123
       },
-      "tokens_cumulative": {
-        "input": 4870,
-        "output": 2924920,
-        "cache_read": 874342960,
-        "cache_creation": 6858692
+      "tokens_total": {
+        "input": 28,
+        "output": 16090,
+        "cache_read": 4226054,
+        "cache_creation": 25123
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7918,
+        "output": 3631861,
+        "cache_read": 1047991106,
+        "cache_creation": 14067426
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 25123,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 28,
+            "output": 16090,
+            "cache_read": 4226054,
+            "cache_creation": 25123,
+            "cache_creation_1h": 25123
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "e6bd08c",
@@ -1151,13 +2651,39 @@
         "cache_read": 13299293,
         "cache_creation": 69074
       },
-      "tokens_cumulative": {
-        "input": 4944,
-        "output": 2950754,
-        "cache_read": 887642253,
-        "cache_creation": 6927766
+      "tokens_total": {
+        "input": 74,
+        "output": 25834,
+        "cache_read": 13299293,
+        "cache_creation": 69074
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 7992,
+        "output": 3657695,
+        "cache_read": 1061290399,
+        "cache_creation": 14136500
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 69074,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 74,
+            "output": 25834,
+            "cache_read": 13299293,
+            "cache_creation": 69074,
+            "cache_creation_1h": 69074
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "80dd46d",
@@ -1172,13 +2698,47 @@
         "cache_read": 32131984,
         "cache_creation": 965336
       },
-      "tokens_cumulative": {
-        "input": 5150,
-        "output": 3155915,
-        "cache_read": 919774237,
-        "cache_creation": 7893102
+      "tokens_total": {
+        "input": 394,
+        "output": 316369,
+        "cache_read": 38760041,
+        "cache_creation": 1323278
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8386,
+        "output": 3974064,
+        "cache_read": 1100050440,
+        "cache_creation": 15459778
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 965336,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 206,
+            "output": 205161,
+            "cache_read": 32131984,
+            "cache_creation": 965336,
+            "cache_creation_1h": 965336
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 188,
+        "output": 111208,
+        "cache_read": 6628057,
+        "cache_creation": 357942,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 188,
+            "output": 111208,
+            "cache_read": 6628057,
+            "cache_creation": 357942,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "3c4832e",
@@ -1193,13 +2753,39 @@
         "cache_read": 17691817,
         "cache_creation": 65781
       },
-      "tokens_cumulative": {
-        "input": 5216,
-        "output": 3185681,
-        "cache_read": 937466054,
-        "cache_creation": 7958883
+      "tokens_total": {
+        "input": 66,
+        "output": 29766,
+        "cache_read": 17691817,
+        "cache_creation": 65781
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8452,
+        "output": 4003830,
+        "cache_read": 1117742257,
+        "cache_creation": 15525559
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 65781,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 66,
+            "output": 29766,
+            "cache_read": 17691817,
+            "cache_creation": 65781,
+            "cache_creation_1h": 65781
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "2f3c7b4",
@@ -1214,13 +2800,47 @@
         "cache_read": 7430210,
         "cache_creation": 208477
       },
-      "tokens_cumulative": {
-        "input": 5288,
-        "output": 3276364,
-        "cache_read": 944896264,
-        "cache_creation": 8167360
+      "tokens_total": {
+        "input": 210,
+        "output": 168688,
+        "cache_read": 12181740,
+        "cache_creation": 552731
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8662,
+        "output": 4172518,
+        "cache_read": 1129923997,
+        "cache_creation": 16078290
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 208477,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 72,
+            "output": 90683,
+            "cache_read": 7430210,
+            "cache_creation": 208477,
+            "cache_creation_1h": 208477
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 138,
+        "output": 78005,
+        "cache_read": 4751530,
+        "cache_creation": 344254,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 138,
+            "output": 78005,
+            "cache_read": 4751530,
+            "cache_creation": 344254,
+            "cache_creation_1h": 0
+          }
+        }
+      }
     },
     {
       "hash": "1bffee8",
@@ -1235,13 +2855,39 @@
         "cache_read": 472655,
         "cache_creation": 1060
       },
-      "tokens_cumulative": {
-        "input": 5292,
-        "output": 3277061,
-        "cache_read": 945368919,
-        "cache_creation": 8168420
+      "tokens_total": {
+        "input": 4,
+        "output": 697,
+        "cache_read": 472655,
+        "cache_creation": 1060
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8666,
+        "output": 4173215,
+        "cache_read": 1130396652,
+        "cache_creation": 16079350
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 1060,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 4,
+            "output": 697,
+            "cache_read": 472655,
+            "cache_creation": 1060,
+            "cache_creation_1h": 1060
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "2d0ad3b",
@@ -1256,13 +2902,39 @@
         "cache_read": 13335724,
         "cache_creation": 288020
       },
-      "tokens_cumulative": {
-        "input": 5390,
-        "output": 3326064,
-        "cache_read": 958704643,
-        "cache_creation": 8456440
+      "tokens_total": {
+        "input": 98,
+        "output": 49003,
+        "cache_read": 13335724,
+        "cache_creation": 288020
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8764,
+        "output": 4222218,
+        "cache_read": 1143732376,
+        "cache_creation": 16367370
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 288020,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 98,
+            "output": 49003,
+            "cache_read": 13335724,
+            "cache_creation": 288020,
+            "cache_creation_1h": 288020
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "39bbe7f",
@@ -1277,13 +2949,39 @@
         "cache_read": 6876298,
         "cache_creation": 158997
       },
-      "tokens_cumulative": {
-        "input": 5480,
-        "output": 3381319,
-        "cache_read": 965580941,
-        "cache_creation": 8615437
+      "tokens_total": {
+        "input": 90,
+        "output": 55255,
+        "cache_read": 6876298,
+        "cache_creation": 158997
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8854,
+        "output": 4277473,
+        "cache_read": 1150608674,
+        "cache_creation": 16526367
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 158997,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 90,
+            "output": 55255,
+            "cache_read": 6876298,
+            "cache_creation": 158997,
+            "cache_creation_1h": 158997
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "8317af3",
@@ -1298,13 +2996,39 @@
         "cache_read": 189959,
         "cache_creation": 951
       },
-      "tokens_cumulative": {
-        "input": 5482,
-        "output": 3382019,
-        "cache_read": 965770900,
-        "cache_creation": 8616388
+      "tokens_total": {
+        "input": 2,
+        "output": 700,
+        "cache_read": 189959,
+        "cache_creation": 951
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8856,
+        "output": 4278173,
+        "cache_read": 1150798633,
+        "cache_creation": 16527318
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 951,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 2,
+            "output": 700,
+            "cache_read": 189959,
+            "cache_creation": 951,
+            "cache_creation_1h": 951
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "18f673f",
@@ -1319,13 +3043,39 @@
         "cache_read": 6867539,
         "cache_creation": 58295
       },
-      "tokens_cumulative": {
-        "input": 5544,
-        "output": 3416143,
-        "cache_read": 972638439,
-        "cache_creation": 8674683
+      "tokens_total": {
+        "input": 62,
+        "output": 34124,
+        "cache_read": 6867539,
+        "cache_creation": 58295
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8918,
+        "output": 4312297,
+        "cache_read": 1157666172,
+        "cache_creation": 16585613
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 58295,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 62,
+            "output": 34124,
+            "cache_read": 6867539,
+            "cache_creation": 58295,
+            "cache_creation_1h": 58295
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "ace821b",
@@ -1340,13 +3090,39 @@
         "cache_read": 4910836,
         "cache_creation": 16303
       },
-      "tokens_cumulative": {
-        "input": 5582,
-        "output": 3427522,
-        "cache_read": 977549275,
-        "cache_creation": 8690986
+      "tokens_total": {
+        "input": 38,
+        "output": 11379,
+        "cache_read": 4910836,
+        "cache_creation": 16303
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 8956,
+        "output": 4323676,
+        "cache_read": 1162577008,
+        "cache_creation": 16601916
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 16303,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 38,
+            "output": 11379,
+            "cache_read": 4910836,
+            "cache_creation": 16303,
+            "cache_creation_1h": 16303
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "740c676",
@@ -1361,13 +3137,39 @@
         "cache_read": 11538232,
         "cache_creation": 42308
       },
-      "tokens_cumulative": {
-        "input": 5662,
-        "output": 3458469,
-        "cache_read": 989087507,
-        "cache_creation": 8733294
+      "tokens_total": {
+        "input": 80,
+        "output": 30947,
+        "cache_read": 11538232,
+        "cache_creation": 42308
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 9036,
+        "output": 4354623,
+        "cache_read": 1174115240,
+        "cache_creation": 16644224
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 42308,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 80,
+            "output": 30947,
+            "cache_read": 11538232,
+            "cache_creation": 42308,
+            "cache_creation_1h": 42308
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "a06c6ac",
@@ -1382,13 +3184,39 @@
         "cache_read": 12278983,
         "cache_creation": 46774
       },
-      "tokens_cumulative": {
-        "input": 5736,
-        "output": 3483317,
-        "cache_read": 1001366490,
-        "cache_creation": 8780068
+      "tokens_total": {
+        "input": 74,
+        "output": 24848,
+        "cache_read": 12278983,
+        "cache_creation": 46774
       },
-      "cost_recorded": null
+      "tokens_cumulative": {
+        "input": 9110,
+        "output": 4379471,
+        "cache_read": 1186394223,
+        "cache_creation": 16690998
+      },
+      "cost_recorded": null,
+      "tokens_split": {
+        "cache_creation_1h": 46774,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 74,
+            "output": 24848,
+            "cache_read": 12278983,
+            "cache_creation": 46774,
+            "cache_creation_1h": 46774
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
     },
     {
       "hash": "2f4fd46",
@@ -1403,18 +3231,44 @@
         "cache_read": 13535784,
         "cache_creation": 189446
       },
+      "tokens_total": {
+        "input": 148,
+        "output": 81021,
+        "cache_read": 13535784,
+        "cache_creation": 189446
+      },
       "tokens_cumulative": {
-        "input": 5884,
-        "output": 3564338,
-        "cache_read": 1014902274,
-        "cache_creation": 8969514
+        "input": 9258,
+        "output": 4460492,
+        "cache_read": 1199930007,
+        "cache_creation": 16880444
       },
       "cost_recorded": {
-        "amount": 3.9913,
+        "amount": 4.2754,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 189446,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 148,
+            "output": 81021,
+            "cache_read": 13535784,
+            "cache_creation": 189446,
+            "cache_creation_1h": 189446
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1426,6 +3280,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 3.9913,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1442,18 +3307,44 @@
         "cache_read": 40640833,
         "cache_creation": 174476
       },
+      "tokens_total": {
+        "input": 248,
+        "output": 95569,
+        "cache_read": 40640833,
+        "cache_creation": 174476
+      },
       "tokens_cumulative": {
-        "input": 6132,
-        "output": 3659907,
-        "cache_read": 1055543107,
-        "cache_creation": 9143990
+        "input": 9506,
+        "output": 4556061,
+        "cache_read": 1240570840,
+        "cache_creation": 17054920
       },
       "cost_recorded": {
-        "amount": 9.5205,
+        "amount": 9.7823,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 174476,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 248,
+            "output": 95569,
+            "cache_read": 40640833,
+            "cache_creation": 174476,
+            "cache_creation_1h": 174476
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1465,6 +3356,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 9.5205,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1481,18 +3383,44 @@
         "cache_read": 34163912,
         "cache_creation": 86107
       },
+      "tokens_total": {
+        "input": 154,
+        "output": 40361,
+        "cache_read": 34163912,
+        "cache_creation": 86107
+      },
       "tokens_cumulative": {
-        "input": 6286,
-        "output": 3700268,
-        "cache_read": 1089707019,
-        "cache_creation": 9230097
+        "input": 9660,
+        "output": 4596422,
+        "cache_read": 1274734752,
+        "cache_creation": 17141027
       },
       "cost_recorded": {
-        "amount": 7.452,
+        "amount": 7.5811,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 86107,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 154,
+            "output": 40361,
+            "cache_read": 34163912,
+            "cache_creation": 86107,
+            "cache_creation_1h": 86107
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1504,6 +3432,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 7.452,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1520,18 +3459,80 @@
         "cache_read": 53659657,
         "cache_creation": 1587972
       },
+      "tokens_total": {
+        "input": 2820,
+        "output": 1002687,
+        "cache_read": 112989666,
+        "cache_creation": 4369422
+      },
       "tokens_cumulative": {
-        "input": 6600,
-        "output": 3985470,
-        "cache_read": 1143366676,
-        "cache_creation": 10818069
+        "input": 12480,
+        "output": 5599109,
+        "cache_read": 1387724418,
+        "cache_creation": 21510449
       },
       "cost_recorded": {
-        "amount": 17.5545,
+        "amount": 46.8296,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
-        "model": "claude-sonnet-5"
+        "model": "multiple",
+        "by_model": {
+          "claude-haiku-4-5-20251001": {
+            "amount": 1.2957,
+            "priced_at": "2026-09-13"
+          },
+          "claude-opus-5": {
+            "amount": 3.6488,
+            "priced_at": "2026-09-13"
+          },
+          "claude-sonnet-5": {
+            "amount": 41.885,
+            "priced_at": "2026-09-13"
+          }
+        }
+      },
+      "tokens_split": {
+        "cache_creation_1h": 1587972,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 314,
+            "output": 285202,
+            "cache_read": 53659657,
+            "cache_creation": 1587972,
+            "cache_creation_1h": 1587972
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 2506,
+        "output": 717485,
+        "cache_read": 59330009,
+        "cache_creation": 2781450,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 1146,
+            "output": 618350,
+            "cache_read": 50245340,
+            "cache_creation": 2285489,
+            "cache_creation_1h": 0
+          },
+          "claude-haiku-4-5-20251001": {
+            "input": 1306,
+            "output": 63725,
+            "cache_read": 5669715,
+            "cache_creation": 327030,
+            "cache_creation_1h": 0
+          },
+          "claude-opus-5": {
+            "input": 54,
+            "output": 35410,
+            "cache_read": 3414954,
+            "cache_creation": 168931,
+            "cache_creation_1h": 0
+          }
+        }
       },
       "repricings": [
         {
@@ -1543,6 +3544,29 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 17.5545,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
+        },
+        {
+          "repriced_at": "2026-09-20T15:02:32.377045+00:00",
+          "previous_cost": {
+            "amount": 19.9365,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "reprice",
+          "note": "Subagent tokens now counted (decided 2026-09-20): cost recomputed over parent sessions plus subagents, per model, with the Claude Opus 5 and Claude Haiku 4.5 series added to the ledger the same day."
         }
       ]
     },
@@ -1559,18 +3583,44 @@
         "cache_read": 31352001,
         "cache_creation": 71497
       },
+      "tokens_total": {
+        "input": 112,
+        "output": 43567,
+        "cache_read": 31352001,
+        "cache_creation": 71497
+      },
       "tokens_cumulative": {
-        "input": 6712,
-        "output": 4029037,
-        "cache_read": 1174718677,
-        "cache_creation": 10889566
+        "input": 12592,
+        "output": 5642676,
+        "cache_read": 1419076419,
+        "cache_creation": 21581946
       },
       "cost_recorded": {
-        "amount": 6.885,
+        "amount": 6.9923,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 71497,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 112,
+            "output": 43567,
+            "cache_read": 31352001,
+            "cache_creation": 71497,
+            "cache_creation_1h": 71497
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1582,6 +3632,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 6.885,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1598,18 +3659,44 @@
         "cache_read": 12496167,
         "cache_creation": 220404
       },
+      "tokens_total": {
+        "input": 124,
+        "output": 69171,
+        "cache_read": 12496167,
+        "cache_creation": 220404
+      },
       "tokens_cumulative": {
-        "input": 6836,
-        "output": 4098208,
-        "cache_read": 1187214844,
-        "cache_creation": 11109970
+        "input": 12716,
+        "output": 5711847,
+        "cache_read": 1431572586,
+        "cache_creation": 21802350
       },
       "cost_recorded": {
-        "amount": 3.7422,
+        "amount": 4.0728,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 220404,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 124,
+            "output": 69171,
+            "cache_read": 12496167,
+            "cache_creation": 220404,
+            "cache_creation_1h": 220404
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1621,6 +3708,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 3.7422,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1637,18 +3735,44 @@
         "cache_read": 46792511,
         "cache_creation": 198487
       },
+      "tokens_total": {
+        "input": 246,
+        "output": 107458,
+        "cache_read": 46792511,
+        "cache_creation": 198487
+      },
       "tokens_cumulative": {
-        "input": 7082,
-        "output": 4205666,
-        "cache_read": 1234007355,
-        "cache_creation": 11308457
+        "input": 12962,
+        "output": 5819305,
+        "cache_read": 1478365097,
+        "cache_creation": 22000837
       },
       "cost_recorded": {
-        "amount": 10.9298,
+        "amount": 11.2275,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 198487,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 246,
+            "output": 107458,
+            "cache_read": 46792511,
+            "cache_creation": 198487,
+            "cache_creation_1h": 198487
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1660,6 +3784,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 10.9298,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1676,18 +3811,44 @@
         "cache_read": 14831413,
         "cache_creation": 18813
       },
+      "tokens_total": {
+        "input": 64,
+        "output": 14650,
+        "cache_read": 14831413,
+        "cache_creation": 18813
+      },
       "tokens_cumulative": {
-        "input": 7146,
-        "output": 4220316,
-        "cache_read": 1248838768,
-        "cache_creation": 11327270
+        "input": 13026,
+        "output": 5833955,
+        "cache_read": 1493196510,
+        "cache_creation": 22019650
       },
       "cost_recorded": {
-        "amount": 3.1599,
+        "amount": 3.1882,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 18813,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 64,
+            "output": 14650,
+            "cache_read": 14831413,
+            "cache_creation": 18813,
+            "cache_creation_1h": 18813
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1699,6 +3860,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 3.1599,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1715,18 +3887,44 @@
         "cache_read": 5282887,
         "cache_creation": 495454
       },
+      "tokens_total": {
+        "input": 36,
+        "output": 13257,
+        "cache_read": 5282887,
+        "cache_creation": 495454
+      },
       "tokens_cumulative": {
-        "input": 7182,
-        "output": 4233573,
-        "cache_read": 1254121655,
-        "cache_creation": 11822724
+        "input": 13062,
+        "output": 5847212,
+        "cache_read": 1498479397,
+        "cache_creation": 22515104
       },
       "cost_recorded": {
-        "amount": 2.4279,
+        "amount": 3.171,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 495454,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 36,
+            "output": 13257,
+            "cache_read": 5282887,
+            "cache_creation": 495454,
+            "cache_creation_1h": 495454
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1738,6 +3936,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 2.4279,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1754,18 +3963,44 @@
         "cache_read": 13467829,
         "cache_creation": 146471
       },
+      "tokens_total": {
+        "input": 144,
+        "output": 69109,
+        "cache_read": 13467829,
+        "cache_creation": 146471
+      },
       "tokens_cumulative": {
-        "input": 7326,
-        "output": 4302682,
-        "cache_read": 1267589484,
-        "cache_creation": 11969195
+        "input": 13206,
+        "output": 5916321,
+        "cache_read": 1511947226,
+        "cache_creation": 22661575
       },
       "cost_recorded": {
-        "amount": 3.7511,
+        "amount": 3.9708,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 146471,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 144,
+            "output": 69109,
+            "cache_read": 13467829,
+            "cache_creation": 146471,
+            "cache_creation_1h": 146471
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1777,6 +4012,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 3.7511,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1793,18 +4039,44 @@
         "cache_read": 3949057,
         "cache_creation": 22262
       },
+      "tokens_total": {
+        "input": 32,
+        "output": 17782,
+        "cache_read": 3949057,
+        "cache_creation": 22262
+      },
       "tokens_cumulative": {
-        "input": 7358,
-        "output": 4320464,
-        "cache_read": 1271538541,
-        "cache_creation": 11991457
+        "input": 13238,
+        "output": 5934103,
+        "cache_read": 1515896283,
+        "cache_creation": 22683837
       },
       "cost_recorded": {
-        "amount": 1.0234,
+        "amount": 1.0567,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 22262,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 32,
+            "output": 17782,
+            "cache_read": 3949057,
+            "cache_creation": 22262,
+            "cache_creation_1h": 22262
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       },
       "repricings": [
         {
@@ -1816,6 +4088,17 @@
             "provider": "anthropic",
             "model": "claude-sonnet-5"
           }
+        },
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 1.0234,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
         }
       ]
     },
@@ -1832,19 +4115,58 @@
         "cache_read": 15463959,
         "cache_creation": 83919
       },
+      "tokens_total": {
+        "input": 102,
+        "output": 41853,
+        "cache_read": 15463959,
+        "cache_creation": 83919
+      },
       "tokens_cumulative": {
-        "input": 7460,
-        "output": 4362317,
-        "cache_read": 1287002500,
-        "cache_creation": 12075376
+        "input": 13340,
+        "output": 5975956,
+        "cache_read": 1531360242,
+        "cache_creation": 22767756
       },
       "cost_recorded": {
-        "amount": 3.7213,
+        "amount": 3.8472,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
-      }
+      },
+      "tokens_split": {
+        "cache_creation_1h": 83919,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 102,
+            "output": 41853,
+            "cache_read": 15463959,
+            "cache_creation": 83919,
+            "cache_creation_1h": 83919
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 3.7213,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
+        }
+      ]
     },
     {
       "hash": "a380b05",
@@ -1859,19 +4181,58 @@
         "cache_read": 4523338,
         "cache_creation": 130402
       },
+      "tokens_total": {
+        "input": 72,
+        "output": 35662,
+        "cache_read": 4523338,
+        "cache_creation": 130402
+      },
       "tokens_cumulative": {
-        "input": 7532,
-        "output": 4397979,
-        "cache_read": 1291525838,
-        "cache_creation": 12205778
+        "input": 13412,
+        "output": 6011618,
+        "cache_read": 1535883580,
+        "cache_creation": 22898158
       },
       "cost_recorded": {
-        "amount": 1.5874,
+        "amount": 1.783,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
-      }
+      },
+      "tokens_split": {
+        "cache_creation_1h": 130402,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 72,
+            "output": 35662,
+            "cache_read": 4523338,
+            "cache_creation": 130402,
+            "cache_creation_1h": 130402
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 1.5874,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
+        }
+      ]
     },
     {
       "hash": "a0abf21",
@@ -1886,34 +4247,141 @@
         "cache_read": 5559227,
         "cache_creation": 156241
       },
+      "tokens_total": {
+        "input": 90,
+        "output": 54548,
+        "cache_read": 5559227,
+        "cache_creation": 156241
+      },
       "tokens_cumulative": {
-        "input": 7622,
-        "output": 4452527,
-        "cache_read": 1297085065,
-        "cache_creation": 12362019
+        "input": 13502,
+        "output": 6066166,
+        "cache_read": 1541442807,
+        "cache_creation": 23054399
       },
       "cost_recorded": {
-        "amount": 2.0481,
+        "amount": 2.2825,
         "currency": "USD",
         "priced_at": "2026-09-13",
         "provider": "anthropic",
         "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 156241,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 90,
+            "output": 54548,
+            "cache_read": 5559227,
+            "cache_creation": 156241,
+            "cache_creation_1h": 156241
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-09-20T14:29:19.804788+00:00",
+          "previous_cost": {
+            "amount": 2.0481,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "reason": "enrich"
+        }
+      ]
+    },
+    {
+      "hash": "2c627d6",
+      "timestamp": "2026-09-20T02:53:15-03:00",
+      "subject": "Regenerate the project log, milestones M77 to M79",
+      "words_published": 120175,
+      "code_lines": 11578,
+      "governance_lines": 767,
+      "tokens_bucket": {
+        "input": 28,
+        "output": 16126,
+        "cache_read": 2570822,
+        "cache_creation": 23439
+      },
+      "tokens_total": {
+        "input": 28,
+        "output": 16126,
+        "cache_read": 2570822,
+        "cache_creation": 23439
+      },
+      "tokens_cumulative": {
+        "input": 13530,
+        "output": 6082292,
+        "cache_read": 1544013629,
+        "cache_creation": 23077838
+      },
+      "cost_recorded": {
+        "amount": 0.7692,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 23439,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 28,
+            "output": 16126,
+            "cache_read": 2570822,
+            "cache_creation": 23439,
+            "cache_creation_1h": 23439
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
       }
     }
   ],
   "tokens_since_last_commit": {
-    "input": 8,
-    "output": 8797,
-    "cache_read": 748941,
-    "cache_creation": 13938
+    "input": 188,
+    "output": 198779,
+    "cache_read": 23093352,
+    "cache_creation": 402620
+  },
+  "tokens_since_last_commit_split": {
+    "cache_creation_1h": 402620,
+    "by_model": {
+      "claude-sonnet-5": {
+        "input": 188,
+        "output": 198779,
+        "cache_read": 23093352,
+        "cache_creation": 402620,
+        "cache_creation_1h": 402620
+      }
+    }
   },
   "cost_since_last_commit": {
-    "amount": 0.2726,
+    "amount": 8.2173,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
     "model": "claude-sonnet-5"
   },
   "unpriced_milestones": 65,
-  "last_repriced_at": "2026-09-20T05:25:34.870672+00:00"
+  "last_repriced_at": "2026-09-20T15:02:32.377045+00:00",
+  "last_enriched_at": "2026-09-20T14:29:19.804788+00:00",
+  "subagent_transcript_files": 114,
+  "subagent_tokens_note": "Subagent transcripts (<session>/subagents/*.jsonl) were never read before 20 September 2026. subagent_tokens on a milestone holds what they recorded, captured while the transcripts still existed, split by model and by cache lifetime. They are counted: tokens_total is tokens_bucket (the parent sessions) plus subagent_tokens, and tokens_cumulative, the totals, the charts and the cost are all built from tokens_total, priced per model. tokens_bucket and tokens_split stay the parent sessions alone, because they are the frozen fact that --enrich checks against the transcripts."
 }
