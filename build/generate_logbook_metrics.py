@@ -438,7 +438,15 @@ def price_milestone(tokens, ledger, date):
     # (gravado antes do corte) mantem o comportamento original: todos os
     # tokens com a serie unica PRICE_MODEL.
     if total_tokens(tokens) == 0:
-        return None, []
+        # Sem nenhum token, o custo e zero de verdade quando ha preco vigente
+        # na data (dois commits no mesmo segundo, por exemplo), e null so
+        # quando nao ha preco vigente: "sem preco" nunca deve descrever um
+        # marco que simplesmente nao gastou nada.
+        entry = price_at(find_price_series(ledger, PRICE_PROVIDER, PRICE_MODEL), date)
+        if entry is None:
+            return None, []
+        return {'amount': 0.0, 'currency': CURRENCY, 'priced_at': entry['effective_date'],
+                'provider': PRICE_PROVIDER, 'model': PRICE_MODEL}, []
 
     by_model = tokens.get('by_model') or {}
     if not by_model:
