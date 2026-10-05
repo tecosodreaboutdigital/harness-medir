@@ -1,4 +1,12 @@
 {
+  "permissions": {
+    "ask": [
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/build/stop_hook.py)",
+      "Edit(/.github/workflows/**)"
+    ]
+  },
   "hooks": {
     "Stop": [
       {

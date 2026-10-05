@@ -110,7 +110,7 @@ Tres versiones completas por pieza, en el mismo archivo, con selector. El inglé
 
 Los identificadores de ancla y los marcadores SVG llevan prefijo de idioma. Nunca generar contenido nuevo sin pasarlo por la función `scope()`.
 
-Una pista de idioma del navegador se aplica en las cuatro páginas HTML trilingües: si el idioma del navegador del visitante es portugués o español y no coincide con la pestaña activa, y ningún hash con prefijo de idioma ya está enrutando la página, un banner descartable en ese idioma ofrece el cambio. Cualquier otro idioma de navegador cae en silencio al inglés. GitHub renderiza los archivos Markdown del repositorio de la skill sin ejecutar JavaScript, así que el equivalente allí es una línea estática de navegación de idioma en la parte superior de cada archivo, no una línea adaptativa.
+Una pista de idioma del navegador se aplica en las nueve páginas HTML trilingües: si el idioma del navegador del visitante es portugués o español y no coincide con la pestaña activa, y ningún hash con prefijo de idioma ya está enrutando la página, un banner descartable en ese idioma ofrece el cambio. Cualquier otro idioma de navegador cae en silencio al inglés. GitHub renderiza los archivos Markdown del repositorio de la skill sin ejecutar JavaScript, así que el equivalente allí es una línea estática de navegación de idioma en la parte superior de cada archivo, no una línea adaptativa.
 
 ---
 

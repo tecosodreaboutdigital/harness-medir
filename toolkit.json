@@ -1,6 +1,6 @@
 {
   "generated_by": "build/generate_toolkit_manifest.py",
-  "generated_at": "2026-09-20",
+  "generated_at": "2026-10-05",
   "derived_from": [
     "TOOLS.md",
     "sources/inventory.md",
@@ -18,7 +18,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "118e6f225c6c092c17da5e48f83662891d86c234cd353071f17cc51b01d769cd",
+  "source_hash": "c36220e6a0d80d90b00bfb909bab6acdbc0632143f22d6be7afb245059ebfef8",
   "entries": [
     {
       "id": "superpowers",

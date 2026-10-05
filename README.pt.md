@@ -9,7 +9,7 @@ Projeto de conteúdo e ferramental sobre **engenharia de harness**: a disciplina
 MEDIR não é uma sigla arbitrária: Mapear, Equipar, Delegar, Inspecionar, Reforçar é também o verbo comum medir. Um projeto sobre medir como um agente se comporta ganhou o verbo medir como nome, de propósito.
 
 Autor: Fernando Teco Sodré
-Estado: em andamento, agosto de 2026
+Estado: em andamento, outubro de 2026
 
 Publicado em [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositório) e [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, os arquivos HTML renderizam como páginas, não só como código-fonte).
 

@@ -40,6 +40,6 @@ Ten standalone SVG files, one per diagram specified in `docs/harness-p3-p4-brief
 - D5: the reversal point is logged before execution, that line carries a heavier stroke and its own annotation, because logging it after is the most common mistake.
 - D6: the N0 to N3 ruler is drawn touching all three layers, it is the only vocabulary shared across them.
 - D7: the two transitions nobody implements, expired certification and no execution in the period, both leading to decommissioning, carry a heavier stroke.
-- D8: the four groups reuse D1's exact verbs, proposes, authorizes, executes, witnesses, to keep the technical and organisational separation of powers visibly the same idea.
+- D8: the four groups reuse D1's exact verbs, proposes, authorises, executes, witnesses, to keep the technical and organisational separation of powers visibly the same idea.
 - D9: each platform is drawn inside its own dashed wall, the master record sits above and outside every wall.
 - D10: a loop, not a state machine, deliberately a different visual type from D7 so it cannot read as a competing life cycle; the title states the word "quarterly" so the cadence is explicit rather than implied.

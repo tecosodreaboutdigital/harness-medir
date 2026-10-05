@@ -8,7 +8,7 @@ parked from 31 August 2026 until 13 September 2026: building it right after fini
 series would have blurred the line between the argument and the toolkit derived from it.
 
 **Opens with D10** (`../diagrams/part4/d10-quarterly-loop.svg`), the office's own quarterly loop from
-[Part 4](../harness-p4.html), section 6: briefing, certification, operation, receipts, indicators,
+[Part 4](../harness-p4.html), section 5: briefing, certification, operation, receipts, indicators,
 revalidation, and back to briefing. It organises this whole playbook the same way it closes Part 4's
 eight-indicators section, a second, legitimate appearance rather than a competing one.
 

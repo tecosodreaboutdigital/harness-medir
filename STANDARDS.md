@@ -110,7 +110,7 @@ Three complete versions per piece, in the same file, with a selector. English is
 
 Anchor identifiers and SVG markers are prefixed by language. Never generate new content without passing it through the `scope()` function.
 
-A browser-language hint applies on the four trilingual HTML pages: if the visitor's browser language is Portuguese or Spanish and does not match the active tab, and no language-prefixed hash is already routing the page, a dismissible banner in that language offers to switch. Any other browser language falls back to English silently. GitHub renders the skill repository's Markdown files without executing JavaScript, so the equivalent there is a static language-navigation line at the top of every file, not an adaptive one.
+A browser-language hint applies on all nine trilingual HTML pages: if the visitor's browser language is Portuguese or Spanish and does not match the active tab, and no language-prefixed hash is already routing the page, a dismissible banner in that language offers to switch. Any other browser language falls back to English silently. GitHub renders the skill repository's Markdown files without executing JavaScript, so the equivalent there is a static language-navigation line at the top of every file, not an adaptive one.
 
 ---
 

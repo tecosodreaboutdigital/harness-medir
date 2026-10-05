@@ -9,7 +9,7 @@ Proyecto de contenido y herramientas sobre **ingeniería de harness**: la discip
 MEDIR no es una sigla arbitraria: Mapear, Equipar, Delegar, Inspeccionar, Reforzar es también el verbo corriente medir, exactamente el mismo verbo que en español. Un proyecto sobre medir cómo se comporta un agente ganó el verbo medir como nombre, a propósito.
 
 Autor: Fernando Teco Sodré
-Estado: en curso, agosto de 2026
+Estado: en curso, octubre de 2026
 
 Publicado en [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositorio) y [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, los archivos HTML se renderizan como páginas, no solo como código fuente).
 

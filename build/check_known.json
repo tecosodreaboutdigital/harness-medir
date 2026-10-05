@@ -2,13 +2,9 @@
  "_": "Achados anteriores a build/check_all.py. So deve encolher; ver o cabecalho do script.",
  "known": {
   "diacritics|docs/logbook.html|8be9a421c6e3": "docs/logbook.html:2108 human in the loop, submissao→alegacao, declaracion falsa por negligencia, \"voce responde p",
-  "spelling|build/body_p4_en.html|023721d94fea": "build/body_p4_en.html:187 nd the non-accumulation rule: proposes, authorizes, executes, witnesses\">",
   "spelling|build/body_p4_en.html|03ff14871c9d": "build/body_p4_en.html:280 <tr><td>Only 11% of organizations are actually running agentic AI in prod",
-  "spelling|build/body_p4_en.html|2d84057ea9ee": "build/body_p4_en.html:207 xt  x=\"265\" y=\"44\" text-anchor=\"middle\">AUTHORIZES</text>",
   "spelling|docs/logbook.html|28605e8283b3": "docs/logbook.html:1543 a empresa compra, e uma funcao que ela organiza\" sentence, fixed here with the exact re",
   "spelling|docs/logbook.html|b58e3f57ab5b": "docs/logbook.html:1528 me pattern as the other build/ scripts: normalizes each term with unicodedata before compa",
-  "spelling|harness-p4.html|023721d94fea": "harness-p4.html:1174 nd the non-accumulation rule: proposes, authorizes, executes, witnesses\">",
-  "spelling|harness-p4.html|03ff14871c9d": "harness-p4.html:1267 <tr><td>Only 11% of organizations are actually running agentic AI in prod",
-  "spelling|harness-p4.html|2d84057ea9ee": "harness-p4.html:1194 xt  x=\"265\" y=\"44\" text-anchor=\"middle\">AUTHORIZES</text>"
+  "spelling|harness-p4.html|03ff14871c9d": "harness-p4.html:1267 <tr><td>Only 11% of organizations are actually running agentic AI in prod"
  }
 }

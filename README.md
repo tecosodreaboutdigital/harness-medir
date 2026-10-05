@@ -9,7 +9,7 @@ A content and tooling project about **harness engineering**: the discipline of b
 MEDIR is not an arbitrary acronym: Mapear, Equipar, Delegar, Inspecionar, Reforçar (Map, Equip, Delegate, Inspect, Reinforce) is also the Portuguese verb for *to measure*. A project about measuring how an agent behaves is named after the word for measuring, on purpose.
 
 Author: Fernando Teco Sodré
-Status: in progress, August 2026
+Status: in progress, October 2026
 
 Published at [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repository) and [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, the HTML files render as pages, not just as source code).
 
@@ -203,10 +203,10 @@ The compact guide lives apart precisely because it ages faster. The four parts t
 A single navigation bar, sticky and reactive to the language selector, runs across every page: the four parts, the compact guide, and two shared companions, `harness-glossary.html` and `harness-sources.html`, consolidating every term and every citation the series uses instead of repeating them piece by piece.
 
 <p align="center">
-  <img src="diagrams/part3/d1-separation-of-powers.png" alt="The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses" width="680">
+  <img src="diagrams/part3/d1-separation-of-powers.png" alt="The separation of powers: the model proposes, the policy authorises, the tool executes, the record witnesses" width="680">
 </p>
 
-<p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of ten.</em></p>
+<p align="center"><em>D1 · The separation of powers: the model proposes, the policy authorises, the tool executes, the record witnesses. Four functions that cannot live in the same place, Part 3's central argument. See <a href="diagrams/README.md">diagrams/README.md</a> for the full index of ten.</em></p>
 
 Part 4 joined the series on 30 August 2026, once the research round for Part 3 exposed a second gap behind the first: MEDIR governs a task, not an agent, and nothing in the series before that point governed the set of agents an organisation ends up running. See `docs/harness-p3-p4-briefing.pt.md` for the working dossier this decision came from, internal, Portuguese only, the same exception `sources/inventory.md` already carries. Fully trilingual since 31 August 2026, the series' fourth and closing part.
 

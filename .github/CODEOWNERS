@@ -1,0 +1,5 @@
+# Verification setup: a person reads these diffs (P3.02 of the change specification).
+/.claude/settings.json @tecosodreaboutdigital
+/build/stop_hook.py @tecosodreaboutdigital
+/build/check_all.py @tecosodreaboutdigital
+/.github/workflows/ @tecosodreaboutdigital

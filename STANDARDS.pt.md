@@ -110,7 +110,7 @@ Três versões completas por peça, no mesmo arquivo, com seletor. Inglês é a 
 
 Identificadores de âncora e marcadores de SVG são prefixados por idioma. Nunca gerar conteúdo novo sem passar pela função `scope()`.
 
-Uma dica de idioma do navegador se aplica nas quatro páginas HTML trilíngues: se o idioma do navegador do visitante for português ou espanhol e não corresponder à aba ativa, e nenhuma âncora com prefixo de idioma já estiver roteando a página, um banner dispensável nesse idioma oferece a troca. Qualquer outro idioma de navegador cai silenciosamente para o inglês. O GitHub renderiza os arquivos Markdown do repositório da skill sem executar JavaScript, então o equivalente lá é uma linha estática de navegação de idioma no topo de cada arquivo, não uma linha adaptativa.
+Uma dica de idioma do navegador se aplica nas nove páginas HTML trilíngues: se o idioma do navegador do visitante for português ou espanhol e não corresponder à aba ativa, e nenhuma âncora com prefixo de idioma já estiver roteando a página, um banner dispensável nesse idioma oferece a troca. Qualquer outro idioma de navegador cai silenciosamente para o inglês. O GitHub renderiza os arquivos Markdown do repositório da skill sem executar JavaScript, então o equivalente lá é uma linha estática de navegação de idioma no topo de cada arquivo, não uma linha adaptativa.
 
 ---
 

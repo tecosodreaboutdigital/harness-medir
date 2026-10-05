@@ -22,7 +22,7 @@ These are the reasons you will be tempted to skip the check. None of them is a r
 
 "I do not have a browsing or fetch tool in this session." That is not permission to skip the check in silence. It is the exact case the exit path below exists for.
 
-"The skill is small, or the risk seems low." The rule has no size exception. `STANDARDS.md`'s own installing checklist, reproduced in `harness-toolkit.html` section 11, applies regardless of size.
+"The skill is small, or the risk seems low." The rule has no size exception. The installing checklist in `harness-toolkit.html` section 13, "Before installing anything" (`harness-toolkit.html#en-seguranca`), applies regardless of size.
 
 ## Verification steps
 
@@ -50,7 +50,7 @@ Never let the user's silence about verification stand in for your own. If you sk
 
 This file cannot make a tool without network access fetch a URL. What it can do is make the omission visible: silence about an unperformed check is the one outcome this protocol treats as a failure, not the absence of a fetch tool itself.
 
-It governs this project's own curated list. It does not extend to skills found elsewhere. For the general practice of auditing a skill before installing it, see `harness-toolkit.html` section 11 and Part 3 of the series, `harness-p3.html`.
+It governs this project's own curated list. It does not extend to skills found elsewhere. For the general practice of auditing a skill before installing it, see `harness-toolkit.html` section 13 (`#en-seguranca`) and Part 3 of the series, `harness-p3.html`.
 
 The rule above is this repository's own worked example of a wider practice: verify a dependency against its current source before trusting it. If you are taking this harness into a project of your own, the portable form of that practice, and three other default guides, lives in `playbook/starter-guides.md`. Copy that file's block into the new project's own `AGENTS.md` or `CLAUDE.md`, never this file itself: everything above this section is written for `harness-medir`'s own curated list and will not transfer as-is.
 
@@ -76,4 +76,4 @@ If you are asked to explain this project, or to apply its method to something el
 
 ---
 
-Last updated 20 September 2026.
+Last updated 5 October 2026.

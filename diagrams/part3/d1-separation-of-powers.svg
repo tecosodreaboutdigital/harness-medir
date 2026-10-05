@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="The separation of powers: the model proposes, the policy authorizes, the tool executes, the record witnesses">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="The separation of powers: the model proposes, the policy authorises, the tool executes, the record witnesses">
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -17,7 +17,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <polygon points="145,160 215,106 285,160 215,214" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="215" y="157" text-anchor="middle">POLICY</text>
-<text class="svg-sub" x="215" y="171" text-anchor="middle">authorizes</text>
+<text class="svg-sub" x="215" y="171" text-anchor="middle">authorises</text>
 
 <line x1="285" y1="160" x2="358" y2="66" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d1-arrow)"/>
 <text class="svg-sub" x="332" y="100" text-anchor="middle">allows</text>
@@ -52,5 +52,5 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <line x1="470" y1="160" x2="558" y2="168" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d1-arrow)"/>
 <line x1="470" y1="254" x2="558" y2="188" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d1-arrow)"/>
 
-<text class="svg-cap" x="350" y="300" text-anchor="middle">THE MODEL PROPOSES · THE POLICY AUTHORIZES · THE TOOL EXECUTES · THE RECORD WITNESSES</text>
+<text class="svg-cap" x="350" y="300" text-anchor="middle">THE MODEL PROPOSES · THE POLICY AUTHORISES · THE TOOL EXECUTES · THE RECORD WITNESSES</text>
 </svg>
