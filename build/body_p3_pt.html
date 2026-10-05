@@ -12,7 +12,7 @@
     <li><a href="#opening">Uma alegação e tanto</a></li>
     <li><a href="#return">A primeira ação irreversível</a></li>
     <li><a href="#separation">A separação de poderes, e a regra de dois</a></li>
-    <li><a href="#identity">Identidade e um dono nomeado</a></li>
+    <li><a href="#identity">Identidade e um proprietário nomeado</a></li>
     <li><a href="#injection">Onde a ordem entra dentro do dado</a></li>
     <li><a href="#record">O que precisa estar registrado, e o que reversão significa</a></li>
     <li><a href="#supply-chain">Skill de terceiro é código de terceiro</a></li>
@@ -224,7 +224,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A última linha é a que teria capturado a resposta da transportadora mesmo que alguém tivesse classificado errado a própria classe de ação. A regra de dois e a matriz de reversibilidade são duas redes independentes, e uma camada de política bem construída roda as duas, porque cada uma sozinha deixa passar casos que a outra captura.</p>
 
-<h2 id="identity">4. Identidade e um dono nomeado</h2>
+<h2 id="identity">4. Identidade e um proprietário nomeado</h2>
 
 <p>Nada da seção anterior funciona se o sistema que executa uma ação não tem identidade própria pra ser conferida contra uma política. Esta é a parte que quase toda implantação pula, porque é invisível até o dia em que importa.</p>
 
@@ -425,7 +425,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>A <a href="harness-p2.html#pt-riscos-2">parte 2</a> fechou com um alerta de que instalar o guia de outra pessoa significa rodar as instruções de outra pessoa dentro do seu próprio ambiente, e prometeu a evidência de por que esse alerta não é teórico. Aqui está.</p>
 
-<p>O caso mais didático é o <a class="src" href="harness-sources.html#pt-src-postmark-mcp" data-tip="Koi Security: nenhuma fonte primária reivindica pioneirismo absoluto.">postmark-mcp</a>, um dos primeiros servidores MCP maliciosos documentados publicamente. Seu autor publicou primeiro quinze versões limpas e funcionais, construindo um histórico genuíno de legitimidade, antes de silenciosamente acrescentar uma única linha de código de exfiltração numa versão posterior. Quinze versões limpas foram paciência, não descuido: a mesma paciência de um fornecedor que entrega no prazo por dois anos para conquistar um contrato maior.</p>
+<p>O caso mais didático é o <a class="src" href="harness-sources.html#pt-src-snyk-postmark" data-tip="Snyk, segunda leitura do incidente que a Koi Security relatou primeiro: nenhuma fonte primária reivindica pioneirismo absoluto.">postmark-mcp</a>, um dos primeiros servidores MCP maliciosos documentados publicamente. Seu autor publicou primeiro quinze versões limpas e funcionais, construindo um histórico genuíno de legitimidade, antes de silenciosamente acrescentar uma única linha de código de exfiltração numa versão posterior. Quinze versões limpas foram paciência, não descuido: a mesma paciência de um fornecedor que entrega no prazo por dois anos para conquistar um contrato maior.</p>
 
 <p>O padrão se repetiu logo depois, ainda que boa parte do que segue seja o mesmo evento visto de três ângulos diferentes, não três provas isoladas: em fevereiro de 2026, uma campanha de envenenamento em massa mirou o OpenClaw, um framework de agente de IA de código aberto e auto-hospedado, e seu marketplace de skills, o ClawHub. A Koi Security descobriu e batizou a campanha de <a class="src" href="harness-sources.html#pt-src-clawhavoc" data-tip="A Koi Security descobriu e batizou a campanha, com uma contagem no primeiro dia de 341 skills maliciosas; a análise técnica de acompanhamento da Antiy CERT, cerca de três semanas depois, catalogou a extensão mais completa da campanha.">ClawHavoc</a> em 1º de fevereiro de 2026, com uma contagem no primeiro dia de 341 skills maliciosas; a análise técnica de acompanhamento da Antiy CERT, publicada cerca de três semanas depois, catalogou a extensão mais completa da campanha em 1.184. Na mesma janela, uma <a class="src" href="harness-sources.html#pt-src-snyk-leaky-skills" data-tip="Snyk: varredura do registro inteiro do ClawHub, 283 de 3.984 skills vazando credenciais.">varredura da Snyk no registro inteiro do ClawHub</a> achou mais de 280 skills instruindo o agente a vazar chaves de API e dados pessoais. Um dado genuinamente separado, sem relação com o OpenClaw: <a class="src" href="harness-sources.html#pt-src-bluerock-ssrf" data-tip="BlueRock: pesquisa de fornecedor de segurança, não auditoria de terceiro desinteressado.">a pesquisa de um fornecedor de segurança</a> sobre mais de 7.000 servidores MCP em geral achou 36,7 por cento potencialmente vulneráveis a requisição forjada do lado do servidor, com uma prova de conceito que recuperou chaves de acesso de nuvem reais. De volta ao OpenClaw especificamente: <a class="src" href="harness-sources.html#pt-src-openclaw-exposed" data-tip="The Register: as 135 mil são instâncias do OpenClaw especificamente, não servidores MCP em geral. Outras varreduras das mesmas semanas relataram de cerca de 30.000 a mais de 220.000, uma variação de diferenças reais de metodologia, não um fato disputado.">uma contagem de fevereiro de 2026 de um único fornecedor achou mais de 135.000 instâncias do OpenClaw expostas publicamente</a> rodando configuração padrão insegura, ainda que outras varreduras das mesmas semanas tenham relatado de cerca de 30.000 a mais de 220.000.</p>
 
@@ -465,7 +465,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <h2 id="accountability">9. Quem responde, e onde você está</h2>
 
-<p>Volte à Air Canada mais uma vez, porque tudo entre aquela abertura e aqui é a resposta à pergunta que o tribunal realmente fez. Se falou em seu nome, você responde pelo que foi dito. Tudo o que esta parte construiu, as quatro funções separadas, a regra de dois, um dono nomeado para cada identidade, uma fronteira traçada em volta de conteúdo não confiável, um ponto de reversão registrado antes do fato, um recibo que sobrevive ao incidente, é a engrenagem que deixa uma empresa responder a essa pergunta em minutos, com evidência, em vez de argumentar num tribunal que o sistema era outra pessoa.</p>
+<p>Volte à Air Canada mais uma vez, porque tudo entre aquela abertura e aqui é a resposta à pergunta que o tribunal realmente fez. Se falou em seu nome, você responde pelo que foi dito. Tudo o que esta parte construiu, as quatro funções separadas, a regra de dois, um proprietário nomeado para cada identidade, uma fronteira traçada em volta de conteúdo não confiável, um ponto de reversão registrado antes do fato, um recibo que sobrevive ao incidente, é a engrenagem que deixa uma empresa responder a essa pergunta em minutos, com evidência, em vez de argumentar num tribunal que o sistema era outra pessoa.</p>
 
 <p>A empresa da diretora respondeu em quatro minutos, dessa vez. A da Air Canada levou dezoito meses e ainda perdeu.</p>
 

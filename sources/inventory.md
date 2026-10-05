@@ -24,10 +24,10 @@ This ledger stays in English only: it is an internal verification tool for whoev
 | V | Anthropic, *Equipping agents for the real world with Agent Skills* | https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills |
 | V | Anthropic, *Effective harnesses for long-running agents* | https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents |
 | V | Anthropic, *Harness design for long-running application development*. Read directly 31 August 2026: describes the GAN-inspired generator/evaluator split cited in Part 1, a different article from *Effective harnesses for long-running agents* above, which does not cover this split | https://anthropic.com/engineering/harness-design-long-running-apps |
-| V | Bölük, *Only the harness changed*, Feb 2026 | https://blog.can.ac/2026/02/12/the-harness-problem/ |
+| V | Bölük, *Only the harness changed*, Feb 2026 | https://stencil.so/blog/the-harness-problem |
 | V | Osmani, *Long-running agents*, Apr 2026 | https://addyosmani.com/blog/long-running-agents/ |
 | V | Agent Skills, open standard | https://agentskills.io/ |
-| V | Agent Skills documentation | https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview |
+| V | Agent Skills documentation | https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview |
 
 ---
 
@@ -76,7 +76,7 @@ Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.
 | V | Help Net Security, OWASP prompt injection coverage | https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/ | Names the rule of two, attributed to Meta |
 | V | memx, the lethal trifecta | https://memx.app/blog/lethal-trifecta-ai-agent-data-exfiltration/ | Simon Willison's formulation: private data, untrusted content, external communication |
 | V | Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 Oct 2025 | https://ai.meta.com/blog/practical-ai-agent-security/ | Found and read directly 31 August 2026, confirming the wording two independent secondary sources had already attributed to Meta. Linked in Part 3 and `harness-sources.html`, all three languages |
-| V | OWASP Agentic Skills Top 10 project page | https://owasp.org/www-project-agentic-skills-top-10/ | Also lists the CVEs used in axis 2 |
+| V | OWASP Agentic Skills Top 10 project page | https://owasp.org/projects/agentic-skills-top-10 | Also lists the CVEs used in axis 2 |
 | V | trydeepteam, OWASP Top 10 for agentic applications | https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications | ASI01, ASI02, ASI03 categories |
 | P | OWASP Top 10 agentic framework, genai.owasp.org | not located | Referenced in an academic source, not read directly |
 
@@ -84,7 +84,7 @@ Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.
 
 | Status | Source | URL | Note |
 |---|---|---|---|
-| V | OWASP Agentic Skills Top 10 project page | https://owasp.org/www-project-agentic-skills-top-10/ | Lists CVE-2025-59536, CVE-2026-21852, CVE-2026-22708, CVE-2025-59532 with original disclosures |
+| V | OWASP Agentic Skills Top 10 project page | https://owasp.org/projects/agentic-skills-top-10 | Lists CVE-2025-59536, CVE-2026-21852, CVE-2026-22708, CVE-2025-59532 with original disclosures |
 | V | secops.group, securing agentic AI | https://secops.group/blog/securing-agentic-ai-the-owasp-top-10-and-beyond/ | Same CVE set, second reading |
 | V | lasoft.org, who pays when the AI is wrong | https://lasoft.org/blog/who-pays-when-the-ai-is-wrong-rethinking-how-we-trust-ai/ | Secondary source for the SaaStr founder's account of a coding agent deleting a production database during a stated change freeze |
 
@@ -92,14 +92,14 @@ Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.
 
 | Status | Source | URL | Note |
 |---|---|---|---|
-| V | Koi Security, first malicious MCP in the wild, postmark-mcp | https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft | 25 Sep 2025. Fifteen clean npm versions, then one exfiltration line in v1.0.16. No primary source claims absolute "first ever," article now says "one of the first documented" |
+| P | Koi Security, first malicious MCP in the wild, postmark-mcp | https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft | 25 Sep 2025. Fifteen clean npm versions, then one exfiltration line in v1.0.16. No primary source claims absolute "first ever," article now says "one of the first documented". Re-checked 5 Oct 2026: the URL now redirects to a Palo Alto Networks product page and the article is gone, so the claim rests on the Snyk reading below until the original is archived or located again |
 | V | Snyk, malicious MCP server on npm, postmark-mcp | https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/ | Second reading of the same incident; explicitly does not claim original discovery ("by third-party analysis") |
 | V | Antiy Labs, ClawHavoc campaign analysis | https://www.antiy.net/p/clawhavoc-analysis-of-large-scale-poisoning-campaign-targeting-the-openclaw-skill-market-for-ai-agents/ | 1,184 malicious skills against OpenClaw's ClawHub marketplace, 12 publisher accounts, one with 677 packages. Discovered/named by Koi Security, 1 Feb 2026; this is the follow-on technical read, not the discovery |
 | V | Snyk, 280+ leaky skills, OpenClaw and ClawHub | https://snyk.io/blog/openclaw-skills-credential-leaks-research/ | 5 Feb 2026. 283 of 3,984 ClawHub skills leaking API keys, passwords, PII, credit-card numbers |
 | V | BlueRock, MCP fURI, SSRF in Microsoft MarkItDown MCP, Jan 2026 | https://www.bluerock.io/post/mcp-furi-microsoft-markitdown-vulnerabilities | Vendor research (BlueRock sells MCP security products), not an independent audit. 7,000+ MCP servers scanned, 36.7% potentially SSRF-vulnerable; PoC recovered a real AWS access key via EC2 metadata. Resolved 31 Aug 2026: this is a dated snapshot of a continuous measurement, not a contradicted figure: BlueRock's public registry (mcp-trust.com, also mirrored at bluerock.io/products/mcp-trust-registry; the earlier `bluerock.io/mcp-trust-registry` URL was simply the wrong path, not a removed page) confirmed open and current the same day, showing 12,000+/33%, the same instrument with a larger sample |
-| V | The Register, 135,000+ OpenClaw instances exposed | https://www.theregister.com/2026/02/09/openclaw_instances_exposed_vibe_code/ | 9 Feb 2026, attributed to SecurityScorecard STRIKE. These are OpenClaw instances specifically (default bind to all network interfaces), not MCP servers generically |
+| V | The Register, 135,000+ OpenClaw instances exposed | https://www.theregister.com/security/2026/02/09/openclaw-instances-open-to-the-internet-present-ripe-targets/5043770 | 9 Feb 2026, attributed to SecurityScorecard STRIKE. These are OpenClaw instances specifically (default bind to all network interfaces), not MCP servers generically |
 
-**Do not cite:** `owasp.org/www-project-agentic-skills-top-10/case-studies` was checked as a possible corroborating source for ClawHavoc and found to contradict the primary sources on basic facts (wrong discoverer, wrong month, SHA256 hashes that look like placeholder hex strings, unsourced dollar-loss figures). Treat as unreliable, added to "Do not cite" below.
+**Do not cite:** `owasp.org/projects/agentic-skills-top-10case-studies` was checked as a possible corroborating source for ClawHavoc and found to contradict the primary sources on basic facts (wrong discoverer, wrong month, SHA256 hashes that look like placeholder hex strings, unsourced dollar-loss figures). Treat as unreliable, added to "Do not cite" below.
 
 ### Axis 3: Brazil, ANPD and LGPD
 
@@ -158,7 +158,7 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 | V | American Bar Association, BC tribunal confirms companies remain liable | https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/ | Air Canada argued the chatbot was a separate legal entity, and lost |
 | V | McCarthy, Moffatt v Air Canada, misrepresentation by AI chatbot | https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot/ | Third independent reading of the same decision |
 | V | CanLII, original decision, *Moffatt v Air Canada*, 2024 BCCRT 149 | https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html | Address cited in secondary sources in the first research round, not opened directly; found and opened directly 31 August 2026. **This precedent is Canadian, not Brazilian.** No Brazilian case involving an agent with an external effect was found in this round, only announced enforcement priority and declared regulatory attention, see axis 3. Part 3 states the precedent's origin explicitly |
-| V | Xoomar, chatbot liability, the Air Canada case | https://xoomar.com/technology/chatbot-liability-air-canada | Secondary source consolidating the Cursor April 2025 phantom-policy incident and the May 2025 AI-hallucination insurance product |
+| P | Xoomar, chatbot liability, the Air Canada case | https://xoomar.com/technology/chatbot-liability-air-canada | Secondary source consolidating the Cursor April 2025 phantom-policy incident and the May 2025 AI-hallucination insurance product. Re-checked 5 Oct 2026: HTTP 410 Gone. Removed from `harness-sources.html`, kept here as a record; no article links it |
 
 ---
 
@@ -183,7 +183,7 @@ Gathered 30 August 2026 for `docs/research-part4.pt.md`, answering the block A s
 
 | Status | Source | URL | Note |
 |---|---|---|---|
-| V | NC State ERM, COSO's take on the three lines of defense | https://erm.ncsu.edu/library/article/cosos-take-on-the-three-lines-of-defense | The Three Lines Model (Institute of Internal Auditors, formalised 2013, revised 2020 and 2023) maps onto the four roles almost exactly: first line operates, second line assists and challenges, third line is independent assurance reporting to the governing body |
+| V | NC State ERM, COSO's take on the three lines of defense | https://erm.ncsu.edu/resource-center/cosos-take-on-the-three-lines-of-defense/ | The Three Lines Model (Institute of Internal Auditors, formalised 2013, revised 2020 and 2023) maps onto the four roles almost exactly: first line operates, second line assists and challenges, third line is independent assurance reporting to the governing body |
 | V | Deloitte, modernising the three lines of defence model | https://www.deloitte.com/mt/en/services/consulting-risk/perspectives/modernising-the-three-lines-of-defence-model.html | Second reading of the same model |
 | V | Pathlock, the COSO framework | https://pathlock.com/blog/internal-controls/coso-framework/ | Segregation of duties defined as keeping authorising and recording as separate functions; the authority matrix's stated purpose is preventing unauthorised action, matching Part 3's matrix of authority almost word for word |
 | V | arXiv 2305.17038, frontier AI developers need an internal audit function | https://arxiv.org/pdf/2305.17038 | Academic application of the Three Lines Model to frontier AI risk |
@@ -199,7 +199,7 @@ Gathered 30 August 2026 for `docs/research-part4.pt.md`, answering the block A s
 | V | Legiscope, GDPR Article 22 automated decision-making | https://www.legiscope.com/blog/gdpr-article-22-automated-decision-making.html | The SCHUFA holding itself, CJEU, Dec 2023, case C-634/21: "solely automated" does not require zero human involvement; a human who formally signs off but in practice defers entirely to the algorithm still leaves the decision "solely automated" |
 | V | Masaryk University Journal of Law and Technology, doctrinal analysis of SCHUFA | https://journals.muni.cz/mujlt/article/view/41367 | Formulation tied directly to SCHUFA's own reasoning, cross-read with Uber, Deliveroo and CaixaBank case law: nominal human review fails Article 22 when it amounts to rubber-stamping without interpretive criteria or authority to deviate |
 | V | GDPR Local, automated decision-making under GDPR | https://gdprlocal.com/automated-decision-making-gdpr/ | General EDPB guidance on meaningful human review, four criteria, not specific to SCHUFA. Cite separately from the SCHUFA holding above, never as if one source made both points |
-| V | CJEU, case C-634/21 (SCHUFA), official press release | https://curia.europa.eu/jcms/upload/docs/application/pdf/2023-12/cp230186en.pdf | Referenced in the two sources above in the first research round, not read directly; the court's own official press release found and opened directly 31 August 2026 |
+| V | CJEU, case C-634/21 (SCHUFA), official press release | https://curia.europa.eu/site/upload/docs/application/pdf/2023-12/cp230186en.pdf | Referenced in the two sources above in the first research round, not read directly; the court's own official press release found and opened directly 31 August 2026 |
 | V | MIT, *The GenAI Divide*, 2025, via Legal.io | https://www.legal.io/blog/5719519/MIT-Report-Finds-95-of-AI-Pilots-Fail-to-Deliver-ROI-Exposing-GenAI-Divide | 95% of generative AI pilots show no measurable P&L impact |
 | V | Kyndryl, 2026 People Readiness Report, via PR Newswire | https://www.prnewswire.com/news-releases/kyndryl-report-ai-adoption-accelerates-as-workforce-readiness-becomes-the-roi-difference-maker-302810837.html | Primary source, verified this round, 1,100 leaders across eight countries. 57% say AI is embedded in core processes or deployed broadly; of those, 32% achieved at least one of their top two AI goals and only 11% achieved both, two different cuts of the data, not one number |
 | V | Deloitte, Agentic AI strategy, Tech Trends 2026 | https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html | Found 31 Aug 2026, replacing an unsourced "89% of pilots never reach production" that had circulated without a locatable Deloitte original. Deloitte's real, quotable pipeline: 30% exploring, 38% piloting, 14% ready to deploy, only 11% actively in production. The circulating "89%" is the arithmetic complement of 11% (100−11), invented by aggregator sites, not a Deloitte figure; even a generous 11-of-38 reading gives ~71%, not 89% |
@@ -218,7 +218,7 @@ No external source proposes these eight indicators as a set. Five have solid ext
 |---|---|---|---|
 | V | CSO Online, it's time to rethink CISO reporting lines | https://www.csoonline.com/article/4136293/its-time-to-rethink-ciso-reporting-lines.html | IANS Research and Artico Search 2026 benchmark: 64% of CISOs report into IT (CIO or CTO), 11% to the CEO, 5% each to the CFO, chief risk officer, legal and other business roles. Quotes a security consultant and former federal prosecutor: asking the CISO to report to the person whose bonus depends on cutting the number of sprinklers is asking the fire inspector to do the same |
 | V | CSO Online, the endless CISO reporting line debate | https://www.csoonline.com/article/4158505/the-endless-ciso-reporting-line-debate-and-what-it-says-about-cybersecurity-leadership.html | The honest counterpoint: framing the relationship as a structural budget conflict is outdated, alignment is the goal, the reporting line is a means, not an end |
-| V | VantEdge Search, CISO elevation in 2026 | https://www.vantedgesearch.com/resources/blogs/ciso-elevation-in-2026-why-cybersecurity-leadership-is-moving-to-the-c-suite-and-board-tables/ | Emerging position for 2026: direct reporting to the CEO or the board's risk committee, specifically to secure independence from the functions being overseen |
+| V | VantEdge Search, CISO elevation in 2026 | https://www.vantedgesearch.com/resources/blogs-articles/ciso-elevation-in-2026-why-cybersecurity-leadership-is-moving-to-the-c-suite-and-board-tables/ | Emerging position for 2026: direct reporting to the CEO or the board's risk committee, specifically to secure independence from the functions being overseen |
 | V | Echelon Cyber, the AI governance gap no one's talking about | https://echeloncyber.com/intelligence/entry/the-ai-governance-gap-no-ones-talking-about-why-your-ciso-cant-own-this-alone | Same Splunk 650-leader survey as axis 2: 79% say their role expanded past its mandate and resources, 71% say AI touches core business systems, only 16% govern that access well. "The person who holds the title doesn't hold the authority, and the people who hold the authority don't answer for the outcomes." Recommends a distributed operating model over a single owner, even in risk |
 | V | Build MVP Fast, AI FinOps function, token budget, org chart 2026 | https://www.buildmvpfast.com/blog/ai-finops-function-token-budget-org-chart-2026 | Adjacent parallel for the cost section: 78% of FinOps teams report to the CTO or CIO, only 8% to the CFO, the same pattern of a control function sitting inside the executor |
 
@@ -243,7 +243,7 @@ Same limitation as Part 3: no Brazilian case was found. Every narrative case abo
 
 Skill showcases with no visible origin repository, no licence and no verifiable maintenance. Dozens of these exist, especially for code cleanup. The risk is twofold: unauditable content, and installing a third-party skill means executing a third party's instructions inside your own environment.
 
-`owasp.org/www-project-agentic-skills-top-10/case-studies`, checked 31 Aug 2026 as a possible corroborating source for the ClawHavoc campaign. Contradicts the primary sources on basic facts: attributes discovery to Snyk instead of Koi Security, uses a January instead of February timeline, and lists SHA256 hashes that read as placeholder hex strings (e.g. `a1b2c3d4e5f6789012...`) plus unsourced dollar-loss figures. Do not cite.
+`owasp.org/projects/agentic-skills-top-10case-studies`, checked 31 Aug 2026 as a possible corroborating source for the ClawHavoc campaign. Contradicts the primary sources on basic facts: attributes discovery to Snyk instead of Koi Security, uses a January instead of February timeline, and lists SHA256 hashes that read as placeholder hex strings (e.g. `a1b2c3d4e5f6789012...`) plus unsourced dollar-loss figures. Do not cite.
 
 ---
 

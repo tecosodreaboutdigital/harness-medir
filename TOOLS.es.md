@@ -80,7 +80,7 @@ Un rastreo de patrones de red o ejecución (`curl`, `wget`, `fetch(`, `eval(`, `
 
 ## Retirada
 
-**impeccable**, retirada el 20 de septiembre de 2026 a petición del operador. Entró el 30 de agosto de 2026 como instalación solo de documentación (`SKILL.md` y `reference/`, sin `scripts/`) y como la decimoctava ficha de la guía compacta, en Inspeccionar. La ficha salió de la guía compacta, de `sources/inventory.md` y de `toolkit.json`, y la copia local salió de `.claude/skills/`. El registro de adopción en `NEXT-STEPS.md` y en el diario de bitácora se mantiene tal como fue escrito: es historia, no estado actual.
+**impeccable**, retirada el 20 de septiembre de 2026 a petición del operador. Entró el 30 de agosto de 2026 como instalación solo de documentación (`SKILL.md` y `reference/`, sin `scripts/`) y como la decimoctava ficha de la guía compacta, en Inspeccionar. La ficha salió de la guía compacta, de `sources/inventory.md` y de `toolkit.json`, y la copia local salió de `.claude/skills/`. El registro de adopción en `NEXT-STEPS.md` y en el diario de bordo se mantiene tal como fue escrito: es historia, no estado actual.
 
 ---
 
