@@ -1,6 +1,6 @@
 # Source inventory
 
-Status as of August 2026. **An unverified source does not enter a signed document.**
+Each row carries its own verification date. Inventory claims (counts, versions, stars) age in weeks; structural claims are reviewed when a part is revised. **An unverified source does not enter a signed document.**
 
 Legend: **V** verified by direct reading or a search result with a confirmed URL. **P** partial, existence confirmed but content not read. **N** unverified, do not cite with a link.
 
@@ -16,7 +16,7 @@ This ledger stays in English only: it is an internal verification tool for whoev
 |---|---|---|
 | V | Böckeler, *Harness engineering for coding agent users*, Apr 2026 | https://martinfowler.com/articles/harness-engineering.html |
 | V | Böckeler, *Maintainability sensors for coding agents*, May 2026 | https://martinfowler.com/articles/sensors-for-coding-agents.html |
-| V | Böckeler and Ford, *Harness engineering and agent feedback* | https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors |
+| V | Böckeler and Ford, *Harness engineering and agent feedback* | https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors | Consulted, not cited: no page of this series links it (5 Oct 2026) |
 | V | Böckeler, *Understanding spec-driven development* | https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html |
 | V | Böckeler, *Context engineering for coding agents* | https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html |
 | V | OpenAI, *Harness engineering: leveraging Codex in an agent-first world*, Feb 2026 | https://openai.com/index/harness-engineering/ |
@@ -78,7 +78,7 @@ Gathered 30 August 2026 for the working dossier `docs/harness-p3-p4-briefing.pt.
 | V | Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security*, 31 Oct 2025 | https://ai.meta.com/blog/practical-ai-agent-security/ | Found and read directly 31 August 2026, confirming the wording two independent secondary sources had already attributed to Meta. Linked in Part 3 and `harness-sources.html`, all three languages |
 | V | OWASP Agentic Skills Top 10 project page | https://owasp.org/projects/agentic-skills-top-10 | Also lists the CVEs used in axis 2 |
 | V | trydeepteam, OWASP Top 10 for agentic applications | https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications | ASI01, ASI02, ASI03 categories |
-| P | OWASP Top 10 agentic framework, genai.owasp.org | not located | Referenced in an academic source, not read directly |
+| V | OWASP GenAI Security Project, *OWASP Top 10 for Agentic Applications for 2026* | https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/ | Located and read 5 Oct 2026. The page shows 9 December 2025 (not 10) and says the list was developed through collaboration with more than 100 industry experts, researchers and practitioners. It does not describe a peer review, so the earlier "first peer-reviewed framework" and "over a hundred specialists" wording was removed from Part 3, the glossary and the compact guide |
 
 ### Axis 2: documented incidents
 
@@ -154,10 +154,10 @@ Article 20's specific-regulation status must be dated in Part 3's text: as of th
 
 | Status | Source | URL | Note |
 |---|---|---|---|
-| V | CanLII commentary, 2025CanLIIDocs1963 | https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963 | Analysis of Moffatt v Air Canada, 2024 BCCRT 149 |
+| V | CanLII commentary, 2025CanLIIDocs1963 | https://www.canlii.org/en/commentary/doc/2025CanLIIDocs1963 | Analysis of Moffatt v Air Canada, 2024 BCCRT 149. Re-check blocked, 5 Oct 2026: HTTP 403 to automated reading; stays **V** on the original reading date |
 | V | American Bar Association, BC tribunal confirms companies remain liable | https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/ | Air Canada argued the chatbot was a separate legal entity, and lost |
 | V | McCarthy, Moffatt v Air Canada, misrepresentation by AI chatbot | https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot/ | Third independent reading of the same decision |
-| V | CanLII, original decision, *Moffatt v Air Canada*, 2024 BCCRT 149 | https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html | Address cited in secondary sources in the first research round, not opened directly; found and opened directly 31 August 2026. **This precedent is Canadian, not Brazilian.** No Brazilian case involving an agent with an external effect was found in this round, only announced enforcement priority and declared regulatory attention, see axis 3. Part 3 states the precedent's origin explicitly |
+| V | CanLII, original decision, *Moffatt v Air Canada*, 2024 BCCRT 149 | https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html | Address cited in secondary sources in the first research round, not opened directly; found and opened directly 31 August 2026. **This precedent is Canadian, not Brazilian.** No Brazilian case involving an agent with an external effect was found in this round, only announced enforcement priority and declared regulatory attention, see axis 3. Part 3 states the precedent's origin explicitly. Re-check blocked, 5 Oct 2026: HTTP 403 to automated reading; stays **V** on the original reading date |
 | P | Xoomar, chatbot liability, the Air Canada case | https://xoomar.com/technology/chatbot-liability-air-canada | Secondary source consolidating the Cursor April 2025 phantom-policy incident and the May 2025 AI-hallucination insurance product. Re-checked 5 Oct 2026: HTTP 410 Gone. Removed from `harness-sources.html`, kept here as a record; no article links it |
 
 ---
@@ -194,7 +194,7 @@ Gathered 30 August 2026 for `docs/research-part4.pt.md`, answering the block A s
 
 | Status | Source | URL | Note |
 |---|---|---|---|
-| P | Airia, shadow AI statistics every CISO needs in 2026 | https://airia.com/blog/shadow-ai-statistics-key-data-points-every-ciso-needs-in-2026/ | Aggregator citing Gartner (43% of organisations cannot produce an AI inventory) and Microsoft (78% of workplace AI users bring their own tools). The 43% figure's primary Gartner report was searched for directly, including on gartner.com, and not found. Stays **P**; attribute in the article to "widely cited Gartner research", not to Gartner directly |
+| P | Airia, shadow AI statistics every CISO needs in 2026 | https://airia.com/blog/shadow-ai-statistics-key-data-points-every-ciso-needs-in-2026/ | Aggregator citing Gartner (43% of organisations cannot produce an AI inventory) and Microsoft (78% of workplace AI users bring their own tools). The 43% figure's primary Gartner report was searched for directly, including on gartner.com, and not found. Stays **P**; attribute in the article to "widely cited Gartner research", not to Gartner directly. Searched again on 5 Oct 2026 (one web search for the Gartner survey): no Gartner primary found, only unrelated Gartner releases and other vendors' surveys. Still **P** |
 | V | OSHA Community, Heinrich's safety triangle | https://oshacommunity.com/osha/heinrichs-safety-triangle/ | Replaces a patent-document citation from the first research round. Heinrich's 1931 accident triangle, 300 near misses to 29 minor injuries to 1 major injury. Modern literature questions the fixed ratio but not the underlying logic, that a loss event is almost always preceded by a warning |
 | V | Legiscope, GDPR Article 22 automated decision-making | https://www.legiscope.com/blog/gdpr-article-22-automated-decision-making.html | The SCHUFA holding itself, CJEU, Dec 2023, case C-634/21: "solely automated" does not require zero human involvement; a human who formally signs off but in practice defers entirely to the algorithm still leaves the decision "solely automated" |
 | V | Masaryk University Journal of Law and Technology, doctrinal analysis of SCHUFA | https://journals.muni.cz/mujlt/article/view/41367 | Formulation tied directly to SCHUFA's own reasoning, cross-read with Uber, Deliveroo and CaixaBank case law: nominal human review fails Article 22 when it amounts to rubber-stamping without interpretive criteria or authority to deviate |
@@ -286,3 +286,77 @@ A reader sent a list of eight candidate skill repositories and asked for a compa
 **Collateral finding, not a repository:** no existing skill was found that automates review of a third-party skill or MCP server beyond this project's own three-question checklist. Searched specifically; came up empty. Read as a real gap in the ecosystem, not only in this project.
 
 **DeepSeek Harness re-verified, no change needed.** The reader also asked about `deepseek-ai/deepseek-harness`, already cited above. First-pass reading of the top-level README suggested the "append-only log" description might be stale (the README foregrounds an "everything is a plugin" architecture instead). Deeper reading of the repository's own `docs/architecture.md` confirmed the existing citation is accurate: it documents `core/session` as owning "the append-only `SessionEvent` log and in-memory store," with session fork, replay and durable state all built on it. The existing table row and Part 1's claim both stand as written.
+
+---
+
+## Round of 5 October 2026: wave 3 of the change specification
+
+Every source below was opened at its own address on 5 October 2026. Two caveats apply to the whole round. Pages were read through a fetching tool that summarises what it receives, so a quotation is as that tool returned it unless a row says the raw text was read. And an HTTP 200 on a row of the second table means the address resolves that day, not that its content was read again. A claim that a row records as unsupported must not be used in the articles.
+
+### New citations on `harness-sources.html`
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | Barbaste, Darrigol, Vu, Wiltberger, *Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents*, arXiv:2609.00006, 15 Jul 2026 | https://arxiv.org/abs/2609.00006 | Abstract page read; v1 only. Scope is coding harnesses. The specification's own reading notes say the Claude Code analysis rests on a publicly circulated snapshot, not an official release: not re-checked here, so do not rest a claim about Claude Code's internals on this paper alone |
+| P | Tech with Mak (@techNmak), *Understanding Harness Engineering*, self-published PDF, 4 Oct 2026 | not located | Supplied by the operator. Two web searches found no stable public address. Orientation only; no factual claim may rest on it |
+| V | Trivedy, LangChain, *The Anatomy of an Agent Harness*, 10 Mar 2026 | https://www.langchain.com/blog/the-anatomy-of-an-agent-harness | Title, author and date as shown |
+| V | Macedo, *What makes a harness a harness*, arXiv:2606.10106, 8 Jun 2026 | https://arxiv.org/abs/2606.10106 | v1 only |
+| V | Microsoft, *Agent Harness*, Agent Framework docs | https://learn.microsoft.com/en-us/agent-framework/concepts/harness | ms.date 2026-09-19; the page metadata also shows updated_at 2026-09-28 |
+| V | Lin et al., *Agentic Harness Engineering*, arXiv:2604.25850, v4 18 May 2026 | https://arxiv.org/abs/2604.25850 | Abstract and ablation section read in the paper's HTML. 69.7% to 77.0% on Terminal-Bench 2; tools, middleware and long-term memory each carry the gain, the system prompt alone is the only single-component regression; +5.1 to +10.1 points across other model families. The abstract also reports a result on SWE-bench Verified. A secondary account attributes 71.9% to SWE-bench Verified: the 71.9% is the Codex CLI baseline on Terminal-Bench 2. Cite the paper |
+| V | Segato, Anthropic, *Quantifying infrastructure noise in agentic coding evals*, 5 Feb 2026 | https://www.anthropic.com/engineering/infrastructure-noise | Terminal-Bench 2.0; "+6 percentage points" is uncapped resources versus 1x. "Deserve skepticism" threshold is under 3 points |
+| V | Anthropic, *An update on recent Claude Code quality reports*, 23 Apr 2026 | https://www.anthropic.com/engineering/april-23-postmortem | Raw text read. Three changes confirmed; "a 3% drop for both Opus 4.6 and 4.7"; "the API was not impacted". The post does **not** say the model did not change: do not write that |
+| V | Rajasekaran, Anthropic, *Harness design for long-running application development*, 24 Mar 2026 | https://www.anthropic.com/engineering/harness-design-long-running-apps | Author and date added to the existing row |
+| V | Aizawa, Anthropic, *Writing effective tools for agents, with agents*, 11 Sep 2025 | https://www.anthropic.com/engineering/writing-tools-for-agents | The page title carries a dash where the repository writes a comma |
+| V | Anthropic Applied AI team, *Effective context engineering for AI agents*, 29 Sep 2025 | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | Byline names Rajasekaran, Dixon, Ryan, Hadfield |
+| V | Erik S. and Barry Zhang, Anthropic, *Building effective agents*, 19 Dec 2024 | https://www.anthropic.com/engineering/building-effective-agents | Raw text read: "Written by Erik S. and Barry Zhang". The surname Schluntz does not appear on the page, so it is not written in the articles |
+| V | Young, Anthropic, *Effective harnesses for long-running agents*, 26 Nov 2025 | https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents | Existing row; author and day added |
+| P | OpenAI, *Introducing the Agents API*, 10 Sep 2026 | https://developers.openai.com/api/docs/guides/agents | The openai.com announcement returned HTTP 403; date and content confirmed through OpenAI's developer-community post and the documentation overview ("OpenAI runs a managed Codex harness") |
+| V | OpenAI, *Sandbox Agents* docs | https://developers.openai.com/api/docs/guides/agents/sandboxes | "A turn is still a model step, not a single shell command or sandbox action." Says nothing on how tool errors are returned to the model |
+| P | OpenAI Agents SDK (JS) guides: running-agents and guardrails | https://openai.github.io/openai-agents-js/guides/running-agents/ | Both pages open, but only navigation and API-reference names came through, no body text. Class names seen: `MaxTurnsExceededError`, `ToolCallError`. Not cited on the sources page; do not cite for turn limits or error formatting until the body is read |
+| V | Dogan and Bao, Google Cloud, *Introducing Agent Executor*, 20 May 2026 | https://cloud.google.com/blog/products/ai-machine-learning/agent-executor-googles-distributed-agent-runtime | Open source, preview, code at github.com/google/ax |
+| V | Kim and Liu, Google Research, *Towards a science of scaling agent systems*, 28 Jan 2026 | https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ | 180 configurations. The 80.9% is financial reasoning with centralised coordination, one parallelisable task; 39% to 70% degradation on sequential planning. Do not state 80.9% as a general multi-agent result. The underlying paper (search results give arXiv:2512.08296) was not opened |
+| V | Dong et al., *Agent Skills Can Be Harmful*, arXiv:2608.11888, 12 Aug 2026 | https://arxiv.org/abs/2608.11888 | "307 skill-induced failures, including 125 functional failures and 182 efficiency regressions", on SkillsBench and SWE-Skills-Bench. The word "confirmed" is not in the abstract |
+| V | Yao, Shinn, Razavi, Narasimhan, *tau-bench*, arXiv:2406.12045, 17 Jun 2024 | https://arxiv.org/abs/2406.12045 | pass^k definition read in the HTML version. No venue stated: cite as arXiv |
+| V | IETF, *RFC 9110*, section 9.2.2 | https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2 | Section number and the definition of idempotent confirmed; copy the sentence from the RFC itself before quoting it verbatim |
+| V | SWE-agent, Yang et al., arXiv:2405.15793 | https://arxiv.org/abs/2405.15793 | The arXiv page states no venue: cite as arXiv:2405.15793, never as NeurIPS 2024 |
+| V | McGuinness, Grace, De Jonghe, Eaton, Ribbink, Anthropic, *How we contain Claude across products*, 25 May 2026 | https://www.anthropic.com/engineering/how-we-contain-claude | "Users approved roughly 93% of permission prompts"; containment treated as distinct from human approval |
+| V | Martin, Cemaj, Cohen, Anthropic, *Scaling Managed Agents*, 8 Apr 2026 | https://www.anthropic.com/engineering/managed-agents | Raw text read: the session is "the append-only log of everything that happened", a separate component from the harness and the sandbox |
+| V | Debenedetti et al., *AgentDojo*, arXiv:2406.13352 (NeurIPS 2024 Datasets and Benchmarks) | https://arxiv.org/abs/2406.13352 | 97 tasks and 629 security test cases confirmed. The proceedings DOI 10.52202/079017-2636 resolves (to the proceedings listing); the arXiv page itself shows only the arXiv DOI |
+| V | Microsoft, *Agent Skills*, Agent Framework docs | https://learn.microsoft.com/en-us/agent-framework/agents/skills | ms.date 2026-10-02. "All three skill tools require approval by default"; prefer workflows when steps "produce side effects (sending emails, charging payments) that should not be repeated on retry" |
+| V | Guo et al., *SkillProbe*, arXiv:2603.21019, 22 Mar 2026 | https://arxiv.org/abs/2603.21019 | Abstract reports over 90% of high-popularity skills failing audit, on 2,500 ClawHub skills |
+| V | Rombaut, *Inside the Scaffold*, arXiv:2604.03515, v2 10 Apr 2026 | https://arxiv.org/abs/2604.03515 | v1 3 Apr; 13 open-source agents |
+| V | Model Context Protocol, *Specification* 2026-07-28 and *Extensions overview* | https://modelcontextprotocol.io/specification/2026-07-28 | The versioning page states 2026-07-28 is the current version. Extensions listed include Skills over MCP |
+| V | Hashimoto, *My AI Adoption Journey*, 5 Feb 2026 | https://mitchellh.com/writing/my-ai-adoption-journey | Existing row. Quote: "I don't know if there is a broad industry-accepted term for this yet, but I've grown to calling this 'harness engineering.'" A personal label, not the founding of a field |
+| V | Böckeler, *Context Engineering for Coding Agents* | https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html | Linked from the glossary; now also on the sources page. The page shows 5 February 2026 |
+| V | Böckeler, *Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl*, 15 Oct 2025 | https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html | Linked from the compact guide; now also on the sources page |
+| V | Anthropic, *Agent Skills* documentation | https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview | The former docs.claude.com address redirects here. Now on the sources page |
+
+### Cited on `harness-sources.html` and missing from this ledger until now
+
+Each address was checked on 5 October 2026 and returned HTTP 200. That confirms the address resolves, not that the content was read again; the page entries record what earlier rounds read.
+
+| Status | Source | URL | Note |
+|---|---|---|---|
+| V | The New Stack, DeepSeek open-sources an agent harness, Aug 2026 | https://thenewstack.io/deepseek-harness-open-source-plugins/ | HTTP 200 |
+| V | Trivedy, LangChain, *Improving Deep Agents with harness engineering*, 17 Feb 2026 | https://www.langchain.com/blog/improving-deep-agents-with-harness-engineering | HTTP 200 |
+| V | Darwin Agent Team, HarnessX, arXiv:2606.14249 and project page | https://darwin-agent.github.io/HarnessX/ | HTTP 200 on both the project page and https://arxiv.org/abs/2606.14249 |
+| P | Karpathy, post that coined "vibe coding", 2 Feb 2025 | https://x.com/karpathy/status/1886192184808149383 | HTTP 200, but x.com content is not readable by this project's tools; the page entry already says it was confirmed through a search snippet |
+| P | Karpathy, post that popularised "context engineering", 25 Jun 2025 | https://x.com/karpathy/status/1937902205765607626 | Same limitation |
+| V | yeachan-heo, `ai-slop-cleaner` SKILL.md (oh-my-claudecode) | https://github.com/yeachan-heo/oh-my-claudecode/blob/main/skills/ai-slop-cleaner/SKILL.md | HTTP 200 |
+| V | BlueRock, MCP trust registry | https://www.mcp-trust.com/ | HTTP 200 |
+| V | EU AI Act, article 73 | https://artificialintelligenceact.eu/article/73/ | HTTP 200 |
+| V | EU AI Act, article 12 | https://artificialintelligenceact.eu/article/12/ | HTTP 200 |
+| V | IETF, RFC 8693, OAuth 2.0 Token Exchange | https://www.rfc-editor.org/info/rfc8693/ | HTTP 200 |
+| V | SPIFFE project | https://spiffe.io/ | HTTP 200 |
+| V | Senado Notícias, law creating the ANPD, 26 Feb 2026 | https://www12.senado.leg.br/noticias/materias/2026/02/26/sancionada-lei-que-cria-a-agencia-nacional-de-protecao-de-dados | HTTP 200 |
+| V | Câmara dos Deputados, tracking record of PL 2338/2023 | https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262 | HTTP 200; the page entry states the date of the status it records |
+| V | Data Privacy Stack, Presidio joins Data Privacy Stack | https://dataprivacystack.org/blog/presidio-project-joins-data-privacy-stack/ | HTTP 200 |
+| V | Microsoft Learn, Purview for AI agents | https://learn.microsoft.com/en-us/purview/ai-agents | HTTP 200 |
+| V | Google Cloud, Model Armor overview | https://docs.cloud.google.com/model-armor/overview | HTTP 200 |
+| V | Veza, *2026 State of Identity & Access Report* (PDF) | https://veza.com/wp-content/uploads/2025/12/SOIA-2026-Veza.pdf | HTTP 200 |
+| V | The IIA, Statements of Position | https://www.theiia.org/en/resources/statements-of-position/ | HTTP 200 |
+| V | Microsoft, Agent Governance Toolkit (repository) | https://github.com/microsoft/agent-governance-toolkit | HTTP 200 |
+
+### Left unverified or unused, on purpose
+
+- **Waves 7 and 8 must not use:** "the model did not change" for the April 2026 Claude Code post (it says the API was not impacted); "71.9% on SWE-bench Verified" for the AHE study; "the first peer-reviewed framework" for the OWASP list; 80.9% as a general multi-agent figure; NeurIPS for SWE-agent; "307 confirmed cases" for the skills study (the abstract says 307 failures).
