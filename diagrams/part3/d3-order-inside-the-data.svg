@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-label="Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of symbols">
-<title>Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of symbols</title>
-<desc>A trusted zone (task contract, own guides and skills) and an untrusted zone (e-mail, PDF or web page, external system responses, third-party skills, customer documents) converge into a single stream of symbols, where nothing reliable separates command from data, and then into a proposed action.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-label="Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of tokens">
+<title>Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of tokens</title>
+<desc>A trusted zone (task contract, own guides and skills) and an untrusted zone (e-mail, PDF or web page, external system responses, third-party skills, customer documents) converge into a single stream of tokens, where nothing reliable separates command from data, and then into a proposed action.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}

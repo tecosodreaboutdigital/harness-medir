@@ -1319,11 +1319,11 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <p>Everything built so far assumes the policy layer can tell a legitimate instruction from an illegitimate one. That assumption deserves to be tested, because the honest answer is that nothing currently can, reliably, and understanding why changes what you build next.</p>
 
-<p>A model reads its own system instructions, the user's request and any text retrieved from an external source as a single stream of symbols. There is no reliable mechanism that marks some of those symbols as command and others as inert data. Hostile text smuggled inside a document, a calendar invitation or a web page carries exactly the same authority as a legitimate instruction from the operator, because to the model reading it, there is no visible difference.</p>
+<p>A model reads its own system instructions, the user's request and any text retrieved from an external source as a single stream of tokens. There is no reliable mechanism that marks some of those symbols as command and others as inert data. Hostile text smuggled inside a document, a calendar invitation or a web page carries exactly the same authority as a legitimate instruction from the operator, because to the model reading it, there is no visible difference.</p>
 
 <figure>
-<svg viewBox="0 0 700 440" role="img" aria-label="Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of symbols">
-<title>Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of symbols</title>
+<svg viewBox="0 0 700 440" role="img" aria-label="Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of tokens">
+<title>Where the order enters inside the data: a trusted zone and an untrusted zone converge into a single stream of tokens</title>
 <desc>The carrier's dispute email sat exactly in the untrusted zone on the right. The rate-sheet clause it cited sat in the trusted zone on the left. Both funnelled into the same proposed action, and nothing inside the model ever drew the line between them.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
