@@ -47,6 +47,55 @@ REINFORCE
 Reinforce score: <count of yes> / 3
 ```
 
+## Five more questions, added on 5 October 2026
+
+Part 1's twelve questions stay as they are. These five come from running agents in production, not
+from the checklist, and they sit here so the instrument can grow without changing the article. Answer
+them in the same way, yes or no, with the same owner named for each "no".
+
+```
+OPERATION
+[ ] Which actions are safe to retry, and does the system know that for each one?
+[ ] After an interruption, is it defined whether the agent resumes, retries, rolls back or restarts?
+[ ] Can text the agent reads (web pages, e-mail, files, memory, skills, other agents) carry
+    instructions it would follow?   (the answer you want is "no, or it is contained")
+[ ] Can the agent change the file that defines its own permissions?   (the answer you want is "no")
+[ ] Do you know which model and harness version produced the last result?
+```
+
+How they change the tier decision:
+
+- **A "yes" to "can the agent change the file that defines its own permissions"** blocks N3, whatever
+  else the checklist says. A policy the agent can edit is a request, not a policy.
+- **A "no" to "do you know which model and harness version produced the last result"** blocks N2.
+  Without it, a change in behaviour cannot be attributed, and a firing history means nothing across
+  versions.
+- The other three feed the receipt: `idempotency_key` and `action_stage` (retry and interruption),
+  and `sources_consulted[].trust` (what the agent reads).
+
+## The thirteen failure classes
+
+The `failure_class` field of `execution-receipt.md` takes one of these. The list is a taxonomy that
+a 2026 handbook on harness engineering proposes (Tech with Mak, self-published, 4 October 2026; used
+here for orientation only, and not a standard). It is useful because a failure that can be named can
+be counted, and a count is what the indicators of Part 4 are built from.
+
+| Class | One line |
+|---|---|
+| Tool selection | The agent picked the wrong tool, or one that sounds like the right one |
+| Tool contract | The tool's inputs, outputs or errors did not mean what the agent assumed |
+| Observation | The agent misread or ignored what a tool returned |
+| Context | The right information was not in front of the model when it decided |
+| State | What the agent remembered or stored was stale, lost or wrong |
+| Environment | The place the agent runs in, not the agent, failed (network, disk, a changed dependency) |
+| Verification | A check was missing, wrong or satisfied by a claim instead of evidence |
+| Authorisation | An action ran without the approval it needed, or was blocked when it should not have been |
+| Recovery | The agent could not resume, retry safely or roll back after an interruption |
+| Coordination | Several agents or steps conflicted, duplicated work or lost a handoff |
+| Budget | A limit (steps, tokens, time, cost) was hit, or was missing |
+| Provenance and injection | Untrusted text was treated as an instruction, or its source was not recorded |
+| Skill-induced | A loaded skill made the work wrong or slower |
+
 ## How to read the result
 
 **This is a gate, not a scorecard.** Part 1 does not offer a numeric threshold, and this template

@@ -45,6 +45,21 @@ verification rule in `../AGENTS.md` that applies to its own curated list. The ot
 written down in any guide here, which is why they are offered as defaults to adopt and not as rules
 this project has shown it follows.
 
+## Revision of 5 October 2026
+
+Seven templates changed, none was added. The execution receipt gained thirteen fields, sorted by tier
+(model, harness, configuration hash, policy version, exit reason, budget, tokens, operation key,
+action stage, reversal scope, trust per source, failure class, redactions). The risk matrix gained
+three rows and two columns (safe to retry, survives bypass mode). The rollout path now asks for
+consistent success in k identical runs before N2, a checkable list before N3, and a step for removing
+components when the model changes. The registry gained six columns and four review triggers, and
+states that a sub-agent is an execution of the registered agent. The skill template gained a
+provenance header, optional activation fields and an evidence section. The starter guides gained an
+optional fifth rule and a note that the block should be reviewed when the model changes. The tier
+diagnostic gained five questions, two of which block a tier, and the thirteen failure classes the
+receipt uses. The reasons and sources are in `docs/harness-medir-mudancas-consolidadas 05Out.md`
+(items PB.01 to PB.07) and in the sources page.
+
 ## Machine-readable form
 
 Each template is registered in `../toolkit.json` as `"kind": "template"`, with the same fields the

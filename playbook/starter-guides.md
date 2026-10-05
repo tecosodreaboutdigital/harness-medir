@@ -65,7 +65,24 @@ read them as defaults offered for adoption, not as practice this project has alr
 - "More tests can't hurt." A test with no failure mode it catches is a maintenance cost
   with no return, and a slow suite trains people to stop reading it.
 
+## An optional fifth rule
+
+```
+5. Do not ask the model to remember what a check can enforce. If a rule is
+   objective and a program can verify it cheaply, put it in a test or a hook,
+   and keep the guide for what cannot be formalised.
+```
+
+This is Part 2's own split of guides and sensors turned into a default. It is optional because it
+presupposes you have somewhere to put a check; a project with no tests and no hooks yet should start
+with the four above.
+
 ## Honest limits
+
+Rules 1 and 2 are written against the habit of a model to over-build. That habit belongs to the
+models of the day, and a newer model may not need the instruction. Review this block whenever the
+model changes, and retire any rule whose removal changes nothing you can measure: a rule kept out of
+habit is a component that costs attention and buys nothing.
 
 These four guides prevent a known class of failure: over-building, over-abstracting,
 working from stale knowledge, over-testing. They say nothing about correctness,
