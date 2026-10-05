@@ -118,6 +118,8 @@ A browser-language hint applies on all nine trilingual HTML pages: if the visito
 
 ---
 
+The Part 4 role "certifier" is written "homologador" in Portuguese (the act is "homologação", the state "homologado") and "certificador" in Spanish. The Portuguese family was chosen on 5 October 2026 because Part 4, the glossary and STATUS already used it throughout (24 occurrences against one residue), and because "homologar" carries the sense of an approval granted by someone with the authority to grant it, which is the role. Do not mix the two inside one language.
+
 ## Tool entry in the compact guide
 
 Six fields, always in this order, in prose rather than a loose list:

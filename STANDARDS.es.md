@@ -118,6 +118,8 @@ Una pista de idioma del navegador se aplica en las nueve páginas HTML trilingü
 
 ---
 
+El rol "certifier" de la Parte 4 se escribe "homologador" en portugués (el acto es "homologação", el estado "homologado") y "certificador" en español. La familia portuguesa se eligió el 5 de octubre de 2026 porque la Parte 4, el glosario y STATUS ya la usaban en todas partes (24 apariciones frente a un residuo), y porque "homologar" lleva el sentido de una aprobación concedida por quien tiene la autoridad para concederla, que es el rol. No mezcles las dos dentro de un mismo idioma.
+
 ## Entrada de herramienta en la guía compacta
 
 Seis campos, siempre en este orden, en prosa y no en una lista suelta:

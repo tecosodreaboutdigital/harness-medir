@@ -118,6 +118,8 @@ Uma dica de idioma do navegador se aplica nas nove páginas HTML trilíngues: se
 
 ---
 
+O papel "certifier" da Parte 4 se escreve "homologador" em português (o ato é "homologação", o estado "homologado") e "certificador" em espanhol. A família portuguesa foi escolhida em 5 de outubro de 2026 porque a Parte 4, o glossário e o STATUS já a usavam em todo lugar (24 ocorrências contra um resíduo), e porque "homologar" carrega o sentido de uma aprovação concedida por quem tem autoridade para concedê-la, que é o papel. Não misture as duas dentro de uma mesma língua.
+
 ## Ficha de ferramenta no guia compacto
 
 Seis campos, sempre nesta ordem, em prosa e não em lista solta:
