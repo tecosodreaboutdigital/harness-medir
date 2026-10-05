@@ -449,7 +449,8 @@ p code{
 </div>
 <span class="brace">}</span>
 </div>
-<main class="page" id="doc-pt" hidden>
+<main class="page" id="doc-pt" hidden lang="pt-BR">
+<span id="pt-top"></span>
 <p class="eyebrow">Harness · Documento companheiro · Prático</p>
 
 <h1>Caixa de ferramentas do harness</h1>
@@ -490,7 +491,7 @@ p code{
 
 <p>Comece lendo. Instale depois, e apenas o que você entendeu.</p>
 
-<p>Tudo a partir daqui é uma skill ou coleção instalável. Este projeto também publica seu próprio <a href="harness-playbook.html">playbook</a>, oito templates derivados das quatro partes, não uma ideia nova, em <code>playbook/</code> no repositório. Se você está levando este harness para um projeto seu, comece por <code>playbook/starter-guides.md</code>: quatro padrões, portáteis, feitos para ser copiados para o <code>AGENTS.md</code> ou <code>CLAUDE.md</code> desse projeto antes de existir qualquer guia específico de tarefa.</p>
+<p>Tudo a partir daqui é uma skill ou coleção instalável. Este projeto também publica seu próprio <a href="harness-playbook.html#pt-top">playbook</a>, oito templates derivados das quatro partes, não uma ideia nova, em <code>playbook/</code> no repositório. Se você está levando este harness para um projeto seu, comece por <code>playbook/starter-guides.md</code>: quatro padrões, portáteis, feitos para ser copiados para o <code>AGENTS.md</code> ou <code>CLAUDE.md</code> desse projeto antes de existir qualquer guia específico de tarefa.</p>
 
 <h2 id="pt-diagnostico">2. Diagnóstico: em que faixa você está</h2>
 
@@ -737,7 +738,7 @@ p code{
 <h3 id="pt-ledger">milestone-loc-tokens-ai-ledger</h3>
 
 <p><strong>Problema.</strong> O próprio diário de bordo de um projeto precisa de evidência real por trás de cada número, palavras, linhas, tokens, e cada vez mais, quanto esses tokens de fato custaram, no preço que era verdadeiro naquele dia, não uma estimativa reconstruída depois.</p>
-<p><strong>Na prática.</strong> Skill própria deste projeto, que generaliza o motor de diário que já produz o <a href="docs/logbook.html">próprio diário de bordo deste repositório</a> para uma Agent Skill instalável: lê o histórico do git e um transcript de sessão real, precifica o uso de token contra um livro-razão datado, multi-fonte e apensado, e publica um painel autohospedado com um painel de preço ao vivo e editável, sem chamada de rede na página publicada. Precifica cada modelo e cada duração de cache com a série própria, lê as transcrições de subagentes das sessões do próprio projeto, corrige um preço gravado errado com um <code>--reprice</code> auditado que guarda o valor antigo e, com <code>--enrich</code>, atualiza marcos gravados antes do corte por modelo, só enquanto as transcrições ainda existem (o Claude Code as apaga depois de 30 dias por padrão) e só onde elas reproduzem exatamente os contadores gravados. Uma decisão de escopo deliberada, dita com honestidade em vez de presumida: computa uma linha por commit, nunca redige a prosa do marco sozinha, uma nota de decisão opcional de uma linha é escrita à mão, a mesma disciplina de não inflar que o próprio diário deste projeto já se impõe.</p>
+<p><strong>Na prática.</strong> Skill própria deste projeto, que generaliza o motor de diário que já produz o <a href="docs/logbook.html#pt-top">próprio diário de bordo deste repositório</a> para uma Agent Skill instalável: lê o histórico do git e um transcript de sessão real, precifica o uso de token contra um livro-razão datado, multi-fonte e apensado, e publica um painel autohospedado com um painel de preço ao vivo e editável, sem chamada de rede na página publicada. Precifica cada modelo e cada duração de cache com a série própria, lê as transcrições de subagentes das sessões do próprio projeto, corrige um preço gravado errado com um <code>--reprice</code> auditado que guarda o valor antigo e, com <code>--enrich</code>, atualiza marcos gravados antes do corte por modelo, só enquanto as transcrições ainda existem (o Claude Code as apaga depois de 30 dias por padrão) e só onde elas reproduzem exatamente os contadores gravados. Uma decisão de escopo deliberada, dita com honestidade em vez de presumida: computa uma linha por commit, nunca redige a prosa do marco sozinha, uma nota de decisão opcional de uma linha é escrita à mão, a mesma disciplina de não inflar que o próprio diário deste projeto já se impõe.</p>
 <p><strong>Para quem é.</strong> N1 para cima, qualquer harness que queira um registro público e autoatualizável do que um projeto custou para construir, em tokens e em dinheiro, por commit, sem backend.</p>
 <p><strong>Faixa mínima.</strong> N1.</p>
 <p><strong>Quando não usar.</strong> Um projeto sem histórico de git ou sem transcript de sessão real para ler, o motor se recusa a estimar qualquer um dos dois.</p>
@@ -795,7 +796,7 @@ p code{
 
 <h2 id="pt-secure">8. Proteger</h2>
 
-<p>Proteger não é um sexto passo do MEDIR. Ele fica ao lado do ciclo, do mesmo jeito que a <a href="harness-p3.html">parte 3</a> fica ao lado da parte 2: o MEDIR constrói um agente confiável, Proteger o impede de agir fora de um mandato que ninguém aprovou. As cinco fichas abaixo dão à separação de poderes, à camada de identidade e à trilha de auditoria da parte 3 um nome, um repositório e um comando, em vez de deixar a arquitetura só no diagrama.</p>
+<p>Proteger não é um sexto passo do MEDIR. Ele fica ao lado do ciclo, do mesmo jeito que a <a href="harness-p3.html#pt-top">parte 3</a> fica ao lado da parte 2: o MEDIR constrói um agente confiável, Proteger o impede de agir fora de um mandato que ninguém aprovou. As cinco fichas abaixo dão à separação de poderes, à camada de identidade e à trilha de auditoria da parte 3 um nome, um repositório e um comando, em vez de deixar a arquitetura só no diagrama.</p>
 
 <h3>Credenciais de escopo estreito e vida curta</h3>
 
@@ -897,7 +898,7 @@ p code{
 
 <h2 id="pt-govern">9. Governar</h2>
 
-<p>Governar não substitui o registro que a <a href="harness-p4.html">parte 4</a> §7 insiste que pode ser uma tabela e uma planilha para uma empresa com sete agentes. Ele existe para os dois momentos em que uma planilha para de bastar: acompanhar os oito indicadores ao longo de um trimestre, e saber o que uma empresa maior que sete-agentes-e-uma-planilha está de fato comprando quando compra uma "control tower".</p>
+<p>Governar não substitui o registro que a <a href="harness-p4.html#pt-top">parte 4</a> §7 insiste que pode ser uma tabela e uma planilha para uma empresa com sete agentes. Ele existe para os dois momentos em que uma planilha para de bastar: acompanhar os oito indicadores ao longo de um trimestre, e saber o que uma empresa maior que sete-agentes-e-uma-planilha está de fato comprando quando compra uma "control tower".</p>
 
 <h3>Langfuse</h3>
 
@@ -1081,10 +1082,11 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <div class="foot">
 <p>Documento companheiro da série Harness · Verificado em agosto de 2026 · Nomes, endereços e comandos mudam sem aviso, confirme na origem antes de instalar.</p>
-<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html">diário de bordo</a>.</p>
+<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html#pt-top">diário de bordo</a>.</p>
 </div>
 </main>
-<main class="page" id="doc-en">
+<main class="page" id="doc-en" lang="en-GB">
+<span id="en-top"></span>
 <p class="eyebrow">Harness · Companion document · Practical</p>
 
 <h1>The harness toolkit</h1>
@@ -1125,7 +1127,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Start by reading. Install afterwards, and only what you understood.</p>
 
-<p>Everything below this point is an installable skill or collection. This project also publishes its own <a href="harness-playbook.html">playbook</a>, eight templates derived from the four parts rather than a new idea, at <code>playbook/</code> in the repository. If you are taking this harness into a project of your own, start with <code>playbook/starter-guides.md</code>: four defaults, portable, meant to be copied into that project's own <code>AGENTS.md</code> or <code>CLAUDE.md</code> before any task-specific guide exists.</p>
+<p>Everything below this point is an installable skill or collection. This project also publishes its own <a href="harness-playbook.html#en-top">playbook</a>, eight templates derived from the four parts rather than a new idea, at <code>playbook/</code> in the repository. If you are taking this harness into a project of your own, start with <code>playbook/starter-guides.md</code>: four defaults, portable, meant to be copied into that project's own <code>AGENTS.md</code> or <code>CLAUDE.md</code> before any task-specific guide exists.</p>
 
 <h2 id="en-diagnostico">2. Diagnosis: which tier you are in</h2>
 
@@ -1372,7 +1374,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <h3 id="en-ledger">milestone-loc-tokens-ai-ledger</h3>
 
 <p><strong>Problem.</strong> A project's own diary of record needs real evidence behind every number, words, lines, tokens, and increasingly, what those tokens actually cost, at the price that was true on the day, not a retrofitted estimate.</p>
-<p><strong>In practice.</strong> This project's own skill, generalising the diary engine that already produces <a href="docs/logbook.html">this repository's own logbook</a> into an installable Agent Skill: it reads git history and a real session transcript, prices token usage against a dated, multi-source, append-only ledger, and publishes a self-hosted dashboard with a live, editable price panel, no network call from the published page. It prices each model and each cache lifetime with its own series, reads the subagent transcripts of the project's own sessions, corrects a price recorded wrong with an audited <code>--reprice</code> that keeps the old value, and, with <code>--enrich</code>, brings milestones recorded before the per-model split up to date, only while the transcripts still exist (Claude Code deletes them after 30 days by default) and only where they reproduce the recorded counters exactly. A deliberate scope decision, stated honestly rather than assumed: it computes one row per commit, it never drafts the milestone prose itself, an optional one-line decision note is written by hand, the same no-inflation discipline this project's own diary already holds itself to.</p>
+<p><strong>In practice.</strong> This project's own skill, generalising the diary engine that already produces <a href="docs/logbook.html#en-top">this repository's own logbook</a> into an installable Agent Skill: it reads git history and a real session transcript, prices token usage against a dated, multi-source, append-only ledger, and publishes a self-hosted dashboard with a live, editable price panel, no network call from the published page. It prices each model and each cache lifetime with its own series, reads the subagent transcripts of the project's own sessions, corrects a price recorded wrong with an audited <code>--reprice</code> that keeps the old value, and, with <code>--enrich</code>, brings milestones recorded before the per-model split up to date, only while the transcripts still exist (Claude Code deletes them after 30 days by default) and only where they reproduce the recorded counters exactly. A deliberate scope decision, stated honestly rather than assumed: it computes one row per commit, it never drafts the milestone prose itself, an optional one-line decision note is written by hand, the same no-inflation discipline this project's own diary already holds itself to.</p>
 <p><strong>Who it is for.</strong> N1 upward, any harness that wants a public, self-updating record of what a project cost to build, in tokens and money, per commit, without a backend.</p>
 <p><strong>Minimum tier.</strong> N1.</p>
 <p><strong>When not to use it.</strong> A project with no git history or no real session transcript to read from, the engine refuses to estimate either one.</p>
@@ -1430,7 +1432,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-secure">8. Secure</h2>
 
-<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The five entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
+<p>Secure is not a sixth step of MEDIR. It sits alongside the cycle, the same way <a href="harness-p3.html#en-top">part 3</a> sits alongside part 2: MEDIR builds a reliable agent, Secure keeps it from acting outside a mandate nobody approved. The five entries below give the separation of powers, the identity layer and the audit trail from part 3 a name, a repository and a command, instead of leaving the architecture as a diagram.</p>
 
 <h3>Short-lived, scoped credentials</h3>
 
@@ -1532,7 +1534,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <h2 id="en-govern">9. Govern</h2>
 
-<p>Govern does not replace the registry <a href="harness-p4.html">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
+<p>Govern does not replace the registry <a href="harness-p4.html#en-top">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
 
 <h3>Langfuse</h3>
 
@@ -1716,10 +1718,11 @@ description: Reviews contract drafts against the house checklist of
 
 <div class="foot">
 <p>Companion document to the Harness series · Verified in August 2026 · Names, addresses and commands change without notice, confirm at the source before installing.</p>
-<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html#en-top">project log</a>.</p>
 </div>
 </main>
-<main class="page" id="doc-es" hidden>
+<main class="page" id="doc-es" hidden lang="es">
+<span id="es-top"></span>
 <p class="eyebrow">Harness · Documento complementario · Práctico</p>
 
 <h1>La caja de herramientas del harness</h1>
@@ -1760,7 +1763,7 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Empieza leyendo. Instala después, y solo lo que entendiste.</p>
 
-<p>Todo lo que sigue a partir de aquí es una skill o colección instalable. Este proyecto también publica su propio <a href="harness-playbook.html">playbook</a>, ocho templates derivados de las cuatro partes, no una idea nueva, en <code>playbook/</code> dentro del repositorio. Si estás llevando este harness a un proyecto propio, empieza por <code>playbook/starter-guides.md</code>: cuatro estándares, portátiles, pensados para copiarse en el <code>AGENTS.md</code> o <code>CLAUDE.md</code> de ese proyecto antes de que exista ninguna guía específica de tarea.</p>
+<p>Todo lo que sigue a partir de aquí es una skill o colección instalable. Este proyecto también publica su propio <a href="harness-playbook.html#es-top">playbook</a>, ocho templates derivados de las cuatro partes, no una idea nueva, en <code>playbook/</code> dentro del repositorio. Si estás llevando este harness a un proyecto propio, empieza por <code>playbook/starter-guides.md</code>: cuatro estándares, portátiles, pensados para copiarse en el <code>AGENTS.md</code> o <code>CLAUDE.md</code> de ese proyecto antes de que exista ninguna guía específica de tarea.</p>
 
 <h2 id="es-diagnostico">2. Diagnóstico: en qué banda estás</h2>
 
@@ -2007,7 +2010,7 @@ description: Reviews contract drafts against the house checklist of
 <h3 id="es-ledger">milestone-loc-tokens-ai-ledger</h3>
 
 <p><strong>Problema.</strong> El propio diario de bordo de un proyecto necesita evidencia real detrás de cada número, palabras, líneas, tokens, y cada vez más, cuánto costaron esos tokens realmente, al precio que era cierto ese día, no una estimación reconstruida después.</p>
-<p><strong>En la práctica.</strong> Skill propia de este proyecto, que generaliza el motor de diario que ya produce el <a href="docs/logbook.html">propio diario de bordo de este repositorio</a> hacia una Agent Skill instalable: lee el historial de git y un transcript de sesión real, tasa el uso de tokens contra un libro mayor fechado, multi-fuente y de solo apéndice, y publica un panel autohospedado con un panel de precio en vivo y editable, sin llamada de red desde la página publicada. Tasa cada modelo y cada duración de caché con su propia serie, lee las transcripciones de subagentes de las sesiones del propio proyecto, corrige un precio registrado mal con un <code>--reprice</code> auditado que conserva el valor anterior y, con <code>--enrich</code>, actualiza hitos registrados antes del corte por modelo, solo mientras las transcripciones aún existen (Claude Code las borra tras 30 días por defecto) y solo donde reproducen exactamente los contadores registrados. Una decisión de alcance deliberada, dicha con honestidad en vez de asumida: calcula una fila por commit, nunca redacta la prosa del hito por sí misma, una nota de decisión opcional de una línea se escribe a mano, la misma disciplina de no inflar que el propio diario de este proyecto ya se exige.</p>
+<p><strong>En la práctica.</strong> Skill propia de este proyecto, que generaliza el motor de diario que ya produce el <a href="docs/logbook.html#es-top">propio diario de bordo de este repositorio</a> hacia una Agent Skill instalable: lee el historial de git y un transcript de sesión real, tasa el uso de tokens contra un libro mayor fechado, multi-fuente y de solo apéndice, y publica un panel autohospedado con un panel de precio en vivo y editable, sin llamada de red desde la página publicada. Tasa cada modelo y cada duración de caché con su propia serie, lee las transcripciones de subagentes de las sesiones del propio proyecto, corrige un precio registrado mal con un <code>--reprice</code> auditado que conserva el valor anterior y, con <code>--enrich</code>, actualiza hitos registrados antes del corte por modelo, solo mientras las transcripciones aún existen (Claude Code las borra tras 30 días por defecto) y solo donde reproducen exactamente los contadores registrados. Una decisión de alcance deliberada, dicha con honestidad en vez de asumida: calcula una fila por commit, nunca redacta la prosa del hito por sí misma, una nota de decisión opcional de una línea se escribe a mano, la misma disciplina de no inflar que el propio diario de este proyecto ya se exige.</p>
 <p><strong>Para quién es.</strong> N1 hacia arriba, cualquier harness que quiera un registro público y autoactualizable de lo que costó construir un proyecto, en tokens y en dinero, por commit, sin backend.</p>
 <p><strong>Nivel mínimo.</strong> N1.</p>
 <p><strong>Cuándo no usarla.</strong> Un proyecto sin historial de git o sin transcript de sesión real de dónde leer, el motor se niega a estimar cualquiera de los dos.</p>
@@ -2065,7 +2068,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-secure">8. Proteger</h2>
 
-<p>Proteger no es un sexto paso de MEDIR. Está al lado del ciclo, de la misma forma en que <a href="harness-p3.html">la parte 3</a> está al lado de la parte 2: MEDIR construye un agente confiable, Proteger le impide actuar fuera de un mandato que nadie aprobó. Las cinco fichas siguientes le dan a la separación de poderes, la capa de identidad y el rastro de auditoría de la parte 3 un nombre, un repositorio y un comando, en vez de dejar la arquitectura como un diagrama.</p>
+<p>Proteger no es un sexto paso de MEDIR. Está al lado del ciclo, de la misma forma en que <a href="harness-p3.html#es-top">la parte 3</a> está al lado de la parte 2: MEDIR construye un agente confiable, Proteger le impide actuar fuera de un mandato que nadie aprobó. Las cinco fichas siguientes le dan a la separación de poderes, la capa de identidad y el rastro de auditoría de la parte 3 un nombre, un repositorio y un comando, en vez de dejar la arquitectura como un diagrama.</p>
 
 <h3>Credenciales de alcance acotado y vida corta</h3>
 
@@ -2167,7 +2170,7 @@ description: Reviews contract drafts against the house checklist of
 
 <h2 id="es-govern">9. Gobernar</h2>
 
-<p>Gobernar no reemplaza el registro que la <a href="harness-p4.html">parte 4</a> §7 insiste que puede ser una tabla y una planilla para una empresa con siete agentes. Existe para los dos momentos en que una planilla deja de alcanzar: rastrear los ocho indicadores a lo largo de un trimestre, y saber qué está comprando en realidad una empresa más grande que siete-agentes-y-una-planilla cuando compra una "torre de control".</p>
+<p>Gobernar no reemplaza el registro que la <a href="harness-p4.html#es-top">parte 4</a> §7 insiste que puede ser una tabla y una planilla para una empresa con siete agentes. Existe para los dos momentos en que una planilla deja de alcanzar: rastrear los ocho indicadores a lo largo de un trimestre, y saber qué está comprando en realidad una empresa más grande que siete-agentes-y-una-planilla cuando compra una "torre de control".</p>
 
 <h3>Langfuse</h3>
 
@@ -2351,7 +2354,7 @@ description: Revisa borradores de contrato contra el checklist de
 
 <div class="foot">
 <p>Documento complementario de la serie Harness · Verificado en agosto de 2026 · Los nombres, direcciones y comandos cambian sin aviso, confirma en la fuente antes de instalar.</p>
-<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html#es-top">diario de bordo</a>.</p>
 </div>
 </main>
 <script>
@@ -2367,10 +2370,12 @@ description: Revisa borradores de contrato contra el checklist de
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }
+  var T0=document.title,SX0=(function(){var t=document.title,i=t.lastIndexOf(' | ');return i>0?t.slice(i+3):'';})();function SXT(s,l){var m={pt:[['Part ','Parte '],['Companion document','Documento companheiro'],['Harness series','S\u00e9rie Harness']],es:[['Part ','Parte '],['Companion document','Documento complementario'],['Harness series','Serie Harness']]}[l];if(!m)return s;for(var k=0;k<m.length;k++){if(s.indexOf(m[k][0])===0){return m[k][1]+s.slice(m[k][0].length);}}return s;}
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    var h1=mains[l].querySelector('h1');document.title=(l==='en'||!h1)?T0:h1.textContent+(SX0?' | '+SXT(SX0,l):'');
     setSeries(l);
   }
   var h=location.hash.slice(1);

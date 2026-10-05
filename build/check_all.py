@@ -241,18 +241,19 @@ def check_facts():
 NO_ACCENT = {
     'pt': r'execucao|execucoes|orfa|orfas|orfao|nao|voce|voces|informacao|informacoes|decisao|decisoes|'
           r'verificacao|verificacoes|autorizacao|producao|tambem|acao|acoes|politica|politicas|'
-          r'organizacao|configuracao|governanca|responsavel|responsaveis|memoria|obrigatorio|'
-          r'avaliacao|operacao|operacoes|descricao|conclusao|excecao|excecoes|ate|codigo',
+          r'organizacao|configuracao|governanca|responsavel|responsaveis|obrigatorio|'
+          r'avaliacao|operacao|operacoes|descricao|conclusao|excecao|excecoes|codigo|[a-z]{3,}cao|[a-z]{3,}coes',
     'es': r'ejecucion|disenar|redisenar|diseno|informacion|decision|verificacion|'
           r'autorizacion|produccion|tambien|accion|politica|politicas|organizacion|'
-          r'configuracion|gobernanza|responsable?s?|memoria|obligatorio|evaluacion|operacion|descripcion|'
-          r'conclusion|excepcion|codigo|huerfanas?|huerfanos?|sesion|razon',
+          r'configuracion|evaluacion|operacion|descripcion|'
+          r'conclusion|excepcion|codigo|huerfanas?|huerfanos?|sesion|razon|[a-z]{3,}[cs]ion',  # so o singular: o plural (-ciones, -siones) nao leva acento
 }
+# Formas que, sem acento, nao sao palavra valida na lingua indicada. Valem
+# tambem em nome proprio e em palavra composta com hifen, por isso o
+# padrao generico so olha palavra inteira. Existem sem acento, com
+# sentido proprio, e portanto ficam FORA da lista: pt "ate", es "memoria",
+# "responsable", "gobernanza", "obligatorio" (todas corretas em espanhol).
 NO_ACCENT_RX = {k: re.compile(r'\b(' + v + r')\b', re.I) for k, v in NO_ACCENT.items()}
-# Palavras que existem sem acento com outro sentido: nao entram na lista
-# acima de proposito (pt "ate", es "responsable" e "memoria" sao validas).
-NO_ACCENT_RX['pt'] = re.compile(NO_ACCENT_RX['pt'].pattern.replace('|ate|', '|').replace('|memoria|', '|'), re.I)
-NO_ACCENT_RX['es'] = re.compile(NO_ACCENT_RX['es'].pattern.replace('|responsable?s?|', '|').replace('|memoria|', '|'), re.I)
 ATTR_STRIP = re.compile(r'\b(?:href|id|class|src|for|name|data-[a-z-]*key|viewBox|d|points|style)="[^"]*"')
 TAG_STRIP = re.compile(r'<(?!/?\w)')
 

@@ -449,7 +449,8 @@ p code{
 </div>
 <span class="brace">}</span>
 </div>
-<main class="page" id="doc-pt" hidden>
+<main class="page" id="doc-pt" hidden lang="pt-BR">
+<span id="pt-top"></span>
 <p class="eyebrow">Harness · Parte 2 de 4 · Como</p>
 
 <h1>Guias e verificadores: como um agente aprende a se corrigir</h1>
@@ -501,11 +502,11 @@ p code{
 
 <p>Por mais complexo que um sistema desses pareça, você só tem dois tipos de controle sobre ele. Pode influenciar o que ele faz antes de agir, ou pode observar o que ele fez depois de agir. Não existe terceiro lugar. Tudo o que a indústria chama de regra, política, teste, revisão, gancho, portão ou auditoria cai em uma dessas duas categorias.</p>
 
-<p>A formulação mais limpa dessas duas categorias vem de <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, da Thoughtworks, e usa dois nomes que vale adotar.</p>
+<p>A formulação mais limpa dessas duas categorias vem de <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, da Thoughtworks, e usa dois nomes que vale adotar.</p>
 
-<p><a class="g" href="harness-glossary.html#pt-g-guia" data-tip="Controle que age antes da execucao, para aumentar a chance de acerto na primeira tentativa.">Guias</a> são os controles que antecipam. Aumentam a probabilidade de acerto na primeira tentativa: regras escritas, convenções, exemplos, o mapa de onde procurar cada coisa, o contrato da tarefa. Foi o que a diretora construiu na quarta semana.</p>
+<p><a class="g" href="harness-glossary.html#pt-g-guia" data-tip="Controle que age antes da execução, para aumentar a chance de acerto na primeira tentativa.">Guias</a> são os controles que antecipam. Aumentam a probabilidade de acerto na primeira tentativa: regras escritas, convenções, exemplos, o mapa de onde procurar cada coisa, o contrato da tarefa. Foi o que a diretora construiu na quarta semana.</p>
 
-<p><a class="g" href="harness-glossary.html#pt-g-sensor" data-tip="Controle que age depois da execucao, medindo o resultado e devolvendo ao agente como se corrigir.">Verificadores</a> são os controles que observam. Medem o que foi produzido e devolvem ao sistema a informação necessária para que ele se corrija sozinho: conferências, testes, comparações contra a fonte, revisões. É o que faltava.</p>
+<p><a class="g" href="harness-glossary.html#pt-g-sensor" data-tip="Controle que age depois da execução, medindo o resultado e devolvendo ao agente como se corrigir.">Verificadores</a> são os controles que observam. Medem o que foi produzido e devolvem ao sistema a informação necessária para que ele se corrija sozinho: conferências, testes, comparações contra a fonte, revisões. É o que faltava.</p>
 
 <blockquote><p>Só com guias, você tem um sistema que segue regras e nunca descobre se elas funcionaram. Só com verificadores, você tem um sistema que repete o mesmo erro para sempre, sendo corrigido toda vez. Os dois juntos formam algo que aprende. Separados, nenhum dos dois é um harness.</p></blockquote>
 
@@ -513,7 +514,7 @@ p code{
 
 <h2 id="pt-duro-julgamento">3. Verificação dura e verificação por julgamento</h2>
 
-<p>Guias e verificadores se dividem outra vez, agora por natureza. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
+<p>Guias e verificadores se dividem outra vez, agora por natureza. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> chama de computacional e inferencial. Em português de negócio, prefiro verificação dura e verificação por julgamento.</p>
 
 <p><strong>Verificação dura</strong> é determinística e rápida. Roda em segundos, custa quase nada, e dá sempre a mesma resposta para a mesma entrada. Um script que confere se um número bate com a fonte. Uma regra que impede um documento de sair sem campo obrigatório. Um teste automatizado.</p>
 
@@ -550,7 +551,7 @@ p code{
 
 <p>A regra de investimento é simples e economiza muito dinheiro: <strong>o que puder ser verificado de forma dura, verifique de forma dura</strong>. Julgamento é caro, lento e não determinístico, e deve ser reservado ao que a verificação dura não alcança, que é o campo semântico.</p>
 
-<p>Existe também um efeito de custo que mudou recentemente. Verificação automática sempre existiu e sempre foi subutilizada, porque configurar regras dava trabalho demais para o retorno. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que a balança virou: hoje é barato pedir ao próprio sistema que escreva as regras e os scripts de conferência, o que derruba o custo de entrada, enquanto o benefício subiu, porque essas verificações pegam justamente os erros típicos de máquina que um humano não cometeria.</p>
+<p>Existe também um efeito de custo que mudou recentemente. Verificação automática sempre existiu e sempre foi subutilizada, porque configurar regras dava trabalho demais para o retorno. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que a balança virou: hoje é barato pedir ao próprio sistema que escreva as regras e os scripts de conferência, o que derruba o custo de entrada, enquanto o benefício subiu, porque essas verificações pegam justamente os erros típicos de máquina que um humano não cometeria.</p>
 
 <h2 id="pt-equipar">4. Equipar: o que ele vê e o que ele toca</h2>
 
@@ -564,13 +565,13 @@ p code{
 
 <p>Um sistema desses tem um espaço de leitura finito. Quando ele enche, as instruções do começo vão sendo empurradas para fora, e o que aconteceu no início da tarefa deixa de existir. Não há aviso. O sistema simplesmente passa a trabalhar sem aquilo.</p>
 
-<p>A analogia que melhor explica isso a quem decide vem de <a class="src" href="harness-sources.html#pt-src-planning-files" data-tip="Othman Adi. planning-with-files, estado duravel em disco, github.com/OthmanAdi/planning-with-files.">quem construiu ferramenta para resolver o problema</a>:</p>
+<p>A analogia que melhor explica isso a quem decide vem de <a class="src" href="harness-sources.html#pt-src-planning-files" data-tip="Othman Adi. planning-with-files, estado durável em disco, github.com/OthmanAdi/planning-with-files.">quem construiu ferramenta para resolver o problema</a>:</p>
 
 <blockquote><p>Janela de contexto é memória volátil. Sistema de arquivos é disco. Tudo o que importa vai para o disco.</p></blockquote>
 
 <p>Na prática, isso significa manter fora da conversa três coisas: o plano com as etapas e o que já foi concluído, as decisões tomadas e por quê, e o registro do que foi feito em cada sessão. A sessão seguinte lê esses arquivos, entende onde parou e avança. É o estado real do trabalho, não uma recontagem da conversa anterior.</p>
 
-<p>É a mesma solução que a <a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Mesma fonte que a parte 1 cita para essa tecnica.">Anthropic</a> descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
+<p>É a mesma solução que a <a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Mesma fonte que a parte 1 cita para essa técnica.">Anthropic</a> descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
 
 <div class="rule-box"><span class="lbl">Teste rápido</span><p>Se você encerrar a sessão agora e abrir outra amanhã, o trabalho continua de onde parou ou recomeça? Se recomeça, você não tem estado durável, tem histórico de conversa. São coisas diferentes.</p></div>
 
@@ -580,9 +581,9 @@ p code{
 
 <p>Falta o formato. Como se escreve, na prática, o guia que o sistema lê.</p>
 
-<p>A resposta virou <a class="src" href="harness-sources.html#pt-src-agentskills" data-tip="Agent Skills, padrao aberto, agentskills.io.">padrão aberto</a> e é mais simples do que parece. Um <a class="g" href="harness-glossary.html#pt-g-skill" data-tip="Pasta com um arquivo SKILL.md, instrucoes, arquivos de apoio e codigo opcional. Formato aberto.">skill</a> é uma pasta com um arquivo chamado SKILL.md dentro. Esse arquivo começa com um cabeçalho de duas linhas, nome e descrição, e o corpo traz as instruções. A pasta pode conter arquivos adicionais e código executável.</p>
+<p>A resposta virou <a class="src" href="harness-sources.html#pt-src-agentskills" data-tip="Agent Skills, padrão aberto, agentskills.io.">padrão aberto</a> e é mais simples do que parece. Um <a class="g" href="harness-glossary.html#pt-g-skill" data-tip="Pasta com um arquivo SKILL.md, instruções, arquivos de apoio e código opcional. Formato aberto.">skill</a> é uma pasta com um arquivo chamado SKILL.md dentro. Esse arquivo começa com um cabeçalho de duas linhas, nome e descrição, e o corpo traz as instruções. A pasta pode conter arquivos adicionais e código executável.</p>
 
-<p>O que faz esse formato funcionar é a <a class="g" href="harness-glossary.html#pt-g-divulgacao" data-tip="O agente carrega so a informacao que a tarefa exige, em niveis: resumo, corpo, anexos.">divulgação progressiva</a>, e ela resolve o problema de espaço que derruba a maior parte das tentativas caseiras.</p>
+<p>O que faz esse formato funcionar é a <a class="g" href="harness-glossary.html#pt-g-divulgacao" data-tip="O agente carrega so a informação que a tarefa exige, em níveis: resumo, corpo, anexos.">divulgação progressiva</a>, e ela resolve o problema de espaço que derruba a maior parte das tentativas caseiras.</p>
 
 <figure>
 <svg viewBox="0 0 700 260" role="img" aria-label="Três níveis de divulgação progressiva de um skill">
@@ -633,7 +634,7 @@ p code{
 
 <h3>A unidade de durabilidade</h3>
 
-<p>O princípio que organiza isso é <a class="src" href="harness-sources.html#pt-src-holdfast" data-tip="Andre Almeida. holdfast, execucao particionada duravel, github.com/AndreAlmeidaDC/holdfast.">a melhor formulação de engenharia que encontrei</a> sobre o assunto:</p>
+<p>O princípio que organiza isso é <a class="src" href="harness-sources.html#pt-src-holdfast" data-tip="Andre Almeida. holdfast, execução particionada durável, github.com/AndreAlmeidaDC/holdfast.">a melhor formulação de engenharia que encontrei</a> sobre o assunto:</p>
 
 <blockquote><p>A unidade de durabilidade tem que ser menor que a unidade de despacho, e o estado pertence a arquivos, não à memória de nenhum sistema.</p></blockquote>
 
@@ -663,7 +664,7 @@ p code{
 
 <h3>Teto e orçamento</h3>
 
-<p>Toda delegação precisa de dois limites que o sistema não possa reescrever. Um <a class="g" href="harness-glossary.html#pt-g-teto" data-tip="Numero maximo de vezes que um agente pode repetir uma tarefa antes de parar e escalar.">teto</a> de tentativas, porque sem ele um laço de correção repete a mesma tentativa indefinidamente. E um teto de custo, porque o gasto é silencioso e só aparece na fatura.</p>
+<p>Toda delegação precisa de dois limites que o sistema não possa reescrever. Um <a class="g" href="harness-glossary.html#pt-g-teto" data-tip="Número máximo de vezes que um agente pode repetir uma tarefa antes de parar e escalar.">teto</a> de tentativas, porque sem ele um laço de correção repete a mesma tentativa indefinidamente. E um teto de custo, porque o gasto é silencioso e só aparece na fatura.</p>
 
 <p>Quando o teto é atingido, o comportamento correto não é falhar em silêncio nem continuar tentando. É parar, entregar o que existe marcado como incompleto, e explicar o que não fechou. É exatamente o que um bom profissional faz.</p>
 
@@ -690,7 +691,7 @@ Padrão provável: transposição de dígitos (84 / 48).
 Corrija o valor no relatório usando o número da fonte e rode
 a conferência novamente antes de entregar.</code></pre>
 
-<p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler descreve isso</a> como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
+<p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler descreve isso</a> como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
 
 <div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu verificador como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um verificador, é um alarme.</p></div>
 
@@ -746,7 +747,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p><strong>No portão</strong> ficam as verificações mais caras, que rodam uma vez, na entrega, e confirmam o resultado. É também onde mora a aprovação humana, quando existe.</p>
 
-<p><strong>Em cadência</strong> ficam os verificadores que procuram <a class="g" href="harness-glossary.html#pt-g-deriva" data-tip="Degradacao gradual que nao acontece em nenhuma execucao especifica, e sim ao longo de dezenas delas.">deriva</a>, aquela degradação que não acontece em nenhuma execução específica e sim ao longo de dezenas delas. Rodam por agenda, não por tarefa.</p>
+<p><strong>Em cadência</strong> ficam os verificadores que procuram <a class="g" href="harness-glossary.html#pt-g-deriva" data-tip="Degradação gradual que não acontece em nenhuma execução específica, e sim ao longo de dezenas delas.">deriva</a>, aquela degradação que não acontece em nenhuma execução específica e sim ao longo de dezenas delas. Rodam por agenda, não por tarefa.</p>
 
 <p><strong>Em uso</strong> ficam os sinais do mundo real, que voltam depois que o trabalho já saiu. Reclamação de cliente, taxa de retrabalho, devolução. É o verificador mais lento e o mais verdadeiro.</p>
 
@@ -770,7 +771,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A analogia útil é a de uma linha de inspeção. Se ela nunca acusa nada, ou o processo é perfeito, o que é improvável, ou os instrumentos estão medindo a coisa errada. Se acusa o tempo todo, ou o padrão está errado, ou a sensibilidade está exagerada e o resultado vira ruído que todo mundo aprende a ignorar.</p>
 
-<p>A solução é <a class="src" href="harness-sources.html#pt-src-sensors-cli" data-tip="Codigo do painel de verificadores, github.com/birgitta410/sensors-cli.">registrar o histórico de disparos de cada verificador</a> e responder com dado em vez de opinião.</p>
+<p>A solução é <a class="src" href="harness-sources.html#pt-src-sensors-cli" data-tip="Código do painel de verificadores, github.com/birgitta410/sensors-cli.">registrar o histórico de disparos de cada verificador</a> e responder com dado em vez de opinião.</p>
 
 <table class="wrap">
 <thead><tr><th>O que o histórico mostra</th><th>O que isso significa</th><th>O que fazer</th></tr></thead>
@@ -881,17 +882,17 @@ Bandeiras vermelhas:
 </tbody>
 </table>
 
-<p>Repare no critério que organiza a tabela: não é a importância da ação, é a <a class="g" href="harness-glossary.html#pt-g-reversibilidade" data-tip="Criterio que organiza a delegacao: acao reversivel custa o preco de desfazer, irreversivel custa o preco do erro.">reversibilidade</a>. Ação reversível pode ser delegada porque o custo do erro é o custo de desfazer. Ação irreversível não pode, por mais confiável que o sistema pareça.</p>
+<p>Repare no critério que organiza a tabela: não é a importância da ação, é a <a class="g" href="harness-glossary.html#pt-g-reversibilidade" data-tip="Critério que organiza a delegação: ação reversivel custa o preço de desfazer, irreversível custa o preço do erro.">reversibilidade</a>. Ação reversível pode ser delegada porque o custo do erro é o custo de desfazer. Ação irreversível não pode, por mais confiável que o sistema pareça.</p>
 
-<p>E o <a class="g" href="harness-glossary.html#pt-g-recibo" data-tip="Registro compacto do que produziu um resultado: contrato, fontes, verificadores, tentativas, custo e aprovacao.">recibo</a>, que transforma tudo isso em algo auditável:</p>
+<p>E o <a class="g" href="harness-glossary.html#pt-g-recibo" data-tip="Registro compacto do que produziu um resultado: contrato, fontes, verificadores, tentativas, custo e aprovação.">recibo</a>, que transforma tudo isso em algo auditável:</p>
 
 <pre><code>{
-  "execucao": "2026-08-28T09:14:22",
+  "execução": "2026-08-28T09:14:22",
   "tarefa": "responder-chamado",
   "contrato": "resposta-nivel-1@v3",
   "fontes_consultadas": ["base-conhecimento@2026-08-20", "chamado-88431"],
   "sensores": {
-    "politica-de-tom": "ok",
+    "política-de-tom": "ok",
     "dados-pessoais-no-texto": "ok",
     "conferencia-de-fatos": "1 divergencia corrigida"
   },
@@ -929,7 +930,7 @@ Bandeiras vermelhas:
 
 <blockquote><p>A maior parte das frustrações com agentes vem de tentar operar em N2 dentro de um ambiente que só sustenta N1. O sistema não está falhando. Ele está sendo cobrado por um controle que ninguém lhe deu como construir.</p></blockquote>
 
-<p>Consequência prática para quem decide: a pergunta de compra não é qual ferramenta é a melhor. É até que faixa eu preciso chegar nesta tarefa, e qual é a classe de ambiente mais simples que sustenta aquela faixa. Nomes, repositórios e roteiros estão no <a href="harness-toolkit.html">guia compacto</a>, que é datado e revisado à parte justamente porque envelhece mais rápido.</p>
+<p>Consequência prática para quem decide: a pergunta de compra não é qual ferramenta é a melhor. É até que faixa eu preciso chegar nesta tarefa, e qual é a classe de ambiente mais simples que sustenta aquela faixa. Nomes, repositórios e roteiros estão no <a href="harness-toolkit.html#pt-top">guia compacto</a>, que é datado e revisado à parte justamente porque envelhece mais rápido.</p>
 
 <h2 id="pt-reforcar">13. Reforçar: como um harness evolui</h2>
 
@@ -945,7 +946,7 @@ Bandeiras vermelhas:
 
 <p>Guias e verificadores acumulam entulho como qualquer outro sistema. Regras que já não se aplicam, verificações que ninguém lê, exemplos de um processo que mudou. E o trabalho produzido acumula o seu próprio: repetição desnecessária, camadas que não servem a nada, restos de tentativas abandonadas.</p>
 
-<p>Essa disciplina de limpeza já está documentada quase regra por regra em <a class="src" href="harness-sources.html#pt-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, projeto oh-my-claudecode, github.com/Yeachan-Heo/oh-my-claudecode. Sustenta quatro das cinco regras citadas; reversao automatica nao documentada neste skill.">pelo menos uma ferramenta real de limpeza</a>, e as regras valem mais que qualquer produto específico:</p>
+<p>Essa disciplina de limpeza já está documentada quase regra por regra em <a class="src" href="harness-sources.html#pt-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, projeto oh-my-claudecode, github.com/Yeachan-Heo/oh-my-claudecode. Sustenta quatro das cinco regras citadas; reversao automática não documentada neste skill.">pelo menos uma ferramenta real de limpeza</a>, e as regras valem mais que qualquer produto específico:</p>
 
 <table class="wrap">
 <thead><tr><th>Regra</th><th>Por que existe</th></tr></thead>
@@ -983,20 +984,21 @@ Bandeiras vermelhas:
 <table class="wrap">
 <thead><tr><th>Peça</th><th>O que entrega</th></tr></thead>
 <tbody>
-<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
+<tr><td><a href="harness-p1.html#pt-top">Parte 1</a></td><td>Por que o ambiente importa mais que o modelo, o ciclo MEDIR, as faixas de autonomia e os riscos de nível de conselho</td></tr>
 <tr><td>Parte 2, esta aqui</td><td>Guias e verificadores, o formato de skill, três exemplos completos e as classes de ambiente</td></tr>
-<tr><td><a href="harness-p3.html">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
-<tr><td><a href="harness-p4.html">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
-<tr><td><a href="harness-toolkit.html">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
+<tr><td><a href="harness-p3.html#pt-top">Parte 3</a></td><td>A separação de poderes, a regra de dois, identidade, injeção, o registro, e o terreno legal no Brasil e na Europa</td></tr>
+<tr><td><a href="harness-p4.html#pt-top">Parte 4</a></td><td>O agente como objeto gerenciado: um ciclo de vida, quatro papéis, oito indicadores e onde deve sentar o escritório que administra tudo isso</td></tr>
+<tr><td><a href="harness-toolkit.html#pt-top">Guia compacto</a></td><td>Nomes, repositórios, comandos e passo a passo, organizados pelos cinco passos do MEDIR</td></tr>
 </tbody>
 </table>
 
 <div class="foot">
 <p>Parte 2 de 4 · Série Harness · Os exemplos de skill são funcionais e foram simplificados para caber no artigo. A personagem da abertura é composta a partir de padrões recorrentes.</p>
-<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html">diário de bordo</a>.</p>
+<p>Este projeto documenta as skills que instala e usa, como prática e não só como argumento. Lista completa e registro de uso em <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolução de tokens e palavras no <a href="docs/logbook.html#pt-top">diário de bordo</a>.</p>
 </div>
 </main>
-<main class="page" id="doc-en">
+<main class="page" id="doc-en" lang="en-GB">
+<span id="en-top"></span>
 <p class="eyebrow">Harness · Part 2 of 4 · How</p>
 
 <h1>Guides and sensors: how an agent learns to correct itself</h1>
@@ -1475,7 +1477,7 @@ Red flags:
 
 <blockquote><p>Most of the frustration with agents comes from trying to operate at N2 inside an environment that only sustains N1. The system is not failing. It is being held to a control nobody gave it any way to build.</p></blockquote>
 
-<p>The practical consequence for whoever decides: the purchasing question is not which tool is best. It is what tier this task needs to reach, and what the simplest environment class is that sustains that tier. Names, repositories and step-by-step guides are in the <a href="harness-toolkit.html">compact guide</a>, which is dated and revised separately precisely because it ages faster.</p>
+<p>The practical consequence for whoever decides: the purchasing question is not which tool is best. It is what tier this task needs to reach, and what the simplest environment class is that sustains that tier. Names, repositories and step-by-step guides are in the <a href="harness-toolkit.html#en-top">compact guide</a>, which is dated and revised separately precisely because it ages faster.</p>
 
 <h2 id="en-reforcar">13. Reinforce: how a harness evolves</h2>
 
@@ -1529,20 +1531,21 @@ Red flags:
 <table class="wrap">
 <thead><tr><th>Piece</th><th>What it delivers</th></tr></thead>
 <tbody>
-<tr><td><a href="harness-p1.html">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
+<tr><td><a href="harness-p1.html#en-top">Part 1</a></td><td>Why the environment matters more than the model, the MEDIR cycle, the autonomy tiers and board-level risks</td></tr>
 <tr><td>Part 2, this one</td><td>Guides and sensors, the skill format, three complete examples and the environment classes</td></tr>
-<tr><td><a href="harness-p3.html">Part 3</a></td><td>The separation of powers, the rule of two, identity, injection, the record, and the legal ground in Brazil and Europe</td></tr>
-<tr><td><a href="harness-p4.html">Part 4</a></td><td>The agent as a managed object: a life cycle, four roles, eight indicators and where the office that runs all of it should sit</td></tr>
-<tr><td><a href="harness-toolkit.html">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
+<tr><td><a href="harness-p3.html#en-top">Part 3</a></td><td>The separation of powers, the rule of two, identity, injection, the record, and the legal ground in Brazil and Europe</td></tr>
+<tr><td><a href="harness-p4.html#en-top">Part 4</a></td><td>The agent as a managed object: a life cycle, four roles, eight indicators and where the office that runs all of it should sit</td></tr>
+<tr><td><a href="harness-toolkit.html#en-top">Compact guide</a></td><td>Names, repositories, commands and step-by-step guides, organised by the five steps of MEDIR</td></tr>
 </tbody>
 </table>
 
 <div class="foot">
 <p>Part 2 of 4 · Harness series · The skill examples are functional and were simplified to fit the article. The character in the opening is composed from recurring patterns.</p>
-<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html">project log</a>.</p>
+<p>This project documents the skills it installs and uses, as practice and not only as argument. Full list and usage log in <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, token and word growth in the <a href="docs/logbook.html#en-top">project log</a>.</p>
 </div>
 </main>
-<main class="page" id="doc-es" hidden>
+<main class="page" id="doc-es" hidden lang="es">
+<span id="es-top"></span>
 <p class="eyebrow">Harness · Parte 2 de 4 · Cómo</p>
 
 <h1>Guías y sensores: cómo un agente aprende a corregirse</h1>
@@ -1594,11 +1597,11 @@ Red flags:
 
 <p>Por más complejo que parezca un sistema de estos, solo tienes dos tipos de control sobre él. Puedes influir en lo que hace antes de actuar, o puedes observar lo que hizo después de actuar. No existe un tercer lugar. Todo lo que la industria llama regla, política, prueba, revisión, gancho, puerta o auditoría cae en una de esas dos categorías.</p>
 
-<p>La formulación más limpia de estas dos categorías viene de <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
+<p>La formulación más limpia de estas dos categorías viene de <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
 
-<p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actua antes de la ejecucion, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
+<p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actúa antes de la ejecución, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
 
-<p><a class="g" href="harness-glossary.html#es-g-sensor" data-tip="Control que actua despues de la ejecucion, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
+<p><a class="g" href="harness-glossary.html#es-g-sensor" data-tip="Control que actúa después de la ejecución, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
 
 <blockquote><p>Solo con guías, tienes un sistema que sigue reglas y nunca descubre si funcionaron. Solo con sensores, tienes un sistema que repite el mismo error para siempre, corregido cada vez. Los dos juntos forman algo que aprende. Separados, ninguno de los dos es un harness.</p></blockquote>
 
@@ -1606,7 +1609,7 @@ Red flags:
 
 <h2 id="es-duro-julgamento">3. Verificación dura y verificación por juicio</h2>
 
-<p>Guías y sensores se dividen otra vez, ahora por naturaleza. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
+<p>Guías y sensores se dividen otra vez, ahora por naturaleza. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
 
 <p><strong>La verificación dura</strong> es determinista y rápida. Corre en segundos, cuesta casi nada, y da siempre la misma respuesta para la misma entrada. Un script que confirma si un número coincide con la fuente. Una regla que impide que un documento salga sin un campo obligatorio. Una prueba automatizada.</p>
 
@@ -1643,7 +1646,7 @@ Red flags:
 
 <p>La regla de inversión es simple y ahorra mucho dinero: <strong>lo que se pueda verificar de forma dura, verifícalo de forma dura</strong>. El juicio es caro, lento y no determinista, y debe reservarse para lo que la verificación dura no alcanza, que es el terreno semántico.</p>
 
-<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
+<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
 
 <h2 id="es-equipar">4. Equipar: qué ve y qué puede tocar</h2>
 
@@ -1663,7 +1666,7 @@ Red flags:
 
 <p>En la práctica, esto significa mantener fuera de la conversación tres cosas: el plan con sus etapas y lo que ya se completó, las decisiones tomadas y por qué, y el registro de lo que se hizo en cada sesión. La sesión siguiente lee esos archivos, entiende dónde se quedó y avanza. No es un resumen de la conversación anterior, es el estado real del trabajo.</p>
 
-<p>Es la misma solución que <a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Misma fuente que cita la parte 1 para esta tecnica.">Anthropic</a> describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
+<p>Es la misma solución que <a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Misma fuente que cita la parte 1 para esta técnica.">Anthropic</a> describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
 
 <div class="rule-box"><span class="lbl">Prueba rápida</span><p>Si cierras la sesión ahora y abres otra mañana, ¿el trabajo continúa donde se quedó o empieza de nuevo? Si empieza de nuevo, no tienes estado duradero, tienes historial de conversación. Son cosas distintas.</p></div>
 
@@ -1673,9 +1676,9 @@ Red flags:
 
 <p>Falta el formato. Cómo se escribe, en la práctica, la guía que el sistema lee.</p>
 
-<p>La respuesta se volvió un <a class="src" href="harness-sources.html#es-src-agentskills" data-tip="Agent Skills, estandar abierto, agentskills.io.">estándar abierto</a> y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
+<p>La respuesta se volvió un <a class="src" href="harness-sources.html#es-src-agentskills" data-tip="Agent Skills, estándar abierto, agentskills.io.">estándar abierto</a> y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y código opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
 
-<p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la informacion que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
+<p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la información que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
 
 <figure>
 <svg viewBox="0 0 700 260" role="img" aria-label="Tres niveles de divulgación progresiva de un skill">
@@ -1726,7 +1729,7 @@ Red flags:
 
 <h3>La unidad de durabilidad</h3>
 
-<p>El principio que organiza esto es <a class="src" href="harness-sources.html#es-src-holdfast" data-tip="Andre Almeida. holdfast, ejecucion particionada duradera, github.com/AndreAlmeidaDC/holdfast.">la mejor formulación de ingeniería que he encontrado</a> sobre el tema:</p>
+<p>El principio que organiza esto es <a class="src" href="harness-sources.html#es-src-holdfast" data-tip="Andre Almeida. holdfast, ejecución particionada duradera, github.com/AndreAlmeidaDC/holdfast.">la mejor formulación de ingeniería que he encontrado</a> sobre el tema:</p>
 
 <blockquote><p>La unidad de durabilidad tiene que ser más pequeña que la unidad de despacho, y el estado pertenece a los archivos, no a la memoria de ningún sistema.</p></blockquote>
 
@@ -1756,7 +1759,7 @@ Red flags:
 
 <h3>Tope y presupuesto</h3>
 
-<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="harness-glossary.html#es-g-teto" data-tip="Numero maximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
+<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="harness-glossary.html#es-g-teto" data-tip="Número máximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
 
 <p>Cuando se alcanza el tope, el comportamiento correcto no es fallar en silencio ni seguir intentando. Es detenerse, entregar lo que existe marcado como incompleto, y explicar qué no se cerró. Es exactamente lo que hace un buen profesional.</p>
 
@@ -1783,7 +1786,7 @@ Patrón probable: transposición de dígitos (84 / 48).
 Corrige el valor del informe usando el número de la fuente y
 vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
-<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describe esto</a> como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
+<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describe esto</a> como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
 
 <div class="rule-box"><span class="lbl">La regla práctica</span><p>Escribe el mensaje de error de tu sensor como si le estuvieras explicando a un colega nuevo qué hacer a continuación. Si no sirve para eso, no es un sensor, es una alarma.</p></div>
 
@@ -1839,7 +1842,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p><strong>En la puerta</strong> están las verificaciones más caras, que corren una vez, en la entrega, y confirman el resultado. Es también donde vive la aprobación humana, cuando existe.</p>
 
-<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="harness-glossary.html#es-g-deriva" data-tip="Degradacion gradual que no ocurre en ninguna ejecucion especifica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
+<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="harness-glossary.html#es-g-deriva" data-tip="Degradación gradual que no ocurre en ninguna ejecución específica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
 
 <p><strong>En uso</strong> están las señales del mundo real, que vuelven después de que el trabajo ya salió. Quejas de clientes, tasa de retrabajo, devoluciones. Es el sensor más lento y el más verdadero.</p>
 
@@ -1863,7 +1866,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p>La analogía útil es la de una línea de inspección. Si nunca marca nada, o el proceso es perfecto, lo cual es improbable, o los instrumentos están midiendo lo que no es. Si marca todo el tiempo, o el estándar está mal, o la sensibilidad está exagerada y el resultado se convierte en ruido que todo el mundo aprende a ignorar.</p>
 
-<p>La solución es <a class="src" href="harness-sources.html#es-src-sensors-cli" data-tip="Codigo del panel de sensores, github.com/birgitta410/sensors-cli.">registrar el historial de disparos de cada sensor</a> y responder con datos en vez de opinión.</p>
+<p>La solución es <a class="src" href="harness-sources.html#es-src-sensors-cli" data-tip="Código del panel de sensores, github.com/birgitta410/sensors-cli.">registrar el historial de disparos de cada sensor</a> y responder con datos en vez de opinión.</p>
 
 <table class="wrap">
 <thead><tr><th>Qué muestra el historial</th><th>Qué significa</th><th>Qué hacer</th></tr></thead>
@@ -1978,19 +1981,19 @@ Banderas rojas:
 </tbody>
 </table>
 
-<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="Criterio que organiza la delegacion: una accion reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
+<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="Criterio que organiza la delegación: una acción reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
 
-<p>Y el <a class="g" href="harness-glossary.html#es-g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobacion.">recibo</a>, que convierte todo esto en algo auditable:</p>
+<p>Y el <a class="g" href="harness-glossary.html#es-g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobación.">recibo</a>, que convierte todo esto en algo auditable:</p>
 
 <pre><code>{
-  "ejecucion": "2026-08-28T09:14:22",
+  "ejecución": "2026-08-28T09:14:22",
   "tarea": "responder-ticket",
   "contrato": "respuesta-nivel-1@v3",
   "fuentes_consultadas": ["base-de-conocimiento@2026-08-20", "ticket-88431"],
   "sensores": {
-    "politica-de-tono": "ok",
+    "política-de-tono": "ok",
     "datos-personales-en-el-texto": "ok",
-    "verificacion-de-hechos": "1 divergencia corregida"
+    "verificación-de-hechos": "1 divergencia corregida"
   },
   "intentos": 2,
   "costo": "$0,84",
@@ -2026,7 +2029,7 @@ Banderas rojas:
 
 <blockquote><p>La mayor parte de la frustración con agentes viene de intentar operar en N2 dentro de un entorno que solo sostiene N1. El sistema no está fallando. Se le está exigiendo un control que nadie le dio manera de construir.</p></blockquote>
 
-<p>La consecuencia práctica para quien decide: la pregunta de compra no es qué herramienta es la mejor. Es hasta qué banda necesito llegar en esta tarea, y cuál es la clase de entorno más simple que sostiene esa banda. Nombres, repositorios y guías paso a paso están en la <a href="harness-toolkit.html">guía compacta</a>, que está fechada y se revisa aparte justamente porque envejece más rápido.</p>
+<p>La consecuencia práctica para quien decide: la pregunta de compra no es qué herramienta es la mejor. Es hasta qué banda necesito llegar en esta tarea, y cuál es la clase de entorno más simple que sostiene esa banda. Nombres, repositorios y guías paso a paso están en la <a href="harness-toolkit.html#es-top">guía compacta</a>, que está fechada y se revisa aparte justamente porque envejece más rápido.</p>
 
 <h2 id="es-reforcar">13. Reforzar: cómo evoluciona un harness</h2>
 
@@ -2042,7 +2045,7 @@ Banderas rojas:
 
 <p>Las guías y los sensores acumulan basura como cualquier otro sistema. Reglas que ya no aplican, verificaciones que nadie lee, ejemplos de un proceso que cambió. Y el trabajo producido acumula la suya propia: repetición innecesaria, capas que no sirven para nada, restos de intentos abandonados.</p>
 
-<p>Esta disciplina ya está documentada casi regla por regla en <a class="src" href="harness-sources.html#es-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, proyecto oh-my-claudecode, github.com/yeachan-heo/oh-my-claudecode. Sustenta cuatro de las cinco reglas citadas; reversion automatica no documentada en este skill.">al menos una herramienta real de limpieza</a>, y las reglas valen más que cualquier producto concreto:</p>
+<p>Esta disciplina ya está documentada casi regla por regla en <a class="src" href="harness-sources.html#es-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, proyecto oh-my-claudecode, github.com/yeachan-heo/oh-my-claudecode. Sustenta cuatro de las cinco reglas citadas; reversión automática no documentada en este skill.">al menos una herramienta real de limpieza</a>, y las reglas valen más que cualquier producto concreto:</p>
 
 <table class="wrap">
 <thead><tr><th>Regla</th><th>Por qué existe</th></tr></thead>
@@ -2080,17 +2083,17 @@ Banderas rojas:
 <table class="wrap">
 <thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
 <tbody>
-<tr><td><a href="harness-p1.html">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de junta directiva</td></tr>
+<tr><td><a href="harness-p1.html#es-top">Parte 1</a></td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de junta directiva</td></tr>
 <tr><td>Parte 2, esta</td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
-<tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
-<tr><td><a href="harness-p4.html">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
-<tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
+<tr><td><a href="harness-p3.html#es-top">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td><a href="harness-p4.html#es-top">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
+<tr><td><a href="harness-toolkit.html#es-top">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
 </tbody>
 </table>
 
 <div class="foot">
 <p>Parte 2 de 4 · Serie Harness · Los ejemplos de skill son funcionales y se simplificaron para caber en el artículo. El personaje de la apertura está compuesto a partir de patrones recurrentes.</p>
-<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html#es-top">diario de bordo</a>.</p>
 </div>
 </main>
 <script>
@@ -2106,10 +2109,12 @@ Banderas rojas:
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }
+  var T0=document.title,SX0=(function(){var t=document.title,i=t.lastIndexOf(' | ');return i>0?t.slice(i+3):'';})();function SXT(s,l){var m={pt:[['Part ','Parte '],['Companion document','Documento companheiro'],['Harness series','S\u00e9rie Harness']],es:[['Part ','Parte '],['Companion document','Documento complementario'],['Harness series','Serie Harness']]}[l];if(!m)return s;for(var k=0;k<m.length;k++){if(s.indexOf(m[k][0])===0){return m[k][1]+s.slice(m[k][0].length);}}return s;}
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    var h1=mains[l].querySelector('h1');document.title=(l==='en'||!h1)?T0:h1.textContent+(SX0?' | '+SXT(SX0,l):'');
     setSeries(l);
   }
   var h=location.hash.slice(1);

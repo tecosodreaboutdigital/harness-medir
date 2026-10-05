@@ -41,7 +41,7 @@
 
 <h2 id="what">2. What a harness is</h2>
 
-<p>There is an equation that has become consensus among the people running these systems in production, and it fits in four words: agent equals model plus harness.</p>
+<p>There is an equation that has become consensus among the people running these systems in production, and it fits in four words: <a class="g" href="harness-glossary.html#en-g-agent" data-tip="A system that combines a language model with tools, memory and rules to carry out multi-step tasks.">agent</a> equals model plus harness.</p>
 
 <p>The <a class="g" href="harness-glossary.html#en-g-model" data-tip="The reasoning engine. It predicts the next word or the next action, but executes nothing on its own.">model</a> is the reasoning engine. It proposes the next action. It is what the industry sells, what makes the headlines, what changes name every six weeks. The <a class="g" href="harness-glossary.html#en-g-harness" data-tip="Everything in an agent except the model: tools, context, memory, permissions, sensors and record.">harness</a> is everything else: what the system can see, what it can touch, what survives from one session to the next, what counts as evidence that the work is good, and at what moment execution must stop and call someone.</p>
 
@@ -151,7 +151,7 @@
 
 <p><a class="src" href="harness-sources.html#en-src-anthropic-effective" data-tip="Anthropic, &quot;Effective harnesses for long-running agents&quot;, November 2025.">Anthropic</a> solved the problem of agents working for hours with a solution any manager recognises. The first working session sets up the environment: an initialisation script, a progress file recording what has been done, and an initial version marker. Every subsequent session reads that record, advances one piece, and writes the update down. Memory lives outside the conversation, in artefacts, not in the system's head.</p>
 
-<p>They then went further, inspired by an <a class="src" href="harness-sources.html#en-src-anthropic-design" data-tip="Anthropic, &quot;Harness design for long-running application development&quot;.">adversarial architecture</a>: they separated who plans, who executes and who evaluates. Three roles, with explicit evaluation criteria. It is the most transferable principle in everything published on the subject so far, and the most ignored in practice: <strong>the one who generates does not evaluate</strong>. Self-assessment is not a shortcut, it is the failure mode.</p>
+<p>They then went further, inspired by an <a class="src" href="harness-sources.html#en-src-anthropic-design" data-tip="Anthropic, &quot;Harness design for long-running application development&quot;.">architecture</a> of <a class="g" href="harness-glossary.html#en-g-gan" data-tip="An architecture in which one network generates and another evaluates, and both improve in the contest. The origin of the idea of separating generator and evaluator.">adversarial networks</a>: they separated who plans, who executes and who evaluates. Three roles, with explicit evaluation criteria. It is the most transferable principle in everything published on the subject so far, and the most ignored in practice: <strong>the one who generates does not evaluate</strong>. Self-assessment is not a shortcut, it is the failure mode.</p>
 
 <h3>The trace as architecture</h3>
 

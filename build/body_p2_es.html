@@ -49,11 +49,11 @@
 
 <p>Por más complejo que parezca un sistema de estos, solo tienes dos tipos de control sobre él. Puedes influir en lo que hace antes de actuar, o puedes observar lo que hizo después de actuar. No existe un tercer lugar. Todo lo que la industria llama regla, política, prueba, revisión, gancho, puerta o auditoría cae en una de esas dos categorías.</p>
 
-<p>La formulación más limpia de estas dos categorías viene de <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
+<p>La formulación más limpia de estas dos categorías viene de <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Birgitta Böckeler</a>, de Thoughtworks, y usa dos nombres que vale la pena adoptar.</p>
 
-<p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actua antes de la ejecucion, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
+<p><a class="g" href="harness-glossary.html#es-g-guia" data-tip="Control que actúa antes de la ejecución, para aumentar la probabilidad de acertar en el primer intento.">Las guías</a> son los controles que anticipan. Aumentan la probabilidad de acertar al primer intento: reglas escritas, convenciones, ejemplos, el mapa de dónde buscar cada cosa, el contrato de la tarea. Eso fue lo que la directora construyó en la cuarta semana.</p>
 
-<p><a class="g" href="harness-glossary.html#es-g-sensor" data-tip="Control que actua despues de la ejecucion, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
+<p><a class="g" href="harness-glossary.html#es-g-sensor" data-tip="Control que actúa después de la ejecución, mide el resultado y le devuelve al agente lo que necesita para corregirse.">Los sensores</a> son los controles que observan. Miden lo que se produjo y le devuelven al sistema la información necesaria para que se corrija solo: conciliaciones, pruebas, comparaciones contra la fuente, revisiones. Eso era lo que faltaba.</p>
 
 <blockquote><p>Solo con guías, tienes un sistema que sigue reglas y nunca descubre si funcionaron. Solo con sensores, tienes un sistema que repite el mismo error para siempre, corregido cada vez. Los dos juntos forman algo que aprende. Separados, ninguno de los dos es un harness.</p></blockquote>
 
@@ -61,7 +61,7 @@
 
 <h2 id="duro-julgamento">3. Verificación dura y verificación por juicio</h2>
 
-<p>Guías y sensores se dividen otra vez, ahora por naturaleza. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
+<p>Guías y sensores se dividen otra vez, ahora por naturaleza. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> lo llama computacional e inferencial. En español de negocio, prefiero verificación dura y verificación por juicio.</p>
 
 <p><strong>La verificación dura</strong> es determinista y rápida. Corre en segundos, cuesta casi nada, y da siempre la misma respuesta para la misma entrada. Un script que confirma si un número coincide con la fuente. Una regla que impide que un documento salga sin un campo obligatorio. Una prueba automatizada.</p>
 
@@ -98,7 +98,7 @@
 
 <p>La regla de inversión es simple y ahorra mucho dinero: <strong>lo que se pueda verificar de forma dura, verifícalo de forma dura</strong>. El juicio es caro, lento y no determinista, y debe reservarse para lo que la verificación dura no alcanza, que es el terreno semántico.</p>
 
-<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
+<p>También existe un efecto de costo que cambió hace poco. La verificación automática siempre existió y siempre estuvo subutilizada, porque configurar reglas costaba más trabajo del que el retorno justificaba. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que la balanza se invirtió: hoy es barato pedirle al propio sistema que escriba las reglas y los scripts de verificación, lo que hunde el costo de entrada, mientras el beneficio subió, porque esas verificaciones detectan justo los errores típicos de máquina que un humano no cometería.</p>
 
 <h2 id="equipar">4. Equipar: qué ve y qué puede tocar</h2>
 
@@ -118,7 +118,7 @@
 
 <p>En la práctica, esto significa mantener fuera de la conversación tres cosas: el plan con sus etapas y lo que ya se completó, las decisiones tomadas y por qué, y el registro de lo que se hizo en cada sesión. La sesión siguiente lee esos archivos, entiende dónde se quedó y avanza. No es un resumen de la conversación anterior, es el estado real del trabajo.</p>
 
-<p>Es la misma solución que <a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Misma fuente que cita la parte 1 para esta tecnica.">Anthropic</a> describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
+<p>Es la misma solución que <a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Misma fuente que cita la parte 1 para esta técnica.">Anthropic</a> describió para agentes de larga duración, con una primera sesión que monta el entorno y todas las siguientes leyendo el registro y avanzando un tramo más. Y es exactamente lo que faltaba en la automatización de la directora: cuando apareció el error, no había rastro para reconstruir qué había visto el sistema y en qué orden.</p>
 
 <div class="rule-box"><span class="lbl">Prueba rápida</span><p>Si cierras la sesión ahora y abres otra mañana, ¿el trabajo continúa donde se quedó o empieza de nuevo? Si empieza de nuevo, no tienes estado duradero, tienes historial de conversación. Son cosas distintas.</p></div>
 
@@ -128,9 +128,9 @@
 
 <p>Falta el formato. Cómo se escribe, en la práctica, la guía que el sistema lee.</p>
 
-<p>La respuesta se volvió un <a class="src" href="harness-sources.html#es-src-agentskills" data-tip="Agent Skills, estandar abierto, agentskills.io.">estándar abierto</a> y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y codigo opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
+<p>La respuesta se volvió un <a class="src" href="harness-sources.html#es-src-agentskills" data-tip="Agent Skills, estándar abierto, agentskills.io.">estándar abierto</a> y es más simple de lo que parece. Un <a class="g" href="harness-glossary.html#es-g-skill" data-tip="Carpeta con un archivo SKILL.md, instrucciones, archivos de apoyo y código opcional. Formato abierto.">skill</a> es una carpeta con un archivo llamado SKILL.md dentro. Ese archivo empieza con un encabezado de dos líneas, nombre y descripción, y el cuerpo trae las instrucciones. La carpeta puede contener archivos adicionales y código ejecutable.</p>
 
-<p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la informacion que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
+<p>Lo que hace que este formato funcione es la <a class="g" href="harness-glossary.html#es-g-divulgacao" data-tip="El agente carga solo la información que la tarea exige, en niveles: resumen, cuerpo, anexos.">divulgación progresiva</a>, y resuelve el problema de espacio que hunde a la mayoría de los intentos caseros.</p>
 
 <figure>
 <svg viewBox="0 0 700 260" role="img" aria-label="Tres niveles de divulgación progresiva de un skill">
@@ -181,7 +181,7 @@
 
 <h3>La unidad de durabilidad</h3>
 
-<p>El principio que organiza esto es <a class="src" href="harness-sources.html#es-src-holdfast" data-tip="Andre Almeida. holdfast, ejecucion particionada duradera, github.com/AndreAlmeidaDC/holdfast.">la mejor formulación de ingeniería que he encontrado</a> sobre el tema:</p>
+<p>El principio que organiza esto es <a class="src" href="harness-sources.html#es-src-holdfast" data-tip="Andre Almeida. holdfast, ejecución particionada duradera, github.com/AndreAlmeidaDC/holdfast.">la mejor formulación de ingeniería que he encontrado</a> sobre el tema:</p>
 
 <blockquote><p>La unidad de durabilidad tiene que ser más pequeña que la unidad de despacho, y el estado pertenece a los archivos, no a la memoria de ningún sistema.</p></blockquote>
 
@@ -211,7 +211,7 @@
 
 <h3>Tope y presupuesto</h3>
 
-<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="harness-glossary.html#es-g-teto" data-tip="Numero maximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
+<p>Toda delegación necesita dos límites que el sistema no pueda reescribir. Un <a class="g" href="harness-glossary.html#es-g-teto" data-tip="Número máximo de veces que un agente puede repetir una tarea antes de detenerse y escalar.">tope</a> de intentos, porque sin él un ciclo de corrección repite el mismo intento indefinidamente. Y un tope de costo, porque el gasto es silencioso y solo aparece en la factura.</p>
 
 <p>Cuando se alcanza el tope, el comportamiento correcto no es fallar en silencio ni seguir intentando. Es detenerse, entregar lo que existe marcado como incompleto, y explicar qué no se cerró. Es exactamente lo que hace un buen profesional.</p>
 
@@ -238,7 +238,7 @@ Patrón probable: transposición de dígitos (84 / 48).
 Corrige el valor del informe usando el número de la fuente y
 vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
-<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describe esto</a> como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
+<p>El segundo contiene todo lo necesario para una autocorrección sin nueva instrucción humana: qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. <a class="src" href="harness-sources.html#es-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describe esto</a> como una buena forma de inyección de contexto, y relata un experimento que prueba el punto: cuando faltó esa orientación en una regla concreta, el sistema empezó a esquivarla sistemáticamente, y volvió a comportarse bien en cuanto se escribió la orientación.</p>
 
 <div class="rule-box"><span class="lbl">La regla práctica</span><p>Escribe el mensaje de error de tu sensor como si le estuvieras explicando a un colega nuevo qué hacer a continuación. Si no sirve para eso, no es un sensor, es una alarma.</p></div>
 
@@ -294,7 +294,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p><strong>En la puerta</strong> están las verificaciones más caras, que corren una vez, en la entrega, y confirman el resultado. Es también donde vive la aprobación humana, cuando existe.</p>
 
-<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="harness-glossary.html#es-g-deriva" data-tip="Degradacion gradual que no ocurre en ninguna ejecucion especifica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
+<p><strong>En cadencia</strong> están los sensores que buscan <a class="g" href="harness-glossary.html#es-g-deriva" data-tip="Degradación gradual que no ocurre en ninguna ejecución específica, sino a lo largo de decenas de ellas.">deriva</a>, esa degradación que no ocurre en ninguna ejecución específica sino a lo largo de decenas de ellas. Corren por agenda, no por tarea.</p>
 
 <p><strong>En uso</strong> están las señales del mundo real, que vuelven después de que el trabajo ya salió. Quejas de clientes, tasa de retrabajo, devoluciones. Es el sensor más lento y el más verdadero.</p>
 
@@ -318,7 +318,7 @@ vuelve a ejecutar la verificación antes de entregar.</code></pre>
 
 <p>La analogía útil es la de una línea de inspección. Si nunca marca nada, o el proceso es perfecto, lo cual es improbable, o los instrumentos están midiendo lo que no es. Si marca todo el tiempo, o el estándar está mal, o la sensibilidad está exagerada y el resultado se convierte en ruido que todo el mundo aprende a ignorar.</p>
 
-<p>La solución es <a class="src" href="harness-sources.html#es-src-sensors-cli" data-tip="Codigo del panel de sensores, github.com/birgitta410/sensors-cli.">registrar el historial de disparos de cada sensor</a> y responder con datos en vez de opinión.</p>
+<p>La solución es <a class="src" href="harness-sources.html#es-src-sensors-cli" data-tip="Código del panel de sensores, github.com/birgitta410/sensors-cli.">registrar el historial de disparos de cada sensor</a> y responder con datos en vez de opinión.</p>
 
 <table class="wrap">
 <thead><tr><th>Qué muestra el historial</th><th>Qué significa</th><th>Qué hacer</th></tr></thead>
@@ -433,19 +433,19 @@ Banderas rojas:
 </tbody>
 </table>
 
-<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="Criterio que organiza la delegacion: una accion reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
+<p>Fíjate en el criterio que organiza la tabla: no es lo importante que parezca la acción, es la <a class="g" href="harness-glossary.html#es-g-reversibilidade" data-tip="Criterio que organiza la delegación: una acción reversible cuesta el precio de deshacerla, una irreversible cuesta el precio del error.">reversibilidad</a>. Una acción reversible se puede delegar porque el costo del error es el costo de deshacerla. Una acción irreversible no, por más fiable que parezca el sistema.</p>
 
-<p>Y el <a class="g" href="harness-glossary.html#es-g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobacion.">recibo</a>, que convierte todo esto en algo auditable:</p>
+<p>Y el <a class="g" href="harness-glossary.html#es-g-recibo" data-tip="Registro compacto de lo que produjo un resultado: contrato, fuentes, sensores, intentos, costo y aprobación.">recibo</a>, que convierte todo esto en algo auditable:</p>
 
 <pre><code>{
-  "ejecucion": "2026-08-28T09:14:22",
+  "ejecución": "2026-08-28T09:14:22",
   "tarea": "responder-ticket",
   "contrato": "respuesta-nivel-1@v3",
   "fuentes_consultadas": ["base-de-conocimiento@2026-08-20", "ticket-88431"],
   "sensores": {
-    "politica-de-tono": "ok",
+    "política-de-tono": "ok",
     "datos-personales-en-el-texto": "ok",
-    "verificacion-de-hechos": "1 divergencia corregida"
+    "verificación-de-hechos": "1 divergencia corregida"
   },
   "intentos": 2,
   "costo": "$0,84",
@@ -497,7 +497,7 @@ Banderas rojas:
 
 <p>Las guías y los sensores acumulan basura como cualquier otro sistema. Reglas que ya no aplican, verificaciones que nadie lee, ejemplos de un proceso que cambió. Y el trabajo producido acumula la suya propia: repetición innecesaria, capas que no sirven para nada, restos de intentos abandonados.</p>
 
-<p>Esta disciplina ya está documentada casi regla por regla en <a class="src" href="harness-sources.html#es-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, proyecto oh-my-claudecode, github.com/yeachan-heo/oh-my-claudecode. Sustenta cuatro de las cinco reglas citadas; reversion automatica no documentada en este skill.">al menos una herramienta real de limpieza</a>, y las reglas valen más que cualquier producto concreto:</p>
+<p>Esta disciplina ya está documentada casi regla por regla en <a class="src" href="harness-sources.html#es-src-ai-slop-cleaner" data-tip="Yeachan Heo. ai-slop-cleaner, proyecto oh-my-claudecode, github.com/yeachan-heo/oh-my-claudecode. Sustenta cuatro de las cinco reglas citadas; reversión automática no documentada en este skill.">al menos una herramienta real de limpieza</a>, y las reglas valen más que cualquier producto concreto:</p>
 
 <table class="wrap">
 <thead><tr><th>Regla</th><th>Por qué existe</th></tr></thead>

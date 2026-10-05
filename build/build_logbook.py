@@ -6,6 +6,7 @@
 # pecas. Reexecutavel: os graficos e a linha do tempo sao gerados a
 # partir do JSON, nunca escritos a mao.
 import json
+from common import main_block, main_open_re
 import os
 import re
 
@@ -1051,10 +1052,12 @@ def main():
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }
+  var T0=document.title,SX0=(function(){var t=document.title,i=t.lastIndexOf(' | ');return i>0?t.slice(i+3):'';})();function SXT(s,l){var m={pt:[['Part ','Parte '],['Companion document','Documento companheiro'],['Harness series','S\\u00e9rie Harness']],es:[['Part ','Parte '],['Companion document','Documento complementario'],['Harness series','Serie Harness']]}[l];if(!m)return s;for(var k=0;k<m.length;k++){if(s.indexOf(m[k][0])===0){return m[k][1]+s.slice(m[k][0].length);}}return s;}
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    var h1=mains[l].querySelector('h1');document.title=(l==='en'||!h1)?T0:h1.textContent+(SX0?' | '+SXT(SX0,l):'');
     setSeries(l);
   }
   var h=location.hash.slice(1);
@@ -1113,9 +1116,9 @@ def main():
     ES = scope(build_body('es'), 'es')
 
     doc = (shell + bar + '\n'
-           + '<main class="page" id="doc-pt" hidden>\n' + PT + '\n</main>\n'
-           + '<main class="page" id="doc-en">\n' + EN + '\n</main>\n'
-           + '<main class="page" id="doc-es" hidden>\n' + ES + '\n</main>\n'
+           + main_block('pt', PT, True)
+           + main_block('en', EN, False)
+           + main_block('es', ES, True)
            + js)
 
     out_dir = os.path.join(ROOT, 'docs')

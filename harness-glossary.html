@@ -449,7 +449,8 @@ p code{
 </div>
 <span class="brace">}</span>
 </div>
-<main class="page" id="doc-pt" hidden>
+<main class="page" id="doc-pt" hidden lang="pt-BR">
+<span id="pt-top"></span>
 <p class="eyebrow">Harness · Documento companheiro</p>
 
 <h1>Glossário</h1>
@@ -531,7 +532,8 @@ p code{
 <p>Série Harness · Documento companheiro · Consolidado a partir das partes 1 a 4 e do playbook.</p>
 </div>
 </main>
-<main class="page" id="doc-en">
+<main class="page" id="doc-en" lang="en-GB">
+<span id="en-top"></span>
 <p class="eyebrow">Harness · Companion document</p>
 
 <h1>Glossary</h1>
@@ -612,7 +614,8 @@ p code{
 <p>Harness series · Companion document · Consolidated from parts 1 to 4 and the playbook.</p>
 </div>
 </main>
-<main class="page" id="doc-es" hidden>
+<main class="page" id="doc-es" hidden lang="es">
+<span id="es-top"></span>
 <p class="eyebrow">Harness · Documento complementario</p>
 
 <h1>Glosario</h1>
@@ -706,10 +709,12 @@ p code{
       if(el.tagName==='A'){el.setAttribute('href',info.file+'#'+l+'-');}
     });
   }
+  var T0=document.title,SX0=(function(){var t=document.title,i=t.lastIndexOf(' | ');return i>0?t.slice(i+3):'';})();function SXT(s,l){var m={pt:[['Part ','Parte '],['Companion document','Documento companheiro'],['Harness series','S\u00e9rie Harness']],es:[['Part ','Parte '],['Companion document','Documento complementario'],['Harness series','Serie Harness']]}[l];if(!m)return s;for(var k=0;k<m.length;k++){if(s.indexOf(m[k][0])===0){return m[k][1]+s.slice(m[k][0].length);}}return s;}
   function set(l){
     for(var k in mains){mains[k].hidden=(k!==l);}
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
     document.documentElement.lang=(l==='pt'?'pt-BR':l);
+    var h1=mains[l].querySelector('h1');document.title=(l==='en'||!h1)?T0:h1.textContent+(SX0?' | '+SXT(SX0,l):'');
     setSeries(l);
   }
   var h=location.hash.slice(1);
