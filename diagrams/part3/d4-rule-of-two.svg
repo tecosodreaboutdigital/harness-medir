@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" role="img" aria-label="The rule of two: three questions, a count, a decision, everything ends in a receipt">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 590" role="img" aria-label="The rule of two: three questions, a count, a decision, everything ends in a receipt">
+<title>The rule of two: three questions, a count, a decision, everything ends in a receipt</title>
+<desc>Three yes-or-no questions (private data, untrusted content, external communication), then a count. Two or fewer yes answers execute without human approval; three require a human in the loop. Both paths end at the receipt. A containment band below says what the agent can reach if approval fails.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -52,4 +54,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <text class="svg-lbl" x="350" y="500" text-anchor="middle">RECEIPT</text>
 
 <text class="svg-cap" x="350" y="530" text-anchor="middle">APPROVED OR NOT, EVERYTHING IS RECORDED</text>
+
+<rect x="40" y="546" width="640" height="30" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="360" y="565" text-anchor="middle">CONTAINMENT: WHAT IT CAN REACH IF APPROVAL FAILS</text>
 </svg>

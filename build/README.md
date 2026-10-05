@@ -27,6 +27,7 @@ Pages built here: `harness-p1.html` to `harness-p4.html`, `harness-toolkit.html`
 | `docs/assets/prices.json` | Dated, append-only price ledger (source data, not a script). A milestone reads the entry in force on its own date and the computed cost is frozen afterwards |
 | `generate_toolkit_manifest.py` | Rebuilds `toolkit.json` from `TOOLS.md`, `sources/inventory.md` and `playbook/README.md`, never edited by hand. `--check` only reports whether it is stale |
 | `check_all.py` | The single verifier, see "Checks" below |
+| `svg_check.py`, `check_upstream.py` | `svg_check.py` compares the geometry of every inline SVG with its standalone file in `diagrams/` (run by `check_all.py` under "parity"). `check_upstream.py` reads every curated origin from the GitHub API into `sources/upstream.json`; it needs `gh` signed in and is run by hand, not by the checks |
 | `check_glossary_order.py`, `check_readme_snapshot.py` | Two checks that `check_all.py` runs, also usable on their own |
 | `check_known.json` | Findings that existed before `check_all.py` did. A ratchet: it may only shrink |
 | `stop_hook.py` | Claude Code stop hook, wired in `.claude/settings.json`: runs `check_all.py` when a session changed published files and keeps the session from ending on a new finding |

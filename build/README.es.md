@@ -27,6 +27,7 @@ Páginas ensambladas aquí: `harness-p1.html` a `harness-p4.html`, `harness-tool
 | `docs/assets/prices.json` | libro mayor de precios fechado y de solo añadir (dato fuente, no script). Un hito lee la entrada vigente en su propia fecha y el costo calculado queda congelado después |
 | `generate_toolkit_manifest.py` | reconstruye `toolkit.json` a partir de `TOOLS.md`, `sources/inventory.md` y `playbook/README.md`, nunca editado a mano. `--check` solo informa si está desactualizado |
 | `check_all.py` | el verificador único, ver "Verificaciones" abajo |
+| `svg_check.py`, `check_upstream.py` | `svg_check.py` compara la geometría de cada SVG en línea con el archivo autónomo en `diagrams/` (lo ejecuta `check_all.py` en "paridad"). `check_upstream.py` lee cada origen curado desde la API de GitHub hacia `sources/upstream.json`; necesita `gh` con sesión iniciada y se ejecuta a mano, no por las comprobaciones |
 | `check_glossary_order.py`, `check_readme_snapshot.py` | dos verificaciones que `check_all.py` ejecuta, también usables por separado |
 | `check_known.json` | hallazgos que existían antes de `check_all.py`. Un trinquete: solo puede encogerse |
 | `stop_hook.py` | hook de parada de Claude Code, conectado en `.claude/settings.json`: ejecuta `check_all.py` cuando la sesión cambió archivos publicados e impide terminar ante un hallazgo nuevo |

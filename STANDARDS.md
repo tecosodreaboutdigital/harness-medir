@@ -47,15 +47,17 @@ Inline SVG diagrams, 0.7 stroke, no fill, no colour. Labels in spaced small caps
 
 One deliberate exception: the tier diagram uses increasing box height to represent autonomy.
 
+Declared departures from the 0.7 stroke and the absence of fill: a heavier line (0.9 or 1.3) marks emphasis, the reversal point in D5 and the two transitions nobody implements in D7; arrowhead markers use stroke 1; D9 draws its platform walls at 0.5; the charts in the project log fill their data points. A third grey, `#c9c7bf`, draws lifelines and secondary boxes next to the two inks. The caption inside a diagram (`svg-cap`) is 8.5 px, spaced capitals, not italic; the italic 9 applies to the `figcaption` under it. Every diagram carries a `<title>` and a `<desc>` as well as `role="img"` and an `aria-label`.
+
 Do not use charting libraries. Do not use raster images.
 
 ---
 
 ## Diagrams
 
-Every diagram is born as a Mermaid sketch, inside the corresponding markdown file. There is no rendering pipeline: nothing in this project turns Mermaid into the inline SVG mechanically. The sketch is a plain-text structural plan, readable as a diff and rendered natively by GitHub when the file is viewed there, nothing more.
+Every diagram from Part 3 on is born as a Mermaid sketch, one markdown file per diagram in `diagrams/sketches/`, written in English, the authoring language. There is no rendering pipeline: nothing in this project turns Mermaid into SVG mechanically. The sketch is a plain-text structural plan, readable as a diff and rendered natively by GitHub when the file is viewed there, nothing more. The three diagrams of Part 1 and the three of Part 2 predate this rule and have no sketch; if one of them changes, it gets a sketch first.
 
-The inline SVG in the HTML is drawn by hand, in the project's own visual system, matching the sketch's structure. This is deliberate, not a shortcut skipped for lack of tooling: a generic Mermaid renderer outputs its own theme and its own automatic layout, neither of which matches this project's thin-stroke, no-fill, no-colour system, so hand-drawing is the direct path, not a workaround.
+The standalone SVG in `diagrams/` is drawn by hand, in the project's own visual system, matching the sketch's structure. The inline SVG in each language of the HTML is a copy of it with only the text translated: `build/svg_check.py`, which `build/check_all.py` runs, fails if the geometry of an inline copy differs from the standalone file. This is deliberate, not a shortcut skipped for lack of tooling: a generic Mermaid renderer outputs its own theme and its own automatic layout, neither of which matches this project's thin-stroke, no-fill, no-colour system, so hand-drawing is the direct path, not a workaround.
 
 When structure or a label changes, change the Mermaid sketch first, then redraw the SVG by hand to match it. Changing only the SVG leaves the sketch out of date, and the next session works from the wrong map.
 

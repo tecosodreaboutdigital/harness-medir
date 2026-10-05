@@ -47,15 +47,17 @@ Diagramas SVG en línea, trazo de 0,7, sin relleno, sin color. Etiquetas en vers
 
 Una excepción deliberada: el diagrama de bandas usa altura creciente de las cajas para representar autonomía.
 
+Desvíos declarados del trazo de 0,7 y de la ausencia de relleno: una línea más gruesa (0,9 o 1,3) marca énfasis, el punto de reversión en D5 y las dos transiciones que nadie implementa en D7; los marcadores de punta de flecha usan trazo 1; D9 dibuja las paredes de las plataformas a 0,5; los gráficos del diario de bordo rellenan sus puntos de dato. Un tercer gris, `#c9c7bf`, dibuja líneas de vida y cajas secundarias junto a las dos tintas. La leyenda dentro del diagrama (`svg-cap`) es de 8,5 px, en versales espaciadas, sin cursiva; la cursiva 9 vale para el `figcaption` debajo. Todo diagrama lleva `<title>` y `<desc>`, además de `role="img"` y `aria-label`.
+
 No usar bibliotecas de gráficos. No usar imágenes rasterizadas.
 
 ---
 
 ## Diagramas
 
-Todo diagrama nace como boceto en Mermaid, dentro del archivo md correspondiente. No existe una canalización de renderización: nada en este proyecto convierte el Mermaid en el SVG en línea de forma mecánica. El boceto es un plan estructural en texto plano, legible en diff, que GitHub renderiza de forma nativa cuando el archivo se abre allí, nada más.
+Todo diagrama desde la Parte 3 nace como boceto en Mermaid, un archivo md por diagrama en `diagrams/sketches/`, escrito en inglés, el idioma de autoría. No existe una canalización de renderización: nada en este proyecto convierte Mermaid en SVG de forma mecánica. El boceto es un plan estructural en texto plano, legible en diff, que GitHub renderiza de forma nativa cuando el archivo se abre allí, nada más. Los tres diagramas de la Parte 1 y los tres de la Parte 2 son anteriores a esta regla y no tienen boceto; si uno de ellos cambia, recibe un boceto antes.
 
-El SVG en línea del HTML se dibuja a mano, en el sistema visual del proyecto, para coincidir con la estructura del boceto. Esto es deliberado, no un atajo por falta de herramienta: un renderizador genérico de Mermaid produce su propio tema y su propio diseño automático, y ninguno de los dos coincide con el sistema de trazo fino, sin relleno, sin color de este proyecto, así que dibujar a mano es el camino directo, no un rodeo.
+El SVG autónomo en `diagrams/` se dibuja a mano, en el sistema visual del proyecto, para coincidir con la estructura del boceto. El SVG en línea de cada idioma del HTML es una copia suya con solo el texto traducido: `build/svg_check.py`, que `build/check_all.py` ejecuta, falla si la geometría de una copia en línea difiere del archivo autónomo. Esto es deliberado, no un atajo por falta de herramienta: un renderizador genérico de Mermaid produce su propio tema y su propio diseño automático, y ninguno de los dos coincide con el sistema de trazo fino, sin relleno, sin color de este proyecto, así que dibujar a mano es el camino directo, no un rodeo.
 
 Al cambiar la estructura o una etiqueta, cambia primero el boceto en Mermaid, luego vuelve a dibujar el SVG a mano para que coincida. Cambiar solo el SVG deja el boceto desactualizado, y la próxima sesión trabaja con el mapa equivocado.
 

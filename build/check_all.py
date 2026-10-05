@@ -329,6 +329,11 @@ def check_parity():
             if len(set(vals.values())) > 1:
                 out.append(F('parity', path, 0, f'{k}: ' + ', '.join(f'{lg.upper()} {n}' for lg, n in vals.items()),
                              'as tres linguas devem ter a mesma contagem; conferir a traducao'))
+    # a geometria de cada SVG inline tem de ser a do autonomo em diagrams/ (build/svg_check.py)
+    sys.path.insert(0, os.path.join(ROOT, 'build'))
+    import svg_check
+    for f, msg in svg_check.problems():
+        out.append(F('parity', f, 0, msg, 'regenerar o inline a partir do SVG autonomo; so o texto muda por lingua'))
     return out
 
 

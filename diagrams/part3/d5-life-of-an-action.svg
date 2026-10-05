@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" role="img" aria-label="The life of an action with an external effect, from proposal to a minimum six-month retention">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-label="The life of an action with an external effect, from proposal to a minimum six-month retention">
+<title>The life of an action with an external effect, from proposal to a minimum six-month retention</title>
+<desc>A sequence across model, policy, human, tool and record: the model proposes, the policy logs the class and asks for named approval, the human approves, the policy authorises, the tool checks whether the action is safe to retry, the reversal point is logged before execution, the tool executes and the result is observed, then result and cost are logged under a minimum six-month retention.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -27,11 +29,11 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   <text class="svg-lbl" x="620" y="44" text-anchor="middle">RECORD</text>
 </g>
 
-<line x1="60" y1="54" x2="60" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="200" y1="54" x2="200" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="340" y1="54" x2="340" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="480" y1="54" x2="480" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="620" y1="54" x2="620" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="60" y1="54" x2="60" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="200" y1="54" x2="200" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="340" y1="54" x2="340" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="480" y1="54" x2="480" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="620" y1="54" x2="620" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
 
 <line x1="60" y1="80" x2="197" y2="80" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
 <text class="svg-sub" x="130" y="75" text-anchor="middle">proposes action with external effect</text>
@@ -48,17 +50,23 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <line x1="200" y1="240" x2="477" y2="240" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
 <text class="svg-sub" x="340" y="235" text-anchor="middle">authorises execution</text>
 
-<line x1="480" y1="284" x2="617" y2="284" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#d5-arrow)"/>
-<text class="svg-sub" x="548" y="272" text-anchor="middle">logs reversal point</text>
-<text class="svg-note" x="548" y="298" text-anchor="middle">BEFORE EXECUTION, NOT AFTER</text>
-<rect x="472" y="262" width="152" height="44" fill="none" stroke="#1b1b19" stroke-width=".9"/>
+<path d="M480,262 C 520,262 520,278 480,278" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
+<text class="svg-sub" x="516" y="274" text-anchor="start">safe to retry? key</text>
 
-<path d="M480,320 C 520,320 520,338 480,338" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
-<text class="svg-sub" x="565" y="333" text-anchor="middle">executes</text>
+<line x1="480" y1="330" x2="617" y2="330" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#d5-arrow)"/>
+<text class="svg-sub" x="548" y="318" text-anchor="middle">logs reversal point</text>
+<text class="svg-note" x="548" y="344" text-anchor="middle">BEFORE EXECUTION, NOT AFTER</text>
+<rect x="472" y="308" width="152" height="44" fill="none" stroke="#1b1b19" stroke-width=".9"/>
 
-<line x1="480" y1="368" x2="617" y2="368" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
-<text class="svg-sub" x="548" y="363" text-anchor="middle">logs result and cost</text>
+<path d="M480,366 C 520,366 520,384 480,384" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
+<text class="svg-sub" x="516" y="379" text-anchor="start">executes</text>
 
-<path d="M620,398 C 655,398 655,414 620,414" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d5-arrow-open)"/>
-<text class="svg-sub" x="695" y="430" text-anchor="end">minimum six-month retention</text>
+<path d="M480,396 C 520,396 520,412 480,412" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
+<text class="svg-sub" x="516" y="407" text-anchor="start">executed / observed</text>
+
+<line x1="480" y1="440" x2="617" y2="440" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d5-arrow)"/>
+<text class="svg-sub" x="548" y="435" text-anchor="middle">logs result and cost</text>
+
+<path d="M620,470 C 655,470 655,486 620,486" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#d5-arrow-open)"/>
+<text class="svg-sub" x="695" y="502" text-anchor="end">minimum six-month retention</text>
 </svg>

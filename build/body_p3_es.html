@@ -61,6 +61,8 @@
 
 <figure>
 <svg viewBox="0 0 700 320" role="img" aria-label="La separación de poderes: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua">
+<title>La separación de poderes: el modelo propone, la política autoriza, la herramienta ejecuta, el registro atestigua</title>
+<desc>El registro está dibujado como un cilindro a propósito. Es el único de los cuatro que no decide ni actúa, solo atestigua, y esa diferencia es todo el sentido de dibujarlo aparte. La propia arquitectura de Anthropic lo mantiene del mismo modo: la sesión como un log de solo anexado, fuera del harness que llama al modelo y fuera de la sandbox donde corre el código.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -105,13 +107,15 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <line x1="470" y1="254" x2="558" y2="188" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d1-arrow)"/>
 <text class="svg-cap" x="350" y="300" text-anchor="middle">EL MODELO PROPONE · LA POLÍTICA AUTORIZA · LA HERRAMIENTA EJECUTA · EL REGISTRO ATESTIGUA</text>
 </svg>
-<figcaption>El registro está dibujado como un cilindro a propósito. Es el único de los cuatro que no decide ni actúa, solo atestigua, y esa diferencia es todo el sentido de dibujarlo aparte.</figcaption>
+<figcaption>El registro está dibujado como un cilindro a propósito. Es el único de los cuatro que no decide ni actúa, solo atestigua, y esa diferencia es todo el sentido de dibujarlo aparte. <a class="src" href="harness-sources.html#es-src-managed-agents" data-tip="Lance Martin, Gabe Cemaj y Michael Cohen, Anthropic, Scaling Managed Agents, 8 de abril de 2026.">La propia arquitectura de Anthropic</a> lo mantiene del mismo modo: la sesión como un log de solo anexado, fuera del harness que llama al modelo y fuera de la sandbox donde corre el código.</figcaption>
 </figure>
 
 <p>Al lado, dibuja lo que la mayoría de los despliegues realmente tienen.</p>
 
 <figure>
 <svg viewBox="0 0 700 200" role="img" aria-label="El modo de falla: concentración, cuando un sistema propone, autoriza y ejecuta a la vez">
+<title>El modo de falla: concentración, cuando un sistema propone, autoriza y ejecuta a la vez</title>
+<desc>Esto es lo que corría en el chatbot de Air Canada, y lo que corría en la función de respuesta a disputas de la directora hasta que alguien lo notó. Está pensado para verse pobre junto al diagrama de arriba. La pobreza es el argumento.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -153,7 +157,9 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <p>Responde las tres con honestidad. Sin un humano en el bucle, un agente puede satisfacer como máximo dos de ellas. En el momento en que una acción respondería que sí a las tres, un humano tiene que estar en el bucle antes de que se ejecute, sin excepciones abiertas por urgencia o incomodidad.</p>
 
 <figure>
-<svg viewBox="0 0 700 540" role="img" aria-label="La regla de dos: tres preguntas, un conteo, una decisión, todo termina en un recibo">
+<svg viewBox="0 0 700 590" role="img" aria-label="La regla de dos: tres preguntas, un conteo, una decisión, todo termina en un recibo">
+<title>La regla de dos: tres preguntas, un conteo, una decisión, todo termina en un recibo</title>
+<desc>Fíjate dónde convergen los dos resultados. Aprobada o no, la acción termina en el mismo recibo. Esa convergencia es deliberada: una decisión que nadie tiene que ir a buscar después.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -162,41 +168,54 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-ttl{font-size:11px;letter-spacing:.16em;fill:#1b1b19}
 </style>
 <defs><marker id="p3d4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+
 <text class="svg-ttl" x="350" y="20" text-anchor="middle">LA REGLA DE DOS</text>
+
 <rect x="290" y="34" width="120" height="32" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="350" y="54" text-anchor="middle">ACCIÓN PROPUESTA</text>
 <polygon points="260,95 350,57 440,95 350,133" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-sub" x="350" y="91" text-anchor="middle">¿Accede a datos</text>
 <text class="svg-sub" x="350" y="103" text-anchor="middle">privados?</text>
 <line x1="350" y1="66" x2="350" y2="55" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+
 <line x1="350" y1="133" x2="350" y2="155" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <polygon points="260,195 350,157 440,195 350,233" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-sub" x="350" y="191" text-anchor="middle">¿Procesa contenido</text>
 <text class="svg-sub" x="350" y="203" text-anchor="middle">no confiable?</text>
+
 <line x1="350" y1="233" x2="350" y2="255" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <polygon points="260,295 350,257 440,295 350,333" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-sub" x="350" y="291" text-anchor="middle">¿Puede comunicarse</text>
 <text class="svg-sub" x="350" y="303" text-anchor="middle">externamente?</text>
+
 <line x1="350" y1="333" x2="350" y2="355" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <polygon points="250,395 350,355 450,395 350,435" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-sub" x="350" y="391" text-anchor="middle">¿Cuántas respuestas</text>
 <text class="svg-sub" x="350" y="403" text-anchor="middle">fueron sí?</text>
+
 <line x1="250" y1="395" x2="212" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <text class="svg-sub" x="225" y="378" text-anchor="middle">dos o menos</text>
 <rect x="40" y="372" width="170" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="125" y="390" text-anchor="middle">EJECUTA</text>
 <text class="svg-sub" x="125" y="404" text-anchor="middle">sin aprobación humana</text>
+
 <line x1="450" y1="395" x2="488" y2="396" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <text class="svg-sub" x="470" y="378" text-anchor="middle">tres</text>
 <rect x="490" y="372" width="190" height="48" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="585" y="390" text-anchor="middle">HUMANO EN EL BUCLE</text>
 <text class="svg-sub" x="585" y="404" text-anchor="middle">exigido antes de ejecutar</text>
+
 <line x1="125" y1="420" x2="330" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
 <line x1="585" y1="420" x2="372" y2="464" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d4-arrow)"/>
+
 <path d="M295,472 a55,10 0 0 1 110,0 v34 a55,10 0 0 1 -110,0 z" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <path d="M295,472 a55,10 0 0 0 110,0" fill="none" stroke="#1b1b19" stroke-width=".7"/>
 <text class="svg-lbl" x="350" y="500" text-anchor="middle">RECIBO</text>
+
 <text class="svg-cap" x="350" y="530" text-anchor="middle">APROBADA O NO, TODO QUEDA REGISTRADO</text>
+
+<rect x="40" y="546" width="640" height="30" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3"/>
+<text class="svg-lbl" x="360" y="565" text-anchor="middle">CONTENCIÓN: LO QUE ALCANZA SI LA APROBACIÓN FALLA</text>
 </svg>
 <figcaption>Fíjate dónde convergen los dos resultados. Aprobada o no, la acción termina en el mismo recibo. Esa convergencia es deliberada: una decisión que nadie tiene que ir a buscar después.</figcaption>
 </figure>
@@ -273,6 +292,8 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 
 <figure>
 <svg viewBox="0 0 700 440" role="img" aria-label="Dónde entra la orden dentro del dato: una zona confiable y una zona no confiable convergen en un único flujo de símbolos">
+<title>Dónde entra la orden dentro del dato: una zona confiable y una zona no confiable convergen en un único flujo de símbolos</title>
+<desc>El correo de disputa del transportista estaba justo en la zona no confiable de la derecha. La cláusula de la tabla de tarifas que citaba estaba en la zona confiable de la izquierda. Ambos convergieron en la misma acción propuesta, y nada dentro del modelo trazó jamás la línea entre ellos.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -331,7 +352,9 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <p>Todo lo anterior a esta sección decide si una acción debe ocurrir. Esta sección trata sobre lo que tiene que sobrevivir al momento en que ocurre, sin importar la respuesta.</p>
 
 <figure>
-<svg viewBox="0 0 700 450" role="img" aria-label="La vida de una acción con efecto externo, desde la propuesta hasta una retención mínima de seis meses">
+<svg viewBox="0 0 700 520" role="img" aria-label="La vida de una acción con efecto externo, desde la propuesta hasta una retención mínima de seis meses">
+<title>La vida de una acción con efecto externo, desde la propuesta hasta una retención mínima de seis meses</title>
+<desc>El punto de reversión se registra antes de que la herramienta ejecute, no después, y ese orden lleva una línea más gruesa por una razón. Registrarlo después es el error más común de todos, porque para entonces ya no queda nada contra qué revertir.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -344,7 +367,9 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   <marker id="p3d5-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker>
   <marker id="p3d5-arrow-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#8a887f" stroke-width="1"/></marker>
 </defs>
+
 <text class="svg-ttl" x="350" y="16" text-anchor="middle">LA VIDA DE UNA ACCIÓN CON EFECTO EXTERNO</text>
+
 <g>
   <rect x="15" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
   <text class="svg-lbl" x="60" y="44" text-anchor="middle">MODELO</text>
@@ -357,31 +382,47 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   <rect x="575" y="26" width="90" height="28" fill="none" stroke="#1b1b19" stroke-width=".7"/>
   <text class="svg-lbl" x="620" y="44" text-anchor="middle">REGISTRO</text>
 </g>
-<line x1="60" y1="54" x2="60" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="200" y1="54" x2="200" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="340" y1="54" x2="340" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="480" y1="54" x2="480" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
-<line x1="620" y1="54" x2="620" y2="424" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+
+<line x1="60" y1="54" x2="60" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="200" y1="54" x2="200" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="340" y1="54" x2="340" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="480" y1="54" x2="480" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+<line x1="620" y1="54" x2="620" y2="496" stroke="#c9c7bf" stroke-width=".7" stroke-dasharray="2,3"/>
+
 <line x1="60" y1="80" x2="197" y2="80" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
 <text class="svg-sub" x="130" y="75" text-anchor="middle">propone acción con efecto externo</text>
+
 <line x1="200" y1="120" x2="617" y2="120" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
 <text class="svg-sub" x="410" y="115" text-anchor="middle">registra propuesta y clase de acción</text>
+
 <line x1="200" y1="160" x2="337" y2="160" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
 <text class="svg-sub" x="270" y="155" text-anchor="middle">clase irreversible, exige aprobación nombrada</text>
+
 <line x1="340" y1="200" x2="617" y2="200" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
 <text class="svg-sub" x="480" y="195" text-anchor="middle">aprueba, con identificación</text>
+
 <line x1="200" y1="240" x2="477" y2="240" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
 <text class="svg-sub" x="340" y="235" text-anchor="middle">autoriza ejecución</text>
-<line x1="480" y1="284" x2="617" y2="284" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#p3d5-arrow)"/>
-<text class="svg-sub" x="548" y="272" text-anchor="middle">registra punto de reversión</text>
-<text class="svg-note" x="548" y="298" text-anchor="middle">ANTES DE EJECUTAR, NO DESPUÉS</text>
-<rect x="472" y="262" width="152" height="44" fill="none" stroke="#1b1b19" stroke-width=".9"/>
-<path d="M480,320 C 520,320 520,338 480,338" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
-<text class="svg-sub" x="565" y="333" text-anchor="middle">ejecuta</text>
-<line x1="480" y1="368" x2="617" y2="368" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
-<text class="svg-sub" x="548" y="363" text-anchor="middle">registra resultado y costo</text>
-<path d="M620,398 C 655,398 655,414 620,414" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#p3d5-arrow-open)"/>
-<text class="svg-sub" x="695" y="430" text-anchor="end">retención mínima de seis meses</text>
+
+<path d="M480,262 C 520,262 520,278 480,278" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="516" y="274" text-anchor="start">¿seguro reintentar? clave</text>
+
+<line x1="480" y1="330" x2="617" y2="330" stroke="#1b1b19" stroke-width="1.3" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="548" y="318" text-anchor="middle">registra punto de reversión</text>
+<text class="svg-note" x="548" y="344" text-anchor="middle">ANTES DE EJECUTAR, NO DESPUÉS</text>
+<rect x="472" y="308" width="152" height="44" fill="none" stroke="#1b1b19" stroke-width=".9"/>
+
+<path d="M480,366 C 520,366 520,384 480,384" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="516" y="379" text-anchor="start">ejecuta</text>
+
+<path d="M480,396 C 520,396 520,412 480,412" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="516" y="407" text-anchor="start">ejecutada / observada</text>
+
+<line x1="480" y1="440" x2="617" y2="440" stroke="#1b1b19" stroke-width=".7" marker-end="url(#p3d5-arrow)"/>
+<text class="svg-sub" x="548" y="435" text-anchor="middle">registra resultado y costo</text>
+
+<path d="M620,470 C 655,470 655,486 620,486" fill="none" stroke="#8a887f" stroke-width=".7" stroke-dasharray="2,3" marker-end="url(#p3d5-arrow-open)"/>
+<text class="svg-sub" x="695" y="502" text-anchor="end">retención mínima de seis meses</text>
 </svg>
 <figcaption>El punto de reversión se registra antes de que la herramienta ejecute, no después, y ese orden lleva una línea más gruesa por una razón. Registrarlo después es el error más común de todos, porque para entonces ya no queda nada contra qué revertir.</figcaption>
 </figure>

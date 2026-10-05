@@ -4,7 +4,7 @@
 
 Ten standalone SVG files, one per diagram specified in `docs/harness-p3-p4-briefing.pt.md` (block C), nine rendered ahead of the articles that would carry them, the tenth (D10) added once Part 4's drafting confirmed it earned its place.
 
-**Source of truth.** The Mermaid specification for each diagram lives in the dossier, not here. Per `STANDARDS.md`'s `Diagrams` rule, if a diagram's structure or a label needs to change, edit the Mermaid in the dossier first, then regenerate the matching file below.
+**Source of truth.** The Mermaid sketch of each diagram lives in `diagrams/sketches/`, one file per diagram, in English, with its purpose, rendering note and caption sentence. The copy in `docs/harness-p3-p4-briefing.pt.md` (Portuguese, block C) is the historical origin and has not been kept in step since 30 August 2026. Per `STANDARDS.md`'s `Diagrams` rule, if a diagram's structure or a label needs to change, edit the sketch first, then redraw the standalone SVG, then copy it into each language of the article; `build/svg_check.py` (run by `build/check_all.py`) fails if an inline copy's geometry differs from the standalone file. The six diagrams of Parts 1 and 2 predate the sketch rule and have none.
 
 **Visual validation, 30 August 2026.** The nine SVGs were rendered for the first time (headless Chrome, `viewBox` dimensions at 2x scale) and checked by eye, closing the caveat the previous session had logged: coordinates computed by hand, never seen rendered. Five files had real overlap bugs, all fixed in the SVG source directly: `d3` had connector lines starting from a box's centre rather than its edge, cutting straight through the label text of boxes stacked below it (fixed by starting each line from the box edge nearest the destination); `d4` carried a duplicate connector into its first diamond, one copy the right length but missing its arrowhead, the other with an arrowhead but overshooting deep into the diamond's interior (merged into one correct line); `d5` had a caption running 82px past the 700-wide canvas, invisible past the edge (right-aligned it inward); `d7`'s heavier "validity expired without renewal" line cut straight through the `IN OPERATION` box, and its "certifier's decision" curve clipped the bottom of `UNDER REVIEW` (both rerouted, the canvas gained 24px of height to give the relabelled curve room); `d9`'s third and fourth platform columns overlapped by 40px, doubling their dashed borders visibly (all four columns recomputed to equal, non-overlapping widths). `d1`, `d2`, `d6` and `d8` had no layout bugs. The Mermaid specs in the dossier were not touched, since none of these were structural or label changes, only coordinate corrections within the existing shapes.
 
@@ -14,32 +14,34 @@ Ten standalone SVG files, one per diagram specified in `docs/harness-p3-p4-brief
 
 **D10 added and validated, 30 August 2026.** `part4/d10-quarterly-loop.svg` was built to the dossier's Mermaid spec (a `flowchart LR` of six boxes, briefing to certification to operation to receipts to indicators to revalidation, closing back to briefing), rendered via headless Chrome and checked by eye on the first pass: no overlap, no clipped text, all six labels fit their boxes with margin, matching the size ratio D1 to D9 had already established as safe. It closes Part 4's indicators section rather than opening the piece, per the dossier's own placement note, and its title carries the word "quarterly" explicitly so it cannot be mistaken for a second MEDIR loop. **A second, legitimate appearance, 13 September 2026:** the same PNG now also opens `harness-playbook.html`, the seven-template playbook, where it organises the whole document rather than competing with itself, exactly as this entry anticipated when the playbook was still deliberately parked.
 
-**Visual system.** Inline SVG, 0.7 stroke, no fill, no colour, `#1b1b19` ink and `#8a887f` faint ink on a transparent background, labels in spaced small caps (`svg-lbl`), captions in italic 9-point (`svg-cap`), exactly as declared in `STANDARDS.md`. Each file is self-contained with its own `<style>` block so it can be opened and checked on its own.
+**Visual system.** Inline SVG, 0.7 stroke, no fill, no colour, `#1b1b19` ink and `#8a887f` faint ink on a transparent background, plus a third grey, `#c9c7bf`, for lifelines and secondary boxes (D3, D5, D6, D8, D9 and the diagrams of Parts 1 and 2). Labels in spaced small caps (`svg-lbl`). The caption inside a diagram (`svg-cap`) is 8.5 px, spaced capitals, not italic; the italic 9 is the `figcaption` in the article. Declared departures: a heavier line for emphasis (1.3 and 0.9 in D5, 1.3 in D7), 1 for arrowhead markers, 0.5 for the platform walls of D9. Each file is self-contained with its own `<style>` block, carries `role="img"`, an `aria-label`, a `<title>` and a `<desc>`, so it can be opened and checked on its own.
 
 **Terminology introduced here, first use.** Part 4 coins governance vocabulary that did not exist in the series before this round. Keep these exact terms when Part 4 is written, so the diagrams and the prose do not drift apart: **Agent owner** (dono do agente), **Certifier** (homologador) and **Certified** (homologado) for the state and the role, **Auditor** (auditor), **Area sponsor** (patrocinador da área), **Receipt** (recibo, the per-execution artefact) kept distinct from **Record** (registro, the append-only log itself).
 
-| File | Diagram | Piece | Where it enters |
-|---|---|---|---|
-| `part3/d1-separation-of-powers.svg` | D1 · The separation of powers | Part 3 | Section 2, right after the Air Canada opening |
-| `part3/d2-concentration.svg` | D2 · The failure mode: concentration | Part 3 | Immediately after D1, same page |
-| `part3/d3-order-inside-the-data.svg` | D3 · Where the order enters inside the data | Part 3 | Section on malicious instructions arriving inside content |
-| `part3/d4-rule-of-two.svg` | D4 · The rule of two | Part 3 | Section on authority, right after D3 |
-| `part3/d5-life-of-an-action.svg` | D5 · The life of an action with an external effect | Part 3 | Section on what needs to be logged, or on reversal |
-| `part4/d6-three-layers.svg` | D6 · The three layers of the framework | Part 4 | Opening of Part 4, and likely the playbook's own opening |
-| `part4/d7-agent-lifecycle.svg` | D7 · The agent life cycle | Part 4 | Life-cycle section |
-| `part4/d8-four-roles.svg` | D8 · The four roles and the non-accumulation rule | Part 4 | Roles section |
-| `part4/d9-platforms-govern-inward.svg` | D9 · Every platform governs inward | Part 4 | Section on the record's independence |
-| `part4/d10-quarterly-loop.svg` | D10 · The office's quarterly loop | Part 4 | Closes the eight-indicators section |
+| File | Diagram | Piece | Where it enters | Secondary embeds |
+|---|---|---|---|---|
+| `part3/d1-separation-of-powers.svg` | D1 · The separation of powers | Part 3 | Section 3, opening the separation of powers, right after the Air Canada opening and the first irreversible action | README, as a PNG |
+| `part3/d2-concentration.svg` | D2 · The failure mode: concentration | Part 3 | Section 3, immediately after D1 | none |
+| `part3/d3-order-inside-the-data.svg` | D3 · Where the order enters inside the data | Part 3 | Section 5, on malicious instructions arriving inside content | none |
+| `part3/d4-rule-of-two.svg` | D4 · The rule of two | Part 3 | Section 3, after D2 (it comes before D3, which sits in section 5) | none |
+| `part3/d5-life-of-an-action.svg` | D5 · The life of an action with an external effect | Part 3 | Section 6, on what must be on the record and what reversal means | none |
+| `part4/d6-three-layers.svg` | D6 · The three layers of the framework | Part 4 | Section 1, the opening of Part 4 | README, as a PNG (it does not open the playbook: D10 does) |
+| `part4/d7-agent-lifecycle.svg` | D7 · The agent life cycle | Part 4 | Section 3, the life cycle | none |
+| `part4/d8-four-roles.svg` | D8 · The four roles and the non-accumulation rule | Part 4 | Section 4, the roles | none |
+| `part4/d9-platforms-govern-inward.svg` | D9 · Every platform governs inward | Part 4 | Section 8, on the record's independence | none |
+| `part4/d10-quarterly-loop.svg` | D10 · The office's quarterly loop | Part 4 | Section 5, closing the eight-indicators section | `harness-playbook.html`, as an inline SVG per language |
 
 **Rendering notes honoured, one line each, full notes in the dossier.**
 
-- D1: the record is a cylinder, the only shape among the four functions that does not decide or act.
+- D1: the record is a cylinder, the only shape among the four functions that does not decide or act. The caption cites Anthropic's session-as-append-only-log architecture as the same choice (5 October 2026).
 - D2: deliberately sparse next to D1, fewer boxes, a dotted line, empty space as the argument.
 - D3: the two zones stay visually separate until the funnel, the caption states the boundary is the diagram's, not the model's.
-- D4: both outcomes of the count converge into the same receipt, approved or not.
-- D5: the reversal point is logged before execution, that line carries a heavier stroke and its own annotation, because logging it after is the most common mistake.
+- D4: both outcomes of the count converge into the same receipt, approved or not. Below it a dashed band, "containment: what it can reach if approval fails", says what holds when the flow does not (5 October 2026).
+- D5: the reversal point is logged before execution, that line carries a heavier stroke and its own annotation, because logging it after is the most common mistake. Two self-steps on the tool were added on 5 October 2026: "safe to retry? key" before the reversal point and "executed / observed" after execution.
 - D6: the N0 to N3 ruler is drawn touching all three layers, it is the only vocabulary shared across them.
-- D7: the two transitions nobody implements, expired certification and no execution in the period, both leading to decommissioning, carry a heavier stroke.
+- D7: the two transitions nobody implements, expired certification and no execution in the period, both leading to decommissioning, carry a heavier stroke. The "indicator fires" transition now also fires on an event (a change of model, harness, skills or memory), with a footnote (5 October 2026).
 - D8: the four groups reuse D1's exact verbs, proposes, authorises, executes, witnesses, to keep the technical and organisational separation of powers visibly the same idea.
 - D9: each platform is drawn inside its own dashed wall, the master record sits above and outside every wall.
-- D10: a loop, not a state machine, deliberately a different visual type from D7 so it cannot read as a competing life cycle; the title states the word "quarterly" so the cadence is explicit rather than implied.
+- D10: a loop, not a state machine, deliberately a different visual type from D7 so it cannot read as a competing life cycle; the title states the word "quarterly" so the cadence is explicit rather than implied. The REVALIDATION box carries the sub-label "or on event" (5 October 2026).
+
+**Revision of 5 October 2026.** D1 to D10 carry a `<title>` and a `<desc>`, in the standalone files and in every inline copy; `authorizes` became `authorises` in D1, D2, D5 and D8 and their PNGs were re-rendered; D4, D5, D7 and D10 gained the additions listed above, in the standalone files, in all three languages inline, and in the playbook copy of D10; the sketches moved into `diagrams/sketches/`; the geometry check `build/svg_check.py` was added. The three diagrams of Part 1 and the three of Part 2 have no standalone file and no sketch.

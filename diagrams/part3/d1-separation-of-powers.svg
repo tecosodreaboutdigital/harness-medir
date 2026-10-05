@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="The separation of powers: the model proposes, the policy authorises, the tool executes, the record witnesses">
+<title>The separation of powers: the model proposes, the policy authorises, the tool executes, the record witnesses</title>
+<desc>Four functions in a row: the model proposes, the policy authorises, the tool executes and the record witnesses. A human decides when the policy requires approval, and a block with a reason stops what is denied. The record is drawn as a cylinder because it only witnesses.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}

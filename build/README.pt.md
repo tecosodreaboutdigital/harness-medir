@@ -27,6 +27,7 @@ Páginas montadas aqui: `harness-p1.html` a `harness-p4.html`, `harness-toolkit.
 | `docs/assets/prices.json` | livro-razão de preço datado e apensado (dado-fonte, não script). Um marco lê a entrada vigente na própria data e o custo calculado fica congelado depois disso |
 | `generate_toolkit_manifest.py` | reconstrói `toolkit.json` a partir de `TOOLS.md`, `sources/inventory.md` e `playbook/README.md`, nunca editado à mão. `--check` só informa se está desatualizado |
 | `check_all.py` | o verificador único, ver "Verificações" abaixo |
+| `svg_check.py`, `check_upstream.py` | `svg_check.py` compara a geometria de cada SVG inline com o arquivo autônomo em `diagrams/` (rodado pelo `check_all.py` em "paridade"). `check_upstream.py` lê cada origem curada pela API do GitHub para `sources/upstream.json`; precisa do `gh` autenticado e roda à mão, não pelas checagens |
 | `check_glossary_order.py`, `check_readme_snapshot.py` | duas verificações que o `check_all.py` roda, também usáveis sozinhas |
 | `check_known.json` | achados que existiam antes do `check_all.py`. Uma catraca: só pode encolher |
 | `stop_hook.py` | hook de parada do Claude Code, ligado em `.claude/settings.json`: roda o `check_all.py` quando a sessão alterou arquivos publicados e impede o encerramento diante de um achado novo |

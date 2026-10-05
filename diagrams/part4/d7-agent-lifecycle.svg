@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 344" role="img" aria-label="The agent life cycle: states, not steps, from a versioned briefing to decommissioning">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 362" role="img" aria-label="The agent life cycle: states, not steps, from a versioned briefing to decommissioning">
+<title>The agent life cycle: states, not steps, from a versioned briefing to decommissioning</title>
+<desc>Six states of an agent: briefing, certified, in operation, under review, suspended and decommissioned, with the transitions between them. The two heavier lines, validity expired without renewal and no execution in the period, both lead to decommissioning. An event such as a change of model, harness, skills or memory also sends an operating agent to review.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -40,7 +42,7 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <text class="svg-sub" x="312" y="140" text-anchor="middle">owner activates</text>
 
 <line x1="397" y1="172" x2="397" y2="238" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d7-arrow)"/>
-<text class="svg-sub" x="465" y="205" text-anchor="middle">indicator fires</text>
+<text class="svg-sub" x="432" y="205" text-anchor="start">indicator fires or event*</text>
 
 <line x1="424" y1="240" x2="424" y2="174" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d7-arrow)"/>
 <text class="svg-sub" x="480" y="245" text-anchor="middle">back to normal</text>
@@ -66,4 +68,5 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <line x1="685" y1="206" x2="698" y2="206" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d7-arrow)"/>
 
 <text class="svg-cap" x="350" y="330" text-anchor="middle">THE TWO TRANSITIONS NOBODY IMPLEMENTS ARE THE HEAVIER LINES</text>
+<text class="svg-cap" x="350" y="350" text-anchor="middle">* EVENT: MODEL, HARNESS, SKILLS OR MEMORY CHANGED</text>
 </svg>

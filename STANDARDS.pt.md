@@ -47,15 +47,17 @@ Diagramas em SVG inline, traço de 0,7, sem preenchimento, sem cor. Rótulos em 
 
 Uma exceção deliberada: o diagrama de faixas usa altura crescente das caixas para representar autonomia.
 
+Desvios declarados do traço de 0,7 e da ausência de preenchimento: uma linha mais grossa (0,9 ou 1,3) marca ênfase, o ponto de reversão no D5 e as duas transições que ninguém implementa no D7; os marcadores de ponta de seta usam traço 1; o D9 desenha as paredes das plataformas a 0,5; os gráficos do diário de bordo preenchem seus pontos de dado. Um terceiro cinza, `#c9c7bf`, desenha linhas de vida e caixas secundárias ao lado das duas tintas. A legenda dentro do diagrama (`svg-cap`) tem 8,5 px, em versais espaçadas, sem itálico; o itálico 9 vale para o `figcaption` abaixo dele. Todo diagrama leva `<title>` e `<desc>`, além de `role="img"` e `aria-label`.
+
 Não usar bibliotecas de gráfico. Não usar imagens rasterizadas.
 
 ---
 
 ## Diagramas
 
-Todo diagrama nasce como rascunho em Mermaid, dentro do arquivo md correspondente. Não existe pipeline de renderização: nada neste projeto transforma o Mermaid no SVG inline de forma mecânica. O rascunho é um plano estrutural em texto puro, legível em diff, e que o GitHub renderiza nativamente quando o arquivo é aberto lá, nada além disso.
+Todo diagrama a partir da Parte 3 nasce como rascunho em Mermaid, um arquivo md por diagrama em `diagrams/sketches/`, escrito em inglês, o idioma de autoria. Não existe pipeline de renderização: nada neste projeto transforma o Mermaid em SVG de forma mecânica. O rascunho é um plano estrutural em texto puro, legível em diff, e que o GitHub renderiza nativamente quando o arquivo é aberto lá, nada além disso. Os três diagramas da Parte 1 e os três da Parte 2 são anteriores a esta regra e não têm rascunho; se um deles mudar, ganha um rascunho antes.
 
-O SVG inline no HTML é desenhado à mão, no sistema visual do projeto, para bater com a estrutura do rascunho. Isso é deliberado, não um atalho por falta de ferramenta: um renderizador genérico de Mermaid produz o tema e o layout automático dele, e nenhum dos dois bate com o sistema de traço fino, sem preenchimento, sem cor deste projeto, então desenhar à mão é o caminho direto, não um contorno.
+O SVG autônomo em `diagrams/` é desenhado à mão, no sistema visual do projeto, para bater com a estrutura do rascunho. O SVG inline de cada idioma do HTML é uma cópia dele com só o texto traduzido: o `build/svg_check.py`, que o `build/check_all.py` roda, falha se a geometria de uma cópia inline diferir do arquivo autônomo. Isso é deliberado, não um atalho por falta de ferramenta: um renderizador genérico de Mermaid produz o tema e o layout automático dele, e nenhum dos dois bate com o sistema de traço fino, sem preenchimento, sem cor deste projeto, então desenhar à mão é o caminho direto, não um contorno.
 
 Ao alterar estrutura ou rótulo, altere primeiro o rascunho em Mermaid, depois redesenhe o SVG à mão pra bater com ele. Alterar apenas o SVG deixa o rascunho desatualizado e a próxima sessão trabalha com o mapa errado.
 

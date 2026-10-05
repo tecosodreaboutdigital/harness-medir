@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" role="img" aria-label="The office's quarterly loop: briefing, certification, operation, receipts, indicators, revalidation, and back to briefing">
+<title>The office's quarterly loop: briefing, certification, operation, receipts, indicators, revalidation, and back to briefing</title>
+<desc>A loop of six boxes, briefing, certification, operation, receipts, indicators and revalidation, closing back on the briefing: the realised return is checked against the return the briefing promised. The loop runs by quarter, not by task, and revalidation can also run on an event.</desc>
 <style>
 text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 .svg-cap{font-size:8.5px;letter-spacing:.16em;fill:#8a887f}
@@ -36,7 +38,8 @@ text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <line x1="559" y1="122" x2="567" y2="122" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
 
 <rect x="569" y="100" width="122" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
-<text class="svg-lbl" x="630" y="126" text-anchor="middle">REVALIDATION</text>
+<text class="svg-lbl" x="630" y="120" text-anchor="middle">REVALIDATION</text>
+<text class="svg-sub" x="630" y="134" text-anchor="middle">or on event</text>
 
 <path d="M630,144 C630,196 54,196 54,144" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#d10-arrow)"/>
 <text class="svg-sub" x="342" y="212" text-anchor="middle">realised return checked against the return the briefing promised</text>
