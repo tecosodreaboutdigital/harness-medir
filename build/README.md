@@ -16,7 +16,9 @@ O envoltório de CSS é extraído do arquivo já pronto anterior, para que os qu
 | `body_p2_en.html` | corpo da parte 2 em inglês, editável |
 | `body_p2_es.html` | corpo da parte 2 em espanhol, editável |
 | `body_toolkit_pt.html` | corpo do guia compacto em português, editável, organizado pelo MEDIR |
-| `body_en.html` | corpo da parte 1 em inglês |
+| `body_p1_pt.html`, `body_p1_en.html`, `body_p1_es.html` | corpos da parte 1, extraídos do `harness-p1.html` vigente em 5 de outubro de 2026. O PT é regravado a cada build, o EN e o ES são editáveis (ids sem prefixo de idioma) |
+| `build_p1.py` | monta `harness-p1.html` trilíngue, no mesmo padrão de `build_p2.py` |
+| `check_all.py` | verificador único: travessão, ordem do glossário, alt do README, `toolkit.json`, links e âncoras, consistência entre partes, fatos repetidos, acentos PT e ES, ortografia britânica e paridade entre línguas. Achados anteriores a ele ficam em `check_known.json` (catraca: só pode encolher; `--write-baseline` regrava depois de corrigir). Roda sozinho pelo hook de parada (`stop_hook.py`, ligado em `.claude/settings.json`) e pela CI (`.github/workflows/check.yml`) |
 | `build_p2.py` | monta `harness-p2.html` trilíngue |
 | `build_toolkit.py` | monta `harness-toolkit.html`, hoje só PT |
 | `build_logbook.py` | monta `docs/logbook.html` trilíngue a partir de `docs/assets/logbook-metrics.json`, incluindo o terceiro gráfico de custo |
@@ -24,9 +26,7 @@ O envoltório de CSS é extraído do arquivo já pronto anterior, para que os qu
 | `docs/assets/prices.json` | livro-razão de preço datado e apensado (não é script, é dado-fonte), nunca sobrescrito, um marco lê a entrada vigente na própria data e o valor calculado fica congelado depois disso |
 | `check_glossary_order.py` | verifica ordem alfabética das entradas de `body_glossary_*.html` nas três línguas, roda antes de qualquer build depois de renomear um termo |
 | `generate_toolkit_manifest.py` | reconstrói `toolkit.json` a partir de `TOOLS.md` e `sources/inventory.md`, nunca editado à mão; `--check` só verifica se está desatualizado |
-| `build_all.py` | histórico, montou a versão trilíngue da parte 1; usa caminhos fixos de sandbox, não roda neste repositório como está |
-| `build_en.py` | histórico, gerou a versão em inglês da parte 1; mesma limitação de `build_all.py` |
-| `patch_p2.py` | histórico, aplicou seções novas na parte 2 antes de `build_p2.py` virar trilíngue |
+| `legacy/` | `build_all.py`, `build_en.py` e `patch_p2.py`, históricos, movidos para cá em 5 de outubro de 2026 para que nenhum agente os execute por engano. Os dois primeiros usam caminhos fixos de sandbox e não rodam neste repositório; foram substituídos por `build_p1.py` |
 
 ## Regra crítica
 

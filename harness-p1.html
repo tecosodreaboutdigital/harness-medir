@@ -357,14 +357,22 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <body>
 <div class="topbar">
 <nav class="serie">
-<span class="cur" data-key="p1">Part 1</span><span class="sep">·</span>
-<a href="harness-p2.html#en-" data-key="p2">Part 2</a><span class="sep">·</span>
-<a href="harness-p3.html#en-" data-key="p3">Part 3</a><span class="sep">·</span>
-<a href="harness-p4.html#en-" data-key="p4">Part 4</a><span class="sep pipe">|</span>
-<a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a><span class="sep">·</span>
-<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a><span class="sep">·</span>
-<a href="harness-sources.html#en-" data-key="sources">Sources</a><span class="sep">·</span>
-<a href="harness-playbook.html#en-" data-key="playbook">Playbook</a><span class="sep pipe">|</span>
+<span class="cur" data-key="p1">Part 1</span>
+<span class="sep">·</span>
+<a href="harness-p2.html#en-" data-key="p2">Part 2</a>
+<span class="sep">·</span>
+<a href="harness-p3.html#en-" data-key="p3">Part 3</a>
+<span class="sep">·</span>
+<a href="harness-p4.html#en-" data-key="p4">Part 4</a>
+<span class="sep pipe">|</span>
+<a href="harness-toolkit.html#en-" data-key="guide">Compact guide</a>
+<span class="sep">·</span>
+<a href="harness-glossary.html#en-" data-key="glossary">Glossary</a>
+<span class="sep">·</span>
+<a href="harness-sources.html#en-" data-key="sources">Sources</a>
+<span class="sep">·</span>
+<a href="harness-playbook.html#en-" data-key="playbook">Playbook</a>
+<span class="sep pipe">|</span>
 <a class="icon-link" href="docs/logbook.html#en-" data-key="logbook" data-icon="1" title="Project log" aria-label="Project log"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><polyline points="1,13 5,13 5,9 9,9 9,4 15,4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
 </nav>
 <span class="brace">{</span>
@@ -1414,13 +1422,12 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
 <p>Parte 1 de 4 · Serie Harness · La escena de apertura está compuesta a partir de patrones recurrentes y no describe una empresa específica.</p>
 <p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
 </div>
-
 </main>
 <script>
 (function(){
   var bar=document.querySelector('.langbar');
   var mains={pt:document.getElementById('doc-pt'),en:document.getElementById('doc-en'),es:document.getElementById('doc-es')};
-  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Guía compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Glossário',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},playbook:{file:'harness-playbook.html',label:{en:'Playbook',pt:'Playbook',es:'Playbook'}},logbook:{file:'docs/logbook.html',label:{en:'Project log',pt:'Diário de bordo',es:'Diario de bordo'}}};
+  var SERIES={p1:{file:'harness-p1.html',label:{en:'Part 1',pt:'Parte 1',es:'Parte 1'}},p2:{file:'harness-p2.html',label:{en:'Part 2',pt:'Parte 2',es:'Parte 2'}},p3:{file:'harness-p3.html',label:{en:'Part 3',pt:'Parte 3',es:'Parte 3'}},p4:{file:'harness-p4.html',label:{en:'Part 4',pt:'Parte 4',es:'Parte 4'}},guide:{file:'harness-toolkit.html',label:{en:'Compact guide',pt:'Guia compacto',es:'Gu\u00eda compacta'}},glossary:{file:'harness-glossary.html',label:{en:'Glossary',pt:'Gloss\u00e1rio',es:'Glosario'}},sources:{file:'harness-sources.html',label:{en:'Sources',pt:'Fontes',es:'Fuentes'}},playbook:{file:'harness-playbook.html',label:{en:'Playbook',pt:'Playbook',es:'Playbook'}},logbook:{file:'docs/logbook.html',label:{en:'Project log',pt:'Di\u00e1rio de bordo',es:'Diario de bordo'}}};
   function setSeries(l){
     document.querySelectorAll('.serie [data-key]').forEach(function(el){
       var info=SERIES[el.dataset.key];
@@ -1456,7 +1463,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
   try{
     if(!m&&!localStorage.getItem('langHintDismissed')){
       var bl=(navigator.language||'').slice(0,2).toLowerCase();
-      var msgs={pt:{text:'Esta página também está disponível em português.',btn:'Ver em português'},es:{text:'Esta página también está disponible en español.',btn:'Ver en español'}};
+      var msgs={pt:{text:'Esta p\u00e1gina tamb\u00e9m est\u00e1 dispon\u00edvel em portugu\u00eas.',btn:'Ver em portugu\u00eas'},es:{text:'Esta p\u00e1gina tambi\u00e9n est\u00e1 disponible en espa\u00f1ol.',btn:'Ver en espa\u00f1ol'}};
       if(msgs[bl]&&bl!==active){
         var d=document.createElement('div');
         d.className='lang-hint';
@@ -1471,7 +1478,7 @@ svg text{font-family:"Aptos","Segoe UI",Arial,sans-serif}
         x.type='button';
         x.className='x';
         x.setAttribute('aria-label','Close');
-        x.textContent='×';
+        x.textContent='\u00d7';
         x.addEventListener('click',dismissHint);
         right.appendChild(btn);
         right.appendChild(x);

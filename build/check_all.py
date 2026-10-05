@@ -243,10 +243,10 @@ NO_ACCENT = {
           r'verificacao|verificacoes|autorizacao|producao|tambem|acao|acoes|politica|politicas|'
           r'organizacao|configuracao|governanca|responsavel|responsaveis|memoria|obrigatorio|'
           r'avaliacao|operacao|operacoes|descricao|conclusao|excecao|excecoes|ate|codigo',
-    'es': r'ejecucion|ejecuciones|disenar|redisenar|diseno|informacion|decision|decisiones|verificacion|'
-          r'autorizacion|produccion|tambien|accion|acciones|politica|politicas|organizacion|'
+    'es': r'ejecucion|disenar|redisenar|diseno|informacion|decision|verificacion|'
+          r'autorizacion|produccion|tambien|accion|politica|politicas|organizacion|'
           r'configuracion|gobernanza|responsable?s?|memoria|obligatorio|evaluacion|operacion|descripcion|'
-          r'conclusion|excepcion|excepciones|codigo|huerfanas?|huerfanos?|sesion|razon',
+          r'conclusion|excepcion|codigo|huerfanas?|huerfanos?|sesion|razon',
 }
 NO_ACCENT_RX = {k: re.compile(r'\b(' + v + r')\b', re.I) for k, v in NO_ACCENT.items()}
 # Palavras que existem sem acento com outro sentido: nao entram na lista

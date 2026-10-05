@@ -1,0 +1,336 @@
+<p class="eyebrow">Harness · Parte 1 de 4 · Por qué</p>
+
+<h1>El mejor modelo del mundo dentro de una empresa sin proceso</h1>
+
+<p class="deck">La fiabilidad de tu IA no está en el modelo que contrataste. Está en el entorno que construiste a su alrededor. Ese entorno tiene nombre, tiene método y, a diferencia del modelo, es tuyo.</p>
+
+<p class="byline">Fernando Teco Sodré · Agosto de 2026 · Lectura de 14 minutos</p>
+
+<nav class="toc">
+  <p>En este artículo</p>
+  <ol>
+    <li><a href="#apertura">La tercera semana</a></li>
+    <li><a href="#que-es">Qué es un harness</a></li>
+    <li><a href="#delegacion">Ya sabes hacer esto</a></li>
+    <li><a href="#linaje">Ya viste esta película</a></li>
+    <li><a href="#quien">Quién lo está haciendo, y qué dicen los números</a></li>
+    <li><a href="#medir">El ciclo MEDIR</a></li>
+    <li><a href="#equivalencias">Lo que ya operas y no sabías que servía</a></li>
+    <li><a href="#niveles">Cuatro bandas de autonomía</a></li>
+    <li><a href="#riesgos">Qué puede salir mal</a></li>
+    <li><a href="#checklist">Doce preguntas antes de confiar</a></li>
+    <li><a href="#serie">Qué viene en las partes 2 y 3</a></li>
+  </ol>
+</nav>
+
+<h2 id="apertura">1. La tercera semana</h2>
+
+<p>Una directora de operaciones de una industria mediana montó, sola, una automatización para revisar facturas de transporte. No es del área técnica. Describió lo que quería en lenguaje natural, señaló la carpeta donde llegan las facturas y pidió que el sistema comparara cada una con el contrato del transportista y marcara las divergencias. Le llevó una tarde.</p>
+
+<p>Funcionó en la demostración. Funcionó la primera semana. Funcionó la segunda, y empezó a contárselo a otras áreas. En la tercera semana, el sistema aprobó una factura duplicada de cuarenta mil.</p>
+
+<p>Su reacción fue la de prácticamente todo el mundo. Primero reescribió la instrucción, añadiendo la frase "verifica si la factura ya fue procesada antes". Dos semanas después, un error parecido con otro proveedor. Entonces cambió de modelo, a uno más nuevo y más caro. El error desapareció durante un mes y volvió con otra cara: el sistema empezó a rechazar facturas legítimas, y nadie logró explicar por qué.</p>
+
+<p>Es tentador concluir que le pidió demasiado a la tecnología. La conclusión es equivocada, y el diagnóstico correcto es mucho más interesante.</p>
+
+<p>Ella no había escrito en ninguna parte qué significaba "listo". No existía un paso entre la decisión del sistema y su efecto en el mundo, nadie ni nada que verificara antes de que la factura pasara a pago. No había registro del porqué: cuando apareció el error, no existía rastro para reconstruir qué había visto el sistema y en qué orden. Y nada impedía que la misma clase de error volviera a ocurrir, porque cada corrección fue un parche en la respuesta, nunca un cambio en el entorno.</p>
+
+<blockquote><p>Ella no contrató a un empleado malo. Contrató a uno excelente y lo puso a trabajar sin proceso definido, sin sistema de registro, sin nivel de aprobación y sin auditoría. Ningún profesional humano sobreviviría a eso.</p></blockquote>
+
+<p>Lo incómodo es que su empresa tiene todo eso. Tiene procedimiento operativo estándar, tiene control interno, tiene niveles de aprobación, tiene rastro de auditoría. Nada de eso se extendió al nuevo trabajador, porque nadie se dio cuenta de que había contratado a uno.</p>
+
+<h2 id="que-es">2. Qué es un harness</h2>
+
+<p>Existe una ecuación que se volvió consenso entre quienes construyen estos sistemas en producción, y cabe en cuatro palabras: agente es igual a modelo más harness.</p>
+
+<p>El <a class="g" href="harness-glossary.html#es-g-modelo" data-tip="El motor de razonamiento. Predice la siguiente palabra o la siguiente accion, pero no ejecuta nada por si solo.">modelo</a> es el motor de razonamiento. Propone la siguiente acción. Es lo que la industria vende, lo que aparece en los titulares, lo que cambia de nombre cada seis semanas. El <a class="g" href="harness-glossary.html#es-g-harness" data-tip="Todo lo que existe en un agente excepto el modelo: herramientas, contexto, memoria, permisos, sensores y registro.">harness</a> es todo lo demás: lo que el sistema puede ver, lo que puede tocar, lo que sobrevive de una sesión a otra, lo que cuenta como evidencia de que el trabajo quedó bien, y en qué momento la ejecución debe detenerse y llamar a alguien.</p>
+
+<p>La palabra viene del inglés y designa el conjunto de equipos que canaliza la fuerza de un animal en una dirección útil. Conviene mantenerla en el original, por la misma razón por la que nadie tradujo <a class="g" href="harness-glossary.html#es-g-kaizen" data-tip="Mejora continua en pequenos incrementos, por todos y todo el tiempo, en lugar de proyectos episodicos.">kaizen</a>, <a class="g" href="harness-glossary.html#es-g-kanban" data-tip="Sistema visual de senalizacion que autoriza produccion o movimiento solo cuando existe demanda real.">kanban</a>, <a class="g" href="harness-glossary.html#es-g-poka" data-tip="A prueba de error. Redisenar el proceso para que el error se vuelva imposible, en vez de pedir mas atencion.">poka-yoke</a> ni <a class="g" href="harness-glossary.html#es-g-jidoka" data-tip="Autonomacion. La maquina detecta la anormalidad y se detiene sola, para que el defecto no siga adelante.">jidoka</a>: una palabra importada señala un cuerpo de conocimiento importado, y no hay ganancia en inventar un sinónimo que nadie va a reconocer en la literatura.</p>
+
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="Diagrama del harness alrededor del modelo">
+  <defs><marker id="es-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+  <text class="svg-ttl" x="350" y="24" text-anchor="middle">EL HARNESS</text>
+  <rect x="150" y="40" width="400" height="215" fill="none" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="20" y="128" width="100" height="46" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="70" y="147" text-anchor="middle">PEDIDO</text>
+  <text class="svg-sub" x="70" y="162" text-anchor="middle">objetivo · riesgo</text>
+  <line x1="122" y1="151" x2="146" y2="151" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a1)"/>
+  <rect x="170" y="62" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="80" text-anchor="middle">CONTRATO</text>
+  <text class="svg-sub" x="227" y="95" text-anchor="middle">qué es "listo"</text>
+  <rect x="170" y="126" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="144" text-anchor="middle">CONTEXTO</text>
+  <text class="svg-sub" x="227" y="159" text-anchor="middle">mapas · reglas</text>
+  <rect x="170" y="190" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="227" y="208" text-anchor="middle">ESTADO</text>
+  <text class="svg-sub" x="227" y="223" text-anchor="middle">memoria duradera</text>
+  <circle cx="350" cy="148" r="34" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="350" y="152" text-anchor="middle">MODELO</text>
+  <line x1="287" y1="84" x2="322" y2="128" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="287" y1="148" x2="314" y2="148" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="287" y1="212" x2="322" y2="170" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="378" y1="128" x2="413" y2="84" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="386" y1="148" x2="413" y2="148" stroke="#c9c7bf" stroke-width=".7"/>
+  <line x1="378" y1="170" x2="413" y2="212" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="415" y="62" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="80" text-anchor="middle">HERRAMIENTAS</text>
+  <text class="svg-sub" x="472" y="95" text-anchor="middle">lo que puede tocar</text>
+  <rect x="415" y="126" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="144" text-anchor="middle">PERMISO</text>
+  <text class="svg-sub" x="472" y="159" text-anchor="middle">alcance · aprobación</text>
+  <rect x="415" y="190" width="115" height="44" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="472" y="208" text-anchor="middle">EVIDENCIA</text>
+  <text class="svg-sub" x="472" y="223" text-anchor="middle">pruebas · rastro</text>
+  <line x1="554" y1="151" x2="578" y2="151" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a1)"/>
+  <rect x="582" y="128" width="100" height="46" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="632" y="147" text-anchor="middle">RESULTADO</text>
+  <text class="svg-sub" x="632" y="162" text-anchor="middle">verificado</text>
+  <text class="svg-cap" x="350" y="275" text-anchor="middle">EL MODELO RAZONA · EL HARNESS CONTROLA · LAS HERRAMIENTAS ACTÚAN</text>
+</svg>
+<figcaption>El modelo ocupa el centro, pero decide poco. Todo lo que determina si el resultado es confiable está fuera de él.</figcaption>
+</figure>
+
+<p>Pon el mismo modelo dentro de una caja de conversación y responde preguntas. Pon el mismo modelo dentro de un entorno con acceso a archivos, pruebas automáticas, memoria entre sesiones, límites de permiso y un revisor, y entrega trabajo. Los pesos no cambiaron. El entorno sí.</p>
+
+<h2 id="delegacion">3. Ya sabes hacer esto</h2>
+
+<p>Aquí está la traducción que faltaba, y no necesita ningún vocabulario técnico.</p>
+
+<p>Cuando delegas una tarea importante en alguien que acaba de llegar, haces seis cosas casi sin pensar. Acuerdas el resultado esperado y el plazo. Muestras dónde está la información y a quién recurrir. Das acceso a los sistemas que la persona necesita, y solo a esos. Pides que registre lo que se decidió. Revisas antes de que el trabajo salga de la empresa. Y defines qué puede firmar sola y qué debe subir.</p>
+
+<p>Nunca tuviste que escribir nada de eso, porque la persona traía la mitad hecha de casa. Le daba vergüenza entregar trabajo malo, sabía que su nombre iba en el documento, notaba cuando algo estaba raro aunque no supiera explicarlo, y tenía memoria de lo que la empresa ya había intentado sin éxito.</p>
+
+<p>El agente no trae nada de eso. No tiene reparo social, no siente rechazo estético ante una solución fea, no tiene la intuición de que "aquí no lo hacemos así", no tiene memoria organizacional. Un harness es el intento de externalizar y hacer explícito aquello que la experiencia humana traía incorporado.</p>
+
+<p>Por eso el problema no es de tecnología de la información. Es de diseño del trabajo. Y por eso la persona mejor preparada para resolverlo en tu empresa probablemente no está en TI: está en calidad, en operaciones, en control interno.</p>
+
+<h2 id="linaje">4. Ya viste esta película</h2>
+
+<p>La expresión harness engineering recibió nombre en febrero de 2026, cuando <a class="src" href="harness-sources.html#es-src-hashimoto" data-tip="Mitchell Hashimoto, &quot;My AI Adoption Journey&quot;, 5 de febrero de 2026.">Mitchell Hashimoto</a>, cofundador de HashiCorp y creador de Terraform, publicó un relato personal de adopción de IA. Su definición cabe en una frase: cada vez que encuentras un error del agente, inviertes el tiempo necesario para diseñar una solución tal que el agente nunca vuelva a cometerlo. Seis días después, <a class="src" href="harness-sources.html#es-src-lopopolo" data-tip="Ryan Lopopolo, OpenAI, &quot;Harness engineering: leveraging Codex in an agent-first world&quot;, 11 de febrero de 2026.">OpenAI</a> publicó un informe de campo que le dio escala al término, y en pocas semanas Thoughtworks, LangChain y Anthropic usaban el mismo vocabulario.</p>
+
+<p>Conviene registrarlo, porque circula mal: no fue Andrej Karpathy. Él <a class="src" href="harness-sources.html#es-src-karpathy-vibe" data-tip="Andrej Karpathy, publicación original que acuñó &quot;vibe coding&quot;, 2 de febrero de 2025.">acuñó</a> <a class="g" href="harness-glossary.html#es-g-vibe" data-tip="Programar aceptando lo que la IA genera sin revisar. Karpathy lo describio como apto para proyectos desechables.">&quot;vibe coding&quot;</a> y <a class="src" href="harness-sources.html#es-src-karpathy-context" data-tip="Andrej Karpathy, publicación que popularizó &quot;context engineering&quot;, 25 de junio de 2025.">popularizó</a> <a class="g" href="harness-glossary.html#es-g-context" data-tip="Disciplina de decidir que entra en el campo de vision del modelo en cada ejecucion: documentos, reglas, resultados.">&quot;context engineering&quot;</a>, pero el término harness ya circulaba antes, en contextos técnicos, y quien lo convirtió en disciplina fue Hashimoto.</p>
+
+<p>Ahora lee su definición otra vez y responde: ¿te recuerda a algo?</p>
+
+<p>Es poka-yoke. No es análogo a poka-yoke, es poka-yoke, el principio japonés de rediseñar el proceso para que el error se vuelva estructuralmente imposible, en lugar de pedir más atención a quien ejecuta. La única diferencia es que el ejecutor no es humano ni determinista.</p>
+
+<p>Y la coincidencia no termina ahí. <a class="src" href="harness-sources.html#es-src-bockeler-harness" data-tip="Birgitta Böckeler, Thoughtworks, &quot;Harness engineering for coding agent users&quot;, 2 de abril de 2026.">Birgitta Böckeler</a>, de Thoughtworks, describe el harness explícitamente como un gobernador <a class="g" href="harness-glossary.html#es-g-cibernetica" data-tip="Ciencia del control y la comunicacion en sistemas. Estudia como un sistema se regula por anticipacion y realimentacion.">cibernético</a>, combinando control anticipatorio y control por realimentación para regular el sistema hacia el estado deseado, e invoca la <a class="g" href="harness-glossary.html#es-g-ashby" data-tip="Ley de la variedad requerida: un regulador solo controla un sistema si tiene al menos tanta variedad como el.">Ley de Ashby</a>: un regulador necesita tener al menos tanta variedad como el sistema que gobierna. Independientemente de su artículo, un ciclo de control con anticipación y realimentación es exactamente la estructura que <a class="g" href="harness-glossary.html#es-g-shewhart" data-tip="Fisico de los Bell Labs, creador del control estadistico de proceso y del ciclo que origino el PDCA.">Walter Shewhart</a> formalizó en los años treinta y que <a class="g" href="harness-glossary.html#es-g-deming" data-tip="Estadistico que llevo el ciclo de Shewhart a Japon en los anos cincuenta y lo volvio base de la gestion de calidad.">Deming</a> llevó al mundo como <a class="g" href="harness-glossary.html#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>.</p>
+
+<p>La ingeniería de harness no es un primo lejano de la gestión de la calidad. Es el mismo tronco, aplicado a un trabajador que falla de una manera nueva.</p>
+
+<blockquote><p>La industria tardó cuarenta años en aceptar que la calidad no se inspecciona al final de la línea, se construye en el proceso. La IA corporativa está repitiendo el error de principiante: casi todo el mundo revisando la salida del agente, casi nadie corrigiendo el proceso que la produjo.</p></blockquote>
+
+<p>Si tu empresa tiene madurez real en gestión de procesos, tienes una ventaja estructural en la adopción de IA agéntica que probablemente aún no has notado. El vocabulario es distinto. La disciplina es la misma.</p>
+
+<h2 id="quien">5. Quién lo está haciendo, y qué dicen los números</h2>
+
+<p>Esta es la parte que suele cerrar la discusión sobre qué modelo contratar.</p>
+
+<h3>El experimento controlado</h3>
+
+<p>En febrero de 2026, el investigador <a class="src" href="harness-sources.html#es-src-boluk" data-tip="Can Bölük, &quot;I improved 15 LLMs at coding in one afternoon. Only the harness changed&quot;, 12 de febrero de 2026.">Can Bölük</a> hizo algo simple. Tomó dieciséis modelos de lenguaje, mantuvo todo igual y cambió solo una pieza del entorno: el formato con el que el agente describe una edición de archivo. Nada en los pesos, nada en la instrucción, nada de entrenamiento. Solo el formato de la herramienta.</p>
+
+<p>El nuevo formato superó al anterior en catorce de los dieciséis modelos. Y los modelos más débiles fueron los que más ganaron: uno pasó de 6,7% a 68,3% de tasa de éxito, un salto de diez veces. La capacidad real del modelo estuvo ahí todo el tiempo, escondida detrás de fallos mecánicos de la herramienta. El experimento costó una tarde y unos trescientos dólares.</p>
+
+<div class="rule-box"><span class="lbl">La frase que lo resume</span><p>&quot;Estabas culpando al piloto por el tren de aterrizaje.&quot;</p></div>
+
+<p>El patrón se repitió en otro lugar. <a class="src" href="harness-sources.html#es-src-langchain-harness" data-tip="Vivek Trivedy, LangChain, &quot;Improving Deep Agents with harness engineering&quot;, 17 de febrero de 2026.">LangChain</a> mejoró solo el harness de su propio agente y subió del trigésimo al quinto puesto en un benchmark público, con una ganancia de 13,7 puntos, sin cambiar el modelo. Y <a class="src" href="harness-sources.html#es-src-harnessx" data-tip="Darwin Agent Team, arXiv 2606.14249, &quot;HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry&quot;, 12 de junio de 2026.">un trabajo académico</a> que automatizó la evolución del harness registró mejora en catorce de quince configuraciones, con ganancia media del 14,5%.</p>
+
+<h3>La escala empresarial</h3>
+
+<p><a class="src" href="harness-sources.html#es-src-lopopolo" data-tip="Ryan Lopopolo, OpenAI, &quot;Harness engineering: leveraging Codex in an agent-first world&quot;, 11 de febrero de 2026.">OpenAI</a> publicó el relato más detallado hasta hoy. Un equipo que empezó con tres personas y terminó con siete construyó un producto interno en cinco meses, con cero líneas de código escritas a mano, cerca de un millón de líneas generadas y aproximadamente mil quinientas <a class="g" href="harness-glossary.html#es-g-pr" data-tip="Propuesta de cambio en un sistema, sometida a revision y aprobacion antes de ser incorporada.">pull requests</a> aprobadas.</p>
+
+<p>Lo que importa no es el número, es el método. La arquitectura se organizó en capas con dirección de dependencia estricta, y esas reglas no eran documentación, eran bloqueo: <a class="g" href="harness-glossary.html#es-g-linter" data-tip="Programa que analiza codigo automaticamente y senala violaciones de regla antes de que llegue a produccion.">linters</a> personalizados, pruebas estructurales y barreras automáticas impedían cualquier entrega que violara la estructura. El detalle más elegante es este: cuando la verificación fallaba, el mensaje de error estaba escrito para enseñarle la corrección al agente, no solo para registrar el fallo. El sistema no se limita a bloquear el error, entrena a quien lo cometió, en el momento.</p>
+
+<p>Dos principios más del mismo relato merecen entrar en tu vocabulario. El primero es divulgación progresiva: el documento de orientación del agente debe ser un índice de unas cien líneas, que señale dónde buscar, y no una enciclopedia que consuma todo el espacio de lectura. El segundo es recolección de basura: tareas de fondo corren con cadencia regular buscando desvíos y proponiendo correcciones pequeñas, porque la deuda acumulada es un préstamo de intereses altos, siempre mejor pagarla en cuotas que dejarla componer hasta convertirse en jornada de limpieza.</p>
+
+<p>Y la frase que resume el problema entero, desde el punto de vista de quien opera: aquello a lo que el agente no puede acceder durante la ejecución, para él simplemente no existe.</p>
+
+<h3>La memoria y el juez</h3>
+
+<p><a class="src" href="harness-sources.html#es-src-anthropic-effective" data-tip="Anthropic, &quot;Effective harnesses for long-running agents&quot;, noviembre de 2025.">Anthropic</a> resolvió el problema de agentes que trabajan durante horas con una solución que cualquier gestor reconoce. La primera sesión de trabajo monta el entorno: un guion de inicialización, un archivo de progreso que registra lo ya hecho y un hito inicial de versión. Cada sesión siguiente lee ese registro, avanza un tramo y deja la actualización por escrito. La memoria vive fuera de la conversación, en artefactos, y no en la cabeza del sistema.</p>
+
+<p>Después fueron más lejos, inspirados en una <a class="src" href="harness-sources.html#es-src-anthropic-design" data-tip="Anthropic, &quot;Harness design for long-running application development&quot;.">arquitectura antagónica</a>: separaron quién planifica, quién ejecuta y quién evalúa. Tres papeles, con criterios explícitos de evaluación. Es el principio más transferible de todo el material publicado hasta ahora sobre el tema, y el más ignorado en la práctica: <strong>quien genera no evalúa</strong>. La autoevaluación no es un atajo, es el modo de fallo.</p>
+
+<h3>El rastro como arquitectura</h3>
+
+<p>En agosto de 2026, <a class="src" href="harness-sources.html#es-src-deepseek" data-tip="DeepSeek, &quot;DeepSeek Harness, developer preview&quot;, agosto de 2026.">DeepSeek liberó el código de su propio harness</a> bajo licencia permisiva, y el repositorio superó las <a class="src" href="harness-sources.html#es-src-newstack" data-tip="The New Stack, &quot;DeepSeek open sources an agent harness where everything is a plugin&quot;, agosto de 2026.">treinta y tres mil estrellas</a> en pocas horas. La decisión de diseño que le interesa a quien responde por gobernanza es esta: todo lo que el modelo ve queda registrado en un <a class="g" href="harness-glossary.html#es-g-append" data-tip="Registro donde nada puede alterarse ni borrarse, solo anadirse. Base tecnica de cualquier rastro de auditoria.">log que solo acepta añadidos</a>, incluidas instrucciones, razonamiento, llamadas a herramientas, resultados y cada inyección de contexto. Reanudar, bifurcar, buscar y reproducir la ejecución operan todos sobre ese mismo registro.</p>
+
+<p>Traducido al lenguaje de consejo: auditoría, cumplimiento y reversión dejaron de ser un informe y se volvieron arquitectura. Quien construya sin eso descubrirá tarde que no puede explicar lo que pasó.</p>
+
+<h2 id="medir">6. El ciclo MEDIR</h2>
+
+<p>Si la ingeniería de harness es de la misma familia que el <a class="g" href="harness-glossary.html#es-g-pdca" data-tip="Planificar, hacer, verificar, actuar. Ciclo iterativo de mejora continua, tambien llamado ciclo de Shewhart.">PDCA</a>, necesita lo que toda metodología de esa familia tiene: un orden, un nombre para cada paso y un criterio para saber cuándo avanzar. Eso es lo que organiza el ciclo de abajo.</p>
+
+<p>El nombre no es incidental. MEDIR, en portugués, es el verbo corriente para <em>medir</em>, exactamente como en español. Un método para medir cómo se comporta un agente ganó el verbo medir como nombre.</p>
+
+<figure>
+<svg viewBox="0 0 700 400" role="img" aria-label="Ciclo MEDIR: mapear, equipar, delegar, inspeccionar, reforzar">
+  <defs><marker id="es-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 2 L8 5 L1 8" fill="none" stroke="#1b1b19" stroke-width="1"/></marker></defs>
+  <rect x="150" y="20" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="42">M · MAPEAR</text>
+  <text class="svg-sub" x="176" y="58">el contrato de la tarea, los límites y el mapa del conocimiento</text>
+  <line x1="370" y1="74" x2="370" y2="92" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a2)"/>
+  <rect x="150" y="94" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="116">E · EQUIPAR</text>
+  <text class="svg-sub" x="176" y="132">herramientas, accesos y memoria duradera, con frontera</text>
+  <line x1="370" y1="148" x2="370" y2="166" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a2)"/>
+  <rect x="150" y="168" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="190">D · DELEGAR</text>
+  <text class="svg-sub" x="176" y="206">ejecución aislada, con autonomía calibrada al riesgo</text>
+  <line x1="370" y1="222" x2="370" y2="240" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a2)"/>
+  <rect x="150" y="242" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="264">I · INSPECCIONAR</text>
+  <text class="svg-sub" x="176" y="280">sensores que producen evidencia, no opinión</text>
+  <line x1="370" y1="296" x2="370" y2="314" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a2)"/>
+  <rect x="150" y="316" width="440" height="52" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="176" y="338">R · REFORZAR</text>
+  <text class="svg-sub" x="176" y="354">el fallo se vuelve cambio permanente en el entorno</text>
+  <path d="M150 342 L108 342 L108 46 L146 46" fill="none" stroke="#1b1b19" stroke-width=".7" marker-end="url(#es-a2)"/>
+  <text class="svg-cap" x="52" y="198">EL CICLO CIERRA</text>
+</svg>
+<figcaption>MEDIR. Lo que separa este ciclo de un PDCA genérico es el último paso: actúas sobre el entorno, no sobre la respuesta.</figcaption>
+</figure>
+
+<p><strong>Mapear</strong> es escribir, antes de cualquier ejecución, qué entrega la tarea, cuáles son los límites y cómo saber que terminó. Sin ese contrato, el sistema puede redefinir en silencio su propio trabajo y aun así declarar éxito. Es la jugada de mayor apalancamiento en tareas largas, y la más saltada.</p>
+
+<p><strong>Equipar</strong> es decidir qué ve y qué puede tocar. Menos herramientas, mejor descritas, con estado guardado fuera de la conversación. Un agente que empieza de cero en cada sesión no es un agente, es un formulario caro.</p>
+
+<p><strong>Delegar</strong> es ejecutar en entorno aislado, con alcance estrecho y autonomía proporcional al riesgo. Una cosa a la vez.</p>
+
+<p><strong>Inspeccionar</strong> es la diferencia entre confianza y evidencia. El sensor debe devolver la brecha exacta, no un veredicto. "No pasó" no enseña nada. "La factura 4471 ya fue procesada el 12/03, referencia en el registro X" enseña, y permite reparación inmediata.</p>
+
+<p><strong>Reforzar</strong> es donde vive la diferencia. El error que apareció en la inspección no se convierte en un parche a la respuesta: se convierte en una regla escrita, una prueba, una herramienta mejor o un permiso más estrecho. El parche arregla una ejecución. El cambio en el entorno mejora todas las siguientes.</p>
+
+<p>Esa es la razón por la que el ciclo puede cerrar sin supervisión humana permanente. El sistema se vuelve más barato de operar en cada vuelta, no más caro. Es también la razón por la que es honesto decir que estás construyendo algo que se mide, se corrige y se repara: no porque el modelo haya aprendido, sino porque el entorno se volvió más difícil de equivocar.</p>
+
+<h2 id="equivalencias">7. Lo que ya operas y no sabías que servía</h2>
+
+<p>Si vienes de un entorno con gestión de procesos madura, lo que sigue no es una tecnología nueva. Es tu propia caja de herramientas, con otros nombres.</p>
+
+<table class="wrap">
+<thead><tr><th>Lo que ya operas</th><th>Su equivalente en el harness</th></tr></thead>
+<tbody>
+<tr><td>Procedimiento operativo estándar</td><td>La guía del agente: reglas, convenciones y mapa de dónde buscar</td></tr>
+<tr><td>Poka-yoke</td><td>Verificación determinista que impide que el error exista</td></tr>
+<tr><td>Jidoka, la máquina que se detiene sola</td><td>El agente interrumpe la ejecución cuando el sensor se dispara</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-andon" data-tip="Senal visual o sonora que interrumpe la linea y llama ayuda inmediata cuando aparece un problema.">Andon</a></td><td>Escalamiento al humano, con el contexto adjunto</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-gemba" data-tip="El lugar real donde ocurre el trabajo. Ir al gemba es observar el proceso, no discutir el informe sobre el.">Gemba</a></td><td>Leer el rastro de la ejecución, y no solo el resultado final</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-cep" data-tip="Grafico del control estadistico de proceso que muestra si la variacion es normal o si algo cambio.">Carta de control</a></td><td>Sensores continuos de desvío, fuera del ciclo de la tarea</td></tr>
+<tr><td>Kaizen</td><td>El paso Reforzar: el fallo se vuelve cambio permanente</td></tr>
+<tr><td>Plan de control y niveles de aprobación</td><td>Política de permisos, impuesta fuera del modelo</td></tr>
+<tr><td>Rastro de auditoría</td><td>Registro de ejecución que solo acepta añadidos</td></tr>
+<tr><td><a class="g" href="harness-glossary.html#es-g-dmaic" data-tip="Definir, medir, analizar, mejorar, controlar. Ciclo estructurado de proyectos Seis Sigma.">DMAIC</a></td><td>MEDIR</td></tr>
+</tbody>
+</table>
+
+<h2 id="niveles">8. Cuatro bandas de autonomía</h2>
+
+<p>La pregunta que todo ejecutivo hace en este punto es cuánta autonomía dar. La respuesta no es un número, es una condición: solo subes de banda cuando el sensor de la banda anterior funciona de verdad.</p>
+
+<figure>
+<svg viewBox="0 0 700 250" role="img" aria-label="Cuatro bandas de madurez de harness">
+  <line x1="60" y1="215" x2="660" y2="215" stroke="#c9c7bf" stroke-width=".7"/>
+  <rect x="60" y="176" width="140" height="38" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="130" y="199" text-anchor="middle">N0 · ASISTIDO</text>
+  <text class="svg-sub" x="130" y="168" text-anchor="middle">el humano revisa todo</text>
+  <rect x="212" y="136" width="140" height="78" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="282" y="180" text-anchor="middle">N1 · GUIADO</text>
+  <text class="svg-sub" x="282" y="128" text-anchor="middle">tareas reversibles</text>
+  <rect x="364" y="96" width="140" height="118" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="434" y="160" text-anchor="middle">N2 · MEDIDO</text>
+  <text class="svg-sub" x="434" y="88" text-anchor="middle">tareas largas</text>
+  <rect x="516" y="56" width="140" height="158" fill="none" stroke="#1b1b19" stroke-width=".7"/>
+  <text class="svg-lbl" x="586" y="140" text-anchor="middle">N3 · GOBERNADO</text>
+  <text class="svg-sub" x="586" y="48" text-anchor="middle">efecto externo, con portero</text>
+  <text class="svg-cap" x="60" y="238">LA AUTONOMÍA CRECE SOLO CUANDO EL SENSOR DE LA BANDA ANTERIOR FUNCIONA</text>
+</svg>
+<figcaption>Las bandas miden la capacidad del sistema, no la certificación de una persona.</figcaption>
+</figure>
+
+<table class="wrap">
+<thead><tr><th>Banda</th><th>Qué existe en el entorno</th><th>Autonomía permitida</th></tr></thead>
+<tbody>
+<tr><td>N0 · Asistido</td><td>Instrucción y modelo, nada más</td><td>Ninguna. El humano revisa cada salida</td></tr>
+<tr><td>N1 · Guiado</td><td>Guía escrita, herramientas definidas, contrato de tarea</td><td>Tareas reversibles y de bajo costo</td></tr>
+<tr><td>N2 · Medido</td><td>Estado duradero, sensores, ciclo con tope de intentos</td><td>Tareas largas, con evidencia antes de la entrega</td></tr>
+<tr><td>N3 · Gobernado</td><td>Permiso fuera del modelo, rastro completo, reversión</td><td>Acción con efecto externo, bajo aprobación humana</td></tr>
+</tbody>
+</table>
+
+<p>La automatización del inicio de este artículo estaba en N0 operando como si fuera N3. Tenía efecto externo, financiero e irreversible, sin guía, sin sensor, sin nivel de aprobación y sin rastro. El accidente no fue mala suerte. Fue consecuencia estructural.</p>
+
+<div class="rule-box"><span class="lbl">Regla de dimensionamiento</span><p>El harness debe ser menor que la superficie de fallo que controla. Una tarea corta y reversible no necesita plataforma. Una tarea que mueve dinero necesita todo.</p></div>
+
+<h2 id="riesgos">9. Qué puede salir mal</h2>
+
+<p>Esta es la sección que un consejo necesita leer, porque cada línea de abajo ya le pasó a alguien.</p>
+
+<table class="wrap">
+<thead><tr><th>Riesgo</th><th>Cómo aparece en la práctica</th><th>Control</th></tr></thead>
+<tbody>
+<tr><td>Autonomía sin sensor</td><td>El sistema escala el error a la misma velocidad con que escala el acierto</td><td>Sensor antes de autonomía, siempre en ese orden</td></tr>
+<tr><td>Juez y parte</td><td>El mismo sistema ejecuta, evalúa y declara éxito en una tarea que redefinió solo</td><td>Evaluador separado del ejecutor, con criterio explícito</td></tr>
+<tr><td>Permiso escrito en la instrucción</td><td>Un texto que llega dentro de un dato, un correo o un PDF se lee como orden</td><td>Permiso impuesto fuera del modelo, en la capa de política</td></tr>
+<tr><td>Memoria sin gobernanza</td><td>Dato personal en estado duradero, fuera de política de retención</td><td>Base legal, plazo y titular definidos antes de encender</td></tr>
+<tr><td>Acción irreversible sin portero</td><td>Pago, envío, borrado o publicación sin aprobación nominal</td><td>Alcance por clase de acción, no por confianza en el sistema</td></tr>
+<tr><td>Ciclo sin presupuesto</td><td>Costo silencioso y repetición infinita del mismo intento</td><td>Tope de intentos, tope de costo y escalamiento</td></tr>
+<tr><td>Ausencia de rastro</td><td>No se puede auditar, atribuir la regresión ni cambiar de proveedor</td><td>Registro por ejecución, con punto de reversión</td></tr>
+<tr><td>Desvío silencioso</td><td>El entorno se degrada poco a poco y nadie lo nota hasta el incidente</td><td>Mantenimiento con cadencia, no en jornadas de limpieza</td></tr>
+<tr><td>Harness mayor que el problema</td><td>Plataforma construida antes de que la primera tarea entregue valor</td><td>Subir de banda solo cuando la tarea pague la complejidad</td></tr>
+</tbody>
+</table>
+
+<p>Hay un riesgo adicional que no cabe en tabla, y es el más caro de los diez. Es tratar todo esto como asunto de tecnología. Las decisiones que importan aquí son de alcance, de responsabilidad y de tolerancia al error. Ninguna de ellas pertenece a quien escribe el código.</p>
+
+<h2 id="checklist">10. Doce preguntas antes de confiar</h2>
+
+<p>Usa esto antes de dejar que cualquier agente toque trabajo real. Si varias respuestas son no, un modelo más fuerte no lo resolverá: solo hará el fallo más caro.</p>
+
+<ul class="checklist">
+<li><strong>Mapear.</strong> ¿El criterio de listo está escrito antes de que empiece la ejecución?</li>
+<li><strong>Mapear.</strong> ¿El sistema encuentra el conocimiento correcto sin cargarlo todo?</li>
+<li><strong>Mapear.</strong> ¿Los límites de la tarea son explícitos, incluido lo que no debe hacer?</li>
+<li><strong>Equipar.</strong> ¿Cada herramienta tiene propósito claro y un estado de fallo previsible?</li>
+<li><strong>Equipar.</strong> ¿Las decisiones quedan guardadas fuera de la conversación?</li>
+<li><strong>Equipar.</strong> ¿La ejecución está aislada de los sistemas de producción?</li>
+<li><strong>Delegar.</strong> ¿La autonomía concedida es proporcional al costo del error?</li>
+<li><strong>Inspeccionar.</strong> ¿Toda transición riesgosa produce evidencia, y no una opinión?</li>
+<li><strong>Inspeccionar.</strong> ¿Quien evalúa es distinto de quien ejecuta?</li>
+<li><strong>Reforzar.</strong> ¿Cada ciclo tiene tope de intentos, tope de costo y camino de escalamiento?</li>
+<li><strong>Reforzar.</strong> ¿Todo fallo actualiza una guía, una prueba, una herramienta o un permiso?</li>
+<li><strong>Reforzar.</strong> ¿Es posible reconstruir lo que pasó y revertir lo que se hizo?</li>
+</ul>
+
+<h2 id="serie">11. Qué viene en las partes 2 y 3</h2>
+
+<p>Existe una razón por la que este asunto crece ahora, y es incómoda: los agentes se volvieron lo bastante buenos para usarse, y todavía no son lo bastante fiables para soltarse. Toda la disciplina existe en ese intervalo.</p>
+
+<p>La buena noticia es que el intervalo es abordable, y la mayor parte del trabajo no es técnica. Es diseño del trabajo, definición de alcance y disciplina de mantenimiento, tres cosas que las empresas maduras ya saben hacer.</p>
+
+<p>La <strong>parte 2</strong> baja un nivel: guías y sensores, los dos únicos tipos de control que existen, la diferencia entre verificación determinista y verificación por juicio, cuándo correr cada una, y tres ejemplos completos que puedes montar sin escribir código, del individual al corporativo.</p>
+
+<p>La <strong>parte 3</strong> trata de lo que queda cuando el sistema ya funciona: permiso fuera del modelo, instrucción maliciosa que llega dentro de un dato, registro auditable, reversión, obligaciones legales y la pregunta que nadie quiere hacer en voz alta en la sala, que es quién responde por lo que hizo el agente.</p>
+
+<blockquote><p>El modelo que usas hoy será sustituido en pocos meses, y no tendrás voto en esa decisión. Las herramientas, las pruebas, las reglas escritas, los límites de aprobación y el registro de lo que pasó siguen siendo tuyos. Por eso la ventaja duradera está migrando del <a class="g" href="harness-glossary.html#es-g-prompt" data-tip="La instruccion escrita que se le da al modelo. Un componente del sistema, no el sistema.">prompt</a> al sistema que lo rodea.</p></blockquote>
+
+<p>Cuanto mejor sea tu harness, mejor para ti y mejor para tu agente. Y, a diferencia del modelo, mejora exactamente en la medida en que lo operas.</p>
+
+<h2 id="donde-estas">Dónde estás</h2>
+
+<table class="wrap">
+<thead><tr><th>Pieza</th><th>Qué entrega</th></tr></thead>
+<tbody>
+<tr><td>Parte 1, esta</td><td>Por qué el entorno importa más que el modelo, el ciclo MEDIR, las bandas de autonomía y los riesgos a nivel de junta directiva</td></tr>
+<tr><td><a href="harness-p2.html">Parte 2</a></td><td>Guías y sensores, el formato de skill, tres ejemplos completos y las clases de entorno</td></tr>
+<tr><td><a href="harness-p3.html">Parte 3</a></td><td>La separación de poderes, la regla de dos, identidad, inyección, el registro, y el terreno legal en Brasil y Europa</td></tr>
+<tr><td><a href="harness-p4.html">Parte 4</a></td><td>El agente como objeto gestionado: un ciclo de vida, cuatro roles, ocho indicadores y dónde debe sentarse la oficina que administra todo eso</td></tr>
+<tr><td><a href="harness-toolkit.html">Guía compacta</a></td><td>Nombres, repositorios, comandos y guías paso a paso, organizados por los cinco pasos del MEDIR</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+<p>Parte 1 de 4 · Serie Harness · La escena de apertura está compuesta a partir de patrones recurrentes y no describe una empresa específica.</p>
+<p>Este proyecto documenta las skills que instala y usa, como práctica y no solo como argumento. Lista completa y registro de uso en <a href="https://github.com/tecosodreaboutdigital/harness-medir/blob/main/TOOLS.md">TOOLS.md</a>, evolución de tokens y palabras en el <a href="docs/logbook.html">diario de bordo</a>.</p>
+</div>
