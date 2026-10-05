@@ -53,7 +53,7 @@
     "secure",
     "govern"
   ],
-  "source_hash": "2380d0d299193e5643dd074c1af3df54908d180ad54f6f6e632f95ff144862c7",
+  "source_hash": "ab6573b2b56f735d80ff710ee665e4f5a3bb0e2da4a0f0ff78dc2d9102069032",
   "entries": [
     {
       "id": "superpowers",
@@ -64,7 +64,7 @@
       "origin": "https://github.com/obra/superpowers",
       "licence": "MIT",
       "status": "installed",
-      "skills_installed_text": "14, of 15 at the origin (the whole collection when installed)",
+      "skills_installed_text": "15, the whole collection (the fifteenth, `diagnosing-superpowers`, was added on 5 October 2026)",
       "skills": [
         "brainstorming",
         "dispatching-parallel-agents",
@@ -79,7 +79,8 @@
         "using-superpowers",
         "verification-before-completion",
         "writing-plans",
-        "writing-skills"
+        "writing-skills",
+        "diagnosing-superpowers"
       ],
       "install": {
         "origin_clone": "git clone https://github.com/obra/superpowers",
@@ -94,15 +95,14 @@
         "archived": false,
         "head_sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d",
         "head_date": "2026-09-25",
-        "stars": 295448
+        "stars": 295648
       },
       "licence_file": true,
       "trust_tier": "community",
       "pinned_ref": null,
       "pinned_ref_note": "The installed copies never recorded the commit they came from. Instead, each skill's SKILL.md was compared with the origin's default branch on verified_at: see installed_vs_upstream.",
       "installed_vs_upstream": {
-        "differs": 8,
-        "identical": 6
+        "identical": 15
       },
       "audit": {
         "contains_scripts": true,
@@ -161,15 +161,14 @@
         "archived": false,
         "head_sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
         "head_date": "2026-10-05",
-        "stars": 276639
+        "stars": 277078
       },
       "licence_file": true,
       "trust_tier": "community",
       "pinned_ref": null,
       "pinned_ref_note": "The installed copies never recorded the commit they came from. Instead, each skill's SKILL.md was compared with the origin's default branch on verified_at: see installed_vs_upstream.",
       "installed_vs_upstream": {
-        "identical": 10,
-        "differs": 2
+        "identical": 12
       },
       "audit": {
         "contains_scripts": false,
@@ -253,7 +252,7 @@
         "archived": false,
         "head_sha": "2c606141936f1eeef17fa3043a72095b4765b9c2",
         "head_date": "2026-04-20",
-        "stars": 216963
+        "stars": 217060
       },
       "licence_file": false,
       "trust_tier": "community",
@@ -299,7 +298,7 @@
         "archived": false,
         "head_sha": "13543f9d6fc1a13a15b68fe5c97baeb3268569e2",
         "head_date": "2026-10-03",
-        "stars": 39584
+        "stars": 39602
       },
       "licence_file": true,
       "trust_tier": "community",
@@ -344,14 +343,14 @@
         "archived": false,
         "head_sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
         "head_date": "2026-09-28",
-        "stars": 54077
+        "stars": 54189
       },
       "licence_file": true,
       "trust_tier": "community",
       "pinned_ref": null,
       "pinned_ref_note": "The installed copies never recorded the commit they came from. Instead, each skill's SKILL.md was compared with the origin's default branch on verified_at: see installed_vs_upstream.",
       "installed_vs_upstream": {
-        "differs": 1
+        "identical": 1
       },
       "audit": {
         "contains_scripts": false,
@@ -391,7 +390,7 @@
         "archived": false,
         "head_sha": "58b55a8921758d13453b440704fb1b5b208c0b0e",
         "head_date": "2026-10-01",
-        "stars": 18075
+        "stars": 18077
       },
       "licence_file": true,
       "trust_tier": "community",
@@ -482,8 +481,8 @@
       "upstream": {
         "repo": "rjmurillo/ai-agents",
         "archived": false,
-        "head_sha": "f371379fc94e84f586875d509c2c7e899d5e74cf",
-        "head_date": "2026-10-04",
+        "head_sha": "db8a9f05560e573559ddf8d2f02a9395de04ee1b",
+        "head_date": "2026-10-05",
         "stars": 47
       },
       "licence_file": true,
@@ -491,7 +490,7 @@
       "pinned_ref": null,
       "pinned_ref_note": "The installed copies never recorded the commit they came from. Instead, each skill's SKILL.md was compared with the origin's default branch on verified_at: see installed_vs_upstream.",
       "installed_vs_upstream": {
-        "differs": 1
+        "identical": 1
       },
       "audit": {
         "contains_scripts": true,

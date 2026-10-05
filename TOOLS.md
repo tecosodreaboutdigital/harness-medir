@@ -12,11 +12,11 @@ A machine-readable form of this same installed-skill list, generated from this f
 
 ## Third-party collections installed
 
-Nine collections, thirty-six skills, all MIT. One of them, the Karpathy-inspired guide, declares MIT only in its README and has no LICENSE file; the licence of each collection as read from its origin is in the provenance table below. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. All nine are cited as entries in the [compact guide](harness-toolkit.html): the first five from 30 August 2026, the four most recent since the round of 10 to 11 September 2026. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 38 active skills in total.
+Nine collections, thirty-seven skills, all MIT. One of them, the Karpathy-inspired guide, declares MIT only in its README and has no LICENSE file; the licence of each collection as read from its origin is in the provenance table below. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. All nine are cited as entries in the [compact guide](harness-toolkit.html): the first five from 30 August 2026, the four most recent since the round of 10 to 11 September 2026. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 39 active skills in total.
 
 | Collection | Origin | Skills installed | Why it made the cut |
 |---|---|---|---|
-| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, of 15 at the origin (the whole collection when installed) | It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard |
+| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 15, the whole collection (the fifteenth, `diagnosing-superpowers`, was added on 5 October 2026) | It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard |
 | mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, curated selection | Writing, clarification and session-handoff skills. The collection's software-engineering set (TDD, code architecture, merge conflicts, TypeScript) was left out as not applicable to a content project, see the full list below |
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, the whole collection | The C4 model and architecture decision records, relevant to the Part 3 research round |
 | Karpathy-inspired guide | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | A behavioural guide against common LLM mistakes. Not actually by Karpathy, see the full caveat in `sources/inventory.md` |
@@ -28,9 +28,9 @@ Nine collections, thirty-six skills, all MIT. One of them, the Karpathy-inspired
 
 ---
 
-## The thirty-six skills, by collection
+## The thirty-seven skills, by collection
 
-**superpowers:** brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills.
+**superpowers:** brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, receiving-code-review, requesting-code-review, subagent-driven-development, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills, diagnosing-superpowers.
 
 **mattpocock/skills:** claude-handoff, grill-me, handoff, research, retro, teach, to-questionnaire, wait-what, writing-beats, writing-for-agents, writing-fragments, writing-shape.
 
@@ -49,19 +49,19 @@ Nine collections, thirty-six skills, all MIT. One of them, the Karpathy-inspired
 **threat-modeling:** threat-modeling. **Scoped install, stated honestly:** this skill lives inside `rjmurillo/ai-agents`, a much larger personal collection; only the `threat-modeling` folder (`SKILL.md`, `references/`, `scripts/`, `templates/`) was copied. The three bundled scripts (`generate_threat_matrix.py`, `generate_mitigation_roadmap.py`, `validate_threat_model.py`) are standard-library only, audited below.
 
 
-**Provenance, read from each origin on 5 October 2026.** None of the nine origins is archived. The installed copies never recorded the commit they came from, so each skill's `SKILL.md` was compared with the origin's default branch that day (`build/check_upstream.py`, result in `sources/upstream.json`). "Differ" means the origin changed after the skill was installed here; how far behind the copy is cannot be known. Of the 38 installed skills, 26 are identical and 12 differ.
+**Provenance, read from each origin on 5 October 2026.** None of the nine origins is archived. The installed copies never recorded the commit they came from, so each skill's `SKILL.md` was compared with the origin's default branch that day (`build/check_upstream.py`, result in `sources/upstream.json`). "Differ" means the origin changed after the skill was installed here; how far behind the copy is cannot be known. On the first reading that day, of the 38 installed skills 26 were identical and 12 differed; after the reinstall logged below, all 39 (the 37 third-party skills and the project's own two) are identical, read again at 23:43 UTC.
 
 | Collection | Licence at the origin | Last commit at the origin | Installed SKILL.md against the origin's |
 |---|---|---|---|
-| superpowers | MIT | 2026-09-25 | 6 identical, 8 differ |
-| mattpocock/skills | MIT | 2026-10-05 | 10 identical, 2 differ |
+| superpowers | MIT | 2026-09-25 | 15 identical |
+| mattpocock/skills | MIT | 2026-10-05 | 12 identical |
 | c4-skills | MIT | 2026-04-26 | 2 identical |
 | Karpathy-inspired guide | MIT declared in the README only, **no LICENSE file** | 2026-04-20 | 1 identical |
 | ai-slop-cleaner | MIT | 2026-10-03 | 1 identical |
-| humanizer | MIT | 2026-09-28 | 0 identical, 1 differ |
+| humanizer | MIT | 2026-09-28 | 1 identical |
 | Agent Skills for Context Engineering | MIT | 2026-10-01 | 3 identical |
 | ai-act-skill | MIT | 2026-08-09 | 1 identical |
-| threat-modeling | MIT | 2026-10-04 | 0 identical, 1 differ |
+| threat-modeling | MIT | 2026-10-04 | 1 identical |
 ---
 
 ## The project's own skills
@@ -115,6 +115,8 @@ This section is what separates "installed" from "used", and it is the one that w
 **`research`, 31 August 2026.** Used directly, repeatedly, at real scale, across the day's two rounds of citation correction and the later adversarial research pass on Parts 3 and 4: researching a claim against real primary sources and saving the findings as a markdown file, rather than a chat summary that disappears when the session ends. It held up well every time, consistently well-sourced output, saved to a sensible location. One real inefficiency logged rather than hidden: its own instruction to spin up a background agent adds one redundant layer of delegation when it is invoked from a call that is already a background agent. Now cited on its own in the compact guide's Inspect section, closing the gap `NEXT-STEPS.md`'s item 4 named: installed and audited at the collection level is not the same claim as individually verified and cited.
 
 **`milestone-loc-tokens-ai-ledger`, 20 September 2026.** Its newer engine (`--enrich` and the `--dry-run` preview, merged that day) was brought to the projects that use it, and `--enrich --dry-run` was run against one of them: 14 of 38 milestones would be enriched, none refused, recorded cost US$97.7252 to US$101.7446, nothing written. This is the one real use of the skill logged here, and it was on another project. This repository's own log does not run the skill's engine, since its pipeline predates it and keeps its own `docs/assets/logbook-metrics.json`; what was ported into `build/generate_logbook_metrics.py` the same day, freezing tokens per model and cache TTL, an audited `--enrich`, counts frozen per commit, is the skill's principle re-implemented, not the skill executed. The two are kept apart on purpose, so this entry does not claim more use than there was.
+
+**Reinstall of twelve skills and one new skill, 5 October 2026.** Classification stated before any change, from a live read of each origin: all four origins active and not archived, MIT, and the installed copies *behind* them (obra/superpowers last push 27 September 2026, mattpocock/skills 5 October, blader/humanizer 28 September, rjmurillo/ai-agents 5 October). On the operator's explicit confirmation, twelve skills were brought back to the origin's text (eight from superpowers, `retro` and `wait-what` from mattpocock/skills, `humanizer`, `threat-modeling`) in `~/.claude/skills` and in this repository's `.claude/skills` wherever each existed, and `diagnosing-superpowers`, the fifteenth skill of superpowers, was installed in both. Behaviour changes worth knowing: `executing-plans` now means executing the plan inline in the current session, no longer a separate session with checkpoints, and `using-superpowers` gains references for other tools. The previous copies were saved to a temporary folder outside the repository before the change. None of these is logged as used here, and `diagnosing-superpowers` has not run on any session.
 
 ---
 

@@ -154,10 +154,23 @@ def read(path):
         return fh.read()
 
 
+def _find(text, heading, pos=0):
+    # 're:' no inicio: o titulo e uma expressao regular (o titulo "The thirty-six
+    # skills" muda de palavra quando a contagem muda, e nao deve quebrar o build).
+    if heading.startswith('re:'):
+        import re
+        m = re.compile(heading[3:]).search(text, pos)
+        if not m:
+            raise ValueError('titulo nao encontrado: ' + heading)
+        return m.start(), m.end()
+    i = text.index(heading, pos)
+    return i, i + len(heading)
+
+
 def extract_section(text, start_heading, end_heading=None):
-    start = text.index(start_heading) + len(start_heading)
+    start = _find(text, start_heading)[1]
     if end_heading:
-        end = text.index(end_heading, start)
+        end = _find(text, end_heading, start)[0]
         return text[start:end]
     return text[start:]
 
@@ -172,7 +185,7 @@ def extract_licence(*texts):
 
 def parse_collections_table(tools_text):
     """Le a tabela 'Third-party collections installed' de TOOLS.md."""
-    section = extract_section(tools_text, '## Third-party collections installed', '## The thirty-six skills')
+    section = extract_section(tools_text, '## Third-party collections installed', 're:## The thirty-[a-z]+ skills')
     rows = []
     for line in section.splitlines():
         line = line.strip()
@@ -198,7 +211,7 @@ def parse_skill_names_by_collection(tools_text, collection_names):
     paragrafo correspondente em 'The thirty-six skills, by collection'
     e extrai so os identificadores de skill individuais, descartando
     prosa de ressalva que segue no mesmo paragrafo."""
-    section = extract_section(tools_text, '## The thirty-six skills, by collection', '## The project')
+    section = extract_section(tools_text, 're:## The thirty-[a-z]+ skills, by collection', '## The project')
     result = {}
     for name in collection_names:
         label = '**%s:**' % name
