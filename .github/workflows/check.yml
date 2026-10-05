@@ -1,0 +1,19 @@
+name: check
+
+# Roda build/check_all.py em todo push e pull request: o hook de parada
+# protege a sessao do agente, esta CI protege o site publicado, inclusive
+# de edicao manual. Achados anteriores a 5 de outubro de 2026 ficam em
+# build/check_known.json e nao derrubam a execucao; achado novo derruba.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python build/check_all.py
