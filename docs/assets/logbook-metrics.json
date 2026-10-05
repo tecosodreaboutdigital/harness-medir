@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T11:40:57.653669+00:00",
+  "generated_at": "2026-10-05T15:44:51.421179+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "03fe2a7b-d6be-43df-83d8-28e4b3e35b12.jsonl",
@@ -3259,6 +3259,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 24.3645,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3335,6 +3336,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 73.1535,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3411,6 +3413,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 61.4951,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3523,6 +3526,7 @@
           }
         }
       },
+      "cache_avoided": 207.499,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3611,6 +3615,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 56.4336,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3687,6 +3692,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 22.4931,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3763,6 +3769,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 84.2265,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3839,6 +3846,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 26.6965,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3915,6 +3923,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 9.5092,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -3991,6 +4000,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 24.2421,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -4067,6 +4077,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 7.1083,
       "repricings": [
         {
           "repriced_at": "2026-09-20T05:25:34.870672+00:00",
@@ -4143,6 +4154,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 27.8351,
       "repricings": [
         {
           "repriced_at": "2026-09-20T14:29:19.804788+00:00",
@@ -4209,6 +4221,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 8.142,
       "repricings": [
         {
           "repriced_at": "2026-09-20T14:29:19.804788+00:00",
@@ -4275,6 +4288,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 10.0066,
       "repricings": [
         {
           "repriced_at": "2026-09-20T14:29:19.804788+00:00",
@@ -4340,7 +4354,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 4.6275
     },
     {
       "hash": "c32ef45",
@@ -4393,7 +4408,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 50.2167
     },
     {
       "hash": "f5332ad",
@@ -4438,7 +4454,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 0.0
     },
     {
       "hash": "1b644f8",
@@ -4483,7 +4500,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 0.0
     },
     {
       "hash": "32d6587",
@@ -4536,7 +4554,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 2.4803
     },
     {
       "hash": "c6888e7",
@@ -4589,7 +4608,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 5.9432
     },
     {
       "hash": "34e4aa5",
@@ -4642,7 +4662,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 9.6787
     },
     {
       "hash": "478486d",
@@ -4695,7 +4716,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 20.9758
     },
     {
       "hash": "af635a8",
@@ -4748,7 +4770,8 @@
         "cache_creation": 0,
         "cache_creation_1h": 0,
         "by_model": {}
-      }
+      },
+      "cache_avoided": 5.1843
     },
     {
       "hash": "03754df",
@@ -4819,6 +4842,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 6.4082,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -4893,6 +4917,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 2.7571,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -4954,6 +4979,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 2.5257,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5015,6 +5041,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 1.2246,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5076,6 +5103,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 14.7225,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5137,6 +5165,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 18.3596,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5198,6 +5227,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 27.2681,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5259,6 +5289,7 @@
         "cache_creation_1h": 0,
         "by_model": {}
       },
+      "cache_avoided": 4.9005,
       "repricings": [
         {
           "repriced_at": "2026-10-05T11:41:53.588932+00:00",
@@ -5267,24 +5298,439 @@
           "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
         }
       ]
+    },
+    {
+      "hash": "844f432",
+      "timestamp": "2026-10-05T08:44:38-03:00",
+      "subject": "Regenerate the project log, milestones M88 to M96, and price Sonnet 5.5",
+      "words_published": 121799,
+      "code_lines": 13991,
+      "governance_lines": 824,
+      "tokens_bucket": {
+        "input": 40,
+        "output": 16961,
+        "cache_read": 9481410,
+        "cache_creation": 27339
+      },
+      "tokens_total": {
+        "input": 40,
+        "output": 16961,
+        "cache_read": 9481410,
+        "cache_creation": 27339
+      },
+      "tokens_cumulative": {
+        "input": 14218,
+        "output": 6572420,
+        "cache_read": 1649409024,
+        "cache_creation": 24102613
+      },
+      "cost_recorded": {
+        "amount": 2.1753,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 27339,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 40,
+            "output": 16961,
+            "cache_read": 9481410,
+            "cache_creation": 27339,
+            "cache_creation_1h": 27339
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 20
+      },
+      "cache_avoided": 17.0666
+    },
+    {
+      "hash": "bc4ce89",
+      "timestamp": "2026-10-05T09:05:20-03:00",
+      "subject": "Wave 3: bibliography, 26 new sources opened at the primary, OWASP claim corrected, ledger brought up to date",
+      "words_published": 125607,
+      "code_lines": 14173,
+      "governance_lines": 826,
+      "tokens_bucket": {
+        "input": 64,
+        "output": 66148,
+        "cache_read": 17235723,
+        "cache_creation": 108271
+      },
+      "tokens_total": {
+        "input": 100,
+        "output": 67435,
+        "cache_read": 17972468,
+        "cache_creation": 362060
+      },
+      "tokens_cumulative": {
+        "input": 14318,
+        "output": 6639855,
+        "cache_read": 1667381492,
+        "cache_creation": 24464673
+      },
+      "cost_recorded": {
+        "amount": 5.3366,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 108271,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 64,
+            "output": 66148,
+            "cache_read": 17235723,
+            "cache_creation": 108271,
+            "cache_creation_1h": 108271
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 36,
+        "output": 1287,
+        "cache_read": 736745,
+        "cache_creation": 253789,
+        "cache_creation_1h": 0,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 36,
+            "output": 1287,
+            "cache_read": 736745,
+            "cache_creation": 253789,
+            "cache_creation_1h": 0
+          }
+        }
+      },
+      "harness_versions": {
+        "2.1.289": 32
+      },
+      "cache_avoided": 32.3504
+    },
+    {
+      "hash": "c7cb5dc",
+      "timestamp": "2026-10-05T09:29:43-03:00",
+      "subject": "Wave 4: compact guide and curated skills, read live from every origin",
+      "words_published": 129857,
+      "code_lines": 14702,
+      "governance_lines": 829,
+      "tokens_bucket": {
+        "input": 110,
+        "output": 92168,
+        "cache_read": 37271106,
+        "cache_creation": 148652
+      },
+      "tokens_total": {
+        "input": 110,
+        "output": 92168,
+        "cache_read": 37271106,
+        "cache_creation": 148652
+      },
+      "tokens_cumulative": {
+        "input": 14428,
+        "output": 6732023,
+        "cache_read": 1704652598,
+        "cache_creation": 24613325
+      },
+      "cost_recorded": {
+        "amount": 8.9707,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 148652,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 110,
+            "output": 92168,
+            "cache_read": 37271106,
+            "cache_creation": 148652,
+            "cache_creation_1h": 148652
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 55
+      },
+      "cache_avoided": 67.088
+    },
+    {
+      "hash": "94020a5",
+      "timestamp": "2026-10-05T09:47:49-03:00",
+      "subject": "Wave 5: playbook templates revised (receipt, risk matrix, rollout, registry, skill, starter guides, tier diagnostic)",
+      "words_published": 129857,
+      "code_lines": 14702,
+      "governance_lines": 831,
+      "tokens_bucket": {
+        "input": 32,
+        "output": 27577,
+        "cache_read": 12217339,
+        "cache_creation": 47768
+      },
+      "tokens_total": {
+        "input": 32,
+        "output": 27577,
+        "cache_read": 12217339,
+        "cache_creation": 47768
+      },
+      "tokens_cumulative": {
+        "input": 14460,
+        "output": 6759600,
+        "cache_read": 1716869937,
+        "cache_creation": 24661093
+      },
+      "cost_recorded": {
+        "amount": 2.9104,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 47768,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 32,
+            "output": 27577,
+            "cache_read": 12217339,
+            "cache_creation": 47768,
+            "cache_creation_1h": 47768
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 16
+      },
+      "cache_avoided": 21.9912
+    },
+    {
+      "hash": "b9e89de",
+      "timestamp": "2026-10-05T10:06:06-03:00",
+      "subject": "Wave 6: diagrams (sketches, four redrawn, title and desc, geometry sensor)",
+      "words_published": 129952,
+      "code_lines": 15052,
+      "governance_lines": 835,
+      "tokens_bucket": {
+        "input": 80,
+        "output": 59281,
+        "cache_read": 33500771,
+        "cache_creation": 98934
+      },
+      "tokens_total": {
+        "input": 80,
+        "output": 59281,
+        "cache_read": 33500771,
+        "cache_creation": 98934
+      },
+      "tokens_cumulative": {
+        "input": 14540,
+        "output": 6818881,
+        "cache_read": 1750370708,
+        "cache_creation": 24760027
+      },
+      "cost_recorded": {
+        "amount": 7.6889,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 98934,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 80,
+            "output": 59281,
+            "cache_read": 33500771,
+            "cache_creation": 98934,
+            "cache_creation_1h": 98934
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 40
+      },
+      "cache_avoided": 60.3013
+    },
+    {
+      "hash": "b81f993",
+      "timestamp": "2026-10-05T10:46:51-03:00",
+      "subject": "Wave 7: Parts 2 and 3 text (environment table, delegation limits, safe to repeat, approval vs containment, credentials outside the sandbox)",
+      "words_published": 136044,
+      "code_lines": 15223,
+      "governance_lines": 837,
+      "tokens_bucket": {
+        "input": 144,
+        "output": 90117,
+        "cache_read": 33459279,
+        "cache_creation": 207543
+      },
+      "tokens_total": {
+        "input": 144,
+        "output": 90117,
+        "cache_read": 33459279,
+        "cache_creation": 207543
+      },
+      "tokens_cumulative": {
+        "input": 14684,
+        "output": 6908998,
+        "cache_read": 1783829987,
+        "cache_creation": 24967570
+      },
+      "cost_recorded": {
+        "amount": 8.4235,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 207543,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 144,
+            "output": 90117,
+            "cache_read": 33459279,
+            "cache_creation": 207543,
+            "cache_creation_1h": 207543
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 72
+      },
+      "cache_avoided": 60.2267
+    },
+    {
+      "hash": "4cb37b8",
+      "timestamp": "2026-10-05T12:33:13-03:00",
+      "subject": "Wave 8: Parts 1 and 4 and the glossary (genealogy corrected, thirteen new terms, ids unified, token kept)",
+      "words_published": 140933,
+      "code_lines": 15325,
+      "governance_lines": 841,
+      "tokens_bucket": {
+        "input": 92,
+        "output": 53232,
+        "cache_read": 10273820,
+        "cache_creation": 255292
+      },
+      "tokens_total": {
+        "input": 92,
+        "output": 53232,
+        "cache_read": 10273820,
+        "cache_creation": 255292
+      },
+      "tokens_cumulative": {
+        "input": 14776,
+        "output": 6962230,
+        "cache_read": 1794103807,
+        "cache_creation": 25222862
+      },
+      "cost_recorded": {
+        "amount": 3.6084,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 255292,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 92,
+            "output": 53232,
+            "cache_read": 10273820,
+            "cache_creation": 255292,
+            "cache_creation_1h": 255292
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 46
+      },
+      "cache_avoided": 18.4929
     }
   ],
   "tokens_since_last_commit": {
-    "input": 0,
-    "output": 0,
-    "cache_read": 0,
-    "cache_creation": 0
+    "input": 74,
+    "output": 41699,
+    "cache_read": 12102053,
+    "cache_creation": 88305
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 0,
-    "by_model": {}
+    "cache_creation_1h": 88305,
+    "by_model": {
+      "claude-sonnet-5-5": {
+        "input": 74,
+        "output": 41699,
+        "cache_read": 12102053,
+        "cache_creation": 88305,
+        "cache_creation_1h": 88305
+      }
+    }
   },
   "cost_since_last_commit": {
-    "amount": 0.0,
+    "amount": 3.1908,
     "currency": "USD",
-    "priced_at": "2026-09-13",
+    "priced_at": "2026-10-05",
     "provider": "anthropic",
-    "model": "claude-sonnet-5"
+    "model": "claude-sonnet-5-5"
   },
   "unpriced_milestones": 65,
   "last_repriced_at": "2026-10-05T11:41:53.588932+00:00",

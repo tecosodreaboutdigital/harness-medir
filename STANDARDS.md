@@ -49,7 +49,7 @@ One deliberate exception: the tier diagram uses increasing box height to represe
 
 Declared departures from the 0.7 stroke and the absence of fill: a heavier line (0.9 or 1.3) marks emphasis, the reversal point in D5 and the two transitions nobody implements in D7; arrowhead markers use stroke 1; D9 draws its platform walls at 0.5; the charts in the project log fill their data points. A third grey, `#c9c7bf`, draws lifelines and secondary boxes next to the two inks. The caption inside a diagram (`svg-cap`) is 8.5 px, spaced capitals, not italic; the italic 9 applies to the `figcaption` under it. Every diagram carries a `<title>` and a `<desc>` as well as `role="img"` and an `aria-label`.
 
-Do not use charting libraries. Do not use raster images.
+Do not use charting libraries. Do not use raster images in the pages. The one exception is the PNG exports of the diagrams and of the project log charts, generated from the SVG for Medium, the README and social cards; the page itself stays vector.
 
 ---
 
@@ -146,3 +146,7 @@ Inherited from the best public collections and adopted as this project's standar
 **A Never section** at the end.
 
 **Honest limits** stated: what has been exercised, what is inference, what the skill does not do.
+
+## Checks
+
+Every objective rule in this file has an automated check in `build/check_all.py`; a rule without a check is marked as such. Rules that have no check yet: the reading level of the prose, the choice of which sources to cite, the accuracy of a translation beyond accents and parity of structure, and the visual quality of a diagram beyond the geometry compared by `build/svg_check.py`. These stay with the reviewer.

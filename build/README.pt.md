@@ -22,7 +22,7 @@ Páginas montadas aqui: `harness-p1.html` a `harness-p4.html`, `harness-toolkit.
 | `build_p1.py`, `build_p2.py` | montam a parte 1 e a parte 2. Autorreferentes: o envoltório e o corpo PT são lidos de volta da página publicada |
 | `build_p3.py`, `build_p4.py`, `build_playbook.py`, `build_toolkit.py`, `build_glossary.py`, `build_sources.py` | montam as demais páginas a partir dos três `body_*` de cada uma. Nunca leem a página publicada de volta |
 | `build_logbook.py` | monta `docs/logbook.html` trilíngue a partir de `docs/assets/logbook-metrics.json`, incluindo o gráfico de custo |
-| `common.py` | regras compartilhadas por todos os scripts de montagem: a âncora de topo e o fragmento de idioma nos links entre páginas, o atributo `lang` em cada `<main>` |
+| `common.py` | regras compartilhadas por todos os scripts de montagem: a âncora de topo e o fragmento de idioma nos links entre páginas, o atributo `lang` em cada `<main>`, e `finish_page`, que acrescenta os metadados da página (descrição, canônica, Open Graph, favicon) e gera a data e o tempo de leitura de cada assinatura |
 | `generate_logbook_metrics.py` | reconstrói `docs/assets/logbook-metrics.json` a partir do git, dos transcripts reais da sessão e de `docs/assets/prices.json`, nunca editado à mão. Modos: normal, `--recount`, `--reprice`, `--enrich [--dry-run]`, ver abaixo |
 | `docs/assets/prices.json` | livro-razão de preço datado e apensado (dado-fonte, não script). Um marco lê a entrada vigente na própria data e o custo calculado fica congelado depois disso |
 | `generate_toolkit_manifest.py` | reconstrói `toolkit.json` a partir de `TOOLS.md`, `sources/inventory.md` e `playbook/README.md`, nunca editado à mão. `--check` só informa se está desatualizado |

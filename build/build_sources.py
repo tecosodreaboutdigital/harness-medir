@@ -149,6 +149,8 @@ doc = (shell
  + js)
 
 out_path = os.path.join(ROOT, 'harness-sources.html')
+from common import finish_page
+doc = finish_page(doc, 'harness-sources.html')
 open(out_path, 'w', encoding='utf-8').write(doc)
 
 ids = set(re.findall(r'\sid="([a-z0-9\-]+)"', doc))

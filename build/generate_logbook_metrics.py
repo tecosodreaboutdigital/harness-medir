@@ -257,6 +257,7 @@ def load_usage_events(paths):
                     'cache_read': u.get('cache_read_input_tokens', 0) or 0,
                     'cache_creation': cache_creation,
                     'cache_creation_1h': _one_hour_cache_writes(u, _as_count(cache_creation)),
+                    'version': d.get('version') if isinstance(d.get('version'), str) else None,
                 }
                 mid = msg.get('id')
                 if mid:
@@ -314,6 +315,48 @@ def attribute_events(rows, events):
         add_event(remaining_bucket, remaining_split, events[ev_idx])
         ev_idx += 1
     return per_commit, (remaining_bucket, remaining_split)
+
+
+def versions_per_commit(rows, events):
+    # Versao do Claude Code (campo `version` do transcript) por marco: quantas
+    # mensagens do assistente vieram de cada versao. LB.03: atribuir mudanca de
+    # comportamento ao harness, pelo mesmo motivo do postmortem de abril de
+    # 2026. Congelado ao gravar o marco; marcos gravados antes de 5 de outubro
+    # de 2026 nao a tem, e a transcricao deles ja expirou.
+    ev_idx, out = 0, []
+    for row in rows:
+        commit_dt = parse_iso(row['iso'])
+        counts = {}
+        while ev_idx < len(events) and parse_iso(events[ev_idx]['ts']) <= commit_dt:
+            v = events[ev_idx].get('version')
+            if v:
+                counts[v] = counts.get(v, 0) + 1
+            ev_idx += 1
+        out.append(counts)
+    return out
+
+
+def cache_avoided(tokens, ledger, date):
+    # LB.02: quanto a leitura de cache poupou. Precifica o marco como esta e
+    # de novo com cada token lido do cache contado como entrada comum, pelos
+    # mesmos precos do livro-razao (price_milestone), e devolve a diferenca.
+    # None se algum dos dois nao tem preco, nunca um chute.
+    actual, _ = price_milestone(tokens, ledger, date)
+    hyp = dict(tokens)
+    hyp['input'] = tokens.get('input', 0) + tokens.get('cache_read', 0)
+    hyp['cache_read'] = 0
+    by_model = tokens.get('by_model')
+    if by_model:
+        hyp['by_model'] = {}
+        for model, c in by_model.items():
+            h = dict(c)
+            h['input'] = c.get('input', 0) + c.get('cache_read', 0)
+            h['cache_read'] = 0
+            hyp['by_model'][model] = h
+    without, _ = price_milestone(hyp, ledger, date)
+    if actual is None or without is None:
+        return None
+    return round(without['amount'] - actual['amount'], 4)
 
 
 def full_tokens(bucket, split):
@@ -769,6 +812,7 @@ def main(recount=False):
         print('recontando palavras e linhas de todos os marcos (%s); pode levar varios minutos' % why)
 
     derived, (remaining, remaining_split) = attribute_events(rows, events)
+    versions_derived = versions_per_commit(rows, events)
     sub_derived, (sub_remaining, sub_remaining_split) = attribute_events(rows, sub_events)
 
     milestones = []
@@ -777,7 +821,8 @@ def main(recount=False):
     tokens_frozen = 0
     tokens_differ = 0
 
-    for row, (derived_bucket, derived_split), (sub_bucket, sub_split) in zip(rows, derived, sub_derived):
+    for row, (derived_bucket, derived_split), (sub_bucket, sub_split), versions_row in zip(
+            rows, derived, sub_derived, versions_derived):
         short_hash = row['hash'][:7]
         prev = prev_ms.get(short_hash)
 
@@ -834,6 +879,21 @@ def main(recount=False):
             milestone['subagent_tokens'] = subagent
         if unpriced_list:
             milestone['unpriced'] = unpriced_list
+        # LB.03: congelada ao gravar; um marco anterior a ela fica sem a chave.
+        if prev is not None:
+            if prev.get('harness_versions'):
+                milestone['harness_versions'] = prev['harness_versions']
+        elif versions_row:
+            milestone['harness_versions'] = versions_row
+        # LB.02: gravada uma vez (marcos antigos ganham na primeira execucao
+        # depois desta mudanca, a partir dos tokens ja gravados e do livro-razao
+        # de entao); nunca recalculada numa execucao normal.
+        if prev is not None and 'cache_avoided' in prev:
+            milestone['cache_avoided'] = prev['cache_avoided']
+        else:
+            avoided = cache_avoided(tokens, price_ledger, row['iso'][:10])
+            if avoided is not None:
+                milestone['cache_avoided'] = avoided
         if prev is not None and prev.get('repricings'):
             milestone['repricings'] = prev['repricings']
         milestones.append(milestone)

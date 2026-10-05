@@ -11,6 +11,8 @@ MEDIR não é uma sigla arbitrária: Mapear, Equipar, Delegar, Inspecionar, Refo
 Autor: Fernando Teco Sodré
 Estado: em andamento, outubro de 2026
 
+Tudo o que está no repositório é servido pelo GitHub Pages como está, porque o site usa `.nojekyll`: os dossiês de pesquisa em `docs/` e os arquivos de governança em Markdown podem ser lidos como texto simples nos seus endereços. É intencional, já que o projeto documenta o próprio trabalho; nada privado pertence a este repositório.
+
 Publicado em [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repositório) e [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, os arquivos HTML renderizam como páginas, não só como código-fonte).
 
 **Comece a ler:** [Parte 1, por quê](harness-p1.html) · [Parte 2, como](harness-p2.html) · [Parte 3, operação](harness-p3.html) · [Parte 4, governança](harness-p4.html) · [Guia compacto](harness-toolkit.html) · [Glossário](harness-glossary.html) · [Fontes](harness-sources.html) · [Playbook](harness-playbook.html) · [Diário de bordo](docs/logbook.html)

@@ -163,6 +163,8 @@ doc = (shell
  + js)
 
 out_path = os.path.join(ROOT, 'harness-p2.html')
+from common import finish_page
+doc = finish_page(doc, 'harness-p2.html')
 open(out_path, 'w', encoding='utf-8').write(doc)
 
 # mantem build/body_p2_pt.html sincronizado com a fonte da verdade,

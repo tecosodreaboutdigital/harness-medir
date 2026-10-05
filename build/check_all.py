@@ -213,6 +213,34 @@ def check_parts():
                 m = rx.search(ln)
                 if m:
                     out.append(F('parts', path, i, ln[max(0, m.start() - 40):m.end() + 40], fix))
+    out += check_site()
+    return out
+
+
+SITE_BASE = 'https://tecosodreaboutdigital.github.io/harness-medir/'
+
+
+def check_site():
+    """Metadados de pagina e arquivos de site (PG.01 a PG.03): cada pagina
+    publicada leva descricao, canonica absoluta e imagem de cartao, o
+    sitemap lista todas, e robots.txt e 404.html existem."""
+    out = []
+    for path in published_files():
+        text = open(path, encoding='utf-8').read()
+        r = rel(path)
+        for needle, fix in (('<meta name="description"', 'sem meta description: rodar o build da pagina'),
+                            ('<link rel="canonical" href="%s%s">' % (SITE_BASE, r), 'sem canonica absoluta: rodar o build da pagina'),
+                            ('<meta property="og:image"', 'sem og:image: rodar o build da pagina')):
+            if needle not in text:
+                out.append(F('parts', path, 1, needle, fix))
+    sm = os.path.join(ROOT, 'sitemap.xml')
+    smt = open(sm, encoding='utf-8').read() if os.path.exists(sm) else ''
+    for p in PAGES:
+        if SITE_BASE + p not in smt:
+            out.append(F('parts', 'sitemap.xml', 1, p, 'pagina publicada fora do sitemap.xml'))
+    for f in ('robots.txt', '404.html'):
+        if not os.path.exists(os.path.join(ROOT, f)):
+            out.append(F('parts', f, 1, f, 'arquivo de site ausente'))
     return out
 
 

@@ -49,7 +49,7 @@ Uma exceção deliberada: o diagrama de faixas usa altura crescente das caixas p
 
 Desvios declarados do traço de 0,7 e da ausência de preenchimento: uma linha mais grossa (0,9 ou 1,3) marca ênfase, o ponto de reversão no D5 e as duas transições que ninguém implementa no D7; os marcadores de ponta de seta usam traço 1; o D9 desenha as paredes das plataformas a 0,5; os gráficos do diário de bordo preenchem seus pontos de dado. Um terceiro cinza, `#c9c7bf`, desenha linhas de vida e caixas secundárias ao lado das duas tintas. A legenda dentro do diagrama (`svg-cap`) tem 8,5 px, em versais espaçadas, sem itálico; o itálico 9 vale para o `figcaption` abaixo dele. Todo diagrama leva `<title>` e `<desc>`, além de `role="img"` e `aria-label`.
 
-Não usar bibliotecas de gráfico. Não usar imagens rasterizadas.
+Não usar bibliotecas de gráfico. Não usar imagens rasterizadas nas páginas. A única exceção são as exportações em PNG dos diagramas e dos gráficos do diário de bordo, geradas a partir do SVG para o Medium, o README e os cartões de compartilhamento; a página em si continua vetorial.
 
 ---
 
@@ -72,6 +72,8 @@ Página única compartilhada desde 30 de agosto de 2026: `harness-glossary.html`
 Estilo de livro. Ordem alfabética ignorando acentos. Sem filete entre verbetes. Termo em negrito, dois pontos, definição na mesma linha, origem ao final em itálico com link. Recuo pendente. Nomes próprios entram pelo sobrenome: "Deming, W. Edwards".
 
 No corpo do texto, o termo aparece sublinhado em pontilhado, com dica ao passar o cursor (o atributo `data-tip` carrega a definição curta, mostrada localmente, sem navegar) e o clique leva a `harness-glossary.html#<idioma>-<slug>`, chegando exatamente naquele verbete. Nunca linkar um termo para uma âncora local `#g-slug` dentro do próprio artigo, essa âncora não existe mais lá.
+
+Duas exceções e uma regra são deliberadas. O glossário em português tem uma entrada a mais que os outros dois (`g-hitl`, "human in the loop") porque o português mantém essa expressão em inglês e a entrada explica por quê, então 68 contra 67 não é erro. O mesmo vale para o rótulo HITL no diagrama D4. E "token", no sentido da unidade em que os modelos leem e cobram texto, fica como "token" em português e espanhol, nunca traduzido como "símbolo". Os ids do glossário são um slug neutro por termo, igual nas três línguas (`g-agent`, `g-model`, `g-chart`, `g-cyb`, `g-context`); só o prefixo de língua muda.
 
 Quando uma parte nova introduz um termo, acrescente-o direto em `harness-glossary.html` (nos três idiomas), mantendo a posição alfabética, e linke a ele a partir do corpo da parte. Não duplique a definição de volta na parte.
 
@@ -144,3 +146,7 @@ Herdado das melhores coleções públicas e adotado como padrão do projeto:
 **Seção Nunca** ao final.
 
 **Limites honestos** declarados: o que foi exercitado, o que é inferência, o que a skill não faz.
+
+## Verificações
+
+Toda regra objetiva deste arquivo tem uma checagem automática em `build/check_all.py`; uma regra sem checagem é marcada como tal. Regras que ainda não têm checagem: o nível de leitura da prosa, a escolha de quais fontes citar, a exatidão de uma tradução além dos acentos e da paridade de estrutura, e a qualidade visual de um diagrama além da geometria que o `build/svg_check.py` compara. Essas ficam com o revisor.

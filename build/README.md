@@ -22,7 +22,7 @@ Pages built here: `harness-p1.html` to `harness-p4.html`, `harness-toolkit.html`
 | `build_p1.py`, `build_p2.py` | Assemble Part 1 and Part 2. Self-referential: the shell and the PT body are read back from the page as published |
 | `build_p3.py`, `build_p4.py`, `build_playbook.py`, `build_toolkit.py`, `build_glossary.py`, `build_sources.py` | Assemble the other pages from the three `body_*` files of each. Never read the published page back |
 | `build_logbook.py` | Assembles `docs/logbook.html` in three languages from `docs/assets/logbook-metrics.json`, including the cost chart |
-| `common.py` | Rules shared by every assembly script: the top anchor and the language fragment on cross-page links, the `lang` attribute on each `<main>` |
+| `common.py` | Rules shared by every assembly script: the top anchor and the language fragment on cross-page links, the `lang` attribute on each `<main>`, and `finish_page`, which adds the page metadata (description, canonical, Open Graph, favicon) and generates each byline's date and reading time |
 | `generate_logbook_metrics.py` | Rebuilds `docs/assets/logbook-metrics.json` from git, from the real session transcripts and from `docs/assets/prices.json`, never edited by hand. Modes: normal, `--recount`, `--reprice`, `--enrich [--dry-run]`, see below |
 | `docs/assets/prices.json` | Dated, append-only price ledger (source data, not a script). A milestone reads the entry in force on its own date and the computed cost is frozen afterwards |
 | `generate_toolkit_manifest.py` | Rebuilds `toolkit.json` from `TOOLS.md`, `sources/inventory.md` and `playbook/README.md`, never edited by hand. `--check` only reports whether it is stale |

@@ -598,6 +598,57 @@ def fmt_cost(amount, lang):
     return '$%s.%s' % (whole, cents)
 
 
+def derived_ratios(m):
+    """LB.01 e LB.02, derivados dos tokens ja gravados: fracao de subagentes,
+    eficiencia de cache (leitura de cache sobre a entrada total) e o que ela
+    poupou. Devolve None onde o marco nao tem token."""
+    t = m.get('tokens_total', m['tokens_bucket'])
+    total = sum(t.values())
+    if total == 0:
+        return None
+    sub_t = m.get('subagent_tokens') or {}
+    sub_total = sum(sub_t.get(k, 0) for k in ('input', 'output', 'cache_read', 'cache_creation'))
+    inp = t['input'] + t['cache_read'] + t['cache_creation']
+    return {
+        'sub': sub_total / total,
+        'cache': (t['cache_read'] / inp) if inp else 0.0,
+        'avoided': m.get('cache_avoided'),
+        'versions': m.get('harness_versions') or {},
+    }
+
+
+def fmt_pct(x, lang):
+    v = '%.0f' % (x * 100)
+    return v + ' %' if lang != 'en' else v + '%'
+
+
+def version_label(versions):
+    if not versions:
+        return ''
+    return ', '.join(sorted(versions, key=lambda v: [int(x) if x.isdigit() else 0 for x in re.split(r'[.\-]', v)]))
+
+
+def kpi_extra(lang):
+    T = TXT[lang]
+    tot = {k: 0 for k in ('input', 'output', 'cache_read', 'cache_creation')}
+    sub_all = 0
+    avoided = 0.0
+    for m in MS:
+        t = m.get('tokens_total', m['tokens_bucket'])
+        for k in tot:
+            tot[k] += t[k]
+        s_t = m.get('subagent_tokens') or {}
+        sub_all += sum(s_t.get(k, 0) for k in tot)
+        avoided += m.get('cache_avoided') or 0.0
+    grand = sum(tot.values())
+    inp = tot['input'] + tot['cache_read'] + tot['cache_creation']
+    return [
+        (fmt_pct(tot['cache_read'] / inp, lang) if inp else '0', T['kpi_cache']),
+        (fmt_cost(avoided, lang), T['kpi_avoided']),
+        (fmt_pct(sub_all / grand, lang) if grand else '0', T['kpi_sub']),
+    ]
+
+
 def build_body(lang):
     T = TXT[lang]
     n = len(MS)
@@ -644,7 +695,7 @@ def build_body(lang):
         (str(n), T['kpi_commits']),
         (fmt_cost(total_cost_now, lang), T['kpi_cost']),
         (str(UNPRICED), T['kpi_unpriced']),
-    ]
+    ] + kpi_extra(lang)
     kpi_html = '\n'.join(
         '<div class="kpi"><span class="kpi-n">%s</span><span class="kpi-l">%s</span></div>' % (v, l)
         for v, l in kpi_rows)
@@ -656,6 +707,16 @@ def build_body(lang):
         bt = sum(row_tokens.values())
         out_t = row_tokens['output']
         cost_cell = fmt_cost(m['cost_recorded']['amount'], lang) if m['cost_recorded'] else T['unpriced_cell']
+        dr = derived_ratios(m)
+        extra = ''
+        if dr:
+            ver = version_label(dr['versions'])
+            extra = T['tokens_extra_cell'] % (fmt_pct(dr['cache'], lang), fmt_pct(dr['sub'], lang))
+            if dr['avoided'] is not None:
+                extra += T['avoided_cell'] % fmt_cost(dr['avoided'], lang)
+            if ver:
+                extra += T['version_cell'] % ver
+            extra = '<br><span class="mono">%s</span>' % extra
         timeline_rows.append(
             '<tr><td>M%d<br><span class="mono">%s</span></td>'
             '<td>%s<br><span class="mono">%s</span></td>'
@@ -665,7 +726,7 @@ def build_body(lang):
                 i + 1, m['hash'],
                 desc, fmt_time(m['timestamp'], lang),
                 fmt_int(m['words_published'], lang),
-                T['tokens_bucket_cell'] % (fmt_millions(bt, lang), fmt_int(out_t, lang)),
+                T['tokens_bucket_cell'] % (fmt_millions(bt, lang), fmt_int(out_t, lang)) + extra,
                 cost_cell
             ))
     timeline_html = '\n'.join(timeline_rows)
@@ -698,6 +759,12 @@ TXT = {
         'kpi_cost': 'custo registrado até agora',
         'kpi_unpriced': 'marcos sem preço vigente na data',
         'tokens_bucket_cell': '%s mi<br><span class="mono">saída: %s</span>',
+        'tokens_extra_cell': 'cache %s · subagentes %s',
+        'avoided_cell': ' · poupou %s',
+        'version_cell': ' · Claude Code %s',
+        'kpi_cache': 'da entrada total veio do cache',
+        'kpi_avoided': 'poupado pela leitura de cache',
+        'kpi_sub': 'dos tokens vieram de subagentes',
         'unpriced_cell': '<span class="mono">sem preço</span>',
     },
     'en': {
@@ -716,6 +783,12 @@ TXT = {
         'kpi_cost': 'cost recorded so far',
         'kpi_unpriced': 'milestones with no price in effect on their date',
         'tokens_bucket_cell': '%sm<br><span class="mono">output: %s</span>',
+        'tokens_extra_cell': 'cache %s · subagents %s',
+        'avoided_cell': ' · saved %s',
+        'version_cell': ' · Claude Code %s',
+        'kpi_cache': 'of all input was read from the cache',
+        'kpi_avoided': 'saved by reading the cache',
+        'kpi_sub': 'of the tokens came from subagents',
         'unpriced_cell': '<span class="mono">unpriced</span>',
     },
     'es': {
@@ -734,6 +807,12 @@ TXT = {
         'kpi_cost': 'costo registrado hasta ahora',
         'kpi_unpriced': 'hitos sin precio vigente en su fecha',
         'tokens_bucket_cell': '%s mi<br><span class="mono">salida: %s</span>',
+        'tokens_extra_cell': 'caché %s · subagentes %s',
+        'avoided_cell': ' · ahorró %s',
+        'version_cell': ' · Claude Code %s',
+        'kpi_cache': 'de toda la entrada se leyó del caché',
+        'kpi_avoided': 'ahorrado por leer el caché',
+        'kpi_sub': 'de los tokens vinieron de subagentes',
         'unpriced_cell': '<span class="mono">sin precio</span>',
     },
 }
@@ -810,6 +889,8 @@ TEMPLATE['pt'] = """<p class="eyebrow">Harness · Diário de bordo · Ao vivo</p
 <p><strong>Linhas.</strong> Contagem de linhas dos scripts de montagem em <code>build/</code> e dos documentos de governança (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventário de fontes), por commit.</p>
 
 <p><strong>Tokens.</strong> Soma real do campo <code>usage</code> de cada mensagem do assistente nos transcripts de sessão (<code>.jsonl</code>) em <code>~/.claude/projects/&lt;projeto&gt;/</code>. Cada evento é atribuído ao commit imediatamente seguinte, por ordem cronológica, mesma técnica usada em outro projeto do autor para o mesmo fim. Os tokens de um marco são congelados quando ele é registrado, separados por modelo e por duração do cache, porque o Claude Code apaga esses transcripts depois de 30 dias por padrão. Os tokens gastos pelos subagentes contam também. Os transcripts deles ficam numa subpasta de cada sessão e este gerador não os leu até 20 de setembro de 2026, quando eles acrescentaram cerca de 257 milhões de tokens, mais ou menos um quinto a mais que o total das sessões-mãe. Cada um é atribuído ao próximo commit deste repositório, então um marco que fecha uma longa etapa de trabalho de subagentes carrega tudo dela, onde quer que esse trabalho tenha acontecido. 43 dos 114 transcripts de subagente também citam o caminho de outro repositório (41 o repositório milestone-loc-tokens-ai-ledger, 2 o intake-briefing). O diário próprio daquele repositório conta os 41 dele pelo caminho dele, então os dois diários não devem ser somados.</p>
+
+<p><strong>Subagentes, cache e versão.</strong> Três leituras derivadas dos tokens já gravados. A fração de subagentes é a parte dos tokens do marco que veio de subagentes; ela não diz se o paralelismo valeu a pena, porque isso depende da forma da tarefa (o Google Research mediu +80,9% numa tarefa que se decompõe e de -39% a -70% em tarefas sequenciais), então leia-a ao lado do que o marco fez, não como nota. A eficiência de cache é a leitura de cache sobre toda a entrada (entrada comum, leitura e escrita de cache), e o valor poupado é a diferença entre precificar o marco como foi e precificar cada token lido do cache como entrada comum, nos preços do livro-razão; gravado uma vez, nunca recalculado. A versão é a do Claude Code que gerou as mensagens do marco, lida do transcript e congelada ao gravar; marcos anteriores a 5 de outubro de 2026 não a têm, porque as transcrições deles já tinham expirado.</p>
 
 <p><strong>Custo.</strong> Portado de <code>milestone-loc-tokens-ai-ledger</code>, a skill própria deste projeto (ver <code>NEXT-STEPS.md</code> item 5): os tokens de cada marco multiplicados pelo preço vigente na data desse marco, lido de <code>docs/assets/prices.json</code>, um livro-razão datado, apensado, nunca sobrescrito. Uma vez calculado, o custo de um marco nunca é recalculado depois, mesmo que o livro-razão ganhe uma entrada nova, para que o passado fique registrado no preço que era verdadeiro quando aconteceu.</p>
 
@@ -905,6 +986,8 @@ TEMPLATE['en'] = """<p class="eyebrow">Harness · Project log · Live</p>
 
 <p><strong>Tokens.</strong> Real sum of the <code>usage</code> field on every assistant message in the session transcripts (<code>.jsonl</code>) under <code>~/.claude/projects/&lt;project&gt;/</code>. Each event is assigned to the immediately following commit, in chronological order, the same technique used on another of the author's projects for the same purpose. A milestone's tokens are frozen when it is recorded, split by model and by cache lifetime, because Claude Code deletes these transcripts after 30 days by default. The tokens spent by subagents count too. Their transcripts sit in a subfolder of each session and this generator did not read them until 20 September 2026, when they added about 257 million tokens, roughly a fifth on top of the parent sessions' total. Each is assigned to the next commit of this repository, so a milestone that closes a long stretch of subagent work carries all of it, wherever that work happened. 43 of the 114 subagent transcripts also name another repository's path (41 the milestone-loc-tokens-ai-ledger repository, 2 intake-briefing). That repository's own log counts its 41 through its own path, so the two logs must not be added together.</p>
 
+<p><strong>Subagents, cache and version.</strong> Three readings derived from the tokens already recorded. The subagent fraction is the share of a milestone's tokens that came from subagents; it does not say whether the parallelism paid, because that depends on the shape of the task (Google Research measured +80.9% on a task that decomposes and -39% to -70% on sequential tasks), so read it next to what the milestone did, not as a score. Cache efficiency is cache reads over all input (plain input, cache reads and cache writes), and the amount saved is the difference between pricing the milestone as it ran and pricing every token read from the cache as plain input, at the ledger's prices; recorded once, never recalculated. The version is the Claude Code that produced the milestone's messages, read from the transcript and frozen when recorded; milestones before 5 October 2026 have none, because their transcripts had already expired.</p>
+
 <p><strong>Cost.</strong> Ported from <code>milestone-loc-tokens-ai-ledger</code>, this project's own skill (see <code>NEXT-STEPS.md</code> item 5): each milestone's tokens multiplied by the price in effect on that milestone's date, read from <code>docs/assets/prices.json</code>, a dated, append-only ledger, never overwritten. Once computed, a milestone's cost is never recalculated afterwards, even if the ledger gains a newer entry, so the past stays recorded at the price that was true when it happened.</p>
 
 <div class="rule-box"><span class="lbl">Cost's honest limit</span><p>The ledger's Sonnet 5 series has two entries, both dated 13 September 2026. The first recorded Sonnet 5 at US$3/15, a wrong price, because the increase scheduled for 1 September was cancelled. The second, verified on 20 September 2026 against Anthropic's pricing page and models overview, corrects it to US$2/10. The wrong entry was kept, and the cost of the milestones already recorded was recomputed on 20 September 2026 from their frozen tokens, with each one's previous value kept. Every milestone earlier than 13 September shows as "unpriced," not as zero cost: this project does not claim a price it has not verified. On 20 September 2026 the tokens of every milestone were frozen per model and per cache lifetime, and every cache write in this project's transcripts is 1-hour, so the cost of the 14 milestones that had one was recomputed at the 1-hour price (US$4.00 per million, against 2.50 for a 5-minute write), each previous value kept. That raised their recorded cost by US$5.37. The same day subagent tokens started to count, priced per model: the ledger gained Claude Opus 5 and Claude Haiku 4.5, read that day and applied from 13 September on an assumption, not a verified fact, that their prices did not change in between. Every subagent cache write is 5-minute, since their transcripts carry the breakdown and record no 1-hour write. That moved the recorded cost of one milestone, the commit that recorded the research and design behind milestone-loc-tokens-ai-ledger, from US$19.94 to US$46.83, because about 63 million subagent tokens fall in the interval it closes. Most subagent tokens sit in milestones before 13 September, which stay unpriced.</p></div>
@@ -998,6 +1081,8 @@ TEMPLATE['es'] = """<p class="eyebrow">Harness · Diario de bordo · En vivo</p>
 <p><strong>Líneas.</strong> Conteo de líneas de los scripts de montaje en <code>build/</code> y de los documentos de gobernanza (README, STANDARDS, STATUS, NEXT-STEPS, TOOLS, inventario de fuentes), por commit.</p>
 
 <p><strong>Tokens.</strong> Suma real del campo <code>usage</code> de cada mensaje del asistente en los transcripts de sesión (<code>.jsonl</code>) de <code>~/.claude/projects/&lt;proyecto&gt;/</code>. Cada evento se asigna al commit inmediatamente siguiente, en orden cronológico, la misma técnica usada en otro proyecto del autor con el mismo fin. Los tokens de un hito se congelan cuando se registra, separados por modelo y por duración de la caché, porque Claude Code borra esos transcripts tras 30 días por defecto. Los tokens gastados por los subagentes también cuentan. Sus transcripts están en una subcarpeta de cada sesión y este generador no los leyó hasta el 20 de septiembre de 2026, cuando añadieron unos 257 millones de tokens, más o menos un quinto más que el total de las sesiones madre. Cada uno se asigna al siguiente commit de este repositorio, así que un hito que cierra una larga etapa de trabajo de subagentes carga con todo ella, dondequiera que ese trabajo haya ocurrido. 43 de los 114 transcripts de subagente también nombran la ruta de otro repositorio (41 el repositorio milestone-loc-tokens-ai-ledger, 2 intake-briefing). El diario propio de ese repositorio cuenta sus 41 por su propia ruta, así que los dos diarios no deben sumarse.</p>
+
+<p><strong>Subagentes, caché y versión.</strong> Tres lecturas derivadas de los tokens ya grabados. La fracción de subagentes es la parte de los tokens del hito que vino de subagentes; no dice si el paralelismo valió la pena, porque eso depende de la forma de la tarea (Google Research midió +80,9% en una tarea que se descompone y de -39% a -70% en tareas secuenciales), así que léela junto a lo que hizo el hito, no como una nota. La eficiencia de caché es la lectura de caché sobre toda la entrada (entrada común, lectura y escritura de caché), y el valor ahorrado es la diferencia entre valorar el hito como ocurrió y valorar cada token leído del caché como entrada común, a los precios del libro mayor; grabado una vez, nunca recalculado. La versión es la de Claude Code que produjo los mensajes del hito, leída del transcript y congelada al grabar; los hitos anteriores al 5 de octubre de 2026 no la tienen, porque sus transcripciones ya habían expirado.</p>
 
 <p><strong>Costo.</strong> Portado de <code>milestone-loc-tokens-ai-ledger</code>, la skill propia de este proyecto (ver el ítem 5 de <code>NEXT-STEPS.md</code>): los tokens de cada hito multiplicados por el precio vigente en la fecha de ese hito, leído de <code>docs/assets/prices.json</code>, un libro mayor fechado y de solo apéndice, nunca sobrescrito. Una vez calculado, el costo de un hito nunca se recalcula después, aunque el libro mayor gane una entrada nueva, para que el pasado quede registrado al precio que era verdadero cuando ocurrió.</p>
 
@@ -1169,6 +1254,8 @@ def main():
     out_dir = os.path.join(ROOT, 'docs')
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, 'logbook.html')
+    from common import finish_page
+    doc = finish_page(doc, 'docs/logbook.html')
     with open(out_path, 'w', encoding='utf-8') as fh:
         fh.write(doc)
 

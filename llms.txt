@@ -2,7 +2,7 @@
 
 > A content and tooling project on harness engineering and the MEDIR cycle (Map, Equip, Delegate, Inspect, Reinforce): the discipline of building the environment around an AI model so it can operate reliably. Written for an executive or a non-technical reader, and built so an AI agent can also act on it directly.
 
-Author: Fernando Teco Sodre. Status: in progress, September 2026. English is this project's primary language; Portuguese and Spanish translations exist for every part of the series and every governance document.
+Author: Fernando Teco Sodre. Status: in progress, October 2026. English is this project's primary language; Portuguese and Spanish translations exist for every part of the series and every governance document.
 
 ## Start here
 
@@ -23,7 +23,7 @@ Author: Fernando Teco Sodre. Status: in progress, September 2026. English is thi
 
 - [Glossary](harness-glossary.html): every term the series uses, one definition each.
 - [Sources](harness-sources.html): every citation the series uses, human-facing.
-- [sources/inventory.md](sources/inventory.md): the same citations plus every curated third-party skill, with a verification status and date.
+- [sources/inventory.md](sources/inventory.md): the same citations plus every curated third-party skill, with a verification status and date. Sources and their verification dates live here; treat every date as a snapshot and fetch the origin before relying on it.
 - [toolkit.json](toolkit.json): the machine-readable manifest, see Start here above.
 - [sources/upstream.json](sources/upstream.json): archive status, last commit, licence and installed-versus-origin comparison for every curated repository, read from the GitHub API on a stated date.
 - [TOOLS.md](TOOLS.md): the skills this project itself installed and actually used, with a real-usage log.

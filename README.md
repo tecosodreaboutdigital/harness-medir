@@ -11,6 +11,8 @@ MEDIR is not an arbitrary acronym: Mapear, Equipar, Delegar, Inspecionar, Refor�
 Author: Fernando Teco Sodré
 Status: in progress, October 2026
 
+Everything in the repository is served by GitHub Pages as it stands, because the site uses `.nojekyll`: the research dossiers in `docs/` and the Markdown governance files are readable at their addresses as plain text. That is intentional, since the project documents its own working; nothing private belongs in this repository.
+
 Published at [github.com/tecosodreaboutdigital/harness-medir](https://github.com/tecosodreaboutdigital/harness-medir) (repository) and [tecosodreaboutdigital.github.io/harness-medir](https://tecosodreaboutdigital.github.io/harness-medir) (GitHub Pages, the HTML files render as pages, not just as source code).
 
 **Start reading:** [Part 1, why](harness-p1.html) · [Part 2, how](harness-p2.html) · [Part 3, operation](harness-p3.html) · [Part 4, governance](harness-p4.html) · [Compact guide](harness-toolkit.html) · [Glossary](harness-glossary.html) · [Sources](harness-sources.html) · [Playbook](harness-playbook.html) · [Project log](docs/logbook.html)
