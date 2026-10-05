@@ -73,6 +73,8 @@ Book style. Alphabetical order ignoring accents. No rule between entries. Term i
 
 In body text, the term appears with a dotted underline, with a tooltip on hover (the `data-tip` attribute carries the short definition, shown locally, no navigation needed) and a click leads to `harness-glossary.html#<lang>-<slug>`, landing on that exact entry. Never link a term to a local `#g-slug` anchor inside the article itself, that anchor no longer exists there.
 
+Two exceptions and one rule are deliberate. The Portuguese glossary has one entry more than the other two (`g-hitl`, "human in the loop") because Portuguese keeps that phrase in English and the entry says why, so a count of 68 against 67 is not an error. The same goes for the HITL label in diagram D4. And "token", in the sense of the unit in which models read and bill text, is kept as "token" in Portuguese and Spanish, never translated as "símbolo". Glossary ids are one neutral slug per term, the same in all three languages (`g-agent`, `g-model`, `g-chart`, `g-cyb`, `g-context`); only the language prefix differs.
+
 When a new part introduces a term, add it to `harness-glossary.html` directly (all three languages), keep the alphabetical position, and link to it from the part's body. Do not duplicate the definition back into the part.
 
 ---
