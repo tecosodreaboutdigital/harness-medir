@@ -101,13 +101,15 @@
 
 <p>A regra de investimento é simples e economiza muito dinheiro: <strong>o que puder ser verificado de forma dura, verifique de forma dura</strong>. Julgamento é caro, lento e não determinístico, e deve ser reservado ao que a verificação dura não alcança, que é o campo semântico.</p>
 
+<p>Um achado de um estudo de 2026 sobre o código-fonte de onze harnesses de programação aponta na mesma direção: ao longo do primeiro semestre, a política de comportamento saiu da prosa do prompt e foi para a configuração (<a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">o estudo</a>). O que pode ser imposto deixa de ser pedido numa frase.</p>
+
 <p>Existe também um efeito de custo que mudou recentemente. Verificação automática sempre existiu e sempre foi subutilizada, porque configurar regras dava trabalho demais para o retorno. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observa que a balança virou: hoje é barato pedir ao próprio sistema que escreva as regras e os scripts de conferência, o que derruba o custo de entrada, enquanto o benefício subiu, porque essas verificações pegam justamente os erros típicos de máquina que um humano não cometeria.</p>
 
 <h2 id="pt-equipar">4. Equipar: o que ele vê e o que ele toca</h2>
 
 <p>Primeiro passo instrumentado do <a class="g" href="harness-glossary.html#pt-g-medir" data-tip="Mapear, Equipar, Delegar, Inspecionar, Reforçar. O ciclo de engenharia de harness em cinco passos, descrito na parte 1.">MEDIR</a>. Equipar é decidir três coisas: quais ferramentas, quais acessos, e o que sobrevive quando a conversa acaba.</p>
 
-<p>As duas primeiras são intuitivas e seguem a mesma lógica de qualquer acesso corporativo: o mínimo que a tarefa exige, e nada além. Menos ferramentas, melhor descritas, com estado de falha previsível. Uma ferramenta que devolve resultado ambíguo obriga o sistema a adivinhar o que aconteceu, e adivinhação é a origem de metade dos incidentes.</p>
+<p>As duas primeiras são intuitivas e seguem a mesma lógica de qualquer acesso corporativo: o mínimo que a tarefa exige, e nada além. Menos ferramentas, melhor descritas, com estado de falha previsível. Uma ferramenta que devolve resultado ambíguo obriga o sistema a adivinhar o que aconteceu, e adivinhação é a origem de metade dos incidentes. A orientação da Anthropic sobre como escrever ferramentas vai um passo além: a descrição de uma ferramenta e suas respostas de erro são texto que o modelo lê, então se escrevem e se testam como um prompt (<a class="src" href="harness-sources.html#pt-src-aizawa" data-tip="Ken Aizawa, Anthropic, Writing effective tools for agents, with agents, 2025.">Aizawa</a>).</p>
 
 <p>A terceira é a que quase ninguém constrói, e é a que separa um agente de um formulário caro.</p>
 
@@ -120,6 +122,10 @@
 <blockquote><p>Janela de contexto é memória volátil. Sistema de arquivos é disco. Tudo o que importa vai para o disco.</p></blockquote>
 
 <p>Na prática, isso significa manter fora da conversa três coisas: o plano com as etapas e o que já foi concluído, as decisões tomadas e por quê, e o registro do que foi feito em cada sessão. A sessão seguinte lê esses arquivos, entende onde parou e avança. É o estado real do trabalho, não uma recontagem da conversa anterior.</p>
+
+<p>Manter o trabalho fora da conversa importa também porque toda forma de encurtar uma conversa é uma decisão sem volta. O relato da Anthropic sobre seus managed agents diz que compactação, notas de memória e poda envolvem escolhas irreversíveis sobre o que guardar, e por isso mantém a sessão inteira como um log separado, só de acréscimo (<a class="src" href="harness-sources.html#pt-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, anthropic.com, 2026.">o texto</a>).</p>
+
+<p>Quem pode escrever nessa memória também é decisão de projeto. O mesmo estudo de código-fonte encontrou quatro modelos de governança lado a lado: o agente mantém a própria memória, uma pessoa revisa cada nota proposta antes de ela ser guardada, o modelo escreve direto num arquivo limitado, e um subagente busca a lembrança antes de cada turno (<a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">o estudo</a>). O segundo é o único que põe uma pessoa entre a escrita e o armazenamento.</p>
 
 <p>É a mesma solução que a <a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Mesma fonte que a parte 1 cita para essa técnica.">Anthropic</a> descreveu para agentes de longa duração, com uma primeira sessão que monta o ambiente e todas as seguintes lendo o registro e avançando um pedaço. E é exatamente o que faltava na automação da diretora: quando o erro apareceu, não havia trilha para reconstruir o que o sistema tinha visto e em que ordem.</p>
 
@@ -176,7 +182,11 @@
 
 <p>O raciocínio por trás disso é sutil e correto. O alvo do guia não é ensinar a regra, porque o sistema já a conhece. O alvo é impedir que ele se convença a não segui-la. São coisas diferentes, e a segunda é a que falha na prática. A regra sete da diretora não falhou por estar mal escrita.</p>
 
-<div class="rule-box"><span class="lbl">Como aplicar</span><p>Depois de enunciar cada regra, escreva a desculpa. Pergunte qual seria a justificativa mais plausível para descumpri-la, e coloque essa justificativa por escrito como sinal de alerta. Você está antecipando a negociação em vez de esperá-la acontecer.</p></div>
+<div class="rule-box"><span class="lbl">Como aplicar</span><p>Depois de enunciar cada regra, escreva a desculpa. Pergunte qual seria a justificativa mais plausível para descumpri-la, e coloque essa justificativa por escrito como sinal de alerta. Você está antecipando a negociação em vez de esperá-la acontecer.</p>
+
+<h3>Uma skill também pode atrapalhar</h3>
+
+<p>Um guia pode piorar o resultado. Um estudo de 2026 sobre skills em dois benchmarks contou 307 falhas induzidas por skill: 125 falhas funcionais e 182 regressões de eficiência (<a class="src" href="harness-sources.html#pt-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, August 2026.">o estudo</a>). A consequência prática é que uma skill precisa da mesma evidência que qualquer outra mudança. Rode a tarefa com ela e sem ela, e só a mantenha se o resultado melhorar.</p></div>
 
 <h2 id="pt-delegar">6. Delegar: como o trabalho é entregue</h2>
 
@@ -216,11 +226,15 @@
 
 <h3>Teto e orçamento</h3>
 
-<p>Toda delegação precisa de dois limites que o sistema não possa reescrever. Um <a class="g" href="harness-glossary.html#pt-g-teto" data-tip="Número máximo de vezes que um agente pode repetir uma tarefa antes de parar e escalar.">teto</a> de tentativas, porque sem ele um laço de correção repete a mesma tentativa indefinidamente. E um teto de custo, porque o gasto é silencioso e só aparece na fatura.</p>
+<p>Toda delegação precisa de limites que o sistema não possa reescrever, e um só não basta. Um <a class="g" href="harness-glossary.html#pt-g-teto" data-tip="Número máximo de vezes que um agente pode repetir uma tarefa antes de parar e escalar.">teto</a> de tentativas, porque sem ele um laço de correção repete a mesma tentativa indefinidamente. Um teto de custo, porque o gasto é silencioso e só aparece na fatura. E, na prática, um limite de tempo, um limite de chamadas de ferramenta, um limite de quão fundo um agente pode delegar a outro e um limite de quantos podem rodar ao mesmo tempo.</p>
 
-<p>Quando o teto é atingido, o comportamento correto não é falhar em silêncio nem continuar tentando. É parar, entregar o que existe marcado como incompleto, e explicar o que não fechou. É exatamente o que um bom profissional faz.</p>
+<p>Quando qualquer limite é atingido, o comportamento correto não é falhar em silêncio nem continuar tentando. É parar, entregar o que existe marcado como incompleto e explicar o que não fechou. O motivo da parada deve vir de uma lista curta que o sistema conhece, como concluído, teto atingido, bloqueado por política, precisa de uma pessoa ou falhou, e não de texto livre. No estudo de código-fonte, um harness (o Hermes) enumera onze motivos de saída de turno e acrescenta duas travas que podem vetar uma resposta final prematura (<a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">o estudo</a>). É o que um bom profissional faz, escrito dentro do laço.</p>
 
 <p>Ferramentas para isso estão no <a href="harness-toolkit.html#pt-delegar">guia compacto</a>, na seção de Delegar.</p>
+
+<h3>Seguro repetir</h3>
+
+<p>Um teto de tentativas pressupõe que repetir é inofensivo, e nem sempre é. O HTTP dá nome à propriedade: um método é idempotente se várias requisições idênticas têm o mesmo efeito que uma só (<a class="src" href="harness-sources.html#pt-src-rfc9110" data-tip="IETF, RFC 9110: HTTP Semantics, section 9.2.2, Idempotent Methods.">RFC 9110</a>). Ler é. Aprovar uma fatura, enviar uma mensagem ou cobrar um cartão não é, a menos que a requisição leve uma chave que o sistema receptor use para reconhecer a repetição. Então a pergunta pertence ao contrato da tarefa, antes de qualquer teto: este passo é seguro de repetir? Onde não for, dê ao passo uma chave de idempotência ou tire-o do laço de tentativas do modelo. A documentação do Agent Framework da Microsoft traça a mesma linha, aconselhando fluxos programados em vez de skills quando os passos têm efeitos colaterais que não devem se repetir numa nova tentativa (<a class="src" href="harness-sources.html#pt-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">a documentação</a>).</p>
 
 <h2 id="pt-inspecionar">7. Inspecionar: o verificador que ensina</h2>
 
@@ -245,7 +259,15 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p>A segunda contém tudo o que é necessário para autocorreção sem nova instrução humana: o que está errado, qual é o valor certo, onde está a fonte, a provável causa e o que fazer em seguida. <a class="src" href="harness-sources.html#pt-src-bockeler-sensors" data-tip="Birgitta Böckeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler descreve isso</a> como uma boa forma de injeção de contexto, e relata um experimento que prova o ponto: quando faltou essa orientação em uma regra específica, o sistema passou a contorná-la sistematicamente, e voltou a se comportar assim que a orientação foi escrita.</p>
 
-<div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu verificador como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um verificador, é um alarme.</p></div>
+<div class="rule-box"><span class="lbl">A regra prática</span><p>Escreva a mensagem de erro do seu verificador como se estivesse explicando a um colega novo o que fazer em seguida. Se ela não serve para isso, ela não é um verificador, é um alarme.</p>
+
+<p>Um erro útil diz quatro coisas: o que falhou e por quê, o que foi pedido, se algo mudou e se é seguro tentar de novo. A orientação da Anthropic sobre como escrever ferramentas pede esse tipo de mensagem, específica e acionável em vez de um código opaco ou um rastreamento de pilha (<a class="src" href="harness-sources.html#pt-src-aizawa" data-tip="Ken Aizawa, Anthropic, Writing effective tools for agents, with agents, 2025.">Aizawa</a>). Por exemplo:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre></div>
 
 <h3>O truque do limiar</h3>
 
@@ -300,7 +322,7 @@ a conferência novamente antes de entregar.</code></pre>
 
 <p><strong>Durante</strong> ficam as verificações rápidas, consultadas enquanto o trabalho acontece. Precisam ser baratas o bastante para rodar a cada passo. É aqui que a autocorreção acontece de verdade.</p>
 
-<p><strong>No portão</strong> ficam as verificações mais caras, que rodam uma vez, na entrega, e confirmam o resultado. É também onde mora a aprovação humana, quando existe.</p>
+<p><strong>No portão</strong> ficam as verificações mais caras, que rodam uma vez, na entrega, e confirmam o resultado. É também onde mora a aprovação humana, quando existe. Duas práticas de fontes de 2026 cabem aqui. Uma é uma trava de parada que recusa a resposta final quando o turno mudou código mas não produziu evidência nova de verificação, que o estudo de código-fonte descreve no Hermes (<a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">o estudo</a>). A outra é uma lista de funcionalidades mantida fora da conversa cujo único campo editável é se cada item passa, que a orientação da Anthropic para agentes de longa duração usa (<a class="src" href="harness-sources.html#pt-src-anthropic-effective" data-tip="Anthropic, Effective harnesses for long-running agents, anthropic.com.">a orientação</a>).</p>
 
 <p><strong>Em cadência</strong> ficam os verificadores que procuram <a class="g" href="harness-glossary.html#pt-g-deriva" data-tip="Degradação gradual que não acontece em nenhuma execução específica, e sim ao longo de dezenas delas.">deriva</a>, aquela degradação que não acontece em nenhuma execução específica e sim ao longo de dezenas delas. Rodam por agenda, não por tarefa.</p>
 
@@ -338,6 +360,8 @@ a conferência novamente antes de entregar.</code></pre>
 </table>
 
 <p>Note o que essa tabela faz: transforma o harness em algo que tem indicador próprio. Ele deixa de ser configuração feita uma vez e passa a ser ativo operado, com histórico e tendência. É a diferença entre ter um extintor e ter um programa de segurança.</p>
+
+<p>Há mais uma leitura da tabela que é fácil pular: se o resultado se repete. Um agente que acerta uma tarefa uma vez e erra na seguinte não é confiável. O benchmark τ-bench pontua o estado final do mundo, e não a redação da resposta, e define pass^k como a chance de todas as k tentativas da mesma tarefa darem certo (<a class="src" href="harness-sources.html#pt-src-taubench" data-tip="Yao et al., tau-bench, arXiv:2406.12045, June 2024.">τ-bench</a>). Rode o verificador mais de uma vez antes de confiar numa única execução verde.</p>
 
 <h2 id="pt-exemplos">11. Três exemplos completos</h2>
 
@@ -469,8 +493,9 @@ Bandeiras vermelhas:
 <thead><tr><th>Classe de ambiente</th><th>O que ele aceita</th><th>Faixa viável</th></tr></thead>
 <tbody>
 <tr><td>Conversa com instruções</td><td>Guia sim. Verificador quase nenhum, porque não há execução nem estado que sobreviva</td><td>N0 a N1</td></tr>
-<tr><td>Agente com arquivos e execução</td><td>Guia, verificação dura, memória durável, código rodando de verdade</td><td>N1 a N2</td></tr>
-<tr><td>Orquestração programada</td><td>Tudo acima, mais teto, política de alçada fora do modelo e registro por execução</td><td>N2 a N3</td></tr>
+<tr><td>Agente com arquivos e execução</td><td>Guia, verificação dura, memória durável, código rodando de verdade</td><td>N1 a N2, e N3 só se o agente não puder editar a própria política</td></tr>
+<tr><td>Runtime gerenciado de agentes</td><td>Tudo acima, rodado por uma plataforma que mantém a sessão, o sandbox e as credenciais separados</td><td>N2 a N3</td></tr>
+<tr><td>Fluxo programado</td><td>Tudo acima, mais teto, política de alçada fora do modelo e registro por execução. A escolha certa quando um passo não pode ser repetido com segurança</td><td>N2 a N3</td></tr>
 <tr><td>Geração assistida de software</td><td>Produz o artefato. O harness relevante é o do que foi gerado</td><td>Não se aplica</td></tr>
 </tbody>
 </table>
@@ -479,13 +504,19 @@ Bandeiras vermelhas:
 
 <p>O <strong>agente com arquivos e execução</strong> é o primeiro degrau em que o ciclo fecha sozinho. Existe sistema de arquivos, então existe estado durável. Existe execução, então existe verificação dura. É aqui que o skill deixa de ser documento bonito e passa a ser mecanismo.</p>
 
-<p>A <strong>orquestração programada</strong> é onde entram as coisas que não são texto: o teto que o sistema não pode ignorar, a tabela de alçada que ele não consegue reescrever, o registro que ele não consegue apagar. Nenhuma das três é instrução. São restrições do lado de fora. É por isso que N3 exige esse ambiente e não é alcançável apenas escrevendo melhor.</p>
+<p>O <strong>fluxo programado</strong> é onde entram as coisas que não são texto: o teto que o sistema não pode ignorar, a tabela de alçada que ele não pode reescrever, o registro que ele não pode apagar. Nenhuma das três é uma instrução. São restrições vindas de fora. Por isso o N3 exige um ambiente que as imponha e não se alcança só escrevendo um guia melhor.</p>
+
+<p>Um <strong>runtime gerenciado de agentes</strong> chega lá por outro caminho. A plataforma mantém o log da sessão, o harness e o sandbox como partes separadas, de modo que a parte que roda código escrito pelo modelo nunca guarda as credenciais nem a única cópia do histórico (<a class="src" href="harness-sources.html#pt-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, anthropic.com, 2026.">Anthropic</a>, <a class="src" href="harness-sources.html#pt-src-openai-sandbox" data-tip="OpenAI, Agents SDK sandbox documentation.">OpenAI</a>).</p>
+
+<p>Duas mudanças em 2026 moveram esta tabela. As grandes plataformas agora vendem o runtime como produto, e uma equipe pode adotar a separação em vez de construí-la (<a class="src" href="harness-sources.html#pt-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">Google Cloud</a>). E a orientação dos fornecedores começou a traçar a linha que a tabela traça: a documentação da Microsoft aconselha fluxos programados em vez de skills quando um passo não pode ser repetido com segurança (<a class="src" href="harness-sources.html#pt-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">Microsoft</a>).</p>
 
 <p>A <strong>geração assistida de software</strong> merece parágrafo próprio, porque é a confusão mais comum. Quem descreve um sistema em linguagem natural e recebe uma aplicação funcionando não montou um harness, gerou um artefato. E esse artefato, se for para produção, precisa de tudo o que este artigo descreve. A ferramenta que gerou não fornece nada disso ao que foi gerado.</p>
 
 <blockquote><p>A maior parte das frustrações com agentes vem de tentar operar em N2 dentro de um ambiente que só sustenta N1. O sistema não está falhando. Ele está sendo cobrado por um controle que ninguém lhe deu como construir.</p></blockquote>
 
 <p>Consequência prática para quem decide: a pergunta de compra não é qual ferramenta é a melhor. É até que faixa eu preciso chegar nesta tarefa, e qual é a classe de ambiente mais simples que sustenta aquela faixa. Nomes, repositórios e roteiros estão no <a href="harness-toolkit.html#pt-top">guia compacto</a>, que é datado e revisado à parte justamente porque envelhece mais rápido.</p>
+
+<p>Antes de recorrer a vários agentes, confira se a tarefa de fato se divide. O Google Research avaliou 180 configurações de agentes: a coordenação centralizada melhorou em cerca de 81% uma tarefa de raciocínio financeiro paralelizável, enquanto em tarefas de planejamento sequencial as variantes multiagente pioraram o desempenho em 39% a 70% (<a class="src" href="harness-sources.html#pt-src-google-scaling" data-tip="Kim and Liu, Google Research, Towards a science of scaling agent systems, January 2026.">o texto</a>). O primeiro número pertence àquele tipo de tarefa, não a sistemas multiagente em geral.</p>
 
 <h2 id="pt-reforcar">13. Reforçar: como um harness evolui</h2>
 
@@ -516,17 +547,23 @@ Bandeiras vermelhas:
 
 <p>E a disciplina que sustenta tudo: isso roda em cadência, não em mutirão. Dívida acumulada é empréstimo de juros altos, sempre melhor paga em parcelas pequenas e contínuas do que deixada compor até virar uma semana perdida. Um mutirão anual de limpeza é o sintoma de que a cadência não existe.</p>
 
+<h3>Reforçar inclui remover</h3>
+
+<p>Uma peça do harness merece seu lugar pelo que acrescenta, e um modelo melhor pode torná-la peso morto. O relato da Anthropic sobre uma construção de longa duração descobriu que os resets de contexto, acrescentados para um modelo que encerrava o trabalho cedo à medida que o contexto enchia, deixaram de ser necessários quando o modelo seguinte removeu em grande parte esse comportamento, e os retirou (<a class="src" href="harness-sources.html#pt-src-anthropic-design" data-tip="Anthropic, Harness design for long-running application development, anthropic.com.">o relato</a>). O mesmo texto mostra o outro lado: o harness completo levou 6 horas e custou US$ 200, contra 20 minutos e US$ 9 da execução solo, e a diferença na saída era imediatamente aparente. O custo não é o teste. O teste é se a peça ainda muda o resultado.</p>
+
 <h2 id="pt-riscos-2">14. Riscos desta camada</h2>
 
-<p>Quatro riscos são específicos desta camada e não apareceram na parte 1.</p>
+<p>Cinco riscos são específicos desta camada e não apareceram na parte 1.</p>
 
 <p><strong>Excesso de sinal.</strong> Ligar muitos verificadores de uma vez inunda o sistema de apontamentos, e ele entra em espiral de correções desnecessárias, gastando tempo e dinheiro em problemas que não eram problemas. Ligue um por vez e observe.</p>
 
 <p><strong>Verificadores em conflito.</strong> Duas regras razoáveis podem se contradizer, e o sistema vai escolher uma sem avisar que houve escolha. Quando isso acontece de forma recorrente, alguém precisa decidir a prioridade e escrevê-la.</p>
 
-<p><strong>Painel verde como prova.</strong> O mais perigoso dos quatro, porque é confortável. Um conjunto de verificadores fracos produz exatamente a mesma tela tranquilizadora que um conjunto de verificadores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que isso ficou vermelho, e por quê.</p>
+<p><strong>Painel verde como prova.</strong> O mais perigoso dos cinco, porque é confortável. Um conjunto de verificadores fracos produz exatamente a mesma tela tranquilizadora que um conjunto de verificadores bons. A pergunta que separa os dois não é está tudo verde, é quando foi a última vez que isso ficou vermelho, e por quê.</p>
 
 <p><strong>Guia de terceiro.</strong> Instalar uma coleção de skills de outra pessoa é executar instrução de outra pessoa dentro do seu ambiente. A recomendação de <a class="src" href="harness-sources.html#pt-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">quem publica o formato</a> é explícita: instale apenas de origem confiável e, quando a origem é menos conhecida, audite antes de usar, com atenção especial a trechos que mandam o sistema buscar algo em rede externa. Isso não é motivo para não usar. É motivo para ler antes, e o <a href="harness-toolkit.html#pt-seguranca">guia compacto</a> traz as três perguntas que essa leitura precisa responder.</p>
+
+<p><strong>Uma skill que atrapalha.</strong> Um guia não é seguro só por estar escrito. Já se mediram skills piorando resultados, e ninguém percebe quando o painel só conta tarefas concluídas. Teste cada skill com e sem ela, e remova as que não se pagam (<a class="src" href="harness-sources.html#pt-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, August 2026.">o estudo</a>).</p>
 
 <blockquote><p>Um agente instrumentado não é um agente seguro. Instrumentação diz se o trabalho ficou bom. Ela não diz se o trabalho deveria ter sido feito de todo.</p></blockquote>
 

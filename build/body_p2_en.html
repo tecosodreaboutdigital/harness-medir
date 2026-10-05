@@ -100,13 +100,15 @@
 
 <p>The investment rule is simple and saves a great deal of money: <strong>whatever can be verified hard, verify hard</strong>. Judgement is expensive, slow and non-deterministic, and should be reserved for what hard verification cannot reach, which is the semantic ground.</p>
 
+<p>One finding from a 2026 source-code study of eleven coding harnesses points the same way: over the first half of the year, behavioural policy moved out of prompt prose and into configuration (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">the study</a>). What can be enforced stops being asked for in a sentence.</p>
+
 <p>There is also a cost effect that has recently shifted. Automated verification always existed and was always under-used, because setting up rules cost more effort than the return justified. <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler</a> observes that the balance has flipped: today it is cheap to ask the system itself to write the rules and the checking scripts, which drives the cost of entry down, while the benefit has gone up, because these checks catch precisely the typical machine mistakes a human would not make.</p>
 
 <h2 id="equipar">4. Equip: what it sees and what it can touch</h2>
 
 <p>The first instrumented step of <a class="g" href="harness-glossary.html#en-g-medir" data-tip="Map, Equip, Delegate, Inspect, Reinforce. The five-step harness engineering cycle, described in part 1.">MEDIR</a>. Equip means deciding three things: which tools, which access, and what survives once the conversation ends.</p>
 
-<p>The first two are intuitive and follow the same logic as any corporate access policy: the minimum the task requires, and nothing more. Fewer tools, better described, with predictable failure states. A tool that returns an ambiguous result forces the system to guess what happened, and guessing is the origin of half of all incidents.</p>
+<p>The first two are intuitive and follow the same logic as any corporate access policy: the minimum the task requires, and nothing more. Fewer tools, better described, with predictable failure states. A tool that returns an ambiguous result forces the system to guess what happened, and guessing is the origin of half of all incidents. Anthropic's guidance on writing tools goes a step further: a tool's description and its error responses are text the model reads, so they are written and tested like a prompt (<a class="src" href="harness-sources.html#en-src-aizawa" data-tip="Ken Aizawa, Anthropic, Writing effective tools for agents, with agents, 2025.">Aizawa</a>).</p>
 
 <p>The third is the one almost nobody builds, and it is the one that separates an agent from an expensive form.</p>
 
@@ -119,6 +121,10 @@
 <blockquote><p>The context window is volatile memory. The file system is disk. Everything that matters goes to disk.</p></blockquote>
 
 <p>In practice, this means keeping three things out of the conversation: the plan with its steps and what has already been completed, the decisions made and why, and the record of what happened in each session. The next session reads these files, understands where it left off, and moves forward. It is not a recap of the previous conversation, it is the real state of the work.</p>
+
+<p>Keeping the work outside the conversation also matters because every way of shrinking a conversation is a one-way decision. Anthropic's account of its managed agents says that compaction, memory notes and trimming all involve irreversible choices about what to keep, which is why it keeps the full session as a separate append-only log (<a class="src" href="harness-sources.html#en-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, anthropic.com, 2026.">the post</a>).</p>
+
+<p>Who may write to that memory is a design decision too. The same source-code study found four governance models side by side: the agent maintains its own memory, a human reviews each proposed note before it is kept, the model writes directly into a bounded file, and a sub-agent recalls before each turn (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">the study</a>). The second is the only one that puts a person between the write and the store.</p>
 
 <p>It is the same solution <a class="src" href="harness-sources.html#en-src-anthropic-effective" data-tip="Anthropic. Effective harnesses for long-running agents, anthropic.com, 2025. Same source part 1 cites for this technique.">Anthropic</a> described for long-running agents, with a first session that sets up the environment and every following one reading the record and advancing a piece further. And it is exactly what was missing from the director's automation: when the error appeared, there was no trail to reconstruct what the system had seen and in what order.</p>
 
@@ -175,7 +181,11 @@
 
 <p>The reasoning behind this is subtle and correct. The point of the guide is not to teach the rule, because the system already knows it. The point is to stop it talking itself out of following it. Those are different things, and the second is what fails in practice. The director's rule seven did not fail because it was badly written.</p>
 
-<div class="rule-box"><span class="lbl">How to apply it</span><p>After stating each rule, write the excuse. Ask what the most plausible justification for breaking it would be, and put that justification down in writing as a warning sign. You are getting ahead of the negotiation instead of waiting for it to happen.</p></div>
+<div class="rule-box"><span class="lbl">How to apply it</span><p>After stating each rule, write the excuse. Ask what the most plausible justification for breaking it would be, and put that justification down in writing as a warning sign. You are getting ahead of the negotiation instead of waiting for it to happen.</p>
+
+<h3>A skill can also hurt</h3>
+
+<p>A guide can make a result worse. A 2026 study of skills on two benchmarks counted 307 skill-induced failures: 125 functional failures and 182 efficiency regressions (<a class="src" href="harness-sources.html#en-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, August 2026.">the study</a>). The practical consequence is that a skill needs the same evidence as any other change. Run the task with it and without it, and keep it only if the result improves.</p></div>
 
 <h2 id="delegar">6. Delegate: how the work is handed over</h2>
 
@@ -215,11 +225,15 @@
 
 <h3>Ceiling and budget</h3>
 
-<p>Every delegation needs two limits the system cannot rewrite. A <a class="g" href="harness-glossary.html#en-g-teto" data-tip="The maximum number of times an agent may repeat a task before stopping and escalating.">retry ceiling</a>, because without one a correction loop repeats the same attempt indefinitely. And a cost ceiling, because spend is silent and only shows up on the invoice.</p>
+<p>Every delegation needs limits the system cannot rewrite, and one is not enough. A <a class="g" href="harness-glossary.html#en-g-teto" data-tip="The maximum number of times an agent may repeat a task before stopping and escalating.">retry ceiling</a>, because without one a correction loop repeats the same attempt indefinitely. A cost ceiling, because spend is silent and only shows up on the invoice. And, in practice, a time limit, a cap on tool calls, a cap on how deeply one agent may delegate to another, and a cap on how many may run at once.</p>
 
-<p>When the ceiling is reached, the correct behaviour is neither to fail silently nor to keep trying. It is to stop, deliver whatever exists marked as incomplete, and explain what did not close. That is exactly what a good professional does.</p>
+<p>When any limit is reached, the correct behaviour is neither to fail silently nor to keep trying. It is to stop, deliver whatever exists marked as incomplete, and explain what did not close. The reason for stopping should come from a short list the system knows, such as finished, ceiling reached, blocked by policy, needs a person, or failed, not from free text. In the source-code study, one harness (Hermes) enumerates eleven turn-exit reasons and adds two stop guards that can veto a premature final answer (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">the study</a>). That is what a good professional does, written into the loop.</p>
 
 <p>Tools for this are in the <a href="harness-toolkit.html#en-delegar">compact guide</a>, in the Delegate section.</p>
+
+<h3>Safe to repeat</h3>
+
+<p>A retry ceiling assumes a retry is harmless, and that is not always so. HTTP names the property: a method is idempotent if several identical requests have the same effect as one (<a class="src" href="harness-sources.html#en-src-rfc9110" data-tip="IETF, RFC 9110: HTTP Semantics, section 9.2.2, Idempotent Methods.">RFC 9110</a>). Reading is. Approving an invoice, sending a message or charging a card is not, unless the request carries a key the receiving system uses to recognise a repeat. So the question belongs in the task contract before any ceiling: is this step safe to repeat? Where it is not, give the step an idempotency key or take it out of the model's retry loop. Microsoft's Agent Framework documentation draws the same line, advising workflows over skills when steps have side effects that should not be repeated on retry (<a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">the documentation</a>).</p>
 
 <h2 id="inspecionar">7. Inspect: the sensor that teaches</h2>
 
@@ -244,7 +258,15 @@ the check again before delivering.</code></pre>
 
 <p>The second contains everything needed for self-correction with no new human instruction: what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. <a class="src" href="harness-sources.html#en-src-bockeler-sensors" data-tip="Birgitta Bockeler, Thoughtworks. Maintainability sensors for coding agents, martinfowler.com, 2026.">Böckeler describes this</a> as a good form of context injection, and reports an experiment that proves the point: when this kind of guidance was missing from a specific rule, the system started routinely working around it, and went back to behaving properly as soon as the guidance was written.</p>
 
-<div class="rule-box"><span class="lbl">The practical rule</span><p>Write your sensor's error message as if you were explaining to a new colleague what to do next. If it does not work for that, it is not a sensor, it is an alarm.</p></div>
+<div class="rule-box"><span class="lbl">The practical rule</span><p>Write your sensor's error message as if you were explaining to a new colleague what to do next. If it does not work for that, it is not a sensor, it is an alarm.</p>
+
+<p>A useful error says four things: what failed and why, what was requested, whether anything changed, and whether it is safe to retry. Anthropic's guidance on writing tools asks for this kind of message, specific and actionable instead of an opaque code or a traceback (<a class="src" href="harness-sources.html#en-src-aizawa" data-tip="Ken Aizawa, Anthropic, Writing effective tools for agents, with agents, 2025.">Aizawa</a>). For example:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre></div>
 
 <h3>The threshold trick</h3>
 
@@ -299,7 +321,7 @@ the check again before delivering.</code></pre>
 
 <p><strong>During</strong> are the fast checks, consulted while the work is happening. They need to be cheap enough to run at every step. This is where real self-correction happens.</p>
 
-<p><strong>At the gate</strong> are the more expensive checks, which run once, at delivery, and confirm the result. It is also where human approval lives, when it exists.</p>
+<p><strong>At the gate</strong> are the more expensive checks, which run once, at delivery, and confirm the result. It is also where human approval lives, when it exists. Two practices from 2026 sources belong here. One is a stop guard that refuses a final answer when the turn changed code but produced no fresh evidence of verification, which the source-code study describes in Hermes (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, arXiv:2609.00006, July 2026.">the study</a>). The other is a feature list kept outside the conversation whose only editable field is whether each item passes, which Anthropic's guidance for long-running agents uses (<a class="src" href="harness-sources.html#en-src-anthropic-effective" data-tip="Anthropic, Effective harnesses for long-running agents, anthropic.com.">the guidance</a>).</p>
 
 <p><strong>On cadence</strong> are the sensors that look for <a class="g" href="harness-glossary.html#en-g-deriva" data-tip="Gradual degradation that does not happen in any single run, but across dozens of them.">drift</a>, that degradation that does not happen in any single run but across dozens of them. They run on a schedule, not per task.</p>
 
@@ -337,6 +359,8 @@ the check again before delivering.</code></pre>
 </table>
 
 <p>Notice what this table does: it turns the harness into something with its own indicator. It stops being a configuration done once and becomes an operated asset, with history and trend. It is the difference between owning a fire extinguisher and running a safety programme.</p>
+
+<p>One more reading of the table is easy to skip: whether the result is repeatable. An agent that gets a task right once and wrong the next time is not reliable. The τ-bench benchmark scores the final state of the world rather than the wording of the reply, and defines pass^k as the chance that all k trials of the same task succeed (<a class="src" href="harness-sources.html#en-src-taubench" data-tip="Yao et al., tau-bench, arXiv:2406.12045, June 2024.">τ-bench</a>). Run the sensor more than once before trusting a single green run.</p>
 
 <h2 id="exemplos">11. Three complete examples</h2>
 
@@ -467,8 +491,9 @@ Red flags:
 <thead><tr><th>Environment class</th><th>What it accepts</th><th>Viable tier</th></tr></thead>
 <tbody>
 <tr><td>Conversation with instructions</td><td>Guides, yes. Almost no sensors, because there is no execution and no state that survives</td><td>N0 to N1</td></tr>
-<tr><td>Agent with files and execution</td><td>Guides, hard verification, durable memory, code actually running</td><td>N1 to N2</td></tr>
-<tr><td>Programmed orchestration</td><td>Everything above, plus a ceiling, an authority policy outside the model, and a per-run record</td><td>N2 to N3</td></tr>
+<tr><td>Agent with files and execution</td><td>Guides, hard verification, durable memory, code actually running</td><td>N1 to N2, and N3 only if the agent cannot edit its own policy</td></tr>
+<tr><td>Managed agent runtime</td><td>Everything above, run by a platform that keeps the session, the sandbox and the credentials apart</td><td>N2 to N3</td></tr>
+<tr><td>Coded workflow</td><td>Everything above, plus a ceiling, an authority policy outside the model, and a per-run record. The right choice when a step cannot be safely repeated</td><td>N2 to N3</td></tr>
 <tr><td>Assisted software generation</td><td>Produces the artefact. The harness that matters is the one built around what was generated</td><td>Not applicable</td></tr>
 </tbody>
 </table>
@@ -477,13 +502,19 @@ Red flags:
 
 <p>The <strong>agent with files and execution</strong> is the first rung where the cycle closes on its own. A file system exists, so durable state exists. Execution exists, so hard verification exists. This is where a skill stops being a nice document and becomes a mechanism.</p>
 
-<p><strong>Programmed orchestration</strong> is where the things that are not text come in: the ceiling the system cannot ignore, the authority table it cannot rewrite, the record it cannot erase. None of the three is an instruction. They are constraints from the outside. That is why N3 requires this environment and cannot be reached simply by writing a better guide.</p>
+<p><strong>Coded workflow</strong> is where the things that are not text come in: the ceiling the system cannot ignore, the authority table it cannot rewrite, the record it cannot erase. None of the three is an instruction. They are constraints from the outside. That is why N3 requires an environment that enforces them and cannot be reached simply by writing a better guide.</p>
+
+<p>A <strong>managed agent runtime</strong> gets there by another route. The platform keeps the session log, the harness and the sandbox as separate parts, so that the part running model-written code never holds the credentials or the only copy of the history (<a class="src" href="harness-sources.html#en-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, anthropic.com, 2026.">Anthropic</a>, <a class="src" href="harness-sources.html#en-src-openai-sandbox" data-tip="OpenAI, Agents SDK sandbox documentation.">OpenAI</a>).</p>
+
+<p>Two changes in 2026 moved this table. The major platforms now sell the runtime as a product, so a team can adopt the separation instead of building it (<a class="src" href="harness-sources.html#en-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">Google Cloud</a>). And vendor guidance has begun to draw the line the table draws: Microsoft's documentation advises coded workflows over skills when a step cannot be safely repeated (<a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">Microsoft</a>).</p>
 
 <p><strong>Assisted software generation</strong> deserves its own paragraph, because it is the most common confusion. Someone who describes a system in natural language and gets a working application back has not built a harness, they have generated an artefact. And that artefact, if it goes to production, needs everything this article describes. The tool that generated it supplies none of that to what it generated.</p>
 
 <blockquote><p>Most of the frustration with agents comes from trying to operate at N2 inside an environment that only sustains N1. The system is not failing. It is being held to a control nobody gave it any way to build.</p></blockquote>
 
 <p>The practical consequence for whoever decides: the purchasing question is not which tool is best. It is what tier this task needs to reach, and what the simplest environment class is that sustains that tier. Names, repositories and step-by-step guides are in the <a href="harness-toolkit.html">compact guide</a>, which is dated and revised separately precisely because it ages faster.</p>
+
+<p>Before reaching for several agents, check that the task actually splits. Google Research evaluated 180 agent configurations: centralised coordination improved one parallelisable financial-reasoning task by about 81%, while on sequential planning tasks the multi-agent variants degraded performance by 39% to 70% (<a class="src" href="harness-sources.html#en-src-google-scaling" data-tip="Kim and Liu, Google Research, Towards a science of scaling agent systems, January 2026.">the post</a>). The first figure belongs to that task type, not to multi-agent systems in general.</p>
 
 <h2 id="reforcar">13. Reinforce: how a harness evolves</h2>
 
@@ -514,17 +545,23 @@ Red flags:
 
 <p>And the discipline that holds it all together: this runs on a cadence, not in a big push. Accumulated debt is a loan at a high interest rate, always better paid in small, continuous instalments than left to compound into a lost week. An annual cleanup push is the symptom that the cadence does not exist.</p>
 
+<h3>Reinforcing includes removing</h3>
+
+<p>A piece of the harness earns its place by what it adds, and a better model can make it dead weight. Anthropic's account of a long-running build found that context resets, added for one model that wrapped work up early as its context filled, were no longer needed once the next model largely removed that behaviour, and dropped them (<a class="src" href="harness-sources.html#en-src-anthropic-design" data-tip="Anthropic, Harness design for long-running application development, anthropic.com.">the account</a>). The same write-up shows the other side: the full harness took 6 hours and cost $200 against 20 minutes and $9 for the solo run, and the difference in output was immediately apparent. Cost is not the test. Whether the piece still changes the result is.</p>
+
 <h2 id="riscos-2">14. Risks at this layer</h2>
 
-<p>Four risks are specific to this layer and did not appear in part 1.</p>
+<p>Five risks are specific to this layer and did not appear in part 1.</p>
 
 <p><strong>Signal overload.</strong> Turning on many sensors at once floods the system with findings, and it enters a spiral of unnecessary corrections, burning time and money on problems that were not problems. Turn on one at a time and watch.</p>
 
 <p><strong>Sensors in conflict.</strong> Two reasonable rules can contradict each other, and the system will pick one without announcing there was a choice to make. When this keeps happening, someone needs to decide the priority and write it down.</p>
 
-<p><strong>A green dashboard as proof.</strong> The most dangerous of the four, because it is comfortable. A set of weak sensors produces exactly the same reassuring screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why.</p>
+<p><strong>A green dashboard as proof.</strong> The most dangerous of the five, because it is comfortable. A set of weak sensors produces exactly the same reassuring screen as a set of good ones. The question that tells the two apart is not is everything green, it is when was the last time this turned red, and why.</p>
 
 <p><strong>A third party's guide.</strong> Installing a collection of someone else's skills is running someone else's instructions inside your own environment. The recommendation from <a class="src" href="harness-sources.html#en-src-anthropic-skills" data-tip="Anthropic. Equipping agents for the real world with Agent Skills, anthropic.com, 2025.">whoever publishes the format</a> is explicit: install only from a trusted source, and when the source is less known, audit it before using it, paying particular attention to anything telling the system to reach out to an external network. This is not a reason not to use it. It is a reason to read it first, and the <a href="harness-toolkit.html#en-seguranca">compact guide</a> carries the three questions that reading needs to answer.</p>
+
+<p><strong>A skill that hurts.</strong> A guide is not safe merely because it is written down. Skills have been measured making results worse, and nobody notices when the dashboard only counts finished tasks. Test each skill with and without it, and remove the ones that do not pay (<a class="src" href="harness-sources.html#en-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, August 2026.">the study</a>).</p>
 
 <blockquote><p>An instrumented agent is not a safe agent. Instrumentation tells you whether the work turned out well. It does not tell you whether the work should have been done at all.</p></blockquote>
 
