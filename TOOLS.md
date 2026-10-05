@@ -4,7 +4,7 @@
 
 A record of what this project has actually installed and uses, not just what it cites. A project about harness engineering that did not instrument its own creation would just be a nice-sounding argument. This document is the instrumentation.
 
-Updated 20 September 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
+Updated 5 October 2026. It grows with every new skill that enters use, it is never rewritten wholesale.
 
 A machine-readable form of this same installed-skill list, generated from this file and `sources/inventory.md`, lives at `toolkit.json`, see `AGENTS.md`.
 
@@ -12,17 +12,17 @@ A machine-readable form of this same installed-skill list, generated from this f
 
 ## Third-party collections installed
 
-Nine collections, thirty-six skills, all MIT or Apache-2.0. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. All nine are cited as entries in the [compact guide](harness-toolkit.html): the first five from 30 August 2026, the four most recent since the round of 10 to 11 September 2026. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 38 active skills in total.
+Nine collections, thirty-six skills, all MIT. One of them, the Karpathy-inspired guide, declares MIT only in its README and has no LICENSE file; the licence of each collection as read from its origin is in the provenance table below. Installed locally in `.claude/skills/`, outside version control (see `.gitignore`): they run in this environment, but the third-party code does not enter this repository's public history. All nine are cited as entries in the [compact guide](harness-toolkit.html): the first five from 30 August 2026, the four most recent since the round of 10 to 11 September 2026. Add `intake-briefing` and `milestone-loc-tokens-ai-ledger`, the project's own skills covered in the next section, and the environment has 38 active skills in total.
 
 | Collection | Origin | Skills installed | Why it made the cut |
 |---|---|---|---|
-| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, the whole collection | It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard |
+| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, of 15 at the origin (the whole collection when installed) | It is the non-negotiable-rule-plus-red-flags pattern that `STANDARDS.md` already adopts as this project's skill-writing standard |
 | mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, curated selection | Writing, clarification and session-handoff skills. The collection's software-engineering set (TDD, code architecture, merge conflicts, TypeScript) was left out as not applicable to a content project, see the full list below |
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, the whole collection | The C4 model and architecture decision records, relevant to the Part 3 research round |
 | Karpathy-inspired guide | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | A behavioural guide against common LLM mistakes. Not actually by Karpathy, see the full caveat in `sources/inventory.md` |
 | ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | The real source of the five-rule cleanup matrix cited in Part 2's Reinforce section |
 | humanizer | [github.com/blader/humanizer](https://github.com/blader/humanizer) | 1, the whole collection | Strips AI-sounding prose patterns from an English draft before it branches into Portuguese and Spanish. None of the other eight collections on this page reaches that level of detail, phrase and paragraph shape, not vocabulary. Added 10 September 2026 from a reader-submitted list of candidate skills |
-| Agent Skills for Context Engineering | [github.com/muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 3, out of 17 | A reader flagged agent-harness architecture as a real gap in this page. `harness-engineering`, `multi-agent-patterns` and `tool-design` close it directly; the other 14 skills (context optimisation, memory systems, evaluation and more) address adjacent problems this project does not have, see the full list below |
+| Agent Skills for Context Engineering | [github.com/muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 3, out of 18 | A reader flagged agent-harness architecture as a real gap in this page. `harness-engineering`, `multi-agent-patterns` and `tool-design` close it directly; the other 15 skills (context optimisation, memory systems, evaluation and more) address adjacent problems this project does not have, see the full list below |
 | ai-act-skill | [github.com/morellid/ai-act-skill](https://github.com/morellid/ai-act-skill) | 1, the whole collection | A versioned, task-by-task checklist for EU AI Act obligations, already current with the Digital Omnibus (Regulation (EU) 2026/1744). Part 3 and 4 already cite Articles 12, 14 and 26 in prose; this is the first tool in this project's own toolkit that turns that citation into a runnable check |
 | threat-modeling | [github.com/rjmurillo/ai-agents](https://github.com/rjmurillo/ai-agents) | 1, out of a larger personal collection | STRIDE-based threat modelling scoped to agent architecture and security review, not per-change diff review. Scoped install: only the one skill folder came in, not the rest of the repository |
 
@@ -42,12 +42,26 @@ Nine collections, thirty-six skills, all MIT or Apache-2.0. Installed locally in
 
 **humanizer:** humanizer.
 
-**Agent Skills for Context Engineering:** harness-engineering, multi-agent-patterns, tool-design. **Scoped install, stated honestly:** the upstream collection has 17 skills; we copied only these three folders (`SKILL.md` plus their own `references/` and `scripts/`), because the other 14 (context-fundamentals, memory-systems, evaluation, self-improvement-loops and more) solve problems this project does not have. `multi-agent-patterns` and `tool-design` each carry a small local Python helper (`coordination.py`, `description_generator.py`); both are standard-library only, audited below.
+**Agent Skills for Context Engineering:** harness-engineering, multi-agent-patterns, tool-design. **Scoped install, stated honestly:** the upstream collection has 18 skills under `skills/` (17 when this installation was made); we copied only these three folders (`SKILL.md` plus their own `references/` and `scripts/`), because the other 15 (context-fundamentals, memory-systems, evaluation, self-improvement-loops and more) solve problems this project does not have. `multi-agent-patterns` and `tool-design` each carry a small local Python helper (`coordination.py`, `description_generator.py`); both are standard-library only, audited below.
 
 **ai-act-skill:** ai-act-skill. Full install: `SKILL.md`, the six task files under `tasks/`, and the reference extracts and worked examples that back them. The upstream repository's own `install.sh`, `uninstall.sh`, release scripts and cross-tool adapters were left out, they serve the author's packaging process, not this skill's function inside this environment.
 
 **threat-modeling:** threat-modeling. **Scoped install, stated honestly:** this skill lives inside `rjmurillo/ai-agents`, a much larger personal collection; only the `threat-modeling` folder (`SKILL.md`, `references/`, `scripts/`, `templates/`) was copied. The three bundled scripts (`generate_threat_matrix.py`, `generate_mitigation_roadmap.py`, `validate_threat_model.py`) are standard-library only, audited below.
 
+
+**Provenance, read from each origin on 5 October 2026.** None of the nine origins is archived. The installed copies never recorded the commit they came from, so each skill's `SKILL.md` was compared with the origin's default branch that day (`build/check_upstream.py`, result in `sources/upstream.json`). "Differ" means the origin changed after the skill was installed here; how far behind the copy is cannot be known. Of the 38 installed skills, 26 are identical and 12 differ.
+
+| Collection | Licence at the origin | Last commit at the origin | Installed SKILL.md against the origin's |
+|---|---|---|---|
+| superpowers | MIT | 2026-09-25 | 6 identical, 8 differ |
+| mattpocock/skills | MIT | 2026-10-05 | 10 identical, 2 differ |
+| c4-skills | MIT | 2026-04-26 | 2 identical |
+| Karpathy-inspired guide | MIT declared in the README only, **no LICENSE file** | 2026-04-20 | 1 identical |
+| ai-slop-cleaner | MIT | 2026-10-03 | 1 identical |
+| humanizer | MIT | 2026-09-28 | 0 identical, 1 differ |
+| Agent Skills for Context Engineering | MIT | 2026-10-01 | 3 identical |
+| ai-act-skill | MIT | 2026-08-09 | 1 identical |
+| threat-modeling | MIT | 2026-10-04 | 0 identical, 1 differ |
 ---
 
 ## The project's own skills
@@ -75,6 +89,8 @@ A scan for network or execution patterns (`curl`, `wget`, `fetch(`, `eval(`, `ch
 **Second audit round, 10 September 2026.** A reader sent a list of eight candidate skill repositories and asked for a comparison against this page, plus a search for anything this project was missing on software architecture, data privacy and information security. Five background agents read each candidate directly (raw file content, not marketing README) and cross-checked it against what was already installed here. Two of the eight turned out to already be covered: the karpathy-inspired guide was already this exact source, and a UI-design skill in the list matched something already active globally on the operator's machine but out of scope for this project. Four were read and set aside as citation-only or a poor fit, including one, Understand-Anything, that installs itself with a `curl | bash` one-liner and ships a hook whose own instructions tell the agent not to ask the user for confirmation before acting, exactly the pattern this checklist exists to catch. The remaining four, humanizer, three skills out of Agent Skills for Context Engineering, ai-act-skill and threat-modeling, passed the same scan run on the first round (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`, plus `requests`, `urllib`, `subprocess` and `os.system` for the three sources that ship Python). The scan found one match: `sandbox.exec()` inside a case-study code sample in `tool-design`'s `references/architectural_reduction.md`, quoting a third party's own sandboxed benchmark, not an instruction this skill executes. No source in this round required an undeclared network call to function.
 
 **Citation in the compact guide, done in the same round.** The first five collections were installed and cited in `harness-toolkit.html` in the same sitting. This round separated the two steps on purpose, so the operator could decide on installation first, and then wrote the six-field entries, in three languages, with the `build/` mirror synced: `humanizer` in Reinforce, the context-engineering bundle in Equip, `threat-modeling` in Secure and `ai-act-skill` in Govern. This paragraph kept saying the citation was pending for nine days after it was done, since it was committed in the same commit as the entries themselves; it was corrected on 20 September 2026, by checking every published document against the repository.
+
+**Third audit round, 5 October 2026.** `build/check_upstream.py` scans the installed copies for signals and found scripts in seven skills. Two of them are flagged for network-related calls and need reading, not trust: superpowers' `brainstorming` runs a small local HTTP server for its visual companion (`scripts/server.cjs`), and `milestone-loc-tokens-ai-ledger`'s `engine/scrub.py` calls `socket.gethostname()` and nothing else on the network. No installed skill registers hooks or declares dependencies through a manifest. The scan finds signals; it does not prove their absence.
 
 ---
 

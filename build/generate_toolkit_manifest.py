@@ -39,8 +39,30 @@ INVENTORY_MD = os.path.join(ROOT, 'sources', 'inventory.md')
 PLAYBOOK_README = os.path.join(ROOT, 'playbook', 'README.md')
 PLAYBOOK_BODY_EN = os.path.join(ROOT, 'build', 'body_playbook_en.html')
 OUT_PATH = os.path.join(ROOT, 'toolkit.json')
+UPSTREAM_PATH = os.path.join(ROOT, 'sources', 'upstream.json')
 
 MEDIR_STEPS = ['map', 'equip', 'delegate', 'inspect', 'reinforce', 'secure', 'govern']
+
+# Convencao .agents/skills/, lida na documentacao de cada ferramenta em 5 de
+# outubro de 2026 (build/check_upstream.py nao cobre isto: sao paginas de
+# documentacao, nao repositorios). "evidence" diz de onde saiu cada linha.
+AGENTS_SKILLS_CONVENTION = {
+    'project_path': '.agents/skills/<skill-id>/',
+    'user_path': '~/.agents/skills/<skill-id>/',
+    'verified_at': '2026-10-05',
+    'read_by': [
+        {'tool': 'Cursor', 'evidence': 'https://cursor.com/docs/skills (project .agents/skills/ and user ~/.agents/skills/)'},
+        {'tool': 'Codex CLI', 'evidence': 'https://developers.openai.com/codex/skills (scans .agents/skills from the working directory up to the repository root)'},
+        {'tool': 'Gemini CLI', 'evidence': 'https://geminicli.com/docs/cli/skills/ (.agents/skills/ alias, ahead of .gemini/skills/ in the same tier)'},
+        {'tool': 'OpenCode', 'evidence': 'https://opencode.ai/docs/skills/ (.agents/skills/ and ~/.agents/skills/; it also reads .claude/skills/ and ~/.claude/skills/)'},
+        {'tool': 'Mistral Vibe, OpenClaw', 'evidence': 'arXiv:2609.00006 section 12.5 and Table 10 (source-code study, July 2026)'},
+    ],
+    'not_reverified': [
+        {'tool': 'Google Antigravity', 'reason': 'its documentation page opened on 2026-10-05 but exposed no text this check could read; the path was last confirmed on 2026-08-31'},
+    ],
+    'note': ('A convention several tools converge on, not a standard any of them guarantees. '
+             'Claude Code reads .claude/skills/ and ~/.claude/skills/ instead.'),
+}
 
 INSTALL_NOTE = (
     "Clone the origin repository, locate this skill's own folder inside it "
@@ -49,6 +71,82 @@ INSTALL_NOTE = (
     "your tool. Check AGENTS.md at this project's root before installing: "
     "confirm the origin is still current first."
 )
+
+
+def load_upstream():
+    """sources/upstream.json, escrito por build/check_upstream.py. Opcional:
+    sem ele o manifesto sai como antes, sem os campos de proveniencia."""
+    if not os.path.exists(UPSTREAM_PATH):
+        return None
+    return json.loads(read(UPSTREAM_PATH))
+
+
+def repo_record(upstream, origin_url):
+    """Acha o registro do repositorio de uma origem, por nome (owner/repo)."""
+    if not upstream:
+        return None
+    slug = re.sub(r'^https?://github\.com/', '', origin_url).strip('/').removesuffix('.git').lower()
+    for rid, rec in upstream['repos'].items():
+        if rec.get('repo', '').lower() == slug:
+            return rec
+    return None
+
+
+def provenance(upstream, origin_url, skill_ids, own):
+    rec = repo_record(upstream, origin_url)
+    if not rec or 'error' in rec:
+        return {}
+    spdx = rec.get('licence_spdx')
+    has_file = bool(rec.get('licence_file'))
+    declared = rec.get('licence_declared_in_readme')
+    if has_file and spdx and spdx != 'NOASSERTION':
+        licence, note = spdx, None
+    elif has_file:
+        licence, note = 'see LICENSE file (SPDX id not detected)', None
+    elif declared:
+        licence = declared
+        note = 'declared in the README, no LICENSE file in the repository: a weaker grant than a licence file'
+    else:
+        licence = None
+        note = 'no licence file and none declared in the README: by default all rights stay with the author'
+    counts = {}
+    audit = {'contains_scripts': False, 'network_calls_in_scripts': False, 'registers_hooks': False,
+             'declares_dependencies': False, 'script_files': [], 'network_flagged_files': []}
+    for sk in skill_ids:
+        res = (upstream.get('skills') or {}).get(sk)
+        if not res:
+            continue
+        counts[res['status']] = counts.get(res['status'], 0) + 1
+        a = res.get('audit') or {}
+        audit['contains_scripts'] |= a.get('contains_scripts', False)
+        audit['network_calls_in_scripts'] |= bool(a.get('network_calls_in_scripts'))
+        audit['registers_hooks'] |= a.get('registers_hooks', False)
+        audit['declares_dependencies'] |= a.get('declares_dependencies', False)
+        audit['script_files'] += ['%s: %s' % (sk, f) for f in a.get('script_files', [])]
+        audit['network_flagged_files'] += ['%s: %s' % (sk, f) for f in a.get('network_calls_in_scripts', [])]
+    owner = rec['repo'].split('/')[0].lower()
+    out = {
+        'verified_at': upstream['checked_at'][:10],
+        'upstream': {
+            'repo': rec['repo'], 'archived': rec['archived'], 'head_sha': rec['head_sha'],
+            'head_date': (rec.get('head_date') or '')[:10], 'stars': rec.get('stars'),
+        },
+        'licence': licence,
+        'licence_file': has_file,
+        'trust_tier': 'own' if owner == 'tecosodreaboutdigital' else 'community',
+        'pinned_ref': None,
+        'pinned_ref_note': ('The installed copies never recorded the commit they came from. Instead, each '
+                            "skill's SKILL.md was compared with the origin's default branch on verified_at: "
+                            'see installed_vs_upstream.'),
+        'installed_vs_upstream': counts,
+        'audit': dict(audit, method=('scan of the installed copy by build/check_upstream.py on verified_at: '
+                                     'it finds signals (scripts, network calls inside scripts, hook registration, '
+                                     'dependency manifests), it does not prove their absence. A flagged file '
+                                     'still needs a person to read it.')),
+    }
+    if note:
+        out['licence_note'] = note
+    return out
 
 
 def read(path):
@@ -178,12 +276,15 @@ OWN_SKILLS = [
 ]
 
 
-def parse_own_skills(tools_text):
+def parse_own_skills(tools_text, upstream=None):
     section = extract_section(tools_text, "## The project's own skills", '## Audit before installing')
     entries = []
     for spec in OWN_SKILLS:
         m = re.search(spec['url_pattern'], section)
         origin = m.group(0).rstrip('.,)') if m else spec['default_origin']
+        prov = provenance(upstream, origin, [spec['id']], own=True)
+        if prov:
+            prov.pop('licence', None)  # as skills proprias sao MIT, ja declarado abaixo
         entries.append({
             'id': spec['id'],
             'kind': 'own_skill',
@@ -196,13 +297,14 @@ def parse_own_skills(tools_text):
             'skills': [spec['id']],
             'install': {
                 'personal': 'git clone %s.git ~/.claude/skills/%s' % (origin, spec['id']),
-                'cursor_codex_antigravity': 'git clone %s.git .agents/skills/%s' % (origin, spec['id']),
+                'agents_skills_convention': 'git clone %s.git .agents/skills/%s' % (origin, spec['id']),
                 'claude_code_plugin': (
                     '/plugin marketplace add tecosodreaboutdigital/%s\n'
                     '/plugin install %s@%s' % (spec['plugin_slug'], spec['plugin_slug'], spec['plugin_slug'])
                 ),
                 'verified': spec['verified'],
             },
+            **prov,
         })
     return entries
 
@@ -252,7 +354,7 @@ def parse_playbook_templates(readme_text, body_en_text):
     return entries
 
 
-def build_entries(tools_text, inventory_text, playbook_readme_text=None, playbook_body_text=None):
+def build_entries(tools_text, inventory_text, playbook_readme_text=None, playbook_body_text=None, upstream=None):
     collections = parse_collections_table(tools_text)
     names = [c['name'] for c in collections]
     skills_by_name = parse_skill_names_by_collection(tools_text, names)
@@ -262,6 +364,9 @@ def build_entries(tools_text, inventory_text, playbook_readme_text=None, playboo
     for c in collections:
         licence = extract_licence(c['role']) or 'MIT or Apache-2.0 (see TOOLS.md overview)'
         skill_ids = skills_by_name.get(c['name']) or [slugify(c['name'])]
+        prov = provenance(upstream, c['origin'], skill_ids, own=False)
+        if prov:
+            licence = prov.pop('licence') or 'none'
         entries.append({
             'id': slugify(c['name']),
             'kind': 'collection',
@@ -277,11 +382,12 @@ def build_entries(tools_text, inventory_text, playbook_readme_text=None, playboo
                 'origin_clone': 'git clone %s' % c['origin'],
                 'claude_code_personal': '~/.claude/skills/<skill-id>/',
                 'claude_code_project': '.claude/skills/<skill-id>/',
-                'cursor_codex_antigravity': '.agents/skills/<skill-id>/',
+                'agents_skills_convention': AGENTS_SKILLS_CONVENTION['project_path'],
                 'note': INSTALL_NOTE,
             },
+            **prov,
         })
-    entries.extend(parse_own_skills(tools_text))
+    entries.extend(parse_own_skills(tools_text, upstream))
     if playbook_readme_text is not None and playbook_body_text is not None:
         entries.extend(parse_playbook_templates(playbook_readme_text, playbook_body_text))
     return entries
@@ -291,7 +397,7 @@ def slugify(name):
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
 
-def source_hash(tools_text, inventory_text, playbook_readme_text=None):
+def source_hash(tools_text, inventory_text, playbook_readme_text=None, upstream_text=None):
     collections_block = extract_section(tools_text, '## Third-party collections installed', '## Audit before installing')
     tools_table_block = extract_section(inventory_text, '## Tools and skills', '## Part 3 and 4 research')
     digest = hashlib.sha256()
@@ -299,6 +405,8 @@ def source_hash(tools_text, inventory_text, playbook_readme_text=None):
     digest.update(tools_table_block.encode('utf-8'))
     if playbook_readme_text is not None:
         digest.update(playbook_readme_text.encode('utf-8'))
+    if upstream_text is not None:
+        digest.update(upstream_text.encode('utf-8'))
     return digest.hexdigest()
 
 
@@ -307,10 +415,13 @@ def build_manifest():
     inventory_text = read(INVENTORY_MD)
     playbook_readme_text = read(PLAYBOOK_README) if os.path.exists(PLAYBOOK_README) else None
     playbook_body_text = read(PLAYBOOK_BODY_EN) if os.path.exists(PLAYBOOK_BODY_EN) else None
+    upstream = load_upstream()
+    upstream_text = read(UPSTREAM_PATH) if upstream else None
     return {
         'generated_by': 'build/generate_toolkit_manifest.py',
         'generated_at': date.today().isoformat(),
-        'derived_from': ['TOOLS.md', 'sources/inventory.md', 'playbook/README.md', 'README.md'],
+        'derived_from': ['TOOLS.md', 'sources/inventory.md', 'sources/upstream.json', 'playbook/README.md', 'README.md'],
+        'agents_skills_convention': AGENTS_SKILLS_CONVENTION,
         'scope_note': (
             "Agent Skills actually installed in this project's .claude/skills/, plus this "
             'project\'s own operational artefacts (kind: "own_skill" for intake-briefing and '
@@ -324,11 +435,13 @@ def build_manifest():
         'verification_note': (
             'This file is a snapshot, generated on the date above. Before installing anything '
             "listed here, follow AGENTS.md's protocol: fetch the origin URL and check "
-            'whether it is still current. Do not present this file as live state.'
+            'whether it is still current. Do not present this file as live state. '
+            'Per-entry verified_at, upstream and installed_vs_upstream come from '
+            'sources/upstream.json, which build/check_upstream.py rewrites from the GitHub API.'
         ),
         'medir_steps': MEDIR_STEPS,
-        'source_hash': source_hash(tools_text, inventory_text, playbook_readme_text),
-        'entries': build_entries(tools_text, inventory_text, playbook_readme_text, playbook_body_text),
+        'source_hash': source_hash(tools_text, inventory_text, playbook_readme_text, upstream_text),
+        'entries': build_entries(tools_text, inventory_text, playbook_readme_text, playbook_body_text, upstream),
     }
 
 
@@ -341,7 +454,7 @@ def main():
             sys.exit(1)
         committed = json.loads(read(OUT_PATH))
         if committed.get('source_hash') != manifest['source_hash']:
-            print('toolkit.json is stale: TOOLS.md or sources/inventory.md changed since it was '
+            print('toolkit.json is stale: TOOLS.md, sources/inventory.md, sources/upstream.json or the playbook changed since it was '
                   'last generated. Run python build/generate_toolkit_manifest.py to refresh it.')
             sys.exit(1)
         print('toolkit.json: up to date.')

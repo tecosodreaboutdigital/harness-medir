@@ -1,0 +1,1053 @@
+{
+ "checked_at": "2026-10-05T12:21Z",
+ "method": "GitHub API through gh, read live on checked_at",
+ "repos": {
+  "superpowers": {
+   "repo": "obra/superpowers",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT License - see LICENSE file for details",
+   "head_sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d",
+   "head_date": "2026-09-25T18:06:27Z",
+   "pushed_at": "2026-09-27T02:37:47Z",
+   "stars": 295448,
+   "html_url": "https://github.com/obra/superpowers"
+  },
+  "mattpocock-skills": {
+   "repo": "mattpocock/skills",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
+   "head_date": "2026-10-05T11:17:18Z",
+   "pushed_at": "2026-10-05T12:04:32Z",
+   "stars": 276639,
+   "html_url": "https://github.com/mattpocock/skills"
+  },
+  "c4-skills": {
+   "repo": "muthub-ai/c4-skills",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "670fdcd9a8bc6bc9583a56390877ec742fee50ac",
+   "head_date": "2026-04-26T06:44:10Z",
+   "pushed_at": "2026-04-26T06:44:10Z",
+   "stars": 4,
+   "html_url": "https://github.com/muthub-ai/c4-skills"
+  },
+  "karpathy-inspired-guide": {
+   "repo": "multica-ai/andrej-karpathy-skills",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": null,
+   "licence_file": null,
+   "licence_declared_in_readme": "MIT",
+   "head_sha": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+   "head_date": "2026-04-20T10:05:04Z",
+   "pushed_at": "2026-04-20T10:05:04Z",
+   "stars": 216963,
+   "html_url": "https://github.com/multica-ai/andrej-karpathy-skills"
+  },
+  "ai-slop-cleaner": {
+   "repo": "Yeachan-Heo/oh-my-claudecode",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT",
+   "head_sha": "13543f9d6fc1a13a15b68fe5c97baeb3268569e2",
+   "head_date": "2026-10-03T06:21:40Z",
+   "pushed_at": "2026-10-05T11:04:27Z",
+   "stars": 39584,
+   "html_url": "https://github.com/Yeachan-Heo/oh-my-claudecode"
+  },
+  "humanizer": {
+   "repo": "blader/humanizer",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT",
+   "head_sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+   "head_date": "2026-09-28T05:54:38Z",
+   "pushed_at": "2026-09-28T05:55:12Z",
+   "stars": 54077,
+   "html_url": "https://github.com/blader/humanizer"
+  },
+  "agent-skills-for-context-engineering": {
+   "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT License - see LICENSE file for details.",
+   "head_sha": "58b55a8921758d13453b440704fb1b5b208c0b0e",
+   "head_date": "2026-10-01T05:58:33Z",
+   "pushed_at": "2026-10-01T05:58:33Z",
+   "stars": 18075,
+   "html_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+  },
+  "ai-act-skill": {
+   "repo": "morellid/ai-act-skill",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT — see [LICENSE](LICENSE).",
+   "head_sha": "216506661fe6bf11a02e0e12396c98b65c736f69",
+   "head_date": "2026-08-09T09:26:07Z",
+   "pushed_at": "2026-08-09T09:26:24Z",
+   "stars": 4,
+   "html_url": "https://github.com/morellid/ai-act-skill"
+  },
+  "threat-modeling": {
+   "repo": "rjmurillo/ai-agents",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT",
+   "head_sha": "f371379fc94e84f586875d509c2c7e899d5e74cf",
+   "head_date": "2026-10-04T17:35:33Z",
+   "pushed_at": "2026-10-05T01:45:28Z",
+   "stars": 47,
+   "html_url": "https://github.com/rjmurillo/ai-agents"
+  },
+  "intake-briefing": {
+   "repo": "tecosodreaboutdigital/intake-briefing",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "239d81ad7a39fecdc19f4fd7da5292f873dff1ee",
+   "head_date": "2026-08-31T12:32:22Z",
+   "pushed_at": "2026-08-31T12:32:25Z",
+   "stars": 1,
+   "html_url": "https://github.com/tecosodreaboutdigital/intake-briefing"
+  },
+  "milestone-loc-tokens-ai-ledger": {
+   "repo": "tecosodreaboutdigital/milestone-loc-tokens-ai-ledger",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "2b6b07a48c85cf508d7164f1d779463c10d2f7a3",
+   "head_date": "2026-09-20T14:06:18Z",
+   "pushed_at": "2026-09-20T14:06:18Z",
+   "stars": 3,
+   "html_url": "https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger"
+  },
+  "holdfast": {
+   "repo": "AndreAlmeidaDC/holdfast",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "master",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT.",
+   "head_sha": "6e4f09dbad22bca93918aeb6efcbb0c0aaddd494",
+   "head_date": "2026-08-21T19:27:44Z",
+   "pushed_at": "2026-08-21T19:27:46Z",
+   "stars": 3,
+   "html_url": "https://github.com/AndreAlmeidaDC/holdfast"
+  },
+  "planning-with-files": {
+   "repo": "OthmanAdi/planning-with-files",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "master",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "MIT License — feel free to use, modify, and distribute.",
+   "head_sha": "dab9d16fbd9314448b319d112e99f497d7638d89",
+   "head_date": "2026-10-01T19:39:28Z",
+   "pushed_at": "2026-10-01T19:57:49Z",
+   "stars": 27287,
+   "html_url": "https://github.com/OthmanAdi/planning-with-files"
+  },
+  "sensors-cli": {
+   "repo": "birgitta410/sensors-cli",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": null,
+   "licence_file": null,
+   "licence_declared_in_readme": null,
+   "head_sha": "204fc29c33539d6e57132440acf4954aeeac1568",
+   "head_date": "2026-07-13T14:37:27Z",
+   "pushed_at": "2026-07-16T17:21:12Z",
+   "stars": 25,
+   "html_url": "https://github.com/birgitta410/sensors-cli"
+  },
+  "autoresearch": {
+   "repo": "karpathy/autoresearch",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "master",
+   "licence_spdx": null,
+   "licence_file": null,
+   "licence_declared_in_readme": "MIT",
+   "head_sha": "228791fb499afffb54b46200aca536f79142f117",
+   "head_date": "2026-03-26T00:07:37Z",
+   "pushed_at": "2026-03-26T00:07:37Z",
+   "stars": 97322,
+   "html_url": "https://github.com/karpathy/autoresearch"
+  },
+  "deepseek-harness": {
+   "repo": "deepseek-ai/deepseek-harness",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "master",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "[MIT](LICENSE)",
+   "head_sha": "5badb15009ae1756c3afe0ae0cef1faafc290ccc",
+   "head_date": "2026-10-03T03:48:13Z",
+   "pushed_at": "2026-10-03T06:02:48Z",
+   "stars": 243744,
+   "html_url": "https://github.com/deepseek-ai/deepseek-harness"
+  },
+  "langgraph": {
+   "repo": "langchain-ai/langgraph",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "9a0394d88b2211f299dcd69df92db3480c69ee61",
+   "head_date": "2026-10-03T12:55:59Z",
+   "pushed_at": "2026-10-05T08:53:37Z",
+   "stars": 42730,
+   "html_url": "https://github.com/langchain-ai/langgraph"
+  },
+  "agent-governance-toolkit": {
+   "repo": "microsoft/agent-governance-toolkit",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "This project is licensed under the [MIT License](LICENSE).",
+   "head_sha": "5233029078c6d90ed2d9e4bc6875e87e504291dd",
+   "head_date": "2026-10-05T08:58:52Z",
+   "pushed_at": "2026-10-05T08:58:52Z",
+   "stars": 6391,
+   "html_url": "https://github.com/microsoft/agent-governance-toolkit"
+  },
+  "presidio": {
+   "repo": "data-privacy-stack/presidio",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "d8847904621733f4eaad4f9bd977b96a11325c90",
+   "head_date": "2026-10-04T11:07:17Z",
+   "pushed_at": "2026-10-04T11:07:18Z",
+   "stars": 11165,
+   "html_url": "https://github.com/data-privacy-stack/presidio"
+  },
+  "spec-kit": {
+   "repo": "github/spec-kit",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "ae5ade7234be5cb1d975f736c4e06dd46d1326d6",
+   "head_date": "2026-10-03T16:48:19Z",
+   "pushed_at": "2026-10-03T16:48:20Z",
+   "stars": 140183,
+   "html_url": "https://github.com/github/spec-kit"
+  },
+  "dependency-cruiser": {
+   "repo": "sverweij/dependency-cruiser",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "MIT",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "[MIT](LICENSE)",
+   "head_sha": "a210586ea2a3c0501153e4a39925cee325fe0b3f",
+   "head_date": "2026-10-01T20:07:36Z",
+   "pushed_at": "2026-10-01T20:08:37Z",
+   "stars": 7249,
+   "html_url": "https://github.com/sverweij/dependency-cruiser"
+  },
+  "semgrep": {
+   "repo": "semgrep/semgrep",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "develop",
+   "licence_spdx": "LGPL-2.1",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "bcaca11e919e6d4dc94992865f77adcfb1216131",
+   "head_date": "2026-10-02T21:34:41Z",
+   "pushed_at": "2026-10-05T00:02:23Z",
+   "stars": 16878,
+   "html_url": "https://github.com/semgrep/semgrep"
+  },
+  "rekor": {
+   "repo": "sigstore/rekor",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "Apache-2.0",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "042eebef2115137aa5c5ffe7ecc92983f931c684",
+   "head_date": "2026-10-05T11:59:46Z",
+   "pushed_at": "2026-10-05T11:59:48Z",
+   "stars": 1215,
+   "html_url": "https://github.com/sigstore/rekor"
+  },
+  "spire": {
+   "repo": "spiffe/spire",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "Apache-2.0",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "eb3c6af4a51b962e88c0cb367f7e894d625ed4e2",
+   "head_date": "2026-10-02T07:19:17Z",
+   "pushed_at": "2026-10-02T07:44:32Z",
+   "stars": 2570,
+   "html_url": "https://github.com/spiffe/spire"
+  },
+  "langfuse": {
+   "repo": "langfuse/langfuse",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "NOASSERTION",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": null,
+   "head_sha": "5fdf5a7088dc25e2b713b22609ac272e4df05b9d",
+   "head_date": "2026-10-05T11:43:22Z",
+   "pushed_at": "2026-10-05T12:07:15Z",
+   "stars": 35395,
+   "html_url": "https://github.com/langfuse/langfuse"
+  },
+  "awesome-harness-engineering": {
+   "repo": "ai-boost/awesome-harness-engineering",
+   "archived": false,
+   "disabled": false,
+   "default_branch": "main",
+   "licence_spdx": "NOASSERTION",
+   "licence_file": "LICENSE",
+   "licence_declared_in_readme": "[CC0](LICENSE) — public domain dedication.",
+   "head_sha": "cc06822327ad85d632a3e0cc76b71241cacab993",
+   "head_date": "2026-10-05T09:12:47Z",
+   "pushed_at": "2026-10-05T09:12:49Z",
+   "stars": 4709,
+   "html_url": "https://github.com/ai-boost/awesome-harness-engineering"
+  }
+ },
+ "skills": {
+  "brainstorming": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/brainstorming/SKILL.md",
+   "local_sha256": "7de1fd7444541192",
+   "upstream_sha256": "851ec4c6fcf248e1",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "scripts/helper.js",
+     "scripts/server.cjs",
+     "scripts/start-server.sh",
+     "scripts/stop-server.sh"
+    ],
+    "network_calls_in_scripts": [
+     "scripts/server.cjs"
+    ],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "dispatching-parallel-agents": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/dispatching-parallel-agents/SKILL.md",
+   "local_sha256": "eed8724a63a6c70a",
+   "upstream_sha256": "eed8724a63a6c70a",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "executing-plans": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/executing-plans/SKILL.md",
+   "local_sha256": "7e45473850d4f22e",
+   "upstream_sha256": "723127f11e538cf8",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "finishing-a-development-branch": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/finishing-a-development-branch/SKILL.md",
+   "local_sha256": "5e9c5f4b069243d8",
+   "upstream_sha256": "5e9c5f4b069243d8",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "receiving-code-review": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/receiving-code-review/SKILL.md",
+   "local_sha256": "4fb08b86f10c892e",
+   "upstream_sha256": "4fb08b86f10c892e",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "requesting-code-review": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/requesting-code-review/SKILL.md",
+   "local_sha256": "be6b780e68a5e370",
+   "upstream_sha256": "2c49062af95e7714",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "subagent-driven-development": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/subagent-driven-development/SKILL.md",
+   "local_sha256": "d7533bb06bb5ed42",
+   "upstream_sha256": "ae460102a83225ed",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "systematic-debugging": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/systematic-debugging/SKILL.md",
+   "local_sha256": "9080c23db452715d",
+   "upstream_sha256": "9080c23db452715d",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "condition-based-waiting-example.ts",
+     "find-polluter.sh"
+    ],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "test-driven-development": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/test-driven-development/SKILL.md",
+   "local_sha256": "462d6c5786d0eefb",
+   "upstream_sha256": "89b7bbc7a3ef3a50",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "using-git-worktrees": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/using-git-worktrees/SKILL.md",
+   "local_sha256": "d27655775d8f9b40",
+   "upstream_sha256": "d27655775d8f9b40",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "using-superpowers": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/using-superpowers/SKILL.md",
+   "local_sha256": "7276e3ec4f556e99",
+   "upstream_sha256": "2404d2e763fad2ac",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "verification-before-completion": {
+   "collection": "superpowers",
+   "status": "identical",
+   "path": "skills/verification-before-completion/SKILL.md",
+   "local_sha256": "07e72bb5e99c67b5",
+   "upstream_sha256": "07e72bb5e99c67b5",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-plans": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/writing-plans/SKILL.md",
+   "local_sha256": "050d2d9fc3b29e2d",
+   "upstream_sha256": "12110e45d07ecc42",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-skills": {
+   "collection": "superpowers",
+   "status": "differs",
+   "path": "skills/writing-skills/SKILL.md",
+   "local_sha256": "8060260f956c8909",
+   "upstream_sha256": "0ce7098d217dddf4",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "render-graphs.js"
+    ],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "claude-handoff": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/in-progress/claude-handoff/SKILL.md",
+   "local_sha256": "1294e18a57c0fabd",
+   "upstream_sha256": "1294e18a57c0fabd",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "grill-me": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/productivity/grill-me/SKILL.md",
+   "local_sha256": "b490ae05dfea2d5d",
+   "upstream_sha256": "b490ae05dfea2d5d",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "handoff": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/productivity/handoff/SKILL.md",
+   "local_sha256": "e41f614544eea834",
+   "upstream_sha256": "e41f614544eea834",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "research": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/engineering/research/SKILL.md",
+   "local_sha256": "cba55b70f2bf00b0",
+   "upstream_sha256": "cba55b70f2bf00b0",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "retro": {
+   "collection": "mattpocock-skills",
+   "status": "differs",
+   "path": "skills/engineering/retro/SKILL.md",
+   "local_sha256": "56f7af1af6f42468",
+   "upstream_sha256": "20ee0cbd89c8f640",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "teach": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/productivity/teach/SKILL.md",
+   "local_sha256": "b9344e8c37f29dbb",
+   "upstream_sha256": "b9344e8c37f29dbb",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "to-questionnaire": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/productivity/to-questionnaire/SKILL.md",
+   "local_sha256": "816d3c78889eb35f",
+   "upstream_sha256": "816d3c78889eb35f",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "wait-what": {
+   "collection": "mattpocock-skills",
+   "status": "differs",
+   "path": "skills/productivity/wait-what/SKILL.md",
+   "local_sha256": "f384b05f68ff43f5",
+   "upstream_sha256": "19459f894e9fb102",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-beats": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/in-progress/writing-beats/SKILL.md",
+   "local_sha256": "3b6f0f12fc23ad54",
+   "upstream_sha256": "3b6f0f12fc23ad54",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-for-agents": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/productivity/writing-for-agents/SKILL.md",
+   "local_sha256": "482e371e48efc2db",
+   "upstream_sha256": "482e371e48efc2db",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-fragments": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/in-progress/writing-fragments/SKILL.md",
+   "local_sha256": "00b5f0feb21497af",
+   "upstream_sha256": "00b5f0feb21497af",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "writing-shape": {
+   "collection": "mattpocock-skills",
+   "status": "identical",
+   "path": "skills/in-progress/writing-shape/SKILL.md",
+   "local_sha256": "2d35fecfbe7773d7",
+   "upstream_sha256": "2d35fecfbe7773d7",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "adr-scribe": {
+   "collection": "c4-skills",
+   "status": "identical",
+   "path": "adr-scribe/SKILL.md",
+   "local_sha256": "d296e8a2a39e0f41",
+   "upstream_sha256": "d296e8a2a39e0f41",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "c4-model": {
+   "collection": "c4-skills",
+   "status": "identical",
+   "path": "c4designer/SKILL.md",
+   "local_sha256": "3fe9964cfbd36e24",
+   "upstream_sha256": "3fe9964cfbd36e24",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "karpathy-guidelines": {
+   "collection": "karpathy-inspired-guide",
+   "status": "identical",
+   "path": "skills/karpathy-guidelines/SKILL.md",
+   "local_sha256": "33deac5b92dbc4f8",
+   "upstream_sha256": "33deac5b92dbc4f8",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "ai-slop-cleaner": {
+   "collection": "ai-slop-cleaner",
+   "status": "identical",
+   "path": "skills/ai-slop-cleaner/SKILL.md",
+   "local_sha256": "d5ecf1c83af9f7d4",
+   "upstream_sha256": "d5ecf1c83af9f7d4",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "humanizer": {
+   "collection": "humanizer",
+   "status": "differs",
+   "path": "SKILL.md",
+   "local_sha256": "c2d85ab8d51934dd",
+   "upstream_sha256": "9d197dc6a6f33277",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "harness-engineering": {
+   "collection": "agent-skills-for-context-engineering",
+   "status": "identical",
+   "path": "skills/harness-engineering/SKILL.md",
+   "local_sha256": "a1f4771e7d065736",
+   "upstream_sha256": "a1f4771e7d065736",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "multi-agent-patterns": {
+   "collection": "agent-skills-for-context-engineering",
+   "status": "identical",
+   "path": "skills/multi-agent-patterns/SKILL.md",
+   "local_sha256": "1dfe697b9b7515fd",
+   "upstream_sha256": "1dfe697b9b7515fd",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "scripts/coordination.py"
+    ],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "tool-design": {
+   "collection": "agent-skills-for-context-engineering",
+   "status": "identical",
+   "path": "skills/tool-design/SKILL.md",
+   "local_sha256": "a86df27de76933b0",
+   "upstream_sha256": "a86df27de76933b0",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "scripts/description_generator.py"
+    ],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "ai-act-skill": {
+   "collection": "ai-act-skill",
+   "status": "identical",
+   "path": "SKILL.md",
+   "local_sha256": "97d879d6fa032002",
+   "upstream_sha256": "97d879d6fa032002",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "threat-modeling": {
+   "collection": "threat-modeling",
+   "status": "differs",
+   "path": ".claude/skills/threat-modeling/SKILL.md",
+   "local_sha256": "596082d841c876b6",
+   "upstream_sha256": "08f4e40f1c57c8a4",
+   "candidates": 3,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "scripts/generate_mitigation_roadmap.py",
+     "scripts/generate_threat_matrix.py",
+     "scripts/validate_threat_model.py"
+    ],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "intake-briefing": {
+   "collection": "intake-briefing",
+   "status": "identical",
+   "path": "SKILL.md",
+   "local_sha256": "b17e5b7c1cbba968",
+   "upstream_sha256": "b17e5b7c1cbba968",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": false,
+    "script_files": [],
+    "network_calls_in_scripts": [],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  },
+  "milestone-loc-tokens-ai-ledger": {
+   "collection": "milestone-loc-tokens-ai-ledger",
+   "status": "identical",
+   "path": "SKILL.md",
+   "local_sha256": "383169bb379a392f",
+   "upstream_sha256": "383169bb379a392f",
+   "candidates": 1,
+   "audit": {
+    "contains_scripts": true,
+    "script_files": [
+     "engine/config.py",
+     "engine/cost.py",
+     "engine/enrich.py",
+     "engine/generate_metrics.py",
+     "engine/git_source.py",
+     "engine/prices.py",
+     "engine/scrub.py",
+     "engine/svg_chart.py",
+     "engine/update_prices.py",
+     "engine/__init__.py",
+     "engine/readers/claude_code.py",
+     "engine/readers/__init__.py"
+    ],
+    "network_calls_in_scripts": [
+     "engine/scrub.py"
+    ],
+    "registers_hooks": false,
+    "hook_files": [],
+    "declares_dependencies": false,
+    "dependency_files": []
+   }
+  }
+ }
+}

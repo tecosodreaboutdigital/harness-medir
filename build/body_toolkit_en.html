@@ -6,7 +6,7 @@
 
 <p class="byline">Fernando Teco Sodré · Revised October 2026 · Companion to parts 1 to 4</p>
 
-<div class="rule-box"><span class="lbl">Validity</span><p>Everything here was verified in August 2026. Names, addresses and commands change. The series' articles talk about principles and do not depend on this document. This document depends on the market.</p></div>
+<div class="rule-box"><span class="lbl">Validity</span><p>Everything here was re-verified on 5 October 2026: for each repository, whether it is archived, the date of its last commit and its licence were read from the origin that day, and <code>sources/upstream.json</code> records the result. Names, addresses and commands change, so the check is repeated every quarter. The series' articles talk about principles and do not depend on this document. This document depends on the market.</p></div>
 
 <nav class="toc">
   <p>In this document</p>
@@ -93,7 +93,7 @@
 <p><strong>When not to use it.</strong> A small, familiar repository, where the context already fits in the head of whoever is requesting the task.</p>
 <p><strong>How to start in 15 minutes.</strong> Open the skills folder, read the three or four most used, compare them against your own process for bringing someone new onto the team.</p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>Despite the name, this is not Karpathy's. It is maintained by a third party, derived from his public observations, with 208 thousand stars. The repository's installation commands point to a different owner than the current one: check before installing. The agentic flow that actually is his is called autoresearch, and it is in the sources.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>Despite the name, this is not Karpathy's. It is maintained by a third party, derived from his public observations, with 217 thousand stars (5 October 2026). The repository's installation commands point to a different owner than the current one: check before installing. The agentic flow that actually is his is called autoresearch, and it is in the sources. The repository has no LICENSE file, only a README that declares MIT, a weaker grant than a licence file. Last commit 20 April 2026: quiet for more than five months, still current by this project's own classification.</p></div>
 
 <p>Repository: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
 
@@ -106,7 +106,7 @@
 <p><strong>When not to use it.</strong> A one-person project, with no expectation that another person or another session will pick the work back up later.</p>
 <p><strong>How to start in 15 minutes.</strong> Write the first context diagram, one box for the system and one for each user and external system it touches, before the next architecture decision.</p>
 
-<p>Repository: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+<p>MIT licence. Last commit 26 April 2026: quiet for more than five months, still current by this project's own classification. Repository: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
 
 <h3>Specification before code</h3>
 
@@ -130,6 +130,15 @@
 <p><strong>When not to use it.</strong> A small task, a single executor, low volume. The ceremony costs more than it prevents, and none of the four tools was designed for that case.</p>
 <p><strong>How to start in 15 minutes.</strong> Write the three-line contract from intake-briefing itself (what it delivers, what it never does, when it is done) before installing any tool from this category. Install afterwards, only if the contract alone is not enough.</p>
 
+<h3>Plan mode</h3>
+
+<p><strong>Problem.</strong> A task contract is a promise until something stops the agent from acting before the plan is approved.</p>
+<p><strong>In practice.</strong> A read-only mode in which the agent studies the task and proposes a plan but cannot change anything until a person approves it. All four provider-native coding agents in the 2026 <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> ship one. In at least one of them the plan file is the only thing the mode lets the agent write, and a dedicated tool is what moves the session back to a mode that can write.</p>
+<p><strong>Who it is for.</strong> N1 upward, anyone who approves changes an agent makes.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A change small enough that the plan and the action are the same step: a plan review then adds a round trip with nothing to review.</p>
+<p><strong>How to start in 15 minutes.</strong> Turn it on for your next change that touches more than one file, read the plan before approving it, and write down what you changed in it. That edit is your task contract, enforced by the runtime instead of by a promise.</p>
+
 <h2 id="equipar">4. Equip</h2>
 
 <p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The four entries below are the most studied collections today for writing guides, organising durable memory and, in the newest entry, designing the harness's own boundaries and tool interface.</p>
@@ -143,7 +152,7 @@
 <p><strong>When not to use it.</strong> When the goal is a small, domain-specific skill. The whole framework is more structure than a single task needs.</p>
 <p><strong>How to start in 15 minutes.</strong> Follow <a href="#howto-1">walkthrough 1</a> below, made exactly for this.</p>
 
-<p>MIT licence. Distributed through the official plugin marketplace and several other environments.</p>
+<p>MIT licence. Distributed through the official plugin marketplace and several other environments. On 5 October 2026 the origin lists fifteen skills; this project installed fourteen, without the newest, <code>diagnosing-superpowers</code>, which was not in the collection when the fourteen were chosen and has not been measured here (see the sixth question in "Before installing anything").</p>
 
 <pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
 
@@ -169,14 +178,14 @@
 <p><strong>When not to use it.</strong> A task that starts and ends within a single short session. The overhead of keeping a state file does not pay for itself.</p>
 <p><strong>How to start in 15 minutes.</strong> Create a plan file with three sections (done, in progress, next) and ask the agent to update it after every completed step, before closing the session.</p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>Around 26 thousand stars, but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>Around 27 thousand stars (5 October 2026), but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
 
 <p>Repository: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
 
 <h3>Agent Skills for Context Engineering</h3>
 
 <p><strong>Problem.</strong> A reader flagged a real gap in this page: everything above equips the agent with process discipline (superpowers), editable pieces (mattpocock/skills) or durable state (planning-with-files), but nothing here addresses the harness's own architecture, the boundary between what an agent may touch, how many agents should be touching it, and what a tool's own interface asks of the model calling it.</p>
-<p><strong>In practice.</strong> Three skills out of a seventeen-skill collection, read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes, including a token cost around fifteen times a single-agent baseline that is routinely underestimated. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
+<p><strong>In practice.</strong> Three skills out of an eighteen-skill collection (seventeen when this entry was first written), read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes. Whether more agents pay is a property of the task, not a rule: <a class="src" href="harness-sources.html#en-src-google-scaling" data-tip="Google Research, 180 agent configurations, 28 January 2026.">Google Research's 2026 study</a> of 180 configurations reported an 80.9% gain from centralised coordination on one decomposable financial-reasoning task and a 39% to 70% loss on sequential planning tasks. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
 <p><strong>Who it is for.</strong> N1 upward for the harness-design and tool-interface half, <code>harness-engineering</code> and <code>tool-design</code>, any single agent already worth designing carefully. N2 upward for <code>multi-agent-patterns</code>, which presupposes more than one agent already exists.</p>
 <p><strong>Minimum tier.</strong> A matter of judgement: N1 for two of the three skills, N2 once multiple agents are actually coordinating.</p>
 <p><strong>When not to use it.</strong> A single, short-lived conversation with no durable state and no tool beyond the model's own defaults. All three skills assume something worth structuring already exists.</p>
@@ -204,20 +213,20 @@
 <h3>Environment classes</h3>
 
 <p><strong>Problem.</strong> Most of the frustration with agents does not come from the model or the method: it comes from trying to set up a control that the chosen environment cannot sustain.</p>
-<p><strong>In practice.</strong> Four classes, detailed in <a href="harness-p2.html#en-ambientes">part 2</a>: conversation with instructions, agent with files and execution, programmed orchestration, assisted software generation. Current names for each class: Claude Code, Codex and equivalents cover the second; DeepSeek Harness (open runtime, append-only log) and LangGraph cover the third; conversation assistants cover the first.</p>
+<p><strong>In practice.</strong> Four classes, detailed in <a href="harness-p2.html#en-ambientes">part 2</a>: conversation with instructions, agent with files and execution, programmed orchestration, assisted software generation. Current names for each class: Claude Code, Codex and equivalents cover the second; managed agent runtimes and coded workflows (see the entry below) cover the third, with DeepSeek Harness (open runtime, append-only log) and LangGraph as examples; conversation assistants cover the first.</p>
 <p><strong>Who it is for.</strong> Whoever decides buys a tool before knowing which tier the task needs to reach. This entry reverses the order: the tier first, then the environment class that sustains that tier.</p>
 <p><strong>Minimum tier.</strong> Not applicable, it is a diagnostic, not a tool.</p>
 <p><strong>When not to use it.</strong> Never skip this question. It is the most common reason a harness project never leaves the drawing board.</p>
 <p><strong>How to start in 15 minutes.</strong> Answer: which tier does this task need to reach? Then, what is the simplest environment class that sustains that tier, without climbing one rung more than necessary.</p>
 
-<h3>Programmed orchestration</h3>
+<h3>Coded workflow and managed runtimes</h3>
 
 <p><strong>Problem.</strong> A retry ceiling, an authority policy and an execution record written as instructions can be rewritten or ignored by the very system they are meant to limit.</p>
-<p><strong>In practice.</strong> A stateful agent orchestration framework, where these three things stop being text and become code outside the model's reach. LangGraph is the most mature reference today.</p>
+<p><strong>In practice.</strong> Two routes put these three things in code outside the model's reach. The first is a managed agent runtime, which keeps the session, approvals and recovery as part of the service: <a class="src" href="harness-sources.html#en-src-openai-agents-api" data-tip="OpenAI, Introducing the Agents API, 10 September 2026, public beta.">OpenAI's Agents API</a> (public beta since 10 September 2026), <a class="src" href="harness-sources.html#en-src-ms-harness" data-tip="Microsoft, Agent Harness, Agent Framework documentation.">Microsoft's Agent Framework harness</a>, <a class="src" href="harness-sources.html#en-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, 8 April 2026.">Anthropic's Managed Agents</a> and <a class="src" href="harness-sources.html#en-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">Google's Agent Executor</a> (open source, in preview) all appeared in 2026. The second is a coded workflow, a fixed sequence written in code with checkpoints, where the model fills in steps but does not choose the path. LangGraph is one reference for that route.</p>
 <p><strong>Who it is for.</strong> N2 to N3, when the guide alone no longer prevents a breach of the ceiling or the authority limit.</p>
 <p><strong>Minimum tier.</strong> N2, to justify the added complexity of orchestrating in code.</p>
-<p><strong>When not to use it.</strong> A task that runs in a single agent-with-files-and-execution session already sustains the tier needed. Orchestrating in code before that is building structure for a problem that does not exist yet.</p>
-<p><strong>How to start in 15 minutes.</strong> Read the documentation on the retry ceiling concept of the chosen framework before any other part: it is the piece that replaces a guide's promise with a constraint the system cannot talk its way around.</p>
+<p><strong>When not to use it.</strong> A task that runs in a single agent-with-files-and-execution session already sustains the tier needed. Orchestrating before that is building structure for a problem that does not exist yet. The <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> of eleven coding-agent runtimes found that none imports a general-purpose agentic framework, so for coding work a framework is not the default. For a business flow with fixed steps that cannot safely be repeated, a coded workflow is still the defensible choice, and <a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">Microsoft's own skills guidance</a> says to prefer workflows when steps have side effects. All four managed runtimes date from 2026, one is a public beta and one is in preview, so expect names and protocols to change.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the documentation on the retry ceiling concept of the route you chose before any other part: it is the piece that replaces a guide's promise with a constraint the system cannot talk its way around.</p>
 
 <p>Repository: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
 
@@ -267,7 +276,16 @@
 <p><strong>When not to use it.</strong> A single isolated sensor does not yet justify a dashboard. Consolidate once the second sensor goes into production.</p>
 <p><strong>How to start in 15 minutes.</strong> Point it at the sensors you already have running and read the first week's trend summary before adding any new sensor.</p>
 
-<p>Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+<p>No licence: the repository has no licence file and its README declares none, so by default all rights stay with the author. Read it and copy the pattern, not the code, until the author publishes a licence. Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<h3>Lifecycle hooks</h3>
+
+<p><strong>Problem.</strong> A guide is read and can be ignored. A rule only becomes a gate when the runtime runs it.</p>
+<p><strong>In practice.</strong> Points in an agent tool's run where a rule can inspect, block or rewrite an action before it happens, run a sensor after it, and refuse to let the session end until fresh evidence exists. The vocabulary is converging: according to the <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a>, OpenAI's Codex copied Claude Code's event names almost verbatim, and Gemini CLI ships eleven lifecycle events. This repository's own stop hook, <code>build/stop_hook.py</code>, is a small working example.</p>
+<p><strong>Who it is for.</strong> N2 upward, whoever already has a sensor and wants it to run without anyone remembering.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> For a rule only a person can judge: keep that in the guide. And never let a hook's configuration be edited by the agent it governs without a person reading the diff; this repository asks for confirmation before its own hook files are changed.</p>
+<p><strong>How to start in 15 minutes.</strong> Write two hooks: one that runs your cheapest sensor after every file change, and one that blocks the end of a session while that sensor fails.</p>
 
 <h3>research</h3>
 
@@ -443,6 +461,15 @@
 
 <p>Two questions this section cannot yet answer honestly, worth stating rather than papering over. Nothing above lets an agent process personal data without storing it at all, "minimisation" in the strict sense: the closest adjacent product, Zep, built on the open-source Graphiti engine, governs how long stored data survives, not whether it gets stored in the first place, and current guidance from the privacy profession itself recommends building retention tiers and callable deletion in house, naming no tool. And no standards body has yet published an agent-specific privacy-by-design framework: ISO/IEC 27701 became a standalone, certifiable standard in October 2025, but with no agent-specific clause found on inspection; NIST's own privacy framework update remains a draft. Both stay open questions for this document to revisit, not problems to paper over with something that sounds like an answer.</p>
 
+<h3>Containment: sandbox, network and credentials</h3>
+
+<p><strong>Problem.</strong> Question 6 of part 1's twelve, whether execution is isolated from production, had no tool in this guide.</p>
+<p><strong>In practice.</strong> An operating-system sandbox, a separate worktree per task, a container, a restricted outbound network, and credentials kept outside the sandbox behind a proxy, so the agent uses a token it never sees. In the <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a>, Codex ships a native sandbox on three operating systems and a network proxy, and Claude Code's runtime sandbox is opt-in. <a class="src" href="harness-sources.html#en-src-contain" data-tip="Anthropic, How we contain Claude across products, 25 May 2026.">Anthropic's 2026 post on containing Claude</a> treats containment as a control separate from approval.</p>
+<p><strong>Who it is for.</strong> N2 to N3, wherever an agent can touch something that cannot be undone.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> Isolation is a costly choice, not a free default, and some tools prefer permission rules and command analysis to a sandbox. Containment limits what an agent can reach if every behavioural safeguard fails. It does not make a wrong action right.</p>
+<p><strong>How to start in 15 minutes.</strong> List what your agent can reach today (files, network, credentials) and remove one thing from the list that no current task needs.</p>
+
 <h2 id="govern">9. Govern</h2>
 
 <p>Govern does not replace the registry <a href="harness-p4.html">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
@@ -500,9 +527,18 @@
 <p><strong>When not to use it.</strong> Everyone below N3. Part 4 §7's own test still applies: if the whole registry fits in a table with meeting minutes next to it, neither row applies yet.</p>
 <p><strong>How to start in 15 minutes.</strong> Not applicable, this is a landscape reference, not something to trial. Re-read part 4 §6 and §7 before any conversation with a vendor from this table.</p>
 
+<h3>Meta-harness: a layer above the agent tools (watch)</h3>
+
+<p><strong>Problem.</strong> Once several agent tools are in use, someone has to decide where each one runs, inside which sandbox and with what record.</p>
+<p><strong>In practice.</strong> A layer above the coding agents that wraps several of them behind one sandbox, one credential proxy and one session record. The 2026 <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> describes one in its corpus and lists the layer as one to watch. This is an observation, not a recommendation: nothing here says to adopt one.</p>
+<p><strong>Who it is for.</strong> N3, and an agent office (part 4) that already runs a registry.</p>
+<p><strong>Minimum tier.</strong> N3.</p>
+<p><strong>When not to use it.</strong> Before there is more than one agent tool and a registry that says which exist. The layer would have nothing to coordinate.</p>
+<p><strong>How to start in 15 minutes.</strong> Do not install anything. Read the study's section on the meta-harness layer and check whether your registry could answer what such a layer would record.</p>
+
 <h3>Reusing sensors-cli for the eight indicators</h3>
 
-<p>No new tool proposed here on purpose. <a href="#inspecionar">sensors-cli</a>, already covered in Inspect, is a dashboard that runs several sensors on an interval and keeps history. The same pattern extends to part 4's eight indicators once more than two or three are being tracked: point it at registry coverage, exception rate and gate rejection rate the same way it already points at hard-verification sensors, instead of standing up a second, separate dashboard.</p>
+<p>No new tool proposed here on purpose. <a href="#inspecionar">sensors-cli</a>, already covered in Inspect, is a dashboard that runs several sensors on an interval and keeps history. The same pattern extends to part 4's eight indicators once more than two or three are being tracked: point it at registry coverage, exception rate and gate rejection rate the same way it already points at hard-verification sensors, instead of standing up a second, separate dashboard. Because the repository carries no licence, reuse the pattern, not the code, until its author publishes one.</p>
 
 <h2 id="howto-1">10. Walkthrough 1: read superpowers in an hour</h2>
 
@@ -560,6 +596,14 @@ description: Reviews contract drafts against the house checklist of
 
 <p><strong>Step 3.</strong> Write the error message as a correction instruction. This is the part that decides whether the sensor works. It needs to contain what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. A message that only says failed is not a sensor, it is an alarm.</p>
 
+<p>The same shape works when a tool fails, not only when a check does. A failure should say what went wrong, what was requested, whether anything already happened as a side effect, and whether trying again is safe:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre>
+
 <p><strong>Step 4.</strong> Tie the sensor to the skill's done criterion. Instead of writing done when the numbers are right, write done when the check command returns no mismatches. The criterion stops being an opinion and becomes verifiable.</p>
 
 <p><strong>Step 5.</strong> Set the ceiling. Three attempts, and on the third the system stops, delivers the work marked not checked and explains what did not close.</p>
@@ -572,16 +616,21 @@ description: Reviews contract drafts against the house checklist of
 
 <p>The recommendation from whoever publishes the format is explicit: install only from a trusted source, and when the source is less known, audit it before using it. Read the content of the files, pay particular attention to any included code and the resources that come with it, and check whether there are instructions telling the system to reach out to an external network.</p>
 
-<p>Three questions before any installation:</p>
+<p>Six questions before any installation:</p>
 
 <table class="wrap">
 <thead><tr><th>Question</th><th>Why it matters</th></tr></thead>
 <tbody>
 <tr><td>What data can this collection reach once it is active?</td><td>An installed skill operates with the permissions the environment already has</td></tr>
 <tr><td>Is there an instruction to fetch something from outside?</td><td>It is the most direct vector for an instruction coming from outside your control</td></tr>
-<tr><td>Who maintains it, under what licence, and how often?</td><td>An abandoned collection turns into an outdated instruction running silently</td></tr>
+<tr><td>Who maintains it, under what licence, and how often?</td><td>An abandoned collection turns into an outdated instruction running silently. A README that declares a licence without a licence file is a weaker grant, and no licence at all means the author keeps every right: this guide says so about sensors-cli</td></tr>
+<tr><td>Does it declare dependencies that will be installed automatically, such as tool servers or binaries?</td><td>Installing a skill can install something else (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">Barbaste and co-authors, section 12.5</a>)</td></tr>
+<tr><td>Does it register hooks, or tell the agent not to ask before acting?</td><td>It is the pattern this project already rejected once, in a skill that told the agent not to ask the user for confirmation (see <code>sources/inventory.md</code>)</td></tr>
+<tr><td>Does the task get better with it?</td><td>A relevant-looking skill can still make the work wrong or slower: <a class="src" href="harness-sources.html#en-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, 12 August 2026.">Dong et al.</a> measured 307 such failures. Measure the task with and without the skill before keeping it</td></tr>
 </tbody>
 </table>
+
+<p>Microsoft's Agent Framework now requires approval by default before a skill is loaded, read or run (<a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">documentation revised 2 October 2026</a>). Treat that as the baseline, not the exception.</p>
 
 <p>Part 3 of the series covers this surface in depth, alongside permission outside the model, an auditable record and accountability.</p>
 

@@ -158,7 +158,8 @@ The full log, with the per-milestone table and the methodology behind these numb
 │   ├── README.md                      index, eight templates as nine files, each traced to its part
 │   └── ...                            task-contract.md, skill-template.md, starter-guides.md, and six more
 ├── sources/
-│   └── inventory.md                   every source verified, with status
+│   ├── inventory.md                   every source verified, with status and date
+│   └── upstream.json                  what build/check_upstream.py read from each curated origin, with a date
 ├── diagrams/
 │   ├── README.md                      index, one row per diagram, rendering notes
 │   ├── part3/                         D1 to D5, SVG plus a matching PNG for Medium

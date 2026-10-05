@@ -4,7 +4,7 @@
 
 Registro de lo que este proyecto realmente instaló y usa, no solo de lo que cita. Un proyecto sobre ingeniería de harness que no instrumentara su propia creación sería solo un argumento bonito. Este documento es la instrumentación.
 
-Actualizado el 20 de septiembre de 2026. Crece con cada skill nueva que entra en uso, nunca se reescribe por completo.
+Actualizado el 5 de octubre de 2026. Crece con cada skill nueva que entra en uso, nunca se reescribe por completo.
 
 Una forma legible por máquina de esta misma lista de skills instaladas, generada a partir de este archivo y de `sources/inventory.md`, vive en `toolkit.json`, ver `AGENTS.md`.
 
@@ -12,17 +12,17 @@ Una forma legible por máquina de esta misma lista de skills instaladas, generad
 
 ## Colecciones de terceros instaladas
 
-Nueve colecciones, treinta y seis skills, todas con licencia MIT o Apache 2.0. Instaladas localmente en `.claude/skills/`, fuera del control de versiones (ver `.gitignore`): funcionan en este entorno, pero el código de terceros no entra en el historial público de este repositorio. Las nueve se citan como entrada en la [guía compacta](harness-toolkit.html): las primeras cinco desde el 30 de agosto de 2026, las cuatro más recientes desde la ronda del 10 al 11 de septiembre de 2026. Suma `intake-briefing` y `milestone-loc-tokens-ai-ledger`, las skills propias del proyecto tratadas en la sección siguiente, y el entorno tiene 38 skills activas en total.
+Nueve colecciones, treinta y seis skills, todas MIT. Una de ellas, la guía inspirada en Karpathy, declara MIT solo en su README y no tiene archivo LICENSE; la licencia de cada colección, tal como se leyó en su origen, está en la tabla de procedencia de abajo. Instaladas localmente en `.claude/skills/`, fuera del control de versiones (ver `.gitignore`): funcionan en este entorno, pero el código de terceros no entra en el historial público de este repositorio. Las nueve se citan como entrada en la [guía compacta](harness-toolkit.html): las primeras cinco desde el 30 de agosto de 2026, las cuatro más recientes desde la ronda del 10 al 11 de septiembre de 2026. Suma `intake-briefing` y `milestone-loc-tokens-ai-ledger`, las skills propias del proyecto tratadas en la sección siguiente, y el entorno tiene 38 skills activas en total.
 
 | Colección | Origen | Skills instaladas | Por qué entró |
 |---|---|---|---|
-| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, la colección entera | Es el patrón de regla innegociable más señales de alerta que `STANDARDS.md` ya adopta como estándar de escritura de skills de este proyecto |
+| superpowers | [github.com/obra/superpowers](https://github.com/obra/superpowers) | 14, de 15 en el origen (la colección completa cuando se instaló) | Es el patrón de regla innegociable más señales de alerta que `STANDARDS.md` ya adopta como estándar de escritura de skills de este proyecto |
 | mattpocock/skills | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | 12, selección curada | Skills de escritura, clarificación y traspaso de sesión. El conjunto de ingeniería de software de la colección (TDD, arquitectura de código, conflictos de merge, TypeScript) quedó fuera por no aplicarse a un proyecto de contenido, ver la lista completa abajo |
 | c4-skills | [github.com/muthub-ai/c4-skills](https://github.com/muthub-ai/c4-skills) | 2, la colección entera | El modelo C4 y los registros de decisión de arquitectura, relevantes para la ronda de investigación de la parte 3 |
 | Guía inspirada en Karpathy | [github.com/multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 1 | Guía de comportamiento contra errores comunes de LLM. No es realmente de Karpathy, ver la salvedad completa en `sources/inventory.md` |
 | ai-slop-cleaner | [github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | 1 | Fuente real de la matriz de cinco reglas de limpieza citada en la sección Reforzar de la parte 2 |
 | humanizer | [github.com/blader/humanizer](https://github.com/blader/humanizer) | 1, la colección entera | Quita los tics de prosa que suenan a IA de un borrador en inglés antes de que se ramifique hacia el portugués y el español. Ninguna de las otras ocho colecciones de esta página llega a ese nivel de detalle, forma de frase y párrafo, no vocabulario. Sumada el 10 de septiembre de 2026 a partir de una lista de skills candidatas enviada por un lector |
-| Agent Skills for Context Engineering | [github.com/muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 3, de 17 | Un lector señaló la arquitectura de harness de agente como una brecha real de esta página. `harness-engineering`, `multi-agent-patterns` y `tool-design` la cierran directamente; las otras 14 skills (optimización de contexto, sistemas de memoria, evaluación y más) resuelven problemas adyacentes que este proyecto no tiene, ver la lista completa abajo |
+| Agent Skills for Context Engineering | [github.com/muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 3, de 18 | Un lector señaló la arquitectura de harness de agente como una brecha real de esta página. `harness-engineering`, `multi-agent-patterns` y `tool-design` la cierran directamente; las otras 15 skills (optimización de contexto, sistemas de memoria, evaluación y más) resuelven problemas adyacentes que este proyecto no tiene, ver la lista completa abajo |
 | ai-act-skill | [github.com/morellid/ai-act-skill](https://github.com/morellid/ai-act-skill) | 1, la colección entera | Checklist versionado, tarea por tarea, para las obligaciones del AI Act europeo, ya actualizado con el Digital Omnibus (Reglamento (UE) 2026/1744). Las partes 3 y 4 ya citan los artículos 12, 14 y 26 en prosa; esta es la primera herramienta del propio kit de este proyecto que convierte esa cita en una verificación ejecutable |
 | threat-modeling | [github.com/rjmurillo/ai-agents](https://github.com/rjmurillo/ai-agents) | 1, de una colección personal más grande | Modelado de amenazas basado en STRIDE, con alcance en arquitectura de agente y revisión de seguridad, no revisión puntual de diff. Instalación parcial: solo entró la carpeta de esta skill, no el resto del repositorio |
 
@@ -42,12 +42,26 @@ Nueve colecciones, treinta y seis skills, todas con licencia MIT o Apache 2.0. I
 
 **humanizer:** humanizer.
 
-**Agent Skills for Context Engineering:** harness-engineering, multi-agent-patterns, tool-design. **Instalación parcial, dicho con honestidad:** la colección original tiene 17 skills; copiamos solo estas tres carpetas (`SKILL.md` más sus propios `references/` y `scripts/`), porque las otras 14 (context-fundamentals, memory-systems, evaluation, self-improvement-loops y más) resuelven problemas que este proyecto no tiene. `multi-agent-patterns` y `tool-design` traen, cada una, un pequeño ayudante local en Python (`coordination.py`, `description_generator.py`); los dos usan solo biblioteca estándar, auditados abajo.
+**Agent Skills for Context Engineering:** harness-engineering, multi-agent-patterns, tool-design. **Instalación parcial, dicho con honestidad:** la colección original tiene 18 skills en `skills/` (17 cuando se hizo esta instalación); copiamos solo estas tres carpetas (`SKILL.md` más sus propios `references/` y `scripts/`), porque las otras 15 (context-fundamentals, memory-systems, evaluation, self-improvement-loops y más) resuelven problemas que este proyecto no tiene. `multi-agent-patterns` y `tool-design` traen, cada una, un pequeño ayudante local en Python (`coordination.py`, `description_generator.py`); los dos usan solo biblioteca estándar, auditados abajo.
 
 **ai-act-skill:** ai-act-skill. Instalación completa: `SKILL.md`, los seis archivos de tarea bajo `tasks/`, y los extractos de referencia y ejemplos resueltos que los respaldan. El `install.sh`, `uninstall.sh`, los scripts de release y los adaptadores entre herramientas del propio repositorio original quedaron fuera: sirven al proceso de empaquetado del autor, no a la función de esta skill dentro de este entorno.
 
 **threat-modeling:** threat-modeling. **Instalación parcial, dicho con honestidad:** esta skill vive dentro de `rjmurillo/ai-agents`, una colección personal mucho más grande; solo se copió la carpeta `threat-modeling` (`SKILL.md`, `references/`, `scripts/`, `templates/`). Los tres scripts incluidos (`generate_threat_matrix.py`, `generate_mitigation_roadmap.py`, `validate_threat_model.py`) usan solo biblioteca estándar, auditados abajo.
 
+
+**Procedencia, leída en cada origen el 5 de octubre de 2026.** Ninguno de los nueve orígenes está archivado. Las copias instaladas nunca registraron el commit del que vinieron, así que el `SKILL.md` de cada skill se comparó con la rama predeterminada del origen ese día (`build/check_upstream.py`, resultado en `sources/upstream.json`). "Difieren" significa que el origen cambió después de instalar la skill aquí; no hay forma de saber cuánto se quedó atrás la copia. De las 38 skills instaladas, 26 son idénticas y 12 difieren.
+
+| Colección | Licencia en el origen | Último commit en el origen | SKILL.md instalado contra el del origen |
+|---|---|---|---|
+| superpowers | MIT | 2026-09-25 | 6 idéntico(s), 8 difieren |
+| mattpocock/skills | MIT | 2026-10-05 | 10 idéntico(s), 2 difieren |
+| c4-skills | MIT | 2026-04-26 | 2 idéntico(s) |
+| Karpathy-inspired guide | MIT declarada solo en el README, **sin archivo LICENSE** | 2026-04-20 | 1 idéntico(s) |
+| ai-slop-cleaner | MIT | 2026-10-03 | 1 idéntico(s) |
+| humanizer | MIT | 2026-09-28 | 0 idéntico(s), 1 difieren |
+| Agent Skills for Context Engineering | MIT | 2026-10-01 | 3 idéntico(s) |
+| ai-act-skill | MIT | 2026-08-09 | 1 idéntico(s) |
+| threat-modeling | MIT | 2026-10-04 | 0 idéntico(s), 1 difieren |
 ---
 
 ## Las skills propias del proyecto
@@ -75,6 +89,8 @@ Un rastreo de patrones de red o ejecución (`curl`, `wget`, `fetch(`, `eval(`, `
 **Segunda ronda de auditoría, 10 de septiembre de 2026.** Un lector mandó una lista de ocho repositorios de skill candidatos y pidió una comparación con esta página, más una búsqueda de cualquier cosa que este proyecto estuviera dejando pasar en arquitectura de software, privacidad de datos y seguridad de la información. Cinco agentes en segundo plano leyeron cada candidato directamente (contenido bruto del archivo, no el README de marketing) y lo cruzaron contra lo que ya estaba instalado aquí. Dos de los ocho ya estaban cubiertos: la guía inspirada en Karpathy ya era exactamente esa misma fuente, y una skill de diseño de UI de la lista coincidía con algo ya activo globalmente en la máquina del operador, pero fuera del alcance de este proyecto. Cuatro se leyeron y se dejaron de lado como solo cita o mala opción, incluyendo uno, Understand-Anything, que se instala con un comando `curl | bash` y trae un hook cuyas propias instrucciones le dicen al agente que no pida confirmación al usuario antes de actuar, exactamente el patrón que este checklist existe para detectar. Los cuatro restantes, humanizer, tres skills de Agent Skills for Context Engineering, ai-act-skill y threat-modeling, pasaron el mismo rastreo de la primera ronda (`curl`, `wget`, `fetch(`, `eval(`, `child_process`, `Invoke-WebRequest`, más `requests`, `urllib`, `subprocess` y `os.system` para las tres fuentes que traen Python). El rastreo encontró un resultado: `sandbox.exec()` dentro de un ejemplo de código de estudio de caso en `references/architectural_reduction.md` de `tool-design`, citando el propio benchmark aislado de un tercero, no una instrucción que esta skill ejecuta. Ninguna fuente de esta ronda requirió una llamada de red no declarada para funcionar.
 
 **La cita en la guía compacta, hecha en la misma ronda.** Las primeras cinco colecciones se instalaron y citaron en `harness-toolkit.html` en la misma sesión. Esta ronda separó los dos pasos a propósito, para que el operador decidiera sobre la instalación primero, y después escribió las entradas de seis campos, en los tres idiomas, con el espejo en `build/` sincronizado: `humanizer` en Reforzar, el paquete de ingeniería de contexto en Equipar, `threat-modeling` en Proteger y `ai-act-skill` en Gobernar. Este párrafo siguió diciendo que la cita estaba pendiente durante nueve días después de estar hecha, porque se hizo commit en el mismo commit de las propias entradas; se corrigió el 20 de septiembre de 2026, contrastando cada documento publicado con el repositorio.
+
+**Tercera ronda de auditoría, 5 de octubre de 2026.** `build/check_upstream.py` escanea las copias instaladas en busca de señales y halló scripts en siete skills. Dos de ellas quedan marcadas por llamadas relacionadas con la red y necesitan lectura, no confianza: el `brainstorming` de superpowers ejecuta un pequeño servidor HTTP local para su acompañamiento visual (`scripts/server.cjs`), y el `engine/scrub.py` de `milestone-loc-tokens-ai-ledger` llama a `socket.gethostname()` y nada más de red. Ninguna skill instalada registra hooks ni declara dependencias por manifiesto. El escaneo encuentra señales; no prueba su ausencia.
 
 ---
 

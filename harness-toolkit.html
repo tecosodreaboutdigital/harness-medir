@@ -459,7 +459,7 @@ p code{
 
 <p class="byline">Fernando Teco Sodré · Revisada em outubro de 2026 · Companheiro das partes 1 a 4</p>
 
-<div class="rule-box"><span class="lbl">Validade</span><p>Tudo aqui foi verificado em agosto de 2026. Nomes, endereços e comandos mudam. Os artigos da série falam de princípios e não dependem deste documento. Este documento depende do mercado.</p></div>
+<div class="rule-box"><span class="lbl">Validade</span><p>Tudo aqui foi reverificado em 5 de outubro de 2026: de cada repositório, se está arquivado, a data do último commit e a licença foram lidos na origem naquele dia, e <code>sources/upstream.json</code> registra o resultado. Nomes, endereços e comandos mudam, então a checagem se repete a cada trimestre. Os artigos da série falam de princípios e não dependem deste documento. Este documento depende do mercado.</p></div>
 
 <nav class="toc">
   <p>Neste documento</p>
@@ -546,7 +546,7 @@ p code{
 <p><strong>Quando não usar.</strong> Repositório pequeno e conhecido, onde o contexto já cabe na cabeça de quem pede a tarefa.</p>
 <p><strong>Como começar em 15 minutos.</strong> Abra a pasta de skills, leia as três ou quatro mais usadas, compare com o seu próprio processo de receber alguém novo no time.</p>
 
-<div class="rule-box"><span class="lbl">Ressalva</span><p>Apesar do nome, não é do Karpathy. É mantido por terceiros, derivado de observações públicas dele, com 208 mil estrelas. Os comandos de instalação do repositório apontam para um dono diferente do atual: confira antes de instalar. O fluxo agêntico que é de fato dele chama-se autoresearch e está nas fontes.</p></div>
+<div class="rule-box"><span class="lbl">Ressalva</span><p>Apesar do nome, não é do Karpathy. É mantido por terceiros, derivado de observações públicas dele, com 217 mil estrelas (5 de outubro de 2026). Os comandos de instalação do repositório apontam para um dono diferente do atual: confira antes de instalar. O fluxo agêntico que é de fato dele chama-se autoresearch e está nas fontes. O repositório não tem arquivo LICENSE, só um README que declara MIT, uma concessão mais fraca que um arquivo de licença. Último commit em 20 de abril de 2026: quieto há mais de cinco meses, ainda atual pela classificação deste projeto.</p></div>
 
 <p>Repositório: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
 
@@ -559,7 +559,7 @@ p code{
 <p><strong>Quando não usar.</strong> Projeto de uma pessoa só, sem expectativa de que outra pessoa ou outra sessão retome o trabalho depois.</p>
 <p><strong>Como começar em 15 minutos.</strong> Escreva o primeiro diagrama de contexto, uma caixa para o sistema e uma para cada usuário e sistema externo que ele toca, antes da próxima decisão de arquitetura.</p>
 
-<p>Repositório: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+<p>Licença MIT. Último commit em 26 de abril de 2026: quieto há mais de cinco meses, ainda atual pela classificação deste projeto. Repositório: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
 
 <h3>Especificação antes do código</h3>
 
@@ -583,6 +583,15 @@ p code{
 <p><strong>Quando não usar.</strong> Tarefa pequena, um único executor, baixo volume. A cerimônia custa mais do que evita, e nenhuma das quatro ferramentas foi desenhada para esse caso.</p>
 <p><strong>Como começar em 15 minutos.</strong> Escreva o contrato de três linhas do próprio intake-briefing (o que entrega, o que nunca faz, quando está pronto) antes de instalar qualquer ferramenta desta categoria. Instale depois, só se o contrato sozinho não bastar.</p>
 
+<h3>Modo plano</h3>
+
+<p><strong>Problema.</strong> Um contrato de tarefa é uma promessa até que algo impeça o agente de agir antes de o plano ser aprovado.</p>
+<p><strong>Na prática.</strong> Um modo só leitura em que o agente estuda a tarefa e propõe um plano, mas não pode mudar nada até uma pessoa aprová-lo. Os quatro agentes de código nativos de fornecedor no <a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">estudo de código-fonte</a> de 2026 trazem um. Em pelo menos um deles, o arquivo do plano é a única coisa que o modo deixa o agente escrever, e uma ferramenta própria é o que leva a sessão de volta a um modo que pode escrever.</p>
+<p><strong>Para quem.</strong> N1 em diante, quem aprova mudanças que um agente faz.</p>
+<p><strong>Faixa mínima.</strong> N1.</p>
+<p><strong>Quando não usar.</strong> Uma mudança pequena a ponto de plano e ação serem o mesmo passo: a revisão do plano então só acrescenta uma ida e volta sem nada a revisar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Ligue-o na sua próxima mudança que toque mais de um arquivo, leia o plano antes de aprová-lo e anote o que você mudou nele. Essa edição é o seu contrato de tarefa, imposto pelo runtime em vez de por uma promessa.</p>
+
 <h2 id="pt-equipar">4. Equipar</h2>
 
 <p>Equipar decide o que o agente vê, o que pode tocar e o que sobrevive entre sessões, discutido em profundidade na <a href="harness-p2.html#pt-equipar">parte 2</a>. As quatro fichas abaixo são as coleções mais estudadas hoje para escrever guia, organizar memória durável e, na ficha mais nova, desenhar as fronteiras do próprio harness e a interface de ferramenta.</p>
@@ -596,7 +605,7 @@ p code{
 <p><strong>Quando não usar.</strong> Quando o objetivo é uma skill pequena e específica de domínio. O framework inteiro é mais estrutura do que uma tarefa isolada precisa.</p>
 <p><strong>Como começar em 15 minutos.</strong> Siga o <a href="#pt-howto-1">roteiro 1</a> abaixo, feito justamente para isso.</p>
 
-<p>Licença MIT. Distribuída pelo marketplace oficial de plugins e por vários outros ambientes.</p>
+<p>Licença MIT. Distribuída pelo marketplace oficial de plugins e por vários outros ambientes. Em 5 de outubro de 2026 a origem lista quinze skills; este projeto instalou catorze, sem a mais nova, <code>diagnosing-superpowers</code>, que não estava na coleção quando as catorze foram escolhidas e não foi medida aqui (ver a sexta pergunta em "Antes de instalar qualquer coisa").</p>
 
 <pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
 
@@ -622,14 +631,14 @@ p code{
 <p><strong>Quando não usar.</strong> Tarefa que começa e termina dentro de uma única sessão curta. O overhead de manter arquivo de estado não se paga.</p>
 <p><strong>Como começar em 15 minutos.</strong> Crie um arquivo de plano com três seções (feito, em andamento, próximo) e peça ao agente que o atualize a cada etapa concluída, antes de fechar a sessão.</p>
 
-<div class="rule-box"><span class="lbl">Ressalva</span><p>Cerca de 26 mil estrelas, mas o número de eficácia divulgado pelo próprio projeto mede fidelidade ao padrão (quantas sessões seguiram o formato), não deriva de um objetivo de negócio. Trate como evidência de adoção, não como prova de resultado.</p></div>
+<div class="rule-box"><span class="lbl">Ressalva</span><p>Cerca de 27 mil estrelas (5 de outubro de 2026), mas o número de eficácia divulgado pelo próprio projeto mede fidelidade ao padrão (quantas sessões seguiram o formato), não deriva de um objetivo de negócio. Trate como evidência de adoção, não como prova de resultado.</p></div>
 
 <p>Repositório: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
 
 <h3>Agent Skills for Context Engineering</h3>
 
 <p><strong>Problema.</strong> Um leitor apontou uma lacuna real nesta página: tudo acima equipa o agente com disciplina de processo (superpowers), peças editáveis (mattpocock/skills) ou estado durável (planning-with-files), mas nada aqui trata da própria arquitetura do harness, da fronteira entre o que um agente pode tocar, quantos agentes deveriam estar tocando nele, e o que a interface de uma ferramenta pede do modelo que a chama.</p>
-<p><strong>Na prática.</strong> Três skills de uma coleção de dezessete, lidas separadamente e mantidas como três porque cada uma responde uma pergunta diferente. <code>harness-engineering</code> nomeia quatro classes de superfície (travada, editável, apenas-anexação, controlada por humano) e trata um pull request que o agente prepara e um deploy que uma pessoa aprova como dois tipos diferentes de autoridade, não um só. <code>multi-agent-patterns</code> documenta as três formas dominantes de coordenação (supervisor, ponto a ponto, hierárquica) contra oito modos de falha nomeados, incluindo um custo de símbolo cerca de quinze vezes a referência de um único agente que é rotineiramente subestimado. <code>tool-design</code> trata a descrição de uma ferramenta como o prompt que ela de fato é, e dá uma auditoria de oito pontos para reduzir um conjunto de ferramentas sobrepostas a um propósito inequívoco por ferramenta.</p>
+<p><strong>Na prática.</strong> Três skills de uma coleção de dezoito (dezessete quando esta entrada foi escrita), lidas separadamente e mantidas como três porque cada uma responde uma pergunta diferente. <code>harness-engineering</code> nomeia quatro classes de superfície (travada, editável, apenas-anexação, controlada por humano) e trata um pull request que o agente prepara e um deploy que uma pessoa aprova como dois tipos diferentes de autoridade, não um só. <code>multi-agent-patterns</code> documenta as três formas dominantes de coordenação (supervisor, ponto a ponto, hierárquica) contra oito modos de falha nomeados. Se mais agentes compensam é propriedade da tarefa, não regra: <a class="src" href="harness-sources.html#pt-src-google-scaling" data-tip="Google Research, 180 configurações de agentes, 28 de janeiro de 2026.">o estudo de 2026 do Google Research</a>, com 180 configurações, relatou ganho de 80,9% com coordenação centralizada numa tarefa decomponível de raciocínio financeiro e perda de 39% a 70% em tarefas sequenciais de planejamento. <code>tool-design</code> trata a descrição de uma ferramenta como o prompt que ela de fato é, e dá uma auditoria de oito pontos para reduzir um conjunto de ferramentas sobrepostas a um propósito inequívoco por ferramenta.</p>
 <p><strong>Para quem.</strong> N1 em diante para a metade de desenho de harness e interface de ferramenta, <code>harness-engineering</code> e <code>tool-design</code>, qualquer agente único que já vale a pena desenhar com cuidado. N2 em diante para <code>multi-agent-patterns</code>, que pressupõe que mais de um agente já existe.</p>
 <p><strong>Faixa mínima.</strong> Uma questão de julgamento: N1 para duas das três skills, N2 quando vários agentes já estão de fato coordenando.</p>
 <p><strong>Quando não usar.</strong> Uma conversa única e curta, sem estado durável e sem ferramenta além dos padrões do próprio modelo. As três skills pressupõem que já existe algo que vale a pena estruturar.</p>
@@ -657,20 +666,20 @@ p code{
 <h3>Classes de ambiente</h3>
 
 <p><strong>Problema.</strong> A maior parte da frustração com agentes não vem do modelo nem do método: vem de tentar montar um controle que o ambiente escolhido não sustenta.</p>
-<p><strong>Na prática.</strong> Quatro classes, detalhadas na <a href="harness-p2.html#pt-ambientes">parte 2</a>: conversa com instruções, agente com arquivos e execução, orquestração programada, geração assistida de software. Nomes atuais de cada classe: Claude Code, Codex e equivalentes cobrem a segunda; DeepSeek Harness (runtime aberto, registro apenas-anexação) e LangGraph cobrem a terceira; assistentes de conversa cobrem a primeira.</p>
+<p><strong>Na prática.</strong> Quatro classes, detalhadas na <a href="harness-p2.html#pt-ambientes">parte 2</a>: conversa com instruções, agente com arquivos e execução, orquestração programada, geração assistida de software. Nomes atuais de cada classe: Claude Code, Codex e equivalentes cobrem a segunda; runtimes gerenciados de agente e workflows em código (ver a entrada abaixo) cobrem a terceira, com DeepSeek Harness (runtime aberto, registro apenas-anexação) e LangGraph como exemplos; assistentes de conversa cobrem a primeira.</p>
 <p><strong>Para quem.</strong> Quem decide compra ferramenta antes de saber que faixa precisa alcançar. Esta ficha inverte a ordem: primeiro a faixa, depois a classe de ambiente que sustenta aquela faixa.</p>
 <p><strong>Faixa mínima.</strong> Não se aplica, é diagnóstico, não ferramenta.</p>
 <p><strong>Quando não usar.</strong> Nunca pule esta pergunta. Ela é o motivo mais comum de projeto de harness que não sai do papel.</p>
 <p><strong>Como começar em 15 minutos.</strong> Responda: até que faixa esta tarefa precisa chegar? Depois, qual é a classe de ambiente mais simples que sustenta aquela faixa, sem subir mais um degrau do que o necessário.</p>
 
-<h3>Orquestração programada</h3>
+<h3>Workflow em código e runtimes gerenciados</h3>
 
 <p><strong>Problema.</strong> Teto de tentativas, política de alçada e registro de execução escritos como instrução podem ser reescritos ou ignorados pelo próprio sistema que deveriam limitar.</p>
-<p><strong>Na prática.</strong> Framework de orquestração de agentes com estado, onde essas três coisas deixam de ser texto e passam a ser código fora do alcance do modelo. LangGraph é a referência mais madura hoje.</p>
+<p><strong>Na prática.</strong> Duas rotas põem essas três coisas em código fora do alcance do modelo. A primeira é um runtime gerenciado de agente, que mantém a sessão, as aprovações e a recuperação como parte do serviço: <a class="src" href="harness-sources.html#pt-src-openai-agents-api" data-tip="OpenAI, Introducing the Agents API, 10 September 2026, public beta.">a Agents API da OpenAI</a> (beta público desde 10 de setembro de 2026), <a class="src" href="harness-sources.html#pt-src-ms-harness" data-tip="Microsoft, Agent Harness, Agent Framework documentation.">o harness do Agent Framework da Microsoft</a>, <a class="src" href="harness-sources.html#pt-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, 8 April 2026.">os Managed Agents da Anthropic</a> e <a class="src" href="harness-sources.html#pt-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">o Agent Executor do Google</a> (código aberto, em prévia) surgiram todos em 2026. A segunda é o workflow em código, uma sequência fixa escrita em código com pontos de verificação, em que o modelo preenche passos mas não escolhe o caminho. LangGraph é uma referência para essa rota.</p>
 <p><strong>Para quem.</strong> N2 a N3, quando o guia sozinho já não impede a violação do teto ou da alçada.</p>
 <p><strong>Faixa mínima.</strong> N2, para justificar a complexidade adicional de orquestrar em código.</p>
-<p><strong>Quando não usar.</strong> Tarefa que roda em uma sessão de agente com arquivos e execução já sustenta a faixa necessária. Orquestrar em código antes disso é construir estrutura para um problema que ainda não existe.</p>
-<p><strong>Como começar em 15 minutos.</strong> Leia a documentação do conceito de teto (retry ceiling) do framework escolhido antes de qualquer outra parte: é a peça que substitui a promessa de um guia por uma restrição que o sistema não consegue driblar.</p>
+<p><strong>Quando não usar.</strong> Tarefa que roda em uma sessão de agente com arquivos e execução já sustenta a faixa necessária. Orquestrar antes disso é construir estrutura para um problema que ainda não existe. O <a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">estudo de código-fonte</a> de onze runtimes de agente de código achou que nenhum importa um framework agêntico de uso geral, então para código o framework não é o padrão. Para um fluxo de negócio com passos fixos que não podem ser repetidos com segurança, o workflow em código continua a escolha defensável, e <a class="src" href="harness-sources.html#pt-src-ms-skills" data-tip="Microsoft, Agent Skills, documentação do Agent Framework, revisada em 2 de outubro de 2026.">a própria orientação da Microsoft sobre skills</a> diz para preferir workflows quando os passos têm efeitos colaterais. Os quatro runtimes gerenciados são de 2026, um é beta público e um está em prévia, então espere mudança de nomes e de protocolos.</p>
+<p><strong>Como começar em 15 minutos.</strong> Leia a documentação do conceito de teto (retry ceiling) da rota escolhida antes de qualquer outra parte: é a peça que substitui a promessa de um guia por uma restrição que o sistema não consegue driblar.</p>
 
 <p>Repositório: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
 
@@ -720,7 +729,16 @@ p code{
 <p><strong>Quando não usar.</strong> Um único verificador isolado ainda não justifica um painel. Consolide quando o segundo verificador entrar em produção.</p>
 <p><strong>Como começar em 15 minutos.</strong> Aponte para os verificadores que você já tem rodando e leia o resumo de tendência da primeira semana antes de adicionar qualquer verificador novo.</p>
 
-<p>Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+<p>Sem licença: o repositório não tem arquivo de licença e o README não declara nenhuma, então por padrão todos os direitos ficam com o autor. Leia-o e copie o padrão, não o código, até o autor publicar uma licença. Repositório: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<h3>Hooks de ciclo de vida</h3>
+
+<p><strong>Problema.</strong> Um guia é lido e pode ser ignorado. Uma regra só vira portão quando o runtime a executa.</p>
+<p><strong>Na prática.</strong> Pontos na execução de uma ferramenta de agente em que uma regra pode inspecionar, bloquear ou reescrever uma ação antes de ela acontecer, rodar um verificador depois dela e recusar o encerramento da sessão até existir evidência nova. O vocabulário está convergindo: segundo o <a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">estudo de código-fonte</a>, o Codex da OpenAI copiou quase literalmente os nomes de evento do Claude Code, e o Gemini CLI traz onze eventos de ciclo de vida. O hook de parada deste repositório, <code>build/stop_hook.py</code>, é um pequeno exemplo funcionando.</p>
+<p><strong>Para quem.</strong> N2 em diante, quem já tem um verificador e quer que ele rode sem que ninguém precise lembrar.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Para uma regra que só uma pessoa julga: deixe-a no guia. E nunca deixe a configuração de um hook ser editada pelo agente que ela governa sem uma pessoa ler o diff; este repositório pede confirmação antes de os próprios arquivos de hook serem alterados.</p>
+<p><strong>Como começar em 15 minutos.</strong> Escreva dois hooks: um que roda o seu verificador mais barato depois de cada mudança de arquivo, e outro que bloqueia o fim da sessão enquanto esse verificador falhar.</p>
 
 <h3>research</h3>
 
@@ -896,6 +914,15 @@ p code{
 
 <p>Duas perguntas que esta seção ainda não consegue responder com honestidade, e vale dizer isso em vez de disfarçar. Nada acima deixa um agente processar dado pessoal sem armazená-lo de jeito nenhum, "minimização" no sentido estrito: o produto adjacente mais próximo, o Zep, construído sobre o motor de código aberto Graphiti, governa por quanto tempo o dado armazenado sobrevive, não se ele é armazenado em primeiro lugar, e a orientação atual da própria profissão de privacidade recomenda construir níveis de retenção e exclusão sob demanda internamente, sem nomear nenhuma ferramenta. E nenhum órgão de padrões ainda publicou um framework de privacidade-desde-o-projeto específico para agente: a ISO/IEC 27701 virou padrão autônomo e certificável em outubro de 2025, mas sem nenhuma cláusula específica de agente encontrada na inspeção; a própria atualização do framework de privacidade do NIST continua em rascunho. As duas seguem perguntas em aberto para este documento revisitar, não problemas para disfarçar com algo que soa como resposta.</p>
 
+<h3>Contenção: sandbox, rede e credenciais</h3>
+
+<p><strong>Problema.</strong> A pergunta 6 das doze da parte 1, se a execução é isolada da produção, não tinha ferramenta neste guia.</p>
+<p><strong>Na prática.</strong> Um sandbox do sistema operacional, um worktree separado por tarefa, um contêiner, rede de saída restrita, e credenciais mantidas fora do sandbox atrás de um proxy, de modo que o agente usa um token que nunca vê. No <a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">estudo de código-fonte</a>, o Codex traz um sandbox nativo em três sistemas operacionais e um proxy de rede, e o sandbox de runtime do Claude Code é opcional. <a class="src" href="harness-sources.html#pt-src-contain" data-tip="Anthropic, How we contain Claude across products, 25 de maio de 2026.">O texto da Anthropic de 2026 sobre conter o Claude</a> trata a contenção como um controle separado da aprovação.</p>
+<p><strong>Para quem.</strong> N2 a N3, onde quer que um agente possa tocar algo que não se desfaz.</p>
+<p><strong>Faixa mínima.</strong> N2.</p>
+<p><strong>Quando não usar.</strong> Isolamento é uma escolha cara, não um padrão gratuito, e algumas ferramentas preferem regras de permissão e análise de comando a um sandbox. A contenção limita o que um agente alcança se todas as salvaguardas de comportamento falharem. Ela não torna certa uma ação errada.</p>
+<p><strong>Como começar em 15 minutos.</strong> Liste o que o seu agente alcança hoje (arquivos, rede, credenciais) e tire da lista uma coisa de que nenhuma tarefa atual precisa.</p>
+
 <h2 id="pt-govern">9. Governar</h2>
 
 <p>Governar não substitui o registro que a <a href="harness-p4.html#pt-top">parte 4</a> §7 insiste que pode ser uma tabela e uma planilha para uma empresa com sete agentes. Ele existe para os dois momentos em que uma planilha para de bastar: acompanhar os oito indicadores ao longo de um trimestre, e saber o que uma empresa maior que sete-agentes-e-uma-planilha está de fato comprando quando compra uma "control tower".</p>
@@ -953,9 +980,18 @@ p code{
 <p><strong>Quando não usar.</strong> Todo mundo abaixo de N3. O próprio teste da parte 4 §7 continua valendo: se o registro inteiro cabe numa tabela com ata de reunião ao lado, nenhuma das duas linhas se aplica ainda.</p>
 <p><strong>Como começar em 15 minutos.</strong> Não se aplica, isto é uma referência de panorama, não algo pra testar. Releia a parte 4 §6 e §7 antes de qualquer conversa com um fornecedor desta tabela.</p>
 
+<h3>Meta-harness: uma camada acima das ferramentas de agente (observar)</h3>
+
+<p><strong>Problema.</strong> Quando várias ferramentas de agente estão em uso, alguém precisa decidir onde cada uma roda, dentro de que sandbox e com que registro.</p>
+<p><strong>Na prática.</strong> Uma camada acima dos agentes de código que envolve vários deles atrás de um sandbox, um proxy de credenciais e um registro de sessão. O <a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">estudo de código-fonte</a> de 2026 descreve uma em seu corpus e lista a camada como uma a observar. É uma observação, não uma recomendação: nada aqui diz para adotar uma.</p>
+<p><strong>Para quem.</strong> N3, e um escritório de agentes (parte 4) que já mantém um registro.</p>
+<p><strong>Faixa mínima.</strong> N3.</p>
+<p><strong>Quando não usar.</strong> Antes de haver mais de uma ferramenta de agente e um registro que diga quais existem. A camada não teria o que coordenar.</p>
+<p><strong>Como começar em 15 minutos.</strong> Não instale nada. Leia a seção do estudo sobre a camada de meta-harness e confira se o seu registro responderia o que essa camada registraria.</p>
+
 <h3>Reaproveitando o sensors-cli para os oito indicadores</h3>
 
-<p>Nenhuma ferramenta nova proposta aqui de propósito. O <a href="#pt-inspecionar">sensors-cli</a>, já coberto em Inspecionar, é um painel que roda vários verificadores em intervalo e guarda histórico. O mesmo padrão se estende aos oito indicadores da parte 4 quando mais de dois ou três já estão sendo acompanhados: aponte para cobertura de registro, taxa de exceção e taxa de recusa no portão do mesmo jeito que ele já aponta para verificadores de verificação dura, em vez de erguer um segundo painel separado.</p>
+<p>Nenhuma ferramenta nova proposta aqui de propósito. O <a href="#pt-inspecionar">sensors-cli</a>, já coberto em Inspecionar, é um painel que roda vários verificadores em intervalo e guarda histórico. O mesmo padrão se estende aos oito indicadores da parte 4 quando mais de dois ou três já estão sendo acompanhados: aponte para cobertura de registro, taxa de exceção e taxa de recusa no portão do mesmo jeito que ele já aponta para verificadores de verificação dura, em vez de erguer um segundo painel separado. Como o repositório não tem licença, reaproveite o padrão, não o código, até o autor publicar uma.</p>
 
 <h2 id="pt-howto-1">10. Roteiro 1: ler o superpowers em uma hora</h2>
 
@@ -1013,6 +1049,14 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p><strong>Passo 3.</strong> Escreva a mensagem de erro como instrução de correção. Esta é a parte que decide se o verificador funciona. Ela precisa conter o que está errado, qual é o valor certo, onde fica a fonte, a provável causa e o que fazer em seguida. Uma mensagem que só diz falhou é um alarme, não um verificador.</p>
 
+<p>A mesma forma vale quando uma ferramenta falha, não só quando uma verificação falha. Uma falha deve dizer o que deu errado, o que foi pedido, se algo já aconteceu como efeito colateral e se é seguro tentar de novo:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre>
+
 <p><strong>Passo 4.</strong> Amarre o verificador ao critério de pronto do skill. Em vez de escrever pronto quando os números estiverem certos, escreva pronto quando o comando de conferência não retornar divergências. O critério deixa de ser opinião e passa a ser verificável.</p>
 
 <p><strong>Passo 5.</strong> Defina o teto. Três tentativas, e na terceira o sistema para, entrega marcado como não conferido e explica o que não fechou.</p>
@@ -1025,16 +1069,21 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>A recomendação de quem publica o formato é explícita: instale apenas de origem confiável, e quando a origem for menos conhecida, audite antes de usar. Leia o conteúdo dos arquivos, preste atenção especial ao código incluído e aos recursos que vêm junto, e verifique se há instruções mandando o sistema buscar algo em rede externa.</p>
 
-<p>Três perguntas antes de qualquer instalação:</p>
+<p>Seis perguntas antes de qualquer instalação:</p>
 
 <table class="wrap">
 <thead><tr><th>Pergunta</th><th>Por que importa</th></tr></thead>
 <tbody>
 <tr><td>Que dado esta coleção alcança quando estiver ativa?</td><td>Skill instalada opera com as permissões que o ambiente já tem</td></tr>
 <tr><td>Existe instrução para buscar algo fora?</td><td>É o vetor mais direto de instrução vinda de fora do seu controle</td></tr>
-<tr><td>Quem mantém, sob que licença, e com que frequência?</td><td>Coleção abandonada vira instrução desatualizada rodando em silêncio</td></tr>
+<tr><td>Quem mantém, sob que licença, e com que frequência?</td><td>Coleção abandonada vira instrução desatualizada rodando em silêncio. Um README que declara licença sem arquivo de licença é uma concessão mais fraca, e nenhuma licença significa que o autor mantém todos os direitos: este guia diz isso sobre o sensors-cli</td></tr>
+<tr><td>Ela declara dependências que serão instaladas automaticamente, como servidores de ferramenta ou binários?</td><td>Instalar uma skill pode instalar outra coisa (<a class="src" href="harness-sources.html#pt-src-barbaste" data-tip="Barbaste, Darrigol, Vu e Wiltberger, estudo do código-fonte de onze sistemas de agentes de código, arXiv:2609.00006, 15 de julho de 2026.">Barbaste e coautores, seção 12.5</a>)</td></tr>
+<tr><td>Ela registra hooks, ou manda o agente não perguntar antes de agir?</td><td>É o padrão que este projeto já rejeitou uma vez, numa skill que mandava o agente não pedir confirmação ao usuário (ver <code>sources/inventory.md</code>)</td></tr>
+<tr><td>A tarefa melhora com ela?</td><td>Uma skill com cara de relevante ainda pode deixar o trabalho errado ou mais lento: <a class="src" href="harness-sources.html#pt-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, 12 de agosto de 2026.">Dong et al.</a> mediu 307 falhas assim. Meça a tarefa com e sem a skill antes de ficar com ela</td></tr>
 </tbody>
 </table>
+
+<p>O Agent Framework da Microsoft agora exige aprovação por padrão antes de uma skill ser carregada, lida ou executada (<a class="src" href="harness-sources.html#pt-src-ms-skills" data-tip="Microsoft, Agent Skills, documentação do Agent Framework, revisada em 2 de outubro de 2026.">documentação revisada em 2 de outubro de 2026</a>). Trate isso como o ponto de partida, não como exceção.</p>
 
 <p>A parte 3 da série trata dessa superfície com profundidade, ao lado de permissão fora do modelo, registro auditável e responsabilidade.</p>
 
@@ -1095,7 +1144,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p class="byline">Fernando Teco Sodré · Revised October 2026 · Companion to parts 1 to 4</p>
 
-<div class="rule-box"><span class="lbl">Validity</span><p>Everything here was verified in August 2026. Names, addresses and commands change. The series' articles talk about principles and do not depend on this document. This document depends on the market.</p></div>
+<div class="rule-box"><span class="lbl">Validity</span><p>Everything here was re-verified on 5 October 2026: for each repository, whether it is archived, the date of its last commit and its licence were read from the origin that day, and <code>sources/upstream.json</code> records the result. Names, addresses and commands change, so the check is repeated every quarter. The series' articles talk about principles and do not depend on this document. This document depends on the market.</p></div>
 
 <nav class="toc">
   <p>In this document</p>
@@ -1182,7 +1231,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A small, familiar repository, where the context already fits in the head of whoever is requesting the task.</p>
 <p><strong>How to start in 15 minutes.</strong> Open the skills folder, read the three or four most used, compare them against your own process for bringing someone new onto the team.</p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>Despite the name, this is not Karpathy's. It is maintained by a third party, derived from his public observations, with 208 thousand stars. The repository's installation commands point to a different owner than the current one: check before installing. The agentic flow that actually is his is called autoresearch, and it is in the sources.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>Despite the name, this is not Karpathy's. It is maintained by a third party, derived from his public observations, with 217 thousand stars (5 October 2026). The repository's installation commands point to a different owner than the current one: check before installing. The agentic flow that actually is his is called autoresearch, and it is in the sources. The repository has no LICENSE file, only a README that declares MIT, a weaker grant than a licence file. Last commit 20 April 2026: quiet for more than five months, still current by this project's own classification.</p></div>
 
 <p>Repository: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
 
@@ -1195,7 +1244,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A one-person project, with no expectation that another person or another session will pick the work back up later.</p>
 <p><strong>How to start in 15 minutes.</strong> Write the first context diagram, one box for the system and one for each user and external system it touches, before the next architecture decision.</p>
 
-<p>Repository: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+<p>MIT licence. Last commit 26 April 2026: quiet for more than five months, still current by this project's own classification. Repository: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
 
 <h3>Specification before code</h3>
 
@@ -1219,6 +1268,15 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A small task, a single executor, low volume. The ceremony costs more than it prevents, and none of the four tools was designed for that case.</p>
 <p><strong>How to start in 15 minutes.</strong> Write the three-line contract from intake-briefing itself (what it delivers, what it never does, when it is done) before installing any tool from this category. Install afterwards, only if the contract alone is not enough.</p>
 
+<h3>Plan mode</h3>
+
+<p><strong>Problem.</strong> A task contract is a promise until something stops the agent from acting before the plan is approved.</p>
+<p><strong>In practice.</strong> A read-only mode in which the agent studies the task and proposes a plan but cannot change anything until a person approves it. All four provider-native coding agents in the 2026 <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> ship one. In at least one of them the plan file is the only thing the mode lets the agent write, and a dedicated tool is what moves the session back to a mode that can write.</p>
+<p><strong>Who it is for.</strong> N1 upward, anyone who approves changes an agent makes.</p>
+<p><strong>Minimum tier.</strong> N1.</p>
+<p><strong>When not to use it.</strong> A change small enough that the plan and the action are the same step: a plan review then adds a round trip with nothing to review.</p>
+<p><strong>How to start in 15 minutes.</strong> Turn it on for your next change that touches more than one file, read the plan before approving it, and write down what you changed in it. That edit is your task contract, enforced by the runtime instead of by a promise.</p>
+
 <h2 id="en-equipar">4. Equip</h2>
 
 <p>Equip decides what the agent sees, what it can touch and what survives between sessions, discussed in depth in <a href="harness-p2.html#en-equipar">part 2</a>. The four entries below are the most studied collections today for writing guides, organising durable memory and, in the newest entry, designing the harness's own boundaries and tool interface.</p>
@@ -1232,7 +1290,7 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> When the goal is a small, domain-specific skill. The whole framework is more structure than a single task needs.</p>
 <p><strong>How to start in 15 minutes.</strong> Follow <a href="#en-howto-1">walkthrough 1</a> below, made exactly for this.</p>
 
-<p>MIT licence. Distributed through the official plugin marketplace and several other environments.</p>
+<p>MIT licence. Distributed through the official plugin marketplace and several other environments. On 5 October 2026 the origin lists fifteen skills; this project installed fourteen, without the newest, <code>diagnosing-superpowers</code>, which was not in the collection when the fourteen were chosen and has not been measured here (see the sixth question in "Before installing anything").</p>
 
 <pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
 
@@ -1258,14 +1316,14 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A task that starts and ends within a single short session. The overhead of keeping a state file does not pay for itself.</p>
 <p><strong>How to start in 15 minutes.</strong> Create a plan file with three sections (done, in progress, next) and ask the agent to update it after every completed step, before closing the session.</p>
 
-<div class="rule-box"><span class="lbl">Caveat</span><p>Around 26 thousand stars, but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
+<div class="rule-box"><span class="lbl">Caveat</span><p>Around 27 thousand stars (5 October 2026), but the effectiveness figure the project itself publishes measures fidelity to the pattern (how many sessions followed the format), it is not derived from a business outcome. Treat it as evidence of adoption, not proof of results.</p></div>
 
 <p>Repository: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
 
 <h3>Agent Skills for Context Engineering</h3>
 
 <p><strong>Problem.</strong> A reader flagged a real gap in this page: everything above equips the agent with process discipline (superpowers), editable pieces (mattpocock/skills) or durable state (planning-with-files), but nothing here addresses the harness's own architecture, the boundary between what an agent may touch, how many agents should be touching it, and what a tool's own interface asks of the model calling it.</p>
-<p><strong>In practice.</strong> Three skills out of a seventeen-skill collection, read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes, including a token cost around fifteen times a single-agent baseline that is routinely underestimated. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
+<p><strong>In practice.</strong> Three skills out of an eighteen-skill collection (seventeen when this entry was first written), read separately and kept as three because each answers a different question. <code>harness-engineering</code> names four surface classes (locked, editable, append-only, human-controlled) and treats a pull request the agent prepares and a deploy a person approves as two different kinds of authority, not one. <code>multi-agent-patterns</code> documents the three dominant coordination shapes (supervisor, peer-to-peer, hierarchical) against eight named failure modes. Whether more agents pay is a property of the task, not a rule: <a class="src" href="harness-sources.html#en-src-google-scaling" data-tip="Google Research, 180 agent configurations, 28 January 2026.">Google Research's 2026 study</a> of 180 configurations reported an 80.9% gain from centralised coordination on one decomposable financial-reasoning task and a 39% to 70% loss on sequential planning tasks. <code>tool-design</code> treats a tool description as the prompt it actually is, and gives an eight-point audit for cutting an overlapping tool set down to one unambiguous purpose per tool.</p>
 <p><strong>Who it is for.</strong> N1 upward for the harness-design and tool-interface half, <code>harness-engineering</code> and <code>tool-design</code>, any single agent already worth designing carefully. N2 upward for <code>multi-agent-patterns</code>, which presupposes more than one agent already exists.</p>
 <p><strong>Minimum tier.</strong> A matter of judgement: N1 for two of the three skills, N2 once multiple agents are actually coordinating.</p>
 <p><strong>When not to use it.</strong> A single, short-lived conversation with no durable state and no tool beyond the model's own defaults. All three skills assume something worth structuring already exists.</p>
@@ -1293,20 +1351,20 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <h3>Environment classes</h3>
 
 <p><strong>Problem.</strong> Most of the frustration with agents does not come from the model or the method: it comes from trying to set up a control that the chosen environment cannot sustain.</p>
-<p><strong>In practice.</strong> Four classes, detailed in <a href="harness-p2.html#en-ambientes">part 2</a>: conversation with instructions, agent with files and execution, programmed orchestration, assisted software generation. Current names for each class: Claude Code, Codex and equivalents cover the second; DeepSeek Harness (open runtime, append-only log) and LangGraph cover the third; conversation assistants cover the first.</p>
+<p><strong>In practice.</strong> Four classes, detailed in <a href="harness-p2.html#en-ambientes">part 2</a>: conversation with instructions, agent with files and execution, programmed orchestration, assisted software generation. Current names for each class: Claude Code, Codex and equivalents cover the second; managed agent runtimes and coded workflows (see the entry below) cover the third, with DeepSeek Harness (open runtime, append-only log) and LangGraph as examples; conversation assistants cover the first.</p>
 <p><strong>Who it is for.</strong> Whoever decides buys a tool before knowing which tier the task needs to reach. This entry reverses the order: the tier first, then the environment class that sustains that tier.</p>
 <p><strong>Minimum tier.</strong> Not applicable, it is a diagnostic, not a tool.</p>
 <p><strong>When not to use it.</strong> Never skip this question. It is the most common reason a harness project never leaves the drawing board.</p>
 <p><strong>How to start in 15 minutes.</strong> Answer: which tier does this task need to reach? Then, what is the simplest environment class that sustains that tier, without climbing one rung more than necessary.</p>
 
-<h3>Programmed orchestration</h3>
+<h3>Coded workflow and managed runtimes</h3>
 
 <p><strong>Problem.</strong> A retry ceiling, an authority policy and an execution record written as instructions can be rewritten or ignored by the very system they are meant to limit.</p>
-<p><strong>In practice.</strong> A stateful agent orchestration framework, where these three things stop being text and become code outside the model's reach. LangGraph is the most mature reference today.</p>
+<p><strong>In practice.</strong> Two routes put these three things in code outside the model's reach. The first is a managed agent runtime, which keeps the session, approvals and recovery as part of the service: <a class="src" href="harness-sources.html#en-src-openai-agents-api" data-tip="OpenAI, Introducing the Agents API, 10 September 2026, public beta.">OpenAI's Agents API</a> (public beta since 10 September 2026), <a class="src" href="harness-sources.html#en-src-ms-harness" data-tip="Microsoft, Agent Harness, Agent Framework documentation.">Microsoft's Agent Framework harness</a>, <a class="src" href="harness-sources.html#en-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, 8 April 2026.">Anthropic's Managed Agents</a> and <a class="src" href="harness-sources.html#en-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">Google's Agent Executor</a> (open source, in preview) all appeared in 2026. The second is a coded workflow, a fixed sequence written in code with checkpoints, where the model fills in steps but does not choose the path. LangGraph is one reference for that route.</p>
 <p><strong>Who it is for.</strong> N2 to N3, when the guide alone no longer prevents a breach of the ceiling or the authority limit.</p>
 <p><strong>Minimum tier.</strong> N2, to justify the added complexity of orchestrating in code.</p>
-<p><strong>When not to use it.</strong> A task that runs in a single agent-with-files-and-execution session already sustains the tier needed. Orchestrating in code before that is building structure for a problem that does not exist yet.</p>
-<p><strong>How to start in 15 minutes.</strong> Read the documentation on the retry ceiling concept of the chosen framework before any other part: it is the piece that replaces a guide's promise with a constraint the system cannot talk its way around.</p>
+<p><strong>When not to use it.</strong> A task that runs in a single agent-with-files-and-execution session already sustains the tier needed. Orchestrating before that is building structure for a problem that does not exist yet. The <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> of eleven coding-agent runtimes found that none imports a general-purpose agentic framework, so for coding work a framework is not the default. For a business flow with fixed steps that cannot safely be repeated, a coded workflow is still the defensible choice, and <a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">Microsoft's own skills guidance</a> says to prefer workflows when steps have side effects. All four managed runtimes date from 2026, one is a public beta and one is in preview, so expect names and protocols to change.</p>
+<p><strong>How to start in 15 minutes.</strong> Read the documentation on the retry ceiling concept of the route you chose before any other part: it is the piece that replaces a guide's promise with a constraint the system cannot talk its way around.</p>
 
 <p>Repository: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
 
@@ -1356,7 +1414,16 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> A single isolated sensor does not yet justify a dashboard. Consolidate once the second sensor goes into production.</p>
 <p><strong>How to start in 15 minutes.</strong> Point it at the sensors you already have running and read the first week's trend summary before adding any new sensor.</p>
 
-<p>Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+<p>No licence: the repository has no licence file and its README declares none, so by default all rights stay with the author. Read it and copy the pattern, not the code, until the author publishes a licence. Repository: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<h3>Lifecycle hooks</h3>
+
+<p><strong>Problem.</strong> A guide is read and can be ignored. A rule only becomes a gate when the runtime runs it.</p>
+<p><strong>In practice.</strong> Points in an agent tool's run where a rule can inspect, block or rewrite an action before it happens, run a sensor after it, and refuse to let the session end until fresh evidence exists. The vocabulary is converging: according to the <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a>, OpenAI's Codex copied Claude Code's event names almost verbatim, and Gemini CLI ships eleven lifecycle events. This repository's own stop hook, <code>build/stop_hook.py</code>, is a small working example.</p>
+<p><strong>Who it is for.</strong> N2 upward, whoever already has a sensor and wants it to run without anyone remembering.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> For a rule only a person can judge: keep that in the guide. And never let a hook's configuration be edited by the agent it governs without a person reading the diff; this repository asks for confirmation before its own hook files are changed.</p>
+<p><strong>How to start in 15 minutes.</strong> Write two hooks: one that runs your cheapest sensor after every file change, and one that blocks the end of a session while that sensor fails.</p>
 
 <h3>research</h3>
 
@@ -1532,6 +1599,15 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 
 <p>Two questions this section cannot yet answer honestly, worth stating rather than papering over. Nothing above lets an agent process personal data without storing it at all, "minimisation" in the strict sense: the closest adjacent product, Zep, built on the open-source Graphiti engine, governs how long stored data survives, not whether it gets stored in the first place, and current guidance from the privacy profession itself recommends building retention tiers and callable deletion in house, naming no tool. And no standards body has yet published an agent-specific privacy-by-design framework: ISO/IEC 27701 became a standalone, certifiable standard in October 2025, but with no agent-specific clause found on inspection; NIST's own privacy framework update remains a draft. Both stay open questions for this document to revisit, not problems to paper over with something that sounds like an answer.</p>
 
+<h3>Containment: sandbox, network and credentials</h3>
+
+<p><strong>Problem.</strong> Question 6 of part 1's twelve, whether execution is isolated from production, had no tool in this guide.</p>
+<p><strong>In practice.</strong> An operating-system sandbox, a separate worktree per task, a container, a restricted outbound network, and credentials kept outside the sandbox behind a proxy, so the agent uses a token it never sees. In the <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a>, Codex ships a native sandbox on three operating systems and a network proxy, and Claude Code's runtime sandbox is opt-in. <a class="src" href="harness-sources.html#en-src-contain" data-tip="Anthropic, How we contain Claude across products, 25 May 2026.">Anthropic's 2026 post on containing Claude</a> treats containment as a control separate from approval.</p>
+<p><strong>Who it is for.</strong> N2 to N3, wherever an agent can touch something that cannot be undone.</p>
+<p><strong>Minimum tier.</strong> N2.</p>
+<p><strong>When not to use it.</strong> Isolation is a costly choice, not a free default, and some tools prefer permission rules and command analysis to a sandbox. Containment limits what an agent can reach if every behavioural safeguard fails. It does not make a wrong action right.</p>
+<p><strong>How to start in 15 minutes.</strong> List what your agent can reach today (files, network, credentials) and remove one thing from the list that no current task needs.</p>
+
 <h2 id="en-govern">9. Govern</h2>
 
 <p>Govern does not replace the registry <a href="harness-p4.html#en-top">part 4</a> §7 insists can be a table and a spreadsheet for a company with seven agents. It exists for the two moments a spreadsheet stops being enough: tracking the eight indicators over a quarter, and knowing what a company larger than seven-agents-and-a-spreadsheet is actually buying when it buys a "control tower."</p>
@@ -1589,9 +1665,18 @@ description: Revisa minutas contratuais contra o checklist de cláusulas
 <p><strong>When not to use it.</strong> Everyone below N3. Part 4 §7's own test still applies: if the whole registry fits in a table with meeting minutes next to it, neither row applies yet.</p>
 <p><strong>How to start in 15 minutes.</strong> Not applicable, this is a landscape reference, not something to trial. Re-read part 4 §6 and §7 before any conversation with a vendor from this table.</p>
 
+<h3>Meta-harness: a layer above the agent tools (watch)</h3>
+
+<p><strong>Problem.</strong> Once several agent tools are in use, someone has to decide where each one runs, inside which sandbox and with what record.</p>
+<p><strong>In practice.</strong> A layer above the coding agents that wraps several of them behind one sandbox, one credential proxy and one session record. The 2026 <a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">source-code study</a> describes one in its corpus and lists the layer as one to watch. This is an observation, not a recommendation: nothing here says to adopt one.</p>
+<p><strong>Who it is for.</strong> N3, and an agent office (part 4) that already runs a registry.</p>
+<p><strong>Minimum tier.</strong> N3.</p>
+<p><strong>When not to use it.</strong> Before there is more than one agent tool and a registry that says which exist. The layer would have nothing to coordinate.</p>
+<p><strong>How to start in 15 minutes.</strong> Do not install anything. Read the study's section on the meta-harness layer and check whether your registry could answer what such a layer would record.</p>
+
 <h3>Reusing sensors-cli for the eight indicators</h3>
 
-<p>No new tool proposed here on purpose. <a href="#en-inspecionar">sensors-cli</a>, already covered in Inspect, is a dashboard that runs several sensors on an interval and keeps history. The same pattern extends to part 4's eight indicators once more than two or three are being tracked: point it at registry coverage, exception rate and gate rejection rate the same way it already points at hard-verification sensors, instead of standing up a second, separate dashboard.</p>
+<p>No new tool proposed here on purpose. <a href="#en-inspecionar">sensors-cli</a>, already covered in Inspect, is a dashboard that runs several sensors on an interval and keeps history. The same pattern extends to part 4's eight indicators once more than two or three are being tracked: point it at registry coverage, exception rate and gate rejection rate the same way it already points at hard-verification sensors, instead of standing up a second, separate dashboard. Because the repository carries no licence, reuse the pattern, not the code, until its author publishes one.</p>
 
 <h2 id="en-howto-1">10. Walkthrough 1: read superpowers in an hour</h2>
 
@@ -1649,6 +1734,14 @@ description: Reviews contract drafts against the house checklist of
 
 <p><strong>Step 3.</strong> Write the error message as a correction instruction. This is the part that decides whether the sensor works. It needs to contain what is wrong, what the correct value is, where the source sits, the likely cause and what to do next. A message that only says failed is not a sensor, it is an alarm.</p>
 
+<p>The same shape works when a tool fails, not only when a check does. A failure should say what went wrong, what was requested, whether anything already happened as a side effect, and whether trying again is safe:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre>
+
 <p><strong>Step 4.</strong> Tie the sensor to the skill's done criterion. Instead of writing done when the numbers are right, write done when the check command returns no mismatches. The criterion stops being an opinion and becomes verifiable.</p>
 
 <p><strong>Step 5.</strong> Set the ceiling. Three attempts, and on the third the system stops, delivers the work marked not checked and explains what did not close.</p>
@@ -1661,16 +1754,21 @@ description: Reviews contract drafts against the house checklist of
 
 <p>The recommendation from whoever publishes the format is explicit: install only from a trusted source, and when the source is less known, audit it before using it. Read the content of the files, pay particular attention to any included code and the resources that come with it, and check whether there are instructions telling the system to reach out to an external network.</p>
 
-<p>Three questions before any installation:</p>
+<p>Six questions before any installation:</p>
 
 <table class="wrap">
 <thead><tr><th>Question</th><th>Why it matters</th></tr></thead>
 <tbody>
 <tr><td>What data can this collection reach once it is active?</td><td>An installed skill operates with the permissions the environment already has</td></tr>
 <tr><td>Is there an instruction to fetch something from outside?</td><td>It is the most direct vector for an instruction coming from outside your control</td></tr>
-<tr><td>Who maintains it, under what licence, and how often?</td><td>An abandoned collection turns into an outdated instruction running silently</td></tr>
+<tr><td>Who maintains it, under what licence, and how often?</td><td>An abandoned collection turns into an outdated instruction running silently. A README that declares a licence without a licence file is a weaker grant, and no licence at all means the author keeps every right: this guide says so about sensors-cli</td></tr>
+<tr><td>Does it declare dependencies that will be installed automatically, such as tool servers or binaries?</td><td>Installing a skill can install something else (<a class="src" href="harness-sources.html#en-src-barbaste" data-tip="Barbaste, Darrigol, Vu and Wiltberger, source-code study of eleven coding-agent systems, arXiv:2609.00006, 15 July 2026.">Barbaste and co-authors, section 12.5</a>)</td></tr>
+<tr><td>Does it register hooks, or tell the agent not to ask before acting?</td><td>It is the pattern this project already rejected once, in a skill that told the agent not to ask the user for confirmation (see <code>sources/inventory.md</code>)</td></tr>
+<tr><td>Does the task get better with it?</td><td>A relevant-looking skill can still make the work wrong or slower: <a class="src" href="harness-sources.html#en-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, 12 August 2026.">Dong et al.</a> measured 307 such failures. Measure the task with and without the skill before keeping it</td></tr>
 </tbody>
 </table>
+
+<p>Microsoft's Agent Framework now requires approval by default before a skill is loaded, read or run (<a class="src" href="harness-sources.html#en-src-ms-skills" data-tip="Microsoft, Agent Skills, Agent Framework documentation, revised 2 October 2026.">documentation revised 2 October 2026</a>). Treat that as the baseline, not the exception.</p>
 
 <p>Part 3 of the series covers this surface in depth, alongside permission outside the model, an auditable record and accountability.</p>
 
@@ -1731,7 +1829,7 @@ description: Reviews contract drafts against the house checklist of
 
 <p class="byline">Fernando Teco Sodré · Revisada en octubre de 2026 · Acompaña las partes 1 a 4</p>
 
-<div class="rule-box"><span class="lbl">Vigencia</span><p>Todo lo de aquí fue verificado en agosto de 2026. Los nombres, direcciones y comandos cambian. Los artículos de la serie hablan de principios y no dependen de este documento. Este documento depende del mercado.</p></div>
+<div class="rule-box"><span class="lbl">Vigencia</span><p>Todo lo de aquí se reverificó el 5 de octubre de 2026: de cada repositorio, si está archivado, la fecha de su último commit y su licencia se leyeron en el origen ese día, y <code>sources/upstream.json</code> registra el resultado. Los nombres, direcciones y comandos cambian, así que la comprobación se repite cada trimestre. Los artículos de la serie hablan de principios y no dependen de este documento. Este documento depende del mercado.</p></div>
 
 <nav class="toc">
   <p>En este documento</p>
@@ -1818,7 +1916,7 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Repositorio pequeño y conocido, donde el contexto ya cabe en la cabeza de quien pide la tarea.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Abre la carpeta de skills, lee las tres o cuatro más usadas, compáralas con tu propio proceso de incorporar a alguien nuevo al equipo.</p>
 
-<div class="rule-box"><span class="lbl">Salvedad</span><p>A pesar del nombre, no es de Karpathy. Lo mantiene un tercero, derivado de sus observaciones públicas, con 208 mil estrellas. Los comandos de instalación del repositorio apuntan a un dueño distinto del actual: verifica antes de instalar. El flujo agéntico que sí es suyo se llama autoresearch y está en las fuentes.</p></div>
+<div class="rule-box"><span class="lbl">Salvedad</span><p>A pesar del nombre, no es de Karpathy. Lo mantiene un tercero, derivado de sus observaciones públicas, con 217 mil estrellas (5 de octubre de 2026). Los comandos de instalación del repositorio apuntan a un dueño distinto del actual: verifica antes de instalar. El flujo agéntico que sí es suyo se llama autoresearch y está en las fuentes. El repositorio no tiene archivo LICENSE, solo un README que declara MIT, una concesión más débil que un archivo de licencia. Último commit el 20 de abril de 2026: quieto desde hace más de cinco meses, todavía vigente según la clasificación de este proyecto.</p></div>
 
 <p>Repositorio: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
 
@@ -1831,7 +1929,7 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Proyecto de una sola persona, sin expectativa de que otra persona u otra sesión retome el trabajo después.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Escribe el primer diagrama de contexto, una caja para el sistema y una para cada usuario y sistema externo que toca, antes de la próxima decisión de arquitectura.</p>
 
-<p>Repositorio: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
+<p>Licencia MIT. Último commit el 26 de abril de 2026: quieto desde hace más de cinco meses, todavía vigente según la clasificación de este proyecto. Repositorio: <a href="https://github.com/muthub-ai/c4-skills">github.com/muthub-ai/c4-skills</a></p>
 
 <h3>Especificación antes del código</h3>
 
@@ -1855,6 +1953,15 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Tarea pequeña, un único ejecutor, volumen bajo. La ceremonia cuesta más de lo que evita, y ninguna de las cuatro herramientas fue diseñada para ese caso.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Escribe el contrato de tres líneas del propio intake-briefing (qué entrega, qué nunca hace, cuándo está listo) antes de instalar cualquier herramienta de esta categoría. Instala después, solo si el contrato solo no basta.</p>
 
+<h3>Modo plan</h3>
+
+<p><strong>Problema.</strong> Un contrato de tarea es una promesa hasta que algo impide al agente actuar antes de que el plan se apruebe.</p>
+<p><strong>En la práctica.</strong> Un modo de solo lectura en el que el agente estudia la tarea y propone un plan, pero no puede cambiar nada hasta que una persona lo apruebe. Los cuatro agentes de código nativos de proveedor en el <a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">estudio de código fuente</a> de 2026 traen uno. En al menos uno de ellos, el archivo del plan es lo único que el modo deja escribir al agente, y una herramienta propia es lo que devuelve la sesión a un modo que puede escribir.</p>
+<p><strong>Para quién.</strong> De N1 en adelante, quien aprueba cambios que hace un agente.</p>
+<p><strong>Banda mínima.</strong> N1.</p>
+<p><strong>Cuándo no usarlo.</strong> Un cambio tan pequeño que plan y acción son el mismo paso: la revisión del plan solo añade una ida y vuelta sin nada que revisar.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Actívalo en tu próximo cambio que toque más de un archivo, lee el plan antes de aprobarlo y anota lo que cambiaste en él. Esa edición es tu contrato de tarea, impuesto por el runtime en lugar de por una promesa.</p>
+
 <h2 id="es-equipar">4. Equipar</h2>
 
 <p>Equipar decide qué ve el agente, qué puede tocar y qué sobrevive entre sesiones, tratado en profundidad en la <a href="harness-p2.html#es-equipar">parte 2</a>. Las cuatro fichas siguientes son las colecciones más estudiadas hoy para escribir guías, organizar memoria duradera y, en la ficha más nueva, diseñar las fronteras del propio harness y la interfaz de herramienta.</p>
@@ -1868,7 +1975,7 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Cuando el objetivo es un skill pequeño y específico de un dominio. Todo el framework es más estructura de la que necesita una tarea aislada.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Sigue el <a href="#es-howto-1">recorrido 1</a> más abajo, hecho justamente para esto.</p>
 
-<p>Licencia MIT. Distribuida por el marketplace oficial de plugins y por otros entornos.</p>
+<p>Licencia MIT. Distribuida por el marketplace oficial de plugins y por otros entornos. El 5 de octubre de 2026 el origen lista quince skills; este proyecto instaló catorce, sin la más nueva, <code>diagnosing-superpowers</code>, que no estaba en la colección cuando se eligieron las catorce y no se midió aquí (ver la sexta pregunta en "Antes de instalar cualquier cosa").</p>
 
 <pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
 
@@ -1894,14 +2001,14 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Tarea que empieza y termina dentro de una sola sesión corta. El costo de mantener un archivo de estado no se paga solo.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Crea un archivo de plan con tres secciones (hecho, en curso, próximo) y pídele al agente que lo actualice después de cada etapa completada, antes de cerrar la sesión.</p>
 
-<div class="rule-box"><span class="lbl">Salvedad</span><p>Cerca de 26 mil estrellas, pero el número de eficacia que divulga el propio proyecto mide fidelidad al patrón (cuántas sesiones siguieron el formato), no se deriva de un objetivo de negocio. Trátalo como evidencia de adopción, no como prueba de resultado.</p></div>
+<div class="rule-box"><span class="lbl">Salvedad</span><p>Cerca de 27 mil estrellas (5 de octubre de 2026), pero el número de eficacia que divulga el propio proyecto mide fidelidad al patrón (cuántas sesiones siguieron el formato), no se deriva de un objetivo de negocio. Trátalo como evidencia de adopción, no como prueba de resultado.</p></div>
 
 <p>Repositorio: <a href="https://github.com/OthmanAdi/planning-with-files">github.com/OthmanAdi/planning-with-files</a></p>
 
 <h3>Agent Skills for Context Engineering</h3>
 
 <p><strong>Problema.</strong> Un lector señaló una brecha real en esta página: todo lo anterior equipa al agente con disciplina de proceso (superpowers), piezas editables (mattpocock/skills) o estado duradero (planning-with-files), pero nada aquí trata la propia arquitectura del harness, la frontera entre lo que un agente puede tocar, cuántos agentes deberían estar tocándolo, y lo que la interfaz de una herramienta le pide al modelo que la llama.</p>
-<p><strong>En la práctica.</strong> Tres skills de una colección de diecisiete, leídas por separado y mantenidas como tres porque cada una responde una pregunta distinta. <code>harness-engineering</code> nombra cuatro clases de superficie (bloqueada, editable, de solo anexado, controlada por humano) y trata un pull request que el agente prepara y un despliegue que una persona aprueba como dos tipos distintos de autoridad, no uno solo. <code>multi-agent-patterns</code> documenta las tres formas dominantes de coordinación (supervisor, punto a punto, jerárquica) frente a ocho modos de falla nombrados, incluyendo un costo de tokens de alrededor de quince veces la línea base de un solo agente que rutinariamente se subestima. <code>tool-design</code> trata la descripción de una herramienta como el prompt que en realidad es, y da una auditoría de ocho puntos para reducir un conjunto de herramientas superpuestas a un propósito inequívoco por herramienta.</p>
+<p><strong>En la práctica.</strong> Tres skills de una colección de dieciocho (diecisiete cuando se escribió esta entrada), leídas por separado y mantenidas como tres porque cada una responde una pregunta distinta. <code>harness-engineering</code> nombra cuatro clases de superficie (bloqueada, editable, de solo anexado, controlada por humano) y trata un pull request que el agente prepara y un despliegue que una persona aprueba como dos tipos distintos de autoridad, no uno solo. <code>multi-agent-patterns</code> documenta las tres formas dominantes de coordinación (supervisor, punto a punto, jerárquica) frente a ocho modos de falla nombrados. Que más agentes compensen es propiedad de la tarea, no una regla: <a class="src" href="harness-sources.html#es-src-google-scaling" data-tip="Google Research, 180 configuraciones de agentes, 28 de enero de 2026.">el estudio de 2026 de Google Research</a>, con 180 configuraciones, informó una ganancia de 80,9% con coordinación centralizada en una tarea descomponible de razonamiento financiero y una pérdida de 39% a 70% en tareas secuenciales de planificación. <code>tool-design</code> trata la descripción de una herramienta como el prompt que en realidad es, y da una auditoría de ocho puntos para reducir un conjunto de herramientas superpuestas a un propósito inequívoco por herramienta.</p>
 <p><strong>Para quién.</strong> De N1 en adelante para la mitad de diseño de harness e interfaz de herramienta, <code>harness-engineering</code> y <code>tool-design</code>, cualquier agente único que ya valga la pena diseñar con cuidado. De N2 en adelante para <code>multi-agent-patterns</code>, que presupone que ya existe más de un agente.</p>
 <p><strong>Banda mínima.</strong> Cuestión de juicio: N1 para dos de las tres skills, N2 una vez que varios agentes están de verdad coordinando.</p>
 <p><strong>Cuándo no usarlo.</strong> Una conversación única y corta, sin estado duradero y sin ninguna herramienta más allá de las que trae el propio modelo. Las tres skills presuponen que ya existe algo que vale la pena estructurar.</p>
@@ -1929,20 +2036,20 @@ description: Reviews contract drafts against the house checklist of
 <h3>Clases de entorno</h3>
 
 <p><strong>Problema.</strong> La mayor parte de la frustración con los agentes no viene del modelo ni del método: viene de intentar montar un control que el entorno elegido no sostiene.</p>
-<p><strong>En la práctica.</strong> Cuatro clases, detalladas en la <a href="harness-p2.html#es-ambientes">parte 2</a>: conversación con instrucciones, agente con archivos y ejecución, orquestación programada, generación asistida de software. Nombres actuales de cada clase: Claude Code, Codex y equivalentes cubren la segunda; DeepSeek Harness (runtime abierto, registro de solo anexado) y LangGraph cubren la tercera; los asistentes de conversación cubren la primera.</p>
+<p><strong>En la práctica.</strong> Cuatro clases, detalladas en la <a href="harness-p2.html#es-ambientes">parte 2</a>: conversación con instrucciones, agente con archivos y ejecución, orquestación programada, generación asistida de software. Nombres actuales de cada clase: Claude Code, Codex y equivalentes cubren la segunda; los runtimes gestionados de agente y los workflows en código (ver la entrada de abajo) cubren la tercera, con DeepSeek Harness (runtime abierto, registro de solo anexado) y LangGraph como ejemplos; los asistentes de conversación cubren la primera.</p>
 <p><strong>Para quién.</strong> Quien decide compra una herramienta antes de saber a qué banda necesita llegar. Esta ficha invierte el orden: primero la banda, después la clase de entorno que sostiene esa banda.</p>
 <p><strong>Banda mínima.</strong> No aplica, es diagnóstico, no herramienta.</p>
 <p><strong>Cuándo no usarlo.</strong> Nunca te saltes esta pregunta. Es el motivo más común de un proyecto de harness que nunca sale del papel.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Responde: ¿hasta qué banda necesita llegar esta tarea? Después, cuál es la clase de entorno más simple que sostiene esa banda, sin subir un escalón más de lo necesario.</p>
 
-<h3>Orquestación programada</h3>
+<h3>Workflow en código y runtimes gestionados</h3>
 
 <p><strong>Problema.</strong> Un tope de intentos, una política de autoridad y un registro de ejecución escritos como instrucción pueden ser reescritos o ignorados por el propio sistema al que deberían limitar.</p>
-<p><strong>En la práctica.</strong> Framework de orquestación de agentes con estado, donde esas tres cosas dejan de ser texto y pasan a ser código fuera del alcance del modelo. LangGraph es la referencia más madura hoy.</p>
+<p><strong>En la práctica.</strong> Dos rutas ponen esas tres cosas en código fuera del alcance del modelo. La primera es un runtime gestionado de agente, que mantiene la sesión, las aprobaciones y la recuperación como parte del servicio: <a class="src" href="harness-sources.html#es-src-openai-agents-api" data-tip="OpenAI, Introducing the Agents API, 10 September 2026, public beta.">la Agents API de OpenAI</a> (beta pública desde el 10 de septiembre de 2026), <a class="src" href="harness-sources.html#es-src-ms-harness" data-tip="Microsoft, Agent Harness, Agent Framework documentation.">el harness del Agent Framework de Microsoft</a>, <a class="src" href="harness-sources.html#es-src-managed-agents" data-tip="Anthropic, Scaling Managed Agents, 8 April 2026.">los Managed Agents de Anthropic</a> y <a class="src" href="harness-sources.html#es-src-google-executor" data-tip="Google Cloud, Introducing Agent Executor, 20 May 2026.">el Agent Executor de Google</a> (código abierto, en vista previa) surgieron todos en 2026. La segunda es el workflow en código, una secuencia fija escrita en código con puntos de control, en que el modelo rellena pasos pero no elige el camino. LangGraph es una referencia para esa ruta.</p>
 <p><strong>Para quién.</strong> De N2 a N3, cuando la guía sola ya no impide la violación del tope o de la autoridad.</p>
 <p><strong>Banda mínima.</strong> N2, para justificar la complejidad adicional de orquestar en código.</p>
-<p><strong>Cuándo no usarlo.</strong> Una tarea que corre en una sesión de agente con archivos y ejecución ya sostiene la banda necesaria. Orquestar en código antes de eso es construir estructura para un problema que todavía no existe.</p>
-<p><strong>Cómo empezar en 15 minutos.</strong> Lee la documentación del concepto de tope de intentos (retry ceiling) del framework elegido antes que cualquier otra parte: es la pieza que reemplaza la promesa de una guía por una restricción que el sistema no puede esquivar.</p>
+<p><strong>Cuándo no usarlo.</strong> Una tarea que corre en una sesión de agente con archivos y ejecución ya sostiene la banda necesaria. Orquestar antes de eso es construir estructura para un problema que todavía no existe. El <a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">estudio de código fuente</a> de once runtimes de agente de código halló que ninguno importa un framework agéntico de uso general, así que para código el framework no es lo predeterminado. Para un flujo de negocio con pasos fijos que no pueden repetirse con seguridad, el workflow en código sigue siendo la elección defendible, y <a class="src" href="harness-sources.html#es-src-ms-skills" data-tip="Microsoft, Agent Skills, documentación del Agent Framework, revisada el 2 de octubre de 2026.">la propia orientación de Microsoft sobre skills</a> dice que se prefieran workflows cuando los pasos tienen efectos secundarios. Los cuatro runtimes gestionados son de 2026, uno es beta pública y uno está en vista previa, así que espera cambios de nombres y de protocolos.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Lee la documentación del concepto de tope de intentos (retry ceiling) de la ruta elegida antes que cualquier otra parte: es la pieza que reemplaza la promesa de una guía por una restricción que el sistema no puede esquivar.</p>
 
 <p>Repositorio: <a href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a></p>
 
@@ -1992,7 +2099,16 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Un único sensor aislado todavía no justifica un panel. Consolida cuando el segundo sensor entre en producción.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> Apúntalo a los sensores que ya tienes corriendo y lee el resumen de tendencia de la primera semana antes de agregar cualquier sensor nuevo.</p>
 
-<p>Repositorio: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+<p>Sin licencia: el repositorio no tiene archivo de licencia y su README no declara ninguna, así que por defecto todos los derechos quedan con el autor. Léelo y copia el patrón, no el código, hasta que el autor publique una licencia. Repositorio: <a href="https://github.com/birgitta410/sensors-cli">github.com/birgitta410/sensors-cli</a></p>
+
+<h3>Hooks de ciclo de vida</h3>
+
+<p><strong>Problema.</strong> Una guía se lee y puede ignorarse. Una regla solo se vuelve puerta cuando el runtime la ejecuta.</p>
+<p><strong>En la práctica.</strong> Puntos en la ejecución de una herramienta de agente en los que una regla puede inspeccionar, bloquear o reescribir una acción antes de que ocurra, correr un sensor después y negarse a dejar terminar la sesión hasta que exista evidencia nueva. El vocabulario está convergiendo: según el <a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">estudio de código fuente</a>, el Codex de OpenAI copió casi literalmente los nombres de evento de Claude Code, y Gemini CLI trae once eventos de ciclo de vida. El hook de parada de este repositorio, <code>build/stop_hook.py</code>, es un pequeño ejemplo funcionando.</p>
+<p><strong>Para quién.</strong> De N2 en adelante, quien ya tiene un sensor y quiere que corra sin que nadie tenga que acordarse.</p>
+<p><strong>Banda mínima.</strong> N2.</p>
+<p><strong>Cuándo no usarlo.</strong> Para una regla que solo una persona puede juzgar: déjala en la guía. Y nunca dejes que la configuración de un hook la edite el agente al que gobierna sin que una persona lea el diff; este repositorio pide confirmación antes de cambiar sus propios archivos de hook.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Escribe dos hooks: uno que corra tu sensor más barato después de cada cambio de archivo, y otro que bloquee el fin de la sesión mientras ese sensor falle.</p>
 
 <h3>research</h3>
 
@@ -2168,6 +2284,15 @@ description: Reviews contract drafts against the house checklist of
 
 <p>Dos preguntas que esta sección todavía no puede responder con honestidad, que vale la pena plantear en vez de disimular. Nada de lo anterior le permite a un agente procesar datos personales sin almacenarlos en absoluto, "minimización" en sentido estricto: el producto adyacente más cercano, Zep, construido sobre el motor de código abierto Graphiti, gobierna cuánto tiempo sobrevive el dato almacenado, no si se almacena en primer lugar, y la orientación actual del propio gremio de privacidad recomienda construir niveles de retención y eliminación invocable puertas adentro, sin nombrar ninguna herramienta. Y ningún organismo de estándares ha publicado todavía un marco de privacidad por diseño específico para agentes: la ISO/IEC 27701 se convirtió en un estándar autónomo y certificable en octubre de 2025, pero sin ninguna cláusula específica para agentes encontrada al inspeccionarla; la propia actualización del marco de privacidad del NIST sigue siendo un borrador. Ambas quedan como preguntas abiertas para que este documento revisite, no como problemas para disimular con algo que suene a respuesta.</p>
 
+<h3>Contención: sandbox, red y credenciales</h3>
+
+<p><strong>Problema.</strong> La pregunta 6 de las doce de la parte 1, si la ejecución está aislada de producción, no tenía herramienta en esta guía.</p>
+<p><strong>En la práctica.</strong> Un sandbox del sistema operativo, un worktree separado por tarea, un contenedor, red de salida restringida, y credenciales mantenidas fuera del sandbox detrás de un proxy, de modo que el agente usa un token que nunca ve. En el <a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">estudio de código fuente</a>, Codex trae un sandbox nativo en tres sistemas operativos y un proxy de red, y el sandbox de runtime de Claude Code es opcional. <a class="src" href="harness-sources.html#es-src-contain" data-tip="Anthropic, How we contain Claude across products, 25 de mayo de 2026.">La publicación de Anthropic de 2026 sobre contener a Claude</a> trata la contención como un control separado de la aprobación.</p>
+<p><strong>Para quién.</strong> De N2 a N3, dondequiera que un agente pueda tocar algo que no se deshace.</p>
+<p><strong>Banda mínima.</strong> N2.</p>
+<p><strong>Cuándo no usarlo.</strong> El aislamiento es una elección costosa, no un valor predeterminado gratuito, y algunas herramientas prefieren reglas de permiso y análisis de comandos a un sandbox. La contención limita lo que un agente alcanza si todas las salvaguardas de comportamiento fallan. No vuelve correcta una acción equivocada.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> Lista lo que tu agente alcanza hoy (archivos, red, credenciales) y quita de la lista una cosa que ninguna tarea actual necesita.</p>
+
 <h2 id="es-govern">9. Gobernar</h2>
 
 <p>Gobernar no reemplaza el registro que la <a href="harness-p4.html#es-top">parte 4</a> §7 insiste que puede ser una tabla y una planilla para una empresa con siete agentes. Existe para los dos momentos en que una planilla deja de alcanzar: rastrear los ocho indicadores a lo largo de un trimestre, y saber qué está comprando en realidad una empresa más grande que siete-agentes-y-una-planilla cuando compra una "torre de control".</p>
@@ -2225,9 +2350,18 @@ description: Reviews contract drafts against the house checklist of
 <p><strong>Cuándo no usarlo.</strong> Cualquiera por debajo de N3. La propia prueba de la parte 4 §7 sigue aplicando: si todo el registro cabe en una tabla con actas de reunión al lado, ninguna de las dos filas aplica todavía.</p>
 <p><strong>Cómo empezar en 15 minutos.</strong> No aplica, esto es una referencia de panorama, no algo para probar. Vuelve a leer la parte 4 §6 y §7 antes de cualquier conversación con un proveedor de esta tabla.</p>
 
+<h3>Meta-harness: una capa sobre las herramientas de agente (observar)</h3>
+
+<p><strong>Problema.</strong> Cuando se usan varias herramientas de agente, alguien tiene que decidir dónde corre cada una, dentro de qué sandbox y con qué registro.</p>
+<p><strong>En la práctica.</strong> Una capa sobre los agentes de código que envuelve a varios detrás de un sandbox, un proxy de credenciales y un registro de sesión. El <a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">estudio de código fuente</a> de 2026 describe una en su corpus y lista la capa como una a observar. Es una observación, no una recomendación: nada aquí dice que se adopte una.</p>
+<p><strong>Para quién.</strong> N3, y una oficina de agentes (parte 4) que ya lleva un registro.</p>
+<p><strong>Banda mínima.</strong> N3.</p>
+<p><strong>Cuándo no usarlo.</strong> Antes de que haya más de una herramienta de agente y un registro que diga cuáles existen. La capa no tendría qué coordinar.</p>
+<p><strong>Cómo empezar en 15 minutos.</strong> No instales nada. Lee la sección del estudio sobre la capa de meta-harness y comprueba si tu registro podría responder qué registraría esa capa.</p>
+
 <h3>Reusar sensors-cli para los ocho indicadores</h3>
 
-<p>Ninguna herramienta nueva propuesta aquí a propósito. <a href="#es-inspecionar">sensors-cli</a>, ya cubierto en Inspeccionar, es un panel que corre varios sensores en un intervalo y guarda historial. El mismo patrón se extiende a los ocho indicadores de la parte 4 una vez que se rastrean más de dos o tres: apúntalo a la cobertura del registro, la tasa de excepciones y la tasa de rechazo en la puerta de la misma forma en que ya apunta a los sensores de verificación dura, en vez de levantar un segundo panel separado.</p>
+<p>Ninguna herramienta nueva propuesta aquí a propósito. <a href="#es-inspecionar">sensors-cli</a>, ya cubierto en Inspeccionar, es un panel que corre varios sensores en un intervalo y guarda historial. El mismo patrón se extiende a los ocho indicadores de la parte 4 una vez que se rastrean más de dos o tres: apúntalo a la cobertura del registro, la tasa de excepciones y la tasa de rechazo en la puerta de la misma forma en que ya apunta a los sensores de verificación dura, en vez de levantar un segundo panel separado. Como el repositorio no tiene licencia, reutiliza el patrón, no el código, hasta que su autor publique una.</p>
 
 <h2 id="es-howto-1">10. Recorrido 1: leer superpowers en una hora</h2>
 
@@ -2285,6 +2419,14 @@ description: Revisa borradores de contrato contra el checklist de
 
 <p><strong>Paso 3.</strong> Escribe el mensaje de error como instrucción de corrección. Esta es la parte que decide si el sensor funciona. Necesita contener qué está mal, cuál es el valor correcto, dónde está la fuente, la causa probable y qué hacer a continuación. Un mensaje que solo dice falló no es un sensor, es una alarma.</p>
 
+<p>La misma forma sirve cuando falla una herramienta, no solo cuando falla una verificación. Un fallo debe decir qué salió mal, qué se pidió, si algo ya ocurrió como efecto secundario y si es seguro reintentar:</p>
+
+<pre><code>status: failed
+reason: carrier_credentials_revoked
+requested: approve invoice 4471
+side_effects: none
+safe_to_retry: no, escalate to accounts payable</code></pre>
+
 <p><strong>Paso 4.</strong> Ata el sensor al criterio de terminado del skill. En vez de escribir terminado cuando los números estén bien, escribe terminado cuando el comando de verificación no devuelva divergencias. El criterio deja de ser una opinión y pasa a ser verificable.</p>
 
 <p><strong>Paso 5.</strong> Define el tope. Tres intentos, y en el tercero el sistema se detiene, entrega el trabajo marcado como no verificado y explica qué no cerró.</p>
@@ -2297,16 +2439,21 @@ description: Revisa borradores de contrato contra el checklist de
 
 <p>La recomendación de quien publica el formato es explícita: instala solo de una fuente confiable, y cuando la fuente sea menos conocida, audítala antes de usarla. Lee el contenido de los archivos, presta especial atención al código incluido y a los recursos que trae, y verifica si hay instrucciones que le digan al sistema que busque algo en una red externa.</p>
 
-<p>Tres preguntas antes de cualquier instalación:</p>
+<p>Seis preguntas antes de cualquier instalación:</p>
 
 <table class="wrap">
 <thead><tr><th>Pregunta</th><th>Por qué importa</th></tr></thead>
 <tbody>
 <tr><td>¿Qué dato alcanza esta colección cuando está activa?</td><td>Un skill instalado opera con los permisos que el entorno ya tiene</td></tr>
 <tr><td>¿Hay una instrucción para buscar algo afuera?</td><td>Es el vector más directo de una instrucción que viene de fuera de tu control</td></tr>
-<tr><td>¿Quién la mantiene, bajo qué licencia, y con qué frecuencia?</td><td>Una colección abandonada se convierte en una instrucción desactualizada corriendo en silencio</td></tr>
+<tr><td>¿Quién la mantiene, bajo qué licencia, y con qué frecuencia?</td><td>Una colección abandonada se convierte en una instrucción desactualizada corriendo en silencio. Un README que declara una licencia sin archivo de licencia es una concesión más débil, y ninguna licencia significa que el autor conserva todos los derechos: esta guía lo dice sobre sensors-cli</td></tr>
+<tr><td>¿Declara dependencias que se instalarán automáticamente, como servidores de herramientas o binarios?</td><td>Instalar un skill puede instalar otra cosa (<a class="src" href="harness-sources.html#es-src-barbaste" data-tip="Barbaste, Darrigol, Vu y Wiltberger, estudio del código fuente de once sistemas de agentes de código, arXiv:2609.00006, 15 de julio de 2026.">Barbaste y coautores, sección 12.5</a>)</td></tr>
+<tr><td>¿Registra hooks, o le dice al agente que no pregunte antes de actuar?</td><td>Es el patrón que este proyecto ya rechazó una vez, en un skill que le decía al agente que no pidiera confirmación al usuario (ver <code>sources/inventory.md</code>)</td></tr>
+<tr><td>¿La tarea mejora con él?</td><td>Un skill de apariencia relevante aún puede dejar el trabajo errado o más lento: <a class="src" href="harness-sources.html#es-src-skills-harmful" data-tip="Dong et al., Agent Skills Can Be Harmful, arXiv:2608.11888, 12 de agosto de 2026.">Dong et al.</a> midió 307 fallos así. Mide la tarea con y sin el skill antes de quedártelo</td></tr>
 </tbody>
 </table>
+
+<p>El Agent Framework de Microsoft ahora exige aprobación por defecto antes de que un skill se cargue, se lea o se ejecute (<a class="src" href="harness-sources.html#es-src-ms-skills" data-tip="Microsoft, Agent Skills, documentación del Agent Framework, revisada el 2 de octubre de 2026.">documentación revisada el 2 de octubre de 2026</a>). Trátalo como el punto de partida, no como la excepción.</p>
 
 <p>La parte 3 de la serie trata esta superficie a fondo, junto con el permiso fuera del modelo, el registro auditable y la responsabilidad.</p>
 

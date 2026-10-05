@@ -301,6 +301,8 @@ def check_spelling():
             for m in US.finditer(clean):
                 if m.group(1).lower() in PROPER_NOUNS:
                     continue
+                if m.group(1).isupper():
+                    continue  # nome de arquivo ou sigla, como LICENSE
                 out.append(F('spelling', path, i, clean[max(0, m.start() - 40):m.end() + 40],
                              f'"{m.group(1)}": ortografia britanica (-ise, -our, -ogue, licence)'))
     return out

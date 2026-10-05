@@ -158,7 +158,8 @@ O diário completo, com a tabela por marco e a metodologia por trás desses núm
 │   ├── README.md                      índice, oito templates em nove arquivos, cada um preso à sua parte
 │   └── ...                            task-contract.md, skill-template.md, starter-guides.md, e mais seis
 ├── sources/
-│   └── inventory.md                   todas as fontes verificadas, com status
+│   ├── inventory.md                   todas as fontes verificadas, com status e data
+│   └── upstream.json                  o que build/check_upstream.py leu de cada origem curada, com data
 ├── diagrams/
 │   ├── README.md                      índice, uma linha por diagrama, notas de renderização
 │   ├── part3/                         D1 a D5, SVG mais um PNG pareado para o Medium

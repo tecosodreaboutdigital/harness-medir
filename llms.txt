@@ -25,6 +25,7 @@ Author: Fernando Teco Sodre. Status: in progress, September 2026. English is thi
 - [Sources](harness-sources.html): every citation the series uses, human-facing.
 - [sources/inventory.md](sources/inventory.md): the same citations plus every curated third-party skill, with a verification status and date.
 - [toolkit.json](toolkit.json): the machine-readable manifest, see Start here above.
+- [sources/upstream.json](sources/upstream.json): archive status, last commit, licence and installed-versus-origin comparison for every curated repository, read from the GitHub API on a stated date.
 - [TOOLS.md](TOOLS.md): the skills this project itself installed and actually used, with a real-usage log.
 - [STANDARDS.md](STANDARDS.md): writing and formatting rules, non-negotiable.
 - [Project log](docs/logbook.html): words published, tokens consumed and cost recorded, per milestone, generated from git and the real usage of the project's sessions, subagents included.

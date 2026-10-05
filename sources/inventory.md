@@ -357,6 +357,39 @@ Each address was checked on 5 October 2026 and returned HTTP 200. That confirms 
 | V | The IIA, Statements of Position | https://www.theiia.org/en/resources/statements-of-position/ | HTTP 200 |
 | V | Microsoft, Agent Governance Toolkit (repository) | https://github.com/microsoft/agent-governance-toolkit | HTTP 200 |
 
+### Curated repositories, read from the GitHub API on 5 October 2026
+
+Written by `build/check_upstream.py` into `sources/upstream.json`; this table is a copy of what it read. A row says what the origin looked like that day, not what it looks like now. Findings that change what the compact guide says: `karpathy/autoresearch` and `multica-ai/andrej-karpathy-skills` have no LICENSE file and only a README that declares MIT; `birgitta410/sensors-cli` has no licence at all, so the guide now recommends reusing its pattern and not its code; `obra/superpowers` has fifteen skills at the origin and this project installed fourteen; the Agent Skills for Context Engineering collection has eighteen under `skills/`, not seventeen; `muthub-ai/c4-skills` and `multica-ai/andrej-karpathy-skills` have had no commit since April 2026, which the AGENTS.md classification still calls current. `microsoft/presidio` and `data-privacy-stack/presidio` are one repository under two addresses; the canonical one is the Data Privacy Stack's.
+
+| Status | Id | Repository | What was read |
+|---|---|---|---|
+| V | superpowers | https://github.com/obra/superpowers | archived: no; last commit 2026-09-25; MIT; 295,448 stars |
+| V | mattpocock-skills | https://github.com/mattpocock/skills | archived: no; last commit 2026-10-05; MIT; 276,639 stars |
+| V | c4-skills | https://github.com/muthub-ai/c4-skills | archived: no; last commit 2026-04-26; MIT; 4 stars |
+| V | karpathy-inspired-guide | https://github.com/multica-ai/andrej-karpathy-skills | archived: no; last commit 2026-04-20; README declares "MIT", no LICENSE file; 216,963 stars |
+| V | ai-slop-cleaner | https://github.com/Yeachan-Heo/oh-my-claudecode | archived: no; last commit 2026-10-03; MIT; 39,584 stars |
+| V | humanizer | https://github.com/blader/humanizer | archived: no; last commit 2026-09-28; MIT; 54,077 stars |
+| V | agent-skills-for-context-engineering | https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering | archived: no; last commit 2026-10-01; MIT; 18,075 stars |
+| V | ai-act-skill | https://github.com/morellid/ai-act-skill | archived: no; last commit 2026-08-09; MIT; 4 stars |
+| V | threat-modeling | https://github.com/rjmurillo/ai-agents | archived: no; last commit 2026-10-04; MIT; 47 stars |
+| V | intake-briefing | https://github.com/tecosodreaboutdigital/intake-briefing | archived: no; last commit 2026-08-31; MIT; 1 stars |
+| V | milestone-loc-tokens-ai-ledger | https://github.com/tecosodreaboutdigital/milestone-loc-tokens-ai-ledger | archived: no; last commit 2026-09-20; MIT; 3 stars |
+| V | holdfast | https://github.com/AndreAlmeidaDC/holdfast | archived: no; last commit 2026-08-21; MIT; 3 stars |
+| V | planning-with-files | https://github.com/OthmanAdi/planning-with-files | archived: no; last commit 2026-10-01; MIT; 27,287 stars |
+| V | sensors-cli | https://github.com/birgitta410/sensors-cli | archived: no; last commit 2026-07-13; no licence file, none declared; 25 stars |
+| V | autoresearch | https://github.com/karpathy/autoresearch | archived: no; last commit 2026-03-26; README declares "MIT", no LICENSE file; 97,322 stars |
+| V | deepseek-harness | https://github.com/deepseek-ai/deepseek-harness | archived: no; last commit 2026-10-03; MIT; 243,744 stars |
+| V | langgraph | https://github.com/langchain-ai/langgraph | archived: no; last commit 2026-10-03; MIT; 42,730 stars |
+| V | agent-governance-toolkit | https://github.com/microsoft/agent-governance-toolkit | archived: no; last commit 2026-10-05; MIT; 6,391 stars |
+| V | presidio | https://github.com/data-privacy-stack/presidio | archived: no; last commit 2026-10-04; MIT; 11,165 stars |
+| V | spec-kit | https://github.com/github/spec-kit | archived: no; last commit 2026-10-03; MIT; 140,183 stars |
+| V | dependency-cruiser | https://github.com/sverweij/dependency-cruiser | archived: no; last commit 2026-10-01; MIT; 7,249 stars |
+| V | semgrep | https://github.com/semgrep/semgrep | archived: no; last commit 2026-10-02; LGPL-2.1; 16,878 stars |
+| V | rekor | https://github.com/sigstore/rekor | archived: no; last commit 2026-10-05; Apache-2.0; 1,215 stars |
+| V | spire | https://github.com/spiffe/spire | archived: no; last commit 2026-10-02; Apache-2.0; 2,570 stars |
+| V | langfuse | https://github.com/langfuse/langfuse | archived: no; last commit 2026-10-05; LICENSE file present, SPDX id not detected; 35,395 stars |
+| V | awesome-harness-engineering | https://github.com/ai-boost/awesome-harness-engineering | archived: no; last commit 2026-10-05; LICENSE file present, SPDX id not detected; 4,709 stars |
+
 ### Left unverified or unused, on purpose
 
 - **Waves 7 and 8 must not use:** "the model did not change" for the April 2026 Claude Code post (it says the API was not impacted); "71.9% on SWE-bench Verified" for the AHE study; "the first peer-reviewed framework" for the OWASP list; 80.9% as a general multi-agent figure; NeurIPS for SWE-agent; "307 confirmed cases" for the skills study (the abstract says 307 failures).
