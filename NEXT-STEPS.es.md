@@ -98,6 +98,10 @@ Dos cosas que el relato también señaló como ya funcionando según lo previsto
 
 ---
 
+## Completado el 5 de octubre de 2026
+
+**Ola 1 de la especificación consolidada de cambios: primero los sensores.** `docs/harness-medir-mudancas-consolidadas 05Out.md` (147 cambios que vienen de dos papers sobre ingeniería de harness y de una auditoría completa de este repositorio) pasa a ser la cola de trabajo, ver el punto 7 más abajo. La primera ola construye las verificaciones contra las que se comprueba todo cambio posterior. `build/check_all.py` ejecuta diez comprobaciones de una vez (rayas, orden del glosario, texto alternativo de los gráficos del README, `toolkit.json`, enlaces y anclas, coherencia entre partes, hechos repetidos entre glosario y partes, tildes ausentes en portugués y español, ortografía estadounidense en inglés y paridad de secciones, tablas, SVG y tooltips entre idiomas), y cada hallazgo indica el archivo, la línea, el pasaje y la corrección esperada. Nace con 331 hallazgos conocidos registrados en `build/check_known.json`, encontrados al ejecutar las comprobaciones por primera vez y dejados para que las olas siguientes los corrijan, un trinquete: un hallazgo fuera de esa lista hace fallar la ejecución, y la lista solo puede encogerse. `build/stop_hook.py`, conectado en `.claude/settings.json`, ejecuta las comprobaciones cuando la sesión modificó archivos publicados e impide terminar ante un hallazgo nuevo, y `.github/workflows/check.yml` las ejecuta en cada push, probado antes en un clon limpio con fin de línea Unix. La Parte 1 pasó a poder editarse desde el build: sus cuerpos en portugués y español nunca habían existido fuera de la página ensamblada, y `build_all.py` y `build_en.py` apuntaban a rutas de sandbox que no existen aquí. Los tres cuerpos se extrajeron del `harness-p1.html` publicado, la fuente de la verdad, `build/build_p1.py` ensambla la página con el mismo patrón que `build_p2.py`, y una segunda ejecución no cambia nada. `build/body_en.html` estaba desactualizado (todavía decía Parte 1 de 3) y se eliminó. Los tres scripts históricos pasaron a `build/legacy/`. Fuera de esta ola, a propósito: la configuración del propio hook todavía no tiene protección contra la edición por el agente (punto P3.02 de la especificación), así que una persona tiene que leer ese diff.
+
 ## 5. Extraer el motor de métricas del diario de bitácora a una skill propia, hecho
 
 Planteado vía retroalimentación de lector, 13 de septiembre de 2026, comparando la maquinaria del propio diario de bitácora de este proyecto con el modo en que `intake-briefing` se sacó de este repositorio para convertirse en una skill propia, autónoma e instalable, el 30 de agosto de 2026. Cerrado entre el 13 y el 14 de septiembre de 2026.
@@ -221,6 +225,14 @@ Planteado y cerrado el 20 de septiembre de 2026. El autor decidió que los token
 **Lo que se deja abierto a propósito, pequeño.** Claude Opus 5 y Claude Haiku 4.5 se cotizan desde el 13 de septiembre bajo una suposición escrita en cada entrada del libro mayor: la página de precios muestra solo el precio del día en que se leyó, así que un cambio fechado entre el 13 y el 20 de septiembre, si lo hubo, no es visible desde aquí. Una fuente que date el precio, como un changelog o una copia archivada de la página, convertiría la suposición en un hecho, y el mecanismo `corrects` del libro mayor es cómo corregir una entrada si resulta errónea.
 
 **Terminado cuando:** los tokens de subagentes están en los totales, en los gráficos y en el costo, con precio por modelo, con el solapamiento y la regla de atribución declarados en el diario publicado, en los tres idiomas. **Cumplido el 20 de septiembre de 2026.**
+
+---
+
+## 7. Aplicar la especificación consolidada de cambios, en curso
+
+Abierto el 5 de octubre de 2026. `docs/harness-medir-mudancas-consolidadas 05Out.md` enumera 147 cambios, 46 de prioridad alta, en nueve olas ordenadas para que cada una use lo que la anterior dejó listo (sección 9 de ese documento). La ola 1, primero los sensores (`BLD.01` a `BLD.05`), se cerró el 5 de octubre de 2026, ver arriba. Faltan: 2 higiene y hechos erróneos, 3 bibliografía, 4 guía compacta y skills, 5 playbook, 6 diagramas, 7 Partes 2 y 3, 8 Partes 1 y 4 y glosario, 9 sitio y diario. Cada ola termina con el checklist de la sección 9 de la especificación, y los hallazgos conocidos en `build/check_known.json` miden el progreso: la lista tiene que llegar a vacía, o cada entrada restante tiene que llevar una razón escrita.
+
+**Listo cuando:** cada punto de la especificación esté aplicado o registrado como rechazado con razón, y `build/check_known.json` no tenga ninguna entrada sin una.
 
 ---
 

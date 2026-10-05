@@ -98,6 +98,10 @@ Duas coisas que o relato também apontou como já funcionando como deveriam, reg
 
 ---
 
+## Concluído em 5 de outubro de 2026
+
+**Onda 1 da especificação consolidada de mudanças: sensores primeiro.** `docs/harness-medir-mudancas-consolidadas 05Out.md` (147 mudanças vindas de dois papers sobre engenharia de harness e de uma auditoria completa deste repositório) passa a ser a fila de trabalho, ver o item 7 abaixo. A primeira onda constrói as verificações contra as quais toda mudança posterior é conferida. `build/check_all.py` roda dez checagens de uma vez (travessões, ordem do glossário, texto alternativo dos gráficos do README, `toolkit.json`, links e âncoras, consistência entre partes, fatos repetidos entre glossário e partes, acentos ausentes em português e espanhol, ortografia americana em inglês e paridade de seções, tabelas, SVG e tooltips entre as línguas), e cada achado diz o arquivo, a linha, o trecho e a correção esperada. Ele nasce com 331 achados conhecidos registrados em `build/check_known.json`, encontrados ao rodar as checagens pela primeira vez e deixados para as ondas seguintes corrigirem, uma catraca: achado fora dessa lista derruba a execução, e a lista só pode encolher. `build/stop_hook.py`, ligado em `.claude/settings.json`, roda as checagens quando a sessão alterou arquivos publicados e impede o encerramento diante de um achado novo, e `.github/workflows/check.yml` as roda a cada push, testado antes num clone limpo com fim de linha Unix. A Parte 1 passou a ser editável pelo build: os corpos em português e espanhol nunca tinham existido fora da página montada, e `build_all.py` e `build_en.py` apontavam para caminhos de sandbox que não existem aqui. Os três corpos foram extraídos do `harness-p1.html` publicado, a fonte da verdade, `build/build_p1.py` monta a página no mesmo padrão de `build_p2.py`, e uma segunda execução não muda nada. `build/body_en.html` estava defasado (ainda dizia Parte 1 de 3) e foi removido. Os três scripts históricos foram para `build/legacy/`. Fora desta onda, de propósito: a configuração do próprio hook ainda não tem proteção contra edição pelo agente (item P3.02 da especificação), então uma pessoa precisa ler esse diff.
+
 ## 5. Extrair o motor de métrica do diário de bordo para uma skill própria, concluído
 
 Levantado via feedback de leitor, 13 de setembro de 2026, comparando a maquinaria do próprio diário de bordo deste projeto com o jeito que o `intake-briefing` foi retirado deste repositório para virar uma skill própria, autônoma e instalável, em 30 de agosto de 2026. Concluído entre 13 e 14 de setembro de 2026.
@@ -221,6 +225,14 @@ Levantado e fechado em 20 de setembro de 2026. O autor decidiu que os tokens de 
 **O que fica em aberto de propósito, pequeno.** O Claude Opus 5 e o Claude Haiku 4.5 são precificados a partir de 13 de setembro sob uma suposição escrita em cada entrada do livro-razão: a página de preços mostra só o preço do dia em que foi lida, então uma mudança datada entre 13 e 20 de setembro, se houve, não é visível daqui. Uma fonte que date o preço, como um changelog ou uma cópia arquivada da página, transformaria a suposição em fato, e o mecanismo `corrects` do livro-razão é como corrigir uma entrada se ela se mostrar errada.
 
 **Concluído quando:** os tokens de subagentes estão nos totais, nos gráficos e no custo, precificados por modelo, com a sobreposição e a regra de atribuição declaradas no diário publicado, nas três línguas. **Cumprido em 20 de setembro de 2026.**
+
+---
+
+## 7. Aplicar a especificação consolidada de mudanças, em andamento
+
+Aberto em 5 de outubro de 2026. `docs/harness-medir-mudancas-consolidadas 05Out.md` lista 147 mudanças, 46 de prioridade alta, em nove ondas ordenadas para que cada uma use o que a anterior deixou pronto (seção 9 desse documento). A onda 1, sensores primeiro (`BLD.01` a `BLD.05`), fechou em 5 de outubro de 2026, ver acima. Faltam: 2 higiene e fatos errados, 3 bibliografia, 4 guia compacto e skills, 5 playbook, 6 diagramas, 7 Partes 2 e 3, 8 Partes 1 e 4 e glossário, 9 site e diário. Cada onda termina com o checklist da seção 9 da especificação, e os achados conhecidos em `build/check_known.json` medem o progresso: a lista tem de chegar a vazia, ou cada entrada restante tem de carregar uma razão escrita.
+
+**Pronto quando:** cada item da especificação estiver aplicado ou registrado como recusado com razão, e `build/check_known.json` não tiver nenhuma entrada sem uma.
 
 ---
 

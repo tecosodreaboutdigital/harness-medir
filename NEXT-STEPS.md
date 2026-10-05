@@ -98,6 +98,10 @@ Two things the write-up also named as working as intended, kept here for the rec
 
 ---
 
+## Completed on 5 October 2026
+
+**Wave 1 of the consolidated change specification: sensors first.** `docs/harness-medir-mudancas-consolidadas 05Out.md` (147 changes from two papers on harness engineering and a full audit of this repository) is now the work queue, see item 7 below. Its first wave builds the checks every later change is verified against. `build/check_all.py` runs ten checks in one pass (dashes, glossary order, README chart alt text, `toolkit.json`, links and anchors, consistency between parts, facts repeated between the glossary and the parts, missing accents in Portuguese and Spanish, American spelling in English, and parity of sections, tables, SVG and tooltips across languages), and every finding names the file, the line, the passage and the expected fix. It opens with 331 known findings recorded in `build/check_known.json`, found by running the checks for the first time and left for later waves to fix, a ratchet: a finding outside that list fails the run, and the list may only shrink. `build/stop_hook.py`, wired in `.claude/settings.json`, runs the checks when a session has changed published files and keeps the session from ending on a new finding, and `.github/workflows/check.yml` runs them on every push, tested beforehand in a clean clone with Unix line endings. Part 1 became editable by the build: its Portuguese and Spanish bodies had never existed outside the assembled page, and `build_all.py` and `build_en.py` pointed at sandbox paths that do not exist here. The three bodies were extracted from the published `harness-p1.html`, the source of truth, `build/build_p1.py` assembles the page in the same pattern as `build_p2.py`, and a second run changes nothing. `build/body_en.html` was found stale (it still said Part 1 of 3) and removed. The three historical scripts moved to `build/legacy/`. Not done in this wave, on purpose: the hook's own configuration still has no protection against the agent editing it (item P3.02 of the specification), so a person has to read that diff.
+
 ## 1. Write Part 3, done
 
 **Status: written and live at `harness-p3.html`, all three languages.** The nine sections below are all in the body (`build/body_p3_en.html`, `_pt.html`, `_es.html`), with the five diagrams inline and fully translated (including every SVG label, checked by rendering each diagram standalone in all three languages, no overflow, no overlap), the matrix-of-authority and receipt-schema artefacts in the text, both honesty obligations honoured, and the Air Canada character arc closing in section 9. Word counts run close across the three (EN 5,131, PT 5,468, ES 5,676), consistent with a real translation rather than a summary. Kept as tracking record below.
@@ -221,6 +225,14 @@ Raised and closed 20 September 2026. The author decided that subagent tokens cou
 **What is deliberately left open, small.** Claude Opus 5 and Claude Haiku 4.5 are priced from 13 September on an assumption written in each ledger entry: the pricing page shows only the price of the day it was read, so a dated change between 13 and 20 September, if there was one, is not visible from here. A source that dates the price, such as a changelog or an archived copy of the page, would turn the assumption into a fact, and the ledger's `corrects` mechanism is how to fix an entry if it proves wrong.
 
 **Done when:** subagent tokens are in the totals, the charts and the cost, priced per model, with the overlap and the attribution rule disclosed in the published log, in three languages. **Met, 20 September 2026.**
+
+---
+
+## 7. Apply the consolidated change specification, in progress
+
+Raised 5 October 2026. `docs/harness-medir-mudancas-consolidadas 05Out.md` lists 147 changes, 46 of high priority, in nine waves ordered so that each uses what the last left ready (section 9 of that document). Wave 1, sensors first (`BLD.01` to `BLD.05`), closed on 5 October 2026, see above. Remaining: 2 hygiene and wrong facts, 3 bibliography, 4 compact guide and skills, 5 playbook, 6 diagrams, 7 Parts 2 and 3, 8 Parts 1 and 4 and the glossary, 9 site and log. Each wave ends with the checklist in section 9 of the specification, and the known findings in `build/check_known.json` are the measure of progress: the list has to reach empty, or every remaining entry has to carry a written reason.
+
+**Done when:** every item in the specification is either applied or recorded as declined with a reason, and `build/check_known.json` holds no entry without one.
 
 ---
 
