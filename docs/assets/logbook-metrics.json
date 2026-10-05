@@ -1,29 +1,18 @@
 {
-  "generated_at": "2026-09-20T15:46:01.863522+00:00",
+  "generated_at": "2026-10-05T11:40:57.653669+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
-    "204bbeb0-335d-484e-843c-bd45b2664d53.jsonl",
+    "03fe2a7b-d6be-43df-83d8-28e4b3e35b12.jsonl",
     "2bd825fa-a8e8-476e-bf87-4591d6537437.jsonl",
-    "46908256-4997-4659-b184-4a6d48768252.jsonl",
-    "53d70d0d-9708-4ea1-835b-f5bcd01b1f8e.jsonl",
     "53f37137-6915-4852-bfe5-28f319ee3f49.jsonl",
     "5cca66f1-772b-46bc-aa39-3590a003ce38.jsonl",
     "700145fd-41ab-4891-9784-7a9f145a2193.jsonl",
     "7f526096-6cdc-4cd0-ab18-2ff52b338719.jsonl",
-    "94076374-cedf-44d4-a224-b04b4df17067.jsonl",
     "9ceec93a-9776-453d-af08-f860720eb670.jsonl",
-    "9f4f9e51-1a43-441f-b80f-b7e9d10a62ac.jsonl",
-    "aac61ff0-ff50-42f9-8b0b-de3773bd541f.jsonl",
-    "b10c3344-93cb-42bd-ba5f-c5ddd03db217.jsonl",
     "b4a46e8e-3bf4-4950-8ca7-8e72c302b597.jsonl",
-    "b8483cb7-107f-4e13-a062-36f399ca1ce7.jsonl",
     "c37b3f32-e79a-4dbb-bed8-b26ffe157825.jsonl",
     "d4bb11b8-6bcc-462a-8982-6cde47e57a98.jsonl",
-    "d6866966-e558-4b5e-b4a9-b907f0feeb66.jsonl",
-    "dbd69bf5-e8c6-49ba-8413-535293be50d3.jsonl",
-    "e5f70a13-d5e8-42e9-b7e6-012cf295bbfe.jsonl",
-    "ee67d6e0-ff77-4fe6-96c3-67ea21b93690.jsonl",
-    "eeadabdc-3f32-4ce2-9526-875208c3f86c.jsonl"
+    "e5f70a13-d5e8-42e9-b7e6-012cf295bbfe.jsonl"
   ],
   "count_rules_hash": "4d561bfe450e594f",
   "milestones": [
@@ -4707,35 +4696,598 @@
         "cache_creation_1h": 0,
         "by_model": {}
       }
+    },
+    {
+      "hash": "af635a8",
+      "timestamp": "2026-09-20T12:47:01-03:00",
+      "subject": "Regenerate the project log, milestones M86 and M87",
+      "words_published": 121724,
+      "code_lines": 12250,
+      "governance_lines": 806,
+      "tokens_bucket": {
+        "input": 10,
+        "output": 6603,
+        "cache_read": 2880175,
+        "cache_creation": 8459
+      },
+      "tokens_total": {
+        "input": 10,
+        "output": 6603,
+        "cache_read": 2880175,
+        "cache_creation": 8459
+      },
+      "tokens_cumulative": {
+        "input": 13842,
+        "output": 6393757,
+        "cache_read": 1596501917,
+        "cache_creation": 23638952
+      },
+      "cost_recorded": {
+        "amount": 0.6759,
+        "currency": "USD",
+        "priced_at": "2026-09-13",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 8459,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 10,
+            "output": 6603,
+            "cache_read": 2880175,
+            "cache_creation": 8459,
+            "cache_creation_1h": 8459
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      }
+    },
+    {
+      "hash": "03754df",
+      "timestamp": "2026-10-05T08:07:27-03:00",
+      "subject": "Add the consolidated change specification of 5 October 2026",
+      "words_published": 121724,
+      "code_lines": 12250,
+      "governance_lines": 806,
+      "tokens_bucket": {
+        "input": 28,
+        "output": 6831,
+        "cache_read": 3560150,
+        "cache_creation": 86015
+      },
+      "tokens_total": {
+        "input": 28,
+        "output": 6831,
+        "cache_read": 3560150,
+        "cache_creation": 86015
+      },
+      "tokens_cumulative": {
+        "input": 13870,
+        "output": 6400588,
+        "cache_read": 1600062067,
+        "cache_creation": 23724967
+      },
+      "cost_recorded": {
+        "amount": 1.1245,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "multiple",
+        "by_model": {
+          "claude-sonnet-5": {
+            "amount": 0.6376,
+            "priced_at": "2026-09-13"
+          },
+          "claude-sonnet-5-5": {
+            "amount": 0.4868,
+            "priced_at": "2026-10-05"
+          }
+        }
+      },
+      "tokens_split": {
+        "cache_creation_1h": 86015,
+        "by_model": {
+          "claude-sonnet-5": {
+            "input": 12,
+            "output": 3505,
+            "cache_read": 2916595,
+            "cache_creation": 4810,
+            "cache_creation_1h": 4810
+          },
+          "claude-sonnet-5-5": {
+            "input": 16,
+            "output": 3326,
+            "cache_read": 643555,
+            "cache_creation": 81205,
+            "cache_creation_1h": 81205
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": {
+            "amount": 0.6376,
+            "currency": "USD",
+            "priced_at": "2026-09-13",
+            "provider": "anthropic",
+            "model": "claude-sonnet-5"
+          },
+          "previous_unpriced": [
+            {
+              "model": "claude-sonnet-5-5",
+              "tokens": 728102,
+              "reason": "no price series for anthropic / claude-sonnet-5-5 in the ledger"
+            }
+          ],
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "d7bcdad",
+      "timestamp": "2026-10-05T08:09:58-03:00",
+      "subject": "Add check_all.py, a stop hook and a CI workflow (BLD.01 to BLD.03)",
+      "words_published": 121724,
+      "code_lines": 13031,
+      "governance_lines": 806,
+      "tokens_bucket": {
+        "input": 24,
+        "output": 15891,
+        "cache_read": 1531691,
+        "cache_creation": 31936
+      },
+      "tokens_total": {
+        "input": 24,
+        "output": 15891,
+        "cache_read": 1531691,
+        "cache_creation": 31936
+      },
+      "tokens_cumulative": {
+        "input": 13894,
+        "output": 6416479,
+        "cache_read": 1601593758,
+        "cache_creation": 23756903
+      },
+      "cost_recorded": {
+        "amount": 0.593,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 31936,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 24,
+            "output": 15891,
+            "cache_read": 1531691,
+            "cache_creation": 31936,
+            "cache_creation_1h": 31936
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "b565c82",
+      "timestamp": "2026-10-05T08:11:40-03:00",
+      "subject": "Extract the Part 1 bodies and add build_p1.py, retire the legacy scripts (BLD.04, BLD.05)",
+      "words_published": 121724,
+      "code_lines": 13839,
+      "governance_lines": 806,
+      "tokens_bucket": {
+        "input": 18,
+        "output": 7737,
+        "cache_read": 1403163,
+        "cache_creation": 23810
+      },
+      "tokens_total": {
+        "input": 18,
+        "output": 7737,
+        "cache_read": 1403163,
+        "cache_creation": 23810
+      },
+      "tokens_cumulative": {
+        "input": 13912,
+        "output": 6424216,
+        "cache_read": 1602996921,
+        "cache_creation": 23780713
+      },
+      "cost_recorded": {
+        "amount": 0.4533,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 23810,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 18,
+            "output": 7737,
+            "cache_read": 1403163,
+            "cache_creation": 23810,
+            "cache_creation_1h": 23810
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "0fc9f7e",
+      "timestamp": "2026-10-05T08:12:44-03:00",
+      "subject": "Record wave 1 of the change specification in NEXT-STEPS, three languages",
+      "words_published": 121724,
+      "code_lines": 13839,
+      "governance_lines": 818,
+      "tokens_bucket": {
+        "input": 8,
+        "output": 9820,
+        "cache_read": 680325,
+        "cache_creation": 11465
+      },
+      "tokens_total": {
+        "input": 8,
+        "output": 9820,
+        "cache_read": 680325,
+        "cache_creation": 11465
+      },
+      "tokens_cumulative": {
+        "input": 13920,
+        "output": 6434036,
+        "cache_read": 1603677246,
+        "cache_creation": 23792178
+      },
+      "cost_recorded": {
+        "amount": 0.2801,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 11465,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 8,
+            "output": 9820,
+            "cache_read": 680325,
+            "cache_creation": 11465,
+            "cache_creation_1h": 11465
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "3cfae17",
+      "timestamp": "2026-10-05T08:25:11-03:00",
+      "subject": "Wave 2, part 1: glossary facts, dead and moved links, PT terminology, Part 1 series section",
+      "words_published": 121786,
+      "code_lines": 13812,
+      "governance_lines": 818,
+      "tokens_bucket": {
+        "input": 78,
+        "output": 33644,
+        "cache_read": 8179186,
+        "cache_creation": 63682
+      },
+      "tokens_total": {
+        "input": 78,
+        "output": 33644,
+        "cache_read": 8179186,
+        "cache_creation": 63682
+      },
+      "tokens_cumulative": {
+        "input": 13998,
+        "output": 6467680,
+        "cache_read": 1611856432,
+        "cache_creation": 23855860
+      },
+      "cost_recorded": {
+        "amount": 2.2272,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 63682,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 78,
+            "output": 33644,
+            "cache_read": 8179186,
+            "cache_creation": 63682,
+            "cache_creation_1h": 63682
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "16621c3",
+      "timestamp": "2026-10-05T08:31:23-03:00",
+      "subject": "Wave 2, part 2: accents, cross-page language fragments, lang attributes and titles, Part 1 tooltip parity",
+      "words_published": 121791,
+      "code_lines": 13632,
+      "governance_lines": 818,
+      "tokens_bucket": {
+        "input": 76,
+        "output": 33889,
+        "cache_read": 10199747,
+        "cache_creation": 52936
+      },
+      "tokens_total": {
+        "input": 76,
+        "output": 33889,
+        "cache_read": 10199747,
+        "cache_creation": 52936
+      },
+      "tokens_cumulative": {
+        "input": 14074,
+        "output": 6501569,
+        "cache_read": 1622056179,
+        "cache_creation": 23908796
+      },
+      "cost_recorded": {
+        "amount": 2.5907,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 52936,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 76,
+            "output": 33889,
+            "cache_read": 10199747,
+            "cache_creation": 52936,
+            "cache_creation_1h": 52936
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "fe2f6ba",
+      "timestamp": "2026-10-05T08:38:39-03:00",
+      "subject": "Wave 2, part 3: fixes in Markdown, STATUS and sources, D10 per language, D1/D2/D5/D8 spelling, build README in three languages, hook protection",
+      "words_published": 121799,
+      "code_lines": 13948,
+      "governance_lines": 818,
+      "tokens_bucket": {
+        "input": 92,
+        "output": 45634,
+        "cache_read": 15148975,
+        "cache_creation": 155436
+      },
+      "tokens_total": {
+        "input": 92,
+        "output": 45634,
+        "cache_read": 15148975,
+        "cache_creation": 155436
+      },
+      "tokens_cumulative": {
+        "input": 14166,
+        "output": 6547203,
+        "cache_read": 1637205154,
+        "cache_creation": 24064232
+      },
+      "cost_recorded": {
+        "amount": 4.1081,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 155436,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 92,
+            "output": 45634,
+            "cache_read": 15148975,
+            "cache_creation": 155436,
+            "cache_creation_1h": 155436
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
+    },
+    {
+      "hash": "e7da0e4",
+      "timestamp": "2026-10-05T08:39:56-03:00",
+      "subject": "Record wave 2 in STATUS and NEXT-STEPS, three languages; fix British spelling in Part 4",
+      "words_published": 121799,
+      "code_lines": 13946,
+      "governance_lines": 824,
+      "tokens_bucket": {
+        "input": 12,
+        "output": 8256,
+        "cache_read": 2722460,
+        "cache_creation": 11042
+      },
+      "tokens_total": {
+        "input": 12,
+        "output": 8256,
+        "cache_read": 2722460,
+        "cache_creation": 11042
+      },
+      "tokens_cumulative": {
+        "input": 14178,
+        "output": 6555459,
+        "cache_read": 1639927614,
+        "cache_creation": 24075274
+      },
+      "cost_recorded": {
+        "amount": 0.6712,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 11042,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 12,
+            "output": 8256,
+            "cache_read": 2722460,
+            "cache_creation": 11042,
+            "cache_creation_1h": 11042
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "repricings": [
+        {
+          "repriced_at": "2026-10-05T11:41:53.588932+00:00",
+          "previous_cost": null,
+          "reason": "reprice",
+          "note": "Added the claude-sonnet-5-5 series (US$2/10, read from the pricing page on 2026-10-05) so the milestones of 5 October 2026 can be priced"
+        }
+      ]
     }
   ],
   "tokens_since_last_commit": {
-    "input": 4,
-    "output": 1669,
-    "cache_read": 1147497,
-    "cache_creation": 2574
+    "input": 0,
+    "output": 0,
+    "cache_read": 0,
+    "cache_creation": 0
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 2574,
-    "by_model": {
-      "claude-sonnet-5": {
-        "input": 4,
-        "output": 1669,
-        "cache_read": 1147497,
-        "cache_creation": 2574,
-        "cache_creation_1h": 2574
-      }
-    }
+    "cache_creation_1h": 0,
+    "by_model": {}
   },
   "cost_since_last_commit": {
-    "amount": 0.2565,
+    "amount": 0.0,
     "currency": "USD",
     "priced_at": "2026-09-13",
     "provider": "anthropic",
     "model": "claude-sonnet-5"
   },
   "unpriced_milestones": 65,
-  "last_repriced_at": "2026-09-20T15:02:32.377045+00:00",
+  "last_repriced_at": "2026-10-05T11:41:53.588932+00:00",
   "last_enriched_at": "2026-09-20T14:29:19.804788+00:00",
   "subagent_transcript_files": 114,
   "subagent_tokens_note": "Subagent transcripts (<session>/subagents/*.jsonl) were never read before 20 September 2026. subagent_tokens on a milestone holds what they recorded, captured while the transcripts still existed, split by model and by cache lifetime. They are counted: tokens_total is tokens_bucket (the parent sessions) plus subagent_tokens, and tokens_cumulative, the totals, the charts and the cost are all built from tokens_total, priced per model. tokens_bucket and tokens_split stay the parent sessions alone, because they are the frozen fact that --enrich checks against the transcripts."

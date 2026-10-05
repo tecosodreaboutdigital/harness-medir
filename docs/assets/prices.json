@@ -68,5 +68,28 @@
         ]
       }
     ]
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "currency": "USD",
+    "entries": [
+      {
+        "effective_date": "2026-10-05",
+        "input_price": 2.0,
+        "output_price": 10.0,
+        "cache_read_price": 0.2,
+        "cache_creation_price": 2.5,
+        "cache_creation_1h_price": 4.0,
+        "note": "Read on 2026-10-05, the first day this model id appears in the session transcripts (message.model), and applied from that date, so no earlier date is assumed. The pricing page names the model \"Claude Sonnet 5.5\" and lists US$2/10 input/output, 5-minute write 2.50, 1-hour write 4.00 and cache read 0.20, the same figures as Claude Sonnet 5. The page shows only the price as of the day it was read.",
+        "sources": [
+          {
+            "name": "Anthropic pricing page, Claude API docs (Claude Sonnet 5.5 row: input, output, 5-minute and 1-hour cache writes, cache hits)",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "checked_at": "2026-10-05"
+          }
+        ]
+      }
+    ]
   }
 ]
