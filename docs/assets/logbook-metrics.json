@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T15:46:08.636254+00:00",
+  "generated_at": "2026-10-06T21:48:52.077503+00:00",
   "session_files": [
     "03f090a0-5d6e-4920-b3e6-2a65dc47ebd3.jsonl",
     "03fe2a7b-d6be-43df-83d8-28e4b3e35b12.jsonl",
@@ -5762,24 +5762,260 @@
         "2.1.289": 44
       },
       "cache_avoided": 26.5495
+    },
+    {
+      "hash": "f6422cd",
+      "timestamp": "2026-10-05T12:49:10-03:00",
+      "subject": "Regenerate the project log for waves 3 to 9: milestones M97 to M104, three new readings, charts and README alt text",
+      "words_published": 140934,
+      "code_lines": 15696,
+      "governance_lines": 849,
+      "tokens_bucket": {
+        "input": 28,
+        "output": 14279,
+        "cache_read": 5599522,
+        "cache_creation": 26225
+      },
+      "tokens_total": {
+        "input": 28,
+        "output": 14279,
+        "cache_read": 5599522,
+        "cache_creation": 26225
+      },
+      "tokens_cumulative": {
+        "input": 14892,
+        "output": 7025426,
+        "cache_read": 1814453089,
+        "cache_creation": 25347957
+      },
+      "cost_recorded": {
+        "amount": 1.3677,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 26225,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 28,
+            "output": 14279,
+            "cache_read": 5599522,
+            "cache_creation": 26225,
+            "cache_creation_1h": 26225
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 14
+      },
+      "cache_avoided": 10.0791
+    },
+    {
+      "hash": "1131f50",
+      "timestamp": "2026-10-05T12:50:09-03:00",
+      "subject": "English D3 text says tokens, like the Portuguese and Spanish",
+      "words_published": 140934,
+      "code_lines": 15696,
+      "governance_lines": 849,
+      "tokens_bucket": {
+        "input": 6,
+        "output": 1114,
+        "cache_read": 1232679,
+        "cache_creation": 2691
+      },
+      "tokens_total": {
+        "input": 6,
+        "output": 1114,
+        "cache_read": 1232679,
+        "cache_creation": 2691
+      },
+      "tokens_cumulative": {
+        "input": 14898,
+        "output": 7026540,
+        "cache_read": 1815685768,
+        "cache_creation": 25350648
+      },
+      "cost_recorded": {
+        "amount": 0.2685,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 2691,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 6,
+            "output": 1114,
+            "cache_read": 1232679,
+            "cache_creation": 2691,
+            "cache_creation_1h": 2691
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 3
+      },
+      "cache_avoided": 2.2188
+    },
+    {
+      "hash": "80abde4",
+      "timestamp": "2026-10-05T18:51:57-03:00",
+      "subject": "Close two open decisions: widen the D5 box (172 wide) and keep homologador in Portuguese",
+      "words_published": 140934,
+      "code_lines": 15696,
+      "governance_lines": 851,
+      "tokens_bucket": {
+        "input": 56,
+        "output": 16734,
+        "cache_read": 11208672,
+        "cache_creation": 806196
+      },
+      "tokens_total": {
+        "input": 56,
+        "output": 16734,
+        "cache_read": 11208672,
+        "cache_creation": 806196
+      },
+      "tokens_cumulative": {
+        "input": 14954,
+        "output": 7043274,
+        "cache_read": 1826894440,
+        "cache_creation": 26156844
+      },
+      "cost_recorded": {
+        "amount": 5.634,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 806196,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 56,
+            "output": 16734,
+            "cache_read": 11208672,
+            "cache_creation": 806196,
+            "cache_creation_1h": 806196
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 28
+      },
+      "cache_avoided": 20.1756
+    },
+    {
+      "hash": "5f6a2f3",
+      "timestamp": "2026-10-05T20:47:13-03:00",
+      "subject": "Bring twelve skills back to their origins, install diagnosing-superpowers, close the open decisions",
+      "words_published": 140978,
+      "code_lines": 15711,
+      "governance_lines": 853,
+      "tokens_bucket": {
+        "input": 68,
+        "output": 25284,
+        "cache_read": 15447157,
+        "cache_creation": 459671
+      },
+      "tokens_total": {
+        "input": 68,
+        "output": 25284,
+        "cache_read": 15447157,
+        "cache_creation": 459671
+      },
+      "tokens_cumulative": {
+        "input": 15022,
+        "output": 7068558,
+        "cache_read": 1842341597,
+        "cache_creation": 26616515
+      },
+      "cost_recorded": {
+        "amount": 5.1811,
+        "currency": "USD",
+        "priced_at": "2026-10-05",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5-5"
+      },
+      "tokens_split": {
+        "cache_creation_1h": 459671,
+        "by_model": {
+          "claude-sonnet-5-5": {
+            "input": 68,
+            "output": 25284,
+            "cache_read": 15447157,
+            "cache_creation": 459671,
+            "cache_creation_1h": 459671
+          }
+        }
+      },
+      "subagent_tokens": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_creation": 0,
+        "cache_creation_1h": 0,
+        "by_model": {}
+      },
+      "harness_versions": {
+        "2.1.289": 34
+      },
+      "cache_avoided": 27.8049
     }
   ],
   "tokens_since_last_commit": {
-    "input": 0,
-    "output": 0,
-    "cache_read": 0,
-    "cache_creation": 0
+    "input": 8,
+    "output": 2801,
+    "cache_read": 1495481,
+    "cache_creation": 487725
   },
   "tokens_since_last_commit_split": {
-    "cache_creation_1h": 0,
-    "by_model": {}
+    "cache_creation_1h": 487725,
+    "by_model": {
+      "claude-sonnet-5-5": {
+        "input": 8,
+        "output": 2801,
+        "cache_read": 1495481,
+        "cache_creation": 487725,
+        "cache_creation_1h": 487725
+      }
+    }
   },
   "cost_since_last_commit": {
-    "amount": 0.0,
+    "amount": 2.278,
     "currency": "USD",
-    "priced_at": "2026-09-13",
+    "priced_at": "2026-10-05",
     "provider": "anthropic",
-    "model": "claude-sonnet-5"
+    "model": "claude-sonnet-5-5"
   },
   "unpriced_milestones": 65,
   "last_repriced_at": "2026-10-05T11:41:53.588932+00:00",
